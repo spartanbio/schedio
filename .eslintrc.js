@@ -7,7 +7,7 @@ module.exports = {
   extends: [
     '@vue/standard',
     'plugin:prettier/recommended',
-    'plugin:vue/strongly-recommended'
+    'plugin:vue/recommended'
   ],
   plugins: ['prettier'],
   rules: {
