@@ -8,6 +8,7 @@ import { linkTo } from '@storybook/addon-links'
 import MyButton from '@/components/MyButton.vue'
 import Colour from '@/components/Colour.vue'
 import Typography from '@/components/Typography.vue'
+import Spacing from '@/components/Spacing.vue'
 
 // Automatically register base components
 const baseComponents = require.context(
@@ -27,6 +28,10 @@ storiesOf('Design', module)
   .add('Colour', () => ({
     components: { Colour },
     template: '<Colour />'
+  }))
+  .add('Spacing', () => ({
+    components: { Spacing },
+    template: '<Spacing />'
   }))
 
 storiesOf('Button', module)

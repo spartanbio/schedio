@@ -1,0 +1,20 @@
+props:
+  spacing-none:
+    value: 0
+  spacing-quarter:
+    value: '0.25em'
+  spacing-half:
+    value: '0.5em'
+  spacing-base:
+    value: '1em'
+  spacing-1.5x:
+    value: '1.5em'
+  spacing-2x:
+    value: '2em'
+  spacing-3x:
+    value: '3em'
+  spacing-4x:
+    value: '4em'
+global:
+  type: number
+  category: spacing
