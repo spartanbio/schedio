@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import MyButton from '../components/MyButton.vue'
-import Typography from '../components/Typography.vue'
+import MyButton from '@/components/MyButton.vue'
+import Typography from '@/components/Typography.vue'
 
 storiesOf('Design', module).add('Typography', () => ({
   components: { Typography },
