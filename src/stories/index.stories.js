@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
 import MyButton from '@/components/MyButton.vue'
-
+import Colour from '@/components/Colour.vue'
 import Typography from '@/components/Typography.vue'
 
 // Automatically register base components
@@ -19,10 +19,15 @@ const baseComponents = require.context(
 registerComponentsGlobally(baseComponents)
 
 // create stories
-storiesOf('Design', module).add('Typography', () => ({
-  components: { Typography },
-  template: '<Typography />'
-}))
+storiesOf('Design', module)
+  .add('Typography', () => ({
+    components: { Typography },
+    template: '<Typography />'
+  }))
+  .add('Colour', () => ({
+    components: { Colour },
+    template: '<Colour />'
+  }))
 
 storiesOf('Button', module)
   .add('with text', () => ({
