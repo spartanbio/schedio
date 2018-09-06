@@ -9,7 +9,7 @@ module.exports = {
     },
     'style-resources-loader': {
       preProcessor: 'scss',
-      patterns: [path.resolve(__dirname, 'src/assets/variables.scss')]
+      patterns: [path.resolve(__dirname, 'src/assets/styles/variables.scss')]
     }
   },
   configureWebpack: {

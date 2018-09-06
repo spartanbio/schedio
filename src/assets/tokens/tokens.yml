@@ -1,0 +1,7 @@
+imports:
+  - ./colours.yml
+  - ./font.yml
+  - ./font-size.yml
+global:
+  type: global
+  category: all

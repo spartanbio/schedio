@@ -1,5 +1,64 @@
-@import 'fonts';
+@import 'tokens/tokens';
 
-$font-family-sans-serif: 'Avenir Next', -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-  sans-serif;
+// Font-sizes
+$base-line-height: 1.5;
+$large-text-line-height: 1.25;
+
+$size-1: (
+  'size': $font-size-1,
+  'leading': $large-text-line-height,
+  'tracking': 0.025em
+);
+
+$size-2: (
+  'size': $font-size-2,
+  'leading': $large-text-line-height,
+  'tracking': 0.025em
+);
+
+$size-3: (
+  'size': $font-size-3,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-4: (
+  'size': $font-size-4,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-5: (
+  'size': $font-size-5,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-6: (
+  'size': $font-size-6,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-7: (
+  'size': $font-size-7,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$sizes: ($size-1, $size-2, $size-3, $size-4, $size-5, $size-6, $size-7);
+
+// colors
+$colours: (
+  'spartan-blue': $spartan-blue,
+  'spartan-white': $spartan-white,
+  'spartan-black': $spartan-black,
+  'spartan-grey': $spartan-grey,
+  'spartan-green': $spartan-green,
+  'spartan-orange': $spartan-orange,
+  'spartan-cyan': $spartan-cyan
+);
+
+@function colour($name) {
+  @return map-get($colours, $name);
+}

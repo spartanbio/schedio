@@ -1,0 +1,138 @@
+{
+  "aliases": {},
+  "props": {
+    "spartan-blue": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(210, 100%, 30%, 1)",
+      "originalValue": "hsla(210, 100%, 30%, 1)",
+      "name": "spartan-blue"
+    },
+    "spartan-white": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(0, 0%, 100%, 1)",
+      "originalValue": "hsla(0, 0%, 100%, 1)",
+      "name": "spartan-white"
+    },
+    "spartan-black": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(345, 6%, 13%, 1)",
+      "originalValue": "hsla(345, 6%, 13%, 1)",
+      "name": "spartan-black"
+    },
+    "spartan-grey": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(216, 3%, 66%, 1)",
+      "originalValue": "hsla(216, 3%, 66%, 1)",
+      "name": "spartan-grey"
+    },
+    "spartan-green": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(144, 71%, 47%, 1)",
+      "originalValue": "hsla(144, 71%, 47%, 1)",
+      "name": "spartan-green"
+    },
+    "spartan-orange": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(40, 97%, 55%, 1)",
+      "originalValue": "hsla(40, 97%, 55%, 1)",
+      "name": "spartan-orange"
+    },
+    "spartan-cyan": {
+      "type": "colour",
+      "category": "colour",
+      "value": "hsla(195, 100%, 47%, 1)",
+      "originalValue": "hsla(195, 100%, 47%, 1)",
+      "name": "spartan-cyan"
+    },
+    "font-family-sans-serif": {
+      "type": "...",
+      "category": "font",
+      "value": "'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      "originalValue": "'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      "name": "font-family-sans-serif"
+    },
+    "font-weight-bold": {
+      "type": "...",
+      "category": "font",
+      "value": "700",
+      "originalValue": "700",
+      "name": "font-weight-bold"
+    },
+    "font-weight-light": {
+      "type": "...",
+      "category": "font",
+      "value": "300",
+      "originalValue": "300",
+      "name": "font-weight-light"
+    },
+    "font-weight-regular": {
+      "type": "...",
+      "category": "font",
+      "value": "400",
+      "originalValue": "400",
+      "name": "font-weight-regular"
+    },
+    "base-font-size": {
+      "type": "number",
+      "category": "font-size",
+      "value": "16px",
+      "originalValue": "16px",
+      "name": "base-font-size"
+    },
+    "font-size-1": {
+      "type": "number",
+      "category": "font-size",
+      "value": "5rem",
+      "originalValue": "5rem",
+      "name": "font-size-1"
+    },
+    "font-size-2": {
+      "type": "number",
+      "category": "font-size",
+      "value": "3.375rem",
+      "originalValue": "3.375rem",
+      "name": "font-size-2"
+    },
+    "font-size-3": {
+      "type": "number",
+      "category": "font-size",
+      "value": "2.25rem",
+      "originalValue": "2.25rem",
+      "name": "font-size-3"
+    },
+    "font-size-4": {
+      "type": "number",
+      "category": "font-size",
+      "value": "1.5rem",
+      "originalValue": "1.5rem",
+      "name": "font-size-4"
+    },
+    "font-size-5": {
+      "type": "number",
+      "category": "font-size",
+      "value": "1rem",
+      "originalValue": "1rem",
+      "name": "font-size-5"
+    },
+    "font-size-6": {
+      "type": "number",
+      "category": "font-size",
+      "value": "0.75rem",
+      "originalValue": "0.75rem",
+      "name": "font-size-6"
+    },
+    "font-size-7": {
+      "type": "number",
+      "category": "font-size",
+      "value": "0.5rem",
+      "originalValue": "0.5rem",
+      "name": "font-size-7"
+    }
+  }
+}
