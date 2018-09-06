@@ -14,7 +14,17 @@ module.exports = {
     'prettier/prettier': ['error', { singleQuote: true, semi: false }],
     semi: [2, 'never'],
     'no-console': 'off',
-    'no-debugger': 'off'
+    'no-debugger': 'off',
+    'vue/max-attributes-per-line': [
+      2,
+      {
+        singleline: 3,
+        multiline: {
+          max: 1,
+          allowFirstLine: false
+        }
+      }
+    ]
   },
   parserOptions: {
     parser: 'babel-eslint'
