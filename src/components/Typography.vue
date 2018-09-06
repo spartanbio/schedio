@@ -75,15 +75,10 @@
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading'
 import tokens from '@/assets/styles/tokens/tokens.json'
 
 export default {
   name: 'Typography',
-
-  components: {
-    BaseHeading
-  },
 
   data: () => ({
     tokens
