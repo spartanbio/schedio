@@ -10,7 +10,9 @@
     "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
     "build:storybook": "vue-cli-service build:storybook -c config/storybook",
     "lint:js": "vue-cli-service lint",
-    "lint:style": "vue-cli-service lint:style"
+    "lint:style": "vue-cli-service lint:style",
+    "theo": "theo ./src/assets/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens",
+    "theo:onchange": "onchange \"./src/tokens/*.yml\" -- npm run theo"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -33,6 +35,7 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.3.0",
+    "theo": "^8.0.0-beta.2",
     "vue-cli-plugin-storybook": "^0.4.6",
     "vue-cli-plugin-style-resources-loader": "^0.1.3",
     "vue-template-compiler": "^2.5.17"
