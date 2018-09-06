@@ -12,6 +12,9 @@ module.exports = {
       patterns: [path.resolve(__dirname, 'src/assets/styles/variables.scss')]
     }
   },
+  css: {
+    extract: false
+  },
   configureWebpack: {
     resolve: {
       alias: {
