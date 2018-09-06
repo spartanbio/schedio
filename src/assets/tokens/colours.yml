@@ -14,7 +14,7 @@ props:
   spartan-green:
     value: 'hsla(144, 71%, 47%, 1)'
     palette: 'secondary'
-  spartan-orange:
+  spartan-gold:
     value: 'hsla(40, 97%, 55%, 1)'
     palette: 'secondary'
   spartan-cyan:
