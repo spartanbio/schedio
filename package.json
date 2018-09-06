@@ -12,7 +12,7 @@
     "lint:js": "vue-cli-service lint",
     "lint:style": "stylelint ./src/assets/**/*.scss",
     "theo": "theo ./src/assets/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens",
-    "theo:onchange": "onchange \"./src/tokens/*.yml\" -- npm run theo"
+    "theo:onchange": "onchange \"./src/assets/tokens/*.yml\" -- npm run theo"
   },
   "dependencies": {
     "vue": "^2.5.17"
