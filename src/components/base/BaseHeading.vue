@@ -1,7 +1,5 @@
 <template>
-  <component
-    :is="displayTag"
-    :class="displayClass">
+  <component :is="displayTag" :class="displayClass">
     <slot/>
   </component>
 </template>
@@ -12,7 +10,7 @@ export default {
 
   props: {
     level: {
-      type: String,
+      type: [String, Number],
       required: true
     },
 
