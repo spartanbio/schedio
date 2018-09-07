@@ -31,7 +31,7 @@ storiesOf('BaseHeading', module)
           <BaseHeading
             level={displayLevel}
             isDisplay
-            className={isUppercase && 'uppercase'}
+            class={isUppercase && 'uppercase'}
           >
             Display Level {displayLevel}
           </BaseHeading>
