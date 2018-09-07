@@ -6,7 +6,7 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs'
 // Global registration doesn't work with `jsx` templates
 import BaseHeading from '@/components/base/BaseHeading.vue'
 
-storiesOf('BaseHeading', module)
+storiesOf('Components/BaseHeading', module)
   .addDecorator(withKnobs)
   .add('Headings', () => {
     const headingLevel = select('Heading Level', [1, 2, 3], '1')
