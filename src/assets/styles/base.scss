@@ -20,6 +20,8 @@ body {
   font-family: $font-family-sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 code {
@@ -63,4 +65,12 @@ td,
 th {
   padding: $spacing-half;
   text-align: left;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
 }
