@@ -6,10 +6,10 @@ props:
     value: 'hsla(0, 0%, 100%, 1)'
     palette: 'primary'
   spartan-black:
-    value: 'hsla(345, 6%, 13%, 1)'
+    value: 'hsla(210, 24%, 17%, 1)'
     palette: 'primary'
   spartan-grey:
-    value: 'hsla(216, 3%, 66%, 1)'
+    value: 'hsla(210, 3%, 86%, 1)'
     palette: 'primary'
   spartan-green:
     value: 'hsla(144, 71%, 47%, 1)'

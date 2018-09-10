@@ -20,17 +20,17 @@
     "spartan-black": {
       "type": "colour",
       "category": "colour",
-      "value": "hsla(345, 6%, 13%, 1)",
+      "value": "hsla(210, 24%, 17%, 1)",
       "palette": "primary",
-      "originalValue": "hsla(345, 6%, 13%, 1)",
+      "originalValue": "hsla(210, 24%, 17%, 1)",
       "name": "spartan-black"
     },
     "spartan-grey": {
       "type": "colour",
       "category": "colour",
-      "value": "hsla(216, 3%, 66%, 1)",
+      "value": "hsla(210, 3%, 86%, 1)",
       "palette": "primary",
-      "originalValue": "hsla(216, 3%, 66%, 1)",
+      "originalValue": "hsla(210, 3%, 86%, 1)",
       "name": "spartan-grey"
     },
     "spartan-green": {
