@@ -69,7 +69,7 @@
       Caption
     </p>
     <p class="caption">
-      Size: {{ tokens['font-size-6'] }} | Weight: {{ tokens['font-weight-regular'] }} | Colour: <code>{{ tokens['spartan-grey'] }}</code>
+      Size: {{ tokens['font-size-6'] }} | Weight: {{ tokens['font-weight-regular'] }} | Color: <code>{{ tokens['spartan-grey'] }}</code>
     </p>
   </div>
 </template>

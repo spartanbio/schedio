@@ -1,5 +1,5 @@
 @import 'tokens/tokens';
-@import 'tokens/tokens.colour-map';
+@import 'tokens/tokens.color-map';
 
 // Font-sizes
 $base-line-height: 1.5;
@@ -49,6 +49,6 @@ $size-7: (
 
 $sizes: ($size-1, $size-2, $size-3, $size-4, $size-5, $size-6, $size-7);
 
-@function colour($name) {
-  @return map-get($colours, $name);
+@function color($name) {
+  @return map-get($colors, $name);
 }

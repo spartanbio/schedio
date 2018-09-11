@@ -1,44 +1,44 @@
 <template>
   <div>
 
-    <BaseHeading level="1">Colours</BaseHeading>
-    <p>As a rule, use lots of contrast, and stick to cool colours</p>
+    <BaseHeading level="1">Colors</BaseHeading>
+    <p>As a rule, use lots of contrast, and stick to cool colors</p>
 
     <!-- Primary -->
     <BaseHeading level="2">Primary</BaseHeading>
     <p>This is the primary Spartan palette. It's primary purpose is for layout</p>
 
-    <ColourList v-for="colour in getPalette('primary')" :colour="colour" :key="colour.name" />
+    <ColorList v-for="color in getPalette('primary')" :color="color" :key="color.name" />
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
-    <ColourList v-for="colour in getPalette('secondary')" :colour="colour" :key="colour.name" />
+    <ColorList v-for="color in getPalette('secondary')" :color="color" :key="color.name" />
 
   </div>
 </template>
 
 <script>
 import { props } from '@/assets/styles/tokens/tokens.raw.json'
-import ColourList from '@/components/docs/ColourList'
+import ColorList from '@/components/docs/ColorList'
 
 export default {
-  name: 'Colour',
+  name: 'Color',
 
   components: {
-    ColourList
+    ColorList
   },
 
   data() {
     return {
-      colours: Object.values(props).filter(t => t.category === 'background-color')
+      colors: Object.values(props).filter(t => t.category === 'background-color')
     }
   },
 
   methods: {
     /**
-     * Split colours into palettes
+     * Split colors into palettes
      * @param {('primary'|'secondary')} palette Get the primary or secondary palette
      *
      * @returns {[Object.<string, string>]}
@@ -48,7 +48,7 @@ export default {
 
       if (notValid) return
 
-      return Object.values(this.colours).filter(c => c.palette === palette)
+      return Object.values(this.colors).filter(c => c.palette === palette)
     }
   }
 }

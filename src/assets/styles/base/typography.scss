@@ -48,7 +48,7 @@ $large-text-line-height: 1.25;
 
 .caption {
   @include font-size(6);
-  color: colour('spartan-grey');
+  color: color('spartan-grey');
 
   &:not(:first-child) {
     margin-top: -1rem;

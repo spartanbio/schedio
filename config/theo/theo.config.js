@@ -1,3 +1,3 @@
 module.exports = theo => {
-  theo.registerFormat('colour-map.scss', require('./formats/colour-map.scss.js'))
+  theo.registerFormat('color-map.scss', require('./formats/color-map.scss.js'))
 }

@@ -16,7 +16,7 @@ html {
 html,
 body {
   @include font-size(5);
-  color: colour('spartan-black');
+  color: color('spartan-black');
   font-family: $font-family-sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

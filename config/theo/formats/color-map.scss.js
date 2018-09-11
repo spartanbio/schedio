@@ -1,10 +1,10 @@
 const groupBy = require('lodash.groupby')
 
-class ColourMap {
+class ColorMap {
   constructor({ props }) {
     const propsWithPalette = props.filter(prop => !!prop.palette)
     this.palettes = groupBy(propsWithPalette, 'palette')
-    this.colours = props.filter(prop => prop.type === 'color')
+    this.colors = props.filter(prop => prop.type === 'color')
   }
 
   renderPalette(palette) {
@@ -16,9 +16,9 @@ class ColourMap {
   )`
   }
 
-  renderColours() {
+  renderColors() {
     // `  ` formats indent
-    return this.colours.map(colour => `  '${colour.name}': ${colour.value}`).join(',\n')
+    return this.colors.map(color => `  '${color.name}': ${color.value}`).join(',\n')
   }
 
   render() {
@@ -28,11 +28,11 @@ class ColourMap {
       .join(',\n  ')}
 );
 
-$colours: (\n${this.renderColours()}\n);`
+$colors: (\n${this.renderColors()}\n);`
   }
 }
 
 module.exports = function(result) {
-  const colourMap = new ColourMap(result.toJS())
-  return colourMap.render()
+  const colorMap = new ColorMap(result.toJS())
+  return colorMap.render()
 }
