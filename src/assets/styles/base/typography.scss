@@ -18,11 +18,11 @@ $large-text-line-height: 1.25;
   font-weight: 700;
 
   &:not(:only-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
   }
 
   &:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 2em;
   }
 }
 
