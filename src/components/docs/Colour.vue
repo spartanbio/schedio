@@ -69,14 +69,14 @@ export default {
   methods: {
     /**
      * Split colours into palettes
-     *
      * @param {('primary'|'secondary')} palette Get the primary or secondary palette
      *
-     * @returns {Object.<string, string>[]}
+     * @returns {[Object.<string, string>]}
      */
     getPalette(palette) {
-      if (typeof palette !== 'string' && palette !== ('primary' || 'secondary'))
-        return
+      const notValid =
+        typeof palette !== 'string' && palette !== ('primary' || 'secondary')
+      if (notValid) return
       return Object.values(this.colours).filter(c => c.palette === palette)
     }
   }
@@ -107,7 +107,7 @@ export default {
   }
 
   &--spartan-white {
-    border: 1px solid colour(spartan-grey);
+    border: 1px solid colour('spartan-grey');
   }
 }
 </style>
