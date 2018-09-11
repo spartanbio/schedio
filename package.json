@@ -11,7 +11,7 @@
     "lint": "npm run lint:js && npm run lint:style",
     "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
     "build:storybook": "vue-cli-service build:storybook -c config/storybook",
-    "lint:js": "vue-cli-service lint",
+    "lint:js": "vue-cli-service lint ./src/*,./config/**/*.js",
     "lint:style": "stylelint ./src/assets/**/*.scss",
     "theo": "theo ./src/assets/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format colour-map.scss,map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens",
     "theo:onchange": "onchange \"./src/assets/tokens/*.yml\" -i -- npm run theo"

@@ -51,9 +51,7 @@ export default {
 
   data() {
     return {
-      colours: Object.values(props).filter(
-        t => t.category === 'background-color'
-      )
+      colours: Object.values(props).filter(t => t.category === 'background-color')
     }
   },
 
@@ -74,8 +72,7 @@ export default {
      * @returns {[Object.<string, string>]}
      */
     getPalette(palette) {
-      const notValid =
-        typeof palette !== 'string' && palette !== ('primary' || 'secondary')
+      const notValid = typeof palette !== 'string' && palette !== ('primary' || 'secondary')
       if (notValid) return
       return Object.values(this.colours).filter(c => c.palette === palette)
     }

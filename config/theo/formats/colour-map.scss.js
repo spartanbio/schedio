@@ -18,9 +18,7 @@ class ColourMap {
 
   renderColours() {
     // `  ` formats indent
-    return this.colours
-      .map(colour => `  '${colour.name}': ${colour.value}`)
-      .join(',\n')
+    return this.colours.map(colour => `  '${colour.name}': ${colour.value}`).join(',\n')
   }
 
   render() {

@@ -4,14 +4,10 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: [
-    '@vue/standard',
-    'plugin:prettier/recommended',
-    'plugin:vue/recommended'
-  ],
+  extends: ['@vue/standard', 'plugin:prettier/recommended', 'plugin:vue/recommended'],
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': ['error', { singleQuote: true, semi: false }],
+    'prettier/prettier': ['error', { singleQuote: true, semi: false, printWidth: 100 }],
     semi: [2, 'never'],
     'no-console': 'off',
     'no-debugger': 'off',

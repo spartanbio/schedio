@@ -13,11 +13,7 @@ storiesOf('Components/BaseHeading', module)
 
     return {
       render() {
-        return (
-          <BaseHeading level={headingLevel}>
-            Heading Level {headingLevel}
-          </BaseHeading>
-        )
+        return <BaseHeading level={headingLevel}>Heading Level {headingLevel}</BaseHeading>
       }
     }
   })
@@ -28,11 +24,7 @@ storiesOf('Components/BaseHeading', module)
     return {
       render() {
         return (
-          <BaseHeading
-            level={displayLevel}
-            isDisplay
-            class={isUppercase && 'uppercase'}
-          >
+          <BaseHeading level={displayLevel} isDisplay class={isUppercase && 'uppercase'}>
             Display Level {displayLevel}
           </BaseHeading>
         )
