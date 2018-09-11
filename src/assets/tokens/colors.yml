@@ -7,9 +7,16 @@ aliases:
   spartan-gold: '40, 97%'
   spartan-cyan: '195, 100%'
 props:
+  # primary and tints
   spartan-blue:
     value: 'hsla({!spartan-blue}, 30%, 1)'
     palette: 'primary'
+  spartan-blue-light:
+    value: 'hsla({!spartan-blue}, 40%, 1)'
+    palette: 'primary-tint'
+  spartan-blue-lighter:
+    value: 'hsla({!spartan-blue}, 50%, 1)'
+    palette: 'primary-tint'
   spartan-white:
     value: 'hsla({!spartan-white}, 100%, 1)'
     palette: 'primary'
@@ -19,15 +26,40 @@ props:
   spartan-grey:
     value: 'hsla({!spartan-grey}, 86%, 1)'
     palette: 'primary'
+  spartan-grey-dark:
+    value: 'hsla({!spartan-grey}, 76%, 1)'
+    palette: 'primary-tint'
+  spartan-grey-darker:
+    value: 'hsla({!spartan-grey}, 66%, 1)'
+    palette: 'primary-tint'
+  # Secondary and tints
   spartan-green:
     value: 'hsla({!spartan-green}, 47%, 1)'
     palette: 'secondary'
+  spartan-green-light:
+    value: 'hsla({!spartan-green}, 57%, 1)'
+    palette: 'secondary-tint'
+  spartan-green-lighter:
+    value: 'hsla({!spartan-green}, 67%, 1)'
+    palette: 'secondary-tint'
   spartan-gold:
     value: 'hsla({!spartan-gold}, 55%, 1)'
     palette: 'secondary'
+  spartan-gold-light:
+    value: 'hsla({!spartan-gold}, 65%, 1)'
+    palette: 'secondary-tint'
+  spartan-gold-lighter:
+    value: 'hsla({!spartan-gold}, 75%, 1)'
+    palette: 'secondary-tint'
   spartan-cyan:
     value: 'hsla({!spartan-cyan}, 47%, 1)'
     palette: 'secondary'
+  spartan-cyan-light:
+    value: 'hsla({!spartan-cyan}, 57%, 1)'
+    palette: 'secondary-tint'
+  spartan-cyan-lighter:
+    value: 'hsla({!spartan-cyan}, 67%, 1)'
+    palette: 'secondary-tint'
 global:
   type: color
   category: background-color

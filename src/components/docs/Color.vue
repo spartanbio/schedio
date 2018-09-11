@@ -10,18 +10,24 @@
 
     <ColorList v-for="color in getPalette('primary')" :color="color" :key="color.name" />
 
+    <BaseHeading level="3">Primary Tints</BaseHeading>
+    <ColorList v-for="color in getPalette('primary-tint')" :color="color" :key="color.name" />
+
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
     <ColorList v-for="color in getPalette('secondary')" :color="color" :key="color.name" />
 
+    <BaseHeading level="3">Secondary Tints</BaseHeading>
+    <ColorList v-for="color in getPalette('secondary-tint')" :color="color" :key="color.name" />
   </div>
 </template>
 
 <script>
 import { props } from '@/assets/styles/tokens/tokens.raw.json'
 import ColorList from '@/components/docs/ColorList'
+import orderBy from 'lodash.orderby'
 
 export default {
   name: 'Color',
@@ -48,7 +54,8 @@ export default {
 
       if (notValid) return
 
-      return Object.values(this.colors).filter(c => c.palette === palette)
+      const colors = Object.values(this.colors).filter(c => c.palette === palette)
+      return orderBy(colors, 'name')
     }
   }
 }

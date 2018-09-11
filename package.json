@@ -17,6 +17,7 @@
     "theo:onchange": "onchange \"./src/assets/tokens/*.yml\" -i -- npm run theo"
   },
   "dependencies": {
+    "lodash.orderby": "^4.6.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {

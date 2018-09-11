@@ -23,21 +23,13 @@
     }
   },
   "props": {
-    "spartan-blue": {
+    "spartan-gold-light": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(0, 76, 153)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-blue}, 30%, 1)",
-      "name": "spartan-blue"
-    },
-    "spartan-white": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(255, 255, 255)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-white}, 100%, 1)",
-      "name": "spartan-white"
+      "value": "rgb(252, 195, 79)",
+      "palette": "secondary-tint",
+      "originalValue": "hsla({!spartan-gold}, 65%, 1)",
+      "name": "spartan-gold-light"
     },
     "spartan-black": {
       "type": "color",
@@ -47,13 +39,13 @@
       "originalValue": "hsla({!spartan-black}, 17%, 1)",
       "name": "spartan-black"
     },
-    "spartan-grey": {
+    "spartan-cyan-light": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(218, 219, 220)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-grey}, 86%, 1)",
-      "name": "spartan-grey"
+      "value": "rgb(36, 200, 255)",
+      "palette": "secondary-tint",
+      "originalValue": "hsla({!spartan-cyan}, 57%, 1)",
+      "name": "spartan-cyan-light"
     },
     "spartan-green": {
       "type": "color",
@@ -63,6 +55,78 @@
       "originalValue": "hsla({!spartan-green}, 47%, 1)",
       "name": "spartan-green"
     },
+    "spartan-grey-dark": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(192, 194, 196)",
+      "palette": "primary-tint",
+      "originalValue": "hsla({!spartan-grey}, 76%, 1)",
+      "name": "spartan-grey-dark"
+    },
+    "spartan-blue-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 127, 255)",
+      "palette": "primary-tint",
+      "originalValue": "hsla({!spartan-blue}, 50%, 1)",
+      "name": "spartan-blue-lighter"
+    },
+    "spartan-white": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(255, 255, 255)",
+      "palette": "primary",
+      "originalValue": "hsla({!spartan-white}, 100%, 1)",
+      "name": "spartan-white"
+    },
+    "spartan-gold-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(253, 212, 129)",
+      "palette": "secondary-tint",
+      "originalValue": "hsla({!spartan-gold}, 75%, 1)",
+      "name": "spartan-gold-lighter"
+    },
+    "spartan-green-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(67, 223, 130)",
+      "palette": "secondary-tint",
+      "originalValue": "hsla({!spartan-green}, 57%, 1)",
+      "name": "spartan-green-light"
+    },
+    "spartan-cyan-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(87, 213, 255)",
+      "palette": "secondary-tint",
+      "originalValue": "hsla({!spartan-cyan}, 67%, 1)",
+      "name": "spartan-cyan-lighter"
+    },
+    "spartan-blue": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 76, 153)",
+      "palette": "primary",
+      "originalValue": "hsla({!spartan-blue}, 30%, 1)",
+      "name": "spartan-blue"
+    },
+    "spartan-grey-darker": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(166, 168, 171)",
+      "palette": "primary-tint",
+      "originalValue": "hsla({!spartan-grey}, 66%, 1)",
+      "name": "spartan-grey-darker"
+    },
+    "spartan-grey": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(218, 219, 220)",
+      "palette": "primary",
+      "originalValue": "hsla({!spartan-grey}, 86%, 1)",
+      "name": "spartan-grey"
+    },
     "spartan-gold": {
       "type": "color",
       "category": "background-color",
@@ -71,6 +135,14 @@
       "originalValue": "hsla({!spartan-gold}, 55%, 1)",
       "name": "spartan-gold"
     },
+    "spartan-blue-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 102, 204)",
+      "palette": "primary-tint",
+      "originalValue": "hsla({!spartan-blue}, 40%, 1)",
+      "name": "spartan-blue-light"
+    },
     "spartan-cyan": {
       "type": "color",
       "category": "background-color",
@@ -78,6 +150,14 @@
       "palette": "secondary",
       "originalValue": "hsla({!spartan-cyan}, 47%, 1)",
       "name": "spartan-cyan"
+    },
+    "spartan-green-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(111, 231, 159)",
+      "palette": "secondary-tint",
+      "originalValue": "hsla({!spartan-green}, 67%, 1)",
+      "name": "spartan-green-lighter"
     },
     "font-family-sans-serif": {
       "type": "...",
