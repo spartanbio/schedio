@@ -8,59 +8,31 @@
     <BaseHeading level="2">Primary</BaseHeading>
     <p>This is the primary Spartan palette. It's primary purpose is for layout</p>
 
-    <template v-for="colour in primaryPalette">
-      <div :key="colour.name" class="colour-preview">
-        <div :class="`colour-preview--${colour.name}`" />
-        <div class="colour-preview__caption">
-          <div>
-          <strong>Name:</strong> {{ colour.name }}</div>
-          <div>
-            <strong>RGB: </strong>
-            <code>{{ colour.value }}</code>
-          </div>
-        </div>
-      </div>
-    </template>
+    <ColourList v-for="colour in getPalette('primary')" :colour="colour" :key="colour.name" />
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
-    <template v-for="colour in secondaryPalette">
-      <div :key="colour.name" class="colour-preview">
-        <div :class="`colour-preview--${colour.name}`" />
-        <div class="colour-preview__caption">
-          <div>
-          <strong>Name:</strong> {{ colour.name }}</div>
-          <div>
-            <strong>RGB: </strong>
-            <code>{{ colour.value }}</code>
-          </div>
-        </div>
-      </div>
-    </template>
+    <ColourList v-for="colour in getPalette('secondary')" :colour="colour" :key="colour.name" />
 
   </div>
 </template>
 
 <script>
 import { props } from '@/assets/styles/tokens/tokens.raw.json'
+import ColourList from '@/components/docs/ColourList'
 
 export default {
   name: 'Colour',
 
+  components: {
+    ColourList
+  },
+
   data() {
     return {
       colours: Object.values(props).filter(t => t.category === 'background-color')
-    }
-  },
-
-  computed: {
-    primaryPalette() {
-      return this.getPalette('primary')
-    },
-    secondaryPalette() {
-      return this.getPalette('secondary')
     }
   },
 
@@ -73,38 +45,11 @@ export default {
      */
     getPalette(palette) {
       const notValid = typeof palette !== 'string' && palette !== ('primary' || 'secondary')
+
       if (notValid) return
+
       return Object.values(this.colours).filter(c => c.palette === palette)
     }
   }
 }
 </script>
-
-<style lang="scss">
-.colour-preview {
-  $card-dimensions: 4em;
-
-  align-items: center;
-  display: flex;
-  margin: 1em 0;
-
-  &__caption {
-    margin: 0 1em;
-  }
-
-  @each $name, $value in $colours {
-    // Create preview classes
-
-    &--#{$name} {
-      background: colour($name);
-      border-radius: $card-dimensions;
-      height: $card-dimensions;
-      width: $card-dimensions;
-    }
-  }
-
-  &--spartan-white {
-    border: 1px solid colour('spartan-grey');
-  }
-}
-</style>
