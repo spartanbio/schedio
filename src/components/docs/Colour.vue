@@ -10,10 +10,14 @@
 
     <template v-for="colour in primaryPalette">
       <div :key="colour.name" class="colour-preview">
-        <div :class="`colour-preview--${colour.name}`"/>
+        <div :class="`colour-preview--${colour.name}`" />
         <div class="colour-preview__caption">
-          <div><strong>Name:</strong> {{ colour.name }}</div>
-          <div><strong>HSLA: </strong><code>{{ colour.value }}</code></div>
+          <div>
+          <strong>Name:</strong> {{ colour.name }}</div>
+          <div>
+            <strong>RGB: </strong>
+            <code>{{ colour.value }}</code>
+          </div>
         </div>
       </div>
     </template>
@@ -24,10 +28,14 @@
 
     <template v-for="colour in secondaryPalette">
       <div :key="colour.name" class="colour-preview">
-        <div :class="`colour-preview--${colour.name}`"/>
+        <div :class="`colour-preview--${colour.name}`" />
         <div class="colour-preview__caption">
-          <div><strong>Name:</strong> {{ colour.name }}</div>
-          <div><strong>HSLA: </strong><code>{{ colour.value }}</code></div>
+          <div>
+          <strong>Name:</strong> {{ colour.name }}</div>
+          <div>
+            <strong>RGB: </strong>
+            <code>{{ colour.value }}</code>
+          </div>
         </div>
       </div>
     </template>
@@ -43,7 +51,9 @@ export default {
 
   data() {
     return {
-      colours: Object.values(props).filter(t => t.category === 'colour')
+      colours: Object.values(props).filter(
+        t => t.category === 'background-color'
+      )
     }
   },
 

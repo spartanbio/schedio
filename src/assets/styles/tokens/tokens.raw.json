@@ -1,58 +1,62 @@
 {
-  "aliases": {},
+  "aliases": {
+    "spartan-black": {
+      "value": "210, 24%"
+    }
+  },
   "props": {
     "spartan-blue": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(210, 100%, 30%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 76, 153)",
       "palette": "primary",
       "originalValue": "hsla(210, 100%, 30%, 1)",
       "name": "spartan-blue"
     },
     "spartan-white": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(0, 0%, 100%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(255, 255, 255)",
       "palette": "primary",
       "originalValue": "hsla(0, 0%, 100%, 1)",
       "name": "spartan-white"
     },
     "spartan-black": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(210, 24%, 17%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(33, 43, 54)",
       "palette": "primary",
-      "originalValue": "hsla(210, 24%, 17%, 1)",
+      "originalValue": "hsla({!spartan-black}, 17%, 1)",
       "name": "spartan-black"
     },
     "spartan-grey": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(210, 3%, 86%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(218, 219, 220)",
       "palette": "primary",
       "originalValue": "hsla(210, 3%, 86%, 1)",
       "name": "spartan-grey"
     },
     "spartan-green": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(144, 71%, 47%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(35, 205, 103)",
       "palette": "secondary",
       "originalValue": "hsla(144, 71%, 47%, 1)",
       "name": "spartan-green"
     },
     "spartan-gold": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(40, 97%, 55%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(252, 177, 29)",
       "palette": "secondary",
       "originalValue": "hsla(40, 97%, 55%, 1)",
       "name": "spartan-gold"
     },
     "spartan-cyan": {
-      "type": "colour",
-      "category": "colour",
-      "value": "hsla(195, 100%, 47%, 1)",
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 180, 240)",
       "palette": "secondary",
       "originalValue": "hsla(195, 100%, 47%, 1)",
       "name": "spartan-cyan"
