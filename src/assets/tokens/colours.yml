@@ -1,26 +1,32 @@
 aliases:
+  spartan-blue: '210, 100%'
+  spartan-white: '0, 0%'
   spartan-black: '210, 24%'
+  spartan-grey: '210, 3%'
+  spartan-green: '144, 71%'
+  spartan-gold: '40, 97%'
+  spartan-cyan: '195, 100%'
 props:
   spartan-blue:
-    value: 'hsla(210, 100%, 30%, 1)'
+    value: 'hsla({!spartan-blue}, 30%, 1)'
     palette: 'primary'
   spartan-white:
-    value: 'hsla(0, 0%, 100%, 1)'
+    value: 'hsla({!spartan-white}, 100%, 1)'
     palette: 'primary'
   spartan-black:
     value: 'hsla({!spartan-black}, 17%, 1)'
     palette: 'primary'
   spartan-grey:
-    value: 'hsla(210, 3%, 86%, 1)'
+    value: 'hsla({!spartan-grey}, 86%, 1)'
     palette: 'primary'
   spartan-green:
-    value: 'hsla(144, 71%, 47%, 1)'
+    value: 'hsla({!spartan-green}, 47%, 1)'
     palette: 'secondary'
   spartan-gold:
-    value: 'hsla(40, 97%, 55%, 1)'
+    value: 'hsla({!spartan-gold}, 55%, 1)'
     palette: 'secondary'
   spartan-cyan:
-    value: 'hsla(195, 100%, 47%, 1)'
+    value: 'hsla({!spartan-cyan}, 47%, 1)'
     palette: 'secondary'
 global:
   type: color
