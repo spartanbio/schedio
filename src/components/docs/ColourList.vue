@@ -3,9 +3,10 @@
     <div :class="`colour-preview--${colour.name}`" />
     <div class="colour-preview__caption">
       <div>
-      <strong>Name:</strong> {{ colour.name }}</div>
+        <strong>Name:</strong> {{ colour.name }}
+      </div>
       <div>
-        <strong>RGB: </strong>
+        <strong>{{ colourSpace }}: </strong>
         <code>{{ colour.value }}</code>
       </div>
     </div>
@@ -20,6 +21,12 @@ export default {
     colour: {
       type: Object,
       required: true
+    }
+  },
+
+  computed: {
+    colourSpace() {
+      return this.colour.value[0] === '#' ? 'HEX' : this.colour.value.split('(')[0].toUpperCase()
     }
   }
 }
