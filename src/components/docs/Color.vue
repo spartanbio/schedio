@@ -17,6 +17,8 @@
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
+    <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
+    
     <div class="palettes">
       <ColorChip
         v-for="(palette, paletteName) in accentPalettes"
