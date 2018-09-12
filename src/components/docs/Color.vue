@@ -1,14 +1,17 @@
 <template>
   <div>
-    <!-- Primary -->
     <BaseHeading level="1">Colors</BaseHeading>
     <p>As a rule, use lots of contrast, and stick to cool colors</p>
 
+    <!-- Primary -->
+    <BaseHeading level="2">Primary</BaseHeading>
+    <p>This is the primary Spartan palette. It's used mostly in layout.</p>
+
     <template v-for="(palette, paletteName) in mainPalettes">
-      <BaseHeading :key="`palette-${paletteName}`" level="2">
+      <BaseHeading :key="`palette-${paletteName}`" level="3">
         {{ paletteName | underscoreToSpace }}
       </BaseHeading>
-      <ColorList v-for="color in palette" :color="color" :key="color.name" />
+      <ColorChip v-for="color in palette" :color="color" :key="color.name" />
     </template>
 
     <!-- Secondary -->
@@ -16,17 +19,17 @@
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
     <template v-for="(palette, paletteName) in accentPalettes">
-      <BaseHeading :key="`palette-${paletteName}`" level="2">
+      <BaseHeading :key="`palette-${paletteName}`" level="3">
         {{ paletteName | underscoreToSpace }}
       </BaseHeading>
-      <ColorList v-for="color in palette" :color="color" :key="color.name" />
+      <ColorChip v-for="color in palette" :color="color" :key="color.name" />
     </template>
   </div>
 </template>
 
 <script>
 import { props } from '@/assets/styles/tokens/tokens.raw.json'
-import ColorList from '@/components/docs/ColorList'
+import ColorChip from '@/components/docs/ColorChip'
 import orderBy from 'lodash.orderby'
 import groupBy from 'lodash.groupby'
 
@@ -34,7 +37,7 @@ export default {
   name: 'Color',
 
   components: {
-    ColorList
+    ColorChip
   },
 
   filters: {

@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'ColorList',
+  name: 'ColorChip',
 
   props: {
     color: {
