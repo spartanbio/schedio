@@ -5,10 +5,13 @@ props:
     value: "'SFMono-Regular', Consolas, 'Fira Sans', 'Liberation Mono', Menlo, 'Courier New', Courier, monospace"
   font-weight-bold:
     value: '700'
+    category: font-weight
   font-weight-light:
     value: '300'
+    category: font-weight
   font-weight-regular:
     value: '400'
+    category: font-weight
 global:
   type: ...
   category: font

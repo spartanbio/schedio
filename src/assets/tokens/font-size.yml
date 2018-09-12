@@ -1,6 +1,12 @@
 props:
   base-font-size:
     value: '16px'
+  base-line-height:
+    value: '1.5'
+    category: line-height
+  large-line-height:
+    value: '1.25'
+    category: line-height
   font-size-1:
     value: '5rem'
   font-size-2:

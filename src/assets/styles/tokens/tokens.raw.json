@@ -249,24 +249,31 @@
     },
     "font-weight-bold": {
       "type": "...",
-      "category": "font",
+      "category": "font-weight",
       "value": "700",
       "originalValue": "700",
       "name": "font-weight-bold"
     },
     "font-weight-light": {
       "type": "...",
-      "category": "font",
+      "category": "font-weight",
       "value": "300",
       "originalValue": "300",
       "name": "font-weight-light"
     },
     "font-weight-regular": {
       "type": "...",
-      "category": "font",
+      "category": "font-weight",
       "value": "400",
       "originalValue": "400",
       "name": "font-weight-regular"
+    },
+    "font-size-1": {
+      "type": "number",
+      "category": "font-size",
+      "value": "5rem",
+      "originalValue": "5rem",
+      "name": "font-size-1"
     },
     "base-font-size": {
       "type": "number",
@@ -275,12 +282,12 @@
       "originalValue": "16px",
       "name": "base-font-size"
     },
-    "font-size-1": {
+    "base-line-height": {
       "type": "number",
-      "category": "font-size",
-      "value": "5rem",
-      "originalValue": "5rem",
-      "name": "font-size-1"
+      "category": "line-height",
+      "value": "1.5",
+      "originalValue": "1.5",
+      "name": "base-line-height"
     },
     "font-size-2": {
       "type": "number",
@@ -323,6 +330,13 @@
       "value": "0.5rem",
       "originalValue": "0.5rem",
       "name": "font-size-7"
+    },
+    "large-line-height": {
+      "type": "number",
+      "category": "line-height",
+      "value": "1.25",
+      "originalValue": "1.25",
+      "name": "large-line-height"
     },
     "spacing-none": {
       "type": "number",
