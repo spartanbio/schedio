@@ -23,7 +23,7 @@ body {
 }
 
 code {
-  background-color: color('grey-lighter');
+  background-color: color('grey', 'lighter');
   border-radius: $spacing-quarter;
   color: hsla(348, 100%, 61%, 1);
   font-family: $font-family-monospaced;

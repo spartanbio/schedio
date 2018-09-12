@@ -29,19 +29,12 @@ class ColorMap {
   )`
   }
 
-  renderColors() {
-    // `  ` formats indent
-    return this.colors.map(color => `  '${color.name}': ${color.value}`).join(',\n')
-  }
-
   render() {
     return `$palettes: (\n  ${Object.keys(this.palettes)
       .map(palettes => this.renderPalette(palettes))
       // `\n  ` formats indent
       .join(',\n  ')}
-);
-
-$colors: (\n${this.renderColors()}\n);`
+);`
   }
 }
 
