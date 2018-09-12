@@ -7,23 +7,23 @@
     <BaseHeading level="2">Primary</BaseHeading>
     <p>This is the primary Spartan palette. It's used mostly in layout.</p>
 
-    <template v-for="(palette, paletteName) in mainPalettes">
-      <BaseHeading :key="`palette-${paletteName}`" level="3">
-        {{ paletteName | underscoreToSpace }}
-      </BaseHeading>
-      <ColorChip v-for="color in palette" :color="color" :key="color.name" />
-    </template>
+    <div class="palettes">
+      <ColorChip
+        v-for="(palette, paletteName) in mainPalettes"
+        :heading="paletteName"
+        :palette="palette" 
+        :key="`preview-${paletteName}`" />
+    </div>
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
-    <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
-
-    <template v-for="(palette, paletteName) in accentPalettes">
-      <BaseHeading :key="`palette-${paletteName}`" level="3">
-        {{ paletteName | underscoreToSpace }}
-      </BaseHeading>
-      <ColorChip v-for="color in palette" :color="color" :key="color.name" />
-    </template>
+    <div class="palettes">
+      <ColorChip
+        v-for="(palette, paletteName) in accentPalettes"
+        :heading="paletteName"
+        :palette="palette" 
+        :key="`preview-${paletteName}`" />
+    </div>
   </div>
 </template>
 
@@ -38,10 +38,6 @@ export default {
 
   components: {
     ColorChip
-  },
-
-  filters: {
-    underscoreToSpace: str => str.replace(/_/g, ' ')
   },
 
   data() {
@@ -103,3 +99,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.palettes {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+</style>
