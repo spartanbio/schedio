@@ -54,7 +54,13 @@ export default {
       })
     },
     mainPalettes() {
-      return this.getPalette('main')
+      const order = ['spartan_blue', 'grey', 'night', 'ice']
+      const toOrder = this.getPalette('main')
+
+      return order.reduce((ordered, key) => {
+        ordered[key] = toOrder[key]
+        return ordered
+      }, {})
     },
     accentPalettes() {
       return this.getPalette('accent')
