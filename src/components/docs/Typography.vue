@@ -5,38 +5,30 @@
 
     <hr>
 
-    <BaseHeading 
-      level="1" 
-      is-display
-      class="uppercase">
+    <BaseHeading level="1" is-display class="uppercase">
       Display 1 Uppercase
     </BaseHeading>
     <p class="caption">
-      Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height: 1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
+      Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height: 1.25em | Tracking: 0.025em | Class:
+      <code>.uppercase</code>
     </p>
 
-    <BaseHeading 
-      level="1" 
-      is-display>
+    <BaseHeading level="1" is-display>
       Display 1 Lowercase
     </BaseHeading>
     <p class="caption">
       Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height: 1.25em | Tracking: 0.025em
     </p>
 
-    <BaseHeading 
-      level="2" 
-      is-display
-      class="uppercase">
+    <BaseHeading level="2" is-display class="uppercase">
       Display 2 Uppercase
     </BaseHeading>
     <p class="caption">
-      Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height: 1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
+      Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height: 1.25em | Tracking: 0.025em | Class:
+      <code>.uppercase</code>
     </p>
 
-    <BaseHeading 
-      level="2" 
-      is-display>
+    <BaseHeading level="2" is-display>
       Display 2 Lowercase
     </BaseHeading>
     <p class="caption">
@@ -63,13 +55,12 @@
       Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-regular'] }}
     </p>
 
-    <p 
-      class="caption" 
-      style="margin-top: 1rem;">
+    <p class="caption" style="margin-top: 1rem;">
       Caption
     </p>
     <p class="caption">
-      Size: {{ tokens['font-size-6'] }} | Weight: {{ tokens['font-weight-regular'] }} | Color: <code>{{ tokens['spartan-grey'] }}</code>
+      Size: {{ tokens['font-size-6'] }} | Weight: {{ tokens['font-weight-regular'] }} | Color:
+      <code>{{ tokens['grey'] }}</code>
     </p>
   </div>
 </template>
