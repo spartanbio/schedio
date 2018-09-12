@@ -1,163 +1,237 @@
 {
-  "aliases": {
-    "spartan-blue": {
-      "value": "210, 100%"
-    },
-    "spartan-white": {
-      "value": "0, 0%"
-    },
-    "spartan-black": {
-      "value": "210, 24%"
-    },
-    "spartan-grey": {
-      "value": "210, 3%"
-    },
-    "spartan-green": {
-      "value": "144, 71%"
-    },
-    "spartan-gold": {
-      "value": "40, 97%"
-    },
-    "spartan-cyan": {
-      "value": "195, 100%"
-    }
-  },
+  "aliases": {},
   "props": {
-    "spartan-gold-light": {
+    "green-dark": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(252, 195, 79)",
-      "palette": "secondary-tint",
-      "originalValue": "hsla({!spartan-gold}, 65%, 1)",
-      "name": "spartan-gold-light"
+      "value": "rgb(27, 161, 81)",
+      "paletteType": "accent",
+      "originalValue": "hsla(144, 71%, 37%, 1)",
+      "name": "green-dark"
     },
-    "spartan-black": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(33, 43, 54)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-black}, 17%, 1)",
-      "name": "spartan-black"
-    },
-    "spartan-cyan-light": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(36, 200, 255)",
-      "palette": "secondary-tint",
-      "originalValue": "hsla({!spartan-cyan}, 57%, 1)",
-      "name": "spartan-cyan-light"
-    },
-    "spartan-green": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(35, 205, 103)",
-      "palette": "secondary",
-      "originalValue": "hsla({!spartan-green}, 47%, 1)",
-      "name": "spartan-green"
-    },
-    "spartan-grey-dark": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(192, 194, 196)",
-      "palette": "primary-tint",
-      "originalValue": "hsla({!spartan-grey}, 76%, 1)",
-      "name": "spartan-grey-dark"
-    },
-    "spartan-blue-lighter": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(0, 127, 255)",
-      "palette": "primary-tint",
-      "originalValue": "hsla({!spartan-blue}, 50%, 1)",
-      "name": "spartan-blue-lighter"
-    },
-    "spartan-white": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(255, 255, 255)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-white}, 100%, 1)",
-      "name": "spartan-white"
-    },
-    "spartan-gold-lighter": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(253, 212, 129)",
-      "palette": "secondary-tint",
-      "originalValue": "hsla({!spartan-gold}, 75%, 1)",
-      "name": "spartan-gold-lighter"
-    },
-    "spartan-green-light": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(67, 223, 130)",
-      "palette": "secondary-tint",
-      "originalValue": "hsla({!spartan-green}, 57%, 1)",
-      "name": "spartan-green-light"
-    },
-    "spartan-cyan-lighter": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(87, 213, 255)",
-      "palette": "secondary-tint",
-      "originalValue": "hsla({!spartan-cyan}, 67%, 1)",
-      "name": "spartan-cyan-lighter"
-    },
-    "spartan-blue": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(0, 76, 153)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-blue}, 30%, 1)",
-      "name": "spartan-blue"
-    },
-    "spartan-grey-darker": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(166, 168, 171)",
-      "palette": "primary-tint",
-      "originalValue": "hsla({!spartan-grey}, 66%, 1)",
-      "name": "spartan-grey-darker"
-    },
-    "spartan-grey": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(218, 219, 220)",
-      "palette": "primary",
-      "originalValue": "hsla({!spartan-grey}, 86%, 1)",
-      "name": "spartan-grey"
-    },
-    "spartan-gold": {
+    "gold": {
       "type": "color",
       "category": "background-color",
       "value": "rgb(252, 177, 29)",
-      "palette": "secondary",
-      "originalValue": "hsla({!spartan-gold}, 55%, 1)",
-      "name": "spartan-gold"
+      "paletteType": "accent",
+      "originalValue": "hsla(40, 97%, 55%, 1)",
+      "name": "gold"
     },
-    "spartan-blue-light": {
+    "cyan-dark": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(0, 102, 204)",
-      "palette": "primary-tint",
-      "originalValue": "hsla({!spartan-blue}, 40%, 1)",
-      "name": "spartan-blue-light"
+      "value": "rgb(0, 142, 189)",
+      "paletteType": "accent",
+      "originalValue": "hsla(195, 100%, 37%, 1)",
+      "name": "cyan-dark"
     },
-    "spartan-cyan": {
+    "night-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(64, 84, 104)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 24%, 33%, 1)",
+      "name": "night-light"
+    },
+    "gold-dark": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(226, 152, 3)",
+      "paletteType": "accent",
+      "originalValue": "hsla(40, 97%, 45%, 1)",
+      "name": "gold-dark"
+    },
+    "green": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(35, 205, 103)",
+      "paletteType": "accent",
+      "originalValue": "hsla(144, 71%, 47%, 1)",
+      "name": "green"
+    },
+    "cyan": {
       "type": "color",
       "category": "background-color",
       "value": "rgb(0, 180, 240)",
-      "palette": "secondary",
-      "originalValue": "hsla({!spartan-cyan}, 47%, 1)",
-      "name": "spartan-cyan"
+      "paletteType": "accent",
+      "originalValue": "hsla(195, 100%, 47%, 1)",
+      "name": "cyan"
     },
-    "spartan-green-lighter": {
+    "grey-dark": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(150, 153, 156)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 3%, 60%, 1)",
+      "name": "grey-dark"
+    },
+    "night-lightest": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(147, 168, 189)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 24%, 66%, 1)",
+      "name": "night-lightest"
+    },
+    "spartan_blue": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 76, 153)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 100%, 30%, 1)",
+      "name": "spartan_blue"
+    },
+    "grey-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(218, 219, 220)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 3%, 86%, 1)",
+      "name": "grey-light"
+    },
+    "white": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(255, 255, 255)",
+      "paletteType": "main",
+      "originalValue": "hsla(0, 0%, 100%, 1)",
+      "name": "white"
+    },
+    "gold-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(253, 200, 94)",
+      "paletteType": "accent",
+      "originalValue": "hsla(40, 97%, 68%, 1)",
+      "name": "gold-light"
+    },
+    "green-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(67, 223, 130)",
+      "paletteType": "accent",
+      "originalValue": "hsla(144, 71%, 57%, 1)",
+      "name": "green-light"
+    },
+    "cyan-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(36, 200, 255)",
+      "paletteType": "accent",
+      "originalValue": "hsla(195, 100%, 57%, 1)",
+      "name": "cyan-light"
+    },
+    "cyan-darker": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 103, 138)",
+      "paletteType": "accent",
+      "originalValue": "hsla(195, 100%, 27%, 1)",
+      "name": "cyan-darker"
+    },
+    "green-darker": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(20, 118, 59)",
+      "paletteType": "accent",
+      "originalValue": "hsla(144, 71%, 27%, 1)",
+      "name": "green-darker"
+    },
+    "night-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(89, 117, 145)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 24%, 46%, 1)",
+      "name": "night-lighter"
+    },
+    "spartan_blue-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 122, 245)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 100%, 48%, 1)",
+      "name": "spartan_blue-light"
+    },
+    "gold-darker": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(176, 118, 3)",
+      "paletteType": "accent",
+      "originalValue": "hsla(40, 97%, 35%, 1)",
+      "name": "gold-darker"
+    },
+    "grey-darker": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(114, 117, 121)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 3%, 46%, 1)",
+      "name": "grey-darker"
+    },
+    "grey-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(234, 235, 235)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 3%, 92%, 1)",
+      "name": "grey-lighter"
+    },
+    "gold-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(253, 217, 144)",
+      "paletteType": "accent",
+      "originalValue": "hsla(40, 97%, 78%, 1)",
+      "name": "gold-lighter"
+    },
+    "night": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(33, 43, 54)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 24%, 17%, 1)",
+      "name": "night"
+    },
+    "green-lighter": {
       "type": "color",
       "category": "background-color",
       "value": "rgb(111, 231, 159)",
-      "palette": "secondary-tint",
-      "originalValue": "hsla({!spartan-green}, 67%, 1)",
-      "name": "spartan-green-lighter"
+      "paletteType": "accent",
+      "originalValue": "hsla(144, 71%, 67%, 1)",
+      "name": "green-lighter"
+    },
+    "cyan-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(87, 213, 255)",
+      "paletteType": "accent",
+      "originalValue": "hsla(195, 100%, 67%, 1)",
+      "name": "cyan-lighter"
+    },
+    "spartan_blue-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(82, 168, 255)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 100%, 66%, 1)",
+      "name": "spartan_blue-lighter"
+    },
+    "spartan_blue-dark": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(0, 36, 71)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 100%, 14%, 1)",
+      "name": "spartan_blue-dark"
+    },
+    "grey": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(192, 194, 196)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 3%, 76%, 1)",
+      "name": "grey"
     },
     "font-family-sans-serif": {
       "type": "...",

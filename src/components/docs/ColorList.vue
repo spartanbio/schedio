@@ -1,9 +1,10 @@
 <template>
   <div class="color-preview">
-    <div :class="`color-preview--${color.name}`" />
-    <div class="color-preview__caption">
+    <div :style="{ backgroundColor: color.value }" class="color-preview__example" />
+    <div class="color-preview__description">
       <div>
-        <strong>Name:</strong> {{ color.name }}
+        <strong>Token name: </strong>
+        <code>{{ color.name }}</code>
       </div>
       <div>
         <strong>{{ colorSpace }}: </strong>
@@ -40,23 +41,15 @@ export default {
   display: flex;
   margin: 1em 0;
 
-  &__caption {
+  &__example {
+    border-radius: $card-dimensions;
+    box-shadow: 0 0.5em 1em 0 color('grey');
+    height: $card-dimensions;
+    width: $card-dimensions;
+  }
+
+  &__description {
     margin: 0 1em;
-  }
-
-  @each $name, $value in $colors {
-    // Create preview classes
-
-    &--#{$name} {
-      background: color($name);
-      border-radius: $card-dimensions;
-      height: $card-dimensions;
-      width: $card-dimensions;
-    }
-  }
-
-  &--spartan-white {
-    border: 1px solid color('spartan-grey');
   }
 }
 </style>

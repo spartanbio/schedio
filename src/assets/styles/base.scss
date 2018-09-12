@@ -16,7 +16,7 @@ html {
 html,
 body {
   @include font-size(5);
-  color: color('spartan-black');
+  color: color('night');
   font-family: $font-family-sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +25,7 @@ body {
 }
 
 code {
-  background-color: #f5f5f5;
+  background-color: color('grey-lighter');
   border-radius: $spacing-quarter;
   color: hsla(348, 100%, 61%, 1);
   font-family: $font-family-monospaced;

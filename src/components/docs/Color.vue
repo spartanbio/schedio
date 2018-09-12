@@ -1,26 +1,26 @@
 <template>
   <div>
-
+    <!-- Primary -->
     <BaseHeading level="1">Colors</BaseHeading>
     <p>As a rule, use lots of contrast, and stick to cool colors</p>
 
-    <!-- Primary -->
-    <BaseHeading level="2">Primary</BaseHeading>
-    <p>This is the primary Spartan palette. It's primary purpose is for layout</p>
-
-    <ColorList v-for="color in getPalette('primary')" :color="color" :key="color.name" />
-
-    <BaseHeading level="3">Primary Tints</BaseHeading>
-    <ColorList v-for="color in getPalette('primary-tint')" :color="color" :key="color.name" />
+    <template v-for="(palette, paletteName) in mainPalettes">
+      <BaseHeading :key="`palette-${paletteName}`" level="2">
+        {{ paletteName | underscoreToSpace }}
+      </BaseHeading>
+      <ColorList v-for="color in palette" :color="color" :key="color.name" />
+    </template>
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
-    <ColorList v-for="color in getPalette('secondary')" :color="color" :key="color.name" />
-
-    <BaseHeading level="3">Secondary Tints</BaseHeading>
-    <ColorList v-for="color in getPalette('secondary-tint')" :color="color" :key="color.name" />
+    <template v-for="(palette, paletteName) in accentPalettes">
+      <BaseHeading :key="`palette-${paletteName}`" level="2">
+        {{ paletteName | underscoreToSpace }}
+      </BaseHeading>
+      <ColorList v-for="color in palette" :color="color" :key="color.name" />
+    </template>
   </div>
 </template>
 
@@ -28,6 +28,7 @@
 import { props } from '@/assets/styles/tokens/tokens.raw.json'
 import ColorList from '@/components/docs/ColorList'
 import orderBy from 'lodash.orderby'
+import groupBy from 'lodash.groupby'
 
 export default {
   name: 'Color',
@@ -36,26 +37,69 @@ export default {
     ColorList
   },
 
+  filters: {
+    underscoreToSpace: str => str.replace(/_/g, ' ')
+  },
+
   data() {
     return {
-      colors: Object.values(props).filter(t => t.category === 'background-color')
+      colors: Object.values(props).filter(p => p.category === 'background-color')
     }
+  },
+
+  computed: {
+    palettes() {
+      return this.colors.map(color => {
+        color.palette = color.name.split('-').shift()
+        return color
+      })
+    },
+    mainPalettes() {
+      return this.getPalette('main')
+    },
+    accentPalettes() {
+      return this.getPalette('accent')
+    }
+  },
+
+  mounted() {
+    console.log(this.mainPalettes)
   },
 
   methods: {
     /**
      * Split colors into palettes
-     * @param {('primary'|'secondary')} palette Get the primary or secondary palette
+     * @param {String} palette Get the primary or secondary palette
      *
-     * @returns {[Object.<string, string>]}
+     * @returns {Object.<string, Object.<string, string>>}
      */
-    getPalette(palette) {
-      const notValid = typeof palette !== 'string' && palette !== ('primary' || 'secondary')
+    getPalette(paletteName) {
+      const filtered = this.palettes.filter(c => c.paletteType === paletteName)
+      const palette = groupBy(filtered, 'palette')
+      return this.orderPalettes(palette)
+    },
 
-      if (notValid) return
+    /**
+     * Orders colours by shade
+     * @param {Object.<string, Object.<string, string>>} paletteList Objects to order
+     *
+     * @returns {Object.<string, Object.<string, string>>}
+     */
+    orderPalettes(paletteList) {
+      const ranks = ['darker', 'dark', 'base', 'light', 'lighter', 'lightest', 'text']
+      const getShade = name => name.split('-').pop()
+      const ordered = {}
 
-      const colors = Object.values(this.colors).filter(c => c.palette === palette)
-      return orderBy(colors, 'name')
+      for (let palette in paletteList) {
+        ordered[palette] = orderBy(paletteList[palette], color => {
+          // parse color shades to assign ranks. `base` if no shade named.
+          const shade = color.name === palette ? 'base' : getShade(color.name)
+
+          return ranks.indexOf(shade)
+        })
+      }
+
+      return ordered
     }
   }
 }

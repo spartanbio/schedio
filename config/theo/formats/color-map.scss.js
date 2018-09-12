@@ -1,8 +1,21 @@
 const groupBy = require('lodash.groupby')
 
+const getShade = name => {
+  const shade = name.split('-').pop()
+  return shade === name ? 'base' : shade
+}
+
 class ColorMap {
   constructor({ props }) {
-    const propsWithPalette = props.filter(prop => !!prop.palette)
+    const propsWithPalette = props.reduce((palettes, prop) => {
+      if (prop.type !== 'color') return palettes
+
+      prop.palette = prop.name.split('-').shift()
+      palettes.push(prop)
+
+      return palettes
+    }, [])
+
     this.palettes = groupBy(propsWithPalette, 'palette')
     this.colors = props.filter(prop => prop.type === 'color')
   }
@@ -11,7 +24,7 @@ class ColorMap {
     const props = this.palettes[palette]
     return `'${palette}': (\n${props
       // `    ` formats indent
-      .map(prop => `    '${prop.name}': ${prop.value}`)
+      .map(prop => `    '${getShade(prop.name)}': ${prop.value}`)
       .join(',\n')}
   )`
   }

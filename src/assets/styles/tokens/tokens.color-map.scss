@@ -1,47 +1,77 @@
 $palettes: (
-  'secondary-tint': (
-    'spartan-gold-light': rgb(252, 195, 79),
-    'spartan-cyan-light': rgb(36, 200, 255),
-    'spartan-gold-lighter': rgb(253, 212, 129),
-    'spartan-green-light': rgb(67, 223, 130),
-    'spartan-cyan-lighter': rgb(87, 213, 255),
-    'spartan-green-lighter': rgb(111, 231, 159)
+  'green': (
+    'dark': rgb(27, 161, 81),
+    'base': rgb(35, 205, 103),
+    'light': rgb(67, 223, 130),
+    'darker': rgb(20, 118, 59),
+    'lighter': rgb(111, 231, 159)
   ),
-  'primary': (
-    'spartan-black': rgb(33, 43, 54),
-    'spartan-white': rgb(255, 255, 255),
-    'spartan-blue': rgb(0, 76, 153),
-    'spartan-grey': rgb(218, 219, 220)
+  'gold': (
+    'base': rgb(252, 177, 29),
+    'dark': rgb(226, 152, 3),
+    'light': rgb(253, 200, 94),
+    'darker': rgb(176, 118, 3),
+    'lighter': rgb(253, 217, 144)
   ),
-  'secondary': (
-    'spartan-green': rgb(35, 205, 103),
-    'spartan-gold': rgb(252, 177, 29),
-    'spartan-cyan': rgb(0, 180, 240)
+  'cyan': (
+    'dark': rgb(0, 142, 189),
+    'base': rgb(0, 180, 240),
+    'light': rgb(36, 200, 255),
+    'darker': rgb(0, 103, 138),
+    'lighter': rgb(87, 213, 255)
   ),
-  'primary-tint': (
-    'spartan-grey-dark': rgb(192, 194, 196),
-    'spartan-blue-lighter': rgb(0, 127, 255),
-    'spartan-grey-darker': rgb(166, 168, 171),
-    'spartan-blue-light': rgb(0, 102, 204)
+  'night': (
+    'light': rgb(64, 84, 104),
+    'lightest': rgb(147, 168, 189),
+    'lighter': rgb(89, 117, 145),
+    'base': rgb(33, 43, 54)
+  ),
+  'grey': (
+    'dark': rgb(150, 153, 156),
+    'light': rgb(218, 219, 220),
+    'darker': rgb(114, 117, 121),
+    'lighter': rgb(234, 235, 235),
+    'base': rgb(192, 194, 196)
+  ),
+  'spartan_blue': (
+    'base': rgb(0, 76, 153),
+    'light': rgb(0, 122, 245),
+    'lighter': rgb(82, 168, 255),
+    'dark': rgb(0, 36, 71)
+  ),
+  'white': (
+    'base': rgb(255, 255, 255)
   )
 );
 
 $colors: (
-  'spartan-gold-light': rgb(252, 195, 79),
-  'spartan-black': rgb(33, 43, 54),
-  'spartan-cyan-light': rgb(36, 200, 255),
-  'spartan-green': rgb(35, 205, 103),
-  'spartan-grey-dark': rgb(192, 194, 196),
-  'spartan-blue-lighter': rgb(0, 127, 255),
-  'spartan-white': rgb(255, 255, 255),
-  'spartan-gold-lighter': rgb(253, 212, 129),
-  'spartan-green-light': rgb(67, 223, 130),
-  'spartan-cyan-lighter': rgb(87, 213, 255),
-  'spartan-blue': rgb(0, 76, 153),
-  'spartan-grey-darker': rgb(166, 168, 171),
-  'spartan-grey': rgb(218, 219, 220),
-  'spartan-gold': rgb(252, 177, 29),
-  'spartan-blue-light': rgb(0, 102, 204),
-  'spartan-cyan': rgb(0, 180, 240),
-  'spartan-green-lighter': rgb(111, 231, 159)
+  'green-dark': rgb(27, 161, 81),
+  'gold': rgb(252, 177, 29),
+  'cyan-dark': rgb(0, 142, 189),
+  'night-light': rgb(64, 84, 104),
+  'gold-dark': rgb(226, 152, 3),
+  'green': rgb(35, 205, 103),
+  'cyan': rgb(0, 180, 240),
+  'grey-dark': rgb(150, 153, 156),
+  'night-lightest': rgb(147, 168, 189),
+  'spartan_blue': rgb(0, 76, 153),
+  'grey-light': rgb(218, 219, 220),
+  'white': rgb(255, 255, 255),
+  'gold-light': rgb(253, 200, 94),
+  'green-light': rgb(67, 223, 130),
+  'cyan-light': rgb(36, 200, 255),
+  'cyan-darker': rgb(0, 103, 138),
+  'green-darker': rgb(20, 118, 59),
+  'night-lighter': rgb(89, 117, 145),
+  'spartan_blue-light': rgb(0, 122, 245),
+  'gold-darker': rgb(176, 118, 3),
+  'grey-darker': rgb(114, 117, 121),
+  'grey-lighter': rgb(234, 235, 235),
+  'gold-lighter': rgb(253, 217, 144),
+  'night': rgb(33, 43, 54),
+  'green-lighter': rgb(111, 231, 159),
+  'cyan-lighter': rgb(87, 213, 255),
+  'spartan_blue-lighter': rgb(82, 168, 255),
+  'spartan_blue-dark': rgb(0, 36, 71),
+  'grey': rgb(192, 194, 196)
 );
