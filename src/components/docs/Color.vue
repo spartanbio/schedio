@@ -62,10 +62,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.mainPalettes)
-  },
-
   methods: {
     /**
      * Split colors into palettes
