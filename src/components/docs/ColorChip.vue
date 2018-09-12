@@ -58,9 +58,7 @@ $shadow-color: color('grey', 'light');
 .palette-wrapper {
   // Add some space
 
-  &:not(:last-child) {
-    margin-right: $spacing-base;
-  }
+  margin: $spacing-half;
 }
 
 .palette-card {
@@ -68,7 +66,7 @@ $shadow-color: color('grey', 'light');
   box-shadow: 0 0 1px $shadow-color, 0 0.5em 1.5em $shadow-color;
   background-color: color('ice');
   display: inline-block;
-  width: 26em;
+  width: 28em;
 
   $row-height: 6em;
 
@@ -94,6 +92,7 @@ $shadow-color: color('grey', 'light');
 
   &__row {
     align-items: center;
+    background: color('white');
     display: flex;
     min-height: $row-height;
     position: relative;

@@ -1,43 +1,54 @@
 $palettes: (
   'green': (
-    'dark': rgb(27, 161, 81),
+    'dark': rgb(23, 155, 76),
     'base': rgb(35, 205, 103),
-    'light': rgb(67, 223, 130),
-    'darker': rgb(20, 118, 59),
-    'lighter': rgb(111, 231, 159)
+    'light': rgb(92, 224, 145),
+    'darker': rgb(13, 89, 43),
+    'lighter': rgb(152, 235, 185)
   ),
   'gold': (
     'base': rgb(252, 177, 29),
-    'dark': rgb(226, 152, 3),
+    'dark': rgb(230, 153, 0),
     'light': rgb(253, 200, 94),
-    'darker': rgb(176, 118, 3),
+    'darker': rgb(179, 113, 0),
     'lighter': rgb(253, 217, 144)
   ),
-  'cyan': (
-    'dark': rgb(0, 142, 189),
+  'turquoise': (
     'base': rgb(0, 180, 240),
-    'light': rgb(36, 200, 255),
-    'darker': rgb(0, 103, 138),
-    'lighter': rgb(87, 213, 255)
+    'dark': rgb(0, 122, 163),
+    'light': rgb(71, 202, 245),
+    'darker': rgb(0, 69, 92),
+    'lighter': rgb(148, 224, 249)
   ),
   'night': (
     'light': rgb(64, 84, 104),
-    'lightest': rgb(147, 168, 189),
-    'lighter': rgb(89, 117, 145),
+    'lightest': rgb(151, 168, 186),
+    'lighter': rgb(98, 122, 147),
     'base': rgb(33, 43, 54)
   ),
   'grey': (
     'dark': rgb(139, 153, 167),
-    'light': rgb(214, 219, 224),
+    'light': rgb(214, 219, 225),
     'darker': rgb(101, 117, 134),
-    'lighter': rgb(232, 235, 237),
-    'base': rgb(185, 194, 202)
+    'lighter': rgb(231, 235, 238),
+    'base': rgb(184, 194, 204)
   ),
   'spartan_blue': (
     'base': rgb(0, 76, 153),
-    'light': rgb(0, 122, 245),
-    'lighter': rgb(82, 168, 255),
+    'light': rgb(0, 107, 214),
+    'lightest': rgb(100, 173, 247),
+    'lighter': rgb(20, 138, 255),
     'dark': rgb(0, 36, 71)
+  ),
+  'magenta': (
+    'darker': rgb(82, 0, 30),
+    'base': rgb(240, 0, 88),
+    'light': rgb(250, 97, 153),
+    'dark': rgb(158, 0, 58),
+    'lighter': rgb(250, 178, 205)
+  ),
+  'white': (
+    'base': rgb(255, 255, 255)
   ),
   'ice': (
     'base': rgb(249, 250, 251)

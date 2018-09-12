@@ -7,10 +7,13 @@ props:
     value: 'hsla(210, 100%, 30%, 1)'
     paletteType: 'main'
   spartan_blue-light:
-    value: 'hsla(210, 100%, 48%, 1)'
+    value: 'hsla(210, 100%, 42%, 1)'
     paletteType: 'main'
   spartan_blue-lighter:
-    value: 'hsla(210, 100%, 66%, 1)'
+    value: 'hsla(210, 100%, 54%, 1)'
+    paletteType: 'main'
+  spartan_blue-lightest:
+    value: 'hsla(210, 90%, 68%, 1)'
     paletteType: 'main'
   grey-dark:
     value: 'hsla(210, 14%, 60%, 1)'
@@ -19,13 +22,13 @@ props:
     value: 'hsla(210, 14%, 46%, 1)'
     paletteType: 'main'
   grey:
-    value: 'hsla(210, 14%, 76%, 1)'
+    value: 'hsla(210, 16%, 76%, 1)'
     paletteType: 'main'
   grey-light:
-    value: 'hsla(210, 14%, 86%, 1)'
+    value: 'hsla(210, 16%, 86%, 1)'
     paletteType: 'main'
   grey-lighter:
-    value: 'hsla(210, 14%, 92%, 1)'
+    value: 'hsla(210, 16%, 92%, 1)'
     paletteType: 'main'
   night:
     value: 'hsla(210, 24%, 17%, 1)'
@@ -34,35 +37,38 @@ props:
     value: 'hsla(210, 24%, 33%, 1)'
     paletteType: 'main'
   night-lighter:
-    value: 'hsla(210, 24%, 46%, 1)'
+    value: 'hsla(210, 20%, 48%, 1)'
     paletteType: 'main'
   night-lightest:
-    value: 'hsla(210, 24%, 66%, 1)'
+    value: 'hsla(210, 20%, 66%, 1)'
     paletteType: 'main'
   ice:
     value: 'hsla(210, 12%, 98%, 1)'
     paletteType: 'main'
+  white:
+    value: 'hsla(210, 12%, 100%, 1)'
+    paletteType: 'main'
   # Secondary and tints
   green-darker:
-    value: 'hsla(144, 71%, 27%, 1)'
+    value: 'hsla(144, 74%, 20%, 1)'
     paletteType: 'accent'
   green-dark:
-    value: 'hsla(144, 71%, 37%, 1)'
+    value: 'hsla(144, 74%, 35%, 1)'
     paletteType: 'accent'
   green:
     value: 'hsla(144, 71%, 47%, 1)'
     paletteType: 'accent'
   green-light:
-    value: 'hsla(144, 71%, 57%, 1)'
+    value: 'hsla(144, 68%, 62%, 1)'
     paletteType: 'accent'
   green-lighter:
-    value: 'hsla(144, 71%, 67%, 1)'
+    value: 'hsla(144, 68%, 76%, 1)'
     paletteType: 'accent'
   gold-darker:
-    value: 'hsla(40, 97%, 35%, 1)'
+    value: 'hsla(38, 100%, 35%, 1)'
     paletteType: 'accent'
   gold-dark:
-    value: 'hsla(40, 97%, 45%, 1)'
+    value: 'hsla(40, 100%, 45%, 1)'
     paletteType: 'accent'
   gold:
     value: 'hsla(40, 97%, 55%, 1)'
@@ -73,20 +79,35 @@ props:
   gold-lighter:
     value: 'hsla(40, 97%, 78%, 1)'
     paletteType: 'accent'
-  cyan-darker:
-    value: 'hsla(195, 100%, 27%, 1)'
+  turquoise-darker:
+    value: 'hsla(195, 100%, 18%, 1)'
     paletteType: 'accent'
-  cyan-dark:
-    value: 'hsla(195, 100%, 37%, 1)'
+  turquoise-dark:
+    value: 'hsla(195, 100%, 32%, 1)'
     paletteType: 'accent'
-  cyan:
+  turquoise:
     value: 'hsla(195, 100%, 47%, 1)'
     paletteType: 'accent'
-  cyan-light:
-    value: 'hsla(195, 100%, 57%, 1)'
+  turquoise-light:
+    value: 'hsla(195, 90%, 62%, 1)'
     paletteType: 'accent'
-  cyan-lighter:
-    value: 'hsla(195, 100%, 67%, 1)'
+  turquoise-lighter:
+    value: 'hsla(195, 90%, 78%, 1)'
+    paletteType: 'accent'
+  magenta-darker:
+    value: 'hsla(338, 100%, 16%, 1)'
+    paletteType: 'accent'
+  magenta-dark:
+    value: 'hsla(338, 100%, 31%, 1)'
+    paletteType: 'accent'
+  magenta:
+    value: 'hsla(338, 100%, 47%, 1)'
+    paletteType: 'accent'
+  magenta-light:
+    value: 'hsla(338, 94%, 68%, 1)'
+    paletteType: 'accent'
+  magenta-lighter:
+    value: 'hsla(338, 88%, 84%, 1)'
     paletteType: 'accent'
 global:
   type: color

@@ -56,7 +56,7 @@ export default {
       })
     },
     mainPalettes() {
-      const order = ['spartan_blue', 'grey', 'night', 'ice']
+      const order = ['spartan_blue', 'grey', 'night', 'ice', 'white']
       const toOrder = this.getPalette('main')
 
       return order.reduce((ordered, key) => {
