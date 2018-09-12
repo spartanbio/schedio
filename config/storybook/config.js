@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { configure } from '@storybook/vue'
+import { configure, addDecorator } from '@storybook/vue'
 import { setOptions } from '@storybook/addon-options'
 import registerComponentsGlobally from '@/utils/register-components-globally'
+import StorybookContainer from './StorybookContainer.vue'
 
 import '@/assets/styles.scss'
 
@@ -26,5 +27,16 @@ setOptions({
   hierarchySeparator: /\./,
   hierarchyRootSeparator: /\//
 })
+
+addDecorator(() => ({
+  // TODO: remove duplicate container
+  render() {
+    return (
+      <StorybookContainer>
+        <story />
+      </StorybookContainer>
+    )
+  }
+}))
 
 configure(loadStories, module)
