@@ -60,9 +60,9 @@
     "grey-dark": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(150, 153, 156)",
+      "value": "rgb(139, 153, 167)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 3%, 60%, 1)",
+      "originalValue": "hsla(210, 14%, 60%, 1)",
       "name": "grey-dark"
     },
     "night-lightest": {
@@ -84,18 +84,10 @@
     "grey-light": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(218, 219, 220)",
+      "value": "rgb(214, 219, 224)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 3%, 86%, 1)",
+      "originalValue": "hsla(210, 14%, 86%, 1)",
       "name": "grey-light"
-    },
-    "white": {
-      "type": "color",
-      "category": "background-color",
-      "value": "rgb(255, 255, 255)",
-      "paletteType": "main",
-      "originalValue": "hsla(0, 0%, 100%, 1)",
-      "name": "white"
     },
     "gold-light": {
       "type": "color",
@@ -104,6 +96,14 @@
       "paletteType": "accent",
       "originalValue": "hsla(40, 97%, 68%, 1)",
       "name": "gold-light"
+    },
+    "ice": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(249, 250, 251)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 12%, 98%, 1)",
+      "name": "ice"
     },
     "green-light": {
       "type": "color",
@@ -164,17 +164,17 @@
     "grey-darker": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(114, 117, 121)",
+      "value": "rgb(101, 117, 134)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 3%, 46%, 1)",
+      "originalValue": "hsla(210, 14%, 46%, 1)",
       "name": "grey-darker"
     },
     "grey-lighter": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(234, 235, 235)",
+      "value": "rgb(232, 235, 237)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 3%, 92%, 1)",
+      "originalValue": "hsla(210, 14%, 92%, 1)",
       "name": "grey-lighter"
     },
     "gold-lighter": {
@@ -228,9 +228,9 @@
     "grey": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(192, 194, 196)",
+      "value": "rgb(185, 194, 202)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 3%, 76%, 1)",
+      "originalValue": "hsla(210, 14%, 76%, 1)",
       "name": "grey"
     },
     "font-family-sans-serif": {

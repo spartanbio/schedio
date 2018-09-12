@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 .storybook-container {
-  background-color: lighten(color('night', 'lightest'), 33%);
+  background-color: color('ice');
   padding: $spacing-half;
 }
 </style>
