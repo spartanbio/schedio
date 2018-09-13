@@ -20,7 +20,8 @@
 
 .caption {
   @include font-size(6);
-  color: color('grey');
+  color: color('night', 'lighter');
+  font-weight: $font-weight-regular;
 
   &:not(:first-child) {
     margin-top: -1rem;
