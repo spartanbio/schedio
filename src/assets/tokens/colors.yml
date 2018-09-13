@@ -10,7 +10,7 @@ props:
     value: 'hsla(210, 100%, 42%, 1)'
     paletteType: 'main'
   spartan_blue-lighter:
-    value: 'hsla(210, 100%, 54%, 1)'
+    value: 'hsla(210, 86%, 54%, 1)'
     paletteType: 'main'
   spartan_blue-lightest:
     value: 'hsla(210, 90%, 68%, 1)'

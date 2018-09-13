@@ -292,9 +292,9 @@
     "spartan_blue-lighter": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(20, 138, 255)",
+      "value": "rgb(37, 138, 239)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 100%, 54%, 1)",
+      "originalValue": "hsla(210, 86%, 54%, 1)",
       "name": "spartan_blue-lighter"
     },
     "spartan_blue-dark": {
