@@ -8,24 +8,24 @@
       <code>font-size</code>.
     </p>
 
-    <table>
+    <table class="table table--bordered table--hoverable">
       <thead>
-        <th>Name</th>
-        <th>Value</th>
-        <th>Example</th>
+        <tr>
+          <th class="table__cell">Name</th>
+          <th class="table__cell">Value</th>
+          <th class="table__cell">Example</th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="{ name, value } in spacing" :key="name">
-          <td>
+          <td class="table__cell">
             <code>${{ name }}</code>
           </td>
-          <td>
+          <td class="table__cell table__cell--numeric">
             <code>{{ value }}</code>
           </td>
-          <td>
-            <div class="spacing-example">
-              <div :style="{height: value, width: value}" class="spacing-example__spacer" />
-            </div>
+          <td class="table__cell spacing-example">
+            <div :style="{height: value, width: value}" class="spacing-example__spacer" />
           </td>
         </tr>
       </tbody>
