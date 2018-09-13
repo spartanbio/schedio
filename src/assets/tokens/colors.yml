@@ -94,21 +94,37 @@ props:
   turquoise-lighter:
     value: 'hsla(195, 90%, 78%, 1)'
     paletteType: 'accent'
+  red-darker:
+    value: 'hsla(0, 87%, 16%, 1)'
+    paletteType: 'accent'
+  red-dark:
+    value: 'hsla(0, 87%, 31%, 1)'
+    paletteType: 'accent'
+  red:
+    value: 'hsla(0, 87%, 50%, 1)'
+    paletteType: 'accent'
+  red-light:
+    value: 'hsla(0, 87%, 68%, 1)'
+    paletteType: 'accent'
+  red-lighter:
+    value: 'hsla(0, 87%, 84%, 1)'
+    paletteType: 'accent'
   magenta-darker:
-    value: 'hsla(338, 100%, 16%, 1)'
+    value: 'hsla(330, 100%, 16%, 1)'
     paletteType: 'accent'
   magenta-dark:
-    value: 'hsla(338, 100%, 31%, 1)'
+    value: 'hsla(330, 100%, 31%, 1)'
     paletteType: 'accent'
   magenta:
-    value: 'hsla(338, 100%, 47%, 1)'
+    value: 'hsla(330, 100%, 47%, 1)'
     paletteType: 'accent'
   magenta-light:
-    value: 'hsla(338, 94%, 68%, 1)'
+    value: 'hsla(330, 94%, 68%, 1)'
     paletteType: 'accent'
   magenta-lighter:
-    value: 'hsla(338, 88%, 84%, 1)'
+    value: 'hsla(330, 88%, 84%, 1)'
     paletteType: 'accent'
+
 global:
   type: color
   category: background-color

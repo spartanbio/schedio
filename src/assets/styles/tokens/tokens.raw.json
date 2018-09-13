@@ -84,10 +84,18 @@
     "magenta-darker": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(82, 0, 30)",
+      "value": "rgb(82, 0, 41)",
       "paletteType": "accent",
-      "originalValue": "hsla(338, 100%, 16%, 1)",
+      "originalValue": "hsla(330, 100%, 16%, 1)",
       "name": "magenta-darker"
+    },
+    "red-lighter": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(250, 179, 179)",
+      "paletteType": "accent",
+      "originalValue": "hsla(0, 87%, 84%, 1)",
+      "name": "red-lighter"
     },
     "grey-light": {
       "type": "color",
@@ -108,9 +116,9 @@
     "magenta": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(240, 0, 88)",
+      "value": "rgb(240, 0, 120)",
       "paletteType": "accent",
-      "originalValue": "hsla(338, 100%, 47%, 1)",
+      "originalValue": "hsla(330, 100%, 47%, 1)",
       "name": "magenta"
     },
     "gold-light": {
@@ -185,6 +193,14 @@
       "originalValue": "hsla(38, 100%, 35%, 1)",
       "name": "gold-darker"
     },
+    "red": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(238, 17, 17)",
+      "paletteType": "accent",
+      "originalValue": "hsla(0, 87%, 50%, 1)",
+      "name": "red"
+    },
     "grey-darker": {
       "type": "color",
       "category": "background-color",
@@ -196,10 +212,18 @@
     "magenta-light": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(250, 97, 153)",
+      "value": "rgb(250, 97, 173)",
       "paletteType": "accent",
-      "originalValue": "hsla(338, 94%, 68%, 1)",
+      "originalValue": "hsla(330, 94%, 68%, 1)",
       "name": "magenta-light"
+    },
+    "red-dark": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(148, 10, 10)",
+      "paletteType": "accent",
+      "originalValue": "hsla(0, 87%, 31%, 1)",
+      "name": "red-dark"
     },
     "grey-lighter": {
       "type": "color",
@@ -249,12 +273,20 @@
       "originalValue": "hsla(144, 68%, 76%, 1)",
       "name": "green-lighter"
     },
+    "red-light": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(244, 102, 102)",
+      "paletteType": "accent",
+      "originalValue": "hsla(0, 87%, 68%, 1)",
+      "name": "red-light"
+    },
     "magenta-dark": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(158, 0, 58)",
+      "value": "rgb(158, 0, 79)",
       "paletteType": "accent",
-      "originalValue": "hsla(338, 100%, 31%, 1)",
+      "originalValue": "hsla(330, 100%, 31%, 1)",
       "name": "magenta-dark"
     },
     "spartan_blue-lighter": {
@@ -284,10 +316,18 @@
     "magenta-lighter": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(250, 178, 205)",
+      "value": "rgb(250, 178, 214)",
       "paletteType": "accent",
-      "originalValue": "hsla(338, 88%, 84%, 1)",
+      "originalValue": "hsla(330, 88%, 84%, 1)",
       "name": "magenta-lighter"
+    },
+    "red-darker": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(76, 5, 5)",
+      "paletteType": "accent",
+      "originalValue": "hsla(0, 87%, 16%, 1)",
+      "name": "red-darker"
     },
     "font-family-sans-serif": {
       "type": "...",
