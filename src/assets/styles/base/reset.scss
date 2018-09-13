@@ -19,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-light;
-  margin: 0;
+  margin: $spacing-none;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
@@ -38,8 +38,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
+  margin: $spacing-none;
+  padding: $spacing-none;
 }
 
 img,
