@@ -26,7 +26,7 @@ body {
 code {
   background-color: color('grey', 'lighter');
   border-radius: $spacing-quarter;
-  color: hsla(348, 100%, 61%, 1);
+  color: color('magenta');
   font-family: $font-family-monospaced;
   padding: $spacing-quarter $spacing-half;
 }
