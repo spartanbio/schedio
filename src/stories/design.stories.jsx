@@ -4,11 +4,15 @@ import Color from '@/components/docs/Color.vue'
 import Graphics from '@/components/docs/Graphics.vue'
 import InteractionStates from '@/components/docs/InteractionStates.vue'
 import Spacing from '@/components/docs/Spacing.vue'
-import Typography from '@/components/docs/Typography.vue'
+import TypographyBase from '@/components/docs/Typography/TypographyBase.vue'
+import TypographyHeadings from '@/components/docs/Typography/TypographyHeadings.vue'
 
 storiesOf('Design', module)
-  .add('Typography', () => h => <Typography />)
   .add('Color', () => h => <Color />)
-  .add('Interaction (TODO)', () => h => <InteractionStates />)
-  .add('Graphics (TODO)', () => h => <Graphics />)
+  .add('Interaction', () => h => <InteractionStates />)
+  .add('Graphics', () => h => <Graphics />)
   .add('Spacing', () => h => <Spacing />)
+
+storiesOf('Design.Typography', module)
+  .add('Base', () => h => <TypographyBase />)
+  .add('Headings & Displays', () => h => <TypographyHeadings />)

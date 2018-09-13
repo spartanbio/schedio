@@ -1,0 +1,21 @@
+.typography-example {
+  border-bottom: 1px solid color('grey', 'light');
+  padding: $spacing-double;
+
+  // Add space after intro
+
+  .typography-intro + & {
+    border-top: 1px solid color('grey', 'light');
+    margin-top: $spacing-double;
+  }
+
+  // Add overrides for example
+
+  .display-1,
+  .display-2,
+  .heading-1,
+  .heading-2,
+  .heading-3 {
+    margin: 0 0 1rem;
+  }
+}
