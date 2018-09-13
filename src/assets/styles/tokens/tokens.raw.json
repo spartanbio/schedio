@@ -427,12 +427,12 @@
       "originalValue": "0.5rem",
       "name": "font-size-7"
     },
-    "large-line-height": {
+    "large-text-line-height": {
       "type": "number",
       "category": "line-height",
       "value": "1.25",
       "originalValue": "1.25",
-      "name": "large-line-height"
+      "name": "large-text-line-height"
     },
     "spacing-none": {
       "type": "number",
