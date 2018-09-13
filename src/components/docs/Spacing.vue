@@ -24,8 +24,7 @@
           </td>
           <td>
             <div class="spacing-example">
-              <div :style="{marginRight: value}" class="spacing-example__element" />
-              <div class="spacing-example__element" />
+              <div :style="{height: value, width: value}" class="spacing-example__spacer" />
             </div>
           </td>
         </tr>
@@ -49,18 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.spacing-example {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  $dimensions: $spacing-double;
-
-  &__element {
-    background-color: $spartan-blue;
-    border-radius: $dimensions;
-    height: $dimensions;
-    width: $dimensions;
-  }
+.spacing-example__spacer {
+  background-color: $spartan-blue;
 }
 </style>
