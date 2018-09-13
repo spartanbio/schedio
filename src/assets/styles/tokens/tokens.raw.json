@@ -462,26 +462,26 @@
       "originalValue": "1em",
       "name": "spacing-base"
     },
-    "spacing-1.5x": {
+    "spacing-loose": {
       "type": "number",
       "category": "spacing",
       "value": "1.5em",
       "originalValue": "1.5em",
-      "name": "spacing-1.5x"
+      "name": "spacing-loose"
     },
-    "spacing-2x": {
+    "spacing-double": {
       "type": "number",
       "category": "spacing",
       "value": "2em",
       "originalValue": "2em",
-      "name": "spacing-2x"
+      "name": "spacing-double"
     },
-    "spacing-3x": {
+    "spacing-triple": {
       "type": "number",
       "category": "spacing",
       "value": "3em",
       "originalValue": "3em",
-      "name": "spacing-3x"
+      "name": "spacing-triple"
     },
     "spacing-4x": {
       "type": "number",

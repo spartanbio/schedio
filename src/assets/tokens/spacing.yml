@@ -7,11 +7,11 @@ props:
     value: '0.5em'
   spacing-base:
     value: '1em'
-  spacing-1.5x:
+  spacing-loose:
     value: '1.5em'
-  spacing-2x:
+  spacing-double:
     value: '2em'
-  spacing-3x:
+  spacing-triple:
     value: '3em'
   spacing-4x:
     value: '4em'

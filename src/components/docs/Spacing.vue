@@ -54,7 +54,7 @@ export default {
   display: flex;
   justify-content: center;
 
-  $dimensions: $spacing-2x;
+  $dimensions: $spacing-double;
 
   &__element {
     background-color: $spartan-blue;
