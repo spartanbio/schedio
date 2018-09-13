@@ -1,0 +1,37 @@
+/// Returns border width.
+/// @param {String} $variant [base] - The border variant key.
+/// @return {Number} The width for the border.
+@function border-width($variant: 'base') {
+  $fetched-value: map-get($borders-width, $variant);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @return 'Could not find border-width `#{$variant}`. Available widths: #{available-names($borders-width)}';
+  }
+}
+
+/// Returns a border.
+/// @param {String} $variant [base] - The border variant key.
+/// @return {List} The border value.
+@function border($variant: 'base') {
+  $fetched-value: map-get($borders-data, $variant);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @return 'Could not find border `#{$variant}`. Available borders: #{available-names($borders-data)}';
+  }
+}
+
+$borders-width: (
+  'base': 1px,
+  'thick': 2px,
+  'thickest': 4px
+);
+
+$borders-data: (
+  'light': border-width() solid color('grey', 'lighter'),
+  'base': border-width() solid color('grey', 'light'),
+  'dark': border-width() solid color('grey')
+);

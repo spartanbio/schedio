@@ -80,6 +80,8 @@
 <script>
 import tokens from '@/assets/styles/tokens/tokens.json'
 import { linkTo } from '@storybook/addon-links'
+import '@/components/docs/Typography/typography.stories.scss'
+
 export default {
   name: 'TypographyHeadings',
 
@@ -92,7 +94,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import 'typography.stories';
-</style>

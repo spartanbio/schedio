@@ -1,11 +1,11 @@
 .typography-example {
-  border-bottom: 1px solid color('grey', 'light');
+  border-bottom: border();
   padding: $spacing-double;
 
   // Add space after intro
 
   .typography-intro + & {
-    border-top: 1px solid color('grey', 'light');
+    border-top: border();
     margin-top: $spacing-double;
   }
 
