@@ -7,6 +7,10 @@
         Headings and displays typically have <code>margin-top: 2em;</code> and
         <code>margin-bottom: 1em;</code>, but that has been disabled for example purposes.
       </p>
+      <p>
+        The <code>BaseHeading</code> component can be used for headings and displays. Find it
+        <a href="" @click.prevent="linkToComponent">here</a>.
+      </p>
     </div>
 
     <article class="typography-example">
@@ -75,13 +79,17 @@
 
 <script>
 import tokens from '@/assets/styles/tokens/tokens.json'
-
+import { linkTo } from '@storybook/addon-links'
 export default {
   name: 'TypographyHeadings',
 
   data: () => ({
     tokens
-  })
+  }),
+
+  methods: {
+    linkToComponent: linkTo('BaseHeading', 'Headings')
+  }
 }
 </script>
 
