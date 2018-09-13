@@ -43,7 +43,7 @@ props:
     value: 'hsla(210, 20%, 66%, 1)'
     paletteType: 'main'
   ice:
-    value: 'hsla(210, 12%, 98%, 1)'
+    value: 'hsla(210, 23%, 96%, 1)'
     paletteType: 'main'
   white:
     value: 'hsla(210, 12%, 100%, 1)'

@@ -132,9 +132,9 @@
     "ice": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(249, 250, 251)",
+      "value": "rgb(242, 245, 247)",
       "paletteType": "main",
-      "originalValue": "hsla(210, 12%, 98%, 1)",
+      "originalValue": "hsla(210, 23%, 96%, 1)",
       "name": "ice"
     },
     "green-light": {
