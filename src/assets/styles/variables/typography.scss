@@ -11,14 +11,15 @@
     text-transform: $text-transform;
   }
 
-  font-weight: 700;
-
-  &:not(:only-child) {
-    margin-bottom: 1em;
-  }
+  font-weight: $font-weight-bold;
 
   &:not(:first-child) {
-    margin-top: 2em;
+    margin-top: $spacing-double;
+  }
+
+  &.subtle {
+    font-weight: $font-weight-light;
+    text-transform: unset;
   }
 }
 
