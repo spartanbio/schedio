@@ -3,4 +3,4 @@
 @import 'fonts/**/*.scss';
 
 // Import component scss, ignore documentation styles
-@import '../components/[!docs]**/*.scss';
+@import '../components/**/*[!.stories].scss';

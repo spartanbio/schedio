@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import tokens from '@/assets/styles/tokens/tokens.json'
+import tokens from '@/assets/styles/tokens/dist/tokens.json'
 import { linkTo } from '@storybook/addon-links'
 import '@/components/docs/Typography/typography.stories.scss'
 

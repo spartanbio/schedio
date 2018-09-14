@@ -11,26 +11,26 @@
       <ColorChip
         v-for="(palette, paletteName) in mainPalettes"
         :heading="paletteName"
-        :palette="palette" 
+        :palette="palette"
         :key="`preview-${paletteName}`" />
     </div>
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
-    
+
     <div class="palettes">
       <ColorChip
         v-for="(palette, paletteName) in accentPalettes"
         :heading="paletteName"
-        :palette="palette" 
+        :palette="palette"
         :key="`preview-${paletteName}`" />
     </div>
   </div>
 </template>
 
 <script>
-import { props } from '@/assets/styles/tokens/tokens.raw.json'
+import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import ColorChip from '@/components/docs/ColorChip'
 import orderBy from 'lodash.orderby'
 import groupBy from 'lodash.groupby'

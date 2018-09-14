@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { props } from '@/assets/styles/tokens/tokens.raw.json'
+import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 export default {
   name: 'Spacing',
 

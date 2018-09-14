@@ -13,8 +13,8 @@
     "build:storybook": "vue-cli-service build:storybook -c config/storybook",
     "lint:js": "vue-cli-service lint ./src/*,./config/**/*.js",
     "lint:style": "stylelint ./src/assets/**/*.scss",
-    "theo": "theo ./src/assets/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens",
-    "theo:onchange": "onchange \"./src/assets/tokens/*.yml\" -i -- npm run theo"
+    "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
+    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -i -- npm run theo"
   },
   "dependencies": {
     "lodash.orderby": "^4.6.0",
