@@ -19,17 +19,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-light;
-  margin: $spacing-none;
+  margin: spacing('none');
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
 
 code {
   background-color: color('grey', 'lighter');
-  border-radius: $spacing-quarter;
+  border-radius: spacing('quarter');
   color: color('magenta');
   font-family: $font-family-monospaced;
-  padding: $spacing-quarter $spacing-half;
+  padding: spacing('quarter') spacing('half');
 }
 
 h1,
@@ -38,13 +38,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin: $spacing-none;
-  padding: $spacing-none;
+  margin: spacing('none');
+  padding: spacing('none');
 }
 
 p {
-  margin-bottom: $spacing-base;
-  margin-top: $spacing-none;
+  margin-bottom: spacing('base');
+  margin-top: spacing('none');
 }
 
 img,
@@ -68,7 +68,7 @@ table {
 
 td,
 th {
-  padding: $spacing-half;
+  padding: spacing('half');
   text-align: left;
 }
 

@@ -5,10 +5,10 @@
     </BaseHeading>
 
     <div class="palette-card">
-      <div 
-        v-for="color in palette" 
-        :key="color.name" 
-        :style="{ backgroundColor: color.value }" 
+      <div
+        v-for="color in palette"
+        :key="color.name"
+        :style="{ backgroundColor: color.value }"
         class="palette-card__row">
 
         <div class="palette-card__description">
@@ -62,7 +62,7 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
 .palette-wrapper {
   // Add some space
 
-  margin: $spacing-half;
+  margin: spacing('half');
 }
 
 .palette-card {
@@ -79,7 +79,7 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
     margin-left: 5em;
     max-width: 24em;
     min-height: inherit;
-    padding: $spacing-base;
+    padding: spacing('base');
   }
 
   &__row {

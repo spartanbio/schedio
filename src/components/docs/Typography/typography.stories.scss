@@ -1,12 +1,11 @@
 .typography-example {
   border-bottom: border();
-  padding: $spacing-double;
-
+  padding: spacing('double');
   // Add space after intro
 
   .typography-intro + & {
     border-top: border();
-    margin-top: $spacing-double;
+    margin-top: spacing('double');
   }
 
   // Add overrides for example
@@ -16,6 +15,6 @@
   .heading-1,
   .heading-2,
   .heading-3 {
-    margin: $spacing-none $spacing-none 1rem;
+    margin: spacing('none') spacing('none') 1rem;
   }
 }

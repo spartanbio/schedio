@@ -1,12 +1,12 @@
 ul {
 
   li {
-    line-height: $spacing-double;
+    line-height: spacing('double');
   }
 
   &.no-bullets {
     list-style: none;
-    padding: $spacing-none;
+    padding: spacing('none');
   }
 }
 

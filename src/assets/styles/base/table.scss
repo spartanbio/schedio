@@ -1,7 +1,7 @@
 .table {
 
   &__cell {
-    padding: $spacing-base;
+    padding: spacing('base');
 
     &--numeric {
       text-align: right;

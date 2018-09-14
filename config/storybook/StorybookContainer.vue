@@ -13,10 +13,10 @@ export default {
 <style lang="scss" scoped>
 .storybook-container {
   background-color: color('ice');
-  padding: $spacing-half;
+  padding: spacing('half');
 
   // Accounts for nested container. Storybook applies the container twice.
   // unquote + interpolation allows resolution of variable in `calc`
-  min-height: unquote('calc(100vh - #{$spacing-base})');
+  min-height: unquote("calc(100vh - #{spacing('base')})");
 }
 </style>
