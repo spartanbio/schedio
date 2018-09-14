@@ -137,6 +137,14 @@
       "originalValue": "hsla(195, 90%, 62%, 1)",
       "name": "turquoise-light"
     },
+    "night-dark": {
+      "type": "color",
+      "category": "background-color",
+      "value": "rgb(14, 18, 22)",
+      "paletteType": "main",
+      "originalValue": "hsla(210, 24%, 7%, 1)",
+      "name": "night-dark"
+    },
     "ice": {
       "type": "color",
       "category": "background-color",

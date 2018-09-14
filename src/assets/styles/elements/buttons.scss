@@ -1,0 +1,26 @@
+$button-colors: map-keys(map-remove($color-palette-data, 'ice', 'white'));
+
+@mixin button-size-small {
+  @include font-size(6);
+}
+
+@mixin button-size-regular {
+  @include font-size(5);
+}
+
+@mixin button-size-large {
+  @include font-size(4);
+}
+
+@mixin button-color($button-color) {
+  background-color: color($button-color);
+  color: color('ice');
+
+  &:hover {
+    background-color: color($button-color, 'light');
+  }
+
+  &:active {
+    background-color: color($button-color, 'dark');
+  }
+}

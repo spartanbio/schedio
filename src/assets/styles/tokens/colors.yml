@@ -34,6 +34,9 @@ props:
     paletteType: 'main'
 
   # Night
+  night-dark:
+    value: 'hsla(210, 24%, 7%, 1)'
+    paletteType: 'main'
   night:
     value: 'hsla(210, 24%, 17%, 1)'
     paletteType: 'main'

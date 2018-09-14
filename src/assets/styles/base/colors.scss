@@ -13,6 +13,17 @@ $color-palette-data: $palettes;
 
     @if type-of($fetched-color) == color {
       @return $fetched-color;
+    } @else {
+      // stylelint-disable string-no-newline
+      $error: "
+    Color `#{$hue}, #{$value}` not found. Arguments must be strings.
+    GOOD: color('night')
+    BAD: color(night)
+    Available options: #{available-names($color-palette-data)}
+    ";
+      // stylelint-enable
+
+      @error $error;
     }
   } @else {
     // stylelint-disable string-no-newline
