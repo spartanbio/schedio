@@ -8,7 +8,8 @@
       text. They should not be distracting when used for decoration.
     </p>
     <p>
-      Important content should <em>never</em> be provided in graphics.
+      Critical content should not be provided by text in graphics, or graphics alone. Always include
+      it as simple text.
     </p>
 
     <BaseHeading level="2">
