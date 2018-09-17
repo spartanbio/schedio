@@ -1,0 +1,41 @@
+.label {
+
+  &--checkbox {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+}
+
+.checkbox {
+  display: none;
+
+  & ~ &__check {
+    @include control;
+    align-items: center;
+    border: border();
+    display: flex;
+    height: 1.5em;
+    justify-content: center;
+    margin: spacing('half');
+    padding: 0;
+    width: 1.5em;
+  }
+
+  &:checked ~ &__check::after {
+    border: border-width('thick') solid color('green');
+    border-left: none;
+    border-top: none;
+    content: '';
+    height: 0.85em;
+    position: relative;
+    top: -0.15em;
+    transform: rotate(45deg);
+    width: 0.5em;
+  }
+}
