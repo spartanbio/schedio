@@ -9,7 +9,7 @@ storiesOf('Components/BaseInput', module)
     const id = text('ID', 'base-input', 'Required')
     const placeholderText = text('Placeholder', 'Placeholder text', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
-    const inputType = select('Input type', options, 'text', 'Optional')
+    const inputType = select('Input type', options, '', 'Optional')
 
     const props = {
       id,
@@ -20,11 +20,9 @@ storiesOf('Components/BaseInput', module)
 
     return {
       render: h => (
-        <div>
-          <BaseInput id="text" {...{ props }}>
-            {labelText}
-          </BaseInput>
-        </div>
+        <BaseInput id="text" {...{ props }}>
+          {labelText}
+        </BaseInput>
       )
     }
   })

@@ -10,9 +10,9 @@ const sizeOptions = ['', ...sizes]
 storiesOf('Components/BaseButton', module)
   .addDecorator(withKnobs)
   .add('Button', () => {
-    const buttonText = text('Button text', 'Sample text')
-    const buttonColor = select('Button color', colorOptions)
-    const buttonSize = select('Button size', sizeOptions, '')
+    const buttonText = text('Button text', 'Sample text', 'Required')
+    const buttonColor = select('Button color', colorOptions, '', 'Optional')
+    const buttonSize = select('Button size', sizeOptions, '', 'Optional')
 
     const props = {
       buttonColor,
