@@ -1,14 +1,30 @@
+import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
+import { allowed as options } from '@/components/base/BaseInput/options'
 import BaseInput from '@/components/base/BaseInput'
-// TODO: knobs
-storiesOf('Components/BaseInput', module).add('Input', () => {
-  return {
-    render: h => (
-      <div>
-        <BaseInput id="text" placeholder="Placeholder text" label="BaseInput" type="url">
-          Text
-        </BaseInput>
-      </div>
-    )
-  }
-})
+
+storiesOf('Components/BaseInput', module)
+  .addDecorator(withKnobs)
+  .add('Input', () => {
+    const id = text('ID', 'base-input', 'Required')
+    const placeholderText = text('Placeholder', 'Placeholder text', 'Required')
+    const labelText = text('Label', 'Label text', 'Required')
+    const inputType = select('Input type', options, 'text', 'Optional')
+
+    const props = {
+      id,
+      labelText,
+      inputType,
+      placeholderText
+    }
+
+    return {
+      render: h => (
+        <div>
+          <BaseInput id="text" {...{ props }}>
+            {labelText}
+          </BaseInput>
+        </div>
+      )
+    }
+  })

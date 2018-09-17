@@ -15,6 +15,8 @@ import { allowed } from './options'
 /**
  * TODO:
  * [] - account for validation
+ * [] - functional in form
+ * [] - additional states
  * [] - Other inputs
  */
 
@@ -31,11 +33,6 @@ export default {
       type: String,
       default: 'text',
       validator: v => (allowed.includes(v) ? v : console.error(`type must be one of: ${allowed}`))
-    },
-
-    label: {
-      type: String,
-      required: true
     },
 
     placeholder: {

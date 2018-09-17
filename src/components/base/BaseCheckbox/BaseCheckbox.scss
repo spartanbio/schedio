@@ -4,11 +4,11 @@
     align-items: center;
     cursor: pointer;
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   &--reversed {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 }
 
