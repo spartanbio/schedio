@@ -1,5 +1,3 @@
-$button-colors: map-keys($color-palette-data);
-
 @mixin button-size-small {
   @include font-size(6);
 }

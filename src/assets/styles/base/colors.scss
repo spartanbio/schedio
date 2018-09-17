@@ -38,3 +38,5 @@ $color-palette-data: $palettes;
     @error $error;
   }
 }
+
+$button-colors: map-keys($color-palette-data);
