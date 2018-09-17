@@ -43,12 +43,6 @@ export default {
         this.buttonSize ? `button--size-${this.buttonSize}` : ''
       ]
     }
-  },
-
-  methods: {
-    onClick() {
-      this.$emit('click')
-    }
   }
 }
 </script>
