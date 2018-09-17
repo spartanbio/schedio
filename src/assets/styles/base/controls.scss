@@ -1,0 +1,9 @@
+@mixin control {
+  background-color: color('white');
+  box-shadow: shadow('border');
+  border-radius: spacing('quarter');
+  display: inline-block;
+  margin: spacing('half') spacing('none');
+  padding: spacing('half') spacing();
+  width: 100%;
+}

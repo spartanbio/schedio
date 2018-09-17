@@ -1,0 +1,7 @@
+.base-input {
+  @include control;
+}
+
+.label {
+  @include display(5, uppercase);
+}
