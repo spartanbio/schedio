@@ -16,10 +16,10 @@ $shadow-color: color('grey', 'light');
 
 $shadows-data: (
   border: (
-    0 0 1px 0 $shadow-color
+    0 0 1px $shadow-color
   ),
   base: (
-    0 0.25em 1em 0 $shadow-color
+    0 0.25em 1em $shadow-color
   ),
   heavy: (
     0 0.5em 1.5em 0.25em $shadow-color
