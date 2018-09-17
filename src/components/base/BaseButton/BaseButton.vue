@@ -1,5 +1,6 @@
 <template>
   <button
+    v-bind="$attrs"
     :class="classList"
     class="button"
     v-on="$listeners">
