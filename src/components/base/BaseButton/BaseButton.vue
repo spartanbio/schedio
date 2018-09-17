@@ -2,7 +2,7 @@
   <button
     :class="classList"
     class="button"
-    @click="onClick">
+    v-on="$listeners">
     <slot/>
   </button>
 </template>
@@ -43,10 +43,6 @@ export default {
         this.buttonSize ? `button--size-${this.buttonSize}` : ''
       ]
     }
-  },
-
-  mounted() {
-    console.log(this.$props)
   },
 
   methods: {
