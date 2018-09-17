@@ -77,9 +77,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-}
-
-button {
   border: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
