@@ -1,4 +1,4 @@
-$button-colors: map-keys(map-remove($color-palette-data, 'ice', 'white'));
+$button-colors: map-keys($color-palette-data);
 
 @mixin button-size-small {
   @include font-size(6);
@@ -13,14 +13,32 @@ $button-colors: map-keys(map-remove($color-palette-data, 'ice', 'white'));
 }
 
 @mixin button-color($button-color) {
-  background-color: color($button-color);
-  color: color('ice');
+  $white-or-ice: ($button-color == 'white') or ($button-color == 'ice');
+  $base-color: color($button-color);
+
+  background-color: $base-color;
+  border-color: darken(color($button-color), 5%);
+  color: if($white-or-ice, color('night'), color('ice'));
 
   &:hover {
-    background-color: color($button-color, 'light');
+    $hover-color: if(
+      $white-or-ice,
+      darken($base-color, 5%),
+      color($button-color, 'light')
+    );
+
+    background-color: $hover-color;
+    border-color: darken($hover-color, 5%);
   }
 
   &:active {
-    background-color: color($button-color, 'dark');
+    $active-color: if(
+      $white-or-ice,
+      darken($base-color, 10%),
+      color($button-color, 'dark')
+    );
+
+    background-color: $active-color;
+    border-color: darken($active-color, 5%);
   }
 }
