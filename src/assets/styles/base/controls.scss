@@ -13,6 +13,11 @@
   cursor: pointer;
   display: inline-flex;
   flex-direction: row-reverse;
+  margin-top: 0 !important;
+  
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
 }
 
 @mixin check-or-radio {
