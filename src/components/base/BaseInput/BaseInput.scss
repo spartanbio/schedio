@@ -4,4 +4,8 @@
 
 .label {
   @include display(5, uppercase);
+
+  &--reversed {
+    flex-direction: row !important;
+  }
 }

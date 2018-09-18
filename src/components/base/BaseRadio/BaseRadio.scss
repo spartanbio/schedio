@@ -1,38 +1,21 @@
 .label {
+  // label style
 
   &--radio {
-    align-items: center;
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: row;
-  }
-
-  &--reversed {
-    flex-direction: row;
+    @include control-inline-label;
   }
 }
 
 .radio {
   display: none;
 
-  & ~ &__check {
-    @include control;
-    align-items: center;
-    border: border();
+  @include check-or-radio {
     border-radius: 50%;
-    display: flex;
-    height: 1.5em;
-    justify-content: center;
-    margin: spacing('half');
-    padding: 0;
-    width: 1.5em;
   }
 
   &:checked ~ &__check::after {
     background-color: color('green');
-    border-left: none;
     border-radius: 50%;
-    border-top: none;
     content: '';
     height: 0.75em;
     position: relative;

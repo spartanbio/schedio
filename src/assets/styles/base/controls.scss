@@ -7,3 +7,27 @@
   padding: spacing('half') spacing();
   width: 100%;
 }
+
+@mixin control-inline-label {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+@mixin check-or-radio {
+  // Style checkmark
+
+  & ~ &__check {
+    align-items: center;
+    background-color: color('white');
+    border: border();
+    display: flex;
+    height: 1.5em;
+    justify-content: center;
+    margin: spacing('half');
+    width: 1.5em;
+
+    @content;
+  }
+}
