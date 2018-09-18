@@ -9,6 +9,7 @@ storiesOf('Components/BaseCheckbox', module)
     const name = text('ID', 'base-checkbox', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
     const isReversed = boolean('isReversed', false, 'Optional')
+    const isDisabled = boolean('isDisabled', false, 'Optional')
 
     const props = {
       id,
@@ -20,7 +21,9 @@ storiesOf('Components/BaseCheckbox', module)
     return {
       render: h => (
         <div>
-          <BaseCheckbox {...{ props }}>{labelText}</BaseCheckbox>
+          <BaseCheckbox {...{ props }} disabled={isDisabled}>
+            {labelText}
+          </BaseCheckbox>
         </div>
       )
     }

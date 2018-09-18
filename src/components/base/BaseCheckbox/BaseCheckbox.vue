@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import InputControl from '@/components/mixins/InputControl.mixin'
 /**
  * TODO:
  * [] - account for validation
@@ -22,29 +23,8 @@
  */
 
 export default {
-  name: 'BaseRadio',
+  name: 'BaseCheckbox',
 
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
-
-    isReversed: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  computed: {
-    classList() {
-      return [this.isReversed ? 'label--reversed' : '']
-    }
-  }
+  mixins: [InputControl]
 }
 </script>

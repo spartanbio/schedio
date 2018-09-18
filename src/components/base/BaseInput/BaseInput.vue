@@ -25,6 +25,8 @@ import { allowed } from './options'
 export default {
   name: 'BaseInput',
 
+  inheritAttrs: false,
+
   props: {
     id: {
       type: String,
