@@ -20,7 +20,7 @@
  */
 
 export default {
-  name: 'BaseInput',
+  name: 'BaseRadio',
 
   props: {
     id: {
