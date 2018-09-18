@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import BaseCheckbox from '@/components/base/BaseCheckbox'
-// TODO: knobs
 
 storiesOf('Components/BaseCheckbox', module)
   .addDecorator(withKnobs)
