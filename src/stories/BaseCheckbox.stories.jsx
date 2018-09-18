@@ -5,7 +5,7 @@ import BaseCheckbox from '@/components/base/BaseCheckbox'
 storiesOf('Components/BaseCheckbox', module)
   .addDecorator(withKnobs)
   .add('Checkbox', () => {
-    const id = text('ID', 'base-input', 'Required')
+    const id = text('ID', 'base-checkbox', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
     const isReversed = boolean('isReversed', false, 'Optional')
 
@@ -18,9 +18,7 @@ storiesOf('Components/BaseCheckbox', module)
     return {
       render: h => (
         <div>
-          <BaseCheckbox id="text" {...{ props }}>
-            {labelText}
-          </BaseCheckbox>
+          <BaseCheckbox {...{ props }}>{labelText}</BaseCheckbox>
         </div>
       )
     }
