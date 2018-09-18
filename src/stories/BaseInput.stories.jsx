@@ -7,22 +7,20 @@ storiesOf('Components/BaseInput', module)
   .addDecorator(withKnobs)
   .add('Input', () => {
     const id = text('ID', 'base-input', 'Required')
-    const placeholderText = text('Placeholder', 'Placeholder text', 'Required')
+    const name = text('name', 'base-input', 'Required')
+    const placeholder = text('Placeholder', 'Placeholder text', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
     const inputType = select('Input type', options, '', 'Optional')
 
     const props = {
       id,
+      name,
       labelText,
       inputType,
-      placeholderText
+      placeholder
     }
 
     return {
-      render: h => (
-        <BaseInput id="text" {...{ props }}>
-          {labelText}
-        </BaseInput>
-      )
+      render: h => <BaseInput {...{ props }}>{labelText}</BaseInput>
     }
   })

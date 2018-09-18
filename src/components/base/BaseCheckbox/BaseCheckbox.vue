@@ -1,7 +1,9 @@
 <template>
-  <label :for="$attrs.id" :class="classList" class="label label--checkbox">
+  <label :for="id" :class="classList" class="label label--checkbox">
     <slot/>
     <input
+      :id="id"
+      :name="name"
       v-bind="$attrs"
       type="checkbox"
       class="checkbox"
@@ -24,6 +26,11 @@ export default {
 
   props: {
     id: {
+      type: String,
+      required: true
+    },
+
+    name: {
       type: String,
       required: true
     },

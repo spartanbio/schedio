@@ -1,7 +1,9 @@
 <template>
-  <label :for="$attrs.id" :class="classList" class="label label--radio">
+  <label :for="id" :class="classList" class="label label--radio">
     <slot/>
     <input
+      :id="id"
+      :name="name"
       v-bind="$attrs"
       type="radio"
       class="radio"
@@ -24,6 +26,11 @@ export default {
 
   props: {
     id: {
+      type: String,
+      required: true
+    },
+
+    name: {
       type: String,
       required: true
     },

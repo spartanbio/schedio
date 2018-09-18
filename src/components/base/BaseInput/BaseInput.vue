@@ -1,7 +1,9 @@
 <template>
-  <label :for="$attrs.id" class="label">
+  <label :for="id" class="label">
     <slot/>
     <input
+      :id="id"
+      :name="name"
       v-bind="$attrs"
       :placeholder="placeholder"
       class="base-input"
@@ -25,6 +27,11 @@ export default {
 
   props: {
     id: {
+      type: String,
+      required: true
+    },
+
+    name: {
       type: String,
       required: true
     },

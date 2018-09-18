@@ -5,31 +5,35 @@ import BaseRadio from '@/components/base/BaseRadio'
 storiesOf('Components/BaseRadio', module)
   .addDecorator(withKnobs)
   .add('Radio', () => {
-    const props = {
-      radio1: {
+    const name = 'radio-group'
+    const radios = [
+      {
         id: text('ID', 'radio-1', 'Required'),
         labelText: text('Label', 'Radio 1', 'Required'),
-        isReversed: boolean('isReversed', false, 'Optional')
+        isReversed: boolean('isReversed', false, 'Optional'),
+        name
       },
-      radio2: {
+      {
         id: text('ID', 'radio-2', 'Required'),
         labelText: text('Label', 'Radio 2', 'Required'),
-        isReversed: boolean('isReversed', false, 'Optional')
+        isReversed: boolean('isReversed', false, 'Optional'),
+        name
       },
-      radio3: {
+      {
         id: text('ID', 'radio-3', 'Required'),
         labelText: text('Label', 'Radio 3', 'Required'),
-        isReversed: boolean('isReversed', false, 'Optional')
+        isReversed: boolean('isReversed', false, 'Optional'),
+        name
       }
-    }
+    ]
 
     return {
       render: h => (
-        <form>
-          <BaseRadio {...{ props: props.radio1 }}>{props.radio1.labelText}</BaseRadio>
-          <BaseRadio {...{ props: props.radio2 }}>{props.radio2.labelText}</BaseRadio>
-          <BaseRadio {...{ props: props.radio3 }}>{props.radio3.labelText}</BaseRadio>
-        </form>
+        <div>
+          {radios.map(radio => (
+            <BaseRadio {...{ props: radio }}>{radio.labelText}</BaseRadio>
+          ))}
+        </div>
       )
     }
   })
