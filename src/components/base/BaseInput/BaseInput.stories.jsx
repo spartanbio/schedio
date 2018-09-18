@@ -12,12 +12,14 @@ storiesOf('Components/BaseInput', module)
     const labelText = text('Label', 'Label text', 'Required')
     const inputType = select('Input type', options, '', 'Optional')
     const isDisabled = boolean('isDisabled', false, 'Optional')
+    const isInline = boolean('isInline', false, 'Optional')
 
     const props = {
       id,
       name,
       labelText,
       inputType,
+      isInline,
       placeholder
     }
 

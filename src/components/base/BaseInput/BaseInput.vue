@@ -1,12 +1,12 @@
 <template>
-  <label :for="id" class="label">
+  <label :for="id" :class="labelClassList" class="label">
     <slot/>
     <input
       :id="id"
       :name="name"
       v-bind="$attrs"
       :placeholder="placeholder"
-      class="base-input"
+      class="input"
       v-on="$listeners">
   </label>
 </template>
@@ -47,6 +47,17 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    },
+
+    isInline: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    labelClassList() {
+      return [this.isInline ? 'label--inline' : '']
     }
   }
 }
