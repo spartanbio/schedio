@@ -43,7 +43,7 @@ export default {
 
   computed: {
     classList() {
-      return [this.isReversed ? 'label--reversed' : 'null']
+      return [this.isReversed ? 'label--reversed' : '']
     }
   }
 }
