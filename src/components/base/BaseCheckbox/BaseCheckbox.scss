@@ -7,15 +7,14 @@
 }
 
 .checkbox {
-  display: none;
-
+  
   @include check-or-radio {
     border-radius: spacing('quarter');
   }
 
   &:checked ~ &__check::after {
     // always transparent
-    
+
     background-color: transparent !important;
     border: border-width('thick') solid color('green');
     border-left: none;

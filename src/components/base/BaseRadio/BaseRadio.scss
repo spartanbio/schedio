@@ -7,8 +7,6 @@
 }
 
 .radio {
-  display: none;
-
   @include check-or-radio {
     border-radius: 50%;
   }

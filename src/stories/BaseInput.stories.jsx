@@ -1,4 +1,4 @@
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import { allowed as options } from '@/components/base/BaseInput/options'
 import BaseInput from '@/components/base/BaseInput'
@@ -11,6 +11,7 @@ storiesOf('Components/BaseInput', module)
     const placeholder = text('Placeholder', 'Placeholder text', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
     const inputType = select('Input type', options, '', 'Optional')
+    const isDisabled = boolean('isDisabled', false, 'Optional')
 
     const props = {
       id,
@@ -21,6 +22,10 @@ storiesOf('Components/BaseInput', module)
     }
 
     return {
-      render: h => <BaseInput {...{ props }}>{labelText}</BaseInput>
+      render: h => (
+        <BaseInput {...{ props }} disabled={isDisabled}>
+          {labelText}
+        </BaseInput>
+      )
     }
   })
