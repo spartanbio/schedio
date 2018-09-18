@@ -1,15 +1,9 @@
-@mixin control-active {
-  background-color: darken(color('white'), 5%);
-  box-shadow: inset 0 0 1em 0 color('grey', 'light'), shadow() !important;
-}
-
-@mixin control-hover {
-  box-shadow: shadow();
+@mixin control-border-shadow {
+  box-shadow: 0 0 0 2px color('spartan_blue', 'light'), shadow();
 }
 
 @mixin control-focus {
-  @include control-hover;
-  border-color: color('spartan_blue', 'light');
+  @include control-border-shadow;
   outline: none;
 }
 
@@ -25,11 +19,8 @@
   display: inline-block;
   margin: spacing('half') spacing('none');
   padding: spacing('half') spacing();
+  transition: all 125ms ease;
   width: 100%;
-
-  &:active {
-    @include control-active;
-  }
 
   &:disabled {
     @include control-disabled;
@@ -39,8 +30,13 @@
     @include control-focus;
   }
 
+  &:active,
+  &:hover:active {
+    @include control-border-shadow;
+  }
+
   &:hover:not(:disabled) {
-    @include control-hover;
+    @include control-border-shadow;
   }
 }
 
@@ -65,16 +61,17 @@
     background-color: color('white');
     border: border();
     display: flex;
-    height: 1.5em;
+    height: 1em;
     justify-content: center;
     margin: spacing('half');
-    width: 1.5em;
+    transition: all 200ms ease;
+    width: 1em;
 
     @content;
   }
 
   &:active ~ &__check {
-    @include control-active;
+    @include control-border-shadow;
   }
 
   &:focus ~ &__check {
@@ -85,12 +82,17 @@
     @include control-disabled;
   }
 
+  &:checked:not(:focus) ~ &__check {
+    box-shadow: 0 0 0 1px color('spartan_blue', 'light'), shadow();
+  }
+
   &:disabled:checked ~ &__check::after {
+    // force checked radios and checkboxes to grey
     background-color: color('grey', 'dark');
     border-color: color('grey', 'dark');
   }
 
   &:not(:disabled) ~ &__check:hover {
-    @include control-hover;
+    @include control-border-shadow;
   }
 }
