@@ -1,0 +1,41 @@
+.label {
+
+  &--radio {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  &--reversed {
+    flex-direction: row;
+  }
+}
+
+.radio {
+  display: none;
+
+  & ~ &__check {
+    @include control;
+    align-items: center;
+    border: border();
+    border-radius: 50%;
+    display: flex;
+    height: 1.5em;
+    justify-content: center;
+    margin: spacing('half');
+    padding: 0;
+    width: 1.5em;
+  }
+
+  &:checked ~ &__check::after {
+    background-color: color('green');
+    border-left: none;
+    border-radius: 50%;
+    border-top: none;
+    content: '';
+    height: 0.75em;
+    position: relative;
+    width: 0.75em;
+  }
+}
