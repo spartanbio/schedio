@@ -9,16 +9,18 @@ import '@/assets/styles.scss'
 // Automatically register base components
 const baseComponents = require.context(
   '@/components/base', // path to components
-  false, // check subfolders?
+  true, // check subfolders?
   /Base[A-Z]\w+\.(vue|js)$/ // regex file name
 )
 
 registerComponentsGlobally(baseComponents)
 
-const req = require.context('@/stories', true, /.stories.(js|jsx)$/)
+const genericStories = require.context('@/stories', true, /.stories.(js|jsx)$/)
+const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  genericStories.keys().forEach(filename => genericStories(filename))
+  componentStories.keys().forEach(filename => componentStories(filename))
 }
 
 // Set options

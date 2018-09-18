@@ -9,8 +9,8 @@ export default function registerComponentsGlobally(componentFiles) {
     // Get component config
     const componentConfig = componentFiles(fileName)
 
-    // Strip the leading `./` and extension from the filename
-    const componentName = fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+    // Strip the leading `./Base<Component>/` and extension from the filename
+    const componentName = fileName.replace(/^\.\/Base[A-Z]\w+\/(.*)\.\w+$/, '$1')
 
     // Register component globally
     Vue.component(
