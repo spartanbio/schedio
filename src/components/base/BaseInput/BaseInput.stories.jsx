@@ -10,7 +10,7 @@ storiesOf('Components/BaseInput', module)
     const name = text('name', 'base-input', 'Required')
     const placeholder = text('Placeholder', 'Placeholder text', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
-    const inputType = select('Input type', options, '', 'Optional')
+    const type = select('Input type', options, '', 'Optional')
     const isDisabled = boolean('isDisabled', false, 'Optional')
     const isInline = boolean('isInline', false, 'Optional')
     const isFullwidth = boolean('isFullwidth', false, 'Optional')
@@ -19,7 +19,7 @@ storiesOf('Components/BaseInput', module)
       id,
       name,
       labelText,
-      inputType,
+      type,
       isInline,
       isFullwidth,
       placeholder

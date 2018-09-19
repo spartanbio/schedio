@@ -6,6 +6,7 @@
       :name="name"
       v-bind="$attrs"
       :placeholder="placeholder"
+      :type="type"
       class="input"
       v-on="$listeners">
   </BaseLabel>
