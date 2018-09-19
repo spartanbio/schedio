@@ -18,7 +18,6 @@ import InputText from '@/components/mixins/InputText.mixin'
  * TODO:
  * [] - account for validation
  * [] - functional in form
- * [] - additional states
  * [] - Other inputs
  */
 

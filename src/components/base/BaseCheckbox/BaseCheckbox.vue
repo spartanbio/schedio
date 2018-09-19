@@ -20,7 +20,6 @@ import InputControl from '@/components/mixins/InputControl.mixin'
  * [] - account for validation
  * [] - functional in form
  * [] - Other inputs
- * [] - additional states
  */
 
 export default {
