@@ -1,11 +1,3 @@
-.label {
-  // label style
-
-  &--checkbox {
-    @include control-inline-label;
-  }
-}
-
 .checkbox {
   @include check-or-radio {
     border-radius: spacing('quarter');

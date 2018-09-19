@@ -17,11 +17,5 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-
-  computed: {
-    classList() {
-      return [this.isReversed ? 'label--reversed' : '']
-    }
   }
 }

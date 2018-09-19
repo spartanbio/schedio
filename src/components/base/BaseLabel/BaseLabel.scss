@@ -1,0 +1,28 @@
+.label {
+  @include font-size(5);
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+
+  &--inline {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .input {
+      margin-left: spacing();
+    }
+
+    &.label--reversed {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--fullwidth {
+    width: 100%;
+  }
+
+  &:not(:last-child) {
+    margin-right: spacing();
+  }
+}

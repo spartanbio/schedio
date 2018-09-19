@@ -1,5 +1,5 @@
 <template>
-  <label :for="id" :class="classList" class="label label--checkbox">
+  <BaseLabel :for="id" :is-reversed="isReversed" is-inline>
     <slot/>
     <input
       :id="id"
@@ -9,10 +9,11 @@
       class="checkbox"
       v-on="$listeners">
     <span class="checkbox__check"/>
-  </label>
+  </BaseLabel>
 </template>
 
 <script>
+import BaseLabel from '@/components/base/BaseLabel'
 import InputControl from '@/components/mixins/InputControl.mixin'
 /**
  * TODO:
@@ -24,6 +25,10 @@ import InputControl from '@/components/mixins/InputControl.mixin'
 
 export default {
   name: 'BaseCheckbox',
+
+  components: {
+    BaseLabel
+  },
 
   mixins: [InputControl]
 }

@@ -1,5 +1,5 @@
 <template>
-  <label :for="id" :class="labelClassList" class="label">
+  <BaseLabel :for="id" :is-inline="isInline" :is-fullwidth="isFullwidth">
     <slot/>
     <input
       :id="id"
@@ -8,12 +8,12 @@
       :placeholder="placeholder"
       class="input"
       v-on="$listeners">
-  </label>
+  </BaseLabel>
 </template>
 
 <script>
 import { allowed } from './options'
-
+import BaseLabel from '@/components/base/BaseLabel'
 /**
  * TODO:
  * [] - account for validation
@@ -24,6 +24,10 @@ import { allowed } from './options'
 
 export default {
   name: 'BaseInput',
+
+  components: {
+    BaseLabel
+  },
 
   inheritAttrs: false,
 
@@ -52,12 +56,11 @@ export default {
     isInline: {
       type: Boolean,
       default: false
-    }
-  },
+    },
 
-  computed: {
-    labelClassList() {
-      return [this.isInline ? 'label--inline' : '']
+    isFullwidth: {
+      type: Boolean,
+      default: true
     }
   }
 }
