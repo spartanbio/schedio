@@ -1,0 +1,27 @@
+.select {
+  @include control;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+
+  &-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      border: border('dark');
+      border-width: border-width('thick');
+      border-color: color('green');
+      border-right: 0;
+      border-top: 0;
+      content: '';
+      height: 0.75em;
+      margin-top: -0.2em;
+      position: absolute;
+      right: spacing('loose');
+      transform: rotate(-45deg);
+      width: 0.75em;
+    }
+  }
+}
