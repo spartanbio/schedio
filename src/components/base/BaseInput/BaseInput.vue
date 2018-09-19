@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :type="type"
       class="input"
-      v-on="$listeners">
+      v-on="listeners">
   </BaseLabel>
 </template>
 

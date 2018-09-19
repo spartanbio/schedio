@@ -7,7 +7,7 @@
       v-bind="$attrs"
       type="radio"
       class="radio"
-      v-on="$listeners">
+      v-on="listeners">
     <span class="radio__check"/>
   </BaseLabel>
 </template>

@@ -15,7 +15,8 @@ storiesOf('Components/BaseCheckbox', module)
       id,
       labelText,
       isReversed,
-      name
+      name,
+      value: 'label text'
     }
 
     return {
