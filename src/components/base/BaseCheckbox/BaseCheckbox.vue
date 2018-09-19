@@ -7,7 +7,7 @@
       v-bind="$attrs"
       type="checkbox"
       class="checkbox"
-      v-on="$listeners">
+      v-on="listeners">
     <span class="checkbox__check"/>
   </BaseLabel>
 </template>

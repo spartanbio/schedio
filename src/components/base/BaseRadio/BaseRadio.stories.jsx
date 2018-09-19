@@ -12,21 +12,24 @@ storiesOf('Components/BaseRadio', module)
         labelText: text('Label', 'Radio 1', 'Required'),
         isReversed: boolean('isReversed', false, 'Optional'),
         isDisabled: boolean('Radio 1 Disabled', false, 'Optional'),
-        name
+        name,
+        value: 'radio 1'
       },
       {
         id: text('ID', 'radio-2', 'Required'),
         labelText: text('Label', 'Radio 2', 'Required'),
         isReversed: boolean('isReversed', false, 'Optional'),
         isDisabled: boolean('Radio 2 Disabled', false, 'Optional'),
-        name
+        name,
+        value: 'radio 2'
       },
       {
         id: text('ID', 'radio-3', 'Required'),
         labelText: text('Label', 'Radio 3', 'Required'),
         isReversed: boolean('isReversed', false, 'Optional'),
         isDisabled: boolean('Radio 3 Disabled', false, 'Optional'),
-        name
+        name,
+        value: 'radio 3'
       }
     ]
 
@@ -34,7 +37,7 @@ storiesOf('Components/BaseRadio', module)
       render: h => (
         <div>
           {radios.map(radio => (
-            <BaseRadio {...{ props: radio }} disabled={radio.isDisabled}>
+            <BaseRadio {...{ props: radio }} disabled={radio.isDisabled} value={radio.value}>
               {radio.labelText}
             </BaseRadio>
           ))}

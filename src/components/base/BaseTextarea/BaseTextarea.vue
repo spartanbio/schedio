@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :rows="$attrs.rows || 10"
       class="textarea"
-      v-on="$listeners"/>
+      v-on="listeners"/>
   </BaseLabel>
 </template>
 

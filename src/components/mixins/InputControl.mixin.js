@@ -1,6 +1,10 @@
+import InputListeners from './InputListeners.mixin'
+
 export default {
   // prevent `<label/>` from inheriting attrs
   inheritAttrs: false,
+
+  mixins: [InputListeners],
 
   props: {
     id: {

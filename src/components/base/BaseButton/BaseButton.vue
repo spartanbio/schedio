@@ -3,7 +3,7 @@
     v-bind="$attrs"
     :class="classList"
     class="button"
-    v-on="$listeners">
+    v-on="listeners">
     <slot/>
   </button>
 </template>

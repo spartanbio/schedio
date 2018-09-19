@@ -1,10 +1,14 @@
 import BaseLabel from '@/components/base/BaseLabel'
+import InputListeners from './InputListeners.mixin'
+
 export default {
   components: {
     BaseLabel
   },
 
   inheritAttrs: false,
+
+  mixins: [InputListeners],
 
   props: {
     id: {
