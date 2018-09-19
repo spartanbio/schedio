@@ -14,7 +14,7 @@
     "lint:js": "vue-cli-service lint ./src/*,./config/**/*.js",
     "lint:style": "stylelint ./src/assets/**/*.scss",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
-    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -i -- npm run theo",
+    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo",
     "scaffold": "node scripts/scaffold-component.js"
   },
   "dependencies": {
