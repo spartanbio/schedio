@@ -31,7 +31,9 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validator: v => (allowed.includes(v) ? v : console.error(`type must be one of: ${allowed}`))
+      validator: value => {
+        return allowed.includes(value) ? true : console.error(`type must be one of: ${allowed}`)
+      }
     }
   }
 }
