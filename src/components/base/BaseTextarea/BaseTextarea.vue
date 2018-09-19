@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import BaseLabel from '@/components/base/BaseLabel'
+import InputText from '@/components/mixins/InputText.mixin'
 /**
  * TODO:
  * [] - account for validation
@@ -25,37 +25,6 @@ import BaseLabel from '@/components/base/BaseLabel'
 export default {
   name: 'BaseInput',
 
-  components: {
-    BaseLabel
-  },
-
-  inheritAttrs: false,
-
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
-
-    placeholder: {
-      type: String,
-      default: ''
-    },
-
-    isInline: {
-      type: Boolean,
-      default: false
-    },
-
-    isFullwidth: {
-      type: Boolean,
-      default: false
-    }
-  }
+  mixins: [InputText]
 }
 </script>

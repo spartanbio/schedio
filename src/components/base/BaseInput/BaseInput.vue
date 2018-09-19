@@ -13,7 +13,7 @@
 
 <script>
 import { allowed } from './options'
-import BaseLabel from '@/components/base/BaseLabel'
+import InputText from '@/components/mixins/InputText.mixin'
 /**
  * TODO:
  * [] - account for validation
@@ -25,42 +25,13 @@ import BaseLabel from '@/components/base/BaseLabel'
 export default {
   name: 'BaseInput',
 
-  components: {
-    BaseLabel
-  },
-
-  inheritAttrs: false,
+  mixins: [InputText],
 
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
-
     type: {
       type: String,
       default: 'text',
       validator: v => (allowed.includes(v) ? v : console.error(`type must be one of: ${allowed}`))
-    },
-
-    placeholder: {
-      type: String,
-      default: ''
-    },
-
-    isInline: {
-      type: Boolean,
-      default: false
-    },
-
-    isFullwidth: {
-      type: Boolean,
-      default: false
     }
   }
 }
