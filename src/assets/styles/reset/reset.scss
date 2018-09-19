@@ -24,12 +24,20 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-code {
+code,
+pre {
   background-color: color('grey', 'lighter');
   border-radius: spacing('quarter');
   color: color('magenta');
   font-family: $font-family-monospaced;
+}
+
+code {
   padding: spacing('quarter') spacing('half');
+}
+
+pre {
+  padding: spacing('half') spacing();
 }
 
 h1,
