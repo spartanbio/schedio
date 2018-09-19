@@ -14,7 +14,8 @@
     "lint:js": "vue-cli-service lint ./src/*,./config/**/*.js",
     "lint:style": "stylelint ./src/assets/**/*.scss",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
-    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -i -- npm run theo"
+    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -i -- npm run theo",
+    "scaffold": "node scripts/scaffold-component.js"
   },
   "dependencies": {
     "lodash.orderby": "^4.6.0",
@@ -30,8 +31,10 @@
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
     "@vue/eslint-config-standard": "^3.0.1",
+    "chalk": "^2.4.1",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
+    "fs-extra": "^7.0.0",
     "lint-staged": "^7.2.2",
     "node-sass": "^4.9.0",
     "node-sass-glob-importer": "^5.2.0",
