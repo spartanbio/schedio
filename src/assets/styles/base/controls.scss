@@ -17,6 +17,7 @@
   border: border();
   border-radius: spacing('quarter');
   display: inline-block;
+  flex: 1 1 0;
   margin: spacing('half') spacing('none');
   padding: spacing('half') spacing();
   transition: all 125ms ease;

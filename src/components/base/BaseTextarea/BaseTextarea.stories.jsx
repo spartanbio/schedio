@@ -1,28 +1,23 @@
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import BaseTextarea from '@/components/base/BaseTextarea'
 
 storiesOf('Components/BaseTextarea', module)
   .addDecorator(withKnobs)
   .add('Textarea', () => {
-    const id = text('ID', 'base-textarea', 'Required')
-    const name = text('name', 'base-textarea', 'Required')
-    const placeholder = text('Placeholder', 'Placeholder text', 'Required')
     const labelText = text('Label', 'Label text', 'Required')
+    const numberOfRows = number('Rows (default: 10)', 10, {}, 'Optional')
     const isDisabled = boolean('isDisabled', false, 'Optional')
-    const isInline = boolean('isInline', false, 'Optional')
-
     const props = {
-      id,
-      name,
-      labelText,
-      isInline,
-      placeholder
+      id: text('ID', 'base-textarea', 'Required'),
+      name: text('Name', 'base-textarea', 'Required'),
+      placeholder: text('Placeholder', 'Placeholder text', 'Required'),
+      isInline: boolean('isInline', false, 'Optional')
     }
 
     return {
       render: h => (
-        <BaseTextarea {...{ props }} disabled={isDisabled}>
+        <BaseTextarea {...{ props }} disabled={isDisabled} rows={numberOfRows}>
           {labelText}
         </BaseTextarea>
       )

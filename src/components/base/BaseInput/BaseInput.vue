@@ -60,7 +60,7 @@ export default {
 
     isFullwidth: {
       type: Boolean,
-      default: true
+      default: false
     }
   }
 }

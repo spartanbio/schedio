@@ -6,7 +6,8 @@
       :name="name"
       v-bind="$attrs"
       :placeholder="placeholder"
-      class="input"
+      :rows="$attrs.rows || 10"
+      class="textarea"
       v-on="$listeners"/>
   </BaseLabel>
 </template>
@@ -53,7 +54,7 @@ export default {
 
     isFullwidth: {
       type: Boolean,
-      default: true
+      default: false
     }
   }
 }
