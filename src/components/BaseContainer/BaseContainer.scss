@@ -1,0 +1,41 @@
+.container {
+  background-color: color('ice');
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin column-width($width) {
+  flex: 0 0 auto;
+  width: $width/12 * 100%;
+}
+
+.column {
+  display: block;
+  flex: 1 1 0px;
+  margin: 0 spacing();
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.column--narrow {
+    flex: 0;
+  }
+
+  @for $i from 1 through 11 {
+
+    &.column--#{$i} {
+      @include column-width($i);
+    }
+  }
+}
