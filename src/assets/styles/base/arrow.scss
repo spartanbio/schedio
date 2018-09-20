@@ -1,0 +1,45 @@
+$arrow-data: (
+  'down': (
+    'rotation': 315deg,
+    'vertical-offset': -0.2em
+  ),
+  'up': (
+    'rotation': 135deg,
+    'vertical-offset': 0.2em
+  ),
+  'left': (
+    'rotation': 45deg,
+    'vertical-offset': 0
+  ),
+  'right': (
+    'rotation': 225deg,
+    'vertical-offset': 0
+  )
+);
+
+/// Arrow mixin
+/// @param {String} $direction - The direction it should point
+/// @param {String} $position ('right') - Should it be on the left or right?
+/// @param {String} $direction ('green') - What color?
+/// @param {String} $direction (0.75em) - How big?
+@mixin arrow($direction, $position: 'right', $color: 'green', $size: 0.75em) {
+  $arrow: map-get($arrow-data, $direction);
+  $rotation: map-get($arrow, 'rotation');
+  $vertical-offset: map-get($arrow, 'vertical-offset');
+
+  border: border-width('thick') solid color($color);
+  border-right: 0;
+  border-top: 0;
+  content: '';
+  height: $size;
+  margin-top: $vertical-offset;
+  position: absolute;
+  transform: rotate($rotation);
+  width: $size;
+
+  @if $position == 'right' {
+    right: spacing('loose');
+  } @else if $position == 'left' {
+    left: spacing('loose');
+  }
+}
