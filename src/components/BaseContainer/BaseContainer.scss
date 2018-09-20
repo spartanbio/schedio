@@ -7,34 +7,26 @@
 .row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @mixin column-width($width) {
-  flex: 0 0 auto;
-  width: $width/12 * 100%;
+  flex: 0 0 $width/12 * 100%;
+  max-width: $width/12 * 100%;
 }
 
 .column {
   display: block;
   flex: 1 1 0px;
-  margin: 0 spacing();
+  padding: 0 spacing('half');
 
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &.column--narrow {
+  &--narrow {
     flex: 0;
   }
 
   @for $i from 1 through 11 {
 
-    &.column--#{$i} {
+    &--#{$i} {
       @include column-width($i);
     }
   }
