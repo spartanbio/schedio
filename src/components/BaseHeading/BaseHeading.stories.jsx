@@ -1,7 +1,7 @@
 // Global registration doesn't work with `jsx` templates
 import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import BaseHeading from '@/components/base/BaseHeading'
+import BaseHeading from '@/components//BaseHeading'
 
 storiesOf('Base Components/BaseHeading', module)
   .addDecorator(withKnobs)

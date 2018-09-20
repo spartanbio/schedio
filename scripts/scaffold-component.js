@@ -5,9 +5,8 @@ const path = require('path')
 // params
 const componentName = process.argv[2]
 const isBaseComponent = /^Base[A-Z]\w+/.test(componentName)
-const componentPath = isBaseComponent ? 'components/base' : 'components'
 const componentType = isBaseComponent ? 'Base Components' : 'Components'
-const writeDir = path.resolve(__dirname, '../src', componentPath, componentName)
+const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
 
 // don't overwrite existing components
 if (fs.pathExistsSync(path.resolve(writeDir, `${componentName}.vue`))) {
@@ -34,7 +33,7 @@ export default {
     extension: 'stories.jsx',
     contents: `import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import ${componentName} from '@/${componentPath}/${componentName}'
+import ${componentName} from '@/components/${componentName}'
 
 storiesOf('${componentType}/${componentName}', module)
   .addDecorator(withKnobs)

@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
-import BaseRadio from '@/components/base/BaseRadio'
+import BaseRadio from '@/components//BaseRadio'
 
 storiesOf('Base Components/BaseRadio', module)
   .addDecorator(withKnobs)

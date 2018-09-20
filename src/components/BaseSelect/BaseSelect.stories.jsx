@@ -1,6 +1,6 @@
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import BaseSelect from '@/components/base/BaseSelect'
+import BaseSelect from '@/components//BaseSelect'
 
 storiesOf('Base Components/BaseSelect', module)
   .addDecorator(withKnobs)

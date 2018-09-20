@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/vue'
 
-import Color from '@/components/docs/Color'
-import Graphics from '@/components/docs/Graphics.vue'
-import InteractionStates from '@/components/docs/InteractionStates.vue'
-import Spacing from '@/components/docs/Spacing.vue'
-import TypographyBase from '@/components/docs/Typography/TypographyBase.vue'
-import TypographyHeadings from '@/components/docs/Typography/TypographyHeadings.vue'
+import Color from '@/components/_docs/Color'
+import Graphics from '@/components/_docs/Graphics.vue'
+import InteractionStates from '@/components/_docs/InteractionStates.vue'
+import Spacing from '@/components/_docs/Spacing.vue'
+import TypographyBase from '@/components/_docs/Typography/TypographyBase.vue'
+import TypographyHeadings from '@/components/_docs/Typography/TypographyHeadings.vue'
 
 storiesOf('Design', module)
   .add('Color', () => h => <Color />)

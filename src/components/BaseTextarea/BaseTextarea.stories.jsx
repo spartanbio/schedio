@@ -1,6 +1,6 @@
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import BaseTextarea from '@/components/base/BaseTextarea'
+import BaseTextarea from '@/components//BaseTextarea'
 
 storiesOf('Base Components/BaseTextarea', module)
   .addDecorator(withKnobs)

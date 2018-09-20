@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import BaseLabel from '@/components/base/BaseLabel'
+import BaseLabel from '@/components//BaseLabel'
 import InputControl from '@/components/mixins/InputControl.mixin'
 /**
  * TODO:

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
-import { colors } from '@/components/base/BaseButton/options'
-import BaseButton from '@/components/base/BaseButton'
+import { colors } from '@/components//BaseButton/options'
+import BaseButton from '@/components//BaseButton'
 import ButtonGroup from '@/components/ButtonGroup'
 
 const colorOptions = ['', ...colors]

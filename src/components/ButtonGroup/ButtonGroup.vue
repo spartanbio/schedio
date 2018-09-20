@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { colors } from '@/components/base/BaseButton/options.js'
+import { colors } from '@/components//BaseButton/options.js'
 
 export default {
   name: 'ButtonGroup',

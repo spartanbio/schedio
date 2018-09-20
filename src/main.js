@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 // Automatically register base components
 const baseComponents = require.context(
-  '@/components/base', // path to components
+  '@/components/', // path to components
   true, // check subfolders?
   /Base[A-Z]\w+\.(vue|js)$/ // regex file name
 )
