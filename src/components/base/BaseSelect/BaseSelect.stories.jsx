@@ -12,11 +12,21 @@ storiesOf('Components/BaseSelect', module)
     const objectOfObjects = { object1, object2, object3, object4 }
     const arrayOfObjects = Object.values(objectOfObjects)
     const arrayOfStrings = arrayOfObjects.map(obj => obj.label)
+
+    const withGroups = {
+      'Group 1': [{ label: 'Group 1 option label', value: 'Group 1 option value' }],
+      'Group 2': [{ label: 'Group 2 option label', value: 'Group 2 option value' }],
+      'Group 3': [{ label: 'Group 3 option label', value: 'Group 3 option value' }],
+      'Group 4': [{ label: 'Group 4 option label', value: 'Group 4 option value' }]
+    }
+
     const optionTypes = {
       'Object of objects': objectOfObjects,
       'Array of objects': arrayOfObjects,
-      'Array of strings': arrayOfStrings
+      'Array of strings': arrayOfStrings,
+      'With groups': withGroups
     }
+
     const optionKeys = Object.keys(optionTypes)
 
     // workaround for storybook converting everything to strings

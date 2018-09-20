@@ -18,11 +18,23 @@
           :hidden="!multiple"
           :selected="!multiple"
           value=""
-          disabled>{{ placeholder }}</option>
-
-        <option v-for="(option, key) in selectOptions" :key="key" :value="getValue(option)">
-          {{ getLabel(option) }}
+          disabled>
+          {{ placeholder }}
         </option>
+
+        <template v-if="optionsHaveGroups">
+          <optgroup v-for="(group, groupName) in selectOptions" :label="groupName" :key="groupName">
+            <option v-for="(option, key) in group" :key="key" :value="getValue(option)">
+              {{ getLabel(option) }}
+            </option>
+          </optgroup>
+        </template>
+
+        <template v-else>
+          <option v-for="(option, key) in selectOptions" :key="key" :value="getValue(option)">
+            {{ getLabel(option) }}
+          </option>
+        </template>
 
       </select>
     </div>
@@ -56,6 +68,7 @@ export default {
 
   data() {
     return {
+      // <select multiple/> expects array
       selected: this.multiple ? [] : ''
     }
   },
@@ -67,6 +80,10 @@ export default {
         input: event => this.$emit('input', this.selected),
         change: event => this.$emit('input', this.selected)
       }
+    },
+
+    optionsHaveGroups() {
+      return Object.values(this.selectOptions).every(value => Array.isArray(value))
     }
   },
 
