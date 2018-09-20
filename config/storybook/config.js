@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { configure, addDecorator } from '@storybook/vue'
 import { setOptions } from '@storybook/addon-options'
-import registerComponentsGlobally from '@/utils/register-components-globally'
+import registerComponentsGlobally from '../../utils/register-components-globally'
 import StorybookContainer from './StorybookContainer.vue'
 
 import '@/assets/styles.scss'
@@ -15,11 +15,9 @@ const baseComponents = require.context(
 
 registerComponentsGlobally(baseComponents)
 
-const genericStories = require.context('@/stories', true, /.stories.(js|jsx)$/)
 const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
 
 function loadStories() {
-  genericStories.keys().forEach(filename => genericStories(filename))
   componentStories.keys().forEach(filename => componentStories(filename))
 }
 

@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/vue'
-
 import Color from '@/components/_docs/Color'
 import Graphics from '@/components/_docs/Graphics.vue'
 import InteractionStates from '@/components/_docs/InteractionStates.vue'
