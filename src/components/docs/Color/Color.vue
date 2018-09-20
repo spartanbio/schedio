@@ -31,7 +31,7 @@
 
 <script>
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import ColorChip from '@/components/docs/ColorChip'
+import ColorChip from './ColorChip'
 import orderBy from 'lodash.orderby'
 import groupBy from 'lodash.groupby'
 
