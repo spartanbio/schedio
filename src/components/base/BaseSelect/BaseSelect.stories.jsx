@@ -1,4 +1,4 @@
-import { select, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import BaseSelect from '@/components/base/BaseSelect'
 
@@ -11,31 +11,31 @@ storiesOf('Components/BaseSelect', module)
     const objectOfObjects = { object1, object2, object3 }
     const arrayOfObjects = Object.values(objectOfObjects)
     const arrayOfStrings = arrayOfObjects.map(obj => obj.label)
-
     const optionTypes = {
       'Object of objects': objectOfObjects,
       'Array of objects': arrayOfObjects,
       'Array of strings': arrayOfStrings
     }
+    const optionKeys = Object.keys(optionTypes)
 
     // workaround for storybook converting everything to strings
-    const options = select(
-      'selectOptions',
-      Object.keys(optionTypes),
-      Object.keys(optionTypes)[0],
-      'Required'
-    )
-
+    const options = select('selectOptions', optionKeys, optionKeys[0], 'Required')
     const props = {
-      id: 'base-select',
-      name: 'base-select',
-      selectOptions: optionTypes[options]
+      id: text('id', 'base-select', 'Required'),
+      name: text('name', 'base-select', 'Required'),
+      selectOptions: optionTypes[options],
+      isInline: boolean('isInline', false, 'Optional'),
+      isFullwidth: boolean('isFullwidth', false, 'Optional')
     }
+    const labelText = text('Label text', 'Label text', 'Required')
+    const isDisabled = boolean('Disabled', false, 'Optional')
 
     return {
       render: h => (
         <div>
-          <BaseSelect {...{ props }}>Label text</BaseSelect>
+          <BaseSelect {...{ props }} disabled={isDisabled}>
+            {labelText}
+          </BaseSelect>
           <p>selectOptions:</p>
           <pre>{JSON.stringify(optionTypes[options], '', 2)}</pre>
         </div>
