@@ -3,10 +3,11 @@
     <slot/>
     <div class="select-wrapper">
       <select
-        ref="select"
+        v-bind="$attrs"
         :id="id"
         :name="name"
-        class="select">
+        class="select"
+        v-on="listeners">
         <option
           value=""
           disabled
