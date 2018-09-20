@@ -28,18 +28,21 @@
     @include control-disabled;
   }
 
-  &:focus {
+  &:focus:not(:disabled) {
     @include control-focus;
   }
 
+  // stylelint-disable no-descending-specificity
+
+  &:hover,
   &:active,
   &:hover:active {
-    @include control-border-shadow;
-  }
 
-  &:hover:not(:disabled) {
-    @include control-border-shadow;
+    &:not(:disabled) {
+      @include control-border-shadow;
+    }
   }
+  // stylelint-enable
 }
 
 @mixin control-inline-label {
@@ -72,19 +75,23 @@
     @content;
   }
 
-  &:active ~ &__check {
-    @include control-border-shadow;
-  }
-
-  &:focus ~ &__check {
-    @include control-focus;
-  }
-
   &:disabled ~ &__check {
     @include control-disabled;
   }
 
-  &:checked:not(:focus) ~ &__check {
+  &:not(:disabled) ~ &__check:hover {
+    @include control-border-shadow;
+  }
+
+  &:active:not(:disabled) ~ &__check {
+    @include control-border-shadow;
+  }
+
+  &:focus:not(:disabled) ~ &__check {
+    @include control-focus;
+  }
+
+  &:checked:not(:focus):not(:disabled) ~ &__check {
     box-shadow: 0 0 0 1px color('spartan_blue', 'light'), shadow();
   }
 
@@ -92,9 +99,5 @@
     // force checked radios and checkboxes to grey
     background-color: color('grey', 'dark');
     border-color: color('grey', 'dark');
-  }
-
-  &:not(:disabled) ~ &__check:hover {
-    @include control-border-shadow;
   }
 }
