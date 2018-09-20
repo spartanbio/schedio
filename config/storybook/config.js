@@ -27,7 +27,8 @@ function loadStories() {
 setOptions({
   name: 'Schédio',
   hierarchySeparator: /\./,
-  hierarchyRootSeparator: /\//
+  hierarchyRootSeparator: /\//,
+  sortStoriesByKind: true
 })
 
 addDecorator(() => ({

@@ -2,7 +2,7 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import BaseLabel from '@/components/base/BaseLabel'
 
-storiesOf('Components/BaseLabel', module)
+storiesOf('Base Components/BaseLabel', module)
   .addDecorator(withKnobs)
   .add('Label', () => {
     const props = {

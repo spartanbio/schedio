@@ -3,7 +3,7 @@ import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs
 import { storiesOf } from '@storybook/vue'
 import BaseHeading from '@/components/base/BaseHeading'
 
-storiesOf('Components/BaseHeading', module)
+storiesOf('Base Components/BaseHeading', module)
   .addDecorator(withKnobs)
   .add('Headings', () => {
     const level = select('level', [1, 2, 3], '1', 'Required')

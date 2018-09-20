@@ -7,7 +7,7 @@ import ButtonGroup from '@/components/ButtonGroup'
 const colorOptions = ['', ...colors]
 const sizeOptions = ['', ...sizes]
 
-storiesOf('Components/BaseButton', module)
+storiesOf('Base Components/BaseButton', module)
   .addDecorator(withKnobs)
   .add('Button', () => {
     const buttonText = text('Button text', 'Sample text', 'Required')

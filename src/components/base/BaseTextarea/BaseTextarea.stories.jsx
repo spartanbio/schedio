@@ -2,7 +2,7 @@ import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import BaseTextarea from '@/components/base/BaseTextarea'
 
-storiesOf('Components/BaseTextarea', module)
+storiesOf('Base Components/BaseTextarea', module)
   .addDecorator(withKnobs)
   .add('Textarea', () => {
     const numberOfRows = number('Rows (default: 10)', 10, {}, 'Optional')

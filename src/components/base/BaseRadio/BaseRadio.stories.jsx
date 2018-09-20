@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import BaseRadio from '@/components/base/BaseRadio'
 
-storiesOf('Components/BaseRadio', module)
+storiesOf('Base Components/BaseRadio', module)
   .addDecorator(withKnobs)
   .add('Radio', () => {
     const name = text('Name', 'radio-group', 'Required')

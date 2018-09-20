@@ -4,7 +4,9 @@ const path = require('path')
 
 // params
 const componentName = process.argv[2]
-const componentPath = /^Base[A-Z]\w+/.test(componentName) ? 'components/base' : 'components'
+const isBaseComponent = /^Base[A-Z]\w+/.test(componentName)
+const componentPath = isBaseComponent ? 'components/base' : 'components'
+const componentType = isBaseComponent ? 'Base Components' : 'Components'
 const writeDir = path.resolve(__dirname, '../src', componentPath, componentName)
 
 // don't overwrite existing components
@@ -34,7 +36,7 @@ export default {
 import { storiesOf } from '@storybook/vue'
 import ${componentName} from '@/${componentPath}/${componentName}'
 
-storiesOf('Components/${componentName}', module)
+storiesOf('${componentType}/${componentName}', module)
   .addDecorator(withKnobs)
   .add('${componentName}', () => {
     return {

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue'
 import { allowed as options } from '@/components/base/BaseInput/options'
 import BaseInput from '@/components/base/BaseInput'
 
-storiesOf('Components/BaseInput', module)
+storiesOf('Base Components/BaseInput', module)
   .addDecorator(withKnobs)
   .add('Input', () => {
     const props = {

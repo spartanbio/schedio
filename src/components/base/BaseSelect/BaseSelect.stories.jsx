@@ -2,7 +2,7 @@ import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import BaseSelect from '@/components/base/BaseSelect'
 
-storiesOf('Components/BaseSelect', module)
+storiesOf('Base Components/BaseSelect', module)
   .addDecorator(withKnobs)
   .add('BaseSelect', () => {
     const object1 = { label: 'Option 1', value: 'option1' }

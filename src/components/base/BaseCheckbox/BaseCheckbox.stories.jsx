@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import BaseCheckbox from '@/components/base/BaseCheckbox'
 
-storiesOf('Components/BaseCheckbox', module)
+storiesOf('Base Components/BaseCheckbox', module)
   .addDecorator(withKnobs)
   .add('Checkbox', () => {
     const props = {
