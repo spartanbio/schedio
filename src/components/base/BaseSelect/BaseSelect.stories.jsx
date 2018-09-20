@@ -34,20 +34,18 @@ storiesOf('Components/BaseSelect', module)
     const props = {
       id: text('id', 'base-select', 'Required'),
       name: text('name', 'base-select', 'Required'),
+      label: text('Label text', 'Label text', 'Required'),
       multiple: boolean('Multiple', false, 'Optional'),
       selectOptions: optionTypes[options],
       isInline: boolean('isInline', false, 'Optional'),
       isFullwidth: boolean('isFullwidth', false, 'Optional')
     }
-    const labelText = text('Label text', 'Label text', 'Required')
     const isDisabled = boolean('Disabled', false, 'Optional')
 
     return {
       render: h => (
         <div>
-          <BaseSelect {...{ props }} disabled={isDisabled}>
-            {labelText}
-          </BaseSelect>
+          <BaseSelect {...{ props }} disabled={isDisabled} />
           <p>selectOptions:</p>
           <pre>{JSON.stringify(optionTypes[options], '', 2)}</pre>
         </div>

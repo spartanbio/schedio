@@ -17,6 +17,11 @@ export default {
       required: true
     },
 
+    label: {
+      type: String,
+      required: true
+    },
+
     isReversed: {
       type: Boolean,
       default: false

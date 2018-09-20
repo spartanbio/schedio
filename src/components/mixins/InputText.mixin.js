@@ -21,6 +21,11 @@ export default {
       required: true
     },
 
+    label: {
+      type: String,
+      required: true
+    },
+
     placeholder: {
       type: String,
       default: ''

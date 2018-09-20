@@ -1,6 +1,9 @@
 <template>
-  <BaseLabel :for="id" :is-inline="isInline" :is-fullwidth="isFullwidth">
-    <slot/>
+  <BaseLabel
+    :for="id"
+    :is-inline="isInline"
+    :is-fullwidth="isFullwidth"
+    :label="label">
     <textarea
       :id="id"
       :name="name"
@@ -17,7 +20,6 @@ import InputText from '@/components/mixins/InputText.mixin'
 /**
  * TODO:
  * [] - account for validation
- * [] - functional in form
  * [] - Other inputs
  */
 

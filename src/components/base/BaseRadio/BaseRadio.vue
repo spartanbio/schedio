@@ -1,6 +1,9 @@
 <template>
-  <BaseLabel :for="id" :is-reversed="isReversed" is-inline>
-    <slot/>
+  <BaseLabel
+    :for="id"
+    :is-reversed="isReversed"
+    :label="label"
+    is-inline>
     <input
       :id="id"
       :name="name"
@@ -18,7 +21,6 @@ import InputControl from '@/components/mixins/InputControl.mixin'
 /**
  * TODO:
  * [] - account for validation
- * [] - functional in form
  * [] - Other inputs
  */
 

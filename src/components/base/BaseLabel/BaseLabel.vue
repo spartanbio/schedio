@@ -1,5 +1,6 @@
 <template>
   <label :class="classList" class="label">
+    {{ label }}
     <slot/>
   </label>
 </template>
@@ -9,6 +10,11 @@ export default {
   name: 'BaseLabel',
 
   props: {
+    label: {
+      type: String,
+      required: true
+    },
+
     isInline: {
       type: Boolean,
       default: false

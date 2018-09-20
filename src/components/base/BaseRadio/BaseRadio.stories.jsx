@@ -9,7 +9,7 @@ storiesOf('Components/BaseRadio', module)
     const radios = [
       {
         id: text('ID', 'radio-1', 'Required'),
-        labelText: text('Label', 'Radio 1', 'Required'),
+        label: text('Label', 'Radio 1', 'Required'),
         isReversed: boolean('isReversed', false, 'Optional'),
         isDisabled: boolean('Radio 1 Disabled', false, 'Optional'),
         name,
@@ -17,7 +17,7 @@ storiesOf('Components/BaseRadio', module)
       },
       {
         id: text('ID', 'radio-2', 'Required'),
-        labelText: text('Label', 'Radio 2', 'Required'),
+        label: text('Label', 'Radio 2', 'Required'),
         isReversed: boolean('isReversed', false, 'Optional'),
         isDisabled: boolean('Radio 2 Disabled', false, 'Optional'),
         name,
@@ -25,7 +25,7 @@ storiesOf('Components/BaseRadio', module)
       },
       {
         id: text('ID', 'radio-3', 'Required'),
-        labelText: text('Label', 'Radio 3', 'Required'),
+        label: text('Label', 'Radio 3', 'Required'),
         isReversed: boolean('isReversed', false, 'Optional'),
         isDisabled: boolean('Radio 3 Disabled', false, 'Optional'),
         name,
@@ -37,9 +37,7 @@ storiesOf('Components/BaseRadio', module)
       render: h => (
         <div>
           {radios.map(radio => (
-            <BaseRadio {...{ props: radio }} disabled={radio.isDisabled} value={radio.value}>
-              {radio.labelText}
-            </BaseRadio>
+            <BaseRadio {...{ props: radio }} disabled={radio.isDisabled} value={radio.value} />
           ))}
         </div>
       )

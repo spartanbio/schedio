@@ -1,7 +1,9 @@
 <template>
-  <BaseLabel :for="id" :is-inline="isInline" :is-fullwidth="isFullwidth">
-
-    <slot/>
+  <BaseLabel
+    :for="id"
+    :is-inline="isInline"
+    :is-fullwidth="isFullwidth"
+    :label="label">
 
     <div :class="{ 'select-wrapper--multiple': multiple }" class="select-wrapper">
 
