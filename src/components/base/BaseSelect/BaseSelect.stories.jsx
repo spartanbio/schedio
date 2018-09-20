@@ -8,7 +8,8 @@ storiesOf('Components/BaseSelect', module)
     const object1 = { label: 'Option 1', value: 'option1' }
     const object2 = { label: 'Option 2', value: 'option2' }
     const object3 = { label: 'Option 3', value: 'option3' }
-    const objectOfObjects = { object1, object2, object3 }
+    const object4 = { label: 'Option 4', value: 'option4' }
+    const objectOfObjects = { object1, object2, object3, object4 }
     const arrayOfObjects = Object.values(objectOfObjects)
     const arrayOfStrings = arrayOfObjects.map(obj => obj.label)
     const optionTypes = {
@@ -23,6 +24,7 @@ storiesOf('Components/BaseSelect', module)
     const props = {
       id: text('id', 'base-select', 'Required'),
       name: text('name', 'base-select', 'Required'),
+      multiple: boolean('Multiple', false, 'Optional'),
       selectOptions: optionTypes[options],
       isInline: boolean('isInline', false, 'Optional'),
       isFullwidth: boolean('isFullwidth', false, 'Optional')

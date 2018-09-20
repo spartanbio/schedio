@@ -2,6 +2,7 @@
   @include control;
   appearance: none;
   cursor: pointer;
+  overflow: auto;
 
   &-wrapper {
     align-items: center;
@@ -12,6 +13,13 @@
 
     &::after {
       @include arrow('down', 'right');
+    }
+
+    &--multiple {
+
+      &::after {
+        display: none;
+      }
     }
   }
 }
