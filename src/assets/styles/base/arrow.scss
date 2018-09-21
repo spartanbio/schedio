@@ -22,6 +22,7 @@ $arrow-data: (
 /// @param {String} $position ('right') - Should it be on the left or right?
 /// @param {String} $direction ('green') - What color?
 /// @param {String} $direction (0.75em) - How big?
+
 @mixin arrow($direction, $position: 'right', $color: 'green', $size: 0.75em) {
   $arrow: map-get($arrow-data, $direction);
   $rotation: map-get($arrow, 'rotation');

@@ -1,6 +1,7 @@
 /// Returns border width.
 /// @param {String} $variant [base] - The border variant key.
 /// @return {Number} The width for the border.
+
 @function border-width($variant: 'base') {
   $fetched-value: map-get($borders-width, $variant);
 
@@ -14,6 +15,7 @@
 /// Returns a border.
 /// @param {String} $variant [base] - The border variant key.
 /// @return {List} The border value.
+
 @function border($variant: 'base') {
   $fetched-value: map-get($borders-data, $variant);
 

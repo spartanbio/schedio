@@ -6,6 +6,7 @@ $color-palette-data: $palettes;
 /// @param {String} $value - The darkness/lightness of the color. Defaults to
 /// base.
 /// @return {Color} The color value.
+
 @function color($hue, $value: 'base') {
   @if map-has-key($color-palette-data, $hue) {
     $fetched-palette: map-get($color-palette-data, $hue);

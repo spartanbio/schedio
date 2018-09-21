@@ -1,5 +1,4 @@
 .table {
-
   &__cell {
     padding: spacing('base');
 
@@ -15,9 +14,7 @@
   }
 
   &.table--bordered {
-
     tbody {
-
       tr {
         border-top: border();
       }
@@ -25,11 +22,8 @@
   }
 
   &.table--striped {
-
     tbody {
-
       tr {
-
         &:nth-child(even) {
           background-color: lighten(color('grey', 'lighter'), 2%);
         }
@@ -38,9 +32,7 @@
   }
 
   &.table--hoverable {
-
     tbody {
-
       tr:hover {
         background-color: color('grey', 'lighter') !important;
       }

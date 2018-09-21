@@ -33,11 +33,9 @@
   }
 
   // stylelint-disable no-descending-specificity
-
   &:hover,
   &:active,
   &:hover:active {
-
     &:not(:disabled) {
       @include control-border-shadow;
     }
