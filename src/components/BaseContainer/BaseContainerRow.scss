@@ -1,0 +1,66 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -1 * spacing();
+
+  &--center-columns {
+    justify-content: center;
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-after-#{$breakpoint} {
+        @include after-breakpoint($breakpoint) {
+          justify-content: center;
+        }
+      }
+    }
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-until-#{$breakpoint} {
+        @include until-breakpoint($breakpoint) {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  &--vertically-centered {
+    align-items: center;
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-after-#{$breakpoint} {
+        @include after-breakpoint($breakpoint) {
+          align-items: center;
+        }
+      }
+    }
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-until-#{$breakpoint} {
+        @include until-breakpoint($breakpoint) {
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &--columns-right {
+    justify-content: flex-end;
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-after-#{$breakpoint} {
+        @include after-breakpoint($breakpoint) {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-until-#{$breakpoint} {
+        @include until-breakpoint($breakpoint) {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
