@@ -4,6 +4,7 @@
   max-width: 100%;
   padding: 0 spacing('half');
   position: relative;
+
   // Responsive columns
 
   @each $breakpoint in map-keys($media-breakpoints) {
@@ -14,85 +15,47 @@
       }
     }
   }
+
   // Fractional columns
 
   @for $i from 1 through $grid-columns {
     &--#{$i} {
-      @include column-width($i);
-
-      @each $breakpoint in map-keys($media-breakpoints) {
-        &-#{$breakpoint} {
-          @include after-breakpoint($breakpoint) {
-            @include column-width($i);
-          }
-        }
+      @include generate-all-breakpoints-after {
+        @include column-width($i);
       }
     }
+
     // Offsets
     &--offset-#{$i} {
-      margin-left: percentage($i, $grid-columns);
-
-      @each $breakpoint in map-keys($media-breakpoints) {
-        &-#{$breakpoint} {
-          @include after-breakpoint($breakpoint) {
-            margin-left: percentage($i, $grid-columns);
-          }
-        }
+      @include generate-all-breakpoints-after {
+        margin-left: percentage($i, $grid-columns);
       }
     }
+
     // Column order
     &--order-#{$i} {
-      order: $i;
-
-      @each $breakpoint in map-keys($media-breakpoints) {
-        &-#{$breakpoint} {
-          @include after-breakpoint($breakpoint) {
-            order: $i;
-          }
-        }
+      @include generate-all-breakpoints-after {
+        order: $i;
       }
     }
 
     &--order-first {
-      order: -1;
-
-      @each $breakpoint in map-keys($media-breakpoints) {
-        &-#{$breakpoint} {
-          @include after-breakpoint($breakpoint) {
-            order: -1;
-          }
-        }
+      @include generate-all-breakpoints-after {
+        order: -1;
       }
     }
 
     &--order-last {
-      order: $grid-columns + 1;
-
-      @each $breakpoint in map-keys($media-breakpoints) {
-        &-#{$breakpoint} {
-          @include after-breakpoint($breakpoint) {
-            order: $grid-columns + 1;
-          }
-        }
+      @include generate-all-breakpoints-after {
+        order: $grid-columns + 1;
       }
     }
   }
+
   // Fit column to content
   &--narrow {
-    flex: none;
-
-    @each $breakpoint in map-keys($media-breakpoints) {
-      &-until-#{$breakpoint} {
-        @include until-breakpoint($breakpoint) {
-          flex: none;
-        }
-      }
-
-      &-before-#{$breakpoint} {
-        @include after-breakpoint($breakpoint) {
-          flex: none;
-        }
-      }
+    @include generate-all-breakpoints {
+      flex: none;
     }
   }
 }
