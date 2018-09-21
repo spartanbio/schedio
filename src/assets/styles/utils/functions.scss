@@ -1,0 +1,8 @@
+/// Returns a percentage
+/// @param {Number} $x - The number to divide
+/// @param {Number} $y - The number to divide by
+/// @return {Number} - The percentage
+
+@function percentage($x, $y) {
+  @return $x / $y * 100%;
+}
