@@ -21,10 +21,62 @@
 
   &--center-columns {
     justify-content: center;
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-above-#{$breakpoint} {
+        @include after-breakpoint($breakpoint) {
+          justify-content: center;
+        }
+      }
+    }
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-below-#{$breakpoint} {
+        @include until-breakpoint($breakpoint) {
+          justify-content: center;
+        }
+      }
+    }
   }
 
   &--vertically-centered {
-    align-items: cetner;
+    align-items: center;
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-above-#{$breakpoint} {
+        @include after-breakpoint($breakpoint) {
+          align-items: center;
+        }
+      }
+    }
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-below-#{$breakpoint} {
+        @include until-breakpoint($breakpoint) {
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &--columns-right {
+    justify-content: flex-end;
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-above-#{$breakpoint} {
+        @include after-breakpoint($breakpoint) {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    @each $breakpoint in map-keys($media-breakpoints) {
+      &-below-#{$breakpoint} {
+        @include until-breakpoint($breakpoint) {
+          justify-content: flex-end;
+        }
+      }
+    }
   }
 }
 
