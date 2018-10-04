@@ -9,10 +9,12 @@ import flexOptions from './row-options'
 import kebabCase from 'lodash.kebabcase'
 import mobileBreakpoints from './mobile-breakpoints'
 
+const validator = v => (flexOptions.includes(v) ? true : console.error(`Allowed: ${flexOptions}`))
+
 const propSettings = () => ({
   type: String,
   default: '',
-  validator: value => flexOptions.includes(value)
+  validator
 })
 
 // set up all $props relying on mobile breakpoints
@@ -36,29 +38,13 @@ export default {
       default: false
     },
 
-    justify: {
-      type: String,
-      default: '',
-      validator: value => {
-        if (!flexOptions.includes(value)) {
-          return console.error(`\`justify\` must be one of ${flexOptions}`)
-        }
+    /* eslint-disable vue/require-default-prop */
+    // eslint doesn't see prop defaults in functions
+    // Add base props without breakpoints
+    justify: propSettings(),
 
-        return true
-      }
-    },
-
-    align: {
-      type: String,
-      default: '',
-      validator: value => {
-        if (!flexOptions.includes(value)) {
-          return console.error(`\`align\` must be one of ${flexOptions}`)
-        }
-
-        return true
-      }
-    }
+    align: propSettings()
+    /* eslint-enable */
   },
 
   computed: {
