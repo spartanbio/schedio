@@ -11,9 +11,7 @@ storiesOf('Base Components/BaseContainer', module)
       render: h => (
         <BaseContainer>
           <BaseContainerRow>
-            <BaseContainerColumn class="column--1" md sm="12" offset="1" order-sm="last">
-              content
-            </BaseContainerColumn>
+            <BaseContainerColumn>content</BaseContainerColumn>
           </BaseContainerRow>
         </BaseContainer>
       )
