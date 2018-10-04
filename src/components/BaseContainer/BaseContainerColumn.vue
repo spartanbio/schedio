@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import kebabCase from 'lodash.kebabcase'
+import sharedMethods from './shared-methods'
 import mobileBreakpoints from './mobile-breakpoints'
 
 // Validator function for most $props
@@ -44,6 +44,8 @@ const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
 
 export default {
   name: 'BaseContainerColumn',
+
+  mixins: [sharedMethods],
 
   props: {
     ...breakpointProps,
@@ -108,39 +110,13 @@ export default {
   },
 
   methods: {
-    /**
-     * Get the $props that should be used to generate responsive class names
-     * @param {(string|RegExp)} modifier - Class modifier (i.e.: size, narrow, order, offset)
-     * @returns {Object.<string, (number|string|boolean)>}
-     */
-    getClassNameProps(modifier) {
-      const pattern = modifier instanceof RegExp ? modifier : new RegExp(modifier)
-
-      return Object.keys(this.$props).reduce((classes, className) => {
-        if (pattern.test(className) && this.$props[className]) {
-          const kebabName = kebabCase(className)
-          classes[kebabName] = this.$props[className]
-        }
-
-        return classes
-      }, {})
-    },
-
-    /**
-     * Generate an array of modifier classes
-     * @param {(string|RegExp)} modifier - Class modifier (i.e.: size, narrow, order, offset)
-     * @returns {Array.<string>}
-     */
-    generateResponsiveClassNames(modifier) {
-      const classes = this.getClassNameProps(modifier)
-
-      return Object.keys(classes).reduce((acc, key) => {
-        // e.g.: 'column--1', 'column--narrow'
-        if (typeof classes[key] === 'boolean') return acc.concat(`column--${key}`)
-        // e.g.: 'column--sm-1', 'column--offset-md-1', 'column--narrow-until-lg'
-        if (classes[key]) return acc.concat(`column--${key}-${classes[key]}`)
-        return acc
-      }, [])
+    // Used by mixin
+    classNameReducer: classes => (acc, key) => {
+      // e.g.: 'column--1', 'column--narrow'
+      if (typeof classes[key] === 'boolean') return acc.concat(`column--${key}`)
+      // e.g.: 'column--sm-1', 'column--offset-md-1', 'column--narrow-until-lg'
+      if (classes[key]) return acc.concat(`column--${key}-${classes[key]}`)
+      return acc
     }
   }
 }

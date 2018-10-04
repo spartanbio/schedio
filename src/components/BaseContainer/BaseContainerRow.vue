@@ -6,7 +6,8 @@
 
 <script>
 import flexOptions from './row-options'
-import kebabCase from 'lodash.kebabcase'
+import sharedMethods from './shared-methods'
+
 import mobileBreakpoints from './mobile-breakpoints'
 
 const validator = v => (flexOptions.includes(v) ? true : console.error(`Allowed: ${flexOptions}`))
@@ -29,6 +30,8 @@ const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
 
 export default {
   name: 'BaseContainerRow',
+
+  mixins: [sharedMethods],
 
   props: {
     ...breakpointProps,
@@ -62,40 +65,14 @@ export default {
   },
 
   methods: {
-    /**
-     * Get the $props that should be used to generate responsive class names
-     * @param {(string|RegExp)} modifier - Class modifier (i.e.: size, narrow, order, offset)
-     * @returns {Object.<string, (number|string|boolean)>}
-     */
-    getClassNameProps(modifier) {
-      const pattern = modifier instanceof RegExp ? modifier : new RegExp(modifier)
+    // used by mixin
+    classNameReducer: classes => (acc, key) => {
+      // e.g.: $props.alignUntilXl => 'row--align-center-until-lg'
+      const name = key.replace(/(align-|justify-)(.+)/, `row--$1${classes[key]}-$2`)
 
-      return Object.keys(this.$props).reduce((classes, className) => {
-        if (pattern.test(className) && this.$props[className]) {
-          const kebabName = kebabCase(className)
-          classes[kebabName] = this.$props[className]
-        }
+      if (classes[key]) return acc.concat(name)
 
-        return classes
-      }, {})
-    },
-
-    /**
-     * Generate an array of modifier classes
-     * @param {(string|RegExp)} modifier - Class modifier (i.e.: size, narrow, order, offset)
-     * @returns {Array.<string>}
-     */
-    generateResponsiveClassNames(modifier) {
-      const classes = this.getClassNameProps(modifier)
-
-      return Object.keys(classes).reduce((acc, key) => {
-        // e.g.: $props.alignUntilXl => 'row--align-center-until-lg'
-        const name = key.replace(/(align-|justify-)(.+)/, `row--$1${classes[key]}-$2`)
-
-        if (classes[key]) return acc.concat(name)
-
-        return acc
-      }, [])
+      return acc
     }
   }
 }
