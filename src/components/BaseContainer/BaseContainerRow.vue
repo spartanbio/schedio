@@ -1,8 +1,5 @@
 <template>
   <div :class="classList" class="row">
-    <pre>
-      {{ theNames }}
-    </pre>
     <slot/>
   </div>
 </template>
