@@ -10,7 +10,7 @@ storiesOf('Base Components/BaseContainer', module)
     return {
       render: h => (
         <BaseContainer>
-          <BaseContainerRow>
+          <BaseContainerRow alignUntilXl="center">
             <BaseContainerColumn>content</BaseContainerColumn>
           </BaseContainerRow>
         </BaseContainer>

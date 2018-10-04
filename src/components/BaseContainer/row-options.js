@@ -1,1 +1,1 @@
-export const columnJustificationOptions = ['', 'center', 'right']
+export default ['', 'start', 'center', 'end', 'around', 'between']
