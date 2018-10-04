@@ -46,10 +46,9 @@ $media-breakpoints: (
 
 @mixin generate-all-breakpoints-after($infix: null) {
   @content;
-
-  @if (type-of($infix) == string) {
-    $infix: '-' + $infix;
-  }
+  // @if (type-of($infix) == string) {
+  // $infix: '-' + $infix;
+  // }
 
   @each $breakpoint in map-keys($media-breakpoints) {
     &#{$infix}-#{$breakpoint} {
