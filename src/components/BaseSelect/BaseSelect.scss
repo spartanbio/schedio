@@ -1,0 +1,33 @@
+.select {
+  @include control;
+  appearance: none;
+  cursor: pointer;
+  overflow: auto;
+
+  &-wrapper {
+    align-items: center;
+    display: inline-flex;
+    flex-shrink: 100;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      @include arrow('down', 'right');
+    }
+
+    &--multiple {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.label--inline {
+
+  .select {
+    // prevent arrow from overlapping default placeholder
+    min-width: 12em;
+  }
+}

@@ -1,0 +1,33 @@
+.button {
+  @include button-size-regular;
+
+  border-radius: spacing('quarter');
+  box-shadow: shadow('base');
+  cursor: pointer;
+  margin: spacing('half');
+  padding: spacing('half') spacing('double');
+  transition: all 125ms ease;
+
+  &:hover {
+    box-shadow: shadow('heavy');
+  }
+
+  &--size-small {
+    @include button-size-small;
+  }
+
+  &--size-regular {
+    @include button-size-regular;
+  }
+
+  &--size-large {
+    @include button-size-large;
+  }
+
+  @each $color-name in $button-colors {
+
+    &--color-#{$color-name} {
+      @include button-color($color-name);
+    }
+  }
+}

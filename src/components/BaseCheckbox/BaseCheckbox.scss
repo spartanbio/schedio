@@ -1,0 +1,24 @@
+.checkbox {
+  @include check-or-radio {
+    border-radius: spacing('quarter');
+  }
+
+  & ~ &__check::after {
+    background-color: transparent !important;
+    border: border-width('thick') solid color('green');
+    border-left: none;
+    border-top: none;
+    content: '';
+    height: 0.65em;
+    opacity: 0;
+    position: relative;
+    top: -0.05em;
+    transition: all 200ms ease;
+    transform: rotate(45deg);
+    width: 0.35em;
+  }
+
+  &:checked ~ &__check::after {
+    opacity: 1;
+  }
+}

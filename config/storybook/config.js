@@ -1,11 +1,43 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { configure } from '@storybook/vue'
-import '@/assets/base.scss'
+import { configure, addDecorator } from '@storybook/vue'
+import { setOptions } from '@storybook/addon-options'
+import registerComponentsGlobally from '../../utils/register-components-globally'
+import StorybookContainer from './StorybookContainer.vue'
 
-const req = require.context('@/stories', true, /.stories.js$/)
+import '@/assets/styles.scss'
+
+// Automatically register base components
+const baseComponents = require.context(
+  '@/components/', // path to components
+  true, // check subfolders?
+  /Base[A-Z]\w+\.(vue|js)$/ // regex file name
+)
+
+registerComponentsGlobally(baseComponents)
+
+const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  componentStories.keys().forEach(filename => componentStories(filename))
 }
+
+// Set options
+setOptions({
+  name: 'Schédio',
+  hierarchySeparator: /\./,
+  hierarchyRootSeparator: /\//,
+  sortStoriesByKind: true
+})
+
+addDecorator(() => ({
+  // TODO: remove duplicate container
+  render() {
+    return (
+      <StorybookContainer>
+        <story />
+      </StorybookContainer>
+    )
+  }
+}))
 
 configure(loadStories, module)

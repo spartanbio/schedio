@@ -1,3 +1,4 @@
+const globImporter = require('node-sass-glob-importer')
 const path = require('path')
 
 module.exports = {
@@ -9,7 +10,18 @@ module.exports = {
     },
     'style-resources-loader': {
       preProcessor: 'scss',
-      patterns: [path.resolve(__dirname, 'src/assets/variables.scss')]
+      patterns: [
+        path.resolve(__dirname, 'src/assets/styles/tokens/dist/*.scss'),
+        path.resolve(__dirname, 'src/assets/styles/base/*.scss')
+      ]
+    }
+  },
+  css: {
+    extract: false,
+    loaderOptions: {
+      sass: {
+        importer: globImporter()
+      }
     }
   },
   configureWebpack: {

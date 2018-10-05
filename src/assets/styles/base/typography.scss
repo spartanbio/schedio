@@ -1,0 +1,68 @@
+@mixin font-size($size) {
+  font-size: map-get(nth($sizes, $size), 'size');
+  letter-spacing: map-get(nth($sizes, $size), 'tracking');
+  line-height: map-get(nth($sizes, $size), 'leading');
+}
+
+@mixin display($size, $text-transform: null) {
+  @include font-size($size);
+
+  @if ($text-transform) {
+    text-transform: $text-transform;
+  }
+
+  font-weight: $font-weight-bold;
+
+  &:not(:first-child) {
+    margin-top: spacing('double');
+  }
+
+  &.subtle {
+    font-weight: $font-weight-light;
+    text-transform: unset;
+  }
+}
+
+$size-1: (
+  'size': $font-size-1,
+  'leading': $large-text-line-height,
+  'tracking': 0.025em
+);
+
+$size-2: (
+  'size': $font-size-2,
+  'leading': $large-text-line-height,
+  'tracking': 0.025em
+);
+
+$size-3: (
+  'size': $font-size-3,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-4: (
+  'size': $font-size-4,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-5: (
+  'size': $font-size-5,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-6: (
+  'size': $font-size-6,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$size-7: (
+  'size': $font-size-7,
+  'leading': $base-line-height,
+  'tracking': normal
+);
+
+$sizes: ($size-1, $size-2, $size-3, $size-4, $size-5, $size-6, $size-7);

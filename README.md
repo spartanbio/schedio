@@ -1,5 +1,8 @@
 # schedio-design
 
+Uses [Storybook](https://storybook.js.org), [Theo](https://github.com/salesforce-ux/theo)
+and [Vue](https://vuejs.org) to document Spartan's design system.
+
 ## Requirements
 
 - Node 8.11.4+
@@ -7,28 +10,25 @@
 
 ## Project setup
 
-```
-npm install
+```bash
+$ npm install
 ```
 
 ### Compiles and hot-reloads for development
 
-```
-# Vue app localhost:8080
-npm run serve
-
-# Storybook localhost:6006
-npm run serve:storybook
+```bash
+# Served at localhost:6006
+npm run dev
 ```
 
 ### Compiles and minifies for production
 
-```
+```bash
 npm run build
 ```
 
 ### Lints and fixes files
 
-```
+```bash
 npm run lint
 ```

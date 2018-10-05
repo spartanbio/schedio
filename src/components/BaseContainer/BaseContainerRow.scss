@@ -1,0 +1,74 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -1 * spacing();
+
+  &--justify {
+    &-start {
+      @include generate-all-breakpoints {
+        justify-content: flex-start;
+      }
+    }
+
+    &-center {
+      @include generate-all-breakpoints {
+        justify-content: center;
+      }
+    }
+
+    &-end {
+      @include generate-all-breakpoints {
+        justify-content: flex-end;
+      }
+    }
+
+    &-around {
+      @include generate-all-breakpoints {
+        justify-content: space-around;
+      }
+    }
+
+    &-between {
+      @include generate-all-breakpoints {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &--align {
+    &-start {
+      @include generate-all-breakpoints {
+        align-items: flex-start;
+      }
+    }
+
+    &-center {
+      @include generate-all-breakpoints {
+        align-items: center;
+      }
+    }
+
+    &-end {
+      @include generate-all-breakpoints {
+        align-items: flex-end;
+      }
+    }
+
+    &-around {
+      @include generate-all-breakpoints {
+        align-items: space-around;
+      }
+    }
+
+    &-between {
+      @include generate-all-breakpoints {
+        align-items: space-between;
+      }
+    }
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+}

@@ -1,0 +1,71 @@
+.column {
+  // `0px` is for IE11
+  flex: 1 1 0px;
+  max-width: 100%;
+  padding: 0 spacing('half');
+  position: relative;
+
+  // Responsive columns
+
+  @each $breakpoint in map-keys($media-breakpoints) {
+    &--#{$breakpoint} {
+      @include until-breakpoint($breakpoint) {
+        flex: 0 1 auto;
+        width: 100%;
+      }
+    }
+  }
+
+  // Fractional columns
+  // `&-` ensures proper BEM suffix for column sizes. (i.e.: '.column--1' not '.column-1'
+  &- {
+    @include generate-all-breakpoints-after {
+      @for $i from 1 through $grid-columns {
+        &-#{$i} {
+          @include column-width($i);
+        }
+      }
+    }
+  }
+
+  // Offsets
+  &--offset {
+    @include generate-all-breakpoints-after {
+      @for $i from 1 through $grid-columns {
+        &-#{$i} {
+          margin-left: percentage($i, $grid-columns);
+        }
+      }
+    }
+  }
+
+  // Column order
+  &--order {
+    @include generate-all-breakpoints-after {
+      @for $i from 1 through $grid-columns {
+        &-#{$i} {
+          order: $i;
+        }
+      }
+    }
+  }
+
+  &--order-first {
+    @include generate-all-breakpoints-after {
+      order: -1;
+    }
+  }
+
+  &--order-last {
+    @include generate-all-breakpoints-after {
+      order: $grid-columns + 1;
+    }
+  }
+
+  // Fit column to content
+  &--narrow {
+    @include generate-all-breakpoints {
+      flex: none;
+    }
+  }
+}

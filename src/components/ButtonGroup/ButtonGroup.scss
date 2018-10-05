@@ -1,0 +1,40 @@
+.button-group {
+  display: inline-block;
+  // Ensures nicely wrapped shadow. Specifying spread radius breaks it.
+  filter: drop-shadow(shadow());
+  margin: spacing('half');
+
+  @each $color-name in $button-colors {
+
+    &-color--#{$color-name} {
+
+      .button {
+        @include button-color($color-name);
+      }
+    }
+  }
+
+  .button {
+    border-radius: 0;
+    border-right: border();
+    box-shadow: none;
+    margin: 0;
+    position: relative;
+
+    &:first-child {
+      border-top-left-radius: spacing('quarter');
+      border-bottom-left-radius: spacing('quarter');
+    }
+
+    &:last-child {
+      border: 0;
+      border-top-right-radius: spacing('quarter');
+      border-bottom-right-radius: spacing('quarter');
+    }
+
+    &:focus {
+      // Ensures outline fully visible when focused
+      z-index: 10;
+    }
+  }
+}

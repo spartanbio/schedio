@@ -1,0 +1,8 @@
+// glob import from `node-sass-glob-importer`
+
+@import 'styles/**/*.scss';
+@import 'fonts/**/*.scss';
+
+// Import component scss, ignore documentation styles
+
+@import '../components/**/[!stories]*.scss';
