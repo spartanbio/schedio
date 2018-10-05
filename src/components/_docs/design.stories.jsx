@@ -5,6 +5,7 @@ import InteractionStates from '@/components/_docs/InteractionStates.vue'
 import Spacing from '@/components/_docs/Spacing.vue'
 import TypographyBase from '@/components/_docs/Typography/TypographyBase.vue'
 import TypographyHeadings from '@/components/_docs/Typography/TypographyHeadings.vue'
+import TypographyPrint from '@/components/_docs/Typography/TypographyPrint.vue'
 
 storiesOf('Design', module)
   .add('Color', () => h => <Color />)
@@ -15,3 +16,4 @@ storiesOf('Design', module)
 storiesOf('Design.Typography', module)
   .add('Base', () => h => <TypographyBase />)
   .add('Headings & Displays', () => h => <TypographyHeadings />)
+  .add('Print', () => h => <TypographyPrint />)
