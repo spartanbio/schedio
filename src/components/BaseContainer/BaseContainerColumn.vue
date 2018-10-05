@@ -35,8 +35,8 @@ const propSettings = ({ types = [], validator = sizeValidator, defaultVal = '' }
 // set up all $props relying on mobile breakpoints
 const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
   props[breakpoint] = propSettings({ types: [Boolean] })
-  props[`narrow-after-${breakpoint}`] = propSettings()
-  props[`narrow-until-${breakpoint}`] = propSettings()
+  props[`narrow-after-${breakpoint}`] = propSettings({ types: [Boolean] })
+  props[`narrow-until-${breakpoint}`] = propSettings({ types: [Boolean] })
   props[`offset-${breakpoint}`] = propSettings()
   props[`order-${breakpoint}`] = propSettings({ validator: orderValidator })
   return props
@@ -52,7 +52,7 @@ export default {
     /* eslint-disable vue/require-default-prop */
     // eslint doesn't see prop defaults in functions
     // Add base props without breakpoints
-    size: propSettings({ types: [Boolean] }),
+    size: propSettings(),
     offset: propSettings(),
     narrow: propSettings({ types: [Boolean] }),
     order: propSettings({ validator: orderValidator })
