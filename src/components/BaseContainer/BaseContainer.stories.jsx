@@ -126,7 +126,7 @@ storiesOf('Base Components/BaseContainer', module)
       .filter(propName => /^order/.test(propName))
       .reduce((p, n) => ({ ...p, [n]: select(n, [...colSizes, 'first', 'last'], '', 'Order') }), {})
 
-    const narrowProps = columnPropNames
+    const narrowBreakpoints = columnPropNames
       .filter(propName => /^narrow/.test(propName))
       .reduce((p, n) => ({ ...p, [n]: boolean(n, false, 'Narrow') }), {})
 
@@ -135,7 +135,7 @@ storiesOf('Base Components/BaseContainer', module)
       ...sizeProps,
       ...offsetProps,
       ...orderProps,
-      ...narrowProps
+      ...narrowBreakpoints
     }
 
     return {
