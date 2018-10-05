@@ -16,6 +16,8 @@ storiesOf('Base Components/BaseContainer', module)
       isFullwidth: boolean('isFullwidth', false)
     }
 
+    const containerPropNames = orderBy(Object.keys(BaseContainer.props))
+
     return {
       render: h => (
         <div>
@@ -38,7 +40,7 @@ storiesOf('Base Components/BaseContainer', module)
 
           <BaseHeading level="2">Prop list</BaseHeading>
           <ul>
-            {Object.keys(BaseContainer.props).map(name => (
+            {containerPropNames.map(name => (
               <li>{kebabCase(name)}</li>
             ))}
           </ul>
