@@ -67,7 +67,7 @@ export default {
   methods: {
     // used by mixin
     classNameReducer: classes => (acc, key) => {
-      // e.g.: $props.alignUntilXl => 'row--align-center-until-lg'
+      // e.g.: $props.alignUntilXl => 'row--align-center-until-xl'
       const name = key.replace(/(align-|justify-)(.+)/, `row--$1${classes[key]}-$2`)
 
       if (classes[key]) return acc.concat(name)
