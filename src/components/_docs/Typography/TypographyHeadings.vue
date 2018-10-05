@@ -9,7 +9,7 @@
       </p>
       <p>
         The <code>BaseHeading</code> component can be used for headings and displays. Find it
-        <a href="" @click.prevent="linkToComponent">here</a>.
+        <a href="#" @click.prevent="linkToComponent">here</a>.
       </p>
     </div>
 
