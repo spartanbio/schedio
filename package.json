@@ -28,6 +28,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.0",
     "@semantic-release/commit-analyzer": "^6.0.1",
     "@semantic-release/gitlab": "^3.0.4",
     "@semantic-release/release-notes-generator": "^7.0.2",
@@ -84,6 +85,14 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false,
+          "tarballDir": "dist"
+        }
+      ],
       "@semantic-release/gitlab"
     ]
   }

@@ -9,5 +9,8 @@ publish:
   stage: release
   only:
     - master
+  artifacts:
+    paths:
+      - dist/*.gz
   script:
     - npx semantic-release
