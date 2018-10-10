@@ -2,6 +2,10 @@
   "name": "schedio-design",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/spartanbio-marketing/schedio.git"
+  },
   "scripts": {
     "dev": "run-p serve:storybook theo:onchange",
     "serve": "npm run serve:js && npm run serve:storybook",
@@ -15,14 +19,18 @@
     "lint:style": "stylelint ./src/assets/**/*.scss",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
     "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo",
-    "scaffold": "node scripts/scaffold-component.js"
+    "scaffold": "node scripts/scaffold-component.js",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "lodash.orderby": "^4.6.0",
     "lodash.groupby": "^4.6.0",
+    "lodash.orderby": "^4.6.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^6.0.1",
+    "@semantic-release/gitlab": "^3.0.4",
+    "@semantic-release/release-notes-generator": "^7.0.2",
     "@storybook/addon-actions": "^4.0.0-alpha.20",
     "@storybook/addon-knobs": "^4.0.0-alpha.20",
     "@storybook/addon-links": "^4.0.0-alpha.20",
@@ -43,6 +51,7 @@
     "onchange": "^4.1.0",
     "prettier": "^1.14.2",
     "sass-loader": "^7.0.1",
+    "semantic-release": "^15.10.2",
     "style-resources-loader": "^1.2.1",
     "stylelint": "^9.5.0",
     "stylelint-config-prettier": "^4.0.0",
@@ -68,6 +77,14 @@
     "*.scss": [
       "stylelint ./src/assets/**/*.scss",
       "git add"
+    ]
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/gitlab"
     ]
   }
 }
