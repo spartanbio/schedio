@@ -21,7 +21,6 @@ import InputControl from '@/components/mixins/InputControl.mixin'
 /**
  * TODO:
  * [] - account for validation
- * [] - Other inputs
  */
 
 export default {
