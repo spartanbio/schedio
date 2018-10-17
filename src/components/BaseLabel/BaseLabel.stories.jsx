@@ -1,18 +1,41 @@
+import BaseHeading from '@/components/BaseHeading'
+import BaseLabel from '@/components/BaseLabel'
+import PropList from '@/components/_docs/PropList'
+import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import BaseLabel from '@/components//BaseLabel'
 
 storiesOf('Base Components/BaseLabel', module)
   .addDecorator(withKnobs)
   .add('Label', () => {
     const props = {
-      label: text('Label text', 'Label text', 'Required'),
-      isFullwidth: boolean('isFullwidth', false, 'Optional'),
-      isInline: boolean('isInline', false, 'Optional'),
-      isReversed: boolean('isReversed', false, 'Optional')
+      label: text('Label text', 'Label text', 'Required Props'),
+      isFullwidth: boolean('isFullwidth', false, 'Optional Props'),
+      isInline: boolean('isInline', false, 'Optional Props'),
+      isReversed: boolean('isReversed', false, 'Optional Props')
     }
 
+    const defaultSlot = text('Default', 'SomeInputComponent', 'Slots')
+
     return {
-      render: h => <BaseLabel {...{ props }} />
+      render: h => (
+        <StoryContainer>
+          <BaseHeading level="1">Label</BaseHeading>
+          <p>
+            <code>BaseLabel</code> provides labels for all form inputs. It is included automatically
+            for all input components in this library, and is designed to wrap components.
+          </p>
+
+          <BaseHeading level="2">Example</BaseHeading>
+          <BaseLabel {...{ props }}>
+            {/* Labels behave best with block elements. */}
+            <div style="text-transform: none; font-weight: 300;">
+              <code>{'<' + defaultSlot + ' />'}</code>
+            </div>
+          </BaseLabel>
+
+          <PropList component={BaseLabel} />
+        </StoryContainer>
+      )
     }
   })

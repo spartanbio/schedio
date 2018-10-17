@@ -40,6 +40,7 @@ export default {
       type: Array,
       required: true
     },
+
     heading: {
       type: String,
       required: true
@@ -54,14 +55,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $palette-border-radius: 0.5em;
 $shadow-color: color('grey', 'light');
 $left-border-shadow: -1px 0 color('grey', 'lighter');
 
 .palette-wrapper {
   // Add some space
-
   margin: spacing('half');
 }
 
@@ -69,7 +69,8 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
   border-radius: $palette-border-radius;
   box-shadow: 0 0 1px $shadow-color, 0 0.5em 1.5em $shadow-color;
   display: inline-block;
-  width: 28em;
+  min-width: 24em;
+  width: 100%;
 
   &__description {
     background-color: color('white');
@@ -84,7 +85,6 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
 
   &__row {
     // Set up border radii
-
     &:first-child {
       border-top-left-radius: $palette-border-radius;
       border-top-right-radius: $palette-border-radius;
@@ -97,7 +97,6 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
 
     &:not(:first-child) {
       // Add a border to descriptions
-
       .palette-card__description {
         box-shadow: $left-border-shadow, 0 -1px color('grey', 'lighter');
       }

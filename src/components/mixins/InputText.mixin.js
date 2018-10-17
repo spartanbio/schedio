@@ -1,4 +1,4 @@
-import BaseLabel from '@/components//BaseLabel'
+import BaseLabel from '@/components/BaseLabel'
 import InputListeners from './InputListeners.mixin'
 
 export default {

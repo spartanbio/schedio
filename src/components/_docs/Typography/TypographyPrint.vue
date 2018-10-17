@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <StoryContainer>
     <BaseHeading level="1">Print Typography</BaseHeading>
     <p>
       <code>16pt</code> would be a bit large for most print typography, so instead, start with a
@@ -56,13 +56,14 @@
       </tbody>
     </table>
 
-  </div>
+  </StoryContainer>
 </template>
 
 <script>
 import { linkTo } from '@storybook/addon-links'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import StoryContainer from '@/components/_docs/StoryContainer'
 
 const fontSizes = Object.values(props).filter(
   ({ category, name }) => category === 'font-size' && name !== 'base-font-size'
@@ -73,6 +74,10 @@ export default {
 
   filters: {
     prettyName: val => val.replace(/font-(size)-(\d*)/, '$1 $2')
+  },
+
+  components: {
+    StoryContainer
   },
 
   data: () => ({

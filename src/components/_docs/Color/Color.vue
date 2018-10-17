@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <StoryContainer>
     <BaseHeading level="1">Colors</BaseHeading>
     <p>As a rule, use lots of contrast, and stick to cool colors</p>
 
@@ -26,20 +26,22 @@
         :palette="palette"
         :key="`preview-${paletteName}`" />
     </div>
-  </div>
+  </StoryContainer>
 </template>
 
 <script>
-import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import ColorChip from './ColorChip'
-import orderBy from 'lodash.orderby'
 import groupBy from 'lodash.groupby'
+import orderBy from 'lodash.orderby'
+import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import StoryContainer from '@/components/_docs/StoryContainer'
 
 export default {
   name: 'Color',
 
   components: {
-    ColorChip
+    ColorChip,
+    StoryContainer
   },
 
   data() {

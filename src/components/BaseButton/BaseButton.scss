@@ -25,7 +25,6 @@
   }
 
   @each $color-name in $button-colors {
-
     &--color-#{$color-name} {
       @include button-color($color-name);
     }

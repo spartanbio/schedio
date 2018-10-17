@@ -1,0 +1,69 @@
+.link {
+  $highlight-spacing: 0.1em;
+
+  color: color('spartan_blue');
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  // Required for `z-index` to work properly on `::before`
+  z-index: 1;
+
+  // Add an obvious highlight
+  &::before {
+    background-color: color('green', 'lighter');
+    border-radius: 0.2em;
+    // Move it up a bit. Uses bottom so highlight animates up
+    // Percentages are favoured over ems as measurements are based on line-height.
+    bottom: 10%;
+    content: '';
+    // Give it just a bit of visual padding
+    left: -1 * $highlight-spacing;
+    // Approximately align top with baseline
+    height: 20%;
+    position: absolute;
+    transition: height 75ms ease;
+    // Adjusts for left offset
+    width: unquote('calc(100% + #{2 * $highlight-spacing})');
+    z-index: -1;
+  }
+
+  // Animate the highlight
+  &:hover {
+    &::before {
+      // Height is approximately from the bottom of `::before` to the top of the link text
+      height: 80%;
+    }
+  }
+
+  // add an icon to external links
+  &--external {
+    $icon-dimensions: 0.75em;
+    $icon-margin: (1 - $icon-dimensions) / 2;
+    // adds enough space before next character after link text
+    margin-right: $icon-dimensions + $icon-margin;
+
+    &::before {
+      // increases highlight size to include icon and spacing
+      width: unquote('calc(100% + #{2 * $highlight-spacing} + #{$icon-dimensions + $icon-margin})');
+    }
+
+    &::after {
+      content: '';
+      background: url('~@/assets/icons/external-link.svg') center center / contain no-repeat;
+      height: $icon-dimensions;
+      // put some horizontal space around the icon
+      margin: 0 $icon-margin;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: $icon-dimensions;
+    }
+  }
+
+  // Tone-down visited links
+  &:visited {
+    &::before {
+      background-color: color('grey', 'light');
+    }
+  }
+}

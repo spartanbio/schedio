@@ -1,8 +1,11 @@
-import { storiesOf } from '@storybook/vue'
+import BaseButton from '@/components/BaseButton'
+import { colors, sizes } from '@/components/BaseButton/options'
+import BaseHeading from '@/components/BaseHeading'
+import PropList from '@/components/_docs/PropList'
+import StoryContainer from '@/components/_docs/StoryContainer'
+import StoryLink from '@/components/_docs/StoryLink'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
-import { colors, sizes } from '@/components//BaseButton/options'
-import BaseButton from '@/components//BaseButton'
-import ButtonGroup from '@/components/ButtonGroup'
+import { storiesOf } from '@storybook/vue'
 
 const colorOptions = ['', ...colors]
 const sizeOptions = ['', ...sizes]
@@ -10,9 +13,9 @@ const sizeOptions = ['', ...sizes]
 storiesOf('Base Components/BaseButton', module)
   .addDecorator(withKnobs)
   .add('Button', () => {
-    const buttonText = text('Button text', 'Sample text', 'Required')
-    const buttonColor = select('Button color', colorOptions, '', 'Optional')
-    const buttonSize = select('Button size', sizeOptions, '', 'Optional')
+    const buttonColor = select('Button color', colorOptions, '', 'Props')
+    const buttonSize = select('Button size', sizeOptions, '', 'Props')
+    const buttonText = text('Button text', 'Sample text', 'Slots')
 
     const props = {
       buttonColor,
@@ -20,22 +23,19 @@ storiesOf('Base Components/BaseButton', module)
     }
 
     return {
-      render: h => <BaseButton {...{ props }}>{buttonText}</BaseButton>
-    }
-  })
-  .add('Button Group', () => {
-    const groupColor = select('Group color', colorOptions)
-    const button1Text = text('Button 1 text', 'Button 1')
-    const button2Text = text('Button 2 text', 'Button 2')
-    const button3Text = text('Button 3 text', 'Button 3')
-
-    return {
       render: h => (
-        <ButtonGroup groupColor={groupColor}>
-          <BaseButton>{button1Text}</BaseButton>
-          <BaseButton>{button2Text}</BaseButton>
-          <BaseButton>{button3Text}</BaseButton>
-        </ButtonGroup>
+        <StoryContainer>
+          <BaseHeading level="1">Buttons</BaseHeading>
+          <p>Buttons are used to make actions immediately visible and easy to click.</p>
+          <p>
+            Use a <StoryLink to="Components/ButtonGroup" /> to group multiple buttons.
+          </p>
+
+          <BaseHeading level="2">Example</BaseHeading>
+          <BaseButton {...{ props }}>{buttonText}</BaseButton>
+
+          <PropList component={BaseButton} />
+        </StoryContainer>
       )
     }
   })
