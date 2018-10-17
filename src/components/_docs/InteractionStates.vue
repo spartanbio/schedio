@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <StoryContainer>
     <BaseHeading level="1">
       Interaction
     </BaseHeading>
@@ -26,11 +26,17 @@
       errors have occurred, and can provide instructions and calls to action. Additionally, they
       give an opportunity to reinforce branding.
     </p>
-  </div>
+  </StoryContainer>
 </template>
 
 <script>
+import StoryContainer from '@/components/_docs/StoryContainer'
+
 export default {
-  name: 'InteractionStates'
+  name: 'InteractionStates',
+
+  components: {
+    StoryContainer
+  }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <StoryContainer>
     <BaseHeading level="1">
       Graphics
     </BaseHeading>
@@ -44,11 +44,17 @@
       information or actions, but they should never be the sole identifier. When an icon is used for
       identification, it should be accompanied by a label.
     </p>
-  </div>
+  </StoryContainer>
 </template>
 
 <script>
+import StoryContainer from '@/components/_docs/StoryContainer'
+
 export default {
-  name: 'Graphics'
+  name: 'Graphics',
+
+  components: {
+    StoryContainer
+  }
 }
 </script>
