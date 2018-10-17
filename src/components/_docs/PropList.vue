@@ -30,11 +30,15 @@ export default {
   computed: {
     propNames() {
       const { mixins, props } = this.component
+
+      // handles cases where there are no props
       let names = Object.keys(props || {})
 
-      if (mixins) mixins.forEach(mixin => names.push(...Object.keys(mixin.props)))
+      // get props if they're from a mixin
+      if (mixins) mixins.forEach(mixin => names.push(...Object.keys(mixin.props || {})))
 
-      return names.sort()
+      // return deduped and sorted
+      return [...new Set(names.sort())]
     }
   }
 }
