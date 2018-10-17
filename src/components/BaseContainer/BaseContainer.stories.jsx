@@ -2,6 +2,7 @@ import BaseContainer from '@/components/BaseContainer'
 import BaseContainerColumn from '@/components/BaseContainer/BaseContainerColumn.vue'
 import BaseContainerRow from '@/components/BaseContainer/BaseContainerRow.vue'
 import BaseHeading from '@/components/BaseHeading'
+import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import kebabCase from 'lodash.kebabcase'
@@ -20,7 +21,7 @@ storiesOf('Base Components/BaseContainer', module)
 
     return {
       render: h => (
-        <div>
+        <StoryContainer>
           <BaseHeading level="1">Container</BaseHeading>
           <p>
             The container defaults to being narrower than the window, but it can be set to
@@ -30,7 +31,7 @@ storiesOf('Base Components/BaseContainer', module)
             It has padding that is hidden when used with a <code>BaseContainerRow</code>.
           </p>
 
-          <BaseHeading level="2">Container Demonstration</BaseHeading>
+          <BaseHeading level="2">Example</BaseHeading>
 
           <BaseContainer {...{ props }} style="border: 1px solid black;">
             <BaseContainerRow>
@@ -44,7 +45,7 @@ storiesOf('Base Components/BaseContainer', module)
               <li>{kebabCase(name)}</li>
             ))}
           </ul>
-        </div>
+        </StoryContainer>
       )
     }
   })
@@ -75,7 +76,7 @@ storiesOf('Base Components/BaseContainer', module)
 
     return {
       render: h => (
-        <div>
+        <StoryContainer>
           <BaseHeading level="1">Rows</BaseHeading>
           <p>
             The container hides the padding from its parent container, and provides a flexbox
@@ -88,7 +89,7 @@ storiesOf('Base Components/BaseContainer', module)
             be reversed by adding the <code>is-reversed</code> prop.
           </p>
 
-          <BaseHeading level="2">Row demonstration</BaseHeading>
+          <BaseHeading level="2">Example</BaseHeading>
 
           <BaseContainer style="border: 1px solid black;">
             The container
@@ -104,7 +105,7 @@ storiesOf('Base Components/BaseContainer', module)
               <li>{kebabCase(name)}</li>
             ))}
           </ul>
-        </div>
+        </StoryContainer>
       )
     }
   })
@@ -142,23 +143,7 @@ storiesOf('Base Components/BaseContainer', module)
 
     return {
       render: h => (
-        <div>
-          {/* Demo columns */}
-          <BaseHeading level="2">Column Demonstration</BaseHeading>
-          <p>The first column's props can be set using the knobs.</p>
-
-          <BaseContainer style="border: 1px solid black;">
-            The container
-            <BaseContainerRow>
-              <BaseContainerColumn {...{ props }} style="border: 2px solid red">
-                Column 1 content
-              </BaseContainerColumn>
-              <BaseContainerColumn style="border: 2px solid red">
-                Column 2 content
-              </BaseContainerColumn>
-            </BaseContainerRow>
-          </BaseContainer>
-
+        <StoryContainer>
           <BaseHeading level="1">Columns</BaseHeading>
           <p>
             A single <code>BaseContainerColumn</code> width defaults to 100% of the row. If you have
@@ -232,13 +217,29 @@ storiesOf('Base Components/BaseContainer', module)
             <em>and including</em> the large breakpoint.
           </p>
 
+          {/* Demo columns */}
+          <BaseHeading level="2">Example</BaseHeading>
+          <p>The first column's props can be set using the knobs.</p>
+
+          <BaseContainer style="border: 1px solid black;">
+            The container
+            <BaseContainerRow>
+              <BaseContainerColumn {...{ props }} style="border: 2px solid red">
+                Column 1 content
+              </BaseContainerColumn>
+              <BaseContainerColumn style="border: 2px solid red">
+                Column 2 content
+              </BaseContainerColumn>
+            </BaseContainerRow>
+          </BaseContainer>
+
           <BaseHeading level="2">Prop list</BaseHeading>
           <ul>
             {columnPropNames.map(name => (
               <li>{kebabCase(name)}</li>
             ))}
           </ul>
-        </div>
+        </StoryContainer>
       )
     }
   })
