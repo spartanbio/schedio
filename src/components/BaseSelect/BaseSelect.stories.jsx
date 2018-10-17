@@ -1,6 +1,9 @@
+import BaseHeading from '@/components/BaseHeading'
+import BaseSelect from '@/components/BaseSelect'
+import PropList from '@/components/_docs/PropList'
+import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import BaseSelect from '@/components//BaseSelect'
 
 storiesOf('Base Components/BaseSelect', module)
   .addDecorator(withKnobs)
@@ -30,25 +33,38 @@ storiesOf('Base Components/BaseSelect', module)
     const optionKeys = Object.keys(optionTypes)
 
     // workaround for storybook converting everything to strings
-    const options = select('selectOptions', optionKeys, optionKeys[0], 'Required')
+    const options = select('selectOptions', optionKeys, optionKeys[0], 'Required props')
     const props = {
-      id: text('id', 'base-select', 'Required'),
-      name: text('name', 'base-select', 'Required'),
-      label: text('Label text', 'Label text', 'Required'),
-      multiple: boolean('Multiple', false, 'Optional'),
+      id: text('id', 'base-select', 'Required props'),
+      name: text('name', 'base-select', 'Required props'),
+      label: text('label', 'Select', 'Required props'),
+      multiple: boolean('Multiple', false, 'Optional props'),
+      placeholder: text('Placeholder', 'Select an option', 'Optional props'),
       selectOptions: optionTypes[options],
-      isInline: boolean('isInline', false, 'Optional'),
-      isFullwidth: boolean('isFullwidth', false, 'Optional')
+      isInline: boolean('isInline', false, 'Optional props'),
+      isFullwidth: boolean('isFullwidth', false, 'Optional props')
     }
-    const isDisabled = boolean('Disabled', false, 'Optional')
+    const isDisabled = boolean('Disabled', false, '$attrs')
 
     return {
       render: h => (
-        <div>
+        <StoryContainer>
+          <BaseHeading level="1">Select</BaseHeading>
+          <p>
+            Selects provide a list of options to choose from. They can be set to allow selection of
+            none, one or many options.
+          </p>
+
+          <BaseHeading level="2">Example</BaseHeading>
           <BaseSelect {...{ props }} disabled={isDisabled} />
-          <p>selectOptions:</p>
+
+          <BaseHeading level="3" style="text-transform: none;">
+            selectOptions:
+          </BaseHeading>
           <pre>{JSON.stringify(optionTypes[options], '', 2)}</pre>
-        </div>
+
+          <PropList component={BaseSelect} />
+        </StoryContainer>
       )
     }
   })
