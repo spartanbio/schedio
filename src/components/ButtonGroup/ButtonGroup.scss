@@ -5,9 +5,7 @@
   margin: spacing('half');
 
   @each $color-name in $button-colors {
-
     &-color--#{$color-name} {
-
       .button {
         @include button-color($color-name);
       }

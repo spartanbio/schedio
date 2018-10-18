@@ -4,7 +4,7 @@ import BaseHeading from '@/components/BaseHeading'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
 import StoryLink from '@/components/_docs/StoryLink'
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 const colorOptions = ['', ...colors]
@@ -13,14 +13,16 @@ const sizeOptions = ['', ...sizes]
 storiesOf('Base Components/BaseButton', module)
   .addDecorator(withKnobs)
   .add('Button', () => {
-    const buttonColor = select('Button color', colorOptions, '', 'Props')
-    const buttonSize = select('Button size', sizeOptions, '', 'Props')
+    const buttonColor = select('Button color', colorOptions, '', 'Optional Props')
+    const buttonSize = select('Button size', sizeOptions, '', 'Optional Props')
     const buttonText = text('Button text', 'Sample text', 'Slots')
 
     const props = {
       buttonColor,
       buttonSize
     }
+
+    const disabled = boolean('disabled', false, '$attrs')
 
     return {
       render: h => (
@@ -32,7 +34,9 @@ storiesOf('Base Components/BaseButton', module)
           </p>
 
           <BaseHeading level="2">Example</BaseHeading>
-          <BaseButton {...{ props }}>{buttonText}</BaseButton>
+          <BaseButton {...{ props }} disabled={disabled}>
+            {buttonText}
+          </BaseButton>
 
           <PropList component={BaseButton} />
         </StoryContainer>

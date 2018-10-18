@@ -8,7 +8,15 @@
   padding: spacing('half') spacing('double');
   transition: all 125ms ease;
 
-  &:hover {
+  &:disabled {
+    background-color: color('grey', 'light');
+    border-color: color('grey') !important;
+    box-shadow: none !important;
+    color: color('night', 'lighter');
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
     box-shadow: shadow('heavy');
   }
 
