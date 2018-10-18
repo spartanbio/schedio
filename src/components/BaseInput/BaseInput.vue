@@ -23,7 +23,7 @@ import { allowed } from './options'
 import InputText from '@/components/mixins/InputText.mixin'
 /**
  * TODO:
- * [] - account for validation
+ * [] - other inputs
  */
 
 export default {

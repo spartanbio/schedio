@@ -20,10 +20,6 @@
 <script>
 import BaseLabel from '@/components/BaseLabel'
 import InputControl from '@/components/mixins/InputControl.mixin'
-/**
- * TODO:
- * [] - account for validation
- */
 
 export default {
   name: 'BaseRadio',

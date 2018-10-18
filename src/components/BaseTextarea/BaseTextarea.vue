@@ -20,10 +20,6 @@
 
 <script>
 import InputText from '@/components/mixins/InputText.mixin'
-/**
- * TODO:
- * [] - account for validation
- */
 
 export default {
   name: 'BaseInput',
