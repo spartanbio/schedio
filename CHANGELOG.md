@@ -1,3 +1,15 @@
+# [1.4.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.3.0...v1.4.0) (2018-10-18)
+
+
+### Bug Fixes
+
+* **buttons:** adds disabled state ([27faa08](https://gitlab.com/spartanbio-marketing/schedio/commit/27faa08))
+
+
+### Features
+
+* **base-label:** provides indication of optional fields ([c5d629f](https://gitlab.com/spartanbio-marketing/schedio/commit/c5d629f))
+
 # [1.3.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.2.0...v1.3.0) (2018-10-17)
 
 
