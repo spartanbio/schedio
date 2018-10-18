@@ -1,42 +1,29 @@
 import BaseHeading from '@/components/BaseHeading'
 import BaseRadio from '@/components/BaseRadio'
+import { withAttrsAsProps, withUnboundAttrs } from '@/components/mixins/stories/form-fields'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
 import StoryLink from '@/components/_docs/StoryLink'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Base Components/BaseRadio', module)
   .addDecorator(withKnobs)
   .add('Radio', () => {
-    const name = text('Name', 'radio-group', 'Required props')
+    const name = 'radio-group'
 
-    const radios = [
-      {
-        id: text('Radio 1 ID', 'radio-1', 'Required props'),
-        label: text('Radio 1 Label', 'Radio 1', 'Required props'),
-        isReversed: boolean('isReversed', false, 'Optional props'),
-        isDisabled: boolean('Radio 1 Disabled', false, '$attrs'),
-        name,
-        value: 'radio 1'
+    const radios = Array.from({ length: 3 }, (v, i) => ({
+      props: {
+        ...withAttrsAsProps({
+          identifier: `radio-${i + 1}`,
+          id: `radio-${i + 1}`,
+          name,
+          label: `Base Radio ${i + 1}`
+        }),
+        isReversed: boolean(`radio-${i + 1} isReversed`, false, 'Optional Props')
       },
-      {
-        id: text('Radio 2 ID', 'radio-2', 'Required props'),
-        label: text('Radio 2 Label', 'Radio 2', 'Required props'),
-        isReversed: boolean('isReversed', false, 'Optional props'),
-        isDisabled: boolean('Radio 2 Disabled', false, '$attrs'),
-        name,
-        value: 'radio 2'
-      },
-      {
-        id: text('Radio 3 ID', 'radio-3', 'Required props'),
-        label: text('Radio 3 Label', 'Radio 3', 'Required props'),
-        isReversed: boolean('isReversed', false, 'Optional props'),
-        isDisabled: boolean('Radio 3 Disabled', false, '$attrs'),
-        name,
-        value: 'radio 3'
-      }
-    ]
+      attrs: withUnboundAttrs({ identifier: `radio-${i + 1}`, value: `radio-${i + 1}` })
+    }))
 
     return {
       render: h => (
@@ -48,8 +35,8 @@ storiesOf('Base Components/BaseRadio', module)
           </p>
 
           <BaseHeading level="2">Example</BaseHeading>
-          {radios.map(radio => (
-            <BaseRadio {...{ props: radio }} disabled={radio.isDisabled} value={radio.value} />
+          {radios.map(({ props, attrs }) => (
+            <BaseRadio {...{ props }} {...{ attrs }} />
           ))}
 
           <PropList component={BaseRadio} />

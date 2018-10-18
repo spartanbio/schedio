@@ -1,18 +1,21 @@
 <template>
   <BaseLabel
     :for="id"
+    :label="label"
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
-    :label="label">
+    :is-optional="!required">
 
     <div :class="{ 'select-wrapper--multiple': multiple }" class="select-wrapper">
 
       <select
         v-model="selected"
         v-bind="$attrs"
-        :multiple="multiple"
+        :class="{ 'select--invalid': isInvalid }"
         :id="id"
+        :multiple="multiple"
         :name="name"
+        :required="required"
         class="select"
         v-on="listeners">
 

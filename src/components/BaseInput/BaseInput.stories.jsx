@@ -1,6 +1,7 @@
 import BaseHeading from '@/components/BaseHeading'
 import BaseInput from '@/components/BaseInput'
 import { allowed as options } from '@/components/BaseInput/options'
+import { withAttrsAsProps, withUnboundAttrs } from '@/components/mixins/stories/form-fields'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
@@ -10,16 +11,14 @@ storiesOf('Base Components/BaseInput', module)
   .addDecorator(withKnobs)
   .add('Input', () => {
     const props = {
-      id: text('ID', 'base-input', 'Required Props'),
-      name: text('name', 'base-input', 'Required Props'),
-      label: text('Label', 'Label text', 'Required Props'),
-      placeholder: text('Placeholder', 'Placeholder text', 'Required Props'),
-      type: select('Input type', options, '', 'Optional Props'),
+      ...withAttrsAsProps({ id: 'base-input', name: 'base-input', label: 'Base Input' }),
+      placeholder: text('placeholder', 'Placeholder text', 'Required Props'),
+      type: select('type', options, '', 'Optional Props'),
       isInline: boolean('isInline', false, 'Optional Props'),
       isFullwidth: boolean('isFullwidth', false, 'Optional Props')
     }
 
-    const isDisabled = boolean('isDisabled', false, '$attrs')
+    const attrs = withUnboundAttrs()
 
     return {
       render: h => (
@@ -28,7 +27,7 @@ storiesOf('Base Components/BaseInput', module)
           <p>Inputs are used to collect user provided text data that should be fairly short.</p>
 
           <BaseHeading level="2">Example</BaseHeading>
-          <BaseInput {...{ props }} disabled={isDisabled} />
+          <BaseInput {...{ props }} {...{ attrs }} />
 
           <PropList component={BaseInput} />
         </StoryContainer>

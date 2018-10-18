@@ -3,12 +3,15 @@
     :for="id"
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
-    :label="label">
+    :is-optional="!required"
+    :label="label" >
     <input
+      v-bind="$attrs"
+      :class="{ 'input--invalid': isInvalid }"
       :id="id"
       :name="name"
-      v-bind="$attrs"
       :placeholder="placeholder"
+      :required="required"
       :type="type"
       class="input"
       v-on="listeners">

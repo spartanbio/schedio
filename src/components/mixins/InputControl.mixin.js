@@ -1,27 +1,14 @@
+// Checkboxes, radios, etc.
 import InputListeners from './InputListeners.mixin'
+import InputProps from './InputProps.mixin'
 
 export default {
   // prevent `<label/>` from inheriting attrs
   inheritAttrs: false,
 
-  mixins: [InputListeners],
+  mixins: [InputListeners, InputProps],
 
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
-
-    label: {
-      type: String,
-      required: true
-    },
-
     isReversed: {
       type: Boolean,
       default: false

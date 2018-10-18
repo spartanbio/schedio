@@ -1,17 +1,19 @@
 <template>
   <BaseLabel
     :for="id"
-    :is-reversed="isReversed"
     :label="label"
+    :is-reversed="isReversed"
+    :is-optional="!required"
     is-inline>
     <input
+      v-bind="$attrs"
       :id="id"
       :name="name"
-      v-bind="$attrs"
-      type="radio"
+      :required="required"
       class="radio"
+      type="radio"
       v-on="listeners">
-    <span class="radio__check"/>
+    <span :class="{ 'radio__check--invalid': isInvalid }" class="radio__check"/>
   </BaseLabel>
 </template>
 
