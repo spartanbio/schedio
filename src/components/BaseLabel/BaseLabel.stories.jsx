@@ -12,7 +12,8 @@ storiesOf('Base Components/BaseLabel', module)
       label: text('Label text', 'Label text', 'Required Props'),
       isFullwidth: boolean('isFullwidth', false, 'Optional Props'),
       isInline: boolean('isInline', false, 'Optional Props'),
-      isReversed: boolean('isReversed', false, 'Optional Props')
+      isReversed: boolean('isReversed', false, 'Optional Props'),
+      isOptional: boolean('isOptional', true, 'Optional Props')
     }
 
     const defaultSlot = text('Default', 'SomeInputComponent', 'Slots')

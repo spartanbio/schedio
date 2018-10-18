@@ -1,21 +1,20 @@
 import BaseCheckbox from '@/components/BaseCheckbox'
 import BaseHeading from '@/components/BaseHeading'
+import { withAttrsAsProps, withUnboundAttrs } from '@/components/mixins/stories/form-fields'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Base Components/BaseCheckbox', module)
   .addDecorator(withKnobs)
   .add('Checkbox', () => {
     const props = {
-      id: text('ID', 'base-checkbox', 'Required'),
-      name: text('Name', 'base-checkbox', 'Required'),
-      value: text('Value', 'base-checkbox', 'Required'),
-      label: text('Label', 'Checkbox', 'Required'),
-      isReversed: boolean('isReversed', false, 'Optional')
+      ...withAttrsAsProps({ id: 'base-checkbox', name: 'base-checkbox', label: 'Base Checkbox' }),
+      isReversed: boolean('isReversed', false, 'Optional Props')
     }
-    const isDisabled = boolean('isDisabled', false, 'Optional')
+
+    const attrs = withUnboundAttrs({ value: 'base-checkbox' })
 
     return {
       render: h => (
@@ -27,7 +26,7 @@ storiesOf('Base Components/BaseCheckbox', module)
           </p>
 
           <BaseHeading level="2">Example</BaseHeading>
-          <BaseCheckbox {...{ props }} disabled={isDisabled} />
+          <BaseCheckbox {...{ props }} {...{ attrs }} />
 
           <PropList component={BaseCheckbox} />
         </StoryContainer>

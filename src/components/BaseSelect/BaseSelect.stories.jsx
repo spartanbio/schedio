@@ -1,5 +1,6 @@
 import BaseHeading from '@/components/BaseHeading'
 import BaseSelect from '@/components/BaseSelect'
+import { withAttrsAsProps, withUnboundAttrs } from '@/components/mixins/stories/form-fields'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
@@ -16,7 +17,7 @@ storiesOf('Base Components/BaseSelect', module)
     const arrayOfObjects = Object.values(objectOfObjects)
     const arrayOfStrings = arrayOfObjects.map(obj => obj.label)
 
-    const withGroups = {
+    const labelledArraysOfObjects = {
       'Group 1': [{ label: 'Group 1 option label', value: 'Group 1 option value' }],
       'Group 2': [{ label: 'Group 2 option label', value: 'Group 2 option value' }],
       'Group 3': [{ label: 'Group 3 option label', value: 'Group 3 option value' }],
@@ -27,24 +28,25 @@ storiesOf('Base Components/BaseSelect', module)
       'Object of objects': objectOfObjects,
       'Array of objects': arrayOfObjects,
       'Array of strings': arrayOfStrings,
-      'With groups': withGroups
+      'Labelled arrays of objects': labelledArraysOfObjects
     }
 
+    // enable setting of option structure.
     const optionKeys = Object.keys(optionTypes)
-
-    // workaround for storybook converting everything to strings
-    const options = select('selectOptions', optionKeys, optionKeys[0], 'Required props')
+    const options = select('selectOptions', optionKeys, optionKeys[0], 'Required Props')
     const props = {
-      id: text('id', 'base-select', 'Required props'),
-      name: text('name', 'base-select', 'Required props'),
-      label: text('label', 'Select', 'Required props'),
-      multiple: boolean('Multiple', false, 'Optional props'),
-      placeholder: text('Placeholder', 'Select an option', 'Optional props'),
+      ...withAttrsAsProps({
+        id: 'base-select',
+        name: 'base-select',
+        label: 'Select'
+      }),
+      placeholder: text('Placeholder', 'Select an option', 'Optional Props'),
       selectOptions: optionTypes[options],
-      isInline: boolean('isInline', false, 'Optional props'),
-      isFullwidth: boolean('isFullwidth', false, 'Optional props')
+      multiple: boolean('Multiple', false, 'Optional Props'),
+      isInline: boolean('isInline', false, 'Optional Props'),
+      isFullwidth: boolean('isFullwidth', false, 'Optional Props')
     }
-    const isDisabled = boolean('Disabled', false, '$attrs')
+    const attrs = withUnboundAttrs()
 
     return {
       render: h => (
@@ -54,9 +56,15 @@ storiesOf('Base Components/BaseSelect', module)
             Selects provide a list of options to choose from. They can be set to allow selection of
             none, one or many options.
           </p>
+          <p>A select's options can have the following structures:</p>
+          <ul>
+            {optionKeys.map(key => (
+              <li>{key}</li>
+            ))}
+          </ul>
 
           <BaseHeading level="2">Example</BaseHeading>
-          <BaseSelect {...{ props }} disabled={isDisabled} />
+          <BaseSelect {...{ props }} {...{ attrs }} />
 
           <BaseHeading level="3" style="text-transform: none;">
             selectOptions:

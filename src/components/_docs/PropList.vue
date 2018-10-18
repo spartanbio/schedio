@@ -29,16 +29,28 @@ export default {
 
   computed: {
     propNames() {
-      const { mixins, props } = this.component
+      // return deduped and sorted prop names
+      return [...new Set(this.getProps(this.component))]
+    }
+  },
 
+  methods: {
+    getProps({ mixins, props }) {
       // handles cases where there are no props
-      let names = Object.keys(props || {})
+      let stack = Object.keys(props || {})
 
-      // get props if they're from a mixin
-      if (mixins) mixins.forEach(mixin => names.push(...Object.keys(mixin.props || {})))
+      const getPropsRecursively = mxs => {
+        mxs.forEach(mixin => {
+          if (mixin.mixins) getPropsRecursively(mixin.mixins)
+          stack.push(...Object.keys(mixin.props || {}))
+        })
+      }
 
-      // return deduped and sorted
-      return [...new Set(names.sort())]
+      // get props recursively if comopnent has mixins
+      if (mixins) getPropsRecursively(mixins)
+
+      // return sorted prop names
+      return stack.sort()
     }
   }
 }

@@ -1,28 +1,25 @@
 <template>
   <BaseLabel
     :for="id"
-    :is-reversed="isReversed"
     :label="label"
+    :is-reversed="isReversed"
+    :is-optional="!required"
     is-inline>
     <input
+      v-bind="$attrs"
       :id="id"
       :name="name"
-      v-bind="$attrs"
-      type="checkbox"
+      :required="required"
       class="checkbox"
+      type="checkbox"
       v-on="listeners">
-    <span class="checkbox__check"/>
+    <span :class="{ 'checkbox__check--invalid': isInvalid }" class="checkbox__check"/>
   </BaseLabel>
 </template>
 
 <script>
 import BaseLabel from '@/components/BaseLabel'
 import InputControl from '@/components/mixins/InputControl.mixin'
-/**
- * TODO:
- * [] - account for validation
- * [] - Other inputs
- */
 
 export default {
   name: 'BaseCheckbox',

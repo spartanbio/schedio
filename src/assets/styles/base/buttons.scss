@@ -21,24 +21,16 @@
   border-color: darken($base-color, 10%) !important;
   color: if($white-or-ice, color('night'), color('ice'));
 
-  &:hover {
-    $hover-color: if(
-      $white-or-ice,
-      darken($base-color, 5%),
-      color($button-color, 'light')
-    );
-
-    background-color: $hover-color;
-  }
-
   &:active {
-    $active-color: if(
-      $white-or-ice,
-      darken($base-color, 10%),
-      color($button-color, 'dark')
-    );
+    $active-color: if($white-or-ice, darken($base-color, 10%), color($button-color, 'dark'));
 
     background-color: $active-color;
     box-shadow: $active-shadow, $focus-shadow, shadow('heavy');
+  }
+
+  &:not(:disabled):hover {
+    $hover-color: if($white-or-ice, darken($base-color, 5%), color($button-color, 'light'));
+
+    background-color: $hover-color;
   }
 }

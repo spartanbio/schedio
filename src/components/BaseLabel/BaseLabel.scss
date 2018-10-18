@@ -27,4 +27,11 @@
   &:not(:last-child) {
     margin-right: spacing();
   }
+
+  &__optional {
+    @include font-size(6);
+    color: color('night', 'lightest');
+    font-weight: $font-weight-light;
+    text-transform: none;
+  }
 }

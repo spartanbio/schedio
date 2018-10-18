@@ -1,5 +1,7 @@
+// Text fields, text areas, etc.
 import BaseLabel from '@/components/BaseLabel'
 import InputListeners from './InputListeners.mixin'
+import InputProps from './InputProps.mixin'
 
 export default {
   components: {
@@ -8,24 +10,9 @@ export default {
 
   inheritAttrs: false,
 
-  mixins: [InputListeners],
+  mixins: [InputListeners, InputProps],
 
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
-
-    label: {
-      type: String,
-      required: true
-    },
-
     placeholder: {
       type: String,
       default: ''

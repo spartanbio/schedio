@@ -1,6 +1,10 @@
 <template>
   <label :class="classList" class="label">
-    {{ label }}
+    <!-- Wrapped to keep optional on the right when reversed -->
+    <span>
+      {{ label }}
+      <span v-if="isOptional" class="label__optional">&mdash;&nbsp;Optional</span>
+    </span>
     <slot/>
   </label>
 </template>
@@ -13,6 +17,11 @@ export default {
     label: {
       type: String,
       required: true
+    },
+
+    isOptional: {
+      type: Boolean,
+      default: true
     },
 
     isInline: {

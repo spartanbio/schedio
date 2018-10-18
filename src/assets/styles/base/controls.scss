@@ -12,6 +12,10 @@
   cursor: not-allowed;
 }
 
+@mixin control-invalid {
+  box-shadow: 0 0 0 2px color('red'), shadow() !important;
+}
+
 @mixin control {
   background-color: color('white');
   border: border();
@@ -41,6 +45,11 @@
     }
   }
   // stylelint-enable
+
+  // only apply invalid styling to fields that have been touched
+  &--invalid {
+    @include control-invalid;
+  }
 }
 
 @mixin control-inline-label {
@@ -71,6 +80,10 @@
     width: 1em;
 
     @content;
+
+    &--invalid {
+      @include control-invalid;
+    }
   }
 
   &:disabled ~ &__check {
