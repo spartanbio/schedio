@@ -31,15 +31,28 @@ export default {
   },
   {
     extension: 'stories.jsx',
-    contents: `import { withKnobs } from '@storybook/addon-knobs'
+    contents: `import ${componentName} from '@/components/${componentName}'
+import BaseHeading from '@/components/BaseHeading'
+import PropList from '@/components/_docs/PropList'
+import StoryContainer from '@/components/_docs/StoryContainer'
+import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import ${componentName} from '@/components/${componentName}'
 
 storiesOf('${componentType}/${componentName}', module)
   .addDecorator(withKnobs)
   .add('${componentName}', () => {
     return {
-      render: h => <${componentName} />
+      render: h => (
+        <StoryContainer>
+          <BaseHeading level="1">${componentName.replace(/^Base/, '')}</BaseHeading>
+          <p>Descibe the component here</p>
+
+          <BaseHeading level="2">Example</BaseHeading>
+          <${componentName} />
+
+          <PropList component={${componentName}} />
+        </StoryContainer>
+      )
     }
   })\n`
   },
