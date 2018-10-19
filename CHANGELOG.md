@@ -1,3 +1,15 @@
+# [1.5.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.4.0...v1.5.0) (2018-10-19)
+
+
+### Bug Fixes
+
+* updates scaffold script ([53eee74](https://gitlab.com/spartanbio-marketing/schedio/commit/53eee74))
+
+
+### Features
+
+* adds `BaseTable` ([b25e40e](https://gitlab.com/spartanbio-marketing/schedio/commit/b25e40e))
+
 # [1.4.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.3.0...v1.4.0) (2018-10-18)
 
 
