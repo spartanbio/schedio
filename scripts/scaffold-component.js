@@ -45,12 +45,12 @@ storiesOf('${componentType}/${componentName}', module)
       render: h => (
         <StoryContainer>
           <BaseHeading level="1">${componentName.replace(/^Base/, '')}</BaseHeading>
-          <p>Descibe the component here</p>
+          <p>Describe the component here</p>
 
           <BaseHeading level="2">Example</BaseHeading>
           <${componentName} />
 
-          <PropList component={${componentName}} />
+          {${componentName}.props && <PropList component={${componentName}} />}
         </StoryContainer>
       )
     }
