@@ -7,19 +7,19 @@
     "url": "https://gitlab.com/spartanbio-marketing/schedio.git"
   },
   "scripts": {
+    "build": "npm run build:vue && npm run build:storybook",
+    "build:storybook": "vue-cli-service build:storybook -c config/storybook -o stry",
+    "build:vue": "vue-cli-service build",
     "dev": "run-p serve:storybook theo:onchange",
-    "serve": "npm run serve:js && npm run serve:storybook",
-    "serve:js": "vue-cli-service serve",
-    "build": "npm run build:js && npm run build:storybook",
-    "build:js": "vue-cli-service build",
-    "lint": "npm run lint:js && npm run lint:style",
-    "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
-    "build:storybook": "vue-cli-service build:storybook -c config/storybook",
-    "lint:js": "vue-cli-service lint ./src/*,./config/**/*.js",
+    "lint": "npm run lint:vue && npm run lint:style",
     "lint:style": "stylelint ./src/assets/**/*.scss",
+    "lint:vue": "vue-cli-service lint ./src/*,./config/**/*.js",
+    "scaffold": "node scripts/scaffold-component.js",
+    "serve": "npm run serve:vue && npm run serve:storybook",
+    "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
+    "serve:vue": "vue-cli-service serve",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
     "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo",
-    "scaffold": "node scripts/scaffold-component.js",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
