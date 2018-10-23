@@ -19,13 +19,13 @@
 @mixin control {
   background-color: color('white');
   border: border();
-  border-radius: spacing('quarter');
+  border-radius: border-radius('small');
   display: inline-block;
   flex: 1 1 0;
   margin: spacing('half') spacing('none');
   padding: spacing('half') spacing();
   text-transform: none;
-  transition: all 125ms ease;
+  transition: all duration() easing();
   width: 100%;
 
   &:disabled {
@@ -76,7 +76,7 @@
     height: 1em;
     justify-content: center;
     margin: spacing('half');
-    transition: all 200ms ease;
+    transition: all duration() easing();
     width: 1em;
 
     @content;

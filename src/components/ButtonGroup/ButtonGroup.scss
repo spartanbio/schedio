@@ -20,14 +20,14 @@
     position: relative;
 
     &:first-child {
-      border-top-left-radius: spacing('quarter');
-      border-bottom-left-radius: spacing('quarter');
+      border-top-left-radius: border-radius('small');
+      border-bottom-left-radius: border-radius('small');
     }
 
     &:last-child {
       border: 0;
-      border-top-right-radius: spacing('quarter');
-      border-bottom-right-radius: spacing('quarter');
+      border-top-right-radius: border-radius('small');
+      border-bottom-right-radius: border-radius('small');
     }
 
     &:focus {

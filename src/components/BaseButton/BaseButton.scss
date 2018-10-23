@@ -1,12 +1,12 @@
 .button {
   @include button-size-regular;
 
-  border-radius: spacing('quarter');
+  border-radius: border-radius('small');
   box-shadow: shadow('base');
   cursor: pointer;
   margin: spacing('half');
   padding: spacing('half') spacing('double');
-  transition: all 125ms ease;
+  transition: all duration() easing();
 
   &:disabled {
     background-color: color('grey', 'light');

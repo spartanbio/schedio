@@ -1,0 +1,13 @@
+/// Returns the border radius of the specified size.
+/// @param {String} $size - The border radius’s size.
+/// @return {Number} The border radius value.
+
+@function border-radius($size: base) {
+  @return map-get($border-radius-data, $size);
+}
+
+$border-radius-data: (
+  small: 0.25em,
+  base: 0.5em,
+  circle: 50%
+);

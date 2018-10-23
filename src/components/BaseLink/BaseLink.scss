@@ -11,7 +11,7 @@
   // Add an obvious highlight
   &::before {
     background-color: color('green', 'lighter');
-    border-radius: 0.2em;
+    border-radius: border-radius('small');
     // Move it up a bit. Uses bottom so highlight animates up
     // Percentages are favoured over ems as measurements are based on line-height.
     bottom: 10%;
@@ -21,7 +21,7 @@
     // Approximately align top with baseline
     height: 20%;
     position: absolute;
-    transition: height 75ms ease;
+    transition: all duration('fast') easing();
     // Adjusts for left offset
     width: unquote('calc(100% + #{2 * $highlight-spacing})');
     z-index: -1;

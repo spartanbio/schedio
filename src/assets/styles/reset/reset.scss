@@ -26,7 +26,7 @@ body {
 code,
 pre {
   background-color: color('grey', 'lighter');
-  border-radius: spacing('quarter');
+  border-radius: border-radius('small');
   color: color('magenta');
   font-family: $font-family-monospaced;
 }
