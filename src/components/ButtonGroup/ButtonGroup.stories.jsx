@@ -12,7 +12,8 @@ const colorOptions = ['', ...colors]
 storiesOf('Components/ButtonGroup', module)
   .addDecorator(withKnobs)
   .add('Button Group', () => {
-    const groupColor = select('Group color', colorOptions, '', 'Optional props')
+    const groupColor = select('Group color', colorOptions, '', 'Optional Props')
+    const areGrouped = boolean('areGrouped', false, 'Optional Props')
     const button1Text = text('Button 1 text', 'Button 1', 'Slots')
     const button2Text = text('Button 2 text', 'Button 2', 'Slots')
     const button3Text = text('Button 3 text', 'Button 3', 'Slots')
@@ -25,11 +26,17 @@ storiesOf('Components/ButtonGroup', module)
       render: h => (
         <StoryContainer>
           <BaseHeading level="1">Button Group</BaseHeading>
-          <p>Button groups take individual buttons, and merge them into a single group.</p>
+          <p>Button groups take multiple buttons and display them nicely.</p>
+          <p>
+            Buttons in a group can be merged with the <code>areGrouped</code> prop.
+          </p>
+          <p>Note that the button group's color will override an individual button's color.</p>
 
           <BaseHeading level="2">Example</BaseHeading>
-          <ButtonGroup groupColor={groupColor}>
-            <BaseButton disabled={button1Disabled}>{button1Text}</BaseButton>
+          <ButtonGroup groupColor={groupColor} areGrouped={areGrouped}>
+            <BaseButton disabled={button1Disabled} button-color="red">
+              {button1Text}
+            </BaseButton>
             <BaseButton disabled={button2Disabled}>{button2Text}</BaseButton>
             <BaseButton disabled={button3Disabled}>{button3Text}</BaseButton>
           </ButtonGroup>
