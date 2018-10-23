@@ -7,30 +7,18 @@
     <BaseHeading level="2">Primary</BaseHeading>
     <p>This is the primary Spartan palette. It's used mostly in layout.</p>
 
-    <div class="palettes">
-      <ColorChip
-        v-for="(palette, paletteName) in mainPalettes"
-        :heading="paletteName"
-        :palette="palette"
-        :key="`preview-${paletteName}`" />
-    </div>
+    <ColorList :palette="mainPalettes" />
 
     <!-- Secondary -->
     <BaseHeading level="2">Secondary</BaseHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
-    <div class="palettes">
-      <ColorChip
-        v-for="(palette, paletteName) in accentPalettes"
-        :heading="paletteName"
-        :palette="palette"
-        :key="`preview-${paletteName}`" />
-    </div>
+    <ColorList :palette="accentPalettes" />
   </StoryContainer>
 </template>
 
 <script>
-import ColorChip from './ColorChip'
+import ColorList from './ColorList'
 import groupBy from 'lodash.groupby'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
@@ -40,8 +28,8 @@ export default {
   name: 'Color',
 
   components: {
-    ColorChip,
-    StoryContainer
+    StoryContainer,
+    ColorList
   },
 
   data() {
@@ -60,11 +48,7 @@ export default {
     mainPalettes() {
       const order = ['spartan_blue', 'grey', 'night', 'ice', 'white']
       const toOrder = this.getPalette('main')
-
-      return order.reduce((ordered, key) => {
-        ordered[key] = toOrder[key]
-        return ordered
-      }, {})
+      return order.reduce((ordered, key) => ({ ...ordered, [key]: toOrder[key] }), {})
     },
     accentPalettes() {
       return this.getPalette('accent')
@@ -74,45 +58,29 @@ export default {
   methods: {
     /**
      * Split colors into palettes
-     * @param {String} palette Get the primary or secondary palette
-     *
+     * @param {String} paletteType Get the primary or secondary palette
      * @returns {Object.<string, Object.<string, string>>}
      */
-    getPalette(paletteName) {
-      const filtered = this.palettes.filter(c => c.paletteType === paletteName)
+    getPalette(paletteType) {
+      const filtered = this.palettes.filter(palette => palette.paletteType === paletteType)
       const palette = groupBy(filtered, 'palette')
-      return this.orderPalettes(palette)
+      return this.orderPalette(palette)
     },
 
     /**
      * Orders colours by shade
-     * @param {Object.<string, Object.<string, string>>} paletteList Objects to order
-     *
+     * @param {Object.<string, Object.<string, string>>} palette Objects to order
      * @returns {Object.<string, Object.<string, string>>}
      */
-    orderPalettes(paletteList) {
+    orderPalette(palette) {
       const ranks = ['darker', 'dark', 'base', 'light', 'lighter', 'lightest', 'text']
-      const getShade = name => name.split('-').pop()
-      const ordered = {}
-
-      for (let palette in paletteList) {
-        ordered[palette] = orderBy(paletteList[palette], color => {
-          // parse color shades to assign ranks. `base` if no shade named.
-          const shade = color.name === palette ? 'base' : getShade(color.name)
-
-          return ranks.indexOf(shade)
-        })
-      }
-
-      return ordered
+      const colors = Object.keys(palette)
+      // base shades do not contain '-'
+      const shade = name => (name.match('-') ? name.split('-').pop() : 'base')
+      // parse color shades to assign ranks. `base` if no shade named.
+      const rank = color => ranks.indexOf(shade(color.name))
+      return colors.reduce((pal, color) => ({ ...pal, [color]: orderBy(palette[color], rank) }), {})
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.palettes {
-  display: inline-flex;
-  flex-wrap: wrap;
-}
-</style>

@@ -1,38 +1,53 @@
 <template>
-  <div class="palette-wrapper">
-    <BaseHeading level="3">
+  <CardDisplay has-no-padding class="palette-card">
+    <BaseHeading slot="header" level="3">
       {{ heading | underscoreToSpace }}
     </BaseHeading>
 
-    <div class="palette-card">
-      <div
-        v-for="color in palette"
-        :key="color.name"
-        :style="{ backgroundColor: color.value }"
-        class="palette-card__row">
+    <div
+      v-for="({ name, value }) in palette"
+      :key="name"
+      :style="{ backgroundColor: value }"
+      class="palette-card__row">
 
-        <div class="palette-card__description">
-          <div>
-            <strong>Token name: </strong>
-            <code>{{ color.name }}</code>
-          </div>
-          <div>
-            <strong>{{ colorSpace(color.value) }}: </strong>
-            <code>{{ color.value }}</code>
-          </div>
+      <div class="palette-card__description">
+        <div>
+          <strong>Shade: </strong>
+          <code>{{ name | getShade }}</code>
+        </div>
+        <div>
+          <strong>{{ value | colorSpace }}: </strong>
+          <code>{{ value }}</code>
+        </div>
+        <div v-if="value !== '#'">
+          <strong>HEX: </strong>
+          <code>{{ value | rgbToHex }}</code>
         </div>
       </div>
-
     </div>
-  </div>
+  </CardDisplay>
 </template>
 
 <script>
+import CardDisplay from '@/components/CardDisplay'
+
+const valToHex = (hex, int) => {
+  const val = Number(int).toString(16)
+  return hex + (val.length === 1 ? `0${val}` : val).toUpperCase()
+}
+
 export default {
   name: 'ColorChip',
 
   filters: {
-    underscoreToSpace: str => str.replace(/_/g, ' ')
+    underscoreToSpace: str => str.replace(/_/g, ' '),
+    rgbToHex: color => color.match(/\d+/g).reduce(valToHex, '#'),
+    colorSpace: color => (color[0] === '#' ? 'HEX' : color.split('(')[0].toUpperCase()),
+    getShade: str => (str.split('-').length > 1 ? str.split('-').pop() : 'base')
+  },
+
+  components: {
+    CardDisplay
   },
 
   props: {
@@ -45,12 +60,6 @@ export default {
       type: String,
       required: true
     }
-  },
-
-  methods: {
-    colorSpace(color) {
-      return color[0] === '#' ? 'HEX' : color.split('(')[0].toUpperCase()
-    }
   }
 }
 </script>
@@ -60,36 +69,18 @@ $palette-border-radius: 0.5em;
 $shadow-color: color('grey', 'light');
 $left-border-shadow: -1px 0 color('grey', 'lighter');
 
-.palette-wrapper {
-  // Add some space
-  margin: spacing('half');
-}
-
 .palette-card {
-  border-radius: $palette-border-radius;
-  box-shadow: 0 0 1px $shadow-color, 0 0.5em 1.5em $shadow-color;
-  display: inline-block;
-  min-width: 24em;
-  width: 100%;
+  margin-bottom: spacing('loose');
 
   &__description {
     background-color: color('white');
-    border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
     box-shadow: $left-border-shadow;
-    margin-left: 5em;
-    max-width: 24em;
-    min-height: inherit;
+    margin-left: 6.5em;
     padding: spacing('base');
   }
 
   &__row {
     // Set up border radii
-    &:first-child {
-      border-top-left-radius: $palette-border-radius;
-      border-top-right-radius: $palette-border-radius;
-    }
-
     &:last-child {
       border-bottom-left-radius: $palette-border-radius;
       border-bottom-right-radius: $palette-border-radius;
