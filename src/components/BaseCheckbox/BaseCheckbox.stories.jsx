@@ -1,6 +1,6 @@
 import BaseCheckbox from '@/components/BaseCheckbox'
 import BaseHeading from '@/components/BaseHeading'
-import { withAttrsAsProps, withUnboundAttrs } from '@/components/mixins/stories/form-fields'
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, withKnobs } from '@storybook/addon-knobs'

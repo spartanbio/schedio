@@ -1,7 +1,7 @@
 import BaseHeading from '@/components/BaseHeading'
 import BaseInput from '@/components/BaseInput'
 import { allowed as options } from '@/components/BaseInput/options'
-import { withAttrsAsProps, withUnboundAttrs } from '@/components/mixins/stories/form-fields'
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
 import PropList from '@/components/_docs/PropList'
 import StoryContainer from '@/components/_docs/StoryContainer'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
