@@ -18,15 +18,10 @@
 </template>
 
 <script>
-import BaseLabel from '@/components/BaseLabel'
 import InputControl from '@/components/mixins/InputControl.mixin'
 
 export default {
   name: 'BaseCheckbox',
-
-  components: {
-    BaseLabel
-  },
 
   mixins: [InputControl]
 }
