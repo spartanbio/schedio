@@ -1,7 +1,7 @@
-import CardContainer from '@/components/CardContainer'
-import BaseHeading from '@/components/BaseHeading'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import { CardContainer } from '@/components/CardContainer'
+import { BaseHeading } from '@/components/BaseHeading'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

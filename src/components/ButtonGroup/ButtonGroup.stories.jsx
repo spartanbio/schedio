@@ -1,9 +1,9 @@
-import BaseButton from '@/components/BaseButton'
+import { BaseButton } from '@/components/BaseButton'
 import { colors } from '@/components/BaseButton/options'
-import BaseHeading from '@/components/BaseHeading'
-import ButtonGroup from '@/components/ButtonGroup'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import { BaseHeading } from '@/components/BaseHeading'
+import { ButtonGroup } from '@/components/ButtonGroup'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
@@ -34,9 +34,7 @@ storiesOf('Components/ButtonGroup', module)
 
           <BaseHeading level="2">Example</BaseHeading>
           <ButtonGroup groupColor={groupColor} areGrouped={areGrouped}>
-            <BaseButton disabled={button1Disabled} button-color="red">
-              {button1Text}
-            </BaseButton>
+            <BaseButton disabled={button1Disabled}>{button1Text}</BaseButton>
             <BaseButton disabled={button2Disabled}>{button2Text}</BaseButton>
             <BaseButton disabled={button3Disabled}>{button3Text}</BaseButton>
           </ButtonGroup>

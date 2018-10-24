@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import CardDisplay from '@/components/CardDisplay'
+import { CardDisplay } from '@/components/CardDisplay'
 
 const valToHex = (hex, int) => {
   const val = Number(int).toString(16)

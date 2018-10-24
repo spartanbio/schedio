@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import StoryContainer from '@/components/_docs/StoryContainer'
+import StoryContainer from '@/docs/StoryContainer'
 
 export default {
   name: 'Graphics',

@@ -1,1 +1,5 @@
-export { default } from './BaseLabel.vue'
+import BaseLabel from './BaseLabel.vue'
+
+export { BaseLabel }
+
+export default Vue => Vue.component(BaseLabel.name, BaseLabel)

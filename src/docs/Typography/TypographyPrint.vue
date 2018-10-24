@@ -63,7 +63,7 @@
 import { linkTo } from '@storybook/addon-links'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import StoryContainer from '@/docs/StoryContainer'
 
 const fontSizes = Object.values(props).filter(
   ({ category, name }) => category === 'font-size' && name !== 'base-font-size'

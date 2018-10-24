@@ -3,17 +3,15 @@
 @import '../../../assets/styles/base/**/*.scss';
 
 .typography-example {
-  border-bottom: border();
+  border-bottom: border-width() solid color('grey', 'light');
   padding: spacing('double');
   // Add space after intro
-
   .typography-intro + & {
-    border-top: border();
+    border-top: border-width() solid color('grey', 'light');
     margin-top: spacing('double');
   }
 
   // Add overrides for example
-
   .display-1,
   .display-2,
   .heading-1,

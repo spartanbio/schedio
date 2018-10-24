@@ -5,10 +5,9 @@
 </template>
 
 <script>
+import ContainerMethods from '@/mixins/ContainerMethods'
 import flexOptions from './row-options'
-import sharedMethods from './shared-methods'
-
-import mobileBreakpoints from './mobile-breakpoints'
+import mobileBreakpoints from '@/components/BaseContainer/mobile-breakpoints'
 
 const validator = v => (flexOptions.includes(v) ? true : console.error(`Allowed: ${flexOptions}`))
 
@@ -31,7 +30,7 @@ const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
 export default {
   name: 'BaseContainerRow',
 
-  mixins: [sharedMethods],
+  mixins: [ContainerMethods],
 
   props: {
     ...breakpointProps,

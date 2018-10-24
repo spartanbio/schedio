@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import sharedMethods from './shared-methods'
-import mobileBreakpoints from './mobile-breakpoints'
+import ContainerMethods from '@/mixins/ContainerMethods'
+import mobileBreakpoints from '@/components/BaseContainer/mobile-breakpoints'
 
 // Validator function for most $props
 const sizeValidator = value => {
@@ -45,7 +45,7 @@ const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
 export default {
   name: 'BaseContainerColumn',
 
-  mixins: [sharedMethods],
+  mixins: [ContainerMethods],
 
   props: {
     ...breakpointProps,

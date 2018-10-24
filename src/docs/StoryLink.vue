@@ -31,10 +31,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.text)
-  },
-
   methods: {
     navigate(kind, story) {
       linkTo(kind, story)()

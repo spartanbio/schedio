@@ -1,8 +1,8 @@
-import BaseHeading from '@/components/BaseHeading'
-import BaseTextarea from '@/components/BaseTextarea'
+import { BaseHeading } from '@/components/BaseHeading'
+import { BaseTextarea } from '@/components/BaseTextarea'
 import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

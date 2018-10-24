@@ -22,7 +22,7 @@ import ColorList from './ColorList'
 import groupBy from 'lodash.groupby'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import StoryContainer from '@/docs/StoryContainer'
 
 export default {
   name: 'Color',

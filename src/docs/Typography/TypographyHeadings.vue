@@ -79,7 +79,7 @@
 
 <script>
 import { linkTo } from '@storybook/addon-links'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import StoryContainer from '@/docs/StoryContainer'
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
 
 export default {

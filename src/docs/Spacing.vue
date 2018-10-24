@@ -36,7 +36,7 @@
 
 <script>
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import StoryContainer from '@/docs/StoryContainer'
 
 export default {
   name: 'Spacing',
