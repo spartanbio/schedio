@@ -1,14 +1,14 @@
-import BaseContainer from '@/components/BaseContainer'
-import BaseContainerColumn from '@/components/BaseContainer/BaseContainerColumn.vue'
-import BaseContainerRow from '@/components/BaseContainer/BaseContainerRow.vue'
-import BaseHeading from '@/components/BaseHeading'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import { BaseContainer } from '@/components/BaseContainer'
+import { BaseContainerColumn } from '@/components/BaseContainerColumn'
+import { BaseContainerRow } from '@/components/BaseContainerRow'
+import rowOptions from '@/components/BaseContainerRow/row-options'
+import { BaseHeading } from '@/components/BaseHeading'
+import StoryContainer from '@/docs/StoryContainer'
 import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import kebabCase from 'lodash.kebabcase'
 import orderBy from 'lodash.orderby'
 import mobileBreakpoints from './mobile-breakpoints'
-import rowOptions from './row-options'
 
 storiesOf('Base Components/BaseContainer', module)
   .addDecorator(withKnobs)

@@ -1,8 +1,8 @@
-import BaseHeading from '@/components/BaseHeading'
-import BaseLink from '@/components/BaseLink'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
-import StoryLink from '@/components/_docs/StoryLink'
+import { BaseHeading } from '@/components/BaseHeading'
+import { BaseLink } from '@/components/BaseLink'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
+import StoryLink from '@/docs/StoryLink'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

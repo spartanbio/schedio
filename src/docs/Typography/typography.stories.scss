@@ -1,0 +1,22 @@
+// required to resolve border fucntion correctly
+
+@import '../../../assets/styles/base/**/*.scss';
+
+.typography-example {
+  border-bottom: border-width() solid color('grey', 'light');
+  padding: spacing('double');
+  // Add space after intro
+  .typography-intro + & {
+    border-top: border-width() solid color('grey', 'light');
+    margin-top: spacing('double');
+  }
+
+  // Add overrides for example
+  .display-1,
+  .display-2,
+  .heading-1,
+  .heading-2,
+  .heading-3 {
+    margin: spacing('none') spacing('none') 1rem;
+  }
+}

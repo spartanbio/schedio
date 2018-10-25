@@ -1,7 +1,7 @@
 // Global registration doesn't work with `jsx` templates
-import BaseHeading from '@/components/BaseHeading'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import { BaseHeading } from '@/components/BaseHeading'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
 import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

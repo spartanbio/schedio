@@ -1,6 +1,6 @@
 .checkbox {
   @include check-or-radio {
-    border-radius: spacing('quarter');
+    border-radius: border-radius('small');
   }
 
   & ~ &__check::after {
@@ -13,7 +13,7 @@
     opacity: 0;
     position: relative;
     top: -0.05em;
-    transition: all 200ms ease;
+    transition: all duration() ease;
     transform: rotate(45deg);
     width: 0.35em;
   }

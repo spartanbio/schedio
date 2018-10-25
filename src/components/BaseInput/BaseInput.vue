@@ -20,7 +20,7 @@
 
 <script>
 import { allowed } from './options'
-import InputText from '@/components/mixins/InputText.mixin'
+import InputText from '@/mixins/InputText.mixin'
 /**
  * TODO:
  * [] - other inputs

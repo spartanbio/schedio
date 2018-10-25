@@ -1,8 +1,8 @@
 .button-group {
-  display: inline-block;
-  // Ensures nicely wrapped shadow. Specifying spread radius breaks it.
-  filter: drop-shadow(shadow());
-  margin: spacing('half');
+  .button {
+    margin-right: spacing();
+    margin-bottom: spacing();
+  }
 
   @each $color-name in $button-colors {
     &-color--#{$color-name} {
@@ -12,27 +12,33 @@
     }
   }
 
-  .button {
-    border-radius: 0;
-    border-right: border();
-    box-shadow: none;
-    margin: 0;
-    position: relative;
+  &--grouped {
+    display: inline-block;
+    // Ensures nicely wrapped shadow. Specifying spread radius breaks it.
+    filter: drop-shadow(shadow());
 
-    &:first-child {
-      border-top-left-radius: spacing('quarter');
-      border-bottom-left-radius: spacing('quarter');
-    }
+    .button {
+      border-radius: 0;
+      border-right: border();
+      box-shadow: none;
+      margin: 0;
+      position: relative;
 
-    &:last-child {
-      border: 0;
-      border-top-right-radius: spacing('quarter');
-      border-bottom-right-radius: spacing('quarter');
-    }
+      &:first-child {
+        border-top-left-radius: border-radius('small');
+        border-bottom-left-radius: border-radius('small');
+      }
 
-    &:focus {
-      // Ensures outline fully visible when focused
-      z-index: 10;
+      &:last-child {
+        border: 0;
+        border-top-right-radius: border-radius('small');
+        border-bottom-right-radius: border-radius('small');
+      }
+
+      &:focus {
+        // Ensures outline fully visible when focused
+        z-index: 10;
+      }
     }
   }
 }

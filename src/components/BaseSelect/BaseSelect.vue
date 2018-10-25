@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import InputText from '@/components/mixins/InputText.mixin'
+import InputText from '@/mixins/InputText.mixin'
 
 export default {
   name: 'BaseSelect',

@@ -1,7 +1,7 @@
-import BaseHeading from '@/components/BaseHeading'
-import BaseLabel from '@/components/BaseLabel'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
+import { BaseHeading } from '@/components/BaseHeading'
+import { BaseLabel } from '@/components/BaseLabel'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

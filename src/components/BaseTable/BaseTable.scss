@@ -6,14 +6,6 @@
     text-transform: uppercase;
   }
 
-  &__cell {
-    padding: spacing('base');
-
-    &--numeric {
-      text-align: right;
-    }
-  }
-
   &__footer {
     border-top: border();
     font-weight: $font-weight-bold;
@@ -31,6 +23,7 @@
     }
   }
 
+  // These row variants have been left here because they're dependent on `.table--<variant>`
   &--bordered {
     &__body {
       &__row {

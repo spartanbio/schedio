@@ -4,6 +4,8 @@ const path = require('path')
 
 // params
 const componentName = process.argv[2]
+const listFile = path.resolve(__dirname, '../src', 'components', 'index.js')
+
 const isBaseComponent = /^Base[A-Z]\w+/.test(componentName)
 const componentType = isBaseComponent ? 'Base Components' : 'Components'
 const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
@@ -31,10 +33,10 @@ export default {
   },
   {
     extension: 'stories.jsx',
-    contents: `import ${componentName} from '@/components/${componentName}'
-import BaseHeading from '@/components/BaseHeading'
-import PropList from '@/components/_docs/PropList'
-import StoryContainer from '@/components/_docs/StoryContainer'
+    contents: `import { ${componentName} } from '@/components/${componentName}'
+import { BaseHeading } from '@/components/BaseHeading'
+import PropList from '@/docs/PropList'
+import StoryContainer from '@/docs/StoryContainer'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
@@ -45,12 +47,12 @@ storiesOf('${componentType}/${componentName}', module)
       render: h => (
         <StoryContainer>
           <BaseHeading level="1">${componentName.replace(/^Base/, '')}</BaseHeading>
-          <p>Descibe the component here</p>
+          <p>Describe the component here</p>
 
           <BaseHeading level="2">Example</BaseHeading>
           <${componentName} />
 
-          <PropList component={${componentName}} />
+          {${componentName}.props && <PropList component={${componentName}} />}
         </StoryContainer>
       )
     }
@@ -63,7 +65,11 @@ storiesOf('${componentType}/${componentName}', module)
   {
     fileName: 'index',
     extension: 'js',
-    contents: `export { default } from './${componentName}.vue'\n`
+    contents: `import ${componentName} from './${componentName}.vue'
+
+export { ${componentName} }
+
+export default Vue => Vue.component(${componentName}.name, ${componentName})\n`
   }
 ]
 
@@ -73,7 +79,15 @@ const outputFiles = scaffold.map(({ fileName, extension, contents }) => {
   fs.outputFile(file, contents)
 })
 
+const updateComponentList = async () => {
+  const output = Buffer.concat([
+    await fs.readFile(listFile),
+    Buffer.from(`export { default as ${componentName} } from '@/components/${componentName}'\n`)
+  ])
+  fs.outputFile(listFile, output)
+}
+
 // write files
-Promise.all(outputFiles)
+Promise.all([...outputFiles, updateComponentList()])
   .then(() => console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``)))
   .catch(err => console.error(chalk.red(err)))

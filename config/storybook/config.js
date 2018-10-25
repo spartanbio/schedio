@@ -1,23 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { configure, addDecorator } from '@storybook/vue'
+import Schedio from '@/'
 import { setOptions } from '@storybook/addon-options'
-import registerComponentsGlobally from '../../utils/register-components-globally'
+import { addDecorator, configure } from '@storybook/vue'
+import Vue from 'vue'
 import StorybookContainer from './StorybookContainer.vue'
 
-import '@/assets/styles.scss'
+Vue.use(Schedio)
 
-// Automatically register base components
-const baseComponents = require.context(
-  '@/components/', // path to components
-  true, // check subfolders?
-  /Base[A-Z]\w+\.(vue|js)$/ // regex file name
-)
-
-registerComponentsGlobally(baseComponents)
-
+const docStories = require.context('@/docs', true, /.stories.(js|jsx)$/)
 const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
 
 function loadStories() {
+  docStories.keys().forEach(filename => docStories(filename))
   componentStories.keys().forEach(filename => componentStories(filename))
 }
 

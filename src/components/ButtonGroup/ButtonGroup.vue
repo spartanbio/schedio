@@ -16,14 +16,22 @@ export default {
       default: '',
       validator: value => {
         if (!value || colors.includes(value)) return true
-
         return console.error(`\`groupColor\` ${value} not found. Allowed colors: ${[...colors]}`)
       }
+    },
+
+    areGrouped: {
+      type: Boolean,
+      default: false
     }
   },
+
   computed: {
     classList() {
-      return [this.groupColor ? `button-group-color--${this.groupColor}` : '']
+      return {
+        [`button-group-color--${this.groupColor}`]: this.groupColor,
+        'button-group--grouped': this.areGrouped
+      }
     }
   }
 }

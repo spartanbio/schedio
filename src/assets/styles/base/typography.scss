@@ -14,7 +14,7 @@
   font-weight: $font-weight-bold;
 
   &:not(:first-child) {
-    margin-top: spacing('double');
+    margin-top: 3rem;
   }
 
   &.subtle {
