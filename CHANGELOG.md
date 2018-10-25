@@ -1,3 +1,10 @@
+## [1.6.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.6.0...v1.6.1) (2018-10-25)
+
+
+### Bug Fixes
+
+* scripts should properly run on install ([e39fc9e](https://gitlab.com/spartanbio-marketing/schedio/commit/e39fc9e))
+
 # [1.6.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.5.0...v1.6.0) (2018-10-25)
 
 
