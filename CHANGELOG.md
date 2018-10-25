@@ -1,3 +1,20 @@
+# [1.6.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.5.0...v1.6.0) (2018-10-25)
+
+
+### Bug Fixes
+
+* **forms:** properly spaces form elements ([6cc3ede](https://gitlab.com/spartanbio-marketing/schedio/commit/6cc3ede))
+* **headings:** uses fixed margin-top ([4646d82](https://gitlab.com/spartanbio-marketing/schedio/commit/4646d82))
+* **scaffold:** only renders `PropList` if component has props ([cebbc45](https://gitlab.com/spartanbio-marketing/schedio/commit/cebbc45))
+* **style:** makes transitions and border-radii reusable ([7dcb2e8](https://gitlab.com/spartanbio-marketing/schedio/commit/7dcb2e8))
+* adds `prepare` ([20a247a](https://gitlab.com/spartanbio-marketing/schedio/commit/20a247a))
+
+
+### Features
+
+* adds card container ([9bd3d93](https://gitlab.com/spartanbio-marketing/schedio/commit/9bd3d93))
+* restructures repo for publishing ([ceeb3c5](https://gitlab.com/spartanbio-marketing/schedio/commit/ceeb3c5))
+
 # [1.5.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.4.0...v1.5.0) (2018-10-19)
 
 
