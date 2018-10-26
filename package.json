@@ -3,6 +3,9 @@
   "version": "1.6.2",
   "private": true,
   "main": "dist/schedio.common.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "gitlab:spartanbio-marketing/schedio"
