@@ -1,3 +1,13 @@
+## [1.6.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.6.2...v1.6.3) (2018-10-26)
+
+
+### Bug Fixes
+
+* adds npmignore ([3f17c68](https://gitlab.com/spartanbio-marketing/schedio/commit/3f17c68))
+* lists build files for npm ([90024b9](https://gitlab.com/spartanbio-marketing/schedio/commit/90024b9))
+* uses correct build and dest dirs ([53f6da6](https://gitlab.com/spartanbio-marketing/schedio/commit/53f6da6))
+* uses correct package name ([997263e](https://gitlab.com/spartanbio-marketing/schedio/commit/997263e))
+
 ## [1.6.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.6.1...v1.6.2) (2018-10-26)
 
 
