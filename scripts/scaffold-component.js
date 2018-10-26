@@ -69,7 +69,9 @@ storiesOf('${componentType}/${componentName}', module)
 
 export { ${componentName} }
 
-export default Vue => Vue.component(${componentName}.name, ${componentName})\n`
+export default {
+  install: Vue => Vue.component(${componentName}.name, ${componentName})
+}\n`
   }
 ]
 

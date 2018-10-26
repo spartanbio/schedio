@@ -2,4 +2,4 @@ import BaseTable from './BaseTable.vue'
 
 export { BaseTable }
 
-export default Vue => Vue.component(BaseTable.name, BaseTable)
+export default { install: Vue => Vue.component(BaseTable.name, BaseTable) }

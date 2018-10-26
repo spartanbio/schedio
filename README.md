@@ -19,13 +19,26 @@ $ npm install gitlab:spartanbio-marketing/schedio
 
 ## Usage
 
+Import and register all components globally:
+
 ```js
-// Import and register all components globally
 import Vue from 'vue'
 import Schedio from 'schedio-design'
-import 'schedio-design/dist/schedio-design.min.css'
+import 'schedio-design/dist/schedio-design.css'
 
 Vue.use(Schedio)
+```
+
+Or, import and register indeividual components:
+
+```js
+import Vue from 'vue'
+import BaseButton from 'schedio-design/dist/components/BaseButton'
+import BaseContainer from 'schedio-design/dist/components/BaseContainer'
+import 'schedio-design/dist/schedio-design.css'
+
+Vue.use(BaseButton)
+Vue.use(BaseContainer)
 ```
 
 ## Dev setup

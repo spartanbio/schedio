@@ -2,7 +2,7 @@
   "name": "schedio-design",
   "version": "1.6.3",
   "private": true,
-  "main": "dist/schedio.common.js",
+  "main": "dist/schedio-design.common.js",
   "files": [
     "dist"
   ],
