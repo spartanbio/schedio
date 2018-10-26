@@ -15,7 +15,7 @@
     "lint": "npm run lint:vue && npm run lint:style",
     "lint:style": "stylelint ./src/assets/**/*.scss",
     "lint:vue": "vue-cli-service lint ./src/*,./config/**/*.js",
-    "prepare": "node scripts/build.js",
+    "prepare": "node ./scripts/build.js",
     "scaffold": "node scripts/scaffold-component.js",
     "serve": "npm run serve:storybook",
     "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
