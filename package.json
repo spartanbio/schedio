@@ -12,7 +12,7 @@
   },
   "homepage": "https://spartanbio-design.netlify.com",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name schedio ./src/index.js",
+    "build": "vue-cli-service build --target lib ./src/index.js",
     "build:storybook": "vue-cli-service build:storybook -c config/storybook",
     "dev": "run-p serve:storybook theo:onchange",
     "lint": "npm run lint:vue && npm run lint:style",
