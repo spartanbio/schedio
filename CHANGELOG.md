@@ -1,3 +1,10 @@
+## [1.6.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.6.1...v1.6.2) (2018-10-26)
+
+
+### Bug Fixes
+
+* references build script in `prepare` properly ([d098a3f](https://gitlab.com/spartanbio-marketing/schedio/commit/d098a3f))
+
 ## [1.6.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.6.0...v1.6.1) (2018-10-25)
 
 
