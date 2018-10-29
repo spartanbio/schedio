@@ -22,7 +22,7 @@
 import InputText from '@/mixins/InputText.mixin'
 
 export default {
-  name: 'BaseInput',
+  name: 'BaseTextarea',
 
   mixins: [InputText]
 }
