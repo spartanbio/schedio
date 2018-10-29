@@ -29,7 +29,7 @@ import 'schedio-design/dist/schedio-design.css'
 Vue.use(Schedio)
 ```
 
-Or, import and register indeividual components:
+Or, import and register individual components:
 
 ```js
 import Vue from 'vue'
