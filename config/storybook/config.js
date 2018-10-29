@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Schedio from '@/'
-import { setOptions } from '@storybook/addon-options'
+import { withOptions } from '@storybook/addon-options'
 import { addDecorator, configure } from '@storybook/vue'
 import Vue from 'vue'
 import StorybookContainer from './StorybookContainer.vue'
@@ -16,12 +16,14 @@ function loadStories() {
 }
 
 // Set options
-setOptions({
-  name: 'Schédio',
-  hierarchySeparator: /\./,
-  hierarchyRootSeparator: /\//,
-  sortStoriesByKind: true
-})
+addDecorator(
+  withOptions({
+    name: 'Schédio',
+    hierarchySeparator: /\./,
+    hierarchyRootSeparator: /\//,
+    sortStoriesByKind: true
+  })
+)
 
 addDecorator(() => ({
   // TODO: remove duplicate container
