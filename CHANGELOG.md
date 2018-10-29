@@ -1,3 +1,10 @@
+## [1.6.5](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v1.6.4...v1.6.5) (2018-10-29)
+
+
+### Bug Fixes
+
+* **docs:** changes extract css setting determination ([17f2c24](https://gitlab.com/spartanbio-marketing/schedio.git/commit/17f2c24))
+
 ## [1.6.4](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v1.6.3...v1.6.4) (2018-10-29)
 
 
