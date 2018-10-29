@@ -17,7 +17,7 @@ module.exports = {
     }
   },
   css: {
-    extract: process.env.NODE_ENV === 'production',
+    extract: !process.env.NO_EXTRACT_CSS,
     loaderOptions: {
       sass: {
         importer: globImporter()
