@@ -1,3 +1,12 @@
+## [1.6.4](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v1.6.3...v1.6.4) (2018-10-29)
+
+
+### Bug Fixes
+
+* allows import of single components ([02ae011](https://gitlab.com/spartanbio-marketing/schedio.git/commit/02ae011))
+* **readme:** fixes typo [skip ci] ([2fea9ef](https://gitlab.com/spartanbio-marketing/schedio.git/commit/2fea9ef))
+* **textarea:** names component correctly ([76c3142](https://gitlab.com/spartanbio-marketing/schedio.git/commit/76c3142))
+
 ## [1.6.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v1.6.2...v1.6.3) (2018-10-26)
 
 
