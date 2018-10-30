@@ -17,7 +17,7 @@ module.exports = {
     }
   },
   css: {
-    extract: !process.env.NO_EXTRACT_CSS,
+    extract: typeof process.env.EXTRACT_CSS !== 'undefined' ? process.env.EXTRACT_CSS : false,
     loaderOptions: {
       sass: {
         importer: globImporter()
