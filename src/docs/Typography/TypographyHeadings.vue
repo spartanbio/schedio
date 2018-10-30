@@ -1,22 +1,22 @@
 <template>
   <StoryContainer>
     <div class="typography-intro">
-      <BaseHeading level="1">Headings and Displays</BaseHeading>
+      <SHeading level="1">Headings and Displays</SHeading>
 
       <p>
         Headings and displays typically have <code>margin-top: 2em;</code> and
         <code>margin-bottom: 1em;</code>, but that has been disabled for example purposes.
       </p>
       <p>
-        The <code>BaseHeading</code> component can be used for headings and displays. Find it
+        The <code>SHeading</code> component can be used for headings and displays. Find it
         <a href="#" @click.prevent="linkToComponent">here</a>.
       </p>
     </div>
 
     <article class="typography-example">
-      <BaseHeading level="1" is-display class="uppercase">
+      <SHeading level="1" is-display class="uppercase">
         Display 1 Uppercase
-      </BaseHeading>
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
         1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
@@ -24,9 +24,9 @@
     </article>
 
     <article class="typography-example">
-      <BaseHeading level="1" is-display>
+      <SHeading level="1" is-display>
         Display 1 Lowercase
-      </BaseHeading>
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
         1.25em | Tracking: 0.025em
@@ -34,9 +34,9 @@
     </article>
 
     <article class="typography-example">
-      <BaseHeading level="2" is-display class="uppercase">
+      <SHeading level="2" is-display class="uppercase">
         Display 2 Uppercase
-      </BaseHeading>
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
         1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
@@ -44,9 +44,9 @@
     </article>
 
     <article class="typography-example">
-      <BaseHeading level="2" is-display>
+      <SHeading level="2" is-display>
         Display 2 Lowercase
-      </BaseHeading>
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
         1.25em | Tracking: 0.025em
@@ -54,7 +54,7 @@
     </article>
 
     <article class="typography-example">
-      <BaseHeading level="1">Heading 1</BaseHeading>
+      <SHeading level="1">Heading 1</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-3'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
         1.5em
@@ -62,14 +62,14 @@
     </article>
 
     <article class="typography-example">
-      <BaseHeading level="2">Heading 2</BaseHeading>
+      <SHeading level="2">Heading 2</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>
     </article>
 
     <article class="typography-example">
-      <BaseHeading level="3">Heading 3</BaseHeading>
+      <SHeading level="3">Heading 3</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>
@@ -94,7 +94,7 @@ export default {
   }),
 
   methods: {
-    linkToComponent: linkTo('BaseHeading', 'Headings')
+    linkToComponent: linkTo('SHeading', 'Headings')
   }
 }
 </script>

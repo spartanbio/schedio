@@ -33,12 +33,12 @@ Or, import and register individual components:
 
 ```js
 import Vue from 'vue'
-import BaseButton from 'schedio-design/dist/components/BaseButton'
-import BaseContainer from 'schedio-design/dist/components/BaseContainer'
+import SButton from 'schedio-design/dist/components/SButton'
+import SContainer from 'schedio-design/dist/components/SContainer'
 import 'schedio-design/dist/schedio-design.css'
 
-Vue.use(BaseButton)
-Vue.use(BaseContainer)
+Vue.use(SButton)
+Vue.use(SContainer)
 ```
 
 ## Dev setup

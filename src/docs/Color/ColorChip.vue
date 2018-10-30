@@ -1,8 +1,8 @@
 <template>
-  <CardDisplay has-no-padding class="palette-card">
-    <BaseHeading slot="header" level="3">
+  <SCard has-no-padding class="palette-card">
+    <SHeading slot="header" level="3">
       {{ heading | underscoreToSpace }}
-    </BaseHeading>
+    </SHeading>
 
     <div
       v-for="({ name, value }) in palette"
@@ -25,11 +25,11 @@
         </div>
       </div>
     </div>
-  </CardDisplay>
+  </SCard>
 </template>
 
 <script>
-import { CardDisplay } from '@/components/CardDisplay'
+import { SCard } from '@/components/SCard'
 
 const valToHex = (hex, int) => {
   const val = Number(int).toString(16)
@@ -47,7 +47,7 @@ export default {
   },
 
   components: {
-    CardDisplay
+    SCard
   },
 
   props: {

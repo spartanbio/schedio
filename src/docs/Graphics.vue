@@ -1,8 +1,8 @@
 <template>
   <StoryContainer>
-    <BaseHeading level="1">
+    <SHeading level="1">
       Graphics
-    </BaseHeading>
+    </SHeading>
     <p>
       Graphics can be used to make a statement, enhance understanding, and break up the monotony of
       text. They should not be distracting when used for decoration.
@@ -12,9 +12,9 @@
       it as simple text.
     </p>
 
-    <BaseHeading level="2">
+    <SHeading level="2">
       Photos
-    </BaseHeading>
+    </SHeading>
     <p>
       Photos should be provide examples, used to set tone, or convey a broader concept. They should
       have primarily cool colors to avoid clashing with the product design.
@@ -24,9 +24,9 @@
       from any instructional text.
     </p>
 
-    <BaseHeading level="2">
+    <SHeading level="2">
       Illustrations
-    </BaseHeading>
+    </SHeading>
     <p>
       Illustrations should be simple, clear, and descriptive. They should convey just enough
       information to communicate an idea, and little more.
@@ -36,9 +36,9 @@
       to modify than photos.
     </p>
 
-    <BaseHeading level="2">
+    <SHeading level="2">
       Icons
-    </BaseHeading>
+    </SHeading>
     <p>
       Icons should be distinct, and readable. They can be used to help users quickly identify key
       information or actions, but they should never be the sole identifier. When an icon is used for

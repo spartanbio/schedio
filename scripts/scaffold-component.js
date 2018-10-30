@@ -6,8 +6,8 @@ const path = require('path')
 const componentName = process.argv[2]
 const listFile = path.resolve(__dirname, '../src', 'components', 'index.js')
 
-const isBaseComponent = /^Base[A-Z]\w+/.test(componentName)
-const componentType = isBaseComponent ? 'Base Components' : 'Components'
+const isSComponent = /^Base[A-Z]\w+/.test(componentName)
+const componentType = isSComponent ? 'Components' : 'Components'
 const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
 
 // don't overwrite existing components
@@ -34,7 +34,7 @@ export default {
   {
     extension: 'stories.jsx',
     contents: `import { ${componentName} } from '@/components/${componentName}'
-import { BaseHeading } from '@/components/BaseHeading'
+import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
 import { withKnobs } from '@storybook/addon-knobs'
@@ -46,10 +46,10 @@ storiesOf('${componentType}/${componentName}', module)
     return {
       render: h => (
         <StoryContainer>
-          <BaseHeading level="1">${componentName.replace(/^Base/, '')}</BaseHeading>
+          <SHeading level="1">${componentName.replace(/^Base/, '')}</SHeading>
           <p>Describe the component here</p>
 
-          <BaseHeading level="2">Example</BaseHeading>
+          <SHeading level="2">Example</SHeading>
           <${componentName} />
 
           {${componentName}.props && <PropList component={${componentName}} />}

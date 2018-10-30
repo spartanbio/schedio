@@ -1,9 +1,9 @@
 <template>
-  <BaseContainer>
-    <CardDisplay>
+  <SContainer>
+    <SCard>
       <slot />
-    </CardDisplay>
-  </BaseContainer>
+    </SCard>
+  </SContainer>
 </template>
 
 <script>
