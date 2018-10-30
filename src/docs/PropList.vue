@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseHeading level="2" style="margin-top: 3rem;">Prop list</BaseHeading>
+    <SHeading level="2" style="margin-top: 3rem;">Prop list</SHeading>
 
     <ul>
       <li v-for="(propName, index) in propNames" :key="index">

@@ -1,7 +1,7 @@
 <template>
   <StoryContainer>
     <div class="typography-intro">
-      <BaseHeading level="1">Base Typography</BaseHeading>
+      <SHeading level="1">Base Typography</SHeading>
       <p>The base Spartan font parameters are:
         <ul class="no-bullets">
           <li>Font: <code>Avenir Next</code></li>

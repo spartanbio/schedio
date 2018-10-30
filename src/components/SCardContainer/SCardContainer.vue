@@ -7,7 +7,13 @@
 </template>
 
 <script>
+import { SCard } from '@/components/SCard'
+
 export default {
-  name: 'StoryContainer'
+  name: 'SCardContainer',
+
+  components: {
+    SCard
+  }
 }
 </script>

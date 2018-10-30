@@ -1,6 +1,6 @@
 <template>
   <StoryContainer>
-    <BaseHeading level="1">Spacing</BaseHeading>
+    <SHeading level="1">Spacing</SHeading>
     <p>Consistent spacing allows elements to stand out. It improves scannability and reduces noise.</p>
     <p>
       All spacing is defined using the

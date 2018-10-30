@@ -1,6 +1,6 @@
 <template>
   <StoryContainer>
-    <BaseHeading level="1">Print Typography</BaseHeading>
+    <SHeading level="1">Print Typography</SHeading>
     <p>
       <code>16pt</code> would be a bit large for most print typography, so instead, start with a
       base of <code>{{ baseFontSize }}pt</code>. Increase or decrease this size as the print size requires using the
@@ -13,10 +13,10 @@
       <a href="#" @click.prevent="linkToComponent">Headings and Displays</a>.
     </blockquote>
 
-    <BaseHeading level="2">Typography Calculator</BaseHeading>
+    <SHeading level="2">Typography Calculator</SHeading>
 
     <form >
-      <BaseInput
+      <SInput
         id="base-font-size"
         v-model="baseFontSize"
         :value="baseFontSize"

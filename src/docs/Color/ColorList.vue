@@ -1,11 +1,11 @@
 <template>
-  <BaseContainer>
-    <BaseContainerRow>
-      <BaseContainerColumn v-for="(colors, name) in palette" :key="'preview-' + name" md="6">
+  <SContainer>
+    <SContainerRow>
+      <SContainerColumn v-for="(colors, name) in palette" :key="'preview-' + name" md="6">
         <ColorChip :heading="name" :palette="colors" />
-      </BaseContainerColumn>
-    </BaseContainerRow>
-  </BaseContainer>
+      </SContainerColumn>
+    </SContainerRow>
+  </SContainer>
 </template>
 
 <script>
