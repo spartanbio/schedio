@@ -1,3 +1,15 @@
+# [2.1.0](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v2.0.1...v2.1.0) (2018-10-31)
+
+
+### Bug Fixes
+
+* updates lint command ([a804ee0](https://gitlab.com/spartanbio-marketing/schedio.git/commit/a804ee0))
+
+
+### Features
+
+* **switch:** adds switch component ([12f7959](https://gitlab.com/spartanbio-marketing/schedio.git/commit/12f7959))
+
 ## [2.0.1](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v2.0.0...v2.0.1) (2018-10-31)
 
 
