@@ -15,9 +15,9 @@
     "build": "vue-cli-service build --target lib ./src/index.js --dashboard",
     "build:storybook": "build-storybook -c config/storybook",
     "dev": "run-p serve:storybook theo:onchange",
-    "lint": "npm run lint:vue && npm run lint:style",
-    "lint:style": "stylelint ./src/assets/**/*.scss",
-    "lint:vue": "vue-cli-service lint ./src/*,./config/**/*.js",
+    "lint": "run-p lint:vue lint:style",
+    "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
+    "lint:vue": "vue-cli-service lint ./{src,config,scripts}/**/*.js",
     "prepare": "node ./scripts/build.js",
     "scaffold": "node scripts/scaffold-component.js",
     "serve": "npm run serve:storybook",
@@ -96,7 +96,8 @@
       "git add"
     ],
     "*.vue": [
-      "vue-cli-service lint && vue-cli-service lint:style",
+      "vue-cli-service lint",
+      "stylelint ./src/**/*.vue",
       "git add"
     ],
     "*.scss": [
