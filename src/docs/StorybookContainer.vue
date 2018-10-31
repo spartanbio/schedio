@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="storybook-container">
     <slot/>
   </div>
@@ -13,10 +13,10 @@ export default {
 <style lang="scss" scoped>
 .storybook-container {
   background-color: color('ice');
-  padding: spacing('half');
-
+  margin: -1 * spacing('half');
   // Accounts for nested container. Storybook applies the container twice.
   // unquote + interpolation allows resolution of variable in `calc`
   min-height: unquote("calc(100vh - #{spacing('base')})");
+  padding: spacing();
 }
 </style>

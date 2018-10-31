@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import Schedio from '@/'
+import Schedio from '@'
 import { withOptions } from '@storybook/addon-options'
 import { addDecorator, configure } from '@storybook/vue'
 import Vue from 'vue'
-import StorybookContainer from './StorybookContainer.vue'
+import StorybookContainer from '@/docs/StorybookContainer.vue'
 
 Vue.use(Schedio)
 
@@ -27,13 +27,11 @@ addDecorator(
 
 addDecorator(() => ({
   // TODO: remove duplicate container
-  render() {
-    return (
-      <StorybookContainer>
-        <story />
-      </StorybookContainer>
-    )
-  }
+  render: h => (
+    <StorybookContainer>
+      <story />
+    </StorybookContainer>
+  )
 }))
 
 configure(loadStories, module)

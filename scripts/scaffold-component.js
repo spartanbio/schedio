@@ -5,9 +5,6 @@ const path = require('path')
 // params
 const componentName = process.argv[2]
 const listFile = path.resolve(__dirname, '../src', 'components', 'index.js')
-
-const isSComponent = /^Base[A-Z]\w+/.test(componentName)
-const componentType = isSComponent ? 'Components' : 'Components'
 const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
 
 // don't overwrite existing components
@@ -40,13 +37,13 @@ import StoryContainer from '@/docs/StoryContainer'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
-storiesOf('${componentType}/${componentName}', module)
+storiesOf('Components/${componentName}', module)
   .addDecorator(withKnobs)
   .add('${componentName}', () => {
     return {
       render: h => (
         <StoryContainer>
-          <SHeading level="1">${componentName.replace(/^Base/, '')}</SHeading>
+          <SHeading level="1">${componentName}</SHeading>
           <p>Describe the component here</p>
 
           <SHeading level="2">Example</SHeading>
@@ -82,6 +79,7 @@ const outputFiles = scaffold.map(({ fileName, extension, contents }) => {
 })
 
 const updateComponentList = async () => {
+  // add component export to @/components/index.js
   const output = Buffer.concat([
     await fs.readFile(listFile),
     Buffer.from(`export { default as ${componentName} } from '@/components/${componentName}'\n`)

@@ -18,7 +18,7 @@ storiesOf('Components/SLink', module)
     // TODO: document visited/unvisited states.
 
     return {
-      render() {
+      render(h) {
         return (
           <StoryContainer>
             <SHeading level="1">Links</SHeading>

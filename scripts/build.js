@@ -7,8 +7,6 @@ const destDir = 'dist/components'
 // Build the complete bundle
 shell.exec(`${buildLib} src/index.js`)
 
-if (process.env.SCHEDIO_BUILD_LIB_ONLY) return
-
 // Builds dist/components/<Component>/<Component>.common.js
 // Then renames to dist/components/<Component>/index.js
 const componentsDir = './src/components'

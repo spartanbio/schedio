@@ -1,5 +1,6 @@
 const globImporter = require('node-sass-glob-importer')
-const path = require('path')
+// const path = require('path')
+const sharedConf = require('../shared-webpack-conf')
 
 module.exports = {
   productionSourceMap: false,
@@ -8,16 +9,10 @@ module.exports = {
     stylelint: {
       formatter: () => require('prettier')
     },
-    'style-resources-loader': {
-      preProcessor: 'scss',
-      patterns: [
-        path.resolve(__dirname, 'src/assets/styles/tokens/dist/*.scss'),
-        path.resolve(__dirname, 'src/assets/styles/base/*.scss')
-      ]
-    }
+    'style-resources-loader': sharedConf.styleResourcesLoaderOptions
   },
   css: {
-    extract: typeof process.env.EXTRACT_CSS !== 'undefined' ? process.env.EXTRACT_CSS : false,
+    extract: true,
     loaderOptions: {
       sass: {
         importer: globImporter()
@@ -26,9 +21,7 @@ module.exports = {
   },
   configureWebpack: {
     resolve: {
-      alias: {
-        '@@': path.resolve(__dirname)
-      }
+      alias: sharedConf.aliases
     }
   }
 }
