@@ -51,6 +51,9 @@ $ cd schedio && npm install
 $ git checkout -b <feature-branch>
 ```
 
+`@` and `~` have been aliased to `src/` in webpack. `@@` and `~~` have also been aliased to the
+project root.
+
 ### Build tokens and hot-reload for component development
 
 ```bash
