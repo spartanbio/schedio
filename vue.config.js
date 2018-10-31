@@ -1,6 +1,5 @@
 const globImporter = require('node-sass-glob-importer')
-// const path = require('path')
-const sharedConf = require('../shared-webpack-conf')
+const sharedConf = require('./config/shared-webpack-conf')
 
 module.exports = {
   productionSourceMap: false,
