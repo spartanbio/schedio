@@ -1,3 +1,21 @@
+# [2.0.0](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v1.6.5...v2.0.0) (2018-10-31)
+
+
+### Bug Fixes
+
+* **install:** improves how extract css is set ([8c792ba](https://gitlab.com/spartanbio-marketing/schedio.git/commit/8c792ba))
+* replaces `vue-cli-plugin-storybook` with manually configured `[@storybook](https://gitlab.com/storybook)/vue` ([c41a179](https://gitlab.com/spartanbio-marketing/schedio.git/commit/c41a179))
+
+
+### Code Refactoring
+
+* renames components ([0bc370d](https://gitlab.com/spartanbio-marketing/schedio.git/commit/0bc370d))
+
+
+### BREAKING CHANGES
+
+* components have been renamed
+
 ## [1.6.5](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v1.6.4...v1.6.5) (2018-10-29)
 
 
