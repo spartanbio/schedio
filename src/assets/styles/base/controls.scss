@@ -112,3 +112,65 @@
     border-color: color('grey', 'dark');
   }
 }
+
+@mixin switch-size($switch-size: 'base') {
+  $toggle-size: 1.5em;
+
+  @if $switch-size == 'base' {
+    $toggle-size: 1.5em;
+  } @else if $switch-size == 'medium' {
+    $toggle-size: 2em;
+  } @else if $switch-size == 'large' {
+    $toggle-size: 3em;
+  }
+
+  border-radius: $toggle-size;
+  height: $toggle-size;
+  width: 2 * $toggle-size;
+
+  &::after {
+    height: $toggle-size;
+    width: $toggle-size;
+  }
+}
+
+@mixin switch {
+  @include check-or-radio;
+
+  & ~ &__check {
+    @include switch-size;
+
+    justify-content: flex-start;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+
+    &::after {
+      background: color('white');
+      border: border();
+      border-radius: border-radius('circle');
+      box-shadow: shadow();
+      content: '';
+      left: -1px;
+      position: relative;
+      transition: all duration() easing('in');
+    }
+  }
+
+  &:disabled ~ &__check::after {
+    background-color: color('grey', 'dark');
+  }
+
+  &:checked ~ &__check {
+    border: none;
+
+    &::after {
+      transform: translateX(calc(100% + 2px));
+    }
+  }
+
+  &:checked:not(:disabled) ~ &__check {
+    background-color: color('green');
+  }
+}
