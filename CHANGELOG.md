@@ -1,3 +1,10 @@
+## [2.0.1](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v2.0.0...v2.0.1) (2018-10-31)
+
+
+### Bug Fixes
+
+* uses correct path to shared conf ([65b43f4](https://gitlab.com/spartanbio-marketing/schedio.git/commit/65b43f4))
+
 # [2.0.0](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v1.6.5...v2.0.0) (2018-10-31)
 
 
