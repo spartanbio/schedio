@@ -8,28 +8,29 @@
       <code>font-size</code>.
     </p>
 
-    <table class="table table--bordered table--hoverable">
-      <thead>
-        <tr>
-          <th class="table__cell">Name</th>
-          <th class="table__cell">Value</th>
-          <th class="table__cell">Example</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="{ name, value } in spacing" :key="name">
-          <td class="table__cell">
-            <code>${{ name }}</code>
-          </td>
-          <td class="table__cell table__cell--numeric">
-            <code>{{ value }}</code>
-          </td>
-          <td class="table__cell spacing-example">
-            <div :style="{height: value, width: value}" class="spacing-example__spacer" />
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <STable is-bordered is-hoverable>
+
+      <STableRow slot="header">
+        <STableCell>Name</STableCell>
+        <STableCell>Value</STableCell>
+        <STableCell>Example</STableCell>
+      </STableRow>
+
+      <STableRow v-for="{ name, value } in spacing" :key="name">
+        <STableCell>
+          <code>${{ name }}</code>
+        </STableCell>
+
+        <STableCell is-numeric>
+          <code>{{ value }}</code>
+        </STableCell>
+
+        <STableCell class="spacing-example">
+          <div :style="{height: value, width: value}" class="spacing-example__spacer" />
+        </STableCell>
+      </STableRow>
+
+    </STable>
 
   </StoryContainer>
 </template>
