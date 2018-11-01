@@ -4,27 +4,6 @@
   font-weight: $font-weight-bold;
   text-transform: uppercase;
 
-  &--inline {
-    align-items: center;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
-    span {
-      margin-top: spacing('half');
-    }
-
-    .input,
-    .textarea,
-    .select {
-      margin-left: spacing();
-    }
-
-    &.label--reversed {
-      flex-direction: row-reverse;
-    }
-  }
-
   &--fullwidth {
     width: 100%;
   }
@@ -35,6 +14,28 @@
 
   &:not(:first-child) {
     margin: spacing('loose') 0;
+  }
+
+  &--inline {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .input,
+    .textarea,
+    .select {
+      margin-top: 0;
+      margin-left: spacing();
+    }
+
+    &.label--reversed {
+      flex-direction: row-reverse;
+    }
+
+    &:not(:first-child) {
+      margin: spacing('half') 0;
+    }
   }
 
   &__optional {
