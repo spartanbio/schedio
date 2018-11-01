@@ -1,3 +1,10 @@
+## [2.2.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.0...v2.2.1) (2018-11-01)
+
+
+### Bug Fixes
+
+* **button-group:** fixes `button-group` color class names ([987110f](https://gitlab.com/spartanbio-marketing/schedio/commit/987110f))
+
 # [2.2.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.1.1...v2.2.0) (2018-11-01)
 
 
