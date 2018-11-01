@@ -25,24 +25,24 @@
 
   // These row variants have been left here because they're dependent on `.table--<variant>`
   &--bordered {
-    &__body {
-      &__row {
+    .table__body {
+      .table__row {
         border-top: border();
       }
     }
   }
 
   &--striped {
-    &__body {
-      &__row:nth-child(even) {
+    .table__body {
+      .table__row:nth-child(even) {
         background-color: lighten(color('grey', 'lighter'), 2%);
       }
     }
   }
 
   &--hoverable {
-    &__body {
-      &__row:hover {
+    .table__body {
+      .table__row:hover {
         background-color: color('grey', 'lighter') !important;
       }
     }

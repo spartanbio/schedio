@@ -1,9 +1,7 @@
 .table__cell {
-  &__cell {
-    padding: spacing('base');
+  padding: spacing('base');
 
-    &--numeric {
-      text-align: right;
-    }
+  &--numeric {
+    text-align: right;
   }
 }
