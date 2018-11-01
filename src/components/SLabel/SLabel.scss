@@ -10,6 +10,10 @@
     flex-direction: row;
     justify-content: flex-start;
 
+    span {
+      margin-top: spacing('half');
+    }
+
     .input,
     .textarea,
     .select {
