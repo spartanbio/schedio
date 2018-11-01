@@ -24,6 +24,14 @@
       from any instructional text.
     </p>
 
+    <SContainer>
+      <SContainerRow justify="center">
+        <SContainerColumn md="6">
+          <img src="@/assets/images/cube.jpg" alt="Cube on a blue background">
+        </SContainerColumn>
+      </SContainerRow>
+    </SContainer>
+
     <SHeading level="2">
       Illustrations
     </SHeading>
@@ -36,6 +44,14 @@
       to modify than photos.
     </p>
 
+    <SContainer>
+      <SContainerRow justify="center">
+        <SContainerColumn md="6">
+          <img src="@/assets/images/installation-illustration.svg" alt="Cube installation">
+        </SContainerColumn>
+      </SContainerRow>
+    </SContainer>
+
     <SHeading level="2">
       Icons
     </SHeading>
@@ -44,6 +60,27 @@
       information or actions, but they should never be the sole identifier. When an icon is used for
       identification, it should be accompanied by a label.
     </p>
+
+    <SContainer>
+      <SContainerRow justify="center">
+        <SContainerColumn md="2" style="align-items: center; display: flex;">
+          <img src="@/assets/images/clipboard-icon.svg" alt="Clipboard icon">
+        </SContainerColumn>
+        <SContainerColumn md="2" style="align-items: center; display: flex;">
+          <img src="@/assets/images/droplet-icon.svg" alt="Droplet icon">
+        </SContainerColumn>
+        <SContainerColumn md="2" style="align-items: center; display: flex;">
+          <img src="@/assets/images/user-icon.svg" alt="User icon">
+        </SContainerColumn>
+        <SContainerColumn md="2" style="align-items: center; display: flex;">
+          <img src="@/assets/images/password-icon.svg" alt="Password icon">
+        </SContainerColumn>
+        <SContainerColumn md="2" style="align-items: center; display: flex;">
+          <img src="@/assets/images/system-icon.svg" alt="Cube icon">
+        </SContainerColumn>
+      </SContainerRow>
+    </SContainer>
+
   </StoryContainer>
 </template>
 
