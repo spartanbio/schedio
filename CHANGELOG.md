@@ -1,3 +1,10 @@
+## [2.2.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.2...v2.2.3) (2018-11-01)
+
+
+### Bug Fixes
+
+* **label:** fixes inline label alignment ([bd868a7](https://gitlab.com/spartanbio-marketing/schedio/commit/bd868a7))
+
 ## [2.2.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.1...v2.2.2) (2018-11-01)
 
 
