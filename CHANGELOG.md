@@ -1,3 +1,11 @@
+# [2.2.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.1.1...v2.2.0) (2018-11-01)
+
+
+### Features
+
+* **progress-bar:** adds progress bar component ([e7063fc](https://gitlab.com/spartanbio-marketing/schedio/commit/e7063fc))
+* **spinner:** adds spinner component ([5ee324f](https://gitlab.com/spartanbio-marketing/schedio/commit/5ee324f))
+
 ## [2.1.1](https://gitlab.com/spartanbio-marketing/schedio.git/compare/v2.1.0...v2.1.1) (2018-10-31)
 
 
