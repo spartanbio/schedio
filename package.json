@@ -21,7 +21,7 @@
     "prepare": "node ./scripts/build.js",
     "scaffold": "node scripts/scaffold-component.js",
     "serve": "npm run serve:storybook",
-    "serve:storybook": "start-storybook -p 6006 -c config/storybook",
+    "serve:storybook": "start-storybook -p 6006 -s ./static -c ./config/storybook",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
     "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo",
     "semantic-release": "semantic-release"
