@@ -1,3 +1,10 @@
+## [2.2.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.1...v2.2.2) (2018-11-01)
+
+
+### Bug Fixes
+
+* **table:** fixes class names ([946a17a](https://gitlab.com/spartanbio-marketing/schedio/commit/946a17a))
+
 ## [2.2.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.0...v2.2.1) (2018-11-01)
 
 
