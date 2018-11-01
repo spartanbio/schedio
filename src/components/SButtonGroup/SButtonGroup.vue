@@ -29,7 +29,7 @@ export default {
   computed: {
     classList() {
       return {
-        [`button-group-color--${this.groupColor}`]: this.groupColor,
+        [`button-group--color-${this.groupColor}`]: this.groupColor,
         'button-group--grouped': this.areGrouped
       }
     }
