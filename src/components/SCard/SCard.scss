@@ -15,19 +15,19 @@
     border-bottom-right-radius: inherit;
   }
 
-  &-header {
+  &__header {
     border-bottom: border();
     border-color: color('grey', 'light');
     flex: 1 1 auto;
     padding: spacing('double');
   }
 
-  &-image {
+  &__image {
     flex: 1 1 auto;
     width: 100%;
   }
 
-  &-body {
+  &__body {
     flex: 1 1 auto;
     padding: spacing('double');
 
@@ -36,7 +36,7 @@
     }
   }
 
-  &-footer {
+  &__footer {
     border-top: border();
     border-color: color('grey', 'light');
     flex: 1 1 auto;
