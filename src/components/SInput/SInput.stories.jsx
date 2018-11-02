@@ -30,7 +30,6 @@ storiesOf('Components/SInput', module)
 
           <SHeading level="2">Example</SHeading>
           <SInput {...{ props }} {...{ attrs }} />
-          <SInput {...{ props }} {...{ attrs }} />
 
           <PropList component={SInput} />
         </StoryContainer>
