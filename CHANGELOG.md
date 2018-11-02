@@ -1,3 +1,16 @@
+# [2.3.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.4...v2.3.0) (2018-11-02)
+
+
+### Bug Fixes
+
+* **card:** uses BEM naming correctly ([2a1f490](https://gitlab.com/spartanbio-marketing/schedio/commit/2a1f490))
+* **input:** fixes prop validation ([42da003](https://gitlab.com/spartanbio-marketing/schedio/commit/42da003))
+
+
+### Features
+
+* **a11y:** adds a11y plugin and updates styles for accessibility ([5139887](https://gitlab.com/spartanbio-marketing/schedio/commit/5139887))
+
 ## [2.2.4](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.3...v2.2.4) (2018-11-01)
 
 
