@@ -33,7 +33,7 @@ $borders-width: (
 );
 
 $borders-data: (
-  'light': border-width() solid color('grey', 'lighter'),
-  'base': border-width() solid color('grey', 'light'),
-  'dark': border-width() solid color('grey')
+  'light': border-width() solid color('night', 'lightest'),
+  'base': border-width() solid color('night', 'lighter'),
+  'dark': border-width() solid color('night', 'light')
 );

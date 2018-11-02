@@ -1,5 +1,6 @@
 @mixin control-border-shadow {
   box-shadow: 0 0 0 2px color('spartan_blue', 'light'), shadow();
+  border-color: transparent;
 }
 
 @mixin control-focus {
@@ -27,6 +28,10 @@
   text-transform: none;
   transition: all duration() easing();
   width: 100%;
+
+  &:focus {
+    border-color: transparent;
+  }
 
   &:disabled {
     @include control-disabled;
@@ -103,6 +108,7 @@
   }
 
   &:checked:not(:focus):not(:disabled) ~ &__check {
+    border-color: transparent;
     box-shadow: 0 0 0 1px color('spartan_blue', 'light'), shadow();
   }
 

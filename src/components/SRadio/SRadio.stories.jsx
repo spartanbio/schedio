@@ -22,7 +22,10 @@ storiesOf('Components/SRadio', module)
         }),
         isReversed: boolean(`radio-${i + 1} isReversed`, false, 'Optional Props')
       },
-      attrs: withUnboundAttrs({ identifier: `radio-${i + 1}`, value: `radio-${i + 1}` })
+      attrs: {
+        ...withUnboundAttrs({ identifier: `radio-${i + 1}`, value: `radio-${i + 1}` }),
+        'aria-labelledby': 'radio-example'
+      }
     }))
 
     return {
@@ -34,7 +37,9 @@ storiesOf('Components/SRadio', module)
             is very long, consider using a <StoryLink to="Components/SSelect" />.
           </p>
 
-          <SHeading level="2">Example</SHeading>
+          <SHeading level="2" id="radio-example">
+            Example
+          </SHeading>
           {radios.map(({ props, attrs }) => (
             <SRadio {...{ props }} {...{ attrs }} />
           ))}

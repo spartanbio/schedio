@@ -1,8 +1,7 @@
 .card {
   background-color: color('white');
-  border: border();
   border-radius: border-radius();
-  box-shadow: shadow();
+  box-shadow: shadow('border'), shadow();
   display: flex;
   flex-direction: column;
 
@@ -18,6 +17,7 @@
 
   &-header {
     border-bottom: border();
+    border-color: color('grey', 'light');
     flex: 1 1 auto;
     padding: spacing('double');
   }
@@ -38,6 +38,7 @@
 
   &-footer {
     border-top: border();
+    border-color: color('grey', 'light');
     flex: 1 1 auto;
     padding: spacing('double');
   }

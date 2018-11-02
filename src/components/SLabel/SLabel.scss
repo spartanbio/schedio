@@ -40,7 +40,7 @@
 
   &__optional {
     @include font-size(6);
-    color: color('night', 'lightest');
+    color: color('night', 'light');
     font-weight: $font-weight-light;
     text-transform: none;
   }

@@ -23,7 +23,7 @@ storiesOf('Components/SCard', module)
     return {
       render: h => (
         <StoryContainer>
-          <SHeading level="1">Card Display</SHeading>
+          <SHeading level="1">Card</SHeading>
           <p>
             It's a card! It has header, footer, and default slots, and supports images. Padding on
             the default slot can be toggled with the <code>has-no-padding</code> prop.
