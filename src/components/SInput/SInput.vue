@@ -36,7 +36,7 @@ export default {
       type: String,
       default: 'text',
       validator: value => {
-        return allowed.includes(value) ? true : console.error(`type must be one of: ${allowed}`)
+        return !value || allowed.includes(value) || console.error(`type must be one of: ${allowed}`)
       }
     }
   }

@@ -40,7 +40,14 @@ storiesOf('Components/SButton', module)
           <SHeading level="1">Buttons</SHeading>
           <p>Buttons are used to make actions immediately visible and easy to click.</p>
           <p>
-            Use a <StoryLink to="Components/SButtonGroup" /> to group multiple buttons.
+            Use <StoryLink to="Components/SButtonGroup" /> to group multiple buttons.
+          </p>
+
+          <SHeading level="2">Accessibility</SHeading>
+          <p>
+            Many buttons have a <code>text-shadow</code> applied to improve acessibility.{' '}
+            <code>@storybook/addon-a11y</code> does not detect the shadow, however, and will still
+            throw a warning.
           </p>
 
           <SHeading level="2">Example</SHeading>

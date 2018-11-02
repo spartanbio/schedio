@@ -29,9 +29,9 @@ storiesOf('Components/SLink', module)
             </p>
             <p>
               <code>SLink</code> will detect external and internal links automatically. It supports
-              use with or without <code>vue-router</code>, and with <code>nuxt</code>.<code>a</code>
-              , <code>router-link</code>, or <code>nuxt-link</code> will be used for the component
-              as necessary.
+              use with or without <code>vue-router</code>, and with <code>nuxt</code>.{' '}
+              <code>a</code>, <code>router-link</code>, or <code>nuxt-link</code> will be used for
+              the component as necessary.
             </p>
 
             <SHeading level="2">Example</SHeading>

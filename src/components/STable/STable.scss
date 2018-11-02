@@ -14,7 +14,7 @@
   &__caption {
     @include font-size(6);
     caption-side: bottom;
-    color: color('night', 'lighter');
+    color: color('night', 'light');
     font-weight: $font-weight-regular;
     text-align: left;
 
