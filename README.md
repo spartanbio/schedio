@@ -93,6 +93,15 @@ $ npm run build:storybook
 $ npm run lint
 ```
 
+### Tests
+```bash
+# run all tests
+$ npm test
+
+# run unit tests
+$ npm run test:unit
+```
+
 ## Contributing
 
 This project uses [conventional commits](https://conventionalcommits.org/) to automatically generate

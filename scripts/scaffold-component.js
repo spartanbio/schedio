@@ -14,6 +14,7 @@ if (fs.pathExistsSync(path.resolve(writeDir, `${componentName}.vue`))) {
 
 // files and contents to write
 const scaffold = [
+  // Vue component
   {
     extension: 'vue',
     contents: `<template>
@@ -28,6 +29,7 @@ export default {
 }
 </script>\n`
   },
+  // Storybook story
   {
     extension: 'stories.jsx',
     contents: `import { ${componentName} } from '@/components/${componentName}'
@@ -55,10 +57,12 @@ storiesOf('Components/${componentName}', module)
     }
   })\n`
   },
+  // SCSS
   {
     extension: 'scss',
     contents: '// component styles\n'
   },
+  // index.js
   {
     fileName: 'index',
     extension: 'js',
@@ -73,10 +77,26 @@ export default {
 ]
 
 // set up promises
-const outputFiles = scaffold.map(({ fileName, extension, contents }) => {
+const generateComponentFiles = scaffold.map(({ fileName, extension, contents }) => {
   const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
-  fs.outputFile(file, contents)
+  return fs.outputFile(file, contents)
 })
+
+const addUnitTest = () => {
+  const test = path.resolve(writeDir, '__tests__', `${componentName}.spec.js`)
+  const contents = `import { shallowMount } from '@vue/test-utils'
+import ${componentName} from '@/components/${componentName}/${componentName}.vue'
+
+describe('${componentName}.vue', () => {
+  it('renders correctly', () => {
+    const wrapper = shallowMount(${componentName})
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+})\n`
+
+  return fs.outputFile(test, contents)
+}
 
 const updateComponentList = async () => {
   // add component export to @/components/index.js
@@ -88,6 +108,6 @@ const updateComponentList = async () => {
 }
 
 // write files
-Promise.all([...outputFiles, updateComponentList()])
+Promise.all([...generateComponentFiles, addUnitTest(), updateComponentList()])
   .then(() => console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``)))
   .catch(err => console.error(chalk.red(err)))
