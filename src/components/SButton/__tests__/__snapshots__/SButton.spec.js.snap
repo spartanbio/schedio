@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SButton.vue renders correctly 1`] = `<button class="button button--color-green">Button Text</button>`;
+
+exports[`SButton.vue sets color correctly 1`] = `<button color="red" class="button button--color-green"></button>`;
+
+exports[`SButton.vue sets size correctly 1`] = `<button size="lg" class="button button--color-green"></button>`;
