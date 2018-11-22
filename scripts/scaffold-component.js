@@ -1,3 +1,4 @@
+const addUnitTest = require('./add-unit-test')
 const chalk = require('chalk')
 const fs = require('fs-extra')
 const path = require('path')
@@ -79,24 +80,9 @@ export default {
 // set up promises
 const generateComponentFiles = scaffold.map(({ fileName, extension, contents }) => {
   const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
+
   return fs.outputFile(file, contents)
 })
-
-const addUnitTest = () => {
-  const test = path.resolve(writeDir, '__tests__', `${componentName}.spec.js`)
-  const contents = `import { shallowMount } from '@vue/test-utils'
-import ${componentName} from '@/components/${componentName}/${componentName}.vue'
-
-describe('${componentName}.vue', () => {
-  it('renders correctly', () => {
-    const wrapper = shallowMount(${componentName})
-
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-})\n`
-
-  return fs.outputFile(test, contents)
-}
 
 const updateComponentList = async () => {
   // add component export to @/components/index.js
@@ -108,6 +94,7 @@ const updateComponentList = async () => {
 }
 
 // write files
-Promise.all([...generateComponentFiles, addUnitTest(), updateComponentList()])
+Promise.all([...generateComponentFiles, updateComponentList()])
+  .then(() => addUnitTest(componentName))
   .then(() => console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``)))
   .catch(err => console.error(chalk.red(err)))

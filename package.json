@@ -3,6 +3,7 @@
   "version": "2.3.0",
   "private": true,
   "scripts": {
+    "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "serve": "npm run serve:storybook",
     "build": "vue-cli-service build --target lib ./src/index.js --dashboard",
     "lint": "run-p lint:vue lint:style",
@@ -11,7 +12,7 @@
     "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
     "lint:vue": "vue-cli-service lint ./{src,config,scripts}/**/*.js",
     "prepare": "node ./scripts/build.js",
-    "scaffold": "node scripts/scaffold-component.js",
+    "scaffold": "node ./scripts/scaffold-component.js",
     "semantic-release": "semantic-release",
     "serve:storybook": "start-storybook -p 6006 -s ./static -c ./config/storybook",
     "test": "run-s test:unit",
