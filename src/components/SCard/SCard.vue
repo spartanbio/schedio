@@ -7,6 +7,7 @@
     <img
       v-if="image && image.src"
       v-bind="image"
+      :alt="image.alt"
       class="card__image">
 
     <div v-if="$slots.default" :class="{ 'card__body--no-padding': hasNoPadding }" class="card__body">
