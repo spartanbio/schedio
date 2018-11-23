@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SButtonGroup.vue changes child button colors 1`] = `
+<div class="button-group button-group--color-red">
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 1
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 2
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 3
+  </sbutton-stub>
+</div>
+`;
+
+exports[`SButtonGroup.vue groups child buttons 1`] = `
+<div class="button-group button-group--grouped">
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 1
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 2
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 3
+  </sbutton-stub>
+</div>
+`;
+
+exports[`SButtonGroup.vue renders child buttons 1`] = `
+<div class="button-group">
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 1
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 2
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 3
+  </sbutton-stub>
+</div>
+`;
+
+exports[`SButtonGroup.vue renders correctly 1`] = `
+<div class="button-group">
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 1
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 2
+  </sbutton-stub>
+  <sbutton-stub buttoncolor="" buttonsize="">
+    Button 3
+  </sbutton-stub>
+</div>
+`;
