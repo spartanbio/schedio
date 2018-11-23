@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SCard.vue can have a footer 1`] = `
+<div class="card">
+  <!---->
+  <!---->
+  <!---->
+  <div class="card__footer">
+    <div>Footer Slot</div>
+  </div>
+</div>
+`;
+
+exports[`SCard.vue can have a header 1`] = `
+<div class="card">
+  <div class="card__header">
+    <div>Header Slot</div>
+  </div>
+  <!---->
+  <!---->
+  <!---->
+</div>
+`;
+
+exports[`SCard.vue can have content 1`] = `
+<div class="card">
+  <!---->
+  <!---->
+  <div class="card__body">
+    <div>Default Slot</div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SCard.vue can show an image 1`] = `
+<div class="card">
+  <!----> <img alt="An image" src="/some-image.jpg" class="card__image">
+  <div class="card__body">
+    <div>Default Slot</div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SCard.vue can use different HTML tags 1`] = `
+<section class="card">
+  <!---->
+  <!---->
+  <div class="card__body">
+    <div>Default Slot</div>
+  </div>
+  <!---->
+</section>
+`;
+
+exports[`SCard.vue renders correctly 1`] = `
+<div class="card">
+  <!---->
+  <!---->
+  <div class="card__body">
+    <div>Default Slot</div>
+  </div>
+  <!---->
+</div>
+`;
