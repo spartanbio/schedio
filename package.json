@@ -63,6 +63,7 @@
     "fs-extra": "^7.0.1",
     "husky": "^1.2.0",
     "lint-staged": "^8.0.5",
+    "lodash.camelcase": "^4.3.0",
     "lodash.groupby": "^4.6.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.orderby": "^4.6.0",
