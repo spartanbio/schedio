@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SProgressBar.vue can be gold 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-gold" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be green 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-green" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be grey 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-grey" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be ice 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-ice" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be large 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background progress-bar__background--large"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be magenta 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-magenta" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be medium 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background progress-bar__background--medium"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be night 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-night" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be red 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-red" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be small 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background progress-bar__background--small"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be spartan_blue 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-spartan_blue" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be turquoise 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-turquoise" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can be white 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-white" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can display a message 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">this is a message: 50% complete.</div>
+</div>
+`;
+
+exports[`SProgressBar.vue can hide the percent complete 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator" style="width: 50%;"></div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SProgressBar.vue renders correctly 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">50% complete.</div>
+</div>
+`;
