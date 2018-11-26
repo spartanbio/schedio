@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SContainerRow.vue can be align around 1`] = `
+<div class="row row--align-around align">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be align between 1`] = `
+<div class="row row--align-between align">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be align center 1`] = `
+<div class="row row--align-center align">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be align end 1`] = `
+<div class="row row--align-end align">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be align start 1`] = `
+<div class="row row--align-start align">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterLg around 1`] = `
+<div class="row row--align-around-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterLg between 1`] = `
+<div class="row row--align-between-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterLg center 1`] = `
+<div class="row row--align-center-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterLg end 1`] = `
+<div class="row row--align-end-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterLg start 1`] = `
+<div class="row row--align-start-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterMd around 1`] = `
+<div class="row row--align-around-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterMd between 1`] = `
+<div class="row row--align-between-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterMd center 1`] = `
+<div class="row row--align-center-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterMd end 1`] = `
+<div class="row row--align-end-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterMd start 1`] = `
+<div class="row row--align-start-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterSm around 1`] = `
+<div class="row row--align-around-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterSm between 1`] = `
+<div class="row row--align-between-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterSm center 1`] = `
+<div class="row row--align-center-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterSm end 1`] = `
+<div class="row row--align-end-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterSm start 1`] = `
+<div class="row row--align-start-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterXl around 1`] = `
+<div class="row row--align-around-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterXl between 1`] = `
+<div class="row row--align-between-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterXl center 1`] = `
+<div class="row row--align-center-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterXl end 1`] = `
+<div class="row row--align-end-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignAfterXl start 1`] = `
+<div class="row row--align-start-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilLg around 1`] = `
+<div class="row row--align-around-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilLg between 1`] = `
+<div class="row row--align-between-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilLg center 1`] = `
+<div class="row row--align-center-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilLg end 1`] = `
+<div class="row row--align-end-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilLg start 1`] = `
+<div class="row row--align-start-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilMd around 1`] = `
+<div class="row row--align-around-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilMd between 1`] = `
+<div class="row row--align-between-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilMd center 1`] = `
+<div class="row row--align-center-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilMd end 1`] = `
+<div class="row row--align-end-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilMd start 1`] = `
+<div class="row row--align-start-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilSm around 1`] = `
+<div class="row row--align-around-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilSm between 1`] = `
+<div class="row row--align-between-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilSm center 1`] = `
+<div class="row row--align-center-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilSm end 1`] = `
+<div class="row row--align-end-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilSm start 1`] = `
+<div class="row row--align-start-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilXl around 1`] = `
+<div class="row row--align-around-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilXl between 1`] = `
+<div class="row row--align-between-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilXl center 1`] = `
+<div class="row row--align-center-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilXl end 1`] = `
+<div class="row row--align-end-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be alignUntilXl start 1`] = `
+<div class="row row--align-start-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justify around 1`] = `
+<div class="row row--justify-around justify">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justify between 1`] = `
+<div class="row row--justify-between justify">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justify center 1`] = `
+<div class="row row--justify-center justify">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justify end 1`] = `
+<div class="row row--justify-end justify">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justify start 1`] = `
+<div class="row row--justify-start justify">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterLg around 1`] = `
+<div class="row row--justify-around-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterLg between 1`] = `
+<div class="row row--justify-between-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterLg center 1`] = `
+<div class="row row--justify-center-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterLg end 1`] = `
+<div class="row row--justify-end-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterLg start 1`] = `
+<div class="row row--justify-start-after-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterMd around 1`] = `
+<div class="row row--justify-around-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterMd between 1`] = `
+<div class="row row--justify-between-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterMd center 1`] = `
+<div class="row row--justify-center-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterMd end 1`] = `
+<div class="row row--justify-end-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterMd start 1`] = `
+<div class="row row--justify-start-after-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterSm around 1`] = `
+<div class="row row--justify-around-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterSm between 1`] = `
+<div class="row row--justify-between-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterSm center 1`] = `
+<div class="row row--justify-center-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterSm end 1`] = `
+<div class="row row--justify-end-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterSm start 1`] = `
+<div class="row row--justify-start-after-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterXl around 1`] = `
+<div class="row row--justify-around-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterXl between 1`] = `
+<div class="row row--justify-between-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterXl center 1`] = `
+<div class="row row--justify-center-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterXl end 1`] = `
+<div class="row row--justify-end-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyAfterXl start 1`] = `
+<div class="row row--justify-start-after-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilLg around 1`] = `
+<div class="row row--justify-around-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilLg between 1`] = `
+<div class="row row--justify-between-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilLg center 1`] = `
+<div class="row row--justify-center-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilLg end 1`] = `
+<div class="row row--justify-end-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilLg start 1`] = `
+<div class="row row--justify-start-until-lg">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilMd around 1`] = `
+<div class="row row--justify-around-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilMd between 1`] = `
+<div class="row row--justify-between-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilMd center 1`] = `
+<div class="row row--justify-center-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilMd end 1`] = `
+<div class="row row--justify-end-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilMd start 1`] = `
+<div class="row row--justify-start-until-md">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilSm around 1`] = `
+<div class="row row--justify-around-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilSm between 1`] = `
+<div class="row row--justify-between-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilSm center 1`] = `
+<div class="row row--justify-center-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilSm end 1`] = `
+<div class="row row--justify-end-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilSm start 1`] = `
+<div class="row row--justify-start-until-sm">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilXl around 1`] = `
+<div class="row row--justify-around-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilXl between 1`] = `
+<div class="row row--justify-between-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilXl center 1`] = `
+<div class="row row--justify-center-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilXl end 1`] = `
+<div class="row row--justify-end-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be justifyUntilXl start 1`] = `
+<div class="row row--justify-start-until-xl">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue can be reversed 1`] = `
+<div class="row row--reverse">
+  <div>Row Content</div>
+</div>
+`;
+
+exports[`SContainerRow.vue renders correctly 1`] = `
+<div class="row">
+  <div>Row Content</div>
+</div>
+`;
