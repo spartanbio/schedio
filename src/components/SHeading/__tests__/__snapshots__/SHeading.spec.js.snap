@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SHeading.vue can be display 1`] = `<h1 class="display-1">Heading Content</h1>`;
+
+exports[`SHeading.vue can be uppercase 1`] = `<h1 class="heading-1 uppercase">Heading Content</h1>`;
+
+exports[`SHeading.vue can be uppercase 2`] = `<h1 class="heading-1 subtle">Heading Content</h1>`;
+
+exports[`SHeading.vue renders correctly 1`] = `<h1 class="heading-1">Heading Content</h1>`;
