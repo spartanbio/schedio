@@ -82,8 +82,8 @@ export default {
     listeners() {
       return {
         ...this.$listeners,
-        input: event => this.$emit('input', this.selected),
-        change: event => this.$emit('input', this.selected)
+        input: event => this.$emit('input', event.target.value),
+        change: event => this.$emit('change', event.target.value)
       }
     },
 
