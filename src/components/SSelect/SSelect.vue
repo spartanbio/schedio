@@ -88,7 +88,9 @@ export default {
     },
 
     optionsHaveGroups() {
-      return Object.values(this.selectOptions).every(value => Array.isArray(value))
+      if (this.selectOptions) {
+        return Object.values(this.selectOptions).every(value => Array.isArray(value))
+      }
     }
   },
 
