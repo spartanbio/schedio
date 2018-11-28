@@ -17,7 +17,7 @@ describe('SHeading.vue', () => {
   })
 
   afterEach(() => {
-    jest.resetAllMocks()
+    jest.clearAllMocks()
   })
 
   it('renders correctly', () => {
@@ -43,11 +43,11 @@ describe('SHeading.vue', () => {
 
   it('should have a level less than 3', () => {
     for (let i; i <= 3; i++) {
-      wrapper.setProps({ level: i })
+      shallowMount(SHeading, { propsData: { level: i } })
       expect(errorSpy).not.toBeCalled()
     }
 
-    wrapper.setProps({ level: 4 })
+    shallowMount(SHeading, { propsData: { level: 4 } })
     expect(errorSpy).toBeCalled()
   })
 
@@ -72,7 +72,7 @@ describe('SHeading.vue', () => {
   })
 
   it('warns if subtle and uppercase', () => {
-    wrapper.setProps({ isUppercase: true, isSubtle: true })
+    shallowMount(SHeading, { propsData: { isUppercase: true, isSubtle: true } })
     expect(errorSpy).toBeCalled()
   })
 })
