@@ -50,9 +50,17 @@
 
 <script>
 import startCase from 'lodash.startcase'
+import { STableRow } from '@/components/STableRow';
+import { STableCell } from '@/components/STableCell';
+
 
 export default {
   name: 'STable',
+
+  components: {
+    STableRow,
+    STableCell
+  },
 
   filters: {
     startCase
