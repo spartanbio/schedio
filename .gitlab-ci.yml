@@ -1,13 +1,36 @@
-stages:
-  - release
+image: node:8
 
-before_script:
-  - npm install
+stages:
+  - build
+  - test
+  - publish
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - ~/.npm/
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+test:
+  stage: test
+  script: npm test
+  dependencies:
+    - build
 
 publish:
-  image: node:8
-  stage: release
+  stage: publish
   only:
     - master
   script:
     - npx semantic-release
+  dependencies:
+    - test

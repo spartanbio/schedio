@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SCardContainer.vue renders correctly 1`] = `
+<scontainer-stub>
+  <scard-stub tag="div" image="[object Object]">
+    <div>Slot content</div>
+  </scard-stub>
+</scontainer-stub>
+`;

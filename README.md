@@ -69,9 +69,10 @@ $ npm run dev
 # Scaffold a new component/story in src/components/<ComponentName>
 # The following files will be created:
 # + index.js
-# + ComponentName.scss
-# + ComponentName.stories.jsx
-# + ComponentName.vue
+# + <ComponentName>.scss
+# + <ComponentName>.stories.jsx
+# + <ComponentName>.vue
+# + __tests__/<ComponentName>.spec.js
 $ npm run scaffold <ComponentName>
 ```
 
@@ -91,6 +92,19 @@ $ npm run build:storybook
 
 ```bash
 $ npm run lint
+```
+
+### Tests
+
+```bash
+# generate any missing unit tests
+$ npm run add-unit-tests
+
+# run all tests
+$ npm test
+
+# run only unit tests
+$ npm run test:unit
 ```
 
 ## Contributing

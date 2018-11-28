@@ -1,0 +1,919 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SContainerColumn.vue accepts slot content 1`] = `
+<div class="column">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrow 1`] = `
+<div class="column column--narrow">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowAfterLg 1`] = `
+<div class="column column--narrow-after-lg">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowAfterMd 1`] = `
+<div class="column column--narrow-after-md">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowAfterSm 1`] = `
+<div class="column column--narrow-after-sm">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowAfterXl 1`] = `
+<div class="column column--narrow-after-xl">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowUntilLg 1`] = `
+<div class="column column--narrow-until-lg">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowUntilMd 1`] = `
+<div class="column column--narrow-until-md">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowUntilSm 1`] = `
+<div class="column column--narrow-until-sm">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be narrowUntilXl 1`] = `
+<div class="column column--narrow-until-xl">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 1 1`] = `
+<div class="column column--offset-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 2 1`] = `
+<div class="column column--offset-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 3 1`] = `
+<div class="column column--offset-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 4 1`] = `
+<div class="column column--offset-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 5 1`] = `
+<div class="column column--offset-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 6 1`] = `
+<div class="column column--offset-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 7 1`] = `
+<div class="column column--offset-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 8 1`] = `
+<div class="column column--offset-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 9 1`] = `
+<div class="column column--offset-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 10 1`] = `
+<div class="column column--offset-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 11 1`] = `
+<div class="column column--offset-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offset 12 1`] = `
+<div class="column column--offset-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 1 1`] = `
+<div class="column column--offset-lg-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 2 1`] = `
+<div class="column column--offset-lg-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 3 1`] = `
+<div class="column column--offset-lg-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 4 1`] = `
+<div class="column column--offset-lg-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 5 1`] = `
+<div class="column column--offset-lg-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 6 1`] = `
+<div class="column column--offset-lg-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 7 1`] = `
+<div class="column column--offset-lg-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 8 1`] = `
+<div class="column column--offset-lg-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 9 1`] = `
+<div class="column column--offset-lg-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 10 1`] = `
+<div class="column column--offset-lg-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 11 1`] = `
+<div class="column column--offset-lg-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetLg 12 1`] = `
+<div class="column column--offset-lg-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 1 1`] = `
+<div class="column column--offset-md-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 2 1`] = `
+<div class="column column--offset-md-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 3 1`] = `
+<div class="column column--offset-md-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 4 1`] = `
+<div class="column column--offset-md-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 5 1`] = `
+<div class="column column--offset-md-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 6 1`] = `
+<div class="column column--offset-md-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 7 1`] = `
+<div class="column column--offset-md-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 8 1`] = `
+<div class="column column--offset-md-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 9 1`] = `
+<div class="column column--offset-md-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 10 1`] = `
+<div class="column column--offset-md-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 11 1`] = `
+<div class="column column--offset-md-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetMd 12 1`] = `
+<div class="column column--offset-md-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 1 1`] = `
+<div class="column column--offset-sm-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 2 1`] = `
+<div class="column column--offset-sm-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 3 1`] = `
+<div class="column column--offset-sm-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 4 1`] = `
+<div class="column column--offset-sm-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 5 1`] = `
+<div class="column column--offset-sm-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 6 1`] = `
+<div class="column column--offset-sm-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 7 1`] = `
+<div class="column column--offset-sm-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 8 1`] = `
+<div class="column column--offset-sm-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 9 1`] = `
+<div class="column column--offset-sm-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 10 1`] = `
+<div class="column column--offset-sm-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 11 1`] = `
+<div class="column column--offset-sm-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetSm 12 1`] = `
+<div class="column column--offset-sm-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 1 1`] = `
+<div class="column column--offset-xl-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 2 1`] = `
+<div class="column column--offset-xl-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 3 1`] = `
+<div class="column column--offset-xl-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 4 1`] = `
+<div class="column column--offset-xl-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 5 1`] = `
+<div class="column column--offset-xl-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 6 1`] = `
+<div class="column column--offset-xl-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 7 1`] = `
+<div class="column column--offset-xl-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 8 1`] = `
+<div class="column column--offset-xl-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 9 1`] = `
+<div class="column column--offset-xl-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 10 1`] = `
+<div class="column column--offset-xl-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 11 1`] = `
+<div class="column column--offset-xl-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be offsetXl 12 1`] = `
+<div class="column column--offset-xl-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 1 1`] = `
+<div class="column column--order-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 2 1`] = `
+<div class="column column--order-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 3 1`] = `
+<div class="column column--order-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 4 1`] = `
+<div class="column column--order-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 5 1`] = `
+<div class="column column--order-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 6 1`] = `
+<div class="column column--order-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 7 1`] = `
+<div class="column column--order-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 8 1`] = `
+<div class="column column--order-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 9 1`] = `
+<div class="column column--order-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 10 1`] = `
+<div class="column column--order-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 11 1`] = `
+<div class="column column--order-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order 12 1`] = `
+<div class="column column--order-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order first 1`] = `
+<div class="column column--order-first">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be order last 1`] = `
+<div class="column column--order-last">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 1 1`] = `
+<div class="column column--order-lg-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 2 1`] = `
+<div class="column column--order-lg-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 3 1`] = `
+<div class="column column--order-lg-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 4 1`] = `
+<div class="column column--order-lg-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 5 1`] = `
+<div class="column column--order-lg-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 6 1`] = `
+<div class="column column--order-lg-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 7 1`] = `
+<div class="column column--order-lg-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 8 1`] = `
+<div class="column column--order-lg-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 9 1`] = `
+<div class="column column--order-lg-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 10 1`] = `
+<div class="column column--order-lg-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 11 1`] = `
+<div class="column column--order-lg-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg 12 1`] = `
+<div class="column column--order-lg-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg first 1`] = `
+<div class="column column--order-lg-first">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderLg last 1`] = `
+<div class="column column--order-lg-last">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 1 1`] = `
+<div class="column column--order-md-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 2 1`] = `
+<div class="column column--order-md-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 3 1`] = `
+<div class="column column--order-md-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 4 1`] = `
+<div class="column column--order-md-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 5 1`] = `
+<div class="column column--order-md-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 6 1`] = `
+<div class="column column--order-md-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 7 1`] = `
+<div class="column column--order-md-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 8 1`] = `
+<div class="column column--order-md-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 9 1`] = `
+<div class="column column--order-md-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 10 1`] = `
+<div class="column column--order-md-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 11 1`] = `
+<div class="column column--order-md-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd 12 1`] = `
+<div class="column column--order-md-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd first 1`] = `
+<div class="column column--order-md-first">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderMd last 1`] = `
+<div class="column column--order-md-last">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 1 1`] = `
+<div class="column column--order-sm-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 2 1`] = `
+<div class="column column--order-sm-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 3 1`] = `
+<div class="column column--order-sm-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 4 1`] = `
+<div class="column column--order-sm-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 5 1`] = `
+<div class="column column--order-sm-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 6 1`] = `
+<div class="column column--order-sm-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 7 1`] = `
+<div class="column column--order-sm-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 8 1`] = `
+<div class="column column--order-sm-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 9 1`] = `
+<div class="column column--order-sm-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 10 1`] = `
+<div class="column column--order-sm-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 11 1`] = `
+<div class="column column--order-sm-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm 12 1`] = `
+<div class="column column--order-sm-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm first 1`] = `
+<div class="column column--order-sm-first">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderSm last 1`] = `
+<div class="column column--order-sm-last">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 1 1`] = `
+<div class="column column--order-xl-1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 2 1`] = `
+<div class="column column--order-xl-2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 3 1`] = `
+<div class="column column--order-xl-3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 4 1`] = `
+<div class="column column--order-xl-4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 5 1`] = `
+<div class="column column--order-xl-5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 6 1`] = `
+<div class="column column--order-xl-6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 7 1`] = `
+<div class="column column--order-xl-7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 8 1`] = `
+<div class="column column--order-xl-8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 9 1`] = `
+<div class="column column--order-xl-9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 10 1`] = `
+<div class="column column--order-xl-10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 11 1`] = `
+<div class="column column--order-xl-11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl 12 1`] = `
+<div class="column column--order-xl-12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl first 1`] = `
+<div class="column column--order-xl-first">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be orderXl last 1`] = `
+<div class="column column--order-xl-last">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 1 1`] = `
+<div class="column column--1">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 2 1`] = `
+<div class="column column--2">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 3 1`] = `
+<div class="column column--3">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 4 1`] = `
+<div class="column column--4">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 5 1`] = `
+<div class="column column--5">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 6 1`] = `
+<div class="column column--6">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 7 1`] = `
+<div class="column column--7">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 8 1`] = `
+<div class="column column--8">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 9 1`] = `
+<div class="column column--9">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 10 1`] = `
+<div class="column column--10">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 11 1`] = `
+<div class="column column--11">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue can be size 12 1`] = `
+<div class="column column--12">
+  <div>Column Content</div>
+</div>
+`;
+
+exports[`SContainerColumn.vue renders correctly 1`] = `
+<div class="column">
+  <div>Column Content</div>
+</div>
+`;

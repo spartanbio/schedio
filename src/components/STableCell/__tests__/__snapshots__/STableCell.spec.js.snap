@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`STableCell.vue automatically detects if it's a header 1`] = `<th class="table__cell">Content</th>`;
+
+exports[`STableCell.vue can be manually set to use \`th\` 1`] = `<th class="table__cell">Content</th>`;
+
+exports[`STableCell.vue can be numeric 1`] = `<td class="table__cell table__cell--numeric">Content</td>`;
+
+exports[`STableCell.vue renders correctly 1`] = `<td class="table__cell">Content</td>`;

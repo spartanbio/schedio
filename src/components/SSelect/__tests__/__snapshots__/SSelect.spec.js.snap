@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SSelect.vue can be a multiple select 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper select-wrapper--multiple"><select id="select" name="select" required="required" class="select" multiple="multiple">
+      <option value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can be fullwidth 1`] = `
+<slabel-stub label="Select" for="select" isfullwidth="true">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can be inline 1`] = `
+<slabel-stub label="Select" for="select" isinline="true">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can be invalid 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select select--invalid">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can be required 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can have a single placeholder 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        This is a placeholder
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can use an array of objects for \`selectOptions\` 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="1">
+        One
+      </option>
+      <option value="2">
+        Two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can use an object of arrays \`selectOptions\` with groups 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <optgroup label="groupOne">
+        <option value="1">
+          One
+        </option>
+      </optgroup>
+      <optgroup label="groupTwo">
+        <option value="2">
+          Two
+        </option>
+      </optgroup>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue can use an object of objects for \`selectOptions\` 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="1">
+        One
+      </option>
+      <option value="2">
+        Two
+      </option>
+    </select></div>
+</slabel-stub>
+`;
+
+exports[`SSelect.vue renders correctly 1`] = `
+<slabel-stub label="Select" for="select">
+  <div class="select-wrapper"><select id="select" name="select" required="required" class="select">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select></div>
+</slabel-stub>
+`;

@@ -1,3 +1,4 @@
+const addUnitTest = require('./add-unit-test')
 const chalk = require('chalk')
 const fs = require('fs-extra')
 const path = require('path')
@@ -14,6 +15,7 @@ if (fs.pathExistsSync(path.resolve(writeDir, `${componentName}.vue`))) {
 
 // files and contents to write
 const scaffold = [
+  // Vue component
   {
     extension: 'vue',
     contents: `<template>
@@ -28,6 +30,7 @@ export default {
 }
 </script>\n`
   },
+  // Storybook story
   {
     extension: 'stories.jsx',
     contents: `import { ${componentName} } from '@/components/${componentName}'
@@ -55,10 +58,12 @@ storiesOf('Components/${componentName}', module)
     }
   })\n`
   },
+  // SCSS
   {
     extension: 'scss',
     contents: '// component styles\n'
   },
+  // index.js
   {
     fileName: 'index',
     extension: 'js',
@@ -73,9 +78,10 @@ export default {
 ]
 
 // set up promises
-const outputFiles = scaffold.map(({ fileName, extension, contents }) => {
+const generateComponentFiles = scaffold.map(({ fileName, extension, contents }) => {
   const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
-  fs.outputFile(file, contents)
+
+  return fs.outputFile(file, contents)
 })
 
 const updateComponentList = async () => {
@@ -88,6 +94,7 @@ const updateComponentList = async () => {
 }
 
 // write files
-Promise.all([...outputFiles, updateComponentList()])
+Promise.all([...generateComponentFiles, updateComponentList()])
+  .then(() => addUnitTest(componentName))
   .then(() => console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``)))
   .catch(err => console.error(chalk.red(err)))

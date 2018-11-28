@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SInput.vue can be invalid 1`] = `<slabel-stub label="input" for="input"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--invalid"></slabel-stub>`;
+
+exports[`SInput.vue can be required 1`] = `<slabel-stub label="input" for="input"><input id="input" name="input" placeholder="" required="required" type="text" class="input"></slabel-stub>`;
+
+exports[`SInput.vue can have a placeholder 1`] = `<slabel-stub label="input" for="input"><input id="input" name="input" placeholder="some placeholder" required="required" type="text" class="input"></slabel-stub>`;
+
+exports[`SInput.vue renders correctly 1`] = `<slabel-stub label="input" for="input"><input id="input" name="input" placeholder="" required="required" type="text" class="input"></slabel-stub>`;

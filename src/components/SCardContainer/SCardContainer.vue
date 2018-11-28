@@ -8,12 +8,14 @@
 
 <script>
 import { SCard } from '@/components/SCard'
+import { SContainer } from '@/components/SContainer'
 
 export default {
   name: 'SCardContainer',
 
   components: {
-    SCard
+    SCard,
+    SContainer
   }
 }
 </script>

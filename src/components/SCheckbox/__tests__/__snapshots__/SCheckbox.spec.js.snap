@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SCheckbox.vue can be invalid 1`] = `
+<label class="label label--inline" for="checkbox"><span>
+    Checkbox
+    <!----></span> <input id="checkbox" name="checkbox" required="required" type="checkbox" class="checkbox"> <span class="checkbox__check checkbox__check--invalid"></span></label>
+`;
+
+exports[`SCheckbox.vue can be reversed 1`] = `
+<label class="label label--inline label--reversed" for="checkbox"><span>
+    Checkbox
+    <!----></span> <input id="checkbox" name="checkbox" required="required" type="checkbox" class="checkbox"> <span class="checkbox__check"></span></label>
+`;
+
+exports[`SCheckbox.vue renders correctly 1`] = `
+<label class="label label--inline" for="checkbox"><span>
+    Checkbox
+    <!----></span> <input id="checkbox" name="checkbox" required="required" type="checkbox" class="checkbox"> <span class="checkbox__check"></span></label>
+`;

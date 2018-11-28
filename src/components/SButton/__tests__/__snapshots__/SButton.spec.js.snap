@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SButton.vue can be gold 1`] = `<button class="button button--color-gold">Button Text</button>`;
+
+exports[`SButton.vue can be gold 2`] = `<button class="button button--color-green button--size-gold">Button Text</button>`;
+
+exports[`SButton.vue can be green 1`] = `<button class="button button--color-green">Button Text</button>`;
+
+exports[`SButton.vue can be green 2`] = `<button class="button button--color-green button--size-green">Button Text</button>`;
+
+exports[`SButton.vue can be grey 1`] = `<button class="button button--color-grey">Button Text</button>`;
+
+exports[`SButton.vue can be grey 2`] = `<button class="button button--color-green button--size-grey">Button Text</button>`;
+
+exports[`SButton.vue can be ice 1`] = `<button class="button button--color-ice">Button Text</button>`;
+
+exports[`SButton.vue can be ice 2`] = `<button class="button button--color-green button--size-ice">Button Text</button>`;
+
+exports[`SButton.vue can be magenta 1`] = `<button class="button button--color-magenta">Button Text</button>`;
+
+exports[`SButton.vue can be magenta 2`] = `<button class="button button--color-green button--size-magenta">Button Text</button>`;
+
+exports[`SButton.vue can be night 1`] = `<button class="button button--color-night">Button Text</button>`;
+
+exports[`SButton.vue can be night 2`] = `<button class="button button--color-green button--size-night">Button Text</button>`;
+
+exports[`SButton.vue can be red 1`] = `<button class="button button--color-red">Button Text</button>`;
+
+exports[`SButton.vue can be red 2`] = `<button class="button button--color-green button--size-red">Button Text</button>`;
+
+exports[`SButton.vue can be spartan_blue 1`] = `<button class="button button--color-spartan_blue">Button Text</button>`;
+
+exports[`SButton.vue can be spartan_blue 2`] = `<button class="button button--color-green button--size-spartan_blue">Button Text</button>`;
+
+exports[`SButton.vue can be turquoise 1`] = `<button class="button button--color-turquoise">Button Text</button>`;
+
+exports[`SButton.vue can be turquoise 2`] = `<button class="button button--color-green button--size-turquoise">Button Text</button>`;
+
+exports[`SButton.vue can be white 1`] = `<button class="button button--color-white">Button Text</button>`;
+
+exports[`SButton.vue can be white 2`] = `<button class="button button--color-green button--size-white">Button Text</button>`;
+
+exports[`SButton.vue renders correctly 1`] = `<button class="button button--color-green">Button Text</button>`;
