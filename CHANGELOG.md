@@ -1,3 +1,16 @@
+## [2.3.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.3.0...v2.3.1) (2018-11-28)
+
+
+### Bug Fixes
+
+* **card:** binds image alt text ([dbafd81](https://gitlab.com/spartanbio-marketing/schedio/commit/dbafd81))
+* **card-container:** imports container ([fcb3647](https://gitlab.com/spartanbio-marketing/schedio/commit/fcb3647))
+* **inputs:** imports label ([7bc05cc](https://gitlab.com/spartanbio-marketing/schedio/commit/7bc05cc))
+* **inputs:** registers SLabel ([d9773ba](https://gitlab.com/spartanbio-marketing/schedio/commit/d9773ba))
+* **select:** emits correct events ([b1c229f](https://gitlab.com/spartanbio-marketing/schedio/commit/b1c229f))
+* **select:** only compute `optionsHaveGroups` if `selectOptions` exists ([bd0f051](https://gitlab.com/spartanbio-marketing/schedio/commit/bd0f051))
+* **table:** imports cell and row ([a010bb3](https://gitlab.com/spartanbio-marketing/schedio/commit/a010bb3))
+
 # [2.3.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.2.4...v2.3.0) (2018-11-02)
 
 
