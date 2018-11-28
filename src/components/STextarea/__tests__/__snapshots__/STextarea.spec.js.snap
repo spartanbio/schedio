@@ -1,25 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`STextarea.vue can be invalid 1`] = `
-<label class="label" for="textarea"><span>
-    textarea
-    <!----></span> <textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--invalid"></textarea></label>
-`;
+exports[`STextarea.vue can be invalid 1`] = `<slabel-stub label="textarea" for="textarea"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--invalid"></textarea></slabel-stub>`;
 
-exports[`STextarea.vue can be required 1`] = `
-<label class="label" for="textarea"><span>
-    textarea
-    <!----></span> <textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea></label>
-`;
+exports[`STextarea.vue can be required 1`] = `<slabel-stub label="textarea" for="textarea"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea></slabel-stub>`;
 
-exports[`STextarea.vue can have a placeholder 1`] = `
-<label class="label" for="textarea"><span>
-    textarea
-    <!----></span> <textarea id="textarea" name="textarea" placeholder="some placeholder" required="required" rows="10" class="textarea"></textarea></label>
-`;
+exports[`STextarea.vue can have a placeholder 1`] = `<slabel-stub label="textarea" for="textarea"><textarea id="textarea" name="textarea" placeholder="some placeholder" required="required" rows="10" class="textarea"></textarea></slabel-stub>`;
 
-exports[`STextarea.vue renders correctly 1`] = `
-<label class="label" for="textarea"><span>
-    textarea
-    <!----></span> <textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea></label>
-`;
+exports[`STextarea.vue renders correctly 1`] = `<slabel-stub label="textarea" for="textarea"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea></slabel-stub>`;

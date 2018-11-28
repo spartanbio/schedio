@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import SCheckbox from '@/components/SCheckbox/SCheckbox.vue'
 import SLabel from '@/components/SLabel/SLabel.vue'
 
@@ -8,7 +8,7 @@ describe('SCheckbox.vue', () => {
   let checkbox
 
   beforeEach(() => {
-    wrapper = shallowMount(SCheckbox, {
+    wrapper = mount(SCheckbox, {
       propsData: {
         id: 'checkbox',
         name: 'checkbox',
@@ -30,7 +30,7 @@ describe('SCheckbox.vue', () => {
     // spies on `console.error` without calling `console.error`
     const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
     // mounting component without required props
-    shallowMount(SCheckbox)
+    mount(SCheckbox)
     expect(spy).toBeCalled()
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
@@ -60,7 +60,7 @@ describe('SCheckbox.vue', () => {
   })
 
   it('can be disabled', () => {
-    const disabledWrapper = shallowMount(SCheckbox, {
+    const disabledWrapper = mount(SCheckbox, {
       propsData: {
         id: 'checkbox',
         name: 'checkbox',

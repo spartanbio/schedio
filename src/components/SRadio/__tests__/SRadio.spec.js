@@ -8,7 +8,7 @@ describe('SRadio.vue', () => {
   let radio
 
   beforeEach(() => {
-    wrapper = shallowMount(SRadio, {
+    wrapper = mount(SRadio, {
       propsData: {
         id: 'radio',
         name: 'radio',

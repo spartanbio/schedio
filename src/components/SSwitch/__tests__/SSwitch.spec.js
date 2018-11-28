@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import SSwitch from '@/components/SSwitch/SSwitch.vue'
 import SLabel from '@/components/SLabel/SLabel.vue'
 
@@ -15,7 +15,7 @@ describe('SSwitch.vue', () => {
   let toggleSwitch
 
   beforeEach(() => {
-    wrapper = shallowMount(SSwitch, {
+    wrapper = mount(SSwitch, {
       propsData: { ...defaultProps },
       listeners: {
         input: inputEvent
@@ -36,7 +36,7 @@ describe('SSwitch.vue', () => {
   it('requires required props', () => {
     // spies on `console.error` without calling `console.error`
     // mounting component without required props
-    shallowMount(SSwitch)
+    mount(SSwitch)
     expect(spy).toBeCalled()
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
@@ -66,7 +66,7 @@ describe('SSwitch.vue', () => {
   })
 
   it('can be disabled', () => {
-    const disabledWrapper = shallowMount(SSwitch, {
+    const disabledWrapper = mount(SSwitch, {
       propsData: {
         id: 'toggleSwitch',
         name: 'toggleSwitch',
@@ -90,7 +90,7 @@ describe('SSwitch.vue', () => {
 
   sizes.forEach(size => {
     it(`can be size ${size}`, () => {
-      const sizeWrapper = shallowMount(SSwitch, {
+      const sizeWrapper = mount(SSwitch, {
         propsData: {
           ...defaultProps,
           size
@@ -102,7 +102,7 @@ describe('SSwitch.vue', () => {
   })
 
   it('validates size', () => {
-    shallowMount(SSwitch, {
+    mount(SSwitch, {
       propsData: {
         ...defaultProps,
         size: 'this is not a size'
