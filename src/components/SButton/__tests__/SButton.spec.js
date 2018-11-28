@@ -1,38 +1,58 @@
 import { shallowMount } from '@vue/test-utils'
 import SButton from '@/components/SButton/SButton.vue'
+import * as options from '@/components/SButton/options'
 
 describe('SButton.vue', () => {
-  it('renders correctly', () => {
-    const wrapper = shallowMount(SButton, {
+  const click = jest.fn()
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = shallowMount(SButton, {
       slots: {
         default: 'Button Text'
-      }
+      },
+      listeners: { click }
     })
+  })
 
-    expect(wrapper.contains('.btn--color-green'))
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
+  it('renders correctly', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.text()).toBe('Button Text')
   })
 
   it('handles clicks', () => {
-    const click = jest.fn()
-    const wrapper = shallowMount(SButton, { listeners: { click } })
-
     wrapper.trigger('click')
     expect(click).toHaveBeenCalled()
   })
 
-  it('sets color correctly', () => {
-    const wrapper = shallowMount(SButton, { propsData: { color: 'red' } })
-
-    expect(wrapper.contains('.btn--color-red'))
-    expect(wrapper.html()).toMatchSnapshot()
+  options.colors.forEach(color => {
+    it(`can be ${color}`, () => {
+      wrapper.setProps({ buttonColor: color })
+      expect(wrapper.contains(`.btn--color-${color}`))
+      expect(wrapper.html()).toMatchSnapshot()
+    })
   })
 
-  it('sets size correctly', () => {
-    const wrapper = shallowMount(SButton, { propsData: { size: 'lg' } })
+  it('validates color', () => {
+    shallowMount(SButton, { propsData: { buttonColor: 'not a color' } })
+    expect(errorSpy).toBeCalled()
+  })
 
-    expect(wrapper.contains('.btn--size-lg'))
-    expect(wrapper.html()).toMatchSnapshot()
+  options.colors.forEach(size => {
+    it(`can be ${size}`, () => {
+      wrapper.setProps({ buttonSize: size })
+      expect(wrapper.contains(`.btn--size-${size}`))
+      expect(wrapper.html()).toMatchSnapshot()
+    })
+  })
+
+  it('validates color', () => {
+    shallowMount(SButton, { propsData: { buttonSize: 'not a size' } })
+    expect(errorSpy).toBeCalled()
   })
 })
