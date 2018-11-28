@@ -24,7 +24,7 @@ describe('SSelect.vue', () => {
   })
 
   afterEach(() => {
-    jest.resetAllMocks()
+    jest.clearAllMocks()
   })
 
   it('renders correctly', () => {

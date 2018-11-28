@@ -22,7 +22,7 @@ describe('SLabel.vue', () => {
   })
 
   afterEach(() => {
-    jest.resetAllMocks()
+    jest.clearAllMocks()
   })
 
   it('renders correctly', () => {
