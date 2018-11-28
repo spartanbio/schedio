@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`STable.vue allows slots to be used for data 1`] = `
+<table class="table">
+  <caption class="table__caption"><span>Caption</span>
+
+
+  </caption>
+  <thead class="table__header">
+    <tr>
+      <th>Header</th>
+    </tr>
+    <tr class="table__row"></tr>
+  </thead>
+  <tbody class="table__body">
+    <tr>
+      <td>Slot content</td>
+    </tr>
+  </tbody>
+  <tfoot class="table__footer">
+    <tr>
+      <td>Footer</td>
+    </tr>
+    <tr class="table__row"></tr>
+  </tfoot>
+</table>
+`;
+
+exports[`STable.vue can be bordered 1`] = `
+<table class="table table--bordered">
+  <!---->
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
+
+exports[`STable.vue can be hoverable 1`] = `
+<table class="table table--hoverable">
+  <!---->
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
+
+exports[`STable.vue can be striped 1`] = `
+<table class="table table--striped">
+  <!---->
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
+
+exports[`STable.vue can duplicate the header in the footer 1`] = `
+<table class="table">
+  <!---->
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <tfoot class="table__footer">
+    <tr class="table__row">
+      <td class="table__cell">
+        Col 1
+      </td>
+      <td class="table__cell">
+        Col 2
+      </td>
+      <td class="table__cell">
+        Col 3
+      </td>
+    </tr>
+  </tfoot>
+</table>
+`;
+
+exports[`STable.vue can have a caption 1`] = `
+<table class="table">
+  <caption class="table__caption">
+
+    caption
+  </caption>
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
+
+exports[`STable.vue can have the caption at the top 1`] = `
+<table class="table">
+  <caption class="table__caption table__caption--top">
+
+    caption
+  </caption>
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
+
+exports[`STable.vue can override generated headers 1`] = `
+<table class="table">
+  <!---->
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        One
+      </th>
+      <th class="table__cell">
+        Two
+      </th>
+      <th class="table__cell">
+        Three
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
+
+exports[`STable.vue renders correctly 1`] = `
+<table class="table">
+  <!---->
+  <thead class="table__header">
+    <tr class="table__row">
+      <th class="table__cell">
+        Col 1
+      </th>
+      <th class="table__cell">
+        Col 2
+      </th>
+      <th class="table__cell">
+        Col 3
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 1
+      </td>
+      <td class="table__cell">
+        Cell 2
+      </td>
+      <td class="table__cell">
+        Cell 3
+      </td>
+    </tr>
+    <tr class="table__row">
+      <td class="table__cell">
+        Cell 4
+      </td>
+      <td class="table__cell">
+        Cell 5
+      </td>
+      <td class="table__cell">
+        Cell 6
+      </td>
+    </tr>
+  </tbody>
+  <!---->
+</table>
+`;
