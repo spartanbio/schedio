@@ -33,7 +33,7 @@ describe('SButton.vue', () => {
   options.colors.forEach(color => {
     it(`can be ${color}`, () => {
       wrapper.setProps({ buttonColor: color })
-      expect(wrapper.contains(`.btn--color-${color}`))
+      expect(wrapper.contains(`.button--color-${color}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
@@ -46,7 +46,7 @@ describe('SButton.vue', () => {
   options.colors.forEach(size => {
     it(`can be ${size}`, () => {
       wrapper.setProps({ buttonSize: size })
-      expect(wrapper.contains(`.btn--size-${size}`))
+      expect(wrapper.contains(`.button--size-${size}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
