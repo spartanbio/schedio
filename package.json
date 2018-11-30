@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
+    "feather-icons": "^4.9.0",
     "lodash.startcase": "^4.4.0",
     "vue": "^2.5.17"
   },
