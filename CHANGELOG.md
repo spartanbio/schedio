@@ -1,3 +1,15 @@
+# [2.4.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.3.1...v2.4.0) (2018-11-30)
+
+
+### Bug Fixes
+
+* **select:** fixes arrow styling ([596d937](https://gitlab.com/spartanbio-marketing/schedio/commit/596d937))
+
+
+### Features
+
+* **icon:** adds icon component ([3943354](https://gitlab.com/spartanbio-marketing/schedio/commit/3943354))
+
 ## [2.3.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.3.0...v2.3.1) (2018-11-28)
 
 
