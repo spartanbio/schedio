@@ -1,6 +1,6 @@
 <template>
   <svg :class="classList" class="icon">
-    <use v-bind="{'xlink:href': require('feather-icons/dist/feather-sprite.svg') + '#' + icon }"/>
+    <use v-bind="{'xlink:href': `${sprites}#${icon}` }"/>
   </svg>
 </template>
 
@@ -46,7 +46,6 @@ export default {
 
   data() {
     return {
-      iconPath: '',
       sprites
     }
   },
@@ -58,17 +57,6 @@ export default {
         this.iconSize ? `icon--size-${this.iconSize}` : ''
       ]
     }
-    // },
-
-    // async mounted() {
-    //   await this.getIconSpriteFile()
-    // },
-
-    // methods: {
-    //   async getIconSpriteFile() {
-    //     const { default: spriteFile } = await import('feather-icons/dist/feather-sprite.svg')
-    //     this.iconPath = spriteFile
-    //   }
   }
 }
 </script>
