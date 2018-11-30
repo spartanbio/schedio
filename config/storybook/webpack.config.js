@@ -8,6 +8,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     use: [
       'style-loader',
       'css-loader',
+      'postcss-loader',
       {
         loader: 'sass-loader',
         options: {

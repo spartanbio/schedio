@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SIcon.vue can be gold 1`] = `
+<svg class="icon icon--color-gold">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be green 1`] = `
+<svg class="icon icon--color-green">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be grey 1`] = `
+<svg class="icon icon--color-grey">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be ice 1`] = `
+<svg class="icon icon--color-ice">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be large 1`] = `
+<svg class="icon icon--size-large">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be magenta 1`] = `
+<svg class="icon icon--color-magenta">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be night 1`] = `
+<svg class="icon icon--color-night">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be red 1`] = `
+<svg class="icon icon--color-red">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be regular 1`] = `
+<svg class="icon icon--size-regular">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be small 1`] = `
+<svg class="icon icon--size-small">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be spartan_blue 1`] = `
+<svg class="icon icon--color-spartan_blue">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be turquoise 1`] = `
+<svg class="icon icon--color-turquoise">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue can be white 1`] = `
+<svg class="icon icon--color-white">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
+
+exports[`SIcon.vue renders correctly 1`] = `
+<svg class="icon">
+  <use xlink:href="test-file-stub#activity"></use>
+</svg>
+`;
