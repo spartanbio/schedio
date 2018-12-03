@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Schedio from '@'
-import StorybookContainer from '@/docs/StorybookContainer.vue'
 import { checkA11y } from '@storybook/addon-a11y'
 import { withOptions } from '@storybook/addon-options'
 import { addDecorator, configure } from '@storybook/vue'
@@ -27,14 +26,5 @@ addDecorator(
 )
 
 addDecorator(checkA11y)
-
-addDecorator(() => ({
-  // TODO: remove duplicate container
-  render: h => (
-    <StorybookContainer>
-      <story />
-    </StorybookContainer>
-  )
-}))
 
 configure(loadStories, module)
