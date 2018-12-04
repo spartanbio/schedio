@@ -9,25 +9,30 @@ import { storiesOf } from '@storybook/vue'
 storiesOf('Components/SSpinner', module)
   .addDecorator(withKnobs)
   .add('SSpinner', () => {
-    const props = {
-      size: select('size', ['', ...sizes], '', 'Optional Props'),
-      color: select('color', ['', ...colors], '', 'Optional Props')
-    }
-
     return {
-      render: h => (
-        <StoryContainer>
-          <SHeading level="1">Spinner</SHeading>
-          <p>
-            Spinners indicate that an action is occuring, but its progress is difficult, or not
-            practical to measure.
-          </p>
+      props: {
+        props: {
+          default: {
+            size: select('size', ['', ...sizes], '', 'Optional Props'),
+            color: select('color', ['', ...colors], '', 'Optional Props')
+          }
+        }
+      },
+      render(h) {
+        return (
+          <StoryContainer>
+            <SHeading level="1">Spinner</SHeading>
+            <p>
+              Spinners indicate that an action is occuring, but its progress is difficult, or not
+              practical to measure.
+            </p>
 
-          <SHeading level="2">Example</SHeading>
-          <SSpinner {...{ props }} />
+            <SHeading level="2">Example</SHeading>
+            <SSpinner {...{ props: this.props }} />
 
-          {SSpinner.props && <PropList component={SSpinner} />}
-        </StoryContainer>
-      )
+            {SSpinner.props && <PropList component={SSpinner} />}
+          </StoryContainer>
+        )
+      }
     }
   })

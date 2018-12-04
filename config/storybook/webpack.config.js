@@ -23,7 +23,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     include: path.resolve(__dirname, '../../src')
   })
 
-  defaultConfig.resolve.alias = sharedConf.aliases
+  Object.assign(defaultConfig.resolve.alias, sharedConf.aliases)
 
   return defaultConfig
 }

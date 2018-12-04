@@ -9,15 +9,12 @@ import { storiesOf } from '@storybook/vue'
 storiesOf('Components/SLink', module)
   .addDecorator(withKnobs)
   .add('SLink', () => {
-    const props = {
-      to: text('Link to (required)', 'https://spartanbio.com', 'Props')
-    }
-
-    const linkText = text('Link text', 'Spartan Bio', 'Slots')
-
     // TODO: document visited/unvisited states.
-
     return {
+      props: {
+        to: { default: text('Link to (required)', 'https://spartanbio.com', 'Props') },
+        linkText: { default: text('Link text', 'Spartan Bio', 'Slots') }
+      },
       render(h) {
         return (
           <StoryContainer>
@@ -36,7 +33,7 @@ storiesOf('Components/SLink', module)
 
             <SHeading level="2">Example</SHeading>
             <p>
-              Here's an external link to <SLink {...{ props }}>{linkText}</SLink>.
+              Here's an external link to <SLink to={this.to}>{this.linkText}</SLink>.
             </p>
             <p>
               Here's an{' '}

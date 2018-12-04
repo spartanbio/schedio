@@ -44,17 +44,19 @@ storiesOf('Components/${componentName}', module)
   .addDecorator(withKnobs)
   .add('${componentName}', () => {
     return {
-      render: h => (
-        <StoryContainer>
-          <SHeading level="1">${componentName}</SHeading>
-          <p>Describe the component here</p>
+      render(h) {
+        return (
+          <StoryContainer>
+            <SHeading level="1">${componentName}</SHeading>
+            <p>Describe the component here</p>
 
-          <SHeading level="2">Example</SHeading>
-          <${componentName} />
+            <SHeading level="2">Example</SHeading>
+            <${componentName} />
 
-          {${componentName}.props && <PropList component={${componentName}} />}
-        </StoryContainer>
-      )
+            {${componentName}.props && <PropList component={${componentName}} />}
+          </StoryContainer>
+        )
+      }
     }
   })\n`
   },

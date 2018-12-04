@@ -9,27 +9,37 @@ import { storiesOf } from '@storybook/vue'
 storiesOf('Components/SCheckbox', module)
   .addDecorator(withKnobs)
   .add('Checkbox', () => {
-    const props = {
-      ...withAttrsAsProps({ id: 'base-checkbox', name: 'base-checkbox', label: 'Base Checkbox' }),
-      isReversed: boolean('isReversed', false, 'Optional Props')
-    }
-
-    const attrs = withUnboundAttrs({ value: 'base-checkbox' })
-
     return {
-      render: h => (
-        <StoryContainer>
-          <SHeading level="1">Checkbox</SHeading>
-          <p>
-            Checkboxes provide the ability to make a range of selections (none, one, or multiple).
-            They can also be used to provide consent, or indicate agreement.
-          </p>
+      props: {
+        props: {
+          default: {
+            ...withAttrsAsProps({
+              id: 'base-checkbox',
+              name: 'base-checkbox',
+              label: 'Base Checkbox'
+            }),
+            isReversed: boolean('isReversed', false, 'Optional Props')
+          }
+        },
+        attrs: { default: withUnboundAttrs({ value: 'base-checkbox' }) }
+      },
 
-          <SHeading level="2">Example</SHeading>
-          <SCheckbox {...{ props }} {...{ attrs }} />
+      render(h) {
+        const { attrs, props } = this.$props
+        return (
+          <StoryContainer>
+            <SHeading level="1">Checkbox</SHeading>
+            <p>
+              Checkboxes provide the ability to make a range of selections (none, one, or multiple).
+              They can also be used to provide consent, or indicate agreement.
+            </p>
 
-          <PropList component={SCheckbox} />
-        </StoryContainer>
-      )
+            <SHeading level="2">Example</SHeading>
+            <SCheckbox {...{ props }} {...{ attrs }} />
+
+            <PropList component={SCheckbox} />
+          </StoryContainer>
+        )
+      }
     }
   })

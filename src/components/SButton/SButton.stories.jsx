@@ -7,35 +7,31 @@ import StoryLink from '@/docs/StoryLink'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
-const colorOptions = colors.reduce(
-  (options, color) => {
-    return { ...options, [color]: color }
-  },
-  { Unset: null }
-)
-const sizeOptions = sizes.reduce(
-  (options, size) => {
-    return { ...options, [size]: size }
-  },
-  { Unset: null }
-)
-
 storiesOf('Components/SButton', module)
   .addDecorator(withKnobs)
-  .add('Button', () => {
-    const buttonColor = select('Button color', colorOptions, '', 'Optional Props')
-    const buttonSize = select('Button size', sizeOptions, '', 'Optional Props')
-    const buttonText = text('Button text', 'Sample text', 'Slots')
+  .add('Button', () => ({
+    props: {
+      buttonColor: {
+        type: String,
+        default: select('Button color', ['', ...colors], '', 'Optional Props')
+      },
+      buttonSize: {
+        type: String,
+        default: select('Button size', ['', ...sizes], '', 'Optional Props')
+      },
+      buttonText: {
+        type: String,
+        default: text('Button text', 'Sample text', 'Slots')
+      },
+      disabled: {
+        type: Boolean,
+        default: boolean('disabled', false, '$attrs')
+      }
+    },
+    render(h) {
+      const { buttonText, disabled, ...props } = this.$props
 
-    const props = {
-      buttonColor,
-      buttonSize
-    }
-
-    const disabled = boolean('disabled', false, '$attrs')
-
-    return {
-      render: h => (
+      return (
         <StoryContainer>
           <SHeading level="1">Buttons</SHeading>
           <p>Buttons are used to make actions immediately visible and easy to click.</p>
@@ -59,4 +55,4 @@ storiesOf('Components/SButton', module)
         </StoryContainer>
       )
     }
-  })
+  }))
