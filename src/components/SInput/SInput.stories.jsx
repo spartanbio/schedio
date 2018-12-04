@@ -7,32 +7,38 @@ import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
-const options = allowed.reduce((opts, a) => ({ ...opts, [a]: a }), { Unset: '' })
-
 storiesOf('Components/SInput', module)
   .addDecorator(withKnobs)
   .add('Input', () => {
-    const props = {
-      ...withAttrsAsProps({ id: 'base-input', name: 'base-input', label: 'Base Input' }),
-      placeholder: text('placeholder', 'Placeholder text', 'Required Props'),
-      type: select('type', options, '', 'Optional Props'),
-      isInline: boolean('isInline', false, 'Optional Props'),
-      isFullwidth: boolean('isFullwidth', false, 'Optional Props')
-    }
-
-    const attrs = withUnboundAttrs()
-
     return {
-      render: h => (
-        <StoryContainer>
-          <SHeading level="1">Input</SHeading>
-          <p>Inputs are used to collect user provided text data that should be fairly short.</p>
+      props: {
+        props: {
+          default: {
+            ...withAttrsAsProps({ id: 'base-input', name: 'base-input', label: 'Base Input' }),
+            placeholder: text('placeholder', 'Placeholder text', 'Required Props'),
+            type: select('type', ['', ...allowed], '', 'Optional Props'),
+            isInline: boolean('isInline', false, 'Optional Props'),
+            isFullwidth: boolean('isFullwidth', false, 'Optional Props')
+          }
+        },
 
-          <SHeading level="2">Example</SHeading>
-          <SInput {...{ props }} {...{ attrs }} />
+        attrs: {
+          default: withUnboundAttrs()
+        }
+      },
+      render(h) {
+        const { props, attrs } = this.$props
+        return (
+          <StoryContainer>
+            <SHeading level="1">Input</SHeading>
+            <p>Inputs are used to collect user provided text data that should be fairly short.</p>
 
-          <PropList component={SInput} />
-        </StoryContainer>
-      )
+            <SHeading level="2">Example</SHeading>
+            <SInput {...{ props }} {...{ attrs }} />
+
+            <PropList component={SInput} />
+          </StoryContainer>
+        )
+      }
     }
   })

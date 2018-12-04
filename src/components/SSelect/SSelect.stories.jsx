@@ -35,45 +35,55 @@ storiesOf('Components/SSelect', module)
     const optionKeys = Object.keys(optionTypes)
     const optionsObj = optionKeys.reduce((o, k) => ({ ...o, [k]: k }), {})
     const options = select('selectOptions', optionsObj, optionKeys[0], 'Required Props')
-    const props = {
-      ...withAttrsAsProps({
-        id: 'base-select',
-        name: 'base-select',
-        label: 'Select'
-      }),
-      placeholder: text('Placeholder', 'Select an option', 'Optional Props'),
-      selectOptions: optionTypes[options],
-      multiple: boolean('Multiple', false, 'Optional Props'),
-      isInline: boolean('isInline', false, 'Optional Props'),
-      isFullwidth: boolean('isFullwidth', false, 'Optional Props')
-    }
-    const attrs = withUnboundAttrs()
 
     return {
-      render: h => (
-        <StoryContainer>
-          <SHeading level="1">Select</SHeading>
-          <p>
-            Selects provide a list of options to choose from. They can be set to allow selection of
-            none, one or many options.
-          </p>
-          <p>A select's options can have the following structures:</p>
-          <ul>
-            {optionKeys.map(key => (
-              <li>{key}</li>
-            ))}
-          </ul>
+      props: {
+        props: {
+          default: {
+            ...withAttrsAsProps({
+              id: 'base-select',
+              name: 'base-select',
+              label: 'Select'
+            }),
+            placeholder: text('Placeholder', 'Select an option', 'Optional Props'),
+            selectOptions: optionTypes[options],
+            multiple: boolean('Multiple', false, 'Optional Props'),
+            isInline: boolean('isInline', false, 'Optional Props'),
+            isFullwidth: boolean('isFullwidth', false, 'Optional Props')
+          }
+        },
+        attrs: {
+          default: withUnboundAttrs()
+        }
+      },
+      render(h) {
+        const { props, attrs } = this.$props
 
-          <SHeading level="2">Example</SHeading>
-          <SSelect {...{ props }} {...{ attrs }} />
+        return (
+          <StoryContainer>
+            <SHeading level="1">Select</SHeading>
+            <p>
+              Selects provide a list of options to choose from. They can be set to allow selection
+              of none, one or many options.
+            </p>
+            <p>A select's options can have the following structures:</p>
+            <ul>
+              {optionKeys.map(key => (
+                <li>{key}</li>
+              ))}
+            </ul>
 
-          <SHeading level="3" style="text-transform: none;">
-            selectOptions:
-          </SHeading>
-          <pre>{JSON.stringify(optionTypes[options], '', 2)}</pre>
+            <SHeading level="2">Example</SHeading>
+            <SSelect {...{ props }} {...{ attrs }} />
 
-          <PropList component={SSelect} />
-        </StoryContainer>
-      )
+            <SHeading level="3" style="text-transform: none;">
+              selectOptions:
+            </SHeading>
+            <pre>{JSON.stringify(props.selectOptions, '', 2)}</pre>
+
+            <PropList component={SSelect} />
+          </StoryContainer>
+        )
+      }
     }
   })
