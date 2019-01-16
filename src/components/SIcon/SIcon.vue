@@ -1,13 +1,16 @@
 <template>
-  <svg :class="classList" class="icon">
-    <use v-bind="{'xlink:href': `${sprites}#${icon}` }"/>
-  </svg>
+  <svg
+    :class="classList"
+    class="icon"
+    viewBox="0 0 24 24"
+    v-html="featherIcon.contents"
+  />
 </template>
 
 <script>
 import { colors, sizes } from './options.js'
+import feather from 'feather-icons'
 import icons from 'feather-icons/dist/icons.json'
-import sprites from 'feather-icons/dist/feather-sprite.svg'
 
 const list = Object.keys(icons)
 
@@ -46,7 +49,7 @@ export default {
 
   data() {
     return {
-      sprites
+      feather
     }
   },
 
@@ -56,6 +59,10 @@ export default {
         this.iconColor ? `icon--color-${this.iconColor}` : '',
         this.iconSize ? `icon--size-${this.iconSize}` : ''
       ]
+    },
+
+    featherIcon() {
+      return feather.icons[this.icon] || { contents: '' }
     }
   }
 }
