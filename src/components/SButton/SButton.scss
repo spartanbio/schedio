@@ -9,11 +9,12 @@
   transition: all duration() easing();
 
   &:disabled {
-    background-color: color('grey', 'light');
+    background-color: color('grey', 'light') !important;
     border-color: color('grey') !important;
     box-shadow: none !important;
-    color: color('night', 'lighter');
+    color: color('night', 'lighter') !important;
     cursor: not-allowed;
+    text-shadow: none !important;
   }
 
   &:not(:disabled):hover {
