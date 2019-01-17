@@ -36,7 +36,6 @@ storiesOf('Components/SLabel', module)
 
             <SHeading level="2">Example</SHeading>
             <SLabel {...{ props }}>
-              {/* Labels behave best with block elements. */}
               <div style="text-transform: none; font-weight: 300;">
                 <code>{'<' + defaultSlot + ' />'}</code>
               </div>
