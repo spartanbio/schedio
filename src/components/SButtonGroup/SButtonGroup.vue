@@ -20,7 +20,7 @@ export default {
       }
     },
 
-    areGrouped: {
+    isGrouped: {
       type: Boolean,
       default: false
     }
@@ -30,7 +30,7 @@ export default {
     classList() {
       return {
         [`button-group--color-${this.groupColor}`]: this.groupColor,
-        'button-group--grouped': this.areGrouped
+        'button-group--grouped': this.isGrouped
       }
     }
   }

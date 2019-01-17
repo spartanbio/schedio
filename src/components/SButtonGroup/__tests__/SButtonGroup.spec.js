@@ -41,7 +41,7 @@ describe('SButtonGroup.vue', () => {
   })
 
   it('groups child buttons', () => {
-    buttonGroup.setProps({ areGrouped: true })
+    buttonGroup.setProps({ isGrouped: true })
     expect(buttonGroup.contains('.button-group--grouped')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
