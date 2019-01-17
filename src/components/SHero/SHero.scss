@@ -1,0 +1,45 @@
+.hero {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &--height {
+    &-half {
+      min-height: 50vh;
+    }
+
+    &-full {
+      min-height: 100vh;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: spacing();
+
+    .container {
+      padding: spacing('none');
+    }
+
+    &--no-padding {
+      padding: spacing('none');
+    }
+  }
+
+  &__foot,
+  &__head {
+    flex: 0 0 auto;
+  }
+
+  @each $color-name in $hero-colors {
+    &--color-#{$color-name} {
+      $white-or-ice: ($color-name == 'white') or ($color-name == 'ice');
+
+      color: if($white-or-ice, color('night'), color('white'));
+      background-color: color($color-name);
+    }
+  }
+}
