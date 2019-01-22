@@ -180,3 +180,35 @@
     background-color: color('green');
   }
 }
+
+@mixin control-with-icons {
+  $root-class: &;
+  display: block;
+  position: relative;
+
+  &__container {
+    position: relative;
+
+    #{$root-class}__icon {
+      margin: 0 spacing('half');
+      position: absolute;
+      top: spacing('half');
+
+      &--left {
+        left: 0;
+      }
+
+      &--right {
+        right: 0;
+      }
+    }
+  }
+
+  &--has-icon-left {
+    padding-left: spacing('double') + spacing('quarter');
+  }
+
+  &--has-icon-right {
+    padding-right: spacing('double') + spacing('quarter');
+  }
+}

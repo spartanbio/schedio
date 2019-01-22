@@ -4,23 +4,47 @@
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
     :is-optional="!required"
-    :label="label" >
-    <input
-      v-bind="$attrs"
-      :class="{ 'input--invalid': isInvalid }"
-      :id="id"
-      :name="name"
-      :placeholder="placeholder"
-      :required="required"
-      :type="type"
-      class="input"
-      v-on="listeners">
+    :label="label"
+  >
+    <div class="input__container">
+      <input
+        v-bind="$attrs"
+        :class="{
+          'input--invalid': isInvalid,
+          'input--has-icon-left': !!iconLeft,
+          'input--has-icon-right': !!iconRight
+        }"
+        :id="id"
+        :name="name"
+        :placeholder="placeholder"
+        :required="required"
+        :type="type"
+        class="input"
+        v-on="listeners"
+      >
+
+      <SIcon
+        v-if="iconLeft"
+        :icon="iconLeft"
+        :icon-color="iconLeftColor"
+        class="input__icon input__icon--left"
+      />
+
+      <SIcon
+        v-if="iconRight"
+        :icon="iconRight"
+        :icon-color="iconRightColor"
+        class="input__icon input__icon--right"
+      />
+    </div>
   </SLabel>
 </template>
 
 <script>
 import { allowed } from './options'
 import InputText from '@/mixins/InputText.mixin'
+import ControlIcons from '@/mixins/ControlIcons.mixin'
+
 /**
  * TODO:
  * [] - other inputs
@@ -29,7 +53,7 @@ import InputText from '@/mixins/InputText.mixin'
 export default {
   name: 'SInput',
 
-  mixins: [InputText],
+  mixins: [InputText, ControlIcons],
 
   props: {
     type: {

@@ -1,6 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
-import SInput from '@/components/SInput/SInput.vue'
+import { colors as iconColors } from '@/components/SIcon/options'
 import { allowed as options } from '@/components/SInput/options'
+import SInput from '@/components/SInput/SInput.vue'
+import { shallowMount } from '@vue/test-utils'
+import icons from 'feather-icons/dist/icons.json'
+
+const iconList = Object.keys(icons)
+
 describe('SInput.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
   const inputEvent = jest.fn()
@@ -20,7 +25,7 @@ describe('SInput.vue', () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    jest.resetAllMocks()
   })
 
   it('renders correctly', () => {
@@ -77,5 +82,26 @@ describe('SInput.vue', () => {
     input.trigger('input')
     expect(wrapper.emitted('input')).toBeTruthy()
     expect(input.element.value).toBe('text')
+  })
+
+  it('can have an icon on the left', () => {
+    wrapper.setProps({ iconLeft: iconList[0] })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can have an icon on the right', () => {
+    wrapper.setProps({ iconRight: iconList[0] })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can set each icon color', () => {
+    wrapper.setProps({
+      iconLeftColor: iconColors[0],
+      iconRightColor: iconColors[1]
+    })
+
+    expect(errorSpy).not.toBeCalled()
+    expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
