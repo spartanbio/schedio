@@ -4,55 +4,89 @@
     :label="label"
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
-    :is-optional="!required">
+    :is-optional="!required"
+  >
 
-    <div :class="{ 'select-wrapper--multiple': multiple }" class="select-wrapper">
-
+    <div
+      :class="{ 'select__container--multiple': multiple }"
+      class="select__container"
+    >
       <select
         v-model="selected"
         v-bind="$attrs"
-        :class="{ 'select--invalid': isInvalid }"
+        :class="{
+          'select--invalid': isInvalid,
+          'select--has-icon-left': !!iconLeft,
+          'select--has-icon-right': !!iconRight
+        }"
         :id="id"
         :multiple="multiple"
         :name="name"
         :required="required"
         class="select"
-        v-on="listeners">
-
+        v-on="listeners"
+      >
         <option
           :hidden="!multiple"
           :selected="!multiple"
           value=""
-          disabled>
+          disabled
+        >
           {{ placeholder }}
         </option>
 
         <template v-if="optionsHaveGroups">
-          <optgroup v-for="(group, groupName) in selectOptions" :label="groupName" :key="groupName">
-            <option v-for="(option, key) in group" :key="key" :value="getValue(option)">
+          <optgroup
+            v-for="(group, groupName) in selectOptions"
+            :label="groupName"
+            :key="groupName"
+          >
+            <option
+              v-for="(option, key) in group"
+              :key="key"
+              :value="getValue(option)"
+            >
               {{ getLabel(option) }}
             </option>
           </optgroup>
         </template>
 
         <template v-else>
-          <option v-for="(option, key) in selectOptions" :key="key" :value="getValue(option)">
+          <option
+            v-for="(option, key) in selectOptions"
+            :key="key"
+            :value="getValue(option)"
+          >
             {{ getLabel(option) }}
           </option>
         </template>
-
       </select>
+
+      <SIcon
+        v-if="iconLeft"
+        :icon="iconLeft"
+        :icon-color="iconLeftColor"
+        class="select__icon select__icon--left"
+      />
+
+      <SIcon
+        v-if="iconRight"
+        :icon="iconRight"
+        :icon-color="iconRightColor"
+        class="select__icon select__icon--right"
+      />
     </div>
   </SLabel>
 </template>
 
 <script>
+import ControlIcons from '@/mixins/ControlIcons.mixin'
 import InputText from '@/mixins/InputText.mixin'
 
 export default {
   name: 'SSelect',
 
-  mixins: [InputText],
+  mixins: [InputText, ControlIcons],
 
   props: {
     selectOptions: {

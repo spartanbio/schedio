@@ -1,5 +1,9 @@
-import { shallowMount } from '@vue/test-utils'
+import { colors as iconColors } from '@/components/SIcon/options'
 import SSelect from '@/components/SSelect/SSelect.vue'
+import { shallowMount } from '@vue/test-utils'
+import icons from 'feather-icons/dist/icons.json'
+
+const iconList = Object.keys(icons)
 
 describe('SSelect.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -109,6 +113,27 @@ describe('SSelect.vue', () => {
 
   it('can be fullwidth', () => {
     wrapper.setProps({ isFullwidth: true })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can have an icon on the left', () => {
+    wrapper.setProps({ iconLeft: iconList[0] })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can have an icon on the right', () => {
+    wrapper.setProps({ iconRight: iconList[0] })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can set each icon color', () => {
+    wrapper.setProps({
+      iconLeftColor: iconColors[0],
+      iconRightColor: iconColors[1]
+    })
+
+    expect(errorSpy).not.toBeCalled()
+    expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

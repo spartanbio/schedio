@@ -23,11 +23,12 @@
     justify-content: flex-start;
 
     .select {
-      margin-top: 0;
-      margin-left: spacing();
+      // prevent arrow from overlapping default placeholder
+      min-width: 16em;
     }
 
     .input,
+    .select,
     .textarea {
       margin-top: 0;
 
