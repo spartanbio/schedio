@@ -1,5 +1,9 @@
-import { shallowMount } from '@vue/test-utils'
+import { colors as iconColors } from '@/components/SIcon/options'
 import STextarea from '@/components/STextarea/STextarea.vue'
+import { shallowMount } from '@vue/test-utils'
+import icons from 'feather-icons/dist/icons.json'
+
+const iconList = Object.keys(icons)
 
 describe('STextarea.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -54,5 +58,26 @@ describe('STextarea.vue', () => {
     textarea.setValue('text')
     expect(wrapper.emitted('input')[0][0]).toBe('text')
     expect(textarea.element.value).toBe('text')
+  })
+
+  it('can have an icon on the left', () => {
+    wrapper.setProps({ iconLeft: iconList[0] })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can have an icon on the right', () => {
+    wrapper.setProps({ iconRight: iconList[0] })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can set each icon color', () => {
+    wrapper.setProps({
+      iconLeftColor: iconColors[0],
+      iconRightColor: iconColors[1]
+    })
+
+    expect(errorSpy).not.toBeCalled()
+    expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

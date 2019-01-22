@@ -22,13 +22,13 @@
     flex-direction: row;
     justify-content: flex-start;
 
-    .textarea,
     .select {
       margin-top: 0;
       margin-left: spacing();
     }
 
-    .input {
+    .input,
+    .textarea {
       margin-top: 0;
 
       &__container {

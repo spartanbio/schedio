@@ -4,26 +4,49 @@
     :label="label"
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
-    :is-optional="!required">
-    <textarea
-      v-bind="$attrs"
-      :class="{ 'textarea--invalid': isInvalid }"
-      :id="id"
-      :name="name"
-      :placeholder="placeholder"
-      :required="required"
-      :rows="$attrs.rows || 10"
-      class="textarea"
-      v-on="listeners"/>
+    :is-optional="!required"
+  >
+    <div class="textarea__container">
+      <textarea
+        v-bind="$attrs"
+        :class="{
+          'textarea--invalid': isInvalid,
+          'textarea--has-icon-left': !!iconLeft,
+          'textarea--has-icon-right': !!iconRight
+        }"
+        :id="id"
+        :name="name"
+        :placeholder="placeholder"
+        :required="required"
+        :rows="$attrs.rows || 10"
+        class="textarea"
+        v-on="listeners"
+      />
+
+      <SIcon
+        v-if="iconLeft"
+        :icon="iconLeft"
+        :icon-color="iconLeftColor"
+        class="textarea__icon textarea__icon--left"
+      />
+
+      <SIcon
+        v-if="iconRight"
+        :icon="iconRight"
+        :icon-color="iconRightColor"
+        class="textarea__icon textarea__icon--right"
+      />
+    </div>
   </SLabel>
 </template>
 
 <script>
+import ControlIcons from '@/mixins/ControlIcons.mixin'
 import InputText from '@/mixins/InputText.mixin'
 
 export default {
   name: 'STextarea',
 
-  mixins: [InputText]
+  mixins: [InputText, ControlIcons]
 }
 </script>
