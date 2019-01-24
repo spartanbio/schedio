@@ -1,12 +1,36 @@
 .button {
   @include button-size-regular;
 
+  align-items: center;
   border-radius: border-radius('small');
   box-shadow: shadow('base');
   cursor: pointer;
   display: inline-flex;
-  padding: spacing('half') spacing('double');
+  padding: spacing('half') spacing();
   transition: all duration() easing();
+
+  &--icon-only {
+    padding: 0;
+  }
+
+  &__icon {
+    &--left {
+      margin-right: spacing('half') + spacing('quarter');
+    }
+
+    &--right {
+      margin-left: spacing('half') + spacing('quarter');
+    }
+
+    .button--icon-only & {
+      margin: spacing('half');
+    }
+
+    .button:disabled & {
+      filter: none;
+      stroke: color('night', 'lightest');
+    }
+  }
 
   &:disabled {
     background-color: color('grey', 'light') !important;

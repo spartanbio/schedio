@@ -3,8 +3,21 @@
     v-bind="$attrs"
     :class="classList"
     class="button"
-    v-on="$listeners">
-    <slot/>
+    v-on="$listeners"
+  >
+    <SIcon
+      v-if="iconLeft"
+      :icon="iconLeft"
+      class="button__icon button__icon--left"
+    />
+
+    <slot v-if="!iconOnly" />
+
+    <SIcon
+      v-if="iconRight"
+      :icon="iconRight"
+      class="button__icon button__icon--right"
+    />
   </button>
 </template>
 
@@ -33,6 +46,21 @@ export default {
 
         return console.error(`\`buttonSizes\` ${value} not found. Allowed sizes: ${sizes}`)
       }
+    },
+
+    iconOnly: {
+      type: Boolean,
+      default: false
+    },
+
+    iconLeft: {
+      type: String,
+      default: ''
+    },
+
+    iconRight: {
+      type: String,
+      default: ''
     }
   },
 
@@ -41,7 +69,8 @@ export default {
       return [
         // Handles storybook default
         this.buttonColor ? `button--color-${this.buttonColor}` : 'button--color-green',
-        this.buttonSize ? `button--size-${this.buttonSize}` : ''
+        this.buttonSize && `button--size-${this.buttonSize}`,
+        this.iconOnly && `button--icon-only`
       ]
     }
   }

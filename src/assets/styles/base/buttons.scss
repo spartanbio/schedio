@@ -23,6 +23,11 @@
   // For accessibility on light, but not white, buttons
   text-shadow: 0 0 0.5em $text-shadow-color;
 
+  .icon {
+    filter: drop-shadow(0 0 0.5em darken($base-color, 20%));
+    stroke: if($white-or-ice, color('night'), color('white'));
+  }
+
   &:active {
     $active-color: if($white-or-ice, darken($base-color, 10%), color($button-color, 'dark'));
 
