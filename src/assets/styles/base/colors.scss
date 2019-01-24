@@ -43,3 +43,4 @@ $color-palette-data: $palettes;
 $button-colors: map-keys($color-palette-data);
 $hero-colors: map-keys($color-palette-data);
 $icon-colors: map-keys($color-palette-data);
+$text-colors: map-keys($color-palette-data);
