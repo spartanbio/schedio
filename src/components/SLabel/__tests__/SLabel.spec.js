@@ -39,6 +39,12 @@ describe('SLabel.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('can hide the optional tag', () => {
+    wrapper.setProps({ showOptional: false })
+    expect(wrapper.text()).not.toContain('Optional')
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('can be inline', () => {
     testBooleanProp('isInline')
   })

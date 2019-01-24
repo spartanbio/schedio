@@ -107,4 +107,10 @@ describe('SRadio.vue', () => {
     expect(radios.at(1).emitted('input')[0][0]).toEqual('radio-2')
     expect(groupWrapper.html()).toMatchSnapshot()
   })
+
+  it('can hide the optional tag', () => {
+    wrapper.setProps({ showOptional: false, required: true })
+    expect(wrapper.text()).not.toContain('Optional')
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

@@ -4,6 +4,7 @@
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
     :is-optional="!required"
+    :show-optional="showOptional"
     :label="label"
   >
     <div class="input__container">

@@ -136,4 +136,10 @@ describe('SSelect.vue', () => {
     expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
     expect(wrapper.html()).toMatchSnapshot()
   })
+
+  it('can hide the optional tag', () => {
+    wrapper.setProps({ showOptional: false, required: true })
+    expect(wrapper.text()).not.toContain('Optional')
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

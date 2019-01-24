@@ -5,6 +5,7 @@
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
     :is-optional="!required"
+    :show-optional="showOptional"
   >
     <div class="textarea__container">
       <textarea

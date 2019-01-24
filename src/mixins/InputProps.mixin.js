@@ -21,6 +21,11 @@ export default {
       default: true
     },
 
+    showOptional: {
+      type: Boolean,
+      default: true
+    },
+
     isInvalid: {
       type: Boolean,
       default: false

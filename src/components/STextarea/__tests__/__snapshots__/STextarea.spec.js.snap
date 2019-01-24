@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`STextarea.vue can be invalid 1`] = `
-<slabel-stub label="textarea" for="textarea">
+<slabel-stub label="textarea" showoptional="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--invalid"></textarea>
     <!---->
     <!---->
@@ -10,7 +10,7 @@ exports[`STextarea.vue can be invalid 1`] = `
 `;
 
 exports[`STextarea.vue can be required 1`] = `
-<slabel-stub label="textarea" for="textarea">
+<slabel-stub label="textarea" showoptional="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
@@ -19,7 +19,7 @@ exports[`STextarea.vue can be required 1`] = `
 `;
 
 exports[`STextarea.vue can have a placeholder 1`] = `
-<slabel-stub label="textarea" for="textarea">
+<slabel-stub label="textarea" showoptional="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="some placeholder" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
@@ -28,7 +28,7 @@ exports[`STextarea.vue can have a placeholder 1`] = `
 `;
 
 exports[`STextarea.vue can have an icon on the left 1`] = `
-<slabel-stub label="textarea" for="textarea">
+<slabel-stub label="textarea" showoptional="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-left"></textarea>
     <sicon-stub icon="activity" iconcolor="green" iconsize="" class="textarea__icon textarea__icon--left"></sicon-stub>
     <!---->
@@ -37,7 +37,7 @@ exports[`STextarea.vue can have an icon on the left 1`] = `
 `;
 
 exports[`STextarea.vue can have an icon on the right 1`] = `
-<slabel-stub label="textarea" for="textarea">
+<slabel-stub label="textarea" showoptional="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-right"></textarea>
     <!---->
     <sicon-stub icon="activity" iconcolor="green" iconsize="" class="textarea__icon textarea__icon--right"></sicon-stub>
@@ -45,7 +45,7 @@ exports[`STextarea.vue can have an icon on the right 1`] = `
 </slabel-stub>
 `;
 
-exports[`STextarea.vue can set each icon color 1`] = `
+exports[`STextarea.vue can hide the optional tag 1`] = `
 <slabel-stub label="textarea" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
     <!---->
@@ -54,8 +54,17 @@ exports[`STextarea.vue can set each icon color 1`] = `
 </slabel-stub>
 `;
 
+exports[`STextarea.vue can set each icon color 1`] = `
+<slabel-stub label="textarea" showoptional="true" for="textarea">
+  <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
+    <!---->
+    <!---->
+  </div>
+</slabel-stub>
+`;
+
 exports[`STextarea.vue renders correctly 1`] = `
-<slabel-stub label="textarea" for="textarea">
+<slabel-stub label="textarea" showoptional="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
