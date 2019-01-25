@@ -14,8 +14,6 @@
 
   animation: spin duration('slowest') linear infinite;
   fill: none;
-  // aligns the spinner a bit better in containers
-  margin-top: 0.25em;
   stroke: color('night', 'lightest');
   stroke-dasharray: 66;
   stroke-linecap: round;
