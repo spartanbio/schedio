@@ -87,9 +87,6 @@
     "vue-jest": "^3.0.2",
     "vue-template-compiler": "^2.5.22"
   },
-  "files": [
-    "dist"
-  ],
   "homepage": "https://spartanbio-design.netlify.com",
   "husky": {
     "hooks": {
