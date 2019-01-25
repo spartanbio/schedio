@@ -30,6 +30,10 @@ storiesOf('Components/SButton', module)
         type: Boolean,
         default: boolean('disabled', false, '$attrs')
       },
+      isLoading: {
+        type: Boolean,
+        default: boolean('is-loading', false, 'Optional Props')
+      },
       iconOnly: {
         type: Boolean,
         default: boolean('icon-only', false, 'Optional Props')

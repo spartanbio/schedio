@@ -9,34 +9,11 @@
   padding: spacing('half') spacing();
   transition: all duration() easing();
 
-  &--icon-only {
-    padding: 0;
-  }
-
-  &__icon {
-    &--left {
-      margin-right: spacing('half') + spacing('quarter');
-    }
-
-    &--right {
-      margin-left: spacing('half') + spacing('quarter');
-    }
-
-    .button--icon-only & {
-      margin: spacing('half');
-    }
-
-    .button:disabled & {
-      filter: none;
-      stroke: color('night', 'lightest');
-    }
-  }
-
   &:disabled {
     background-color: color('grey', 'light') !important;
     border-color: color('grey') !important;
     box-shadow: none !important;
-    color: color('night', 'lighter') !important;
+    color: color('night', 'lighter');
     cursor: not-allowed;
     text-shadow: none !important;
   }
@@ -55,6 +32,55 @@
 
   &--size-large {
     @include button-size-large;
+  }
+
+  &--loading {
+    color: transparent !important;
+    pointer-events: none;
+    position: relative;
+    text-shadow: none !important;
+
+    .icon {
+      filter: none;
+      stroke: transparent !important;
+    }
+
+    .button__spinner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      padding-top: spacing('half');
+      transform: translateX(-50%);
+    }
+  }
+
+  &--has-icon {
+    padding: spacing('half');
+  }
+
+  &--icon-only {
+    .icon {
+      margin: 0;
+
+      & + .icon {
+        margin-left: spacing();
+      }
+    }
+  }
+
+  &__icon {
+    &--left {
+      margin-right: spacing('half') + spacing('quarter');
+    }
+
+    &--right {
+      margin-left: spacing('half') + spacing('quarter');
+    }
+
+    .button:disabled & {
+      filter: none;
+      stroke: color('night', 'lightest');
+    }
   }
 
   @each $color-name in $button-colors {

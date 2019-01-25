@@ -84,4 +84,9 @@ describe('SButton.vue', () => {
     expect(iconButton.text()).toBeFalsy()
     expect(iconButton.html()).toMatchSnapshot()
   })
+
+  it('can have a loading spinner', () => {
+    wrapper.setProps({ isLoading: true })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

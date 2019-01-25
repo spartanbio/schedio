@@ -1,147 +1,151 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SButton.vue can an icon and no text 1`] = `
-<button class="button button--color-green button--icon-only">
+<button class="button button--color-green button--has-icon button--icon-only button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <sicon icon="activity" class="button__icon button__icon--left"></sicon>
   <!---->
-  <!---->
-</button>
+  <!----></button>
 `;
 
 exports[`SButton.vue can be gold 1`] = `
-<button class="button button--color-gold">
+<button class="button button--color-gold button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be gold 2`] = `
-<button class="button button--color-green button--size-gold">
+<button class="button button--color-green button--size-gold button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be green 1`] = `
-<button class="button button--color-green">
+<button class="button button--color-green button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be green 2`] = `
-<button class="button button--color-green button--size-green">
+<button class="button button--color-green button--size-green button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be grey 1`] = `
-<button class="button button--color-grey">
+<button class="button button--color-grey button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be grey 2`] = `
-<button class="button button--color-green button--size-grey">
+<button class="button button--color-green button--size-grey button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be ice 1`] = `
-<button class="button button--color-ice">
+<button class="button button--color-ice button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be ice 2`] = `
-<button class="button button--color-green button--size-ice">
+<button class="button button--color-green button--size-ice button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be magenta 1`] = `
-<button class="button button--color-magenta">
+<button class="button button--color-magenta button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be magenta 2`] = `
-<button class="button button--color-green button--size-magenta">
+<button class="button button--color-green button--size-magenta button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be night 1`] = `
-<button class="button button--color-night">
+<button class="button button--color-night button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be night 2`] = `
-<button class="button button--color-green button--size-night">
+<button class="button button--color-green button--size-night button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be red 1`] = `
-<button class="button button--color-red">
+<button class="button button--color-red button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be red 2`] = `
-<button class="button button--color-green button--size-red">
+<button class="button button--color-green button--size-red button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be spartan_blue 1`] = `
-<button class="button button--color-spartan_blue">
+<button class="button button--color-spartan_blue button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be spartan_blue 2`] = `
-<button class="button button--color-green button--size-spartan_blue">
+<button class="button button--color-green button--size-spartan_blue button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be turquoise 1`] = `
-<button class="button button--color-turquoise">
+<button class="button button--color-turquoise button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be turquoise 2`] = `
-<button class="button button--color-green button--size-turquoise">
+<button class="button button--color-green button--size-turquoise button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be white 1`] = `
-<button class="button button--color-white">
+<button class="button button--color-white button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can be white 2`] = `
-<button class="button button--color-green button--size-white">
+<button class="button button--color-green button--size-white button--loading"><span class="button__spinner"><sspinner></sspinner></span>
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can have a loading spinner 1`] = `
+<button class="button button--color-green button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;
 
 exports[`SButton.vue can have an icon on the left 1`] = `
-<button class="button button--color-green">
+<button class="button button--color-green button--has-icon button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <sicon icon="activity" class="button__icon button__icon--left"></sicon> Button Text
-  <!---->
-</button>
+  <!----></button>
 `;
 
 exports[`SButton.vue can have an icon on the right 1`] = `
-<button class="button button--color-green">
+<button class="button button--color-green button--has-icon button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text <sicon icon="activity" class="button__icon button__icon--right"></sicon></button>
 `;
 
 exports[`SButton.vue renders correctly 1`] = `
-<button class="button button--color-green">
+<button class="button button--color-green button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
 `;

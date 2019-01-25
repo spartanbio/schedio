@@ -5,6 +5,12 @@
     class="button"
     v-on="$listeners"
   >
+    <template v-if="isLoading">
+      <span class="button__spinner">
+        <SSpinner />
+      </span>
+    </template>
+
     <SIcon
       v-if="iconLeft"
       :icon="iconLeft"
@@ -48,6 +54,11 @@ export default {
       }
     },
 
+    isLoading: {
+      type: Boolean,
+      default: false
+    },
+
     iconOnly: {
       type: Boolean,
       default: false
@@ -70,7 +81,9 @@ export default {
         // Handles storybook default
         this.buttonColor ? `button--color-${this.buttonColor}` : 'button--color-green',
         this.buttonSize && `button--size-${this.buttonSize}`,
-        this.iconOnly && `button--icon-only`
+        (this.iconLeft || this.iconRight) && 'button--has-icon',
+        this.iconOnly && 'button--icon-only',
+        this.isLoading && 'button--loading'
       ]
     }
   }
