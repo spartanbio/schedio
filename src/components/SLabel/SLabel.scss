@@ -46,6 +46,10 @@
     }
   }
 
+  + .button {
+    margin-top: spacing('loose');
+  }
+
   &__optional {
     @include font-size(6);
     color: color('night', 'light');
