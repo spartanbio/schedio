@@ -41,8 +41,21 @@ describe('SButton.vue', () => {
     })
   })
 
-  it('validates color', () => {
+  options.colors.forEach(color => {
+    it(`can be outlined with ${color}`, () => {
+      wrapper.setProps({ outlineColor: color })
+      expect(wrapper.contains(`.button--color-${color}-outlined`)).toBe(true)
+      expect(wrapper.html()).toMatchSnapshot()
+    })
+  })
+
+  it('validates fill color', () => {
     shallowMount(SButton, { propsData: { buttonColor: 'not a color' } })
+    expect(errorSpy).toBeCalled()
+  })
+
+  it('validates outline color', () => {
+    shallowMount(SButton, { propsData: { outlineColor: 'not a color' } })
     expect(errorSpy).toBeCalled()
   })
 

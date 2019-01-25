@@ -16,11 +16,15 @@ storiesOf('Components/SButton', module)
     props: {
       buttonColor: {
         type: String,
-        default: select('Button color', ['', ...colors], '', 'Optional Props')
+        default: select('button-color', ['', ...colors], '', 'Optional Props')
+      },
+      outlineColor: {
+        type: String,
+        default: select('outline-color', ['', ...colors], '', 'Optional Props')
       },
       buttonSize: {
         type: String,
-        default: select('Button size', ['', ...sizes], '', 'Optional Props')
+        default: select('button-size', ['', ...sizes], '', 'Optional Props')
       },
       buttonText: {
         type: String,

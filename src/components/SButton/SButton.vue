@@ -44,6 +44,16 @@ export default {
       }
     },
 
+    outlineColor: {
+      type: String,
+      default: '',
+      validator: value => {
+        if (!value || colors.includes(value)) return true
+
+        return console.error(`\`outlineColor\` ${value} not found. Allowed colors: ${[...colors]}`)
+      }
+    },
+
     buttonSize: {
       type: String,
       default: '',
@@ -79,8 +89,9 @@ export default {
     classList() {
       return [
         // Handles storybook default
-        this.buttonColor ? `button--color-${this.buttonColor}` : 'button--color-green',
+        this.buttonColor && `button--color-${this.buttonColor}`,
         this.buttonSize && `button--size-${this.buttonSize}`,
+        this.outlineColor && `button--color-${this.outlineColor}-outlined`,
         (this.iconLeft || this.iconRight) && 'button--has-icon',
         this.iconOnly && 'button--icon-only',
         this.isLoading && 'button--loading'

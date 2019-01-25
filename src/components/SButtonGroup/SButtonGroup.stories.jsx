@@ -12,8 +12,11 @@ storiesOf('Components/SButtonGroup', module)
   .add('Button Group', () => {
     return {
       props: {
-        groupColor: { default: select('Group color', ['', ...colors], '', 'Optional Props') },
-        isGrouped: { default: boolean('isGrouped', false, 'Optional Props') },
+        groupColor: { default: select('group-color', ['', ...colors], '', 'Optional Props') },
+        groupOutlineColor: {
+          default: select('group-outline-color', ['', ...colors], '', 'Optional Props')
+        },
+        isGrouped: { default: boolean('is-grouped', false, 'Optional Props') },
         button1Text: { default: text('Button 1 text', 'Button 1', 'Slots') },
         button2Text: { default: text('Button 2 text', 'Button 2', 'Slots') },
         button3Text: { default: text('Button 3 text', 'Button 3', 'Slots') },
@@ -32,7 +35,11 @@ storiesOf('Components/SButtonGroup', module)
             <p>Note that the button group's color will override an individual button's color.</p>
 
             <SHeading level="2">Example</SHeading>
-            <SButtonGroup groupColor={this.groupColor} isGrouped={this.isGrouped}>
+            <SButtonGroup
+              groupColor={this.groupColor}
+              groupOutlineColor={this.groupOutlineColor}
+              isGrouped={this.isGrouped}
+            >
               <SButton disabled={this.button1Disabled}>{this.button1Text}</SButton>
               <SButton disabled={this.button2Disabled}>{this.button2Text}</SButton>
               <SButton disabled={this.button3Disabled}>{this.button3Text}</SButton>

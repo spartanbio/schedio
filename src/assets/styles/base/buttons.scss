@@ -1,13 +1,42 @@
-@mixin button-size-small {
-  @include font-size(6);
+@function active-button-shadow($button-color: 'grey', $hue: 'base') {
+  $base-color: color($button-color, $hue);
+
+  @return inset 0 0 0.5em 0 darken($base-color, 20%);
 }
 
-@mixin button-size-regular {
-  @include font-size(5);
+@mixin button-base {
+  align-items: center;
+  background-color: transparent;
+  border: border();
+  border-color: transparent;
+  color: color('spartan_blue', 'light');
+  border-radius: border-radius('small');
+  cursor: pointer;
+  display: inline-flex;
+  padding: spacing('half') spacing();
+  transition: all duration() easing();
+
+  &:hover {
+    color: color('spartan_blue', 'dark');
+    // border: border();
+  }
+
+  &:disabled {
+    background-color: color('grey', 'light') !important;
+    border-color: color('grey') !important;
+    box-shadow: none !important;
+    color: color('night', 'lighter') !important;
+    cursor: not-allowed;
+    text-shadow: none !important;
+  }
 }
 
-@mixin button-size-large {
-  @include font-size(4);
+@mixin button-shadow {
+  box-shadow: shadow();
+
+  &:not(:disabled):hover {
+    box-shadow: shadow('heavy');
+  }
 }
 
 @mixin button-color($button-color) {
@@ -16,35 +45,38 @@
   $text-shadow-color: if($white-or-ice, transparent, darken($base-color, 40%));
   $active-shadow: inset 0 0 0.5em 0 darken($base-color, 20%);
   $focus-shadow: inset 0 0 1px 2px darken($base-color, 10%);
-  $svg-shadow: 0 0 0.5em darken($base-color, 20%);
   $text-color: if($white-or-ice, color('night'), color('white'));
 
+  @include button-shadow;
   background-color: $base-color;
-  border-color: darken($base-color, 10%);
+  border-color: darken($base-color, 20%);
   color: $text-color;
   // For accessibility on light, but not white, buttons
   text-shadow: 0 0 0.5em $text-shadow-color;
 
-  .icon {
-    filter: drop-shadow($svg-shadow);
-    stroke: $text-color;
+  svg {
+    filter: drop-shadow(0 0 0.5em darken($base-color, 20%));
   }
 
   .spinner {
-    filter: drop-shadow($svg-shadow);
     stroke: if($white-or-ice, color('grey'), color('white'));
+  }
+
+  &,
+  &:hover {
+    border-color: transparent;
+    color: $text-color;
   }
 
   &:active {
     $active-color: if($white-or-ice, darken($base-color, 10%), color($button-color, 'dark'));
 
     background-color: $active-color;
-    box-shadow: $active-shadow, $focus-shadow, shadow('heavy');
+    box-shadow: active-button-shadow($button-color), $focus-shadow, shadow('heavy') !important;
   }
 
   &:disabled {
-    .icon,
-    .spinner {
+    svg {
       filter: none;
     }
 
@@ -58,4 +90,35 @@
 
     background-color: $hover-color;
   }
+}
+
+@mixin button-outline($button-color) {
+  @include button-shadow;
+  border: border();
+  border-color: color($button-color);
+  color: color($button-color);
+
+  .spinner {
+    stroke: color($button-color);
+  }
+
+  &:active {
+    box-shadow: active-button-shadow($hue: 'light'), shadow('heavy') !important;
+  }
+
+  &:hover {
+    color: color($button-color);
+  }
+}
+
+@mixin button-size-small {
+  @include font-size(6);
+}
+
+@mixin button-size-regular {
+  @include font-size(5);
+}
+
+@mixin button-size-large {
+  @include font-size(4);
 }
