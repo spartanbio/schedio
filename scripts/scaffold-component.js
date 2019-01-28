@@ -5,7 +5,6 @@ const path = require('path')
 
 // params
 const componentName = process.argv[2]
-const listFile = path.resolve(__dirname, '../src', 'components', 'index.js')
 const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
 
 // don't overwrite existing components
@@ -87,12 +86,21 @@ const generateComponentFiles = scaffold.map(({ fileName, extension, contents }) 
 })
 
 const updateComponentList = async () => {
+  const vueIndex = path.resolve(__dirname, '../src/components/index.js')
   // add component export to @/components/index.js
-  const output = Buffer.concat([
-    await fs.readFile(listFile),
+  const vueToAdd = Buffer.concat([
+    await fs.readFile(vueIndex),
     Buffer.from(`export { default as ${componentName} } from '@/components/${componentName}'\n`)
   ])
-  fs.outputFile(listFile, output)
+  fs.outputFile(vueIndex, vueToAdd)
+
+  const scssIndex = path.resolve(__dirname, '../src/components.scss')
+  // import components in @/components.scss
+  const scssToAdd = Buffer.concat([
+    await fs.readFile(scssIndex),
+    Buffer.from(`@import './components/${componentName}/${componentName}.scss';\n`)
+  ])
+  fs.outputFile(scssIndex, scssToAdd)
 }
 
 // write files
