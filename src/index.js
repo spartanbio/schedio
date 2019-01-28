@@ -8,6 +8,6 @@ const Schedio = {
   }
 }
 
-Vue.use(Schedio)
+if (typeof window !== 'undefined' && window.Vue) Vue.use(Schedio)
 
 export default Schedio
