@@ -38,7 +38,20 @@ describe('SLink.vue', () => {
 
   it('detects external links and uses `a` tag for them', () => {
     expect(wrapper.vm.isExternalLink).toBe(true)
+    expect(wrapper.vm.componentIs).toBe('a')
     expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('uses `a` when no router is present', () => {
+    const noRouter = shallowMount(SLink, {
+      propsData: {
+        to: '/about'
+      }
+    })
+
+    expect(noRouter.vm.isExternalLink).toBe(false)
+    expect(noRouter.vm.componentIs).toBe('a')
+    expect(noRouter.html()).toMatchSnapshot()
   })
 
   it('uses best practices for [target="_blank"]', () => {
@@ -52,7 +65,7 @@ describe('SLink.vue', () => {
   it('detects internal links and uses a link component', () => {
     wrapper.setProps({ to: '/about' })
     expect(wrapper.vm.isExternalLink).toBe(false)
-    expect(wrapper.vm.linkProperties.is).toBe('router-link')
+    expect(wrapper.vm.componentIs).toBe('router-link')
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -70,7 +83,7 @@ describe('SLink.vue', () => {
       }
     })
 
-    expect(nuxtWrapper.vm.linkProperties.is).toBe('nuxt-link')
+    expect(nuxtWrapper.vm.componentIs).toBe('nuxt-link')
     expect(nuxtWrapper.html()).toMatchSnapshot()
   })
 })
