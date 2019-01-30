@@ -12,6 +12,12 @@ exports[`SCheckbox.vue can be reversed 1`] = `
     <!----></span> <input id="checkbox" name="checkbox" required="required" type="checkbox" class="checkbox"> <span class="checkbox__check"></span></label>
 `;
 
+exports[`SCheckbox.vue can hide the optional tag 1`] = `
+<label class="label label--inline" for="checkbox"><span>
+    Checkbox
+    <!----></span> <input id="checkbox" name="checkbox" required="required" type="checkbox" class="checkbox"> <span class="checkbox__check"></span></label>
+`;
+
 exports[`SCheckbox.vue renders correctly 1`] = `
 <label class="label label--inline" for="checkbox"><span>
     Checkbox

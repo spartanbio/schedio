@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SHero.vue can be full 1`] = `
+<div class="hero hero--height-full">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be gold 1`] = `
+<div class="hero hero--color-gold">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be green 1`] = `
+<div class="hero hero--color-green">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be grey 1`] = `
+<div class="hero hero--color-grey">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be half 1`] = `
+<div class="hero hero--height-half">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be ice 1`] = `
+<div class="hero hero--color-ice">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be magenta 1`] = `
+<div class="hero hero--color-magenta">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be night 1`] = `
+<div class="hero hero--color-night">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be red 1`] = `
+<div class="hero hero--color-red">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be spartan_blue 1`] = `
+<div class="hero hero--color-spartan_blue">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be turquoise 1`] = `
+<div class="hero hero--color-turquoise">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be white 1`] = `
+<div class="hero hero--color-white">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can have no padding on the body 1`] = `
+<div class="hero hero--has-no-padding">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue hides empty slots 1`] = `
+<div class="hero">
+  <!---->
+  <div class="hero__body">content</div>
+  <!---->
+</div>
+`;
+
+exports[`SHero.vue renders correctly 1`] = `
+<div class="hero">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;

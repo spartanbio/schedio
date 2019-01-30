@@ -1,6 +1,9 @@
 <template>
-  <div :class="classList" class="column">
-    <slot/>
+  <div
+    :class="classList"
+    class="column"
+  >
+    <slot />
   </div>
 </template>
 
@@ -32,13 +35,19 @@ const propSettings = ({ types = [], validator = sizeValidator, defaultVal = '' }
   validator
 })
 
+const narrowSettings = () => ({
+  type: Boolean,
+  default: false
+})
+
 // set up all $props relying on mobile breakpoints
 const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
   props[breakpoint] = propSettings({ types: [Boolean] })
-  props[`narrow-after-${breakpoint}`] = propSettings({ types: [Boolean] })
-  props[`narrow-until-${breakpoint}`] = propSettings({ types: [Boolean] })
+  props[`narrow-after-${breakpoint}`] = narrowSettings()
+  props[`narrow-until-${breakpoint}`] = narrowSettings()
   props[`offset-${breakpoint}`] = propSettings()
   props[`order-${breakpoint}`] = propSettings({ validator: orderValidator })
+
   return props
 }, {})
 
@@ -54,7 +63,7 @@ export default {
     // Add base props without breakpoints
     size: propSettings(),
     offset: propSettings(),
-    narrow: propSettings({ types: [Boolean] }),
+    narrow: narrowSettings(),
     order: propSettings({ validator: orderValidator })
     /* eslint-enable */
   },

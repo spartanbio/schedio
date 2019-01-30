@@ -3,13 +3,17 @@
 exports[`SLabel.vue can be fullwidth 1`] = `
 <label class="label label--inline label--fullwidth"><span>
     label
-    <span class="label__optional">—&nbsp;Optional</span></span> </label>
+    <span class="label__optional">
+      —&nbsp;Optional
+    </span></span> </label>
 `;
 
 exports[`SLabel.vue can be inline 1`] = `
 <label class="label label--inline"><span>
     label
-    <span class="label__optional">—&nbsp;Optional</span></span> </label>
+    <span class="label__optional">
+      —&nbsp;Optional
+    </span></span> </label>
 `;
 
 exports[`SLabel.vue can be required 1`] = `
@@ -21,11 +25,21 @@ exports[`SLabel.vue can be required 1`] = `
 exports[`SLabel.vue can be reversed 1`] = `
 <label class="label label--inline label--reversed"><span>
     label
-    <span class="label__optional">—&nbsp;Optional</span></span> </label>
+    <span class="label__optional">
+      —&nbsp;Optional
+    </span></span> </label>
+`;
+
+exports[`SLabel.vue can hide the optional tag 1`] = `
+<label class="label"><span>
+    label
+    <!----></span> </label>
 `;
 
 exports[`SLabel.vue renders correctly 1`] = `
 <label class="label"><span>
     label
-    <span class="label__optional">—&nbsp;Optional</span></span> </label>
+    <span class="label__optional">
+      —&nbsp;Optional
+    </span></span> </label>
 `;

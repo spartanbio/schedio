@@ -3,8 +3,27 @@
     v-bind="$attrs"
     :class="classList"
     class="button"
-    v-on="$listeners">
-    <slot/>
+    v-on="$listeners"
+  >
+    <template v-if="isLoading">
+      <span class="button__spinner">
+        <SSpinner />
+      </span>
+    </template>
+
+    <SIcon
+      v-if="iconLeft"
+      :icon="iconLeft"
+      class="button__icon button__icon--left"
+    />
+
+    <slot v-if="!iconOnly" />
+
+    <SIcon
+      v-if="iconRight"
+      :icon="iconRight"
+      class="button__icon button__icon--right"
+    />
   </button>
 </template>
 
@@ -25,6 +44,16 @@ export default {
       }
     },
 
+    outlineColor: {
+      type: String,
+      default: '',
+      validator: value => {
+        if (!value || colors.includes(value)) return true
+
+        return console.error(`\`outlineColor\` ${value} not found. Allowed colors: ${[...colors]}`)
+      }
+    },
+
     buttonSize: {
       type: String,
       default: '',
@@ -33,6 +62,26 @@ export default {
 
         return console.error(`\`buttonSizes\` ${value} not found. Allowed sizes: ${sizes}`)
       }
+    },
+
+    isLoading: {
+      type: Boolean,
+      default: false
+    },
+
+    iconOnly: {
+      type: Boolean,
+      default: false
+    },
+
+    iconLeft: {
+      type: String,
+      default: ''
+    },
+
+    iconRight: {
+      type: String,
+      default: ''
     }
   },
 
@@ -40,8 +89,12 @@ export default {
     classList() {
       return [
         // Handles storybook default
-        this.buttonColor ? `button--color-${this.buttonColor}` : 'button--color-green',
-        this.buttonSize ? `button--size-${this.buttonSize}` : ''
+        this.buttonColor && `button--color-${this.buttonColor}`,
+        this.buttonSize && `button--size-${this.buttonSize}`,
+        this.outlineColor && `button--color-${this.outlineColor}-outlined`,
+        (this.iconLeft || this.iconRight) && 'button--has-icon',
+        this.iconOnly && 'button--icon-only',
+        this.isLoading && 'button--loading'
       ]
     }
   }

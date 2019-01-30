@@ -16,7 +16,8 @@ storiesOf('Components/SLabel', module)
             isFullwidth: boolean('isFullwidth', false, 'Optional Props'),
             isInline: boolean('isInline', false, 'Optional Props'),
             isReversed: boolean('isReversed', false, 'Optional Props'),
-            isOptional: boolean('isOptional', true, 'Optional Props')
+            isOptional: boolean('isOptional', true, 'Optional Props'),
+            showOptional: boolean('showOptional', true, 'Optional Props')
           }
         },
 
@@ -33,10 +34,13 @@ storiesOf('Components/SLabel', module)
               <code>SLabel</code> provides labels for all form inputs. It is included automatically
               for all input components in this library, and is designed to wrap components.
             </p>
+            <p>
+              By default, if a label is for an optional field, it will append '- Optional' to the
+              label. This text can be hidden with the <code>show-optional</code> prop.
+            </p>
 
             <SHeading level="2">Example</SHeading>
             <SLabel {...{ props }}>
-              {/* Labels behave best with block elements. */}
               <div style="text-transform: none; font-weight: 300;">
                 <code>{'<' + defaultSlot + ' />'}</code>
               </div>

@@ -1,10 +1,17 @@
 import { SHeading } from '@/components/SHeading'
+import { colors as iconColors } from '@/components/SIcon/options'
 import { SSelect } from '@/components/SSelect'
 import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
+import icons from 'feather-icons/dist/icons.json'
+
+const iconList = Object.keys(icons)
+const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
+const iconColor = side =>
+  select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
 
 storiesOf('Components/SSelect', module)
   .addDecorator(withKnobs)
@@ -49,7 +56,11 @@ storiesOf('Components/SSelect', module)
             selectOptions: optionTypes[options],
             multiple: boolean('Multiple', false, 'Optional Props'),
             isInline: boolean('isInline', false, 'Optional Props'),
-            isFullwidth: boolean('isFullwidth', false, 'Optional Props')
+            isFullwidth: boolean('isFullwidth', false, 'Optional Props'),
+            iconLeft: iconProp('left'),
+            iconLeftColor: iconColor('left'),
+            iconRight: iconProp('right'),
+            iconRightColor: iconColor('right')
           }
         },
         attrs: {

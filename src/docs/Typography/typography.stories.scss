@@ -1,7 +1,3 @@
-// required to resolve border fucntion correctly
-
-@import '../../../assets/styles/base/**/*.scss';
-
 .typography-example {
   border-bottom: border-width() solid color('grey', 'light');
   padding: spacing('double');

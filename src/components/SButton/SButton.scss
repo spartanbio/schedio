@@ -1,23 +1,6 @@
 .button {
+  @include button-base;
   @include button-size-regular;
-
-  border-radius: border-radius('small');
-  box-shadow: shadow('base');
-  cursor: pointer;
-  padding: spacing('half') spacing('double');
-  transition: all duration() easing();
-
-  &:disabled {
-    background-color: color('grey', 'light');
-    border-color: color('grey') !important;
-    box-shadow: none !important;
-    color: color('night', 'lighter');
-    cursor: not-allowed;
-  }
-
-  &:not(:disabled):hover {
-    box-shadow: shadow('heavy');
-  }
 
   &--size-small {
     @include button-size-small;
@@ -31,9 +14,68 @@
     @include button-size-large;
   }
 
+  &--loading {
+    color: transparent !important;
+    pointer-events: none;
+    position: relative;
+    text-shadow: none !important;
+
+    .icon {
+      filter: none;
+      stroke: transparent !important;
+    }
+
+    .button__spinner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      padding-top: spacing('half');
+      transform: translateX(-50%);
+    }
+  }
+
+  &--has-icon {
+    padding: spacing('half');
+  }
+
+  &--icon-only {
+    .icon {
+      margin: 0;
+
+      & + .icon {
+        margin-left: spacing();
+      }
+    }
+  }
+
+  &__icon {
+    &--left {
+      margin-right: spacing('half') + spacing('quarter');
+    }
+
+    &--right {
+      margin-left: spacing('half') + spacing('quarter');
+    }
+
+    .button:disabled & {
+      filter: none;
+      stroke: color('night', 'lightest');
+    }
+  }
+
   @each $color-name in $button-colors {
     &--color-#{$color-name} {
       @include button-color($color-name);
+
+      &-outlined {
+        @include button-outline($color-name);
+      }
+    }
+  }
+
+  @each $color-name in $button-colors {
+    &--outline-#{$color-name} {
+      @include button-outline($color-name);
     }
   }
 }

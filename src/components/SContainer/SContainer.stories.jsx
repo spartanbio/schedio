@@ -6,15 +6,13 @@ import { SHeading } from '@/components/SHeading'
 import StoryContainer from '@/docs/StoryContainer'
 import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import kebabCase from 'lodash.kebabcase'
 import orderBy from 'lodash.orderby'
 import mobileBreakpoints from './mobile-breakpoints'
+import PropList from '@/docs/PropList'
 
 storiesOf('Components/SContainer', module)
   .addDecorator(withKnobs)
-  .add('SContainer', function SContainer() {
-    const containerPropNames = orderBy(Object.keys(SContainer.props))
-
+  .add('SContainer', function SContainerDocs() {
     return {
       props: {
         props: {
@@ -44,18 +42,13 @@ storiesOf('Components/SContainer', module)
               </SContainerRow>
             </SContainer>
 
-            <SHeading level="2">Prop list</SHeading>
-            <ul>
-              {containerPropNames.map(name => (
-                <li>{kebabCase(name)}</li>
-              ))}
-            </ul>
+            <PropList component={SContainer} />
           </StoryContainer>
         )
       }
     }
   })
-  .add('SContainerRow', function SContainerRow() {
+  .add('SContainerRow', function SContainerRowDocs() {
     // get sorted row props from component
     const rowPropNames = orderBy(Object.keys(SContainerRow.props))
 
@@ -77,7 +70,6 @@ storiesOf('Components/SContainer', module)
           default: {
             ...alignProps,
             ...justifyProps,
-            // `flex-direction: ${isReversed ? 'row' : 'row-reverse'}`
             isReversed: boolean('isReversed', false, 'Other')
           }
         }
@@ -109,18 +101,13 @@ storiesOf('Components/SContainer', module)
               </SContainerRow>
             </SContainer>
 
-            <SHeading level="2">Prop list</SHeading>
-            <ul>
-              {rowPropNames.map(name => (
-                <li>{kebabCase(name)}</li>
-              ))}
-            </ul>
+            <PropList component={SContainerRow} />
           </StoryContainer>
         )
       }
     }
   })
-  .add('SContainerColumn', function SContainerColumn() {
+  .add('SContainerColumn', function SContainerColumnDocs() {
     // get sorted column props from component
     const columnPropNames = orderBy(Object.keys(SContainerColumn.props))
 
@@ -223,8 +210,10 @@ storiesOf('Components/SContainer', module)
             </p>
             <p>
               Additionally, just about every column prop can be set for each breakpoint (
-              {/* prettier-ignore */}
-              <code>${'{prop}'}-${'{breakpoint}'}="${'value'}"</code>)
+              <code>
+                {'{$prop}'}-{'{$breakpoint}'}={'value'}"
+              </code>
+              )
             </p>
 
             <SHeading level="3">Responsive Breakpoints and Narrow Columns</SHeading>
@@ -238,7 +227,6 @@ storiesOf('Components/SContainer', module)
               <em>and including</em> the large breakpoint.
             </p>
 
-            {/* Demo columns */}
             <SHeading level="2">Example</SHeading>
             <p>The first column's props can be set using the knobs.</p>
 
@@ -252,12 +240,7 @@ storiesOf('Components/SContainer', module)
               </SContainerRow>
             </SContainer>
 
-            <SHeading level="2">Prop list</SHeading>
-            <ul>
-              {columnPropNames.map(name => (
-                <li>{kebabCase(name)}</li>
-              ))}
-            </ul>
+            <PropList component={SContainerColumn} />
           </StoryContainer>
         )
       }

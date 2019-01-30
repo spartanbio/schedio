@@ -1,0 +1,10 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin spinner-dimensions($size) {
+  height: $size;
+  width: $size;
+}

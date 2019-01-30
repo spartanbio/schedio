@@ -1,16 +1,16 @@
 .select {
   @include control;
+  @include control-with-icons;
+
   appearance: none;
   cursor: pointer;
   overflow: auto;
 
-  &-wrapper {
-    align-items: center;
-    display: inline-flex;
-    flex-shrink: 100;
-    position: relative;
-    width: 100%;
+  &__icon--right {
+    right: spacing('triple') !important;
+  }
 
+  &__container {
     &::after {
       @include arrow('down', 'right');
     }
@@ -19,13 +19,10 @@
       &::after {
         display: none;
       }
-    }
-  }
-}
 
-.label--inline {
-  .select {
-    // prevent arrow from overlapping default placeholder
-    min-width: 12em;
+      .select__icon--right {
+        right: spacing() + spacing('quarter') !important;
+      }
+    }
   }
 }

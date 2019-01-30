@@ -1,6 +1,9 @@
 <template>
-  <div :class="classList" class="row">
-    <slot/>
+  <div
+    :class="classList"
+    class="row"
+  >
+    <slot />
   </div>
 </template>
 
@@ -68,10 +71,11 @@ export default {
   methods: {
     // used by mixin
     classNameReducer: classes => (acc, key) => {
+      const rx = /(align|justify)-(.+)/
       // e.g.: $props.alignUntilXl => 'row--align-center-until-xl'
-      const name = key.replace(/(align-|justify-)(.+)/, `row--$1${classes[key]}-$2`)
+      const name = key.replace(rx, `row--$1-${classes[key]}-$2`)
 
-      if (classes[key]) return acc.concat(name)
+      if (classes[key] && key.match(rx)) return acc.concat(name)
 
       return acc
     }

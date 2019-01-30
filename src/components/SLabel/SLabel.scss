@@ -22,11 +22,19 @@
     flex-direction: row;
     justify-content: flex-start;
 
-    .input,
-    .textarea,
     .select {
+      // prevent arrow from overlapping default placeholder
+      min-width: 16em;
+    }
+
+    .input,
+    .select,
+    .textarea {
       margin-top: 0;
-      margin-left: spacing();
+
+      &__container {
+        margin-left: spacing();
+      }
     }
 
     &.label--reversed {
@@ -36,6 +44,10 @@
     &:not(:first-child) {
       margin: spacing('half') 0;
     }
+  }
+
+  + .button {
+    margin-top: spacing('loose');
   }
 
   &__optional {

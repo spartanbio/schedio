@@ -1,6 +1,9 @@
 <template>
-  <component :is="displayTag" :class="classList">
-    <slot/>
+  <component
+    :is="componentTag"
+    :class="classList"
+  >
+    <slot />
   </component>
 </template>
 
@@ -11,8 +14,14 @@ export default {
   props: {
     level: {
       type: [String, Number],
-      required: true,
-      validator: value => Number(value) <= 3 || console.error('Level must be 3 or lower.')
+      default: 1,
+      validator: value => Number(value) <= 4 || console.error('Level must be 4 or lower.')
+    },
+
+    displayLevel: {
+      type: [String, Number],
+      default: 1,
+      validator: value => Number(value) <= 2 || console.error('Display level must be 2 or lower.')
     },
 
     isDisplay: {
@@ -20,12 +29,22 @@ export default {
       default: false
     },
 
-    isUppercase: {
+    hasNoCase: {
       type: Boolean,
       default: false
     },
 
     isSubtle: {
+      type: Boolean,
+      default: false
+    },
+
+    isTitle: {
+      type: Boolean,
+      default: false
+    },
+
+    isSubtitle: {
       type: Boolean,
       default: false
     },
@@ -37,7 +56,7 @@ export default {
         // allow empty
         if (!value) return true
 
-        const allowedTags = ['div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+        const allowedTags = ['div', 'span', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
         if (!allowedTags.includes(value)) {
           console.error(`Tag must be one of: ${allowedTags.join(', ')}.`)
@@ -50,38 +69,19 @@ export default {
   computed: {
     classList() {
       return [
-        this.displayClass,
+        'heading',
+        this.isDisplay ? `heading--display-${this.displayLevel}` : `heading--level-${this.level}`,
         {
-          subtle: this.isSubtle,
-          uppercase: this.isUppercase
+          'heading--subtle': this.isSubtle,
+          'heading--no-case': this.hasNoCase,
+          'heading--title': this.isTitle,
+          'heading--subtitle': this.isSubtitle
         }
       ]
     },
 
-    displayClass() {
-      return this.isDisplay ? 'display-' + this.level : 'heading-' + this.level
-    },
-
-    displayTag() {
+    componentTag() {
       return this.tag || 'h' + this.level
-    }
-  },
-
-  created() {
-    this.validateProps()
-  },
-
-  methods: {
-    validateProps() {
-      // validate `level` prop if `isDisplay` is set
-      if (this.isDisplay && this.level > 2) {
-        const name = this.$options.name
-        throw new Error(`${name}: \`level\` must be 1 or 2 if  \`isDisplay\` is true.`)
-      }
-
-      if (this.isSubtle && this.isUppercase) {
-        console.error('`SHeading` always has no `text-transform` if `isSubtle` is true.')
-      }
     }
   }
 }

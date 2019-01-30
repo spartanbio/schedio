@@ -4,25 +4,6 @@
   line-height: map-get(nth($sizes, $size), 'leading');
 }
 
-@mixin display($size, $text-transform: null) {
-  @include font-size($size);
-
-  @if ($text-transform) {
-    text-transform: $text-transform;
-  }
-
-  font-weight: $font-weight-bold;
-
-  &:not(:first-child) {
-    margin-top: 3rem;
-  }
-
-  &.subtle {
-    font-weight: $font-weight-light;
-    text-transform: unset;
-  }
-}
-
 $size-1: (
   'size': $font-size-1,
   'leading': $large-text-line-height,
@@ -66,3 +47,5 @@ $size-7: (
 );
 
 $sizes: ($size-1, $size-2, $size-3, $size-4, $size-5, $size-6, $size-7);
+
+$text-alignments: (left, right, center, justify);

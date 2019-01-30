@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SContainerRow.vue can be align around 1`] = `
-<div class="row row--align-around align">
+<div class="row row--align-around">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be align between 1`] = `
-<div class="row row--align-between align">
+<div class="row row--align-between">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be align center 1`] = `
-<div class="row row--align-center align">
+<div class="row row--align-center">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be align end 1`] = `
-<div class="row row--align-end align">
+<div class="row row--align-end">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be align start 1`] = `
-<div class="row row--align-start align">
+<div class="row row--align-start">
   <div>Row Content</div>
 </div>
 `;
@@ -271,31 +271,31 @@ exports[`SContainerRow.vue can be alignUntilXl start 1`] = `
 `;
 
 exports[`SContainerRow.vue can be justify around 1`] = `
-<div class="row row--justify-around justify">
+<div class="row row--justify-around">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be justify between 1`] = `
-<div class="row row--justify-between justify">
+<div class="row row--justify-between">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be justify center 1`] = `
-<div class="row row--justify-center justify">
+<div class="row row--justify-center">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be justify end 1`] = `
-<div class="row row--justify-end justify">
+<div class="row row--justify-end">
   <div>Row Content</div>
 </div>
 `;
 
 exports[`SContainerRow.vue can be justify start 1`] = `
-<div class="row row--justify-start justify">
+<div class="row row--justify-start">
   <div>Row Content</div>
 </div>
 `;

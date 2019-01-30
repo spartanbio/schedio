@@ -56,7 +56,6 @@ storiesOf('Components/STable', module)
               or <code>{'<Object>'}</code> to the <code>tableData</code> prop.
             </p>
 
-            {/* Prop example */}
             <SHeading level="3">Using props</SHeading>
             <p>
               When the <code>tableData</code> prop is provided, <code>{'<STable />'}</code> will
@@ -87,7 +86,6 @@ storiesOf('Components/STable', module)
             </p>
             <STable {...{ props: props.propExampleProps }} />
 
-            {/* Slot example */}
             <SHeading level="3">Using slots</SHeading>
             <p>
               When using slots, it is up to you to manually provide and configure{' '}

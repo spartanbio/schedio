@@ -17,12 +17,14 @@ export const withAttrsAsProps = ({
   name = 'name',
   label = 'label',
   required = true,
+  showOptional = true,
   isInvalid = false
 } = {}) => ({
   id: text(`${identifier} id`.trim(), id, 'Required Props'),
   name: text(`${identifier} name`.trim(), name, 'Required Props'),
   label: text(`${identifier} label`.trim(), label, 'Required Props'),
   required: boolean(`${identifier} required`.trim(), required, 'Optional Props'),
+  showOptional: boolean(`${identifier} showOptional`.trim(), showOptional, 'Optional Props'),
   isInvalid: boolean(`${identifier} isInvalid`.trim(), isInvalid, 'Optional Props')
 })
 

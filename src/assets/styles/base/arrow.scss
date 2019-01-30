@@ -35,8 +35,8 @@ $arrow-data: (
   height: $size;
   margin-top: $vertical-offset;
   position: absolute;
-  top: 1.4em;
-  transform: rotate($rotation);
+  top: 50%;
+  transform: translateY(-50%) rotate($rotation);
   width: $size;
 
   @if $position == 'right' {

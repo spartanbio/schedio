@@ -5,31 +5,35 @@ import StoryContainer from '@/docs/StoryContainer'
 import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
-const headingLevels = ['1', '2', '3']
+const headingLevels = ['1', '2', '3', '4']
+const displayLevels = ['1', '2']
+const options = radios(
+  'Pick one',
+  ['Default', 'has-no-case', 'is-subtle'],
+  'Default',
+  'Optional props'
+)
+const tagOptions = ['', 'div', 'span', 'a']
 
 storiesOf('Components/SHeading', module)
   .addDecorator(withKnobs)
   .add('Heading', function Heading() {
-    const options = radios(
-      'Pick one',
-      ['Default', 'is-uppercase', 'is-subtle'],
-      'Default',
-      'Optional'
-    )
-
     return {
       props: {
         props: {
           default: {
-            level: select('level', headingLevels, '1', 'Required'),
-            isUppercase: options === 'is-uppercase',
+            level: select('level', headingLevels, '1', 'Optional props'),
+            displayLevel: select('display-level', displayLevels, '1', 'Optional props'),
+            hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
-            isDisplay: boolean('is-display', false, 'Optional'),
-            tag: select('tag', ['', 'div', 'span'], '', 'Optional')
+            isDisplay: boolean('is-display', false, 'Optional props'),
+            isTitle: boolean('is-title', false, 'Optional props'),
+            isSubtitle: boolean('is-subtitle', false, 'Optional props'),
+            tag: select('tag', tagOptions, '', 'Optional props')
           }
         },
         slotContent: {
-          default: text('Default', '{{ Slot content }}', 'Slots')
+          default: text('Default', 'Slot content', 'Slots')
         }
       },
       render(h) {
@@ -37,7 +41,7 @@ storiesOf('Components/SHeading', module)
 
         return (
           <StoryContainer>
-            <SHeading level="1">Heading</SHeading>
+            <SHeading>Heading</SHeading>
             <p>
               <code>SHeading</code> defaults to using <code>h1-h6</code> tags, but can be overriden
               to be a <code>{'<div>'}</code> or <code>{'<span>'}</code> instead using the{' '}
@@ -47,8 +51,7 @@ storiesOf('Components/SHeading', module)
             <SHeading level="2">Example</SHeading>
             <div>
               <SHeading {...{ props }}>
-                <p>Heading Level {props.level}</p>
-                <p>{this.slotContent}</p>
+                Level {props.level}: {this.slotContent}
               </SHeading>
             </div>
 
@@ -63,12 +66,15 @@ storiesOf('Components/SHeading', module)
       props: {
         props: {
           default: {
-            level: select('level', headingLevels, '1', 'Required'),
-            isSubtle: boolean('is-subtle', false, 'Optional')
+            level: select('level', headingLevels, '1', 'Optional props'),
+            hasNoCase: options === 'has-no-case',
+            isSubtle: options === 'is-subtle',
+            isTitle: boolean('is-title', false, 'Optional props'),
+            isSubtitle: boolean('is-subtitle', false, 'Optional props')
           }
         },
         slotContent: {
-          default: text('Default', '{{ Slot content }}', 'Slots')
+          default: text('Default', 'Slot content', 'Slots')
         }
       },
       render(h) {
@@ -76,14 +82,27 @@ storiesOf('Components/SHeading', module)
 
         return (
           <StoryContainer>
-            <SHeading level="1">Usage: Heading</SHeading>
+            <SHeading>Usage: Heading</SHeading>
             <p>Headings help identify key sections and information within a document.</p>
 
             <SHeading level="2">Example</SHeading>
             <div>
               <SHeading {...{ props }}>
-                <p>Heading Level {props.level}</p>
-                <p>{slotContent}</p>
+                Level {props.level}: {slotContent}
+              </SHeading>
+            </div>
+
+            <SHeading level="3">Consecutive Headings</SHeading>
+            <p>Headings placed next to each other will be spaced 1rem apart.</p>
+            <div>
+              <SHeading>Title</SHeading>
+              <SHeading level="2">Subtitle</SHeading>
+            </div>
+
+            <div>
+              <SHeading isTitle>Title</SHeading>
+              <SHeading isSubtitle level="2">
+                Subtitle
               </SHeading>
             </div>
 
@@ -96,7 +115,7 @@ storiesOf('Components/SHeading', module)
   .add('Usage: Display', function UsageDisplay() {
     const options = radios(
       'Pick one',
-      ['Default', 'is-uppercase', 'is-subtle'],
+      ['Default', 'has-no-case', 'is-subtle'],
       'Default',
       'Optional'
     )
@@ -105,14 +124,18 @@ storiesOf('Components/SHeading', module)
       props: {
         props: {
           default: {
-            level: select('level', ['1', '2'], '1', 'Required'),
-            isDisplay: boolean('is-display', true, 'Required'),
-            isUppercase: options === 'is-uppercase',
-            isSubtle: options === 'is-subtle'
+            level: select('level', headingLevels, '1', 'Optional props'),
+            displayLevel: select('display-level', displayLevels, '1', 'Optional props'),
+            hasNoCase: options === 'has-no-case',
+            isSubtle: options === 'is-subtle',
+            isDisplay: true,
+            isTitle: boolean('is-title', false, 'Optional props'),
+            isSubtitle: boolean('is-subtitle', false, 'Optional props'),
+            tag: select('tag', tagOptions, '', 'Optional props')
           }
         },
         slotContent: {
-          default: text('Default', '{{ Slot content }}', 'Slots')
+          default: text('Default', 'Slot content', 'Slots')
         }
       },
       render(h) {
@@ -120,7 +143,7 @@ storiesOf('Components/SHeading', module)
 
         return (
           <StoryContainer>
-            <SHeading level="1">Usage: Display</SHeading>
+            <SHeading>Usage: Display</SHeading>
             <p>
               Headings are key to structure, and displays are decorative. Displays should be used
               sparingly, typically once per document.
@@ -129,8 +152,7 @@ storiesOf('Components/SHeading', module)
             <SHeading level="2">Example</SHeading>
             <div>
               <SHeading {...{ props }}>
-                <p>Display Level {props.level}</p>
-                <p>{slotContent}</p>
+                Level {props.level}: {slotContent}
               </SHeading>
             </div>
 

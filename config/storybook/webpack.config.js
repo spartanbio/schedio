@@ -1,4 +1,3 @@
-const globImporter = require('node-sass-glob-importer')
 const path = require('path')
 const sharedConf = require('../shared-webpack-conf')
 
@@ -9,12 +8,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
       'style-loader',
       'css-loader',
       'postcss-loader',
-      {
-        loader: 'sass-loader',
-        options: {
-          importer: globImporter()
-        }
-      },
+      'sass-loader',
       {
         loader: 'style-resources-loader',
         options: sharedConf.styleResourcesLoaderOptions

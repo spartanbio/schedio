@@ -4,7 +4,9 @@
     :label="label"
     :is-reversed="isReversed"
     :is-optional="!required"
-    is-inline>
+    :show-optional="showOptional"
+    is-inline
+  >
     <input
       v-bind="$attrs"
       :id="id"
@@ -12,8 +14,12 @@
       :required="required"
       class="radio"
       type="radio"
-      v-on="listeners">
-    <span :class="{ 'radio__check--invalid': isInvalid }" class="radio__check"/>
+      v-on="listeners"
+    >
+    <span
+      :class="{ 'radio__check--invalid': isInvalid }"
+      class="radio__check"
+    />
   </SLabel>
 </template>
 

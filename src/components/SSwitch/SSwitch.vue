@@ -4,7 +4,9 @@
     :label="label"
     :is-reversed="isReversed"
     :is-optional="!required"
-    is-inline>
+    :show-optional="showOptional"
+    is-inline
+  >
     <input
       v-bind="$attrs"
       :id="id"
@@ -13,8 +15,12 @@
       :class="{ [`switch--${size}`]: size }"
       class="switch"
       type="checkbox"
-      v-on="listeners">
-    <span :class="{ 'switch__check--invalid': isInvalid }" class="switch__check"/>
+      v-on="listeners"
+    >
+    <span
+      :class="{ 'switch__check--invalid': isInvalid }"
+      class="switch__check"
+    />
   </SLabel>
 </template>
 

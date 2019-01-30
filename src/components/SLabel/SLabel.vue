@@ -1,11 +1,20 @@
 <template>
-  <label :class="classList" class="label">
+  <label
+    :class="classList"
+    class="label"
+  >
     <!-- Wrapped to keep optional on the right when reversed -->
     <span>
       {{ label }}
-      <span v-if="isOptional" class="label__optional">&mdash;&nbsp;Optional</span>
+      <span
+        v-if="isOptional && showOptional"
+        class="label__optional"
+      >
+        &mdash;&nbsp;Optional
+      </span>
     </span>
-    <slot/>
+
+    <slot />
   </label>
 </template>
 
@@ -37,6 +46,11 @@ export default {
     isReversed: {
       type: Boolean,
       default: false
+    },
+
+    showOptional: {
+      type: Boolean,
+      default: true
     }
   },
 

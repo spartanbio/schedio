@@ -4,6 +4,10 @@
   flex-wrap: wrap;
   margin: 0 -1 * spacing();
 
+  & + & {
+    margin-top: spacing();
+  }
+
   &--justify {
     &-start {
       @include generate-all-breakpoints {

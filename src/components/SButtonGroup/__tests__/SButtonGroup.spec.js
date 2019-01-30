@@ -40,8 +40,14 @@ describe('SButtonGroup.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('changes child button outlines', () => {
+    buttonGroup.setProps({ groupOutlineColor: 'red', isGrouped: true })
+    expect(buttonGroup.contains('.button-group--color-red-outlined')).toBe(true)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('groups child buttons', () => {
-    buttonGroup.setProps({ areGrouped: true })
+    buttonGroup.setProps({ isGrouped: true })
     expect(buttonGroup.contains('.button-group--grouped')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
