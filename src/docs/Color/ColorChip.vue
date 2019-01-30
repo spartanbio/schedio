@@ -1,6 +1,13 @@
 <template>
-  <SCard has-no-padding class="palette-card">
-    <SHeading slot="header" level="3">
+  <SCard
+    has-no-padding
+    class="palette-card"
+  >
+    <SHeading
+      slot="header"
+      level="3"
+      is-title
+    >
       {{ heading | underscoreToSpace }}
     </SHeading>
 
@@ -8,7 +15,8 @@
       v-for="({ name, value }) in palette"
       :key="name"
       :style="{ backgroundColor: value }"
-      class="palette-card__row">
+      class="palette-card__row"
+    >
 
       <div class="palette-card__description">
         <div>

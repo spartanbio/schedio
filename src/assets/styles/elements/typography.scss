@@ -10,26 +10,6 @@ ul {
   }
 }
 
-.display-1 {
-  @include display(1);
-}
-
-.display-2 {
-  @include display(2);
-}
-
-.heading-1 {
-  @include display(3, uppercase);
-}
-
-.heading-2 {
-  @include display(4, uppercase);
-}
-
-.heading-3 {
-  @include display(5, uppercase);
-}
-
 .caption {
   @include font-size(6);
   color: color('night', 'lighter');

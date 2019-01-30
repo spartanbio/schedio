@@ -8,7 +8,7 @@ const colors = Object.values(props)
   .map(color => color.name)
   .sort()
 
-storiesOf('Utilities/Text').add('Color', () => ({
+storiesOf('Utilities/Text', module).add('Color', () => ({
   render(h) {
     return (
       <StoryContainer>

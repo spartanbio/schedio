@@ -1,7 +1,7 @@
 <template>
   <StoryContainer>
     <div class="typography-intro">
-      <SHeading level="1">Headings and Displays</SHeading>
+      <SHeading>Headings and Displays</SHeading>
 
       <p>
         Headings and displays typically have <code>margin-top: 2em;</code> and
@@ -9,23 +9,16 @@
       </p>
       <p>
         The <code>SHeading</code> component can be used for headings and displays. Find it
-        <a href="#" @click.prevent="linkToComponent">here</a>.
+        <a
+          href="#"
+          @click.prevent="linkToComponent"
+        >here</a>.
       </p>
     </div>
 
     <article class="typography-example">
-      <SHeading level="1" is-display class="uppercase">
+      <SHeading is-display>
         Display 1 Uppercase
-      </SHeading>
-      <p class="caption">
-        Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
-      </p>
-    </article>
-
-    <article class="typography-example">
-      <SHeading level="1" is-display>
-        Display 1 Lowercase
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
@@ -34,7 +27,23 @@
     </article>
 
     <article class="typography-example">
-      <SHeading level="2" is-display class="uppercase">
+      <SHeading
+        is-display
+        has-no-case
+      >
+        Display 1 Lowercase
+      </SHeading>
+      <p class="caption">
+        Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
+        1.25em | Tracking: 0.025em | Class: <code>.heading--has-no-case</code>
+      </p>
+    </article>
+
+    <article class="typography-example">
+      <SHeading
+        level="2"
+        is-display
+      >
         Display 2 Uppercase
       </SHeading>
       <p class="caption">
@@ -44,17 +53,21 @@
     </article>
 
     <article class="typography-example">
-      <SHeading level="2" is-display>
+      <SHeading
+        level="2"
+        is-display
+        has-no-case
+      >
         Display 2 Lowercase
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em
+        1.25em | Tracking: 0.025em | Class: <code>.heading--has-no-case</code>
       </p>
     </article>
 
     <article class="typography-example">
-      <SHeading level="1">Heading 1</SHeading>
+      <SHeading>Heading 1</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-3'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
         1.5em
@@ -70,6 +83,13 @@
 
     <article class="typography-example">
       <SHeading level="3">Heading 3</SHeading>
+      <p class="caption">
+        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
+      </p>
+    </article>
+
+    <article class="typography-example">
+      <SHeading level="4">Heading 4</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>
