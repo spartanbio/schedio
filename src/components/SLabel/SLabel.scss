@@ -4,16 +4,12 @@
   font-weight: $font-weight-bold;
   text-transform: uppercase;
 
-  &--fullwidth {
-    width: 100%;
-  }
-
-  &:not(:last-child) {
-    margin-right: spacing();
-  }
-
   &:not(:first-child) {
     margin: spacing('loose') 0;
+  }
+
+  &--fullwidth {
+    width: 100%;
   }
 
   &--inline {
@@ -41,12 +37,12 @@
       flex-direction: row-reverse;
     }
 
-    &:not(:first-child) {
-      margin: spacing('half') 0;
+    &:not(:last-child) {
+      margin-right: spacing();
     }
   }
 
-  + .button {
+  & + .button {
     margin-top: spacing('loose');
   }
 
