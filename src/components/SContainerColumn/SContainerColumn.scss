@@ -2,10 +2,10 @@
   // `0px` is for IE11
   flex: 1 1 0px;
   max-width: 100%;
-  padding: 0 spacing('half');
+  padding: spacing('half');
   position: relative;
 
-  // Responsive columns
+  // Responsive columns (sm, md, lg, xl)
 
   @each $breakpoint in map-keys($media-breakpoints) {
     &--#{$breakpoint} {
@@ -16,8 +16,8 @@
     }
   }
 
-  // Fractional columns
-  // `&-` ensures proper BEM suffix for column sizes. (i.e.: '.column--1' not '.column-1'
+  // Fractional columns (.column--1, .column--md-1)
+  // `&-` ensures proper BEM suffix for column sizes/breakpoints. (i.e.: '.column--md-1' not '.column-md-1'
   &- {
     @include generate-all-breakpoints-after {
       @for $i from 1 through $grid-columns {
