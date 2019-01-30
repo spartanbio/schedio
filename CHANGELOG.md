@@ -1,3 +1,34 @@
+# [2.5.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.4.0...v2.5.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* **button:** improves disabled and active states ([7b3674a](https://gitlab.com/spartanbio-marketing/schedio/commit/7b3674a))
+* **button-group:** uses consistent prop naming ([f4b5d11](https://gitlab.com/spartanbio-marketing/schedio/commit/f4b5d11))
+* **container-column:** uses separate function for `narrow` prop settings ([8bab4af](https://gitlab.com/spartanbio-marketing/schedio/commit/8bab4af))
+* **container-row:** adds margin between sibling rows ([f7985ec](https://gitlab.com/spartanbio-marketing/schedio/commit/f7985ec))
+* **container-row:** fixes class name generation ([4fb21f7](https://gitlab.com/spartanbio-marketing/schedio/commit/4fb21f7))
+* **heading:** fixes heading margins (fixes [#5](https://gitlab.com/spartanbio-marketing/schedio/issues/5)) ([274078a](https://gitlab.com/spartanbio-marketing/schedio/commit/274078a))
+* makes buttons inline-flex ([0a47467](https://gitlab.com/spartanbio-marketing/schedio/commit/0a47467))
+* **icon:** uses feather library instead of svg sprites ([b473d99](https://gitlab.com/spartanbio-marketing/schedio/commit/b473d99))
+* **label:** adds prop to hide optional text ([9f2d597](https://gitlab.com/spartanbio-marketing/schedio/commit/9f2d597))
+* **label:** adds space between labels and buttons ([b6df098](https://gitlab.com/spartanbio-marketing/schedio/commit/b6df098))
+* **reset:** resets address elements ([769ff50](https://gitlab.com/spartanbio-marketing/schedio/commit/769ff50))
+* **spinner:** removes margin ([e6a46b6](https://gitlab.com/spartanbio-marketing/schedio/commit/e6a46b6))
+* removes registration of multiple Vue instances and removes need for ([7fcc0a0](https://gitlab.com/spartanbio-marketing/schedio/commit/7fcc0a0))
+
+
+### Features
+
+* **button:** adds icons to buttons ([#2](https://gitlab.com/spartanbio-marketing/schedio/issues/2)) ([08e5983](https://gitlab.com/spartanbio-marketing/schedio/commit/08e5983))
+* **buttons:** adds loading indicator to buttons ([d2cfddb](https://gitlab.com/spartanbio-marketing/schedio/commit/d2cfddb))
+* **buttons:** adds outlined buttons (closes [#9](https://gitlab.com/spartanbio-marketing/schedio/issues/9)) ([be71eae](https://gitlab.com/spartanbio-marketing/schedio/commit/be71eae))
+* **hero:** adds hero component (closes [#1](https://gitlab.com/spartanbio-marketing/schedio/issues/1)) ([813e16f](https://gitlab.com/spartanbio-marketing/schedio/commit/813e16f))
+* **input:** adds icons to inputs ([#2](https://gitlab.com/spartanbio-marketing/schedio/issues/2)) ([feb99cb](https://gitlab.com/spartanbio-marketing/schedio/commit/feb99cb))
+* **select:** adds icons to select ([#2](https://gitlab.com/spartanbio-marketing/schedio/issues/2)) ([5a32f7a](https://gitlab.com/spartanbio-marketing/schedio/commit/5a32f7a))
+* **textarea:** adds icons to textareas ([#2](https://gitlab.com/spartanbio-marketing/schedio/issues/2)) ([6f85ac4](https://gitlab.com/spartanbio-marketing/schedio/commit/6f85ac4))
+* **typography:** adds basic text utility classes ([#3](https://gitlab.com/spartanbio-marketing/schedio/issues/3)) ([914d1e7](https://gitlab.com/spartanbio-marketing/schedio/commit/914d1e7))
+
 # [2.4.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.3.1...v2.4.0) (2018-11-30)
 
 
