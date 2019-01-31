@@ -1,3 +1,20 @@
+# [2.6.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.5.0...v2.6.0) (2019-01-31)
+
+
+### Bug Fixes
+
+* moves fonts to static ([47fc023](https://gitlab.com/spartanbio-marketing/schedio/commit/47fc023))
+* **button:** fixes various disabled state bugs ([67f36ba](https://gitlab.com/spartanbio-marketing/schedio/commit/67f36ba))
+* **container:** removes negative margins from rows ([d4a06b9](https://gitlab.com/spartanbio-marketing/schedio/commit/d4a06b9))
+* **label:** fixes margin on first child ([3ab8327](https://gitlab.com/spartanbio-marketing/schedio/commit/3ab8327))
+* **scss:** imports scss in a better order ([1fd36c5](https://gitlab.com/spartanbio-marketing/schedio/commit/1fd36c5))
+* **shadows:** uses dark colour for shadows ([052dc41](https://gitlab.com/spartanbio-marketing/schedio/commit/052dc41))
+
+
+### Features
+
+* **link:** allows empty slot content ([9418f05](https://gitlab.com/spartanbio-marketing/schedio/commit/9418f05))
+
 # [2.5.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.4.0...v2.5.0) (2019-01-30)
 
 
