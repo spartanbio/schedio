@@ -12,17 +12,17 @@
   }
 }
 
-$shadow-color: color('grey', 'light');
+$shadow-color: color('night');
 
 $shadows-data: (
   border: (
-    0 0 1px $shadow-color
+    0 0 1px transparentize($shadow-color, 0.8)
   ),
   base: (
-    0 0.25em 1em $shadow-color
+    0 0.25em 1em transparentize($shadow-color, 0.8)
   ),
   heavy: (
-    0 0.5em 1.5em 0.25em $shadow-color
+    0 0.5em 1.5em 0.25em transparentize($shadow-color, 0.8)
   ),
   transparent: (
     0 0 0 0 transparent

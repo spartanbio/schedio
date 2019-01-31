@@ -33,7 +33,12 @@ storiesOf('Components/SLink', module)
 
             <SHeading level="2">Example</SHeading>
             <p>
-              Here's an external link to <SLink to={this.to}>{this.linkText}</SLink>.
+              Here's an external link to <SLink to={this.to}>{this.linkText}</SLink>. Make sure
+              there is no whitespace around external links. If there is, it will break the icon
+              placement.
+            </p>
+            <p>
+              Here's a link with no slot content provided: <SLink to="http://spartanbio.com/" />
             </p>
             <p>
               Here's an{' '}

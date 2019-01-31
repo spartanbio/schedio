@@ -37,7 +37,7 @@
 
   // add an icon to external links
   &--external {
-    $icon-dimensions: 0.75em;
+    $icon-dimensions: 0.7em;
     $icon-margin: (1 - $icon-dimensions) / 2;
     // adds enough space before next character after link text
     margin-right: $icon-dimensions + $icon-margin;
@@ -48,14 +48,11 @@
     }
 
     &::after {
-      content: '';
-      background: url('~@/assets/icons/external-link.svg') center center / contain no-repeat;
+      content: url('../assets/icons/external-link.svg');
       height: $icon-dimensions;
       // put some horizontal space around the icon
       margin: 0 $icon-margin;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       width: $icon-dimensions;
     }
   }

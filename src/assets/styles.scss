@@ -1,25 +1,25 @@
 // base
 
-@import 'styles/reset/reset.scss';
-@import 'styles/utils/functions.scss';
 @import 'styles/tokens/dist/tokens.scss';
 @import 'styles/tokens/dist/tokens.color-map.scss';
-@import 'fonts/fonts.scss';
-@import 'styles/base/arrow.scss';
+@import 'styles/utils/functions.scss';
+@import 'styles/base/fonts.scss';
+@import 'styles/base/colors.scss';
+@import 'styles/base/spacing.scss';
+@import 'styles/base/duration.scss';
+@import 'styles/base/easing.scss';
 @import 'styles/base/border-radius.scss';
 @import 'styles/base/borders.scss';
 @import 'styles/base/breakpoints.scss';
-@import 'styles/base/buttons.scss';
-@import 'styles/base/colors.scss';
-@import 'styles/base/controls.scss';
-@import 'styles/base/duration.scss';
-@import 'styles/base/easing.scss';
 @import 'styles/base/layout.scss';
-@import 'styles/base/shadows.scss';
-@import 'styles/base/spacing.scss';
-@import 'styles/base/spinner.scss';
 @import 'styles/base/typography.scss';
+@import 'styles/base/buttons.scss';
+@import 'styles/base/controls.scss';
+@import 'styles/base/shadows.scss';
+@import 'styles/base/spinner.scss';
 @import 'styles/elements/typography.scss';
+@import 'styles/base/arrow.scss';
+@import 'styles/reset/reset.scss';
 
 // components
 

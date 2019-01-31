@@ -6,7 +6,7 @@
     class="link"
     v-on="$listeners"
   >
-    <slot />
+    <slot>{{ to }}</slot>
   </component>
 </template>
 
