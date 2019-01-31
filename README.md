@@ -43,6 +43,8 @@ Vue.use(SContainer)
 
 Place the required fonts in a directory relative to the web root.
 
+SCSS can be used by importing `'schedio-design/src/assets/styles.scss'`
+
 ## Dev setup
 
 ```bash
