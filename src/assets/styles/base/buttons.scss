@@ -4,7 +4,28 @@
   @return inset 0 0 0.5em 0 darken($base-color, 20%);
 }
 
+@mixin button-shadow {
+  box-shadow: shadow();
+
+  &:not(:disabled):hover {
+    box-shadow: shadow('heavy');
+  }
+}
+
+@mixin button-disabled {
+  &:disabled {
+    background-color: color('grey', 'light') !important;
+    border-color: color('grey') !important;
+    box-shadow: none !important;
+    color: color('night', 'lighter');
+    cursor: not-allowed;
+    text-shadow: none !important;
+  }
+}
+
 @mixin button-base {
+  @include button-disabled;
+
   align-items: center;
   background-color: transparent;
   border: border();
@@ -18,24 +39,6 @@
 
   &:hover {
     color: color('spartan_blue', 'dark');
-    // border: border();
-  }
-
-  &:disabled {
-    background-color: color('grey', 'light') !important;
-    border-color: color('grey') !important;
-    box-shadow: none !important;
-    color: color('night', 'lighter') !important;
-    cursor: not-allowed;
-    text-shadow: none !important;
-  }
-}
-
-@mixin button-shadow {
-  box-shadow: shadow();
-
-  &:not(:disabled):hover {
-    box-shadow: shadow('heavy');
   }
 }
 
@@ -48,6 +51,8 @@
   $text-color: if($white-or-ice, color('night'), color('white'));
 
   @include button-shadow;
+  @include button-disabled;
+
   background-color: $base-color;
   border-color: darken($base-color, 20%);
   color: $text-color;
@@ -94,6 +99,8 @@
 
 @mixin button-outline($button-color) {
   @include button-shadow;
+  @include button-disabled;
+
   border: border();
   border-color: color($button-color);
   color: color($button-color);
