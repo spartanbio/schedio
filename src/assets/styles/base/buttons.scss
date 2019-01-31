@@ -13,7 +13,8 @@
 }
 
 @mixin button-disabled {
-  &:disabled {
+  &:disabled,
+  &:disabled:hover {
     background-color: color('grey', 'light') !important;
     border-color: color('grey') !important;
     box-shadow: none !important;
