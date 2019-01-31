@@ -6,8 +6,8 @@ exports[`SLink.vue detects external links and uses \`a\` tag for them 1`] = `<a 
 
 exports[`SLink.vue detects internal links and uses a link component 1`] = `<a class="link">link text</a>`;
 
-exports[`SLink.vue detects nuxt and uses \`nuxt-link\` instead of \`router-link\` 1`] = `<a class="link"></a>`;
+exports[`SLink.vue detects nuxt and uses \`nuxt-link\` instead of \`router-link\` 1`] = `<a class="link">/about</a>`;
 
-exports[`SLink.vue uses \`a\` when no router is present 1`] = `<a href="/about" class="link"></a>`;
+exports[`SLink.vue uses \`a\` when no router is present 1`] = `<a href="/about" class="link">/about</a>`;
 
 exports[`SLink.vue uses best practices for [target="_blank"] 1`] = `<a href="https://spartanbio.com" target="_blank" rel="noopener noreferrer" class="link link--external">link text</a>`;
