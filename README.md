@@ -41,6 +41,8 @@ Vue.use(SButton)
 Vue.use(SContainer)
 ```
 
+Place the required fonts in a directory relative to the web root.
+
 ## Dev setup
 
 ```bash
