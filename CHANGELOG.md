@@ -1,3 +1,10 @@
+## [2.6.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.6.0...v2.6.1) (2019-01-31)
+
+
+### Bug Fixes
+
+* **button:** ensures disabled buttons hover state does not change ([8ee1e12](https://gitlab.com/spartanbio-marketing/schedio/commit/8ee1e12))
+
 # [2.6.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.5.0...v2.6.0) (2019-01-31)
 
 
