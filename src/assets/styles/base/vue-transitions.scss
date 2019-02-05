@@ -11,6 +11,6 @@
 
   &-enter-active,
   &-leave-active {
-    transition: all duration('slowest') easing();
+    transition: all duration() easing();
   }
 }
