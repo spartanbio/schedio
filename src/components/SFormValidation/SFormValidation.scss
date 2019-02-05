@@ -1,5 +1,4 @@
 .form-validation {
-  align-items: center;
   display: flex;
   margin-top: spacing('half');
 
@@ -15,7 +14,12 @@
     color: color('red');
   }
 
-  .icon {
+  &__icon {
+    flex: none;
     margin-right: spacing('half');
+  }
+
+  &__text {
+    flex: auto;
   }
 }

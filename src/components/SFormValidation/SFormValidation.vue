@@ -4,13 +4,19 @@
       :class="classList"
       class="form-validation"
     >
-      <SIcon
+      <div
         v-if="icons[validationState] && hasIcon"
-        :icon="icons[validationState]"
-        :icon-color="iconColors[validationState] || 'night'"
-      />
-      
-      <slot>{{ validationText }}</slot>
+        class="form-validation__icon"
+      >
+        <SIcon
+          :icon="icons[validationState]"
+          :icon-color="iconColors[validationState] || 'night'"
+        />
+      </div>
+
+      <div class="form-validation__text">
+        <slot>{{ validationText }}</slot>
+      </div>
     </div>
   </transition>
 </template>
