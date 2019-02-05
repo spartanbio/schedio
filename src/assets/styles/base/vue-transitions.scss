@@ -1,0 +1,16 @@
+.fade {
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all duration('slowest') easing();
+  }
+}
