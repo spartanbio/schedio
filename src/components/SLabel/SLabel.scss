@@ -4,10 +4,6 @@
   font-weight: $font-weight-bold;
   text-transform: uppercase;
 
-  &:not(:first-child) {
-    margin: spacing('loose') 0;
-  }
-
   &--fullwidth {
     width: 100%;
   }
@@ -40,10 +36,6 @@
     &:not(:last-child) {
       margin-right: spacing();
     }
-  }
-
-  & + .button {
-    margin-top: spacing('loose');
   }
 
   &__optional {
