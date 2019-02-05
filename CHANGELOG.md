@@ -1,3 +1,17 @@
+# [2.7.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.6.1...v2.7.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* **controls:** fixes fullwidth controls ([c8bc39d](https://gitlab.com/spartanbio-marketing/schedio/commit/c8bc39d))
+
+
+### Features
+
+* **form-field:** adds form-field wrapper ([a6d51fb](https://gitlab.com/spartanbio-marketing/schedio/commit/a6d51fb))
+* **form-validation:** adds form validation component (closes [#6](https://gitlab.com/spartanbio-marketing/schedio/issues/6), [#7](https://gitlab.com/spartanbio-marketing/schedio/issues/7)) ([1750885](https://gitlab.com/spartanbio-marketing/schedio/commit/1750885))
+* **vue-transitions:** adds global vue transition ([a17c26b](https://gitlab.com/spartanbio-marketing/schedio/commit/a17c26b))
+
 ## [2.6.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.6.0...v2.6.1) (2019-01-31)
 
 
