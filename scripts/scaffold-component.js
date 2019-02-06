@@ -2,6 +2,9 @@ const addUnitTest = require('./add-unit-test')
 const chalk = require('chalk')
 const fs = require('fs-extra')
 const path = require('path')
+const getComponentNames = require('./get-component-names')
+const generateVueIndex = require('./generate-vue-index')
+const generateScssIndex = require('./generate-scss-index')
 
 // params
 const componentName = process.argv[2]
@@ -17,7 +20,8 @@ const scaffold = [
   // Vue component
   {
     extension: 'vue',
-    contents: `<template>
+    contents: `\
+<template>
   <div>
     <!-- component content -->
   </div>
@@ -27,12 +31,14 @@ const scaffold = [
 export default {
   name: '${componentName}'
 }
-</script>\n`
+</script>
+`
   },
   // Storybook story
   {
     extension: 'stories.jsx',
-    contents: `import { ${componentName} } from '@/components/${componentName}'
+    contents: `\
+import { ${componentName} } from '@/components/${componentName}'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
@@ -57,7 +63,8 @@ storiesOf('Components/${componentName}', module)
         )
       }
     }
-  })\n`
+  })
+`
   },
   // SCSS
   {
@@ -68,43 +75,52 @@ storiesOf('Components/${componentName}', module)
   {
     fileName: 'index',
     extension: 'js',
-    contents: `import ${componentName} from './${componentName}.vue'
+    contents: `\
+import ${componentName} from './${componentName}.vue'
 
 export { ${componentName} }
 
 export default {
   install: Vue => Vue.component(${componentName}.name, ${componentName})
-}\n`
+}
+`
   }
 ]
 
-// set up promises
-const generateComponentFiles = scaffold.map(({ fileName, extension, contents }) => {
-  const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
+// write files
+async function scaffoldComponent() {
+  console.log(chalk.yellow(`Building ${componentName}...\n`))
 
-  return fs.outputFile(file, contents)
-})
+  try {
+    // add vue, story, scss, index.js
+    await Promise.all(
+      scaffold.map(async ({ fileName, extension, contents }) => {
+        console.log(chalk.yellow(`Adding ${extension} file...\n`))
 
-const updateComponentList = async () => {
-  const vueIndex = path.resolve(__dirname, '../src/components/index.js')
-  // add component export to @/components/index.js
-  const vueToAdd = Buffer.concat([
-    await fs.readFile(vueIndex),
-    Buffer.from(`export { default as ${componentName} } from '@/components/${componentName}'\n`)
-  ])
-  fs.outputFile(vueIndex, vueToAdd)
+        const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
 
-  const scssIndex = path.resolve(__dirname, '../src/components.scss')
-  // import components in @/components.scss
-  const scssToAdd = Buffer.concat([
-    await fs.readFile(scssIndex),
-    Buffer.from(`@import './components/${componentName}/${componentName}.scss';\n`)
-  ])
-  fs.outputFile(scssIndex, scssToAdd)
+        return fs.outputFile(file, contents)
+      })
+    )
+
+    // add unit test files
+    console.log(chalk.yellow('Adding unit test...\n'))
+
+    await addUnitTest(componentName)
+
+    // Rebuild index.js and components.scss
+    console.log(chalk.yellow('Rebuilding index files...\n'))
+
+    const allComponentNames = getComponentNames()
+
+    generateVueIndex(allComponentNames)
+    generateScssIndex(allComponentNames)
+
+    // great success!
+    console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``))
+  } catch (err) {
+    console.error(chalk.red(err))
+  }
 }
 
-// write files
-Promise.all([...generateComponentFiles, updateComponentList()])
-  .then(() => addUnitTest(componentName))
-  .then(() => console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``)))
-  .catch(err => console.error(chalk.red(err)))
+scaffoldComponent()

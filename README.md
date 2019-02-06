@@ -29,7 +29,7 @@ import 'schedio-design/dist/schedio-design.css'
 Vue.use(Schedio)
 ```
 
-Or, import and register individual components:
+Or, import and register individual components to keep the bundle smaller:
 
 ```js
 import Vue from 'vue'
@@ -41,9 +41,24 @@ Vue.use(SButton)
 Vue.use(SContainer)
 ```
 
+Components can also be registered locally:
+
+<!-- prettier-ignore-start -->
+```vue
+import { SButton } from 'schedio-design'
+
+export default {
+  name: 'ALocalComponent',
+  components: {
+    SButton
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
 Place the required fonts in a directory relative to the web root.
 
-SCSS can be used by importing `'schedio-design/src/assets/styles.scss'`
+SCSS features can be used by importing `'schedio-design/src/assets/styles.scss'`
 
 ## Dev setup
 
