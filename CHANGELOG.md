@@ -1,3 +1,11 @@
+## [2.7.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.7.0...v2.7.1) (2019-02-05)
+
+
+### Bug Fixes
+
+* **form-validation:** sets flex properties correctly ([49501cf](https://gitlab.com/spartanbio-marketing/schedio/commit/49501cf))
+* **vue-transitions:** fixes transition duration ([5be8d47](https://gitlab.com/spartanbio-marketing/schedio/commit/5be8d47))
+
 # [2.7.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.6.1...v2.7.0) (2019-02-05)
 
 
