@@ -47,12 +47,6 @@ export default {
     }
   },
 
-  data() {
-    return {
-      feather
-    }
-  },
-
   computed: {
     classList() {
       return [
