@@ -7,7 +7,7 @@
     "serve": "npm run serve:storybook",
     "build": "vue-cli-service build --target lib ./src/index.js --dashboard",
     "lint": "run-p lint:vue lint:style",
-    "build:storybook": "build-storybook -c config/storybook",
+    "build:storybook": "build-storybook -s ./static -c config/storybook",
     "dev": "run-p serve:storybook theo:onchange",
     "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
     "lint:vue": "vue-cli-service lint ./{src,config,scripts}/**/*.js",
