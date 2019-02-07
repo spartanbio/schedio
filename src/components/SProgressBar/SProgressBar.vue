@@ -1,13 +1,24 @@
 <template>
   <div class="progress-bar">
-    <div :class="progressBarClassList" class="progress-bar__background">
-      <progress :value="computedProgress" class="progress-bar__progress" max="100"/>
+    <div
+      :class="progressBarClassList"
+      class="progress-bar__background"
+    >
+      <progress
+        :value="computedProgress"
+        class="progress-bar__progress"
+        max="100"
+      />
       <div
         :class="progressIndicatorClassList"
         :style="{ width: `${computedProgress}%` }"
-        class="progress-bar__indicator"/>
+        class="progress-bar__indicator"
+      />
     </div>
-    <div v-if="computedMessage" class="progress-bar__message">{{ computedMessage }}</div>
+    <div
+      v-if="computedMessage"
+      class="progress-bar__message"
+    >{{ computedMessage }}</div>
   </div>
 </template>
 

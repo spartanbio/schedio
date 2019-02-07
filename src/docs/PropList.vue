@@ -1,9 +1,15 @@
 <template>
   <div>
-    <SHeading level="2" style="margin-top: 3rem;">Prop list</SHeading>
+    <SHeading
+      level="2"
+      style="margin-top: 3rem;"
+    >Prop list</SHeading>
 
     <ul>
-      <li v-for="(propName, index) in propNames" :key="index">
+      <li
+        v-for="(propName, index) in propNames"
+        :key="index"
+      >
         {{ propName | kebabCase }}
       </li>
     </ul>

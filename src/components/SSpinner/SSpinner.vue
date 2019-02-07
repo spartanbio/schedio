@@ -3,7 +3,8 @@
     :class="classList"
     class="spinner"
     role="status"
-    viewBox="0 0 32 32">
+    viewBox="0 0 32 32"
+  >
     <path d="M16 2 a 14 14 0 0 0 0 28 a 14 14 0 0 0 0 -28" />
   </svg>
 </template>

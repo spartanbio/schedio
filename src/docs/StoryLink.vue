@@ -1,5 +1,9 @@
 <template>
-  <a href="#" class="link" @click.prevent="navigate(to, story)">{{ text }}</a>
+  <a
+    href="#"
+    class="link"
+    @click.prevent="navigate(to, story)"
+  >{{ text }}</a>
 </template>
 
 <script>

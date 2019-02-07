@@ -1,8 +1,15 @@
 <template>
   <SContainer>
     <SContainerRow>
-      <SContainerColumn v-for="(colors, name) in palette" :key="'preview-' + name" md="6">
-        <ColorChip :heading="name" :palette="colors" />
+      <SContainerColumn
+        v-for="(colors, name) in palette"
+        :key="'preview-' + name"
+        md="6"
+      >
+        <ColorChip
+          :heading="name"
+          :palette="colors"
+        />
       </SContainerColumn>
     </SContainerRow>
   </SContainer>
