@@ -1,3 +1,10 @@
+## [2.8.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.8.0...v2.8.1) (2019-02-07)
+
+
+### Bug Fixes
+
+* **icons:** fixes strokewidth on android ([9f91501](https://gitlab.com/spartanbio-marketing/schedio/commit/9f91501))
+
 # [2.8.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.7.1...v2.8.0) (2019-02-07)
 
 
