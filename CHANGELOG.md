@@ -1,3 +1,16 @@
+# [2.8.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.7.1...v2.8.0) (2019-02-07)
+
+
+### Bug Fixes
+
+* **links:** improves link states ([2b68e64](https://gitlab.com/spartanbio-marketing/schedio/commit/2b68e64))
+* adds static directory to build script ([ecb1d72](https://gitlab.com/spartanbio-marketing/schedio/commit/ecb1d72))
+
+
+### Features
+
+* adds italic and weight utilities ([39537e8](https://gitlab.com/spartanbio-marketing/schedio/commit/39537e8))
+
 ## [2.7.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.7.0...v2.7.1) (2019-02-05)
 
 
