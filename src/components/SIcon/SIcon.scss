@@ -4,7 +4,8 @@
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 0.125em;
+  // using px because android browsers render stroke width twice as thick when using ems
+  stroke-width: 2px;
   width: 1.5em;
 
   &--size-small {
