@@ -49,6 +49,19 @@ h6 {
   padding: spacing('none');
 }
 
+a {
+  color: color('spartan_blue', 'light');
+  text-decoration: none;
+
+  &:active {
+    color: color('green');
+  }
+
+  &:visited {
+    color: color('magenta', 'dark');
+  }
+}
+
 p {
   margin-bottom: spacing('base');
   margin-top: spacing('none');

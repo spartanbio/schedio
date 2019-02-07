@@ -18,12 +18,17 @@ export default {
     to: {
       type: [String, Object],
       required: true
+    },
+
+    isPlain: {
+      type: Boolean,
+      default: false
     }
   },
 
   computed: {
     classList() {
-      return { 'link--external': this.isExternalLink }
+      return { 'link--external': this.isExternalLink, 'link--plain': this.isPlain }
     },
 
     isExternalLink() {
