@@ -5,13 +5,13 @@
   "scripts": {
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "serve": "npm run serve:storybook",
-    "build": "vue-cli-service build --target lib ./src/index.js --dashboard",
+    "build": "vue-cli-service build --target lib ./src/index.js && rm dist/demo.html",
+    "build:release": "node ./scripts/build-release.js",
     "lint": "run-p lint:vue lint:style",
     "build:storybook": "build-storybook -s ./static -c config/storybook",
     "dev": "run-p serve:storybook theo:onchange",
     "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
     "lint:vue": "vue-cli-service lint ./{src,config,scripts}/**/*.js",
-    "prepare": "node ./scripts/build.js",
     "scaffold": "node ./scripts/scaffold-component.js",
     "semantic-release": "semantic-release",
     "serve:storybook": "start-storybook -p 6006 -s ./static -c ./config/storybook",
@@ -110,28 +110,11 @@
     ]
   },
   "main": "dist/schedio-design.common.js",
-  "release": {
-    "branch": "master",
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/changelog",
-        {
-          "changelogFile": "CHANGELOG.md"
-        }
-      ],
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": false,
-          "tarballDir": "dist/"
-        }
-      ],
-      "@semantic-release/gitlab",
-      "@semantic-release/git"
-    ]
-  },
+  "browser": "dist/schedio-design.umd.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "gitlab:spartanbio-marketing/schedio"
