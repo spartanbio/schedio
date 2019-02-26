@@ -2,21 +2,29 @@
   <table
     v-bind="$attrs"
     :class="classList"
-    class="table">
+    class="table"
+  >
     <caption
       v-if="$slots.caption || caption"
       :class="{ 'table__caption--top': hasCaptionTop }"
-      class="table__caption">
+      class="table__caption"
+    >
       <slot name="caption" />
 
       {{ caption }}
     </caption>
 
-    <thead v-if="!hideHeader && ($slots.header || headerCells.length)" class="table__header">
-      <slot name="header"/>
+    <thead
+      v-if="!hideHeader && ($slots.header || headerCells.length)"
+      class="table__header"
+    >
+      <slot name="header" />
 
       <STableRow>
-        <STableCell v-for="(cell, key) in headerCells" :key="key">
+        <STableCell
+          v-for="(cell, key) in headerCells"
+          :key="key"
+        >
           {{ cell.value || cell | startCase }}
         </STableCell>
       </STableRow>
@@ -25,22 +33,32 @@
     <tbody class="table__body">
       <slot />
 
-      <STableRow v-for="(row, key) in tableData" :key="key">
+      <STableRow
+        v-for="(row, key) in tableData"
+        :key="key"
+      >
         <STableCell
           v-for="cell in row"
           :key="cell"
           :is-header="cell.header"
-          :is-numeric="typeof cell === 'number'">
+          :is-numeric="typeof cell === 'number'"
+        >
           {{ cell.value || cell }}
         </STableCell>
       </STableRow>
     </tbody>
 
-    <tfoot v-if="$slots.footer || footerCells.length" class="table__footer">
-      <slot name="footer"/>
+    <tfoot
+      v-if="$slots.footer || footerCells.length"
+      class="table__footer"
+    >
+      <slot name="footer" />
 
       <STableRow>
-        <STableCell v-for="(cell, key) in footerCells" :key="key">
+        <STableCell
+          v-for="(cell, key) in footerCells"
+          :key="key"
+        >
           {{ cell.value || cell | startCase }}
         </STableCell>
       </STableRow>
@@ -50,9 +68,8 @@
 
 <script>
 import startCase from 'lodash.startcase'
-import { STableRow } from '@/components/STableRow';
-import { STableCell } from '@/components/STableCell';
-
+import { STableRow } from '@/components/STableRow'
+import { STableCell } from '@/components/STableCell'
 
 export default {
   name: 'STable',

@@ -1,3 +1,45 @@
+## [2.8.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.8.0...v2.8.1) (2019-02-07)
+
+
+### Bug Fixes
+
+* **icons:** fixes strokewidth on android ([9f91501](https://gitlab.com/spartanbio-marketing/schedio/commit/9f91501))
+
+# [2.8.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.7.1...v2.8.0) (2019-02-07)
+
+
+### Bug Fixes
+
+* **links:** improves link states ([2b68e64](https://gitlab.com/spartanbio-marketing/schedio/commit/2b68e64))
+* adds static directory to build script ([ecb1d72](https://gitlab.com/spartanbio-marketing/schedio/commit/ecb1d72))
+
+
+### Features
+
+* adds italic and weight utilities ([39537e8](https://gitlab.com/spartanbio-marketing/schedio/commit/39537e8))
+
+## [2.7.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.7.0...v2.7.1) (2019-02-05)
+
+
+### Bug Fixes
+
+* **form-validation:** sets flex properties correctly ([49501cf](https://gitlab.com/spartanbio-marketing/schedio/commit/49501cf))
+* **vue-transitions:** fixes transition duration ([5be8d47](https://gitlab.com/spartanbio-marketing/schedio/commit/5be8d47))
+
+# [2.7.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.6.1...v2.7.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* **controls:** fixes fullwidth controls ([c8bc39d](https://gitlab.com/spartanbio-marketing/schedio/commit/c8bc39d))
+
+
+### Features
+
+* **form-field:** adds form-field wrapper ([a6d51fb](https://gitlab.com/spartanbio-marketing/schedio/commit/a6d51fb))
+* **form-validation:** adds form validation component (closes [#6](https://gitlab.com/spartanbio-marketing/schedio/issues/6), [#7](https://gitlab.com/spartanbio-marketing/schedio/issues/7)) ([1750885](https://gitlab.com/spartanbio-marketing/schedio/commit/1750885))
+* **vue-transitions:** adds global vue transition ([a17c26b](https://gitlab.com/spartanbio-marketing/schedio/commit/a17c26b))
+
 ## [2.6.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.6.0...v2.6.1) (2019-01-31)
 
 

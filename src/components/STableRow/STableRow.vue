@@ -1,5 +1,7 @@
 <template>
-  <tr class="table__row"><slot /></tr>
+  <tr class="table__row">
+    <slot />
+  </tr>
 </template>
 
 <script>

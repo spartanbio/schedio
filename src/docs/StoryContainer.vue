@@ -2,7 +2,7 @@
   <div class="storybook-container">
     <SContainer>
       <SCard>
-        <slot/>
+        <slot />
       </SCard>
     </SContainer>
   </div>

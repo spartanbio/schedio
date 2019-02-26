@@ -187,6 +187,7 @@
   position: relative;
 
   &__container {
+    flex: 1 1 0;
     position: relative;
 
     #{$root-class}__icon {

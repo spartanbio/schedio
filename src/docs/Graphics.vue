@@ -27,7 +27,10 @@
     <SContainer>
       <SContainerRow justify="center">
         <SContainerColumn md="6">
-          <img src="@/assets/images/cube.jpg" alt="Cube on a blue background">
+          <img
+            src="@/assets/images/cube.jpg"
+            alt="Cube on a blue background"
+          >
         </SContainerColumn>
       </SContainerRow>
     </SContainer>
@@ -47,7 +50,10 @@
     <SContainer>
       <SContainerRow justify="center">
         <SContainerColumn md="6">
-          <img src="@/assets/images/installation-illustration.svg" alt="Cube installation">
+          <img
+            src="@/assets/images/installation-illustration.svg"
+            alt="Cube installation"
+          >
         </SContainerColumn>
       </SContainerRow>
     </SContainer>
@@ -63,20 +69,50 @@
 
     <SContainer>
       <SContainerRow justify="center">
-        <SContainerColumn md="2" style="align-items: center; display: flex;">
-          <img src="@/assets/images/clipboard-icon.svg" alt="Clipboard icon">
+        <SContainerColumn
+          md="2"
+          style="align-items: center; display: flex;"
+        >
+          <img
+            src="@/assets/images/clipboard-icon.svg"
+            alt="Clipboard icon"
+          >
         </SContainerColumn>
-        <SContainerColumn md="2" style="align-items: center; display: flex;">
-          <img src="@/assets/images/droplet-icon.svg" alt="Droplet icon">
+        <SContainerColumn
+          md="2"
+          style="align-items: center; display: flex;"
+        >
+          <img
+            src="@/assets/images/droplet-icon.svg"
+            alt="Droplet icon"
+          >
         </SContainerColumn>
-        <SContainerColumn md="2" style="align-items: center; display: flex;">
-          <img src="@/assets/images/user-icon.svg" alt="User icon">
+        <SContainerColumn
+          md="2"
+          style="align-items: center; display: flex;"
+        >
+          <img
+            src="@/assets/images/user-icon.svg"
+            alt="User icon"
+          >
         </SContainerColumn>
-        <SContainerColumn md="2" style="align-items: center; display: flex;">
-          <img src="@/assets/images/password-icon.svg" alt="Password icon">
+        <SContainerColumn
+          md="2"
+          style="align-items: center; display: flex;"
+        >
+          <img
+            src="@/assets/images/password-icon.svg"
+            alt="Password icon"
+          >
         </SContainerColumn>
-        <SContainerColumn md="2" style="align-items: center; display: flex;">
-          <img src="@/assets/images/system-icon.svg" alt="Cube icon">
+        <SContainerColumn
+          md="2"
+          style="align-items: center; display: flex;"
+        >
+          <img
+            src="@/assets/images/system-icon.svg"
+            alt="Cube icon"
+          >
         </SContainerColumn>
       </SContainerRow>
     </SContainer>

@@ -10,32 +10,42 @@
     <blockquote>
       <strong>Note:</strong> The calculator below is <em>only</em> for font size. Other than size,
       all other parameters should match those in
-      <a href="#" @click.prevent="linkToComponent">Headings and Displays</a>.
+      <a
+        href="#"
+        @click.prevent="linkToComponent"
+      >Headings and Displays</a>.
     </blockquote>
 
     <SHeading level="2">Typography Calculator</SHeading>
 
-    <form >
+    <form>
       <SInput
         id="base-font-size"
         v-model="baseFontSize"
         :value="baseFontSize"
         name="base-font-size"
-        label="Base font size (pt)"/>
+        label="Base font size (pt)"
+      />
     </form>
 
     <table class="table table--bordered table--hoverable">
       <thead>
         <tr>
-          <th class="table__cell"/>
+          <th class="table__cell" />
           <th class="table__cell">Size</th>
           <th class="table__cell">Leading</th>
           <th class="table__cell">Tracking</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{ name, value } in fontSizes" :key="name">
-          <td class="table__cell" style="text-transform: capitalize;">
+        <tr
+          v-for="{ name, value } in fontSizes"
+          :key="name"
+        >
+          <td
+            class="table__cell"
+            style="text-transform: capitalize;"
+          >
             {{ name | prettyName }}
           </td>
           <td class="table__cell table__cell--numeric">

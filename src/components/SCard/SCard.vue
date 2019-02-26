@@ -1,21 +1,35 @@
 <template>
-  <component :is="tag" class="card">
-    <div v-if="$slots.header" class="card__header">
-      <slot name="header"/>
+  <component
+    :is="tag"
+    class="card"
+  >
+    <div
+      v-if="$slots.header"
+      class="card__header"
+    >
+      <slot name="header" />
     </div>
 
     <img
       v-if="image && image.src"
       v-bind="image"
       :alt="image.alt"
-      class="card__image">
+      class="card__image"
+    >
 
-    <div v-if="$slots.default" :class="{ 'card__body--no-padding': hasNoPadding }" class="card__body">
-      <slot/>
+    <div
+      v-if="$slots.default"
+      :class="{ 'card__body--no-padding': hasNoPadding }"
+      class="card__body"
+    >
+      <slot />
     </div>
 
-    <div v-if="$slots.footer" class="card__footer">
-      <slot name="footer"/>
+    <div
+      v-if="$slots.footer"
+      class="card__footer"
+    >
+      <slot name="footer" />
     </div>
   </component>
 </template>

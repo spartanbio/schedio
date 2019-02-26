@@ -8,7 +8,10 @@
       <code>font-size</code>.
     </p>
 
-    <STable is-bordered is-hoverable>
+    <STable
+      is-bordered
+      is-hoverable
+    >
 
       <STableRow slot="header">
         <STableCell>Name</STableCell>
@@ -16,7 +19,10 @@
         <STableCell>Example</STableCell>
       </STableRow>
 
-      <STableRow v-for="{ name, value } in spacing" :key="name">
+      <STableRow
+        v-for="{ name, value } in spacing"
+        :key="name"
+      >
         <STableCell>
           <code>${{ name }}</code>
         </STableCell>
@@ -26,7 +32,10 @@
         </STableCell>
 
         <STableCell class="spacing-example">
-          <div :style="{height: value, width: value}" class="spacing-example__spacer" />
+          <div
+            :style="{height: value, width: value}"
+            class="spacing-example__spacer"
+          />
         </STableCell>
       </STableRow>
 

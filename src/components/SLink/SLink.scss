@@ -1,7 +1,7 @@
 .link {
   $highlight-spacing: 0.1em;
 
-  color: color('spartan_blue');
+  color: color('spartan_blue', 'light');
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -29,9 +29,20 @@
 
   // Animate the highlight
   &:hover {
+    color: color('spartan_blue');
+
     &::before {
       // Height is approximately from the bottom of `::before` to the top of the link text
       height: 80%;
+    }
+  }
+
+  // Tone-down visited links
+  &:visited {
+    color: color('spartan_blue');
+
+    &::before {
+      background-color: color('grey', 'light');
     }
   }
 
@@ -57,10 +68,19 @@
     }
   }
 
-  // Tone-down visited links
-  &:visited {
+  &--plain {
+    color: color('spartan_blue', 'light');
+
+    &:active {
+      color: color('green');
+    }
+
+    &:visited {
+      color: color('magenta', 'dark');
+    }
+
     &::before {
-      background-color: color('grey', 'light');
+      display: none;
     }
   }
 }

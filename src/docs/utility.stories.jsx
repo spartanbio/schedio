@@ -3,48 +3,95 @@ import { SHeading } from '@/components/SHeading'
 import StoryContainer from '@/docs/StoryContainer'
 import { storiesOf } from '@storybook/vue'
 
-const colors = Object.values(props)
-  .filter(prop => prop.type === 'color')
-  .map(color => color.name)
-  .sort()
+storiesOf('Utilities/Typography', module)
+  .add('Alignment', () => ({
+    render(h) {
+      const alignments = ['center', 'left', 'right', 'justify']
 
-storiesOf('Utilities/Text', module).add('Color', () => ({
-  render(h) {
-    return (
-      <StoryContainer>
-        <SHeading level="1">Text Utilities</SHeading>
-        <p>These are CSS utility classes to enhance text presentation.</p>
+      return (
+        <StoryContainer>
+          <SHeading>Alignment</SHeading>
+          <p>
+            You can change text alignment witht the following classes:
+            <ul>
+              {alignments.map(alignment => (
+                <li>
+                  <code>{`.text--align-${alignment}`}</code>
+                </li>
+              ))}
+            </ul>
+          </p>
+        </StoryContainer>
+      )
+    }
+  }))
 
-        <SHeading level="2">Alignment</SHeading>
-        <p>
-          You can change text alignment witht the following classes:
-          <ul>
-            {['center', 'left', 'right', 'justify'].map(alignment => (
-              <li>{`text--align-${alignment}`}</li>
-            ))}
-          </ul>
-        </p>
+  .add('Color', () => ({
+    render(h) {
+      const colors = Object.values(props)
+        .filter(prop => prop.type === 'color')
+        .map(color => color.name)
+        .sort()
 
-        <SHeading level="2">Size</SHeading>
-        <p>
-          You can change text size witht the following classes:
-          <ul>
-            {Array.from({ length: 7 }).map((v, idx) => (
-              <li>{`.text--size-${idx + 1}`}</li>
-            ))}
-          </ul>
-        </p>
+      return (
+        <StoryContainer>
+          <SHeading>Color</SHeading>
+          <p>
+            The following classes exist to change the color of the text:
+            <ul>
+              {colors.map(color => (
+                <li>
+                  <code>{`.text--color-${color}`}</code>
+                </li>
+              ))}
+            </ul>
+          </p>
+        </StoryContainer>
+      )
+    }
+  }))
+  .add('Italic and Weight', () => ({
+    render(h) {
+      const weights = Object.values(props)
+        .filter(prop => prop.name.includes('-weight-'))
+        .map(weight => weight.name.split('-').pop())
 
-        <SHeading level="2">Color</SHeading>
-        <p>
-          The following classes exist to change the color of the text:
-          <ul>
-            {colors.map(color => (
-              <li>{`.text--color-${color}`}</li>
-            ))}
-          </ul>
-        </p>
-      </StoryContainer>
-    )
-  }
-}))
+      return (
+        <StoryContainer>
+          <SHeading>Italic and Weight</SHeading>
+          <p>
+            <code>.text--italic</code> will make text italic and the following classes can change
+            its weight:
+            <ul>
+              {weights.map(weight => (
+                <li>
+                  <code>{`.text--weight-${weight}`}</code>
+                </li>
+              ))}
+            </ul>
+          </p>
+        </StoryContainer>
+      )
+    }
+  }))
+  .add('Size', () => ({
+    render(h) {
+      const sizes = Array.from({ length: 7 })
+
+      return (
+        <StoryContainer>
+          <SHeading>Size</SHeading>
+          <p>
+            You can change text size witht the following classes:
+            <ul>
+              {sizes.map((v, idx) => (
+                <li>
+                  <code>{`.text--size-${idx + 1}`}</code>
+                </li>
+              ))}
+            </ul>
+          </p>
+        </StoryContainer>
+      )
+    }
+  }))

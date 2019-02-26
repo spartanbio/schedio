@@ -3,7 +3,8 @@
     v-bind="$attrs"
     :class="{ 'table__cell--numeric': isNumeric }"
     :is="cellType"
-    class="table__cell">
+    class="table__cell"
+  >
     <slot />
   </component>
 </template>

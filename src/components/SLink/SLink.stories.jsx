@@ -3,7 +3,7 @@ import { SLink } from '@/components/SLink'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
 import StoryLink from '@/docs/StoryLink'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/SLink', module)
@@ -12,8 +12,11 @@ storiesOf('Components/SLink', module)
     // TODO: document visited/unvisited states.
     return {
       props: {
-        to: { default: text('Link to (required)', 'https://spartanbio.com', 'Props') },
-        linkText: { default: text('Link text', 'Spartan Bio', 'Slots') }
+        to: {
+          default: text('Link to (required)', 'https://anunvisitedwebsite.com', 'Required Props')
+        },
+        isPlain: { default: boolean('is-plain', false, 'Optional Props') },
+        linkText: { default: text('Link text', '', 'Slots') }
       },
       render(h) {
         return (
@@ -31,23 +34,31 @@ storiesOf('Components/SLink', module)
               the component as necessary.
             </p>
 
-            <SHeading level="2">Example</SHeading>
+            <SHeading level="2">Link examples</SHeading>
             <p>
-              Here's an external link to <SLink to={this.to}>{this.linkText}</SLink>. Make sure
-              there is no whitespace around external links. If there is, it will break the icon
-              placement.
+              Here's an external link to <SLink to="https://spartanbio.com">Spartan Bio</SLink>.
+              Make sure there is no whitespace around external links. If there is, it will break the
+              icon placement.
             </p>
             <p>
-              Here's a link with no slot content provided: <SLink to="http://spartanbio.com/" />
+              Here's a link with no slot content provided: <SLink to="https://spartanbio.com/" />
             </p>
             <p>
               Here's an{' '}
               <SLink to="/some-internal-page" on-click={e => e.preventDefault()}>
                 internal link.
               </SLink>{' '}
-              Don't worry; it's called with <code>@click.prevent</code>, so you won't leave the
-              documentation..
+              It's called with <code>preventDefault()</code>, so you won't leave the documentation.
             </p>
+
+            <SHeading level="2">Dynamic Example</SHeading>
+            <p>
+              Storybook's knobs have been bound to the link below. It's called with{' '}
+              <code>preventDefault()</code>.
+            </p>
+            <SLink props={{ isPlain: this.isPlain, to: this.to }} onclick={e => e.preventDefault()}>
+              {this.linkText}
+            </SLink>
 
             <PropList component={SLink} />
           </StoryContainer>

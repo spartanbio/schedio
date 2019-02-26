@@ -54,6 +54,11 @@ describe('SLink.vue', () => {
     expect(noRouter.html()).toMatchSnapshot()
   })
 
+  it('can be plain', () => {
+    wrapper.setProps({ isPlain: true })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('uses best practices for [target="_blank"]', () => {
     if (wrapper.element.target === '_blank') {
       expect(wrapper.element.rel).toBe('noopener noreferrer')

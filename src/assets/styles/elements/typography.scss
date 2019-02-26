@@ -24,26 +24,38 @@ ul {
   text-transform: uppercase;
 }
 
-@each $color-name in $text-colors {
-  .text--color-#{$color-name} {
-    color: color($color-name);
+.text {
+  &--italic {
+    font-style: italic;
+  }
 
-    @each $hue-name in map-keys(map-remove(map-get($color-palette-data, $color-name), 'base')) {
-      &-#{$hue-name} {
-        color: color($color-name, $hue-name);
+  @each $weight in $font-weights {
+    &--weight-#{$weight} {
+      text-align: $weight;
+    }
+  }
+
+  @each $color-name in $text-colors {
+    &--color-#{$color-name} {
+      color: color($color-name);
+
+      @each $hue-name in map-keys(map-remove(map-get($color-palette-data, $color-name), 'base')) {
+        &-#{$hue-name} {
+          color: color($color-name, $hue-name);
+        }
       }
     }
   }
-}
 
-@each $alignment in $text-alignments {
-  .text--align-#{$alignment} {
-    text-align: $alignment;
+  @each $alignment in $text-alignments {
+    &--align-#{$alignment} {
+      text-align: $alignment;
+    }
   }
-}
 
-@for $size from 1 through length($sizes) {
-  .text--size-#{$size} {
-    @include font-size($size);
+  @for $size from 1 through length($sizes) {
+    &--size-#{$size} {
+      @include font-size($size);
+    }
   }
 }
