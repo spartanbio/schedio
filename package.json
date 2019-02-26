@@ -89,9 +89,9 @@
   "homepage": "https://spartanbio-design.netlify.com",
   "husky": {
     "hooks": {
-      "pre-commit": "sh scripts/guard-master.sh && lint-staged",
+      "pre-commit": "scripts/guard-master.sh && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "sh scripts/guard-master.sh"
+      "pre-push": "scripts/guard-master.sh"
     }
   },
   "lint-staged": {
