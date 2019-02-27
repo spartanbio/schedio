@@ -3,16 +3,9 @@ import { SHeading } from '@/components/SHeading'
 import { SButton } from '@/components/SButton'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import { toastTypes } from './options'
-
-const exampleContainerStyle = {
-  minHeight: '12em',
-  position: 'relative',
-  padding: '1em',
-  backgroundColor: '#f2f5f7'
-}
+import { toastTypes, positions } from './options'
 
 storiesOf('Components/SToast', module)
   .addDecorator(withKnobs)
@@ -21,51 +14,53 @@ storiesOf('Components/SToast', module)
       props: {
         props: {
           default: {
-            toastType: select('toast-type', toastTypes, toastTypes[0], 'Optional Props'),
-            toastTitle: text('toast-title', '', 'Optional Props'),
+            toastType: select('toast-type', toastTypes, toastTypes[0], 'Required Props'),
+            containerParent: text('container-parent', '#example', 'Optional Props'),
             toastBody: text('toast-body', 'Some text', 'Optional Props'),
-            action: () => alert('You did something!')
+            position: select('position', positions, positions[0], 'Optional Props'),
+            actionText: text('action-text', 'Run an action', 'Optional Props'),
+            toastTitle: text('toast-title', '', 'Optional Props'),
+            hasIcon: boolean('has-icon', true, 'Optional Props'),
+            isIndefinite: boolean('is-indefinite', false, 'Optional Props'),
+            duration: number('duration', 3000, {}, 'Optional Props'),
+
+            action() {
+              setTimeout(() => {
+                this.$toast.open({
+                  containerParent: '#example',
+                  toastBody: 'The action ran',
+                  toastType: 'warning'
+                })
+              }, 750)
+            }
           }
-        },
-        title: { default: text('title', '', 'Slots') },
-        body: { default: text('default', '', 'Slots') }
-      },
-
-      data() {
-        return {
-          toastIsShowing: false
         }
       },
 
-      methods: {
-        showToast() {
-          this.toastIsShowing = true
-          setTimeout(() => (this.toastIsShowing = false), 6000)
-        }
-      },
       render(h) {
-        const { props, ...slots } = this.$props
+        const { props } = this.$props
+        const exampleContainerStyle = {
+          minHeight: '12em',
+          position: 'relative',
+          padding: '1em',
+          backgroundColor: '#f2f5f7'
+        }
 
         return (
           <StoryContainer>
             <SHeading level="1">SToast</SHeading>
-            <p>Describe the component here</p>
+            <p>
+              Toasts are quick notifications, usually indicating the status of an action. They can
+              also be used to trigger another action. To do so, just pass a function to the{' '}
+              <code>action</code> prop.
+            </p>
 
             <SHeading level="2">Example</SHeading>
 
-            <div style={exampleContainerStyle}>
-              <div>
-                <p>Toasts sit at the bottom of their parent element.</p>
-                <SButton onclick={this.showToast}>Open a toast</SButton>
-              </div>
-
-              {this.toastIsShowing && (
-                <SToast {...{ props }}>
-                  <template slot="title">{slots.title}</template>
-
-                  {slots.body}
-                </SToast>
-              )}
+            <div id="example" style={exampleContainerStyle}>
+              <SButton outline-color="night" onclick={() => this.$toast.open(props)}>
+                Open a toast
+              </SButton>
             </div>
 
             {SToast.props && <PropList component={SToast} />}

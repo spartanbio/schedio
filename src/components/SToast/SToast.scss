@@ -3,11 +3,19 @@
   align-items: center;
   background-color: color('white');
   border-radius: border-radius();
-  bottom: 1em;
+  bottom: spacing();
   box-shadow: shadow('border'), shadow();
-  display: inline-flex;
+  display: flex;
+  flex: 0 0 auto;
+  margin: spacing();
+  margin-bottom: 0;
   max-width: 44em;
-  position: absolute;
+  pointer-events: auto;
+  z-index: 500;
+
+  &:first-child {
+    margin-bottom: spacing();
+  }
 
   &__icon {
     align-items: center;
@@ -17,7 +25,10 @@
 
   &__text {
     padding: spacing();
-    padding-left: 0;
+
+    &:not(:first-child) {
+      padding-left: 0;
+    }
 
     &:not(:last-child) {
       padding-right: spacing('half');
@@ -66,11 +77,10 @@
   }
 
   &--right {
-    right: 1em;
+    align-self: flex-end;
   }
 
   &--center {
-    left: 50%;
-    transform: translateX(-50%);
+    align-self: center;
   }
 }

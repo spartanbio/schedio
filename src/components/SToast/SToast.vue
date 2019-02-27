@@ -1,56 +1,58 @@
 <template>
-  <div
-    :class="classList"
-    class="toast"
-  >
-    <!-- Icon -->
+  <transition name="fade">
     <div
-      v-if="toastType && hasIcon"
-      class="toast__icon"
+      v-show="isVisible"
+      :class="classList"
+      class="toast"
     >
-      <SIcon
-        :icon="toastIcon"
-        :icon-color="toastIconColor"
-      />
-    </div>
-
-    <!-- Content -->
-    <div
-      v-if="hasContent.any"
-      class="toast__text"
-    >
-      <!-- Title -->
+      <!-- Icon -->
       <div
-        v-if="hasContent.title"
-        class="toast__title"
+        v-if="toastType && hasIcon"
+        class="toast__icon"
       >
-        <slot name="title">
+        <SIcon
+          :icon="toastIcon"
+          :icon-color="toastIconColor"
+        />
+      </div>
+
+      <!-- Content -->
+      <div
+        v-if="hasContent.any"
+        class="toast__text"
+      >
+        <!-- Title -->
+        <div
+          v-if="hasContent.title"
+          class="toast__title"
+        >
           {{ toastTitle }}
-        </slot>
-      </div>
+        </div>
 
-      <!-- Body -->
-      <div
-        v-if="hasContent.body"
-        class="toast__body"
-      >
-        <slot>
+        <!-- Body -->
+        <div
+          v-if="hasContent.body"
+          class="toast__body"
+        >
           {{ toastBody }}
-        </slot>
+        </div>
       </div>
-    </div>
 
-    <button
-      v-if="action && (typeof action === 'function')"
-      class="toast__action"
-      @click="clickHandler"
-    >Do something</button>
-  </div>
+      <button
+        v-if="action && (typeof action === 'function')"
+        class="toast__action"
+        @click="clickHandler"
+      >
+        {{ actionText }}
+      </button>
+    </div>
+  </transition>
 </template>
 
 <script>
+import NotificationMixin from '@/mixins/Notification.mixin'
 import { SIcon } from '@/components/SIcon'
-import { toastTypes } from './options'
+import { toastTypes, positions } from './options'
 
 export default {
   name: 'SToast',
@@ -58,6 +60,8 @@ export default {
   components: {
     SIcon
   },
+
+  mixins: [NotificationMixin],
 
   props: {
     toastType: {
@@ -89,13 +93,30 @@ export default {
     action: {
       type: Function,
       default: null
+    },
+
+    actionText: {
+      type: String,
+      default: 'OK'
+    },
+
+    position: {
+      type: String,
+      default: '',
+      validator: v => {
+        return (
+          positions.includes(v) ||
+          console.error(`\`position\` should be one of ${positions.join(', ')}`)
+        )
+      }
     }
   },
 
   computed: {
     classList() {
       return {
-        [`toast--${this.toastType}`]: this.toastType
+        [`toast--${this.toastType}`]: this.toastType,
+        [`toast--${this.position}`]: this.position
       }
     },
 
@@ -135,6 +156,7 @@ export default {
   methods: {
     clickHandler() {
       this.action()
+      this.closeNotification()
     }
   }
 }
