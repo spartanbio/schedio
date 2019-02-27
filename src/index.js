@@ -30,6 +30,7 @@ import STable from './components/STable'
 import STableCell from './components/STableCell'
 import STableRow from './components/STableRow'
 import STextarea from './components/STextarea'
+import SToast from './components/SToast'
 
 const Schedio = {
   install(Vue) {
@@ -58,6 +59,7 @@ const Schedio = {
     Vue.use(STableCell)
     Vue.use(STableRow)
     Vue.use(STextarea)
+    Vue.use(SToast)
   }
 }
 
@@ -90,3 +92,4 @@ export { STable } from './components/STable'
 export { STableCell } from './components/STableCell'
 export { STableRow } from './components/STableRow'
 export { STextarea } from './components/STextarea'
+export { SToast } from './components/SToast'

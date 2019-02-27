@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SToast.vue can have a clickable action 1`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div> <button class="toast__action">
+    OK
+  </button>
+</div>
+`;
+
+exports[`SToast.vue can have action text configured 1`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div> <button class="toast__action">
+    action text
+  </button>
+</div>
+`;
+
+exports[`SToast.vue can have position  1`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue can have position center 1`] = `
+<div class="toast toast--success toast--center" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue can have position right 1`] = `
+<div class="toast toast--success toast--right" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue can have the icon hidden 1`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue closes on action click 1`] = `
+<div class="toast toast--success" style="display: none;" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div> <button class="toast__action">
+    OK
+  </button>
+</div>
+`;
+
+exports[`SToast.vue renders toast type error correctly 1`] = `
+<div class="toast toast--error" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="alert-circle" iconcolor="red" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue renders toast type success correctly 1`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue renders toast type warning correctly 1`] = `
+<div class="toast toast--warning" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="alert-triangle" iconcolor="gold" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      Text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue requires a title or body 1`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <!---->
+    <div class="toast__body">
+      text
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`SToast.vue requires a title or body 2`] = `
+<div class="toast toast--success" style="" name="fade">
+  <div class="toast__icon">
+    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+  </div>
+  <div class="toast__text">
+    <div class="toast__title">
+      title
+    </div>
+    <!---->
+  </div>
+  <!---->
+</div>
+`;
