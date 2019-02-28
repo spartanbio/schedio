@@ -66,7 +66,7 @@ export default {
   props: {
     toastType: {
       type: String,
-      required: true,
+      default: '',
       validator: v => {
         return (
           toastTypes.includes(v) ||
