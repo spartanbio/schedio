@@ -1,3 +1,11 @@
+## [2.9.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.2...v2.9.3) (2019-02-28)
+
+
+### Bug Fixes
+
+* **forms:** fixes placeholder font-weight ([8fb5471](https://gitlab.com/spartanbio-marketing/schedio/commit/8fb5471))
+* **toast:** allows toasts to have no type ([cac2140](https://gitlab.com/spartanbio-marketing/schedio/commit/cac2140))
+
 ## [2.9.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.1...v2.9.2) (2019-02-28)
 
 
