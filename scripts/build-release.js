@@ -31,5 +31,7 @@ Promise.all(
     }
   })
 )
+  .then(() => console.log(chalk.green('All Vue components built!\n')))
+  .then(() => require('./generate-vetur-helpers'))
   .then(() => console.log(chalk.green('Library successfully built for release!')))
   .catch(err => console.error(chalk.red(err)))

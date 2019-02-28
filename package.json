@@ -118,5 +118,9 @@
   "repository": {
     "type": "git",
     "url": "gitlab:spartanbio-marketing/schedio"
+  },
+  "vetur": {
+    "tags": "dist/vetur/tags.json",
+    "attributes": "dist/vetur/attributes.json"
   }
 }
