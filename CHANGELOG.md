@@ -1,3 +1,10 @@
+## [2.9.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.1...v2.9.2) (2019-02-28)
+
+
+### Bug Fixes
+
+* fixes build and release config ([b8320ff](https://gitlab.com/spartanbio-marketing/schedio/commit/b8320ff))
+
 ## [2.8.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.8.0...v2.8.1) (2019-02-07)
 
 
