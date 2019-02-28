@@ -5,6 +5,22 @@
 
 * fixes build and release config ([b8320ff](https://gitlab.com/spartanbio-marketing/schedio/commit/b8320ff))
 
+## [2.9.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.0...v2.9.1) (2019-02-27)
+
+
+### Bug Fixes
+
+* fixes broken release ([c2602af](https://gitlab.com/spartanbio-marketing/schedio/commit/c2602af))
+
+# [2.9.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.8.1...v2.9.0) (2019-02-27)
+
+
+### Features
+
+* **notification:** adds notification mixin ([d86faf8](https://gitlab.com/spartanbio-marketing/schedio/commit/d86faf8))
+* **toast:** adds toast component ([c43a2aa](https://gitlab.com/spartanbio-marketing/schedio/commit/c43a2aa))
+* **toast:** adds toast component ([#13](https://gitlab.com/spartanbio-marketing/schedio/issues/13)) ([4d615b5](https://gitlab.com/spartanbio-marketing/schedio/commit/4d615b5))
+
 ## [2.8.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.8.0...v2.8.1) (2019-02-07)
 
 
