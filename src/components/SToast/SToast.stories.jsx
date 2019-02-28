@@ -7,6 +7,8 @@ import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs
 import { storiesOf } from '@storybook/vue'
 import { toastTypes, positions } from './options'
 
+const upperCase = str => str[0].toUpperCase() + str.substr(1)
+
 storiesOf('Components/SToast', module)
   .addDecorator(withKnobs)
   .add('SToast', () => {
@@ -14,7 +16,7 @@ storiesOf('Components/SToast', module)
       props: {
         props: {
           default: {
-            toastType: select('toast-type', toastTypes, toastTypes[0], 'Required Props'),
+            toastType: select('toast-type', toastTypes, toastTypes[0], 'Optional Props'),
             containerParent: text('container-parent', '#example', 'Optional Props'),
             toastBody: text('toast-body', 'Some text', 'Optional Props'),
             position: select('position', positions, positions[0], 'Optional Props'),
@@ -35,6 +37,46 @@ storiesOf('Components/SToast', module)
             }
           }
         }
+      },
+
+      data() {
+        return {
+          toastCount: 0,
+          toastList: [...toastTypes].reverse()
+        }
+      },
+
+      methods: {
+        mountToasts() {
+          if (this.toastCount > 0) return
+
+          this.toastList.forEach(type => {
+            this.$toast.open({
+              toastType: type,
+              containerParent: '#all-toasts',
+              toastBody: 'Type: ' + upperCase(type || 'default'),
+              isIndefinite: true,
+              action: () => this.toastCount--
+            })
+
+            this.toastCount++
+          })
+        }
+      },
+
+      mounted() {
+        // without actions
+        this.toastList.forEach(type => {
+          this.$toast.open({
+            toastType: type,
+            containerParent: '#all-toasts',
+            toastBody: 'Type: ' + upperCase(type || 'default'),
+            isIndefinite: true
+          })
+        })
+
+        // with actions
+        this.mountToasts()
       },
 
       render(h) {
@@ -58,8 +100,20 @@ storiesOf('Components/SToast', module)
             <SHeading level="2">Example</SHeading>
 
             <div id="example" style={exampleContainerStyle}>
-              <SButton outline-color="night" onclick={() => this.$toast.open(props)}>
+              <SButton outline-color="spartan_blue" onClick={() => this.$toast.open(props)}>
                 Open a toast
+              </SButton>
+            </div>
+
+            <SHeading level="3">All toasts</SHeading>
+
+            <div id="all-toasts" style={{ ...exampleContainerStyle, height: '41em' }}>
+              <SButton
+                outline-color="spartan_blue"
+                onClick={this.mountToasts}
+                disabled={this.toastCount !== 0}
+              >
+                Reset toasts
               </SButton>
             </div>
 
