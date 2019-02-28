@@ -6,6 +6,9 @@ const shell = require('shelljs')
 const buildLib = 'npx vue-cli-service build --target lib'
 const destDir = 'dist/components'
 
+console.log(chalk.yellow('Building main library bundle...\n'))
+shell.exec('npm run build')
+
 // Builds dist/components/<Component>/<Component>.common.js
 // Then renames to dist/components/<Component>/index.js
 console.log(chalk.yellow('Building individual component bundles...\n'))
@@ -18,6 +21,7 @@ Promise.all(
     const entry = `${componentsDir}/${component}/index.js`
 
     if (stat.isDirectory()) {
+      console.log(chalk.yellow(`Building ${component}...`))
       // compile the component
       shell.exec(
         `${buildLib} --silent --formats commonjs --dest ${dest} --name ${component} ${entry}`
