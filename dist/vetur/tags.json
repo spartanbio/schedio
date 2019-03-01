@@ -1,0 +1,236 @@
+{
+  "s-button": {
+    "attributes": [
+      "button-color",
+      "outline-color",
+      "button-size",
+      "is-loading",
+      "icon-only",
+      "icon-left",
+      "icon-right"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-button>"
+  },
+  "s-button-group": {
+    "attributes": [
+      "group-color",
+      "group-outline-color",
+      "is-grouped"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-button-group>"
+  },
+  "s-card": {
+    "attributes": [
+      "tag",
+      "image",
+      "has-no-padding"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-card>"
+  },
+  "s-container": {
+    "attributes": [
+      "is-fullwidth"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-container>"
+  },
+  "s-container-column": {
+    "attributes": [
+      "sm",
+      "narrow-after-sm",
+      "narrow-until-sm",
+      "offset-sm",
+      "order-sm",
+      "md",
+      "narrow-after-md",
+      "narrow-until-md",
+      "offset-md",
+      "order-md",
+      "lg",
+      "narrow-after-lg",
+      "narrow-until-lg",
+      "offset-lg",
+      "order-lg",
+      "xl",
+      "narrow-after-xl",
+      "narrow-until-xl",
+      "offset-xl",
+      "order-xl",
+      "size",
+      "offset",
+      "narrow",
+      "order"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-container-column>"
+  },
+  "s-container-row": {
+    "attributes": [
+      "align-after-sm",
+      "align-until-sm",
+      "justify-after-sm",
+      "justify-until-sm",
+      "align-after-md",
+      "align-until-md",
+      "justify-after-md",
+      "justify-until-md",
+      "align-after-lg",
+      "align-until-lg",
+      "justify-after-lg",
+      "justify-until-lg",
+      "align-after-xl",
+      "align-until-xl",
+      "justify-after-xl",
+      "justify-until-xl",
+      "is-reversed",
+      "justify",
+      "align"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-container-row>"
+  },
+  "s-form-validation": {
+    "attributes": [
+      "validation-text",
+      "validation-state",
+      "icon",
+      "has-icon"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-form-validation>"
+  },
+  "s-heading": {
+    "attributes": [
+      "level",
+      "display-level",
+      "is-display",
+      "has-no-case",
+      "is-subtle",
+      "is-title",
+      "is-subtitle",
+      "tag"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-heading>"
+  },
+  "s-hero": {
+    "attributes": [
+      "height",
+      "color",
+      "has-no-padding"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-hero>"
+  },
+  "s-icon": {
+    "attributes": [
+      "icon",
+      "icon-color",
+      "icon-size"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-icon>"
+  },
+  "s-input": {
+    "attributes": [
+      "type"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-input>"
+  },
+  "s-label": {
+    "attributes": [
+      "label",
+      "is-optional",
+      "is-inline",
+      "is-fullwidth",
+      "is-reversed",
+      "show-optional"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-label>"
+  },
+  "s-link": {
+    "attributes": [
+      "to",
+      "is-plain"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-link>"
+  },
+  "s-progress-bar": {
+    "attributes": [
+      "progress",
+      "size",
+      "color",
+      "message",
+      "show-percent-complete"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-progress-bar>"
+  },
+  "s-select": {
+    "attributes": [
+      "select-options",
+      "placeholder",
+      "multiple"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-select>"
+  },
+  "s-spinner": {
+    "attributes": [
+      "color",
+      "size"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-spinner>"
+  },
+  "s-switch": {
+    "attributes": [
+      "size"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-switch>"
+  },
+  "s-table": {
+    "attributes": [
+      "table-data",
+      "header",
+      "footer",
+      "caption",
+      "has-caption-top",
+      "header-in-footer",
+      "hide-header",
+      "is-bordered",
+      "is-hoverable",
+      "is-striped"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-table>"
+  },
+  "s-table-cell": {
+    "attributes": [
+      "is-header",
+      "is-numeric"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-table-cell>"
+  },
+  "s-toast": {
+    "attributes": [
+      "toast-type",
+      "has-icon",
+      "toast-title",
+      "toast-body",
+      "action",
+      "action-text",
+      "position"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-toast>"
+  }
+}

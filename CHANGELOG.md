@@ -1,3 +1,10 @@
+# [2.10.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.3...v2.10.0) (2019-03-01)
+
+
+### Features
+
+* adds vetur helpers ([09e1e8c](https://gitlab.com/spartanbio-marketing/schedio/commit/09e1e8c))
+
 ## [2.9.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.2...v2.9.3) (2019-02-28)
 
 
