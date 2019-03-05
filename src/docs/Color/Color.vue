@@ -1,5 +1,5 @@
 <template>
-  <StoryContainer>
+  <div>
     <SHeading level="1">Colors</SHeading>
     <p>As a rule, use lots of contrast, and stick to cool colors</p>
 
@@ -14,7 +14,7 @@
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
     <ColorList :palette="accentPalettes" />
-  </StoryContainer>
+  </div>
 </template>
 
 <script>
@@ -22,13 +22,11 @@ import ColorList from './ColorList'
 import groupBy from 'lodash.groupby'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import StoryContainer from '@/docs/StoryContainer'
 
 export default {
   name: 'Color',
 
   components: {
-    StoryContainer,
     ColorList
   },
 

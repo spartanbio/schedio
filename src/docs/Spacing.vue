@@ -1,5 +1,5 @@
 <template>
-  <StoryContainer>
+  <div>
     <SHeading level="1">Spacing</SHeading>
     <p>Consistent spacing allows elements to stand out. It improves scannability and reduces noise.</p>
     <p>
@@ -41,19 +41,14 @@
 
     </STable>
 
-  </StoryContainer>
+  </div>
 </template>
 
 <script>
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import StoryContainer from '@/docs/StoryContainer'
 
 export default {
   name: 'Spacing',
-
-  components: {
-    StoryContainer
-  },
 
   data() {
     return {

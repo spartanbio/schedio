@@ -41,16 +41,16 @@ export default {
 import { ${componentName} } from '@/components/${componentName}'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
-import StoryContainer from '@/docs/StoryContainer'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/${componentName}', module)
+  .addParameters({ jest: ${componentName} })
   .add('${componentName}', () => {
     return {
       render(h) {
         return (
-          <StoryContainer>
+          <div>
             <SHeading level="1">${componentName}</SHeading>
             <p>Describe the component here</p>
 
@@ -58,7 +58,7 @@ storiesOf('Components/${componentName}', module)
             <${componentName} />
 
             {${componentName}.props && <PropList component={${componentName}} />}
-          </StoryContainer>
+          </div>
         )
       }
     }

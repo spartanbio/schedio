@@ -1,6 +1,5 @@
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import { SHeading } from '@/components/SHeading'
-import StoryContainer from '@/docs/StoryContainer'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Utilities/Typography', module)
@@ -9,7 +8,7 @@ storiesOf('Utilities/Typography', module)
       const alignments = ['center', 'left', 'right', 'justify']
 
       return (
-        <StoryContainer>
+        <div>
           <SHeading>Alignment</SHeading>
           <p>
             You can change text alignment witht the following classes:
@@ -21,7 +20,7 @@ storiesOf('Utilities/Typography', module)
               ))}
             </ul>
           </p>
-        </StoryContainer>
+        </div>
       )
     }
   }))
@@ -34,7 +33,7 @@ storiesOf('Utilities/Typography', module)
         .sort()
 
       return (
-        <StoryContainer>
+        <div>
           <SHeading>Color</SHeading>
           <p>
             The following classes exist to change the color of the text:
@@ -46,7 +45,7 @@ storiesOf('Utilities/Typography', module)
               ))}
             </ul>
           </p>
-        </StoryContainer>
+        </div>
       )
     }
   }))
@@ -57,7 +56,7 @@ storiesOf('Utilities/Typography', module)
         .map(weight => weight.name.split('-').pop())
 
       return (
-        <StoryContainer>
+        <div>
           <SHeading>Italic and Weight</SHeading>
           <p>
             <code>.text--italic</code> will make text italic and the following classes can change
@@ -70,7 +69,7 @@ storiesOf('Utilities/Typography', module)
               ))}
             </ul>
           </p>
-        </StoryContainer>
+        </div>
       )
     }
   }))
@@ -79,7 +78,7 @@ storiesOf('Utilities/Typography', module)
       const sizes = Array.from({ length: 7 })
 
       return (
-        <StoryContainer>
+        <div>
           <SHeading>Size</SHeading>
           <p>
             You can change text size witht the following classes:
@@ -91,7 +90,7 @@ storiesOf('Utilities/Typography', module)
               ))}
             </ul>
           </p>
-        </StoryContainer>
+        </div>
       )
     }
   }))

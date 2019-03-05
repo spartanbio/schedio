@@ -3,11 +3,11 @@ import { STable } from '@/components/STable'
 import { STableCell } from '@/components/STableCell'
 import { STableRow } from '@/components/STableRow'
 import PropList from '@/docs/PropList'
-import StoryContainer from '@/docs/StoryContainer'
 import { boolean, number, object, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
-storiesOf('Components/STable', module)
+storiesOf('Components/Tables.STable', module)
+  .addParameters({ jest: 'STable' })
   .add('STable', function STableDocs() {
     const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
     const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
@@ -45,7 +45,7 @@ storiesOf('Components/STable', module)
         const { props, headerCells, bodyRows, footerRows } = this.$props
 
         return (
-          <StoryContainer>
+          <div>
             <SHeading level="1">Table</SHeading>
             <p>Tables organize display data. They allow data to be viewed in detail.</p>
 
@@ -135,85 +135,7 @@ storiesOf('Components/STable', module)
             </STable>
 
             <PropList component={STable} />
-          </StoryContainer>
-        )
-      }
-    }
-  })
-  .add('STableRow', function STableRowDocs() {
-    return {
-      props: {
-        slotContent: {
-          default: text('default', 'Slot content', 'Slots')
-        }
-      },
-      render(h) {
-        return (
-          <StoryContainer>
-            <SHeading level="1">Table Row</SHeading>
-            <p>
-              Table rows are containers for <code>{'<STableCell />'}</code>. They do not have any
-              props, but have a single default slot. <code>{'<STableCell />'}</code> is the only
-              content that should go in this slot.
-            </p>
-
-            <SHeading level="2">Example</SHeading>
-            <STable>
-              <STableRow slot="header">
-                <STableCell>Header</STableCell>
-              </STableRow>
-              <STableRow>{this.slotContent}</STableRow>
-            </STable>
-
-            {STableRow.props && <PropList component={STableRow} />}
-          </StoryContainer>
-        )
-      }
-    }
-  })
-  .add('STableCell', function STableCellDocs() {
-    return {
-      props: {
-        isNumeric: { default: boolean('isNumeric', true, 'Optional Props') },
-        isHeader: { default: boolean('isHeader', false, 'Optional Props') },
-        headerCellSlotContent: { default: text('default', 'Header cell slot', 'Slots') },
-        numericCellSlotContent: { default: number('default', 1200, 'Slots') }
-      },
-      render(h) {
-        return (
-          <StoryContainer>
-            <SHeading level="1">Table Cell</SHeading>
-            <p>
-              Table cells contain the actual data values for the table. They should always be
-              enclosed in <code>{'<STableRow />'}</code>.
-            </p>
-            <p>
-              Cells placed within a <code>{'<thead />'}</code> will automatically use the{' '}
-              <code>{'<th />'}</code> tag instead of <code>{'<td />'}</code>.
-            </p>
-            <p>
-              If <code>isNumeric</code> is <code>true</code>, the cell will try to convert to its
-              localized version with <code>Number.toLocaleString()</code>
-            </p>
-
-            <SHeading level="2">Example</SHeading>
-            <STable>
-              <STableRow slot="header">
-                <STableCell>
-                  Toggling <code style="text-transform: none;">isHeader</code> will change this one
-                </STableCell>
-                <STableCell>
-                  Toggling <code style="text-transform: none;">isNumeric</code> will change this one
-                </STableCell>
-              </STableRow>
-              <STableRow>
-                <STableCell is-header={this.isHeader}>{this.headerCellSlotContent}</STableCell>
-                <STableCell is-numeric={this.isNumeric}>{this.numericCellSlotContent}</STableCell>
-              </STableRow>
-            </STable>
-
-            <PropList component={STableCell} />
-          </StoryContainer>
+          </div>
         )
       }
     }

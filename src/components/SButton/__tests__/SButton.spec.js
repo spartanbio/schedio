@@ -59,7 +59,7 @@ describe('SButton.vue', () => {
     expect(errorSpy).toBeCalled()
   })
 
-  options.colors.forEach(size => {
+  options.sizes.forEach(size => {
     it(`can be ${size}`, () => {
       wrapper.setProps({ buttonSize: size })
       expect(wrapper.contains(`.button--size-${size}`)).toBe(true)

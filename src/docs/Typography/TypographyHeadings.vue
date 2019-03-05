@@ -1,5 +1,5 @@
 <template>
-  <StoryContainer>
+  <div>
     <div class="typography-intro">
       <SHeading>Headings and Displays</SHeading>
 
@@ -94,20 +94,15 @@
         Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>
     </article>
-  </StoryContainer>
+  </div>
 </template>
 
 <script>
 import { linkTo } from '@storybook/addon-links'
-import StoryContainer from '@/docs/StoryContainer'
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
 
 export default {
   name: 'TypographyHeadings',
-
-  components: {
-    StoryContainer
-  },
 
   data: () => ({
     tokens

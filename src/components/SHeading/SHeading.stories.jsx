@@ -1,7 +1,6 @@
 // Global registration doesn't work with `jsx` templates
 import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
-import StoryContainer from '@/docs/StoryContainer'
 import { boolean, radios, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
@@ -10,7 +9,8 @@ const displayLevels = ['1', '2']
 
 const tagOptions = ['', 'div', 'span', 'a']
 
-storiesOf('Components/SHeading', module)
+storiesOf('Components/Layout.SHeading', module)
+  .addParameters({ jest: 'SHeading' })
   .add('Heading', function Heading() {
     const options = radios(
       'Pick one',
@@ -41,7 +41,7 @@ storiesOf('Components/SHeading', module)
         const { props } = this.$props
 
         return (
-          <StoryContainer>
+          <div>
             <SHeading>Heading</SHeading>
             <p>
               <code>SHeading</code> defaults to using <code>h1-h6</code> tags, but can be overriden
@@ -57,7 +57,7 @@ storiesOf('Components/SHeading', module)
             </div>
 
             <PropList component={SHeading} />
-          </StoryContainer>
+          </div>
         )
       }
     }
@@ -89,7 +89,7 @@ storiesOf('Components/SHeading', module)
         const { slotContent, props } = this.$props
 
         return (
-          <StoryContainer>
+          <div>
             <SHeading>Usage: Heading</SHeading>
             <p>Headings help identify key sections and information within a document.</p>
 
@@ -115,7 +115,7 @@ storiesOf('Components/SHeading', module)
             </div>
 
             <PropList component={SHeading} />
-          </StoryContainer>
+          </div>
         )
       }
     }
@@ -150,7 +150,7 @@ storiesOf('Components/SHeading', module)
         const { slotContent, props } = this.$props
 
         return (
-          <StoryContainer>
+          <div>
             <SHeading>Usage: Display</SHeading>
             <p>
               Headings are key to structure, and displays are decorative. Displays should be used
@@ -165,7 +165,7 @@ storiesOf('Components/SHeading', module)
             </div>
 
             <PropList component={SHeading} />
-          </StoryContainer>
+          </div>
         )
       }
     }

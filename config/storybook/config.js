@@ -1,9 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Schedio from '@'
+import { withTests } from '@storybook/addon-jest'
+import { withKnobs } from '@storybook/addon-knobs'
 import { create } from '@storybook/theming'
 import { addDecorator, addParameters, configure } from '@storybook/vue'
-import { withKnobs } from '@storybook/addon-knobs'
 import Vue from 'vue'
+import results from '../../.jest-test-results.json'
+import StoryContainer from '@/docs/StoryContainer.vue'
 
 Vue.use(Schedio)
 
@@ -31,5 +34,14 @@ addParameters({
 })
 
 addDecorator(withKnobs)
+addDecorator(withTests({ results }))
+addDecorator(story => ({
+  components: { StoryContainer, story },
+  template: `\
+<StoryContainer>
+  <story />
+</StoryContainer>
+`
+}))
 
 configure(loadStories, module)

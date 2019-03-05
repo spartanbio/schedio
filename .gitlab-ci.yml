@@ -21,9 +21,13 @@ build:
 
 test:
   stage: test
-  script: npm test
+  script: npm test:generate
   dependencies:
     - build
+  artifacts:
+    paths:
+      - dist/
+      - .jest-test-results.json
 
 publish:
   stage: publish
@@ -33,4 +37,5 @@ publish:
     - npm run build:release
     - npx semantic-release
   dependencies:
+    - build
     - test

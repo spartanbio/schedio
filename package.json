@@ -16,6 +16,7 @@
     "semantic-release": "semantic-release",
     "serve:storybook": "start-storybook -p 6006 -s ./static -c ./config/storybook",
     "test": "run-s test:unit",
+    "test:generate": "vue-cli-service test:unit -- --json --outputFile=.jest-test-results.json || true && echo `git commit -am 'test: updates test results'`",
     "test:unit": "vue-cli-service test:unit",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
     "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo"
@@ -37,6 +38,7 @@
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/gitlab": "^3.1.2",
     "@semantic-release/release-notes-generator": "^7.1.4",
+    "@storybook/addon-jest": "^5.0.0",
     "@storybook/addon-knobs": "^5.0.0",
     "@storybook/addon-links": "^5.0.0",
     "@storybook/addons": "^5.0.0",

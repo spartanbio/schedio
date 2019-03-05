@@ -16,22 +16,8 @@ exports[`SButton.vue can be gold 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be gold 2`] = `
-<button class="button button--size-gold">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
 exports[`SButton.vue can be green 1`] = `
 <button class="button button--color-green">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be green 2`] = `
-<button class="button button--size-green">
   <!---->
   <!----> Button Text
   <!----></button>
@@ -44,13 +30,6 @@ exports[`SButton.vue can be grey 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be grey 2`] = `
-<button class="button button--size-grey">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
 exports[`SButton.vue can be ice 1`] = `
 <button class="button button--color-ice">
   <!---->
@@ -58,8 +37,8 @@ exports[`SButton.vue can be ice 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be ice 2`] = `
-<button class="button button--size-ice">
+exports[`SButton.vue can be large 1`] = `
+<button class="button button--size-large">
   <!---->
   <!----> Button Text
   <!----></button>
@@ -72,22 +51,8 @@ exports[`SButton.vue can be magenta 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be magenta 2`] = `
-<button class="button button--size-magenta">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
 exports[`SButton.vue can be night 1`] = `
 <button class="button button--color-night">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be night 2`] = `
-<button class="button button--size-night">
   <!---->
   <!----> Button Text
   <!----></button>
@@ -170,8 +135,15 @@ exports[`SButton.vue can be red 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be red 2`] = `
-<button class="button button--size-red">
+exports[`SButton.vue can be regular 1`] = `
+<button class="button button--size-regular">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be small 1`] = `
+<button class="button button--size-small">
   <!---->
   <!----> Button Text
   <!----></button>
@@ -184,13 +156,6 @@ exports[`SButton.vue can be spartan_blue 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be spartan_blue 2`] = `
-<button class="button button--size-spartan_blue">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
 exports[`SButton.vue can be turquoise 1`] = `
 <button class="button button--color-turquoise">
   <!---->
@@ -198,22 +163,8 @@ exports[`SButton.vue can be turquoise 1`] = `
   <!----></button>
 `;
 
-exports[`SButton.vue can be turquoise 2`] = `
-<button class="button button--size-turquoise">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
 exports[`SButton.vue can be white 1`] = `
 <button class="button button--color-white">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be white 2`] = `
-<button class="button button--size-white">
   <!---->
   <!----> Button Text
   <!----></button>

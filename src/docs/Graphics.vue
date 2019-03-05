@@ -1,5 +1,5 @@
 <template>
-  <StoryContainer>
+  <div>
     <SHeading level="1">
       Graphics
     </SHeading>
@@ -117,17 +117,11 @@
       </SContainerRow>
     </SContainer>
 
-  </StoryContainer>
+  </div>
 </template>
 
 <script>
-import StoryContainer from '@/docs/StoryContainer'
-
 export default {
-  name: 'Graphics',
-
-  components: {
-    StoryContainer
-  }
+  name: 'Graphics'
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <StoryContainer>
+  <div>
     <div class="typography-intro">
       <SHeading level="1">Base Typography</SHeading>
       <p>The base Spartan font parameters are:
@@ -29,19 +29,14 @@
         <code>{{ tokens['grey'] }}</code>
       </p>
     </article>
-  </StoryContainer>
+  </div>
 </template>
 
 <script>
-import StoryContainer from '@/docs/StoryContainer'
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
 
 export default {
   name: 'TypographyBase',
-
-  components: {
-    StoryContainer
-  },
 
   data: () => ({
     tokens

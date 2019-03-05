@@ -31,7 +31,13 @@ export default {
 
   computed: {
     text() {
-      return (this.linkText || this.to.replace(/^.*\/(\w*)/, '$1')).trim()
+      return (
+        this.linkText ||
+        this.to
+          .replace(/^.*\/(\w*)/, '$1')
+          .split('.')
+          .pop()
+      ).trim()
     }
   },
 
