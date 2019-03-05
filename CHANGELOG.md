@@ -1,3 +1,10 @@
+## [2.10.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.2...v2.10.3) (2019-03-05)
+
+
+### Bug Fixes
+
+* **switch:** fixes switch border ([6703495](https://gitlab.com/spartanbio-marketing/schedio/commit/6703495))
+
 # [2.10.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.9.3...v2.10.0) (2019-03-01)
 
 
