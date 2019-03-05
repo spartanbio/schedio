@@ -9,16 +9,30 @@ import { storiesOf } from '@storybook/vue'
 
 const hideAddons = {
   options: {
-    showAddonPanel: false
+    showPanel: false
   }
 }
 
-storiesOf('* Design/Color', module).add('Color', () => h => <Color />, hideAddons)
-storiesOf('* Design/Interaction', module).add('Interaction', () => h => <Interaction />, hideAddons)
-storiesOf('* Design/Graphics', module).add('Graphics', () => h => <Graphics />, hideAddons)
-storiesOf('* Design/Spacing', module).add('Spacing', () => h => <Spacing />, hideAddons)
+storiesOf('* Design/Color', module).add('Color', () => ({ render: h => <Color /> }), hideAddons)
+storiesOf('* Design/Interaction', module).add(
+  'Interaction',
+  () => ({ render: h => <Interaction /> }),
+  hideAddons
+)
+
+storiesOf('* Design/Graphics', module).add(
+  'Graphics',
+  () => ({ render: h => <Graphics /> }),
+  hideAddons
+)
+
+storiesOf('* Design/Spacing', module).add(
+  'Spacing',
+  () => ({ render: h => <Spacing /> }),
+  hideAddons
+)
 
 storiesOf('* Design/Typography', module)
-  .add('Base', () => h => <TypographyBase />, hideAddons)
-  .add('Headings & Displays', () => h => <TypographyHeadings />, hideAddons)
-  .add('Print', () => h => <TypographyPrint />, hideAddons)
+  .add('Base', () => ({ render: h => <TypographyBase /> }), hideAddons)
+  .add('Headings & Displays', () => ({ render: h => <TypographyHeadings /> }), hideAddons)
+  .add('Print', () => ({ render: h => <TypographyPrint /> }), hideAddons)

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Schedio from '@'
-import { checkA11y } from '@storybook/addon-a11y'
-import { withOptions } from '@storybook/addon-options'
-import { addDecorator, configure } from '@storybook/vue'
+import { create } from '@storybook/theming'
+import { addDecorator, addParameters, configure } from '@storybook/vue'
+import { withKnobs } from '@storybook/addon-knobs'
 import Vue from 'vue'
 
 Vue.use(Schedio)
@@ -16,15 +16,20 @@ function loadStories() {
 }
 
 // Set options
-addDecorator(
-  withOptions({
-    name: 'Schédio',
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: 'Schédio',
+      brandImage: null
+    }),
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\//,
-    sortStoriesByKind: true
-  })
-)
+    sortStoriesByKind: true,
+    showPanel: true
+  }
+})
 
-addDecorator(checkA11y)
+addDecorator(withKnobs)
 
 configure(loadStories, module)

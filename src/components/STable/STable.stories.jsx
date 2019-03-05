@@ -4,11 +4,10 @@ import { STableCell } from '@/components/STableCell'
 import { STableRow } from '@/components/STableRow'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
-import { boolean, number, object, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, object, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/STable', module)
-  .addDecorator(withKnobs)
   .add('STable', function STableDocs() {
     const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
     const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
@@ -33,10 +32,10 @@ storiesOf('Components/STable', module)
     return {
       props: {
         props: {
-          default: {
+          default: () => ({
             slotExampleProps,
             propExampleProps
-          }
+          })
         },
         headerCells: { default: makeDummySlotData('header (cells)') },
         bodyRows: { default: makeDummySlotData('default (rows)') },
