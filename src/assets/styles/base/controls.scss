@@ -162,6 +162,7 @@
 
   &:disabled ~ &__check::after {
     background-color: color('grey', 'dark');
+    border: border() !important;
   }
 
   &:not(:disabled) ~ &__check {
@@ -169,8 +170,6 @@
   }
 
   &:checked ~ &__check {
-    border: none;
-
     &::after {
       transform: translateX(calc(100% + 2px));
     }
