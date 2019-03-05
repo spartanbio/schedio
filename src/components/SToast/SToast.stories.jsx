@@ -94,6 +94,10 @@ storiesOf('Components/SToast', module).add('SToast', () => {
             also be used to trigger another action. To do so, just pass a function to the{' '}
             <code>action</code> prop.
           </p>
+          <p>
+            <code>{'<SToast />'}</code> is registered programattically. To use it, call{' '}
+            <code>this.$toast.open()</code>.
+          </p>
 
           <SHeading level="2">Example</SHeading>
 
