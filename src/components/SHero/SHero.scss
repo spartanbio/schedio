@@ -19,12 +19,10 @@
     align-items: center;
     flex: 1 0 auto;
     padding: spacing();
+  }
 
-    .container {
-      padding: spacing('none');
-    }
-
-    &--no-padding {
+  &--has-no-padding {
+    .hero__body {
       padding: spacing('none');
     }
   }
