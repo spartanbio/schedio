@@ -2,35 +2,36 @@
 import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
 import StoryContainer from '@/docs/StoryContainer'
-import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, radios, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 const headingLevels = ['1', '2', '3', '4']
 const displayLevels = ['1', '2']
-const options = radios(
-  'Pick one',
-  ['Default', 'has-no-case', 'is-subtle'],
-  'Default',
-  'Optional props'
-)
+
 const tagOptions = ['', 'div', 'span', 'a']
 
 storiesOf('Components/SHeading', module)
-  .addDecorator(withKnobs)
   .add('Heading', function Heading() {
+    const options = radios(
+      'Pick one',
+      ['Default', 'has-no-case', 'is-subtle'],
+      'Default',
+      'Optional Props'
+    )
+
     return {
       props: {
         props: {
-          default: {
-            level: select('level', headingLevels, '1', 'Optional props'),
-            displayLevel: select('display-level', displayLevels, '1', 'Optional props'),
+          default: () => ({
+            level: select('level', headingLevels, '1', 'Optional Props'),
+            displayLevel: select('display-level', displayLevels, '1', 'Optional Props'),
             hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
-            isDisplay: boolean('is-display', false, 'Optional props'),
-            isTitle: boolean('is-title', false, 'Optional props'),
-            isSubtitle: boolean('is-subtitle', false, 'Optional props'),
-            tag: select('tag', tagOptions, '', 'Optional props')
-          }
+            isDisplay: boolean('is-display', false, 'Optional Props'),
+            isTitle: boolean('is-title', false, 'Optional Props'),
+            isSubtitle: boolean('is-subtitle', false, 'Optional Props'),
+            tag: select('tag', tagOptions, '', 'Optional Props')
+          })
         },
         slotContent: {
           default: text('Default', 'Slot content', 'Slots')
@@ -62,16 +63,23 @@ storiesOf('Components/SHeading', module)
     }
   })
   .add('Usage: Headings', function UsageHeadings() {
+    const options = radios(
+      'Pick one',
+      ['Default', 'has-no-case', 'is-subtle'],
+      'Default',
+      'Optional Props'
+    )
+
     return {
       props: {
         props: {
-          default: {
-            level: select('level', headingLevels, '1', 'Optional props'),
+          default: () => ({
+            level: select('level', headingLevels, '1', 'Optional Props'),
             hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
-            isTitle: boolean('is-title', false, 'Optional props'),
-            isSubtitle: boolean('is-subtitle', false, 'Optional props')
-          }
+            isTitle: boolean('is-title', false, 'Optional Props'),
+            isSubtitle: boolean('is-subtitle', false, 'Optional Props')
+          })
         },
         slotContent: {
           default: text('Default', 'Slot content', 'Slots')
@@ -117,22 +125,22 @@ storiesOf('Components/SHeading', module)
       'Pick one',
       ['Default', 'has-no-case', 'is-subtle'],
       'Default',
-      'Optional'
+      'Optional Props'
     )
 
     return {
       props: {
         props: {
-          default: {
-            level: select('level', headingLevels, '1', 'Optional props'),
-            displayLevel: select('display-level', displayLevels, '1', 'Optional props'),
+          default: () => ({
+            level: select('level', headingLevels, '1', 'Optional Props'),
+            displayLevel: select('display-level', displayLevels, '1', 'Optional Props'),
             hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
             isDisplay: true,
-            isTitle: boolean('is-title', false, 'Optional props'),
-            isSubtitle: boolean('is-subtitle', false, 'Optional props'),
-            tag: select('tag', tagOptions, '', 'Optional props')
-          }
+            isTitle: boolean('is-title', false, 'Optional Props'),
+            isSubtitle: boolean('is-subtitle', false, 'Optional Props'),
+            tag: select('tag', tagOptions, '', 'Optional Props')
+          })
         },
         slotContent: {
           default: text('Default', 'Slot content', 'Slots')

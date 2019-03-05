@@ -46,7 +46,6 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/${componentName}', module)
-  .addDecorator(withKnobs)
   .add('${componentName}', () => {
     return {
       render(h) {

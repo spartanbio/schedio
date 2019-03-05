@@ -1,8 +1,8 @@
 const path = require('path')
 const sharedConf = require('../shared-webpack-conf')
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules.push({
+module.exports = ({ config, mode }) => {
+  config.module.rules.push({
     test: /\.scss$/,
     use: [
       'style-loader',
@@ -17,7 +17,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     include: path.resolve(__dirname, '../../src')
   })
 
-  Object.assign(defaultConfig.resolve.alias, sharedConf.aliases)
+  Object.assign(config.resolve.alias, sharedConf.aliases)
 
-  return defaultConfig
+  return config
 }

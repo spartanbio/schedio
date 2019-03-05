@@ -4,21 +4,20 @@ import { SContainerRow } from '@/components/SContainerRow'
 import rowOptions from '@/components/SContainerRow/row-options'
 import { SHeading } from '@/components/SHeading'
 import StoryContainer from '@/docs/StoryContainer'
-import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import orderBy from 'lodash.orderby'
 import mobileBreakpoints from './mobile-breakpoints'
 import PropList from '@/docs/PropList'
 
 storiesOf('Components/SContainer', module)
-  .addDecorator(withKnobs)
   .add('SContainer', function SContainerDocs() {
     return {
       props: {
         props: {
-          default: {
+          default: () => ({
             isFullwidth: boolean('isFullwidth', false)
-          }
+          })
         }
       },
       render(h) {
@@ -67,11 +66,11 @@ storiesOf('Components/SContainer', module)
     return {
       props: {
         props: {
-          default: {
+          default: () => ({
             ...alignProps,
             ...justifyProps,
             isReversed: boolean('isReversed', false, 'Other')
-          }
+          })
         }
       },
       render(h) {
@@ -139,13 +138,13 @@ storiesOf('Components/SContainer', module)
     return {
       props: {
         props: {
-          default: {
+          default: () => ({
             size: number('Generic size', 0, { range: true, min: 0, max: 12, step: 1 }, 'Sizes'),
             ...sizeProps,
             ...offsetProps,
             ...orderProps,
             ...narrowBreakpoints
-          }
+          })
         }
       },
       render(h) {
