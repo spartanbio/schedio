@@ -32,18 +32,21 @@
     }
   }
 
-  &--striped {
+  &--hoverable {
     .table__body {
-      .table__row:nth-child(even) {
-        background-color: lighten(color('grey', 'lighter'), 2%);
+      .table__row {
+        &:hover,
+        &:focus {
+          background-color: color('grey', 'light');
+        }
       }
     }
   }
 
-  &--hoverable {
+  &--striped {
     .table__body {
-      .table__row:hover {
-        background-color: color('grey', 'lighter') !important;
+      .table__row:nth-child(even) {
+        background-color: lighten(color('grey', 'lighter'), 3%);
       }
     }
   }
