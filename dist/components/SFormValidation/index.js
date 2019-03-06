@@ -4931,12 +4931,12 @@ var es7_array_includes = __webpack_require__("6762");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
 var es6_string_includes = __webpack_require__("2fdb");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3b881a5f-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=2614120c&
-var SIconvue_type_template_id_2614120c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
-var SIconvue_type_template_id_2614120c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3b881a5f-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
+var SIconvue_type_template_id_31b076cc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
+var SIconvue_type_template_id_31b076cc_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SIcon/SIcon.vue?vue&type=template&id=2614120c&
+// CONCATENATED MODULE: ./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js
 var keys = __webpack_require__("a4bb");
@@ -5024,6 +5024,7 @@ var dist_icons = __webpack_require__("9eb1");
 
 
 
+//
 //
 //
 //
@@ -5184,8 +5185,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   SIcon_SIconvue_type_script_lang_js_,
-  SIconvue_type_template_id_2614120c_render,
-  SIconvue_type_template_id_2614120c_staticRenderFns,
+  SIconvue_type_template_id_31b076cc_render,
+  SIconvue_type_template_id_31b076cc_staticRenderFns,
   false,
   null,
   null,
