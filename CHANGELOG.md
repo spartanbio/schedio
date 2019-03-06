@@ -1,3 +1,10 @@
+## [2.10.4](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.3...v2.10.4) (2019-03-05)
+
+
+### Bug Fixes
+
+* **hero:** fixes `has-no-padding` prop ([d7b9dd9](https://gitlab.com/spartanbio-marketing/schedio/commit/d7b9dd9))
+
 ## [2.10.3](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.2...v2.10.3) (2019-03-05)
 
 

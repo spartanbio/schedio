@@ -21,7 +21,7 @@ build:
 
 test:
   stage: test
-  script: npm test:generate
+  script: npm run test:generate
   dependencies:
     - build
   artifacts:
