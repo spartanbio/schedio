@@ -1,8 +1,11 @@
 <template>
   <div>
     <div class="typography-intro">
-      <SHeading level="1">Base Typography</SHeading>
-      <p>The base Spartan font parameters are:
+      <SHeading level="1">
+        Base Typography
+      </SHeading>
+      <p>
+        The base Spartan font parameters are:
         <ul class="no-bullets">
           <li>Font: <code>Avenir Next</code></li>
           <li>Size: <code>{{ tokens['base-font-size'] }}</code></li>

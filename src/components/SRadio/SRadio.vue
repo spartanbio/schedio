@@ -8,8 +8,8 @@
     is-inline
   >
     <input
-      v-bind="$attrs"
       :id="id"
+      v-bind="$attrs"
       :name="name"
       :required="required"
       class="radio"

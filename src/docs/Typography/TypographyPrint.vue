@@ -1,6 +1,8 @@
 <template>
   <div>
-    <SHeading level="1">Print Typography</SHeading>
+    <SHeading level="1">
+      Print Typography
+    </SHeading>
     <p>
       <code>16pt</code> would be a bit large for most print typography, so instead, start with a
       base of <code>{{ baseFontSize }}pt</code>. Increase or decrease this size as the print size requires using the
@@ -16,7 +18,9 @@
       >Headings and Displays</a>.
     </blockquote>
 
-    <SHeading level="2">Typography Calculator</SHeading>
+    <SHeading level="2">
+      Typography Calculator
+    </SHeading>
 
     <form>
       <SInput
@@ -32,9 +36,15 @@
       <thead>
         <tr>
           <th class="table__cell" />
-          <th class="table__cell">Size</th>
-          <th class="table__cell">Leading</th>
-          <th class="table__cell">Tracking</th>
+          <th class="table__cell">
+            Size
+          </th>
+          <th class="table__cell">
+            Leading
+          </th>
+          <th class="table__cell">
+            Tracking
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -65,7 +75,6 @@
         </tr>
       </tbody>
     </table>
-
   </div>
 </template>
 

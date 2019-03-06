@@ -3,7 +3,9 @@
     <SHeading
       level="2"
       style="margin-top: 3rem;"
-    >Prop list</SHeading>
+    >
+      Prop list
+    </SHeading>
 
     <STable
       is-striped
@@ -31,12 +33,18 @@
 
           <STableCell>
             <code v-if="typeof defaultValue !== 'undefined'">{{ defaultValue }}</code>
-            <template v-else>&mdash;</template>
+            <template v-else>
+              &mdash;
+            </template>
           </STableCell>
 
           <STableCell>
-            <template v-if="required">{{ required }}</template>
-            <template v-else>&mdash;</template>
+            <template v-if="required">
+              {{ required }}
+            </template>
+            <template v-else>
+              &mdash;
+            </template>
           </STableCell>
         </STableRow>
       </template>

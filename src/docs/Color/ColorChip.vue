@@ -17,7 +17,6 @@
       :style="{ backgroundColor: value }"
       class="palette-card__row"
     >
-
       <div class="palette-card__description">
         <div>
           <strong>Shade: </strong>

@@ -7,12 +7,12 @@
     :is-optional="!required"
     :show-optional="showOptional"
   >
-
     <div
       :class="{ 'select__container--multiple': multiple }"
       class="select__container"
     >
       <select
+        :id="id"
         v-model="selected"
         v-bind="$attrs"
         :class="{
@@ -20,7 +20,6 @@
           'select--has-icon-left': !!iconLeft,
           'select--has-icon-right': !!iconRight
         }"
-        :id="id"
         :multiple="multiple"
         :name="name"
         :required="required"
@@ -39,8 +38,8 @@
         <template v-if="optionsHaveGroups">
           <optgroup
             v-for="(group, groupName) in selectOptions"
-            :label="groupName"
             :key="groupName"
+            :label="groupName"
           >
             <option
               v-for="(option, key) in group"
@@ -123,9 +122,9 @@ export default {
     },
 
     optionsHaveGroups() {
-      if (this.selectOptions) {
-        return Object.values(this.selectOptions).every(value => Array.isArray(value))
-      }
+      if (!this.selectOptions) return false
+
+      return Object.values(this.selectOptions).every(value => Array.isArray(value))
     }
   },
 

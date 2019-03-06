@@ -9,13 +9,13 @@
   >
     <div class="input__container">
       <input
+        :id="id"
         v-bind="$attrs"
         :class="{
           'input--invalid': isInvalid,
           'input--has-icon-left': !!iconLeft,
           'input--has-icon-right': !!iconRight
         }"
-        :id="id"
         :name="name"
         :placeholder="placeholder"
         :required="required"

@@ -116,7 +116,6 @@
         </SContainerColumn>
       </SContainerRow>
     </SContainer>
-
   </div>
 </template>
 

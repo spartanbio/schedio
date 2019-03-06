@@ -1,6 +1,8 @@
 <template>
   <div>
-    <SHeading level="1">Spacing</SHeading>
+    <SHeading level="1">
+      Spacing
+    </SHeading>
     <p>Consistent spacing allows elements to stand out. It improves scannability and reduces noise.</p>
     <p>
       All spacing is defined using the
@@ -12,7 +14,6 @@
       is-bordered
       is-hoverable
     >
-
       <STableRow slot="header">
         <STableCell>Name</STableCell>
         <STableCell>Value</STableCell>
@@ -38,9 +39,7 @@
           />
         </STableCell>
       </STableRow>
-
     </STable>
-
   </div>
 </template>
 

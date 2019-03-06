@@ -18,7 +18,9 @@
     <div
       v-if="computedMessage"
       class="progress-bar__message"
-    >{{ computedMessage }}</div>
+    >
+      {{ computedMessage }}
+    </div>
   </div>
 </template>
 

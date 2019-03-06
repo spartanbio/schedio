@@ -9,13 +9,13 @@
   >
     <div class="textarea__container">
       <textarea
+        :id="id"
         v-bind="$attrs"
         :class="{
           'textarea--invalid': isInvalid,
           'textarea--has-icon-left': !!iconLeft,
           'textarea--has-icon-right': !!iconRight
         }"
-        :id="id"
         :name="name"
         :placeholder="placeholder"
         :required="required"

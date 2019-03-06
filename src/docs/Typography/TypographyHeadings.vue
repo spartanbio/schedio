@@ -75,21 +75,27 @@
     </article>
 
     <article class="typography-example">
-      <SHeading level="2">Heading 2</SHeading>
+      <SHeading level="2">
+        Heading 2
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>
     </article>
 
     <article class="typography-example">
-      <SHeading level="3">Heading 3</SHeading>
+      <SHeading level="3">
+        Heading 3
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>
     </article>
 
     <article class="typography-example">
-      <SHeading level="4">Heading 4</SHeading>
+      <SHeading level="4">
+        Heading 4
+      </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
       </p>

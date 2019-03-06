@@ -1,16 +1,22 @@
 <template>
   <div>
-    <SHeading level="1">Colors</SHeading>
+    <SHeading level="1">
+      Colors
+    </SHeading>
     <p>As a rule, use lots of contrast, and stick to cool colors</p>
 
     <!-- Primary -->
-    <SHeading level="2">Primary</SHeading>
+    <SHeading level="2">
+      Primary
+    </SHeading>
     <p>This is the primary Spartan palette. It's used mostly in layout.</p>
 
     <ColorList :palette="mainPalettes" />
 
     <!-- Secondary -->
-    <SHeading level="2">Secondary</SHeading>
+    <SHeading level="2">
+      Secondary
+    </SHeading>
     <p>This is the secondary Spartan palette. It should be used sparingly for accents.</p>
 
     <ColorList :palette="accentPalettes" />
