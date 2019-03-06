@@ -1,3 +1,10 @@
+## [2.10.5](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.4...v2.10.5) (2019-03-06)
+
+
+### Bug Fixes
+
+* **table:** improves table stripe and higlight colors ([c9196e6](https://gitlab.com/spartanbio-marketing/schedio/commit/c9196e6))
+
 ## [2.10.4](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.3...v2.10.4) (2019-03-05)
 
 

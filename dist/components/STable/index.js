@@ -3628,12 +3628,12 @@ var component = normalizeComponent(
     return Vue.component(STableRow.name, STableRow);
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3b881a5f-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/STableCell/STableCell.vue?vue&type=template&id=fee88042&
-var STableCellvue_type_template_id_fee88042_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.cellType,_vm._b({tag:"component",staticClass:"table__cell",class:{ 'table__cell--numeric': _vm.isNumeric }},'component',_vm.$attrs,false),[_vm._t("default")],2)}
-var STableCellvue_type_template_id_fee88042_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3b881a5f-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/STableCell/STableCell.vue?vue&type=template&id=5f7f8c55&
+var STableCellvue_type_template_id_5f7f8c55_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.cellType,_vm._b({tag:"component",staticClass:"table__cell",class:{ 'table__cell--numeric': _vm.isNumeric }},'component',_vm.$attrs,false),[_vm._t("default")],2)}
+var STableCellvue_type_template_id_5f7f8c55_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/STableCell/STableCell.vue?vue&type=template&id=fee88042&
+// CONCATENATED MODULE: ./src/components/STableCell/STableCell.vue?vue&type=template&id=5f7f8c55&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -3698,8 +3698,8 @@ var es6_number_constructor = __webpack_require__("c5f6");
 
 var STableCell_component = normalizeComponent(
   STableCell_STableCellvue_type_script_lang_js_,
-  STableCellvue_type_template_id_fee88042_render,
-  STableCellvue_type_template_id_fee88042_staticRenderFns,
+  STableCellvue_type_template_id_5f7f8c55_render,
+  STableCellvue_type_template_id_5f7f8c55_staticRenderFns,
   false,
   null,
   null,
