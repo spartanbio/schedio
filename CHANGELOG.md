@@ -1,3 +1,15 @@
+# [2.11.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.5...v2.11.0) (2019-03-07)
+
+
+### Bug Fixes
+
+* **table:** hover background color overrides stripe color ([24008e5](https://gitlab.com/spartanbio-marketing/schedio/commit/24008e5))
+
+
+### Features
+
+* **table:** makes tables responsive ([8711726](https://gitlab.com/spartanbio-marketing/schedio/commit/8711726))
+
 ## [2.10.5](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.4...v2.10.5) (2019-03-06)
 
 
