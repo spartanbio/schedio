@@ -3,7 +3,7 @@
     href="#"
     class="link"
     @click.prevent="navigate(to, story)"
-  >{{ text }}</a>
+  ><slot>{{ text }}</slot></a>
 </template>
 
 <script>

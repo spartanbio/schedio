@@ -9,10 +9,12 @@
       </p>
       <p>
         The <code>SHeading</code> component can be used for headings and displays. Find it
-        <a
-          href="#"
-          @click.prevent="linkToComponent"
-        >here</a>.
+        <StoryLink
+          to="Components/Layout.SHeading"
+          story="Heading"
+        >
+          here.
+        </StoryLink>
       </p>
     </div>
 
@@ -104,19 +106,19 @@
 </template>
 
 <script>
-import { linkTo } from '@storybook/addon-links'
+import StoryLink from '@/docs/StoryLink.vue'
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
 
 export default {
   name: 'TypographyHeadings',
 
+  components: {
+    StoryLink
+  },
+
   data: () => ({
     tokens
-  }),
-
-  methods: {
-    linkToComponent: linkTo('SHeading', 'Headings')
-  }
+  })
 }
 </script>
 
