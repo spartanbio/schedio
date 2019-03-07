@@ -134,6 +134,23 @@ storiesOf('Components/Tables.STable', module)
               </template>
             </STable>
 
+            <SHeading level="3">Responsive Tables</SHeading>
+            <p>
+              Tables are automatically responsive and scroll when they are too wide for their
+              parent. An overlay will be added to either side that has hidden content.
+            </p>
+
+            <STable>
+              <template slot="header">
+                <STableCell>Narrow</STableCell>
+                <STableCell>Very wide</STableCell>
+              </template>
+              <STableCell>This is narrow.</STableCell>
+              <STableCell style="min-width: 100vw; background-color: whitesmoke;">
+                This is very wide.
+              </STableCell>
+            </STable>
+
             <PropList component={STable} />
           </div>
         )
