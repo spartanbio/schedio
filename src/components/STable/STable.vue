@@ -1,69 +1,76 @@
 <template>
-  <table
-    v-bind="$attrs"
-    :class="classList"
-    class="table"
+  <div
+    class="table__overlay"
+    :class="overlayClassList"
   >
-    <caption
-      v-if="$slots.caption || caption"
-      :class="{ 'table__caption--top': hasCaptionTop }"
-      class="table__caption"
-    >
-      <slot name="caption" />
-
-      {{ caption }}
-    </caption>
-
-    <thead
-      v-if="!hideHeader && ($slots.header || headerCells.length)"
-      class="table__header"
-    >
-      <slot name="header" />
-
-      <STableRow>
-        <STableCell
-          v-for="(cell, key) in headerCells"
-          :key="key"
-        >
-          {{ cell.value || cell | startCase }}
-        </STableCell>
-      </STableRow>
-    </thead>
-
-    <tbody class="table__body">
-      <slot />
-
-      <STableRow
-        v-for="(row, key) in tableData"
-        :key="key"
+    <div class="table__container">
+      <table
+        v-bind="$attrs"
+        :class="tableClassList"
+        class="table"
       >
-        <STableCell
-          v-for="cell in row"
-          :key="cell"
-          :is-header="cell.header"
-          :is-numeric="typeof cell === 'number'"
+        <caption
+          v-if="$slots.caption || caption"
+          :class="{ 'table__caption--top': hasCaptionTop }"
+          class="table__caption"
         >
-          {{ cell.value || cell }}
-        </STableCell>
-      </STableRow>
-    </tbody>
+          <slot name="caption" />
 
-    <tfoot
-      v-if="$slots.footer || footerCells.length"
-      class="table__footer"
-    >
-      <slot name="footer" />
+          {{ caption }}
+        </caption>
 
-      <STableRow>
-        <STableCell
-          v-for="(cell, key) in footerCells"
-          :key="key"
+        <thead
+          v-if="!hideHeader && ($slots.header || headerCells.length)"
+          class="table__header"
         >
-          {{ cell.value || cell | startCase }}
-        </STableCell>
-      </STableRow>
-    </tfoot>
-  </table>
+          <slot name="header" />
+
+          <STableRow>
+            <STableCell
+              v-for="(cell, key) in headerCells"
+              :key="key"
+            >
+              {{ cell.value || cell | startCase }}
+            </STableCell>
+          </STableRow>
+        </thead>
+
+        <tbody class="table__body">
+          <slot />
+
+          <STableRow
+            v-for="(row, key) in tableData"
+            :key="key"
+          >
+            <STableCell
+              v-for="cell in row"
+              :key="cell"
+              :is-header="cell.header"
+              :is-numeric="typeof cell === 'number'"
+            >
+              {{ cell.value || cell }}
+            </STableCell>
+          </STableRow>
+        </tbody>
+
+        <tfoot
+          v-if="$slots.footer || footerCells.length"
+          class="table__footer"
+        >
+          <slot name="footer" />
+
+          <STableRow>
+            <STableCell
+              v-for="(cell, key) in footerCells"
+              :key="key"
+            >
+              {{ cell.value || cell | startCase }}
+            </STableCell>
+          </STableRow>
+        </tfoot>
+      </table>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -126,13 +133,38 @@ export default {
     }
   },
 
+  data() {
+    return {
+      container: null,
+      containerWidth: 0,
+      tableWidth: 0,
+      distanceToScroll: 0,
+      horizontalScrollPosition: 0
+    }
+  },
+
   computed: {
-    classList() {
+    overlayClassList() {
+      return {
+        'table__overlay--left': this.isScrolled,
+        'table__overlay--right': this.isFullyScrolled
+      }
+    },
+
+    tableClassList() {
       return {
         'table--bordered': this.isBordered,
         'table--hoverable': this.isHoverable,
         'table--striped': this.isStriped
       }
+    },
+
+    isScrolled() {
+      return this.horizontalScrollPosition > 0
+    },
+
+    isFullyScrolled() {
+      return this.horizontalScrollPosition < this.distanceToScroll
     },
 
     headerCells() {
@@ -161,6 +193,38 @@ export default {
     // check keys in case object is passed
     if (!Object.keys(this.tableData).length && !this.$slots.default) {
       console.error(`\`${this.$options.name}\` requires \`tableData\` prop or default slot content`)
+    }
+  },
+
+  mounted() {
+    this.container = this.$el.querySelector('.table__container')
+    this.checkForOverflow()
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.checkForOverflow)
+      this.container.addEventListener('scroll', this.checkOverflowSide)
+    }
+  },
+
+  destroyed() {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.checkForOverflow)
+      this.container.removeEventListener('scroll', this.checkOverflowSide)
+    }
+  },
+
+  methods: {
+    checkForOverflow(e) {
+      const table = this.$el.querySelector('.table')
+
+      this.containerWidth = this.container.clientWidth
+      this.tableWidth = table.scrollWidth
+      this.distanceToScroll = this.tableWidth - this.containerWidth
+      this.horizontalScrollPosition = table.scrollLeft
+    },
+
+    checkOverflowSide(e) {
+      this.horizontalScrollPosition = e.target.scrollLeft
     }
   }
 }
