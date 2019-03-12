@@ -42,10 +42,11 @@ export default {
   mounted() {
     // make $el available to computed
     this.parentTag = this.$parent.$el.parentNode.tagName
+  },
 
-    let innerText = this.$el.innerText
-    if (this.isNumeric && isFinite(innerText)) {
-      this.$el.innerText = Number(innerText).toLocaleString()
+  updated() {
+    if (this.isNumeric && isFinite(this.$el.innerText)) {
+      this.$el.innerText = Number(this.$el.innerText).toLocaleString()
     }
   }
 }
