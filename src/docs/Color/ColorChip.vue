@@ -4,7 +4,7 @@
     class="palette-card"
   >
     <SHeading
-      slot="header"
+      v-slot:header
       level="3"
       is-title
     >
