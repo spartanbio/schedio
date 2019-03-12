@@ -91,6 +91,10 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
     &:last-child {
       border-bottom-left-radius: $palette-border-radius;
       border-bottom-right-radius: $palette-border-radius;
+
+      .palette-card__description {
+        border-bottom-right-radius: $palette-border-radius;
+      }
     }
 
     &:not(:first-child) {
