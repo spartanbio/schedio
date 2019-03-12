@@ -142,41 +142,64 @@
 
 @mixin switch {
   @include check-or-radio;
+  // save the parent to make nesting easier
+  $parent: &;
 
   & ~ &__check {
     @include switch-size;
-
+    // override border and shadow
+    border: border() !important;
+    box-shadow: shadow() !important;
     justify-content: flex-start;
-
+    // the switch knob
     &::after {
       background: color('white');
       border: border();
       border-radius: border-radius('circle');
-      box-shadow: shadow();
       content: '';
       left: -1px;
       position: relative;
       transition: all duration() easing('in');
     }
   }
-
+  // use default browser focus styling
+  &:focus ~ &__check {
+    outline-color: rgb(77, 144, 254) !important;
+    outline-offset: -2px !important;
+    outline-style: auto !important;
+    outline-width: 5px !important;
+  }
+  // disabled switch knob
   &:disabled ~ &__check::after {
     background-color: color('grey', 'dark');
     border: border() !important;
   }
-
+  // pointer on hover
   &:not(:disabled) ~ &__check {
     cursor: pointer;
   }
 
-  &:checked ~ &__check {
-    &::after {
+  // slide the switch and change background
+  &:checked {
+    ~ #{$parent}__check::after {
       transform: translateX(calc(100% + 2px));
+    }
+
+    &:not(:disabled) ~ #{$parent}__check {
+      background-color: color('green');
     }
   }
 
-  &:checked:not(:disabled) ~ &__check {
-    background-color: color('green');
+  // slide the switch a little on hover
+  &:hover:not(:focus):not(:disabled) {
+    // unchecked comes from left
+    &:not(:checked) ~ #{$parent}__check::after {
+      transform: translateX(spacing('half'));
+    }
+    // checked comes from right
+    &:checked ~ #{$parent}__check::after {
+      transform: translateX(spacing());
+    }
   }
 }
 
