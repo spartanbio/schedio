@@ -93,10 +93,14 @@ export default {
         let defaultValue
 
         if (typeof details.default === 'function') {
+          // mostly handles props that default to an array or object
           defaultValue = typeof details.default() !== 'undefined' ? details.default() : '() => {}'
         } else if (details.default === '') {
+          // empty strings should still be rendered
           defaultValue = '""'
-        } else {
+        } else if (typeof details.default !== 'undefined') {
+          // some props have a default value of `null` while others are truly undefined
+          // if `null`, 'null' will be rendered
           defaultValue = String(details.default)
         }
 
