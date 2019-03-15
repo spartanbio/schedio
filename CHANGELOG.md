@@ -1,3 +1,15 @@
+# [2.12.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.11.0...v2.12.0) (2019-03-15)
+
+
+### Bug Fixes
+
+* **table-cell:** updates numeric cells on change ([2d279ab](https://gitlab.com/spartanbio-marketing/schedio/commit/2d279ab))
+
+
+### Features
+
+* **switch:** makes switch states less garish ([9d1c488](https://gitlab.com/spartanbio-marketing/schedio/commit/9d1c488))
+
 # [2.11.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.10.5...v2.11.0) (2019-03-07)
 
 
