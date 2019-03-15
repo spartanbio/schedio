@@ -14,7 +14,7 @@
       is-bordered
       is-hoverable
     >
-      <STableRow slot="header">
+      <STableRow v-slot:header>
         <STableCell>Name</STableCell>
         <STableCell>Value</STableCell>
         <STableCell>Example</STableCell>
