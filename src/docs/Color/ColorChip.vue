@@ -3,13 +3,14 @@
     has-no-padding
     class="palette-card"
   >
-    <SHeading
-      v-slot:header
-      level="3"
-      is-title
-    >
-      {{ heading | underscoreToSpace }}
-    </SHeading>
+    <template v-slot:header>
+      <SHeading
+        level="3"
+        is-title
+      >
+        {{ heading | underscoreToSpace }}
+      </SHeading>
+    </template>
 
     <div
       v-for="({ name, value }) in palette"
