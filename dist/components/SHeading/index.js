@@ -972,12 +972,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"584bbaf5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SHeading/SHeading.vue?vue&type=template&id=5ec15632&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"584bbaf5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SHeading/SHeading.vue?vue&type=template&id=717a7582&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.componentTag,{tag:"component",class:_vm.classList},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SHeading/SHeading.vue?vue&type=template&id=5ec15632&
+// CONCATENATED MODULE: ./src/components/SHeading/SHeading.vue?vue&type=template&id=717a7582&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
 var es7_array_includes = __webpack_require__("6762");
@@ -1038,14 +1038,10 @@ var es6_number_constructor = __webpack_require__("c5f6");
       type: String,
       default: '',
       validator: function validator(value) {
-        // allow empty
-        if (!value) return true;
         var allowedTags = ['div', 'span', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-
-        if (!allowedTags.includes(value)) {
-          console.error("Tag must be one of: ".concat(allowedTags.join(', '), "."));
-          return false;
-        }
+        return (// allow empty
+          !value || allowedTags.includes(value) || console.error("Tag must be one of: ".concat(allowedTags.join(', '), "."))
+        );
       }
     }
   },

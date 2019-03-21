@@ -1,3 +1,15 @@
+# [2.13.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.12.0...v2.13.0) (2019-03-21)
+
+
+### Bug Fixes
+
+* **heading:** fixes `tag` validation ([23ef081](https://gitlab.com/spartanbio-marketing/schedio/commit/23ef081))
+
+
+### Features
+
+* **spacing:** adds `spacing-tight` (0.75em) ([13c9d8f](https://gitlab.com/spartanbio-marketing/schedio/commit/13c9d8f))
+
 # [2.12.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.11.0...v2.12.0) (2019-03-15)
 
 
