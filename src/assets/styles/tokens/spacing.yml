@@ -5,6 +5,8 @@ props:
     value: '0.25em'
   spacing-half:
     value: '0.5em'
+  spacing-tight:
+    value: '0.75em'
   spacing-base:
     value: '1em'
   spacing-loose:
