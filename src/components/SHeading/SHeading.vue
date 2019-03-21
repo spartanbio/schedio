@@ -53,15 +53,14 @@ export default {
       type: String,
       default: '',
       validator: value => {
-        // allow empty
-        if (!value) return true
-
         const allowedTags = ['div', 'span', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
-        if (!allowedTags.includes(value)) {
+        return (
+          // allow empty
+          !value ||
+          allowedTags.includes(value) ||
           console.error(`Tag must be one of: ${allowedTags.join(', ')}.`)
-          return false
-        }
+        )
       }
     }
   },
