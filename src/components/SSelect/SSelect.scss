@@ -15,6 +15,12 @@
       @include arrow('down', 'right');
     }
 
+    &--disabled {
+      &::after {
+        border-color: color('night', 'lighter');
+      }
+    }
+
     &--multiple {
       &::after {
         display: none;

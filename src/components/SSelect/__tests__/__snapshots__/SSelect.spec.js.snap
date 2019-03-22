@@ -19,6 +19,25 @@ exports[`SSelect.vue can be a multiple select 1`] = `
 </slabel-stub>
 `;
 
+exports[`SSelect.vue can be disabled correctly 1`] = `
+<slabel-stub label="Select" showoptional="true" for="select">
+  <div class="select__container select__container--disabled"><select id="select" name="select" required="required" class="select" disabled="disabled">
+      <option hidden="hidden" value="" disabled="disabled">
+        Select an option
+      </option>
+      <option value="one">
+        one
+      </option>
+      <option value="two">
+        two
+      </option>
+    </select>
+    <!---->
+    <!---->
+  </div>
+</slabel-stub>
+`;
+
 exports[`SSelect.vue can be fullwidth 1`] = `
 <slabel-stub label="Select" showoptional="true" for="select" isfullwidth="true">
   <div class="select__container"><select id="select" name="select" required="required" class="select">

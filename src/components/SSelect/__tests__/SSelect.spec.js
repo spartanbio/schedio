@@ -142,4 +142,9 @@ describe('SSelect.vue', () => {
     expect(wrapper.text()).not.toContain('Optional')
     expect(wrapper.html()).toMatchSnapshot()
   })
+
+  it('can be disabled correctly', () => {
+    wrapper.setProps({ disabled: 'disabled' })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

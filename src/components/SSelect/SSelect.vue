@@ -8,7 +8,10 @@
     :show-optional="showOptional"
   >
     <div
-      :class="{ 'select__container--multiple': multiple }"
+      :class="{
+        'select__container--multiple': multiple,
+        'select__container--disabled': $attrs.disabled,
+      }"
       class="select__container"
     >
       <select
