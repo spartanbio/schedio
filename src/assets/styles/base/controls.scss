@@ -1,10 +1,6 @@
 @mixin control-border-shadow {
   box-shadow: 0 0 0 2px color('spartan_blue', 'light'), shadow();
   border-color: transparent;
-}
-
-@mixin control-focus {
-  @include control-border-shadow;
   outline: none;
 }
 
@@ -32,16 +28,12 @@
   transition: all duration() easing();
   width: 100%;
 
-  &:focus {
-    border-color: transparent;
-  }
-
   &:disabled {
     @include control-disabled;
   }
 
   &:focus:not(:disabled) {
-    @include control-focus;
+    @include control-border-shadow;
   }
 
   // stylelint-disable no-descending-specificity
@@ -107,7 +99,7 @@
   }
 
   &:focus:not(:disabled) ~ &__check {
-    @include control-focus;
+    @include control-border-shadow;
   }
 
   &:checked:not(:focus):not(:disabled) ~ &__check {
