@@ -10,10 +10,13 @@
 
 @mixin control-disabled {
   background-color: color('grey', 'light');
+  border: border();
+  box-shadow: none !important;
   cursor: not-allowed;
 }
 
 @mixin control-invalid {
+  border-color: transparent;
   box-shadow: 0 0 0 2px color('red'), shadow() !important;
 }
 
