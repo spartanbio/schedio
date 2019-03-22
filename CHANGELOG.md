@@ -1,3 +1,15 @@
+## [2.13.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.13.0...v2.13.1) (2019-03-22)
+
+
+### Bug Fixes
+
+* **inputs:** fixes invalid border color ([36c4ef5](https://gitlab.com/spartanbio-marketing/schedio/commit/36c4ef5))
+* **inputs:** removes redundant mixin ([dac92a7](https://gitlab.com/spartanbio-marketing/schedio/commit/dac92a7))
+* **select:** disables pointer events on arrow ([d4ab445](https://gitlab.com/spartanbio-marketing/schedio/commit/d4ab445))
+* **select:** fixes select arrow disabled color ([1faa024](https://gitlab.com/spartanbio-marketing/schedio/commit/1faa024))
+* **switch:** fixes disabled state ([857a0c0](https://gitlab.com/spartanbio-marketing/schedio/commit/857a0c0))
+* **switch:** fixes invalid state ([eb902b6](https://gitlab.com/spartanbio-marketing/schedio/commit/eb902b6))
+
 # [2.13.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.12.0...v2.13.0) (2019-03-21)
 
 
