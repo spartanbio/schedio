@@ -172,7 +172,7 @@
   }
   // disabled switch knob
   &:disabled ~ &__check::after {
-    background-color: color('grey', 'dark');
+    background-color: color('grey');
     border: border() !important;
   }
   // pointer on hover
