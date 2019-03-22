@@ -157,6 +157,12 @@
       transition: all duration() easing('in');
     }
   }
+
+  & ~ &__check--invalid {
+    border-color: transparent !important;
+    box-shadow: 0 0 0 2px color('red'), shadow() !important;
+  }
+
   // use default browser focus styling
   &:focus ~ &__check {
     outline-color: rgb(77, 144, 254) !important;
