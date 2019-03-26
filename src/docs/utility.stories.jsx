@@ -24,7 +24,6 @@ storiesOf('Utilities/Typography', module)
       )
     }
   }))
-
   .add('Color', () => ({
     render(h) {
       const colors = Object.values(props)
@@ -89,6 +88,19 @@ storiesOf('Utilities/Typography', module)
                 </li>
               ))}
             </ul>
+          </p>
+        </div>
+      )
+    }
+  }))
+  .add('Markdown', () => ({
+    render(h) {
+      return (
+        <div>
+          <SHeading>Markdown</SHeading>
+          <p>
+            To format markdown converted to HTML, add the <code>.markdown</code> class to its
+            container.
           </p>
         </div>
       )
