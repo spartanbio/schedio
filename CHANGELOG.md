@@ -1,3 +1,10 @@
+# [2.14.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.13.1...v2.14.0) (2019-03-26)
+
+
+### Features
+
+* **markdown:** adds markdown utility class ([6dc1a43](https://gitlab.com/spartanbio-marketing/schedio/commit/6dc1a43))
+
 ## [2.13.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.13.0...v2.13.1) (2019-03-22)
 
 

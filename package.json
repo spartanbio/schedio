@@ -1,6 +1,6 @@
 {
   "name": "schedio-design",
-  "version": "2.13.1",
+  "version": "2.14.0",
   "private": true,
   "scripts": {
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
