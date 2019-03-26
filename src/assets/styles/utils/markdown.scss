@@ -1,0 +1,110 @@
+.markdown {
+  h1 {
+    @include font-size(3);
+  }
+
+  h2 {
+    @include font-size(4);
+  }
+
+  h3 {
+    @include font-size(5);
+  }
+
+  h4 {
+    @include font-size(5);
+    text-transform: none;
+  }
+
+  h5 {
+    @include font-size(6);
+  }
+
+  h6 {
+    @include font-size(6);
+    font-weight: $font-weight-light;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $font-weight-bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  a {
+    $highlight-spacing: 0.1em;
+
+    color: color('spartan_blue');
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    // Required for `z-index` to work properly on `::before`
+    z-index: 1;
+
+    // Add an obvious highlight
+    &::before {
+      background-color: color('green', 'lighter');
+      border-radius: border-radius('small');
+      // Move it up a bit. Uses bottom so highlight animates up
+      // Percentages are favoured over ems as measurements are based on line-height.
+      bottom: 10%;
+      content: '';
+      // Give it just a bit of visual padding
+      left: -1 * $highlight-spacing;
+      // Approximately align top with baseline
+      height: 20%;
+      position: absolute;
+      transition: all duration('fast') easing();
+      // Adjusts for left offset
+      width: unquote('calc(100% + #{2 * $highlight-spacing})');
+      z-index: -1;
+    }
+
+    // Animate the highlight
+    &:hover {
+      &::before {
+        // Height is approximately from the bottom of `::before` to the top of the link text
+        height: 80%;
+      }
+    }
+  }
+
+  &:visited {
+    &::before {
+      background-color: color('grey', 'light');
+    }
+  }
+}
+
+.embed-container {
+  height: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe,
+  object,
+  embed {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
