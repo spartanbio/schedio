@@ -4,7 +4,7 @@ import { toastTypes, positions } from '../options'
 
 describe('SToast.vue', () => {
   jest.useFakeTimers()
-  const errorSpy = jest.spyOn(global.console, 'error') // .mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
   let wrapper
 
   beforeEach(() => {

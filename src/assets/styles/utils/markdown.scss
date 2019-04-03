@@ -82,12 +82,18 @@
         height: 80%;
       }
     }
+
+    &:visited {
+      &::before {
+        background-color: color('grey', 'light');
+      }
+    }
   }
 
-  &:visited {
-    &::before {
-      background-color: color('grey', 'light');
-    }
+  blockquote {
+    @extend .callout;
+
+    margin: 0;
   }
 }
 
