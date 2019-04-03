@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SCallout.vue accepts slot content 1`] = `<div class="callout">I am slot text</div>`;
+
+exports[`SCallout.vue can have type  1`] = `<div class="callout"></div>`;
+
+exports[`SCallout.vue can have type error 1`] = `<div class="callout callout--error"></div>`;
+
+exports[`SCallout.vue can have type success 1`] = `<div class="callout callout--success"></div>`;
+
+exports[`SCallout.vue can have type warning 1`] = `<div class="callout callout--warning"></div>`;
+
+exports[`SCallout.vue renders correctly 1`] = `<div class="callout"></div>`;

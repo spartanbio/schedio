@@ -7,6 +7,7 @@ import './assets/styles.scss'
 import Vue from 'vue'
 import SButton from './components/SButton'
 import SButtonGroup from './components/SButtonGroup'
+import SCallout from './components/SCallout'
 import SCard from './components/SCard'
 import SCardContainer from './components/SCardContainer'
 import SCheckbox from './components/SCheckbox'
@@ -36,6 +37,7 @@ const Schedio = {
   install(Vue) {
     Vue.use(SButton)
     Vue.use(SButtonGroup)
+    Vue.use(SCallout)
     Vue.use(SCard)
     Vue.use(SCardContainer)
     Vue.use(SCheckbox)
@@ -69,6 +71,7 @@ export default Schedio
 
 export { SButton } from './components/SButton'
 export { SButtonGroup } from './components/SButtonGroup'
+export { SCallout } from './components/SCallout'
 export { SCard } from './components/SCard'
 export { SCardContainer } from './components/SCardContainer'
 export { SCheckbox } from './components/SCheckbox'
