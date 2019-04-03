@@ -29,7 +29,7 @@ storiesOf('Components/SCallout', module)
         return (
           <div>
             <SHeading level="1">SCallout</SHeading>
-            <p>Describe the component here</p>
+            <p>Callouts are used to place special emphasis on text and call attention to it.</p>
 
             <SHeading level="2">Example</SHeading>
             <SCallout {...{ props }}>{slots.default}</SCallout>
