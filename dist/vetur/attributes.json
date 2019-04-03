@@ -39,6 +39,10 @@
     "description": "Boolean value.",
     "type": "boolean"
   },
+  "s-callout/callout-type": {
+    "description": "String value.",
+    "type": "string"
+  },
   "s-card/tag": {
     "description": "String value.",
     "type": "string"

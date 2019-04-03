@@ -21,6 +21,13 @@
     "subtags": [],
     "description": "Schedio component: <s-button-group>"
   },
+  "s-callout": {
+    "attributes": [
+      "callout-type"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-callout>"
+  },
   "s-card": {
     "attributes": [
       "tag",

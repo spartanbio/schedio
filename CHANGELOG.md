@@ -1,3 +1,10 @@
+# [2.15.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.14.0...v2.15.0) (2019-04-03)
+
+
+### Features
+
+* **callout:** adds callout component ([8bbd7a6](https://gitlab.com/spartanbio-marketing/schedio/commit/8bbd7a6))
+
 # [2.14.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.13.1...v2.14.0) (2019-03-26)
 
 
