@@ -42,8 +42,8 @@
 
   &__action {
     align-self: stretch;
-    border-bottom-right-radius: border-radius();
-    border-top-right-radius: border-radius();
+    border-bottom-right-radius: border-radius('small');
+    border-top-right-radius: border-radius('small');
     background-color: transparent;
     color: color('spartan_blue');
     cursor: pointer;
