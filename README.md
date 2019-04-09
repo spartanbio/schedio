@@ -83,7 +83,7 @@ project root.
 
 ```bash
 # Build Theo tokens
-$ npm run theo
+$ npm run dist:tokens
 
 # Served at localhost:6006
 # Watches Vue components, SCSS, Storybook stories, and Theo tokens

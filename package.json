@@ -3,6 +3,7 @@
   "version": "2.15.1",
   "private": true,
   "scripts": {
+    "ase-encode": " node ./scripts/ase-encode.js",
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "serve": "npm run serve:storybook",
     "build": "vue-cli-service build --target lib ./src/index.js && rm dist/demo.html",
@@ -10,6 +11,7 @@
     "lint": "run-p lint:vue lint:style",
     "build:storybook": "build-storybook -s ./static -c config/storybook",
     "dev": "run-p serve:storybook theo:onchange",
+    "dist:tokens": "run-s theo ase-encode",
     "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
     "lint:vue": "vue-cli-service lint ./{src,config,scripts}/**/*.js",
     "scaffold": "node ./scripts/scaffold-component.js",
@@ -18,7 +20,7 @@
     "test": "run-s test:unit",
     "test:generate": "vue-cli-service test:unit --json --outputFile=.jest-test-results.json || true && echo `git commit -am 'test: updates test results'`",
     "test:unit": "vue-cli-service test:unit",
-    "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
+    "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format ase.json,color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
     "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo"
   },
   "dependencies": {
@@ -50,6 +52,7 @@
     "@vue/cli-service": "^3.5.3",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.29",
+    "ase-utils": "^0.1.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-syntax-jsx": "^6.18.0",
