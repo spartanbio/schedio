@@ -22,12 +22,12 @@ storiesOf('* Design/Assets', module).add('Design Assets', () => ({
         <SHeading>Design assets</SHeading>
         <p>
           To use these components and styles in Adobe XD,{' '}
-          <SLink to="assets/schedio-components-01.xd">use this file</SLink>.
+          <SLink to="assets/schedio-components-02.xd">use this file</SLink>.
         </p>
 
         <p>
           The latest version of that file can be found on Spartan's server at{' '}
-          <code>S:\Sales & Marketing\Marketing and UI\Schedio Components_01.xd</code>
+          <code>S:\Sales & Marketing\Marketing and UI\Schedio Components_02.xd</code>
         </p>
       </StoryContainer>
     )
