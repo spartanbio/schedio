@@ -1,3 +1,10 @@
+## [2.15.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.15.0...v2.15.1) (2019-04-09)
+
+
+### Bug Fixes
+
+* **typography:** improves legibility ([ad197a9](https://gitlab.com/spartanbio-marketing/schedio/commit/ad197a9))
+
 # [2.15.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.14.0...v2.15.0) (2019-04-03)
 
 
