@@ -17,7 +17,7 @@ body {
   font-family: $font-family-sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-regular;
   margin: spacing('none');
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -100,7 +100,7 @@ textarea {
   border: none;
   font-family: inherit;
   font-size: inherit;
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-regular;
   line-height: inherit;
 }
 

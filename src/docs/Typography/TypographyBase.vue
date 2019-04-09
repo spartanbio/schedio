@@ -9,7 +9,7 @@
         <ul class="no-bullets">
           <li>Font: <code>Avenir Next</code></li>
           <li>Size: <code>{{ tokens['base-font-size'] }}</code></li>
-          <li>Weight: <code>{{ tokens['font-weight-light'] }}</code> (Light)</li>
+          <li>Weight: <code>{{ tokens['font-weight-regular'] }}</code> (Regular)</li>
           <li>Color: <code>{{ tokens['night'] }}</code></li>
           <li>Leading: <code>{{ tokens['base-line-height'] }}</code></li>
         </ul>
@@ -19,7 +19,7 @@
     <article class="typography-example">
       <p>Body</p>
       <p class="caption">
-        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-light'] }}
+        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-regular'] }}
       </p>
     </article>
 

@@ -8,8 +8,8 @@ props:
   font-weight-bold:
     value: '700'
     category: font-weight
-  font-weight-light:
-    value: '300'
+  font-weight-demi:
+    value: '600'
     category: font-weight
   font-weight-regular:
     value: '400'
