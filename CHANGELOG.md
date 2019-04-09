@@ -1,3 +1,10 @@
+# [2.16.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.15.2...v2.16.0) (2019-04-09)
+
+
+### Features
+
+* **tokens:** writes adobe swatch file ([c56c897](https://gitlab.com/spartanbio-marketing/schedio/commit/c56c897))
+
 ## [2.15.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.15.1...v2.15.2) (2019-04-09)
 
 
