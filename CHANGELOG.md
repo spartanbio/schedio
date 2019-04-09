@@ -1,3 +1,11 @@
+## [2.15.2](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.15.1...v2.15.2) (2019-04-09)
+
+
+### Bug Fixes
+
+* **toast:** uses correct border-radius ([2b9ab46](https://gitlab.com/spartanbio-marketing/schedio/commit/2b9ab46))
+* **toast:** uses correct border-radius for toast action ([d328dec](https://gitlab.com/spartanbio-marketing/schedio/commit/d328dec))
+
 ## [2.15.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.15.0...v2.15.1) (2019-04-09)
 
 
