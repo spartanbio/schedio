@@ -3096,12 +3096,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9eb7ae9e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=9b8591e4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9eb7ae9e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=1e5d983e&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"button-group",class:_vm.classList},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=9b8591e4&
+// CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=1e5d983e&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -3239,12 +3239,25 @@ var sizes = ['small', 'regular', 'large'];
       default: false
     }
   },
+  data: function data() {
+    return {
+      isDisabled: false
+    };
+  },
   computed: {
     classList: function classList() {
       var _ref;
 
-      return _ref = {}, _defineProperty(_ref, "button-group--color-".concat(this.groupColor), this.groupColor), _defineProperty(_ref, "button-group--color-".concat(this.groupOutlineColor, "-outlined"), this.groupOutlineColor), _defineProperty(_ref, 'button-group--grouped', this.isGrouped), _ref;
+      return _ref = {}, _defineProperty(_ref, "button-group--color-".concat(this.groupColor), this.groupColor), _defineProperty(_ref, "button-group--color-".concat(this.groupOutlineColor, "-outlined"), this.groupOutlineColor), _defineProperty(_ref, 'button-group--grouped', this.isGrouped), _defineProperty(_ref, 'button-group--disabled', this.isDisabled), _ref;
     }
+  },
+  updated: function updated() {
+    var buttons = this.$children.filter(function (child) {
+      return child.$options.name === 'SButton';
+    });
+    this.isDisabled = buttons.every(function (button) {
+      return !!button.$attrs.disabled;
+    });
   }
 });
 // CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=script&lang=js&
