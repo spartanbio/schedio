@@ -62,26 +62,25 @@
     position: relative;
 
     #{$root-class}__icon {
-      margin: 0 spacing('half');
       position: absolute;
       top: spacing('half');
 
       &--left {
-        left: 0;
+        left: spacing('half');
       }
 
       &--right {
-        right: 0;
+        right: spacing('half');
       }
     }
   }
 
   &--has-icon-left {
-    padding-left: spacing('double') + spacing('quarter');
+    padding-left: spacing('double') + spacing('half');
   }
 
   &--has-icon-right {
-    padding-right: spacing('double') + spacing('quarter');
+    padding-right: spacing('double') + spacing('half');
   }
 }
 
