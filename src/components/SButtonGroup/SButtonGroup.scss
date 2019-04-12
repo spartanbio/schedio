@@ -19,9 +19,9 @@
   }
 
   &--grouped {
+    border-radius: border-radius('small');
+    box-shadow: shadow();
     display: inline-block;
-    // Ensures nicely wrapped shadow. Specifying spread radius breaks it.
-    filter: drop-shadow(shadow());
 
     .button {
       border-radius: 0;
@@ -60,5 +60,9 @@
         }
       }
     }
+  }
+
+  &--disabled {
+    box-shadow: none;
   }
 }

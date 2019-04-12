@@ -38,14 +38,26 @@ export default {
     }
   },
 
+  data() {
+    return {
+      isDisabled: false
+    }
+  },
+
   computed: {
     classList() {
       return {
         [`button-group--color-${this.groupColor}`]: this.groupColor,
         [`button-group--color-${this.groupOutlineColor}-outlined`]: this.groupOutlineColor,
-        'button-group--grouped': this.isGrouped
+        'button-group--grouped': this.isGrouped,
+        'button-group--disabled': this.isDisabled
       }
     }
+  },
+
+  updated() {
+    const buttons = this.$children.filter(child => child.$options.name === 'SButton')
+    this.isDisabled = buttons.every(button => !!button.$attrs.disabled)
   }
 }
 </script>

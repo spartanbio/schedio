@@ -28,6 +28,22 @@ exports[`SButtonGroup.vue changes child button outlines 1`] = `
 </div>
 `;
 
+exports[`SButtonGroup.vue disables shadow based on children disabled status 1`] = `
+<div class="button-group button-group--disabled"><button class="button" disabled="disabled">
+    <!---->
+    <!---->
+    Button 1
+    <!----></button><button class="button" disabled="disabled">
+    <!---->
+    <!---->
+    Button 2
+    <!----></button><button class="button" disabled="disabled">
+    <!---->
+    <!---->
+    Button 3
+    <!----></button></div>
+`;
+
 exports[`SButtonGroup.vue groups child buttons 1`] = `
 <div class="button-group button-group--grouped">
   <sbutton-stub buttoncolor="" outlinecolor="" buttonsize="" iconleft="" iconright="">

@@ -51,4 +51,28 @@ describe('SButtonGroup.vue', () => {
     expect(buttonGroup.contains('.button-group--grouped')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
+
+  it('disables shadow based on children disabled status', () => {
+    const disabledWrapper = mount({
+      components: { SButton, SButtonGroup },
+      props: {
+        disabled: {
+          type: Boolean,
+          default: false
+        }
+      },
+      template: `
+          <SButtonGroup>
+            <SButton v-for="i in 3" :key="i" :disabled="disabled">
+              Button {{ i }}
+            </SButton>
+          </SButtonGroup>
+        `
+    })
+
+    disabledWrapper.setProps({ disabled: true })
+
+    expect(disabledWrapper.classes()).toContain('button-group--disabled')
+    expect(disabledWrapper.html()).toMatchSnapshot()
+  })
 })
