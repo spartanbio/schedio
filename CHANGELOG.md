@@ -1,3 +1,11 @@
+## [2.16.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.16.0...v2.16.1) (2019-04-12)
+
+
+### Bug Fixes
+
+* **button-group:** button group shadow should not appear when children are disabled ([e726fa5](https://gitlab.com/spartanbio-marketing/schedio/commit/e726fa5))
+* **controls:** fixes icon spacing ([d9aa545](https://gitlab.com/spartanbio-marketing/schedio/commit/d9aa545))
+
 # [2.16.0](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.15.2...v2.16.0) (2019-04-09)
 
 

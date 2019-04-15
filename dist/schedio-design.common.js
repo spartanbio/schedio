@@ -7332,12 +7332,12 @@ var component = normalizeComponent(
     return Vue.component(SButton.name, SButton);
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9eb7ae9e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=9b8591e4&
-var SButtonGroupvue_type_template_id_9b8591e4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"button-group",class:_vm.classList},[_vm._t("default")],2)}
-var SButtonGroupvue_type_template_id_9b8591e4_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9eb7ae9e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=1e5d983e&
+var SButtonGroupvue_type_template_id_1e5d983e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"button-group",class:_vm.classList},[_vm._t("default")],2)}
+var SButtonGroupvue_type_template_id_1e5d983e_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=9b8591e4&
+// CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=1e5d983e&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -7398,12 +7398,25 @@ function _defineProperty(obj, key, value) {
       default: false
     }
   },
+  data: function data() {
+    return {
+      isDisabled: false
+    };
+  },
   computed: {
     classList: function classList() {
       var _ref;
 
-      return _ref = {}, _defineProperty(_ref, "button-group--color-".concat(this.groupColor), this.groupColor), _defineProperty(_ref, "button-group--color-".concat(this.groupOutlineColor, "-outlined"), this.groupOutlineColor), _defineProperty(_ref, 'button-group--grouped', this.isGrouped), _ref;
+      return _ref = {}, _defineProperty(_ref, "button-group--color-".concat(this.groupColor), this.groupColor), _defineProperty(_ref, "button-group--color-".concat(this.groupOutlineColor, "-outlined"), this.groupOutlineColor), _defineProperty(_ref, 'button-group--grouped', this.isGrouped), _defineProperty(_ref, 'button-group--disabled', this.isDisabled), _ref;
     }
+  },
+  updated: function updated() {
+    var buttons = this.$children.filter(function (child) {
+      return child.$options.name === 'SButton';
+    });
+    this.isDisabled = buttons.every(function (button) {
+      return !!button.$attrs.disabled;
+    });
   }
 });
 // CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=script&lang=js&
@@ -7418,8 +7431,8 @@ function _defineProperty(obj, key, value) {
 
 var SButtonGroup_component = normalizeComponent(
   SButtonGroup_SButtonGroupvue_type_script_lang_js_,
-  SButtonGroupvue_type_template_id_9b8591e4_render,
-  SButtonGroupvue_type_template_id_9b8591e4_staticRenderFns,
+  SButtonGroupvue_type_template_id_1e5d983e_render,
+  SButtonGroupvue_type_template_id_1e5d983e_staticRenderFns,
   false,
   null,
   null,
