@@ -120,7 +120,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "gitlab:spartanbio-marketing/schedio"
+    "url": "gitlab:spartanbio-ux/schedio"
   },
   "vetur": {
     "tags": "dist/vetur/tags.json",
