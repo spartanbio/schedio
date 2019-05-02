@@ -159,6 +159,7 @@
 
   border-radius: $toggle-size;
   height: $toggle-size;
+  min-width: 2 * $toggle-size;
   width: 2 * $toggle-size;
 
   &::after {
@@ -186,7 +187,7 @@
       content: '';
       left: -1px;
       position: relative;
-      transition: all duration() easing('in');
+      transition: all duration('slow') easing();
     }
   }
 
@@ -208,6 +209,7 @@
     background-color: color('grey');
     border: border() !important;
   }
+
   // pointer on hover
   &:not(:disabled) ~ &__check {
     cursor: pointer;
@@ -216,7 +218,7 @@
   // slide the switch and change background
   &:checked {
     ~ #{$parent}__check::after {
-      transform: translateX(calc(100% + 2px));
+      transform: translateX(calc(100%));
     }
 
     &:not(:disabled) ~ #{$parent}__check {

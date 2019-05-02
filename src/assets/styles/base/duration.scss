@@ -13,12 +13,12 @@
   }
 }
 
-$unit: 100ms;
+$initial-transition-speed: 100ms;
 
 $duration-data: (
-  fast: $unit,
-  base: $unit * 2,
-  slow: $unit * 3,
-  slower: $unit * 4,
-  slowest: $unit * 5
+  fast: $initial-transition-speed,
+  base: $initial-transition-speed * 2,
+  slow: $initial-transition-speed * 3,
+  slower: $initial-transition-speed * 4,
+  slowest: $initial-transition-speed * 5
 );
