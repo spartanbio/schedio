@@ -1,3 +1,10 @@
+# [2.17.0](https://gitlab.com/spartanbio-ux/schedio/compare/v2.16.2...v2.17.0) (2019-05-02)
+
+
+### Features
+
+* uses `dart-sass` instead of `node-sass` ([2951646](https://gitlab.com/spartanbio-ux/schedio/commit/2951646))
+
 ## [2.16.2](https://gitlab.com/spartanbio-ux/schedio/compare/v2.16.1...v2.16.2) (2019-05-02)
 
 
