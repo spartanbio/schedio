@@ -202,6 +202,7 @@
     outline-style: auto !important;
     outline-width: 5px !important;
   }
+
   // disabled switch knob
   &:disabled ~ &__check::after {
     background-color: color('grey');
@@ -221,6 +222,14 @@
     &:not(:disabled) ~ #{$parent}__check {
       background-color: color('green');
     }
+
+    &:not(:disabled):hover ~ #{$parent}__check {
+      background-color: color('green', 'dark');
+    }
+  }
+
+  &:not(:disabled):hover ~ #{$parent}__check {
+    background-color: color('grey', 'lighter');
   }
 
   // slide the switch a little on hover
