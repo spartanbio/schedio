@@ -16,11 +16,11 @@ $color-palette-data: $palettes;
       @return $fetched-color;
     } @else {
       // stylelint-disable string-no-newline
-      $error: "
-    Color `#{$hue}, #{$value}` not found. Arguments must be strings.
-    GOOD: color('night')
-    BAD: color(night)
-    Available options: #{available-names($color-palette-data)}
+      $error: "\
+    Color `#{$hue}, #{$value}` not found. Arguments must be strings.\
+    GOOD: color('night')\
+    BAD: color(night)\
+    Available options: #{available-names($color-palette-data)}\
     ";
       // stylelint-enable
 
@@ -28,11 +28,11 @@ $color-palette-data: $palettes;
     }
   } @else {
     // stylelint-disable string-no-newline
-    $error: "
-  Color `#{$hue}, #{$value}` not found. Arguments must be strings.
-  GOOD: color('night')
-  BAD: color(night)
-  Available options: #{available-names($color-palette-data)}
+    $error: "\
+  Color `#{$hue}, #{$value}` not found. Arguments must be strings.\
+  GOOD: color('night')\
+  BAD: color(night)\
+  Available options: #{available-names($color-palette-data)}\
   ";
     // stylelint-enable
 
