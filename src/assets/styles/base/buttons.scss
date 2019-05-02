@@ -1,9 +1,3 @@
-@function active-button-shadow($button-color: 'grey', $hue: 'base') {
-  $base-color: color($button-color, $hue);
-
-  @return inset 0 0 0.5em 0 darken($base-color, 20%);
-}
-
 @mixin button-shadow {
   box-shadow: shadow();
 
@@ -47,8 +41,6 @@
   $white-or-ice: ($button-color == 'white') or ($button-color == 'ice');
   $base-color: color($button-color);
   $text-shadow-color: if($white-or-ice, transparent, darken($base-color, 40%));
-  $active-shadow: inset 0 0 0.5em 0 darken($base-color, 20%);
-  $focus-shadow: inset 0 0 1px 2px darken($base-color, 10%);
   $text-color: if($white-or-ice, color('night'), color('white'));
 
   @include button-shadow;
@@ -78,7 +70,7 @@
     $active-color: if($white-or-ice, darken($base-color, 10%), color($button-color, 'dark'));
 
     background-color: $active-color;
-    box-shadow: active-button-shadow($button-color), $focus-shadow, shadow('heavy') !important;
+    box-shadow: shadow('heavy') !important;
   }
 
   &:disabled {
@@ -99,7 +91,6 @@
 }
 
 @mixin button-outline($button-color) {
-  @include button-shadow;
   @include button-disabled;
 
   border: border();
@@ -111,11 +102,15 @@
   }
 
   &:active {
-    box-shadow: active-button-shadow($hue: 'light'), shadow('heavy') !important;
+    box-shadow: inset 0 0 0.5em rgba(color('night'), 0.15), shadow() !important;
   }
 
   &:hover {
     color: color($button-color);
+  }
+
+  &:not(:disabled):hover {
+    box-shadow: shadow('light');
   }
 }
 

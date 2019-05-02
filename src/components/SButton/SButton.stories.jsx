@@ -6,6 +6,9 @@ import StoryLink from '@/docs/StoryLink'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import icons from 'feather-icons/dist/icons.json'
+import { SFormField } from '../SFormField/index'
+import { SInput } from '../SInput/index'
+import { SButtonGroup } from '../SButtonGroup/index'
 
 const iconProp = side => select(`icon-${side}`, ['', ...Object.keys(icons)], '', 'Optional Props')
 
