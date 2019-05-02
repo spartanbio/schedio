@@ -8,7 +8,13 @@ module.exports = ({ config, mode }) => {
       'style-loader',
       'css-loader',
       'postcss-loader',
-      'sass-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          implementation: require('sass'),
+          fibers: require('fibers')
+        }
+      },
       {
         loader: 'style-resources-loader',
         options: sharedConf.styleResourcesLoaderOptions
