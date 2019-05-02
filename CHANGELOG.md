@@ -1,3 +1,11 @@
+## [2.16.2](https://gitlab.com/spartanbio-ux/schedio/compare/v2.16.1...v2.16.2) (2019-05-02)
+
+
+### Bug Fixes
+
+* **shadows:** decreases shadow intensity ([4f5756a](https://gitlab.com/spartanbio-ux/schedio/commit/4f5756a))
+* **shadows:** reduces shadow intensity ([#15](https://gitlab.com/spartanbio-ux/schedio/issues/15)) ([d2ef9f5](https://gitlab.com/spartanbio-ux/schedio/commit/d2ef9f5))
+
 ## [2.16.1](https://gitlab.com/spartanbio-marketing/schedio/compare/v2.16.0...v2.16.1) (2019-04-12)
 
 
