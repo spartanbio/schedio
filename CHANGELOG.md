@@ -1,3 +1,10 @@
+## [2.18.1](https://gitlab.com/spartanbio-ux/schedio/compare/v2.18.0...v2.18.1) (2019-05-02)
+
+
+### Bug Fixes
+
+* **switch:** improves transitions ([2539ff4](https://gitlab.com/spartanbio-ux/schedio/commit/2539ff4))
+
 # [2.18.0](https://gitlab.com/spartanbio-ux/schedio/compare/v2.17.0...v2.18.0) (2019-05-02)
 
 
