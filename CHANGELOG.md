@@ -1,3 +1,15 @@
+# [2.18.0](https://gitlab.com/spartanbio-ux/schedio/compare/v2.17.0...v2.18.0) (2019-05-02)
+
+
+### Bug Fixes
+
+* **switch:** adds color to hover state (closes [#14](https://gitlab.com/spartanbio-ux/schedio/issues/14)) ([d5ddbca](https://gitlab.com/spartanbio-ux/schedio/commit/d5ddbca))
+
+
+### Features
+
+* adds shadow overlay mixin ([65ebd9d](https://gitlab.com/spartanbio-ux/schedio/commit/65ebd9d))
+
 # [2.17.0](https://gitlab.com/spartanbio-ux/schedio/compare/v2.16.2...v2.17.0) (2019-05-02)
 
 

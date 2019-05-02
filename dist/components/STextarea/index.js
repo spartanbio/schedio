@@ -5789,7 +5789,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5072a6b7-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/STextarea/STextarea.vue?vue&type=template&id=9235aafc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"71b0ca1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/STextarea/STextarea.vue?vue&type=template&id=9235aafc&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('SLabel',{attrs:{"for":_vm.id,"label":_vm.label,"is-inline":_vm.isInline,"is-fullwidth":_vm.isFullwidth,"is-optional":!_vm.required,"show-optional":_vm.showOptional}},[_c('div',{staticClass:"textarea__container"},[_c('textarea',_vm._g(_vm._b({staticClass:"textarea",class:{
         'textarea--invalid': _vm.isInvalid,
         'textarea--has-icon-left': !!_vm.iconLeft,
@@ -5800,7 +5800,7 @@ var staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/STextarea/STextarea.vue?vue&type=template&id=9235aafc&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5072a6b7-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"71b0ca1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
 var SIconvue_type_template_id_31b076cc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
 var SIconvue_type_template_id_31b076cc_staticRenderFns = []
 
@@ -6112,7 +6112,7 @@ var component = normalizeComponent(
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5072a6b7-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=template&id=c10c8f7e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"71b0ca1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=template&id=c10c8f7e&
 var SLabelvue_type_template_id_c10c8f7e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"label",class:_vm.classList},[_c('span',[_vm._v("\n    "+_vm._s(_vm.label)+"\n    "),(_vm.isOptional && _vm.showOptional)?_c('span',{staticClass:"label__optional"},[_vm._v("\n      — Optional\n    ")]):_vm._e()]),_vm._t("default")],2)}
 var SLabelvue_type_template_id_c10c8f7e_staticRenderFns = []
 
