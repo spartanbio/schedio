@@ -7,7 +7,6 @@ import TypographyHeadings from '@/docs/Typography/TypographyHeadings.vue'
 import TypographyPrint from '@/docs/Typography/TypographyPrint.vue'
 import { storiesOf } from '@storybook/vue'
 import { SHeading } from '@/components/SHeading/index'
-import { SLink } from '@/components/SLink/index'
 
 const hideAddons = {
   options: {
@@ -18,18 +17,14 @@ const hideAddons = {
 storiesOf('* Design/Assets', module).add('Design Assets', () => ({
   render(h) {
     return (
-      <StoryContainer>
+      <div>
         <SHeading>Design assets</SHeading>
-        <p>
-          To use these components and styles in Adobe XD,{' '}
-          <SLink to="assets/schedio-components-03.xd">use this file</SLink>.
-        </p>
 
         <p>
           The latest version of that file can be found on Spartan's server at{' '}
-          <code>S:\Sales & Marketing\Marketing and UI\Schedio Components_03.xd</code>
+          <code>S:\Sales & Marketing\Marketing and UI\</code>
         </p>
-      </StoryContainer>
+      </div>
     )
   }
 }))
