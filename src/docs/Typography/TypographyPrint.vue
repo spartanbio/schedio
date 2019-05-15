@@ -32,49 +32,60 @@
       />
     </form>
 
-    <table class="table table--bordered table--hoverable">
-      <thead>
-        <tr>
-          <th class="table__cell" />
-          <th class="table__cell">
-            Size
-          </th>
-          <th class="table__cell">
-            Leading
-          </th>
-          <th class="table__cell">
-            Tracking
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="{ name, value } in fontSizes"
-          :key="name"
-        >
-          <td
-            class="table__cell"
-            style="text-transform: capitalize;"
-          >
-            {{ name | prettyName }}
-          </td>
-          <td class="table__cell table__cell--numeric">
-            <code>{{ computePrintSize(value) }}</code>
-          </td>
-          <td class="table__cell table__cell--numeric">
-            <code>{{ computeLeading(value) }}</code>
-          </td>
-          <td class="table__cell table__cell--numeric">
-            <code>{{ computeTracking(value) }}</code>
-          </td>
-          <td class="table__cell">
-            <span :style="{ fontSize: computePrintSize(value) }">
-              Example text
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table__overlay">
+      <div class="table__container">
+        <table class="table table--bordered table--hoverable">
+          <thead class="table__header">
+            <tr class="table__row">
+              <th class="table__cell">
+                Level
+              </th>
+              <th class="table__cell">
+                Size
+              </th>
+              <th class="table__cell">
+                Leading
+              </th>
+              <th class="table__cell">
+                Tracking
+              </th>
+              <th class="table__cell">
+                example
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="table__body">
+            <tr
+              v-for="{ name, value } in fontSizes"
+              :key="name"
+              class="table__row"
+            >
+              <td
+                class="table__cell"
+                style="text-transform: capitalize;"
+              >
+                {{ name | prettyName }}
+              </td>
+              <td class="table__cell table__cell--numeric">
+                <code>{{ computePrintSize(value) }}</code>
+              </td>
+              <td class="table__cell table__cell--numeric">
+                <code>{{ computeLeading(value) }}</code>
+              </td>
+              <td class="table__cell table__cell--numeric">
+                <code>{{ computeTracking(value) }}</code>
+              </td>
+              <td class="table__cell">
+                <span :style="{ fontSize: computePrintSize(value) }">
+                  Example text
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
