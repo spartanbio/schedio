@@ -4,7 +4,7 @@ import PropList from '@/docs/PropList'
 import { select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import jeffsum from 'jeffsum'
-import { calloutTypes } from './options'
+import { types } from './options'
 
 const defaultSlotPlaceholder = jeffsum(5, 'sentences')
 storiesOf('Components/SCallout', module)
@@ -14,7 +14,7 @@ storiesOf('Components/SCallout', module)
       props: {
         props: {
           default: {
-            calloutType: select('calloutType', calloutTypes, calloutTypes[0], 'Optional Props')
+            type: select('type', types, types[0], 'Optional Props')
           }
         },
         slots: {

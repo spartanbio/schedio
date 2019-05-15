@@ -17,7 +17,7 @@ storiesOf('Components/Inputs.SSwitch', module)
               name: 'toggle-switch',
               label: 'Toggle Switch'
             }),
-            isReversed: boolean('isReversed', false, 'Optional Props'),
+            isReversed: boolean('is-reversed', false, 'Optional Props'),
             size: select('size', ['', 'base', 'medium', 'large'], '', 'Optional Props')
           })
         },

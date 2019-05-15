@@ -5,7 +5,6 @@ import { boolean, radios, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 const headingLevels = ['1', '2', '3', '4']
-const displayLevels = ['1', '2']
 
 const tagOptions = ['', 'div', 'span', 'a']
 
@@ -24,7 +23,6 @@ storiesOf('Components/Layout.SHeading', module)
         props: {
           default: () => ({
             level: select('level', headingLevels, '1', 'Optional Props'),
-            displayLevel: select('display-level', displayLevels, '1', 'Optional Props'),
             hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
             isDisplay: boolean('is-display', false, 'Optional Props'),
@@ -133,7 +131,6 @@ storiesOf('Components/Layout.SHeading', module)
         props: {
           default: () => ({
             level: select('level', headingLevels, '1', 'Optional Props'),
-            displayLevel: select('display-level', displayLevels, '1', 'Optional Props'),
             hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
             isDisplay: true,

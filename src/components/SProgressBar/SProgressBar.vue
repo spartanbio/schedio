@@ -60,9 +60,9 @@ export default {
       default: ''
     },
 
-    showPercentComplete: {
+    hidePercentComplete: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
 
@@ -75,8 +75,8 @@ export default {
 
     computedMessage() {
       let stack = this.message
-      if (this.message && this.showPercentComplete) stack += ': '
-      if (this.showPercentComplete) stack += `${this.computedProgress}% complete.`
+      if (this.message && !this.hidePercentComplete) stack += ': '
+      if (!this.hidePercentComplete) stack += `${this.computedProgress}% complete.`
 
       return stack
     },

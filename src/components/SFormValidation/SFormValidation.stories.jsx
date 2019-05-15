@@ -15,10 +15,10 @@ storiesOf('Components/Forms.SFormValidation', module)
       props: {
         props: {
           default: () => ({
-            validationText: text('validation-text', 'validation text', 'Optional Props'),
-            validationState: select('validation-state', states, 'error', 'Optional Props'),
+            text: text('text', 'validation text', 'Optional Props'),
+            state: select('state', states, 'error', 'Optional Props'),
             icon: select('icon', ['', ...Object.keys(icons)], '', 'Optional Props'),
-            hasIcon: boolean('has-icon', true, 'Optional Props')
+            hideIcon: boolean('hide-icon', false, 'Optional Props')
           })
         }
       },
@@ -74,8 +74,8 @@ storiesOf('Components/Forms.SFormValidation', module)
 
                 <SFormValidation
                   v-show={this.inputOneValidity !== null}
-                  validation-state={this.inputOneValidity ? 'success' : 'error'}
-                  validation-text={this.inputOneValidity ? 'Valid!' : "That's not a valid email"}
+                  state={this.inputOneValidity ? 'success' : 'error'}
+                  text={this.inputOneValidity ? 'Valid!' : "That's not a valid email"}
                 />
               </SFormField>
 
@@ -87,7 +87,7 @@ storiesOf('Components/Forms.SFormValidation', module)
                   value={this.shouldRespondInvalid}
                   oninput={e => (this.shouldRespondInvalid = e)}
                   required={false}
-                  showOptional={false}
+                  hideOptional={true}
                 />
               </SFormField>
 
@@ -98,8 +98,8 @@ storiesOf('Components/Forms.SFormValidation', module)
 
                 <SFormValidation
                   v-show={this.formValidity !== null}
-                  validation-state={this.formValidity ? 'success' : 'error'}
-                  validation-text={this.formValidity ? 'Valid!' : "The form's not valid"}
+                  state={this.formValidity ? 'success' : 'error'}
+                  text={this.formValidity ? 'Valid!' : "The form's not valid"}
                 />
               </SFormField>
             </form>

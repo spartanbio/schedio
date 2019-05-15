@@ -13,7 +13,7 @@ storiesOf('Components/Layout.SContainer', module)
       props: {
         props: {
           default: () => ({
-            isFullwidth: boolean('isFullwidth', false)
+            isFullwidth: boolean('is-fullwidth', false)
           })
         }
       },

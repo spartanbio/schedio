@@ -34,34 +34,29 @@ export default {
   name: 'SButton',
 
   props: {
-    buttonColor: {
+    color: {
       type: String,
       default: '',
       validator: value => {
         if (!value || colors.includes(value)) return true
 
-        return console.error(`\`buttonColor\` ${value} not found. Allowed colors: ${[...colors]}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
       }
     },
 
-    outlineColor: {
-      type: String,
-      default: '',
-      validator: value => {
-        if (!value || colors.includes(value)) return true
-
-        return console.error(`\`outlineColor\` ${value} not found. Allowed colors: ${[...colors]}`)
-      }
-    },
-
-    buttonSize: {
+    size: {
       type: String,
       default: '',
       validator: value => {
         if (!value || sizes.includes(value)) return true
 
-        return console.error(`\`buttonSizes\` ${value} not found. Allowed sizes: ${sizes}`)
+        return console.error(`\`size\` ${value} not found. Allowed sizes: ${sizes}`)
       }
+    },
+
+    isOutlined: {
+      type: Boolean,
+      default: false
     },
 
     isLoading: {
@@ -88,14 +83,22 @@ export default {
   computed: {
     classList() {
       return [
-        // Handles storybook default
-        this.buttonColor && `button--color-${this.buttonColor}`,
-        this.buttonSize && `button--size-${this.buttonSize}`,
-        this.outlineColor && `button--color-${this.outlineColor}-outlined`,
+        this.buttonStyle && this.buttonStyle,
+        this.size && `button--size-${this.size}`,
         (this.iconLeft || this.iconRight) && 'button--has-icon',
         this.iconOnly && 'button--icon-only',
         this.isLoading && 'button--loading'
       ]
+    },
+
+    buttonStyle() {
+      let buttonStyle = ''
+
+      if (this.color) buttonStyle += `button--color-${this.color}`
+
+      if (this.color && this.isOutlined) buttonStyle += '-outlined'
+
+      return buttonStyle
     }
   }
 }

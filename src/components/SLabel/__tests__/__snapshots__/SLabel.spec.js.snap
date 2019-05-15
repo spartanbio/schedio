@@ -19,7 +19,9 @@ exports[`SLabel.vue can be inline 1`] = `
 exports[`SLabel.vue can be required 1`] = `
 <label class="label"><span>
     label
-    <!----></span> </label>
+    <span class="label__optional">
+      —&nbsp;Optional
+    </span></span> </label>
 `;
 
 exports[`SLabel.vue can be reversed 1`] = `

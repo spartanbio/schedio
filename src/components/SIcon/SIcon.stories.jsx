@@ -19,8 +19,8 @@ storiesOf('Components/SIcon', module)
         props: {
           default: () => ({
             icon: select('icon', iconList, iconList[0], 'Required Props'),
-            iconColor: select('icon-color', colorOptions, '', 'Optional Props'),
-            iconSize: select('icon-size', sizeOptions, '', 'Optional Props')
+            color: select('color', colorOptions, '', 'Optional Props'),
+            size: select('size', sizeOptions, '', 'Optional Props')
           })
         }
       },
@@ -44,14 +44,14 @@ storiesOf('Components/SIcon', module)
                 <div>
                   Icon name: <code>{props.icon}</code>
                 </div>
-                {props.iconColor && (
+                {props.color && (
                   <div>
-                    Icon color: <code>{props.iconColor}</code>
+                    Icon color: <code>{props.color}</code>
                   </div>
                 )}
-                {props.iconSize && (
+                {props.size && (
                   <div>
-                    Icon size: <code>{props.iconSize}</code>
+                    Icon size: <code>{props.size}</code>
                   </div>
                 )}
               </div>

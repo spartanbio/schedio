@@ -22,7 +22,7 @@ storiesOf('Components/Inputs.SRadio', module)
                 name,
                 label: `Base Radio ${i + 1}`
               }),
-              isReversed: boolean(`radio-${i + 1} isReversed`, false, 'Optional Props')
+              isReversed: boolean(`radio-${i + 1} is-reversed`, false, 'Optional Props')
             },
             attrs: {
               ...withUnboundAttrs({ identifier: `radio-${i + 1}`, value: `radio-${i + 1}` }),

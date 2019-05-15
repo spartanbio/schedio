@@ -40,7 +40,7 @@ describe('SLabel.vue', () => {
   })
 
   it('can hide the optional tag', () => {
-    wrapper.setProps({ showOptional: false })
+    wrapper.setProps({ hideOptional: true })
     expect(wrapper.text()).not.toContain('Optional')
     expect(wrapper.html()).toMatchSnapshot()
   })

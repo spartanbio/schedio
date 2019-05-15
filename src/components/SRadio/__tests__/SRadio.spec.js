@@ -109,7 +109,7 @@ describe('SRadio.vue', () => {
   })
 
   it('can hide the optional tag', () => {
-    wrapper.setProps({ showOptional: false, required: true })
+    wrapper.setProps({ hideOptional: true, required: false })
     expect(wrapper.text()).not.toContain('Optional')
     expect(wrapper.html()).toMatchSnapshot()
   })

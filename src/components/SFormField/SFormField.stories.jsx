@@ -35,7 +35,7 @@ storiesOf('Components/Forms.SFormField', module)
                     id={`radio-${r}`}
                     label={`radio-${r}`}
                     required={false}
-                    showOptional={false}
+                    hideOptional={true}
                     checked={r === '1'}
                   />
                 ))}

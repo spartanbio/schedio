@@ -12,7 +12,7 @@ storiesOf('Components/SLink', module)
     return {
       props: {
         to: {
-          default: text('Link to (required)', 'https://anunvisitedwebsite.com', 'Required Props')
+          default: text('to', 'https://anunvisitedwebsite.com', 'Required Props')
         },
         isPlain: { default: boolean('is-plain', false, 'Optional Props') },
         linkText: { default: text('Link text', '', 'Slots') }

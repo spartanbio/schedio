@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import SCallout from '@/components/SCallout/SCallout.vue'
-import { calloutTypes } from '../options'
+import { types } from '../options'
 
 describe('SCallout.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -20,19 +20,19 @@ describe('SCallout.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  calloutTypes.forEach(type => {
+  types.forEach(type => {
     it(`can have type ${type}`, () => {
-      wrapper.setProps({ calloutType: type })
+      wrapper.setProps({ type })
 
       expect(errorSpy).not.toBeCalled()
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
-  it('validates the `calloutType`', () => {
+  it('validates the `type`', () => {
     shallowMount(SCallout, {
       propsData: {
-        calloutType: 'not a type'
+        type: 'not a type'
       }
     })
 

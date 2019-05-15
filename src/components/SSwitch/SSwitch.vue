@@ -3,8 +3,8 @@
     :for="id"
     :label="label"
     :is-reversed="isReversed"
-    :is-optional="!required"
-    :show-optional="showOptional"
+    :is-required="required"
+    :hide-optional="hideOptional"
     is-inline
   >
     <input

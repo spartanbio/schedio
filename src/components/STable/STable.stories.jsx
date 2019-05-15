@@ -12,12 +12,12 @@ storiesOf('Components/Tables.STable', module)
     const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
     const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
     const slotExampleProps = {
-      hasCaptionTop: makeOptionalBoolean('hasCaptionTop'),
-      headerInFooter: makeOptionalBoolean('headerInFooter'),
-      hideHeader: makeOptionalBoolean('hideHeader'),
-      isBordered: makeOptionalBoolean('isBordered'),
-      isHoverable: makeOptionalBoolean('isHoverable'),
-      isStriped: makeOptionalBoolean('isStriped')
+      hasCaptionTop: makeOptionalBoolean('has-caption-top'),
+      headerInFooter: makeOptionalBoolean('header-in-footer'),
+      hideHeader: makeOptionalBoolean('hide-header'),
+      isBordered: makeOptionalBoolean('is-bordered'),
+      isHoverable: makeOptionalBoolean('is-hoverable'),
+      isStriped: makeOptionalBoolean('is-striped')
     }
     const tableData = [
       { col1: 'Cell 1', col2: 'Cell 2', col3: 'Cell 3' },
@@ -26,7 +26,7 @@ storiesOf('Components/Tables.STable', module)
     const propExampleProps = {
       ...slotExampleProps,
       caption: text('caption', 'This is a caption', 'Optional Props'),
-      tableData: object('tableData', tableData, 'Optional Props')
+      tableData: object('table-data', tableData, 'Optional Props')
     }
 
     return {

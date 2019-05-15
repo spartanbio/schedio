@@ -27,33 +27,33 @@ export default {
       }
     },
 
-    iconColor: {
+    color: {
       type: String,
       default: '',
       validator: value => {
         if (!value || colors.includes(value)) return true
 
-        return console.error(`\`iconColor\` ${value} not found. Allowed colors: ${colors}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colors}`)
       }
     },
 
-    iconSize: {
+    size: {
       type: String,
       default: '',
       validator: value => {
         if (!value || sizes.includes(value)) return true
 
-        return console.error(`\`iconSizes\` ${value} not found. Allowed sizes: ${sizes}`)
+        return console.error(`\`sizes\` ${value} not found. Allowed sizes: ${sizes}`)
       }
     }
   },
 
   computed: {
     classList() {
-      return [
-        this.iconColor ? `icon--color-${this.iconColor}` : '',
-        this.iconSize ? `icon--size-${this.iconSize}` : ''
-      ]
+      return {
+        [`icon--color-${this.color}`]: this.color,
+        [`icon--size-${this.size}`]: this.size
+      }
     },
 
     featherIcon() {

@@ -33,7 +33,7 @@ exports[`SSwitch.vue can be size small 1`] = `
 exports[`SSwitch.vue can hide the optional tag 1`] = `
 <label class="label label--inline" for="toggleSwitch"><span>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check"></span></label>
+    <!----></span> <input id="toggleSwitch" name="toggleSwitch" type="checkbox" class="switch"> <span class="switch__check"></span></label>
 `;
 
 exports[`SSwitch.vue renders correctly 1`] = `

@@ -4,7 +4,7 @@ import { SButton } from '@/components/SButton'
 import PropList from '@/docs/PropList'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import { toastTypes, positions } from './options'
+import { types, positions } from './options'
 
 const upperCase = str => str[0].toUpperCase() + str.substr(1)
 
@@ -15,13 +15,13 @@ storiesOf('Components/SToast', module)
       props: {
         props: {
           default: () => ({
-            toastType: select('toast-type', toastTypes, toastTypes[0], 'Optional Props'),
+            type: select('toast-type', types, types[0], 'Optional Props'),
             containerParent: text('container-parent', '#example', 'Optional Props'),
-            toastBody: text('toast-body', 'Some text', 'Optional Props'),
+            body: text('toast-body', 'Some text', 'Optional Props'),
             position: select('position', positions, positions[0], 'Optional Props'),
             actionText: text('action-text', 'Run an action', 'Optional Props'),
-            toastTitle: text('toast-title', '', 'Optional Props'),
-            hasIcon: boolean('has-icon', true, 'Optional Props'),
+            title: text('toast-title', '', 'Optional Props'),
+            hideIcon: boolean('hideIcon', false, 'Optional Props'),
             isIndefinite: boolean('is-indefinite', false, 'Optional Props'),
             duration: number('duration', 3000, {}, 'Optional Props'),
 
@@ -29,8 +29,8 @@ storiesOf('Components/SToast', module)
               setTimeout(() => {
                 this.$toast.open({
                   containerParent: '#example',
-                  toastBody: 'The action ran',
-                  toastType: 'warning'
+                  body: 'The action ran',
+                  type: 'warning'
                 })
               }, 750)
             }
@@ -41,7 +41,7 @@ storiesOf('Components/SToast', module)
       data() {
         return {
           toastCount: 0,
-          toastList: [...toastTypes].reverse()
+          toastList: [...types].reverse()
         }
       },
 
@@ -51,7 +51,7 @@ storiesOf('Components/SToast', module)
 
           this.toastList.forEach(type => {
             this.$toast.open({
-              toastType: type,
+              type: type,
               containerParent: '#all-toasts',
               toastBody: 'Type: ' + upperCase(type || 'default'),
               isIndefinite: true,
@@ -67,7 +67,7 @@ storiesOf('Components/SToast', module)
         // without actions
         this.toastList.forEach(type => {
           this.$toast.open({
-            toastType: type,
+            type: type,
             containerParent: '#all-toasts',
             toastBody: 'Type: ' + upperCase(type || 'default'),
             isIndefinite: true

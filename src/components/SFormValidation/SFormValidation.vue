@@ -5,17 +5,17 @@
       class="form-validation"
     >
       <div
-        v-if="icons[validationState] && hasIcon"
+        v-if="icons[state] && !hideIcon"
         class="form-validation__icon"
       >
         <SIcon
-          :icon="icons[validationState]"
-          :icon-color="iconColors[validationState] || 'night'"
+          :icon="icons[state]"
+          :icon-color="iconColors[state] || 'night'"
         />
       </div>
 
       <div class="form-validation__text">
-        <slot>{{ validationText }}</slot>
+        <slot>{{ text }}</slot>
       </div>
     </div>
   </transition>
@@ -33,18 +33,17 @@ export default {
   },
 
   props: {
-    validationText: {
+    text: {
       type: String,
       default: ''
     },
 
-    validationState: {
+    state: {
       type: String,
       default: 'error',
       validator: v => {
         return (
-          states.includes(v) ||
-          console.error(`\`validationState\` should be one of ${states.join(', ')}`)
+          states.includes(v) || console.error(`\`state\` should be one of ${states.join(', ')}`)
         )
       }
     },
@@ -54,9 +53,9 @@ export default {
       default: ''
     },
 
-    hasIcon: {
+    hideIcon: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
 
@@ -73,12 +72,12 @@ export default {
   computed: {
     classList() {
       return {
-        [`form-validation--${this.validationState}`]: this.validationState
+        [`form-validation--${this.state}`]: this.state
       }
     },
 
     icons() {
-      if (this.icon) return { [this.validationState]: this.icon }
+      if (this.icon) return { [this.state]: this.icon }
 
       return {
         success: 'check-circle',

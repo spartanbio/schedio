@@ -24,8 +24,8 @@ storiesOf('Components/Inputs.STextarea', module)
               name: 'base-textarea',
               label: 'Base Textarea'
             }),
-            placeholder: text('Placeholder', 'Placeholder text', 'Required Props'),
-            isInline: boolean('isInline', false, 'Optional Props'),
+            placeholder: text('placeholder', 'Placeholder text', 'Required Props'),
+            isInline: boolean('is-inline', false, 'Optional Props'),
             iconLeft: iconProp('left'),
             iconLeftColor: iconColor('left'),
             iconRight: iconProp('right'),

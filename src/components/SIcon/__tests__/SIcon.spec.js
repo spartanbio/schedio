@@ -38,27 +38,27 @@ describe('SIcon.vue', () => {
 
   options.colors.forEach(color => {
     it(`can be ${color}`, () => {
-      wrapper.setProps({ iconColor: color })
+      wrapper.setProps({ color })
       expect(wrapper.contains(`.icon--color-${color}`))
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
   it('validates color', () => {
-    shallowMount(SIcon, { propsData: { icon: iconList[0], iconColor: 'not a color' } })
+    shallowMount(SIcon, { propsData: { icon: iconList[0], color: 'not a color' } })
     expect(errorSpy).toBeCalled()
   })
 
   options.sizes.forEach(size => {
     it(`can be ${size}`, () => {
-      wrapper.setProps({ iconSize: size })
+      wrapper.setProps({ size })
       expect(wrapper.contains(`.icon--size-${size}`))
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
   it('validates size', () => {
-    shallowMount(SIcon, { propsData: { icon: iconList[0], iconSize: 'not a size' } })
+    shallowMount(SIcon, { propsData: { icon: iconList[0], size: 'not a size' } })
     expect(errorSpy).toBeCalled()
   })
 })

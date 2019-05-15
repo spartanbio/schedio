@@ -17,7 +17,7 @@ storiesOf('Components/Inputs.SCheckbox', module)
               name: 'base-checkbox',
               label: 'Base Checkbox'
             }),
-            isReversed: boolean('isReversed', false, 'Optional Props')
+            isReversed: boolean('is-reversed', false, 'Optional Props')
           })
         },
         attrs: { default: withUnboundAttrs({ value: 'base-checkbox' }) }

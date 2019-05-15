@@ -16,7 +16,7 @@ storiesOf('Components/Loading.SProgressBar', module)
             size: select('size', ['', ...sizes], '', 'Optional Props'),
             color: select('color', ['', ...colors], '', 'Optional Props'),
             message: text('message', 'Something is happening', 'Optional Props'),
-            showPercentComplete: boolean('showPercentComplete', true, 'Optional Props')
+            hidePercentComplete: boolean('hide-percent-complete', true, 'Optional Props')
           })
         }
       },

@@ -14,22 +14,18 @@ export default {
   name: 'SButtonGroup',
 
   props: {
-    groupColor: {
+    color: {
       type: String,
       default: '',
       validator: value => {
         if (!value || colors.includes(value)) return true
-        return console.error(`\`groupColor\` ${value} not found. Allowed colors: ${[...colors]}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
       }
     },
 
-    groupOutlineColor: {
-      type: String,
-      default: '',
-      validator: value => {
-        if (!value || colors.includes(value)) return true
-        return console.error(`\`groupColor\` ${value} not found. Allowed colors: ${[...colors]}`)
-      }
+    isOutlined: {
+      type: Boolean,
+      default: false
     },
 
     isGrouped: {
@@ -46,12 +42,22 @@ export default {
 
   computed: {
     classList() {
-      return {
-        [`button-group--color-${this.groupColor}`]: this.groupColor,
-        [`button-group--color-${this.groupOutlineColor}-outlined`]: this.groupOutlineColor,
-        'button-group--grouped': this.isGrouped,
-        'button-group--disabled': this.isDisabled
-      }
+      return [
+        this.groupStyle,
+        {
+          'button-group--grouped': this.isGrouped,
+          'button-group--disabled': this.isDisabled
+        }
+      ]
+    },
+    groupStyle() {
+      let style = ''
+
+      if (this.color) style += `button-group--color-${this.color}`
+
+      if (style && this.isOutlined) style += '-outlined'
+
+      return style
     }
   },
 

@@ -3,40 +3,23 @@
 exports[`SToast.vue can have a clickable action 1`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div> <button class="toast__action">
+  <!----> <button class="toast__action">
     OK
-  </button>
-</div>
+  </button></div>
 `;
 
 exports[`SToast.vue can have action text configured 1`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div> <button class="toast__action">
+  <!----> <button class="toast__action">
     action text
-  </button>
-</div>
+  </button></div>
 `;
 
 exports[`SToast.vue can have position  1`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -44,12 +27,7 @@ exports[`SToast.vue can have position  1`] = `
 exports[`SToast.vue can have position center 1`] = `
 <div class="toast toast--center" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -57,12 +35,7 @@ exports[`SToast.vue can have position center 1`] = `
 exports[`SToast.vue can have position right 1`] = `
 <div class="toast toast--right" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -70,12 +43,7 @@ exports[`SToast.vue can have position right 1`] = `
 exports[`SToast.vue can have the icon hidden 1`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -83,26 +51,15 @@ exports[`SToast.vue can have the icon hidden 1`] = `
 exports[`SToast.vue closes on action click 1`] = `
 <div class="toast" style="display: none;" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div> <button class="toast__action">
+  <!----> <button class="toast__action">
     OK
-  </button>
-</div>
+  </button></div>
 `;
 
 exports[`SToast.vue renders toast type  correctly 1`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -110,14 +67,9 @@ exports[`SToast.vue renders toast type  correctly 1`] = `
 exports[`SToast.vue renders toast type error correctly 1`] = `
 <div class="toast toast--error" style="" name="fade">
   <div class="toast__icon">
-    <sicon-stub icon="alert-circle" iconcolor="red" iconsize=""></sicon-stub>
+    <sicon-stub icon="alert-circle" color="" size="" icon-color="red"></sicon-stub>
   </div>
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -125,14 +77,9 @@ exports[`SToast.vue renders toast type error correctly 1`] = `
 exports[`SToast.vue renders toast type success correctly 1`] = `
 <div class="toast toast--success" style="" name="fade">
   <div class="toast__icon">
-    <sicon-stub icon="check-circle" iconcolor="green" iconsize=""></sicon-stub>
+    <sicon-stub icon="check-circle" color="" size="" icon-color="green"></sicon-stub>
   </div>
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -140,14 +87,9 @@ exports[`SToast.vue renders toast type success correctly 1`] = `
 exports[`SToast.vue renders toast type warning correctly 1`] = `
 <div class="toast toast--warning" style="" name="fade">
   <div class="toast__icon">
-    <sicon-stub icon="alert-triangle" iconcolor="gold" iconsize=""></sicon-stub>
+    <sicon-stub icon="alert-triangle" color="" size="" icon-color="gold"></sicon-stub>
   </div>
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      Text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -155,12 +97,7 @@ exports[`SToast.vue renders toast type warning correctly 1`] = `
 exports[`SToast.vue requires a title or body 1`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <!---->
-    <div class="toast__body">
-      text
-    </div>
-  </div>
+  <!---->
   <!---->
 </div>
 `;
@@ -168,12 +105,7 @@ exports[`SToast.vue requires a title or body 1`] = `
 exports[`SToast.vue requires a title or body 2`] = `
 <div class="toast" style="" name="fade">
   <!---->
-  <div class="toast__text">
-    <div class="toast__title">
-      title
-    </div>
-    <!---->
-  </div>
+  <!---->
   <!---->
 </div>
 `;

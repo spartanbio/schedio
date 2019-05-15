@@ -11,9 +11,9 @@ storiesOf('Components/Buttons.SButtonGroup', module)
   .add('Button Group', () => {
     return {
       props: {
-        groupColor: { default: select('group-color', ['', ...colors], '', 'Optional Props') },
-        groupOutlineColor: {
-          default: select('group-outline-color', ['', ...colors], '', 'Optional Props')
+        color: { default: select('color', ['', ...colors], '', 'Optional Props') },
+        isOutlined: {
+          default: boolean('is-outlined', false, 'Optional Props')
         },
         isGrouped: { default: boolean('is-grouped', false, 'Optional Props') },
         button1Text: { default: text('Button 1 text', 'Button 1', 'Slots') },
@@ -35,8 +35,8 @@ storiesOf('Components/Buttons.SButtonGroup', module)
 
             <SHeading level="2">Example</SHeading>
             <SButtonGroup
-              groupColor={this.groupColor}
-              groupOutlineColor={this.groupOutlineColor}
+              color={this.color}
+              isOutlined={this.isOutlined}
               isGrouped={this.isGrouped}
             >
               <SButton disabled={this.button1Disabled}>{this.button1Text}</SButton>

@@ -40,7 +40,7 @@ storiesOf('Components/Inputs.SSelect', module)
     // enable setting of option structure.
     const optionKeys = Object.keys(optionTypes)
     const optionsObj = optionKeys.reduce((o, k) => ({ ...o, [k]: k }), {})
-    const options = select('selectOptions', optionsObj, optionKeys[0], 'Required Props')
+    const options = select('select-options', optionsObj, optionKeys[0], 'Required Props')
 
     return {
       props: {
@@ -51,11 +51,11 @@ storiesOf('Components/Inputs.SSelect', module)
               name: 'base-select',
               label: 'Select'
             }),
-            placeholder: text('Placeholder', 'Select an option', 'Optional Props'),
+            placeholder: text('placeholder', 'Select an option', 'Optional Props'),
             selectOptions: optionTypes[options],
-            multiple: boolean('Multiple', false, 'Optional Props'),
-            isInline: boolean('isInline', false, 'Optional Props'),
-            isFullwidth: boolean('isFullwidth', false, 'Optional Props'),
+            multiple: boolean('multiple', false, 'Optional Props'),
+            isInline: boolean('is-inline', false, 'Optional Props'),
+            isFullwidth: boolean('is-fullwidth', false, 'Optional Props'),
             iconLeft: iconProp('left'),
             iconLeftColor: iconColor('left'),
             iconRight: iconProp('right'),

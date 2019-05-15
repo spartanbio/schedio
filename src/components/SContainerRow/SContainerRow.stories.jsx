@@ -7,6 +7,7 @@ import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import orderBy from 'lodash.orderby'
 import PropList from '@/docs/PropList'
+import kebabCase from 'lodash.kebabcase'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainerRow' })
@@ -16,13 +17,15 @@ storiesOf('Components/Layout.SContainer', module)
 
     // flexbox align items
     const alignProps = rowPropNames.reduce((p, name) => {
-      return /^(align)/.test(name) ? { ...p, [name]: select(name, rowOptions, '', 'Alignment') } : p
+      return /^(align)/.test(name)
+        ? { ...p, [name]: select(kebabCase(name), rowOptions, '', 'Alignment') }
+        : p
     }, {})
 
     // flexbox justify content
     const justifyProps = rowPropNames.reduce((props, name) => {
       return /^(justify)/.test(name)
-        ? { ...props, [name]: select(name, rowOptions, '', 'Justification') }
+        ? { ...props, [name]: select(kebabCase(name), rowOptions, '', 'Justification') }
         : props
     }, {})
 
@@ -32,7 +35,7 @@ storiesOf('Components/Layout.SContainer', module)
           default: () => ({
             ...alignProps,
             ...justifyProps,
-            isReversed: boolean('isReversed', false, 'Other')
+            isReversed: boolean('is-reversed', false, 'Other')
           })
         }
       },

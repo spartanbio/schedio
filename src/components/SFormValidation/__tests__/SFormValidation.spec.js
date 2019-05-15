@@ -21,13 +21,13 @@ describe('SFormValidation.vue', () => {
   })
 
   it('validates its visual state', () => {
-    shallowMount(SFormValidation, { propsData: { validationState: 'not valid' } })
+    shallowMount(SFormValidation, { propsData: { state: 'not valid' } })
 
     expect(errorSpy).toBeCalled()
   })
 
   it('accepts text as a prop or slot', () => {
-    wrapper.setProps({ validationText: 'Some text' })
+    wrapper.setProps({ text: 'Some text' })
     expect(wrapper.text()).toContain('Some text')
     expect(wrapper).toMatchSnapshot()
 
@@ -38,7 +38,7 @@ describe('SFormValidation.vue', () => {
 
   states.forEach(state => {
     it(`sets a visual state for ${state} state`, () => {
-      wrapper.setProps({ validationState: state })
+      wrapper.setProps({ state })
       // test if `state = ''` does not show an icon while other states do
       expect(wrapper.contains(SIcon)).toBe(!!state)
       expect(errorSpy).not.toBeCalled()
@@ -54,7 +54,7 @@ describe('SFormValidation.vue', () => {
   })
 
   it('can hide its icon', () => {
-    wrapper.setProps({ icon: Object.keys(icons)[0], hasIcon: false })
+    wrapper.setProps({ icon: Object.keys(icons)[0], hideIcon: true })
     expect(errorSpy).not.toBeCalled()
     expect(wrapper.contains(SIcon)).toBe(false)
   })

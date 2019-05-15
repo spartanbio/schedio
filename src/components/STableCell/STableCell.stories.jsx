@@ -11,8 +11,8 @@ storiesOf('Components/Tables.STableCell', module)
   .add('STableCell', function STableCellDocs() {
     return {
       props: {
-        isNumeric: { default: boolean('isNumeric', true, 'Optional Props') },
-        isHeader: { default: boolean('isHeader', false, 'Optional Props') },
+        isNumeric: { default: boolean('is-numeric', true, 'Optional Props') },
+        isHeader: { default: boolean('is-header', false, 'Optional Props') },
         headerCellSlotContent: { default: text('Header content', 'Header cell slot', 'Slots') },
         numericCellSlotContent: { default: number('Numeric content', 1200, {}, 'Slots') }
       },

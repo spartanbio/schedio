@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SHeading.vue can be display 1`] = `<h1 class="heading heading--display-1">Heading Content</h1>`;
+exports[`SHeading.vue can be display 1`] = `<h1 class="heading heading--level-1 heading--display">Heading Content</h1>`;
 
 exports[`SHeading.vue can be subtle 1`] = `<h1 class="heading heading--level-1 heading--subtle">Heading Content</h1>`;
 

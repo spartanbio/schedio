@@ -7,7 +7,7 @@
     <span>
       {{ label }}
       <span
-        v-if="isOptional && showOptional"
+        v-if="!isRequired && !hideOptional"
         class="label__optional"
       >
         &mdash;&nbsp;Optional
@@ -28,9 +28,9 @@ export default {
       required: true
     },
 
-    isOptional: {
+    isRequired: {
       type: Boolean,
-      default: true
+      default: false
     },
 
     isInline: {
@@ -48,9 +48,9 @@ export default {
       default: false
     },
 
-    showOptional: {
+    hideOptional: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
 

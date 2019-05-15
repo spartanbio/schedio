@@ -21,9 +21,9 @@ export default {
       default: true
     },
 
-    showOptional: {
+    hideOptional: {
       type: Boolean,
-      default: true
+      default: false
     },
 
     isInvalid: {

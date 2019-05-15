@@ -13,17 +13,17 @@ storiesOf('Components/Buttons.SButton', module)
   .addParameters({ jest: 'SButton' })
   .add('Button', () => ({
     props: {
-      buttonColor: {
+      color: {
         type: String,
-        default: select('button-color', ['', ...colors], '', 'Optional Props')
+        default: select('color', ['', ...colors], '', 'Optional Props')
       },
-      outlineColor: {
+      isOutlined: {
         type: String,
-        default: select('outline-color', ['', ...colors], '', 'Optional Props')
+        default: boolean('is-outlined', false, 'Optional Props')
       },
-      buttonSize: {
+      size: {
         type: String,
-        default: select('button-size', ['', ...sizes], '', 'Optional Props')
+        default: select('size', ['', ...sizes], '', 'Optional Props')
       },
       buttonText: {
         type: String,

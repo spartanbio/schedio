@@ -8,20 +8,17 @@
 </template>
 
 <script>
-import { calloutTypes } from './options'
+import { types } from './options'
 
 export default {
   name: 'SCallout',
 
   props: {
-    calloutType: {
+    type: {
       type: String,
-      default: calloutTypes[0],
+      default: types[0],
       validator: v => {
-        return (
-          calloutTypes.includes(v) ||
-          console.error(`\`calloutType\` should be one of ${calloutTypes.join(', ')}`)
-        )
+        return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`)
       }
     }
   },
@@ -29,7 +26,7 @@ export default {
   computed: {
     classList() {
       return {
-        ...(this.calloutType && { [`callout--${this.calloutType}`]: !!this.calloutType })
+        [`callout--${this.type}`]: !!this.type
       }
     }
   }

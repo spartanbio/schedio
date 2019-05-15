@@ -35,40 +35,35 @@ describe('SButton.vue', () => {
 
   options.colors.forEach(color => {
     it(`can be ${color}`, () => {
-      wrapper.setProps({ buttonColor: color })
-      expect(wrapper.contains(`.button--color-${color}`)).toBe(true)
+      wrapper.setProps({ color })
+      expect(wrapper.classes()).toContain(`button--color-${color}`)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
   options.colors.forEach(color => {
     it(`can be outlined with ${color}`, () => {
-      wrapper.setProps({ outlineColor: color })
-      expect(wrapper.contains(`.button--color-${color}-outlined`)).toBe(true)
+      wrapper.setProps({ color, isOutlined: true })
+      expect(wrapper.classes()).toContain(`button--color-${color}-outlined`)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
   it('validates fill color', () => {
-    shallowMount(SButton, { propsData: { buttonColor: 'not a color' } })
-    expect(errorSpy).toBeCalled()
-  })
-
-  it('validates outline color', () => {
-    shallowMount(SButton, { propsData: { outlineColor: 'not a color' } })
+    shallowMount(SButton, { propsData: { color: 'not a color' } })
     expect(errorSpy).toBeCalled()
   })
 
   options.sizes.forEach(size => {
     it(`can be ${size}`, () => {
-      wrapper.setProps({ buttonSize: size })
-      expect(wrapper.contains(`.button--size-${size}`)).toBe(true)
+      wrapper.setProps({ size })
+      expect(wrapper.classes()).toContain(`button--size-${size}`)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
   it('validates color', () => {
-    shallowMount(SButton, { propsData: { buttonSize: 'not a size' } })
+    shallowMount(SButton, { propsData: { size: 'not a size' } })
     expect(errorSpy).toBeCalled()
   })
 

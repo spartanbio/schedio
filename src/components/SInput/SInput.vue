@@ -3,8 +3,8 @@
     :for="id"
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
-    :is-optional="!required"
-    :show-optional="showOptional"
+    :is-required="required"
+    :hide-optional="hideOptional"
     :label="label"
   >
     <div class="input__container">

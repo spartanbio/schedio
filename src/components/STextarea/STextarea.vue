@@ -4,8 +4,8 @@
     :label="label"
     :is-inline="isInline"
     :is-fullwidth="isFullwidth"
-    :is-optional="!required"
-    :show-optional="showOptional"
+    :is-required="required"
+    :hide-optional="hideOptional"
   >
     <div class="textarea__container">
       <textarea

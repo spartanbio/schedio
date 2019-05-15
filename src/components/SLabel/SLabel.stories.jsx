@@ -15,8 +15,8 @@ storiesOf('Components/Inputs.SLabel', module)
             isFullwidth: boolean('isFullwidth', false, 'Optional Props'),
             isInline: boolean('isInline', false, 'Optional Props'),
             isReversed: boolean('isReversed', false, 'Optional Props'),
-            isOptional: boolean('isOptional', true, 'Optional Props'),
-            showOptional: boolean('showOptional', true, 'Optional Props')
+            isRequired: boolean('iRrequired', false, 'Optional Props'),
+            hideOptional: boolean('hide-optional', false, 'Optional Props')
           })
         },
 
@@ -35,7 +35,7 @@ storiesOf('Components/Inputs.SLabel', module)
             </p>
             <p>
               By default, if a label is for an optional field, it will append '- Optional' to the
-              label. This text can be hidden with the <code>show-optional</code> prop.
+              label. This text can be hidden with the <code>hide-optional</code> prop.
             </p>
 
             <SHeading level="2">Example</SHeading>

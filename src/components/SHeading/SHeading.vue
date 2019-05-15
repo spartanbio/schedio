@@ -15,13 +15,12 @@ export default {
     level: {
       type: [String, Number],
       default: 1,
-      validator: value => Number(value) <= 4 || console.error('Level must be 4 or lower.')
-    },
-
-    displayLevel: {
-      type: [String, Number],
-      default: 1,
-      validator: value => Number(value) <= 2 || console.error('Display level must be 2 or lower.')
+      validator: value => {
+        return (
+          Number(value) <= 4 ||
+          console.error('Level must be 4 or lower. 2 or lower if `isDisplay`.')
+        )
+      }
     },
 
     isDisplay: {
@@ -69,8 +68,9 @@ export default {
     classList() {
       return [
         'heading',
-        this.isDisplay ? `heading--display-${this.displayLevel}` : `heading--level-${this.level}`,
         {
+          [`heading--level-${this.level}`]: this.level,
+          'heading--display': this.isDisplay,
           'heading--subtle': this.isSubtle,
           'heading--no-case': this.hasNoCase,
           'heading--title': this.isTitle,

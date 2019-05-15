@@ -7,7 +7,7 @@
     >
       <!-- Icon -->
       <div
-        v-if="toastType && hasIcon"
+        v-if="type && !hideIcon"
         class="toast__icon"
       >
         <SIcon
@@ -52,7 +52,7 @@
 <script>
 import NotificationMixin from '@/mixins/Notification.mixin'
 import { SIcon } from '@/components/SIcon'
-import { toastTypes, positions } from './options'
+import { types, positions } from './options'
 
 export default {
   name: 'SToast',
@@ -64,28 +64,25 @@ export default {
   mixins: [NotificationMixin],
 
   props: {
-    toastType: {
+    type: {
       type: String,
       default: '',
       validator: v => {
-        return (
-          toastTypes.includes(v) ||
-          console.error(`\`toastType\` should be one of ${toastTypes.join(', ')}`)
-        )
+        return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`)
       }
     },
 
-    hasIcon: {
+    hideIcon: {
       type: Boolean,
-      default: true
+      default: false
     },
 
-    toastTitle: {
+    title: {
       type: String,
       default: ''
     },
 
-    toastBody: {
+    body: {
       type: String,
       default: ''
     },
@@ -115,7 +112,7 @@ export default {
   computed: {
     classList() {
       return {
-        [`toast--${this.toastType}`]: this.toastType,
+        [`toast--${this.type}`]: this.type,
         [`toast--${this.position}`]: this.position
       }
     },
@@ -127,7 +124,7 @@ export default {
         success: 'check-circle'
       }
 
-      return stateMap[this.toastType]
+      return stateMap[this.type]
     },
 
     toastIconColor() {
@@ -137,7 +134,7 @@ export default {
         success: 'green'
       }
 
-      return stateMap[this.toastType]
+      return stateMap[this.type]
     },
 
     hasContent() {

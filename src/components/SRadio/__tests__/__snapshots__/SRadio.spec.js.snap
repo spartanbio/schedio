@@ -23,7 +23,7 @@ exports[`SRadio.vue can be reversed 1`] = `
 exports[`SRadio.vue can hide the optional tag 1`] = `
 <label class="label label--inline" for="radio"><span>
     Radio
-    <!----></span> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span></label>
+    <!----></span> <input id="radio" name="radio" type="radio" class="radio"> <span class="radio__check"></span></label>
 `;
 
 exports[`SRadio.vue renders correctly 1`] = `

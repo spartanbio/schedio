@@ -51,11 +51,6 @@ describe('SHeading.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('validates the display level', () => {
-    shallowMount(SHeading, { propsData: { isDisplay: true, displayLevel: 3 } })
-    expect(errorSpy).toBeCalled()
-  })
-
   it('can have no case', () => {
     wrapper.setProps({ hasNoCase: true })
     expect(wrapper.html()).toMatchSnapshot()

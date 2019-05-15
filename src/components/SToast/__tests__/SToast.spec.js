@@ -1,6 +1,6 @@
 import SToast from '@/components/SToast/SToast.vue'
 import { shallowMount } from '@vue/test-utils'
-import { toastTypes, positions } from '../options'
+import { types, positions } from '../options'
 
 describe('SToast.vue', () => {
   jest.useFakeTimers()
@@ -10,8 +10,8 @@ describe('SToast.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SToast, {
       propsData: {
-        toastType: toastTypes[0],
-        toastBody: 'Text'
+        type: types[0],
+        body: 'Text'
       }
     })
   })
@@ -20,12 +20,12 @@ describe('SToast.vue', () => {
     jest.resetAllMocks()
   })
 
-  toastTypes.forEach(type => {
+  types.forEach(type => {
     it(`renders toast type ${type} correctly`, () => {
       const tempWrapper = shallowMount(SToast, {
         propsData: {
-          toastType: type,
-          toastBody: 'Text'
+          type: type,
+          body: 'Text'
         }
       })
 
@@ -36,8 +36,8 @@ describe('SToast.vue', () => {
   it('warns if the wrong toast type is provided', () => {
     shallowMount(SToast, {
       propsData: {
-        toastType: 'not a type',
-        toastBody: 'Text'
+        type: 'not a type',
+        body: 'Text'
       }
     })
 
@@ -48,7 +48,7 @@ describe('SToast.vue', () => {
     const mountToast = props => {
       return shallowMount(SToast, {
         propsData: {
-          toastType: toastTypes[0],
+          type: types[0],
           ...(props && props)
         }
       })
@@ -58,13 +58,13 @@ describe('SToast.vue', () => {
 
     expect(errorSpy).toBeCalled()
 
-    const body = mountToast({ toastBody: 'text ' })
+    const body = mountToast({ body: 'text' })
     expect(body.html()).toMatchSnapshot()
 
-    const title = mountToast({ toastTitle: 'title' })
+    const title = mountToast({ title: 'title' })
     expect(title.html()).toMatchSnapshot()
 
-    expect(errorSpy).toBeCalledTimes(1)
+    expect(errorSpy).toBeCalledTimes(4)
   })
 
   positions.forEach(position => {
@@ -77,8 +77,8 @@ describe('SToast.vue', () => {
   it('validates position', () => {
     shallowMount(SToast, {
       propsData: {
-        toastType: toastTypes[0],
-        toastBody: 'Text',
+        type: types[0],
+        body: 'Text',
         position: 'not a position'
       }
     })

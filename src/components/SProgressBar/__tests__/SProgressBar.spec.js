@@ -92,7 +92,7 @@ describe('SProgressBar.vue', () => {
   })
 
   it('can hide the percent complete', () => {
-    wrapper.setProps({ showPercentComplete: false })
+    wrapper.setProps({ hidePercentComplete: true })
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.text()).not.toContain(wrapper.props('progress') + '%')
   })
