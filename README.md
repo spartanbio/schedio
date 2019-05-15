@@ -62,7 +62,15 @@ export default {
 
 Place the required fonts in a directory relative to the web root.
 
-SCSS features can be used by importing `'schedio-design/src/assets/styles.scss'`
+### SCSS Resources
+
+SCSS can be used with `sass` and `sass-loader` by importing `'schedio-design/src/assets/styles.scss'`
+
+To use SCSS resources, import the following in this order:
+
+1. Required: `'schedio-design/src/assets/styles/tokens.scss'`
+1. `'schedio-design/src/assets/styles/base.scss'`
+1. `'schedio-design/src/assets/styles/global.scss'`
 
 ## Dev setup
 
