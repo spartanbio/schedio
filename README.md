@@ -91,11 +91,11 @@ project root.
 
 ```bash
 # Build Theo tokens
-$ npm run dist:tokens
+$ yarn dist:tokens
 
 # Served at localhost:6006
 # Watches Vue components, SCSS, Storybook stories, and Theo tokens
-$ npm run dev
+$ yarn dev
 
 # Scaffold a new component/story in src/components/<ComponentName>
 # The following files will be created:
@@ -104,38 +104,38 @@ $ npm run dev
 # + <ComponentName>.stories.jsx
 # + <ComponentName>.vue
 # + __tests__/<ComponentName>.spec.js
-$ npm run scaffold <ComponentName>
+$ yarn scaffold <ComponentName>
 ```
 
 ### Compile and minify component library for production
 
 ```bash
-$ npm run build
+$ yarn build
 ```
 
 ### Builds docs for deploy
 
 ```bash
-$ npm run build:storybook
+$ yarn build:storybook
 ```
 
 ### Lint and fix
 
 ```bash
-$ npm run lint
+$ yarn lint
 ```
 
 ### Tests
 
 ```bash
 # generate any missing unit tests
-$ npm run add-unit-tests
+$ yarn add-unit-tests
 
 # run all tests
-$ npm test
+$ yarn test
 
 # run only unit tests
-$ npm run test:unit
+$ yarn test:unit
 ```
 
 ## Contributing
