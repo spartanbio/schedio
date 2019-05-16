@@ -1,3 +1,10 @@
+## [3.0.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.0.0...v3.0.1) (2019-05-16)
+
+
+### Bug Fixes
+
+* **inputs:** fixes icon color binding ([f2d451f](https://gitlab.com/spartanbio-ux/schedio/commit/f2d451f))
+
 # [3.0.0](https://gitlab.com/spartanbio-ux/schedio/compare/v2.18.1...v3.0.0) (2019-05-16)
 
 
