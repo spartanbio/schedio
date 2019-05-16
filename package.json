@@ -53,6 +53,7 @@
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "ase-utils": "^0.1.1",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "23.6.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-jsx": "^6.18.0",
