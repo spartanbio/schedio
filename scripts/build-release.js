@@ -7,7 +7,7 @@ const buildLib = 'npx vue-cli-service build --target lib'
 const destDir = 'dist/components'
 
 console.log(chalk.yellow('Building main library bundle...\n'))
-shell.exec('npm run build')
+shell.exec('yarn build')
 
 // Builds dist/components/<Component>/<Component>.common.js
 // Then renames to dist/components/<Component>/index.js

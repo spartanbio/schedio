@@ -5,7 +5,7 @@
   "scripts": {
     "ase-encode": " node ./scripts/ase-encode.js",
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
-    "serve": "npm run serve:storybook",
+    "serve": "yarn run serve:storybook",
     "build": "vue-cli-service build --target lib ./src/index.js && rm dist/demo.html",
     "build:release": "node ./scripts/build-release.js",
     "lint": "run-p lint:vue lint:style",
@@ -21,7 +21,7 @@
     "test:generate": "vue-cli-service test:unit --json --outputFile=.jest-test-results.json || true && echo `git commit -am 'test: updates test results'`",
     "test:unit": "vue-cli-service test:unit",
     "theo": "theo ./src/assets/styles/tokens/tokens.yml --setup ./config/theo/theo.config.js --transform web --format ase.json,color-map.scss,scss,raw.json,json --dest ./src/assets/styles/tokens/dist",
-    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- npm run theo"
+    "theo:onchange": "onchange \"./src/assets/styles/tokens/*.yml\" -- yarn run theo"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4",
