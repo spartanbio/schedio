@@ -10,7 +10,7 @@
       >
         <SIcon
           :icon="icons[state]"
-          :icon-color="iconColors[state] || 'night'"
+          :color="iconColors[state] || 'night'"
         />
       </div>
 

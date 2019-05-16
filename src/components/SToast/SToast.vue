@@ -12,7 +12,7 @@
       >
         <SIcon
           :icon="toastIcon"
-          :icon-color="toastIconColor"
+          :color="toastIconColor"
         />
       </div>
 

@@ -27,14 +27,14 @@
       <SIcon
         v-if="iconLeft"
         :icon="iconLeft"
-        :icon-color="iconLeftColor"
+        :color="iconLeftColor"
         class="textarea__icon textarea__icon--left"
       />
 
       <SIcon
         v-if="iconRight"
         :icon="iconRight"
-        :icon-color="iconRightColor"
+        :color="iconRightColor"
         class="textarea__icon textarea__icon--right"
       />
     </div>

@@ -68,14 +68,14 @@
       <SIcon
         v-if="iconLeft"
         :icon="iconLeft"
-        :icon-color="iconLeftColor"
+        :color="iconLeftColor"
         class="select__icon select__icon--left"
       />
 
       <SIcon
         v-if="iconRight"
         :icon="iconRight"
-        :icon-color="iconRightColor"
+        :color="iconRightColor"
         class="select__icon select__icon--right"
       />
     </div>
