@@ -13,15 +13,15 @@ cache:
 build:
   stage: build
   script:
-    - npm ci
-    - npm run build
+    - yarn --frozen-lockfile --non-interactive
+    - yarn build
   artifacts:
     paths:
       - dist/
 
 test:
   stage: test
-  script: npm run test:generate
+  script: yarn test:generate
   dependencies:
     - build
   artifacts:
@@ -34,8 +34,8 @@ publish:
   only:
     - master
   script:
-    - npm run build:release
-    - npx semantic-release
+    - yarn build:release
+    - yarn semantic-release
   dependencies:
     - build
     - test
