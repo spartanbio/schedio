@@ -5477,12 +5477,12 @@ var es6_object_assign = __webpack_require__("f751");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SToast/SToast.vue?vue&type=template&id=582d2a4a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.isVisible),expression:"isVisible"}],staticClass:"toast",class:_vm.classList},[(_vm.toastType && _vm.hasIcon)?_c('div',{staticClass:"toast__icon"},[_c('SIcon',{attrs:{"icon":_vm.toastIcon,"icon-color":_vm.toastIconColor}})],1):_vm._e(),(_vm.hasContent.any)?_c('div',{staticClass:"toast__text"},[(_vm.hasContent.title)?_c('div',{staticClass:"toast__title"},[_vm._v("\n        "+_vm._s(_vm.toastTitle)+"\n      ")]):_vm._e(),(_vm.hasContent.body)?_c('div',{staticClass:"toast__body"},[_vm._v("\n        "+_vm._s(_vm.toastBody)+"\n      ")]):_vm._e()]):_vm._e(),(_vm.action && (typeof _vm.action === 'function'))?_c('button',{staticClass:"toast__action",on:{"click":_vm.clickHandler}},[_vm._v("\n      "+_vm._s(_vm.actionText)+"\n    ")]):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SToast/SToast.vue?vue&type=template&id=6b7398e2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.isVisible),expression:"isVisible"}],staticClass:"toast",class:_vm.classList},[(_vm.type && !_vm.hideIcon)?_c('div',{staticClass:"toast__icon"},[_c('SIcon',{attrs:{"icon":_vm.toastIcon,"icon-color":_vm.toastIconColor}})],1):_vm._e(),(_vm.hasContent.any)?_c('div',{staticClass:"toast__text"},[(_vm.hasContent.title)?_c('div',{staticClass:"toast__title"},[_vm._v("\n        "+_vm._s(_vm.toastTitle)+"\n      ")]):_vm._e(),(_vm.hasContent.body)?_c('div',{staticClass:"toast__body"},[_vm._v("\n        "+_vm._s(_vm.toastBody)+"\n      ")]):_vm._e()]):_vm._e(),(_vm.action && (typeof _vm.action === 'function'))?_c('button',{staticClass:"toast__action",on:{"click":_vm.clickHandler}},[_vm._v("\n      "+_vm._s(_vm.actionText)+"\n    ")]):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SToast/SToast.vue?vue&type=template&id=582d2a4a&
+// CONCATENATED MODULE: ./src/components/SToast/SToast.vue?vue&type=template&id=6b7398e2&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -5602,12 +5602,12 @@ var es6_number_constructor = __webpack_require__("c5f6");
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
-var SIconvue_type_template_id_31b076cc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
-var SIconvue_type_template_id_31b076cc_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=d8e5f004&
+var SIconvue_type_template_id_d8e5f004_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
+var SIconvue_type_template_id_d8e5f004_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
+// CONCATENATED MODULE: ./src/components/SIcon/SIcon.vue?vue&type=template&id=d8e5f004&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -5706,6 +5706,7 @@ var icons = __webpack_require__("9eb1");
 
 
 
+
 //
 //
 //
@@ -5730,26 +5731,28 @@ var list = Object.keys(icons);
         return list.includes(v) || console.error("`icon` must be one of: ".concat(list.join(', ')));
       }
     },
-    iconColor: {
+    color: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || colors.includes(value)) return true;
-        return console.error("`iconColor` ".concat(value, " not found. Allowed colors: ").concat(colors));
+        return console.error("`color` ".concat(value, " not found. Allowed colors: ").concat(colors));
       }
     },
-    iconSize: {
+    size: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || sizes.includes(value)) return true;
-        return console.error("`iconSizes` ".concat(value, " not found. Allowed sizes: ").concat(sizes));
+        return console.error("`sizes` ".concat(value, " not found. Allowed sizes: ").concat(sizes));
       }
     }
   },
   computed: {
     classList: function classList() {
-      return [this.iconColor ? "icon--color-".concat(this.iconColor) : '', this.iconSize ? "icon--size-".concat(this.iconSize) : ''];
+      var _ref;
+
+      return _ref = {}, _defineProperty(_ref, "icon--color-".concat(this.color), this.color), _defineProperty(_ref, "icon--size-".concat(this.size), this.size), _ref;
     },
     featherIcon: function featherIcon() {
       return feather_default.a.icons[this.icon] || {
@@ -5865,8 +5868,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   SIcon_SIconvue_type_script_lang_js_,
-  SIconvue_type_template_id_31b076cc_render,
-  SIconvue_type_template_id_31b076cc_staticRenderFns,
+  SIconvue_type_template_id_d8e5f004_render,
+  SIconvue_type_template_id_d8e5f004_staticRenderFns,
   false,
   null,
   null,
@@ -5884,7 +5887,7 @@ var component = normalizeComponent(
   }
 });
 // CONCATENATED MODULE: ./src/components/SToast/options.js
-var toastTypes = ['', 'success', 'warning', 'error'];
+var types = ['', 'success', 'warning', 'error'];
 var positions = ['', 'center', 'right'];
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SToast/SToast.vue?vue&type=script&lang=js&
 
@@ -5951,22 +5954,22 @@ var positions = ['', 'center', 'right'];
   },
   mixins: [Notification_mixin],
   props: {
-    toastType: {
+    type: {
       type: String,
       default: '',
       validator: function validator(v) {
-        return toastTypes.includes(v) || console.error("`toastType` should be one of ".concat(toastTypes.join(', ')));
+        return types.includes(v) || console.error("`type` should be one of ".concat(types.join(', ')));
       }
     },
-    hasIcon: {
+    hideIcon: {
       type: Boolean,
-      default: true
+      default: false
     },
-    toastTitle: {
+    title: {
       type: String,
       default: ''
     },
-    toastBody: {
+    body: {
       type: String,
       default: ''
     },
@@ -5990,7 +5993,7 @@ var positions = ['', 'center', 'right'];
     classList: function classList() {
       var _ref;
 
-      return _ref = {}, _defineProperty(_ref, "toast--".concat(this.toastType), this.toastType), _defineProperty(_ref, "toast--".concat(this.position), this.position), _ref;
+      return _ref = {}, _defineProperty(_ref, "toast--".concat(this.type), this.type), _defineProperty(_ref, "toast--".concat(this.position), this.position), _ref;
     },
     toastIcon: function toastIcon() {
       var stateMap = {
@@ -5998,7 +6001,7 @@ var positions = ['', 'center', 'right'];
         warning: 'alert-triangle',
         success: 'check-circle'
       };
-      return stateMap[this.toastType];
+      return stateMap[this.type];
     },
     toastIconColor: function toastIconColor() {
       var stateMap = {
@@ -6006,7 +6009,7 @@ var positions = ['', 'center', 'right'];
         warning: 'gold',
         success: 'green'
       };
-      return stateMap[this.toastType];
+      return stateMap[this.type];
     },
     hasContent: function hasContent() {
       var title = this.toastTitle || this.$slots.title;

@@ -3616,12 +3616,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SProgressBar/SProgressBar.vue?vue&type=template&id=0511f10c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SProgressBar/SProgressBar.vue?vue&type=template&id=0be5b690&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"progress-bar"},[_c('div',{staticClass:"progress-bar__background",class:_vm.progressBarClassList},[_c('progress',{staticClass:"progress-bar__progress",attrs:{"max":"100"},domProps:{"value":_vm.computedProgress}}),_c('div',{staticClass:"progress-bar__indicator",class:_vm.progressIndicatorClassList,style:({ width: (_vm.computedProgress + "%") })})]),(_vm.computedMessage)?_c('div',{staticClass:"progress-bar__message"},[_vm._v("\n    "+_vm._s(_vm.computedMessage)+"\n  ")]):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SProgressBar/SProgressBar.vue?vue&type=template&id=0511f10c&
+// CONCATENATED MODULE: ./src/components/SProgressBar/SProgressBar.vue?vue&type=template&id=0be5b690&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -3800,9 +3800,9 @@ var propError = function propError(propName, values) {
       type: String,
       default: ''
     },
-    showPercentComplete: {
+    hidePercentComplete: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   computed: {
@@ -3813,8 +3813,8 @@ var propError = function propError(propName, values) {
     },
     computedMessage: function computedMessage() {
       var stack = this.message;
-      if (this.message && this.showPercentComplete) stack += ': ';
-      if (this.showPercentComplete) stack += "".concat(this.computedProgress, "% complete.");
+      if (this.message && !this.hidePercentComplete) stack += ': ';
+      if (!this.hidePercentComplete) stack += "".concat(this.computedProgress, "% complete.");
       return stack;
     },
     progressBarClassList: function progressBarClassList() {

@@ -3459,12 +3459,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButton/SButton.vue?vue&type=template&id=73fb5a8c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButton/SButton.vue?vue&type=template&id=f9773902&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g(_vm._b({staticClass:"button",class:_vm.classList},'button',_vm.$attrs,false),_vm.$listeners),[(_vm.isLoading)?[_c('span',{staticClass:"button__spinner"},[_c('SSpinner')],1)]:_vm._e(),(_vm.iconLeft)?_c('SIcon',{staticClass:"button__icon button__icon--left",attrs:{"icon":_vm.iconLeft}}):_vm._e(),(!_vm.iconOnly)?_vm._t("default"):_vm._e(),(_vm.iconRight)?_c('SIcon',{staticClass:"button__icon button__icon--right",attrs:{"icon":_vm.iconRight}}):_vm._e()],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SButton/SButton.vue?vue&type=template&id=73fb5a8c&
+// CONCATENATED MODULE: ./src/components/SButton/SButton.vue?vue&type=template&id=f9773902&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js
 var is_array = __webpack_require__("a745");
@@ -3590,29 +3590,25 @@ var sizes = ['small', 'regular', 'large'];
 /* harmony default export */ var SButtonvue_type_script_lang_js_ = ({
   name: 'SButton',
   props: {
-    buttonColor: {
+    color: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || colors.includes(value)) return true;
-        return console.error("`buttonColor` ".concat(value, " not found. Allowed colors: ").concat(_toConsumableArray(colors)));
+        return console.error("`color` ".concat(value, " not found. Allowed colors: ").concat(_toConsumableArray(colors)));
       }
     },
-    outlineColor: {
-      type: String,
-      default: '',
-      validator: function validator(value) {
-        if (!value || colors.includes(value)) return true;
-        return console.error("`outlineColor` ".concat(value, " not found. Allowed colors: ").concat(_toConsumableArray(colors)));
-      }
-    },
-    buttonSize: {
+    size: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || sizes.includes(value)) return true;
-        return console.error("`buttonSizes` ".concat(value, " not found. Allowed sizes: ").concat(sizes));
+        return console.error("`size` ".concat(value, " not found. Allowed sizes: ").concat(sizes));
       }
+    },
+    isOutlined: {
+      type: Boolean,
+      default: false
     },
     isLoading: {
       type: Boolean,
@@ -3633,8 +3629,13 @@ var sizes = ['small', 'regular', 'large'];
   },
   computed: {
     classList: function classList() {
-      return [// Handles storybook default
-      this.buttonColor && "button--color-".concat(this.buttonColor), this.buttonSize && "button--size-".concat(this.buttonSize), this.outlineColor && "button--color-".concat(this.outlineColor, "-outlined"), (this.iconLeft || this.iconRight) && 'button--has-icon', this.iconOnly && 'button--icon-only', this.isLoading && 'button--loading'];
+      return [this.buttonStyle && this.buttonStyle, this.size && "button--size-".concat(this.size), (this.iconLeft || this.iconRight) && 'button--has-icon', this.iconOnly && 'button--icon-only', this.isLoading && 'button--loading'];
+    },
+    buttonStyle: function buttonStyle() {
+      var buttonStyle = '';
+      if (this.color) buttonStyle += "button--color-".concat(this.color);
+      if (this.color && this.isOutlined) buttonStyle += '-outlined';
+      return buttonStyle;
     }
   }
 });

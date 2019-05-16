@@ -1,3 +1,34 @@
+# [3.0.0](https://gitlab.com/spartanbio-ux/schedio/compare/v2.18.1...v3.0.0) (2019-05-16)
+
+
+### Bug Fixes
+
+* converts font definitions to css ([e736b86](https://gitlab.com/spartanbio-ux/schedio/commit/e736b86))
+* **ci:** upgrades image to node 10 ([cbdc157](https://gitlab.com/spartanbio-ux/schedio/commit/cbdc157))
+
+
+### Features
+
+* improved scss import ([008cf73](https://gitlab.com/spartanbio-ux/schedio/commit/008cf73))
+* uses a consistent naming scheme for props ([3f066a9](https://gitlab.com/spartanbio-ux/schedio/commit/3f066a9))
+
+
+### BREAKING CHANGES
+
+* updates library API
+In general:
+- `xColor` => `color`
+- `xSize` => `size`
+- `xType` => `type`
+- `outlineColor` => `isOutlined` (to be used with color prop)
+- `showX` => `hideX` with default changed to `false`
+- `isOptional` => `isRequired` with default changed accordingly
+- `hasX` => `hideX` if X is an element, or text; default changed
+accordingly
+
+Specifically:
+- **s-heading**: `displayLevel` has been combined with `level`
+
 ## [2.18.1](https://gitlab.com/spartanbio-ux/schedio/compare/v2.18.0...v2.18.1) (2019-05-02)
 
 

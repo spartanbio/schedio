@@ -1182,18 +1182,6 @@ module.exports = function (Constructor, NAME, next) {
 
 /***/ }),
 
-/***/ "454f":
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__("46a7");
-var $Object = __webpack_require__("584a").Object;
-module.exports = function defineProperty(it, key, desc) {
-  return $Object.defineProperty(it, key, desc);
-};
-
-
-/***/ }),
-
 /***/ "4588":
 /***/ (function(module, exports) {
 
@@ -1232,16 +1220,6 @@ module.exports = function (bitmap, value) {
     value: value
   };
 };
-
-
-/***/ }),
-
-/***/ "46a7":
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__("63b6");
-// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__("8e60"), 'Object', { defineProperty: __webpack_require__("d9f6").f });
 
 
 /***/ }),
@@ -2270,13 +2248,6 @@ module.exports = function () { /* empty */ };
 
 module.exports = {};
 
-
-/***/ }),
-
-/***/ "85f2":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("454f");
 
 /***/ }),
 
@@ -3488,33 +3459,13 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=1e5d983e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=0722d02d&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"button-group",class:_vm.classList},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=1e5d983e&
+// CONCATENATED MODULE: ./src/components/SButtonGroup/SButtonGroup.vue?vue&type=template&id=0722d02d&
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
-var define_property = __webpack_require__("85f2");
-var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    define_property_default()(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js
 var is_array = __webpack_require__("a745");
 var is_array_default = /*#__PURE__*/__webpack_require__.n(is_array);
@@ -3606,7 +3557,6 @@ var sizes = ['small', 'regular', 'large'];
 
 
 
-
 //
 //
 //
@@ -3620,21 +3570,17 @@ var sizes = ['small', 'regular', 'large'];
 /* harmony default export */ var SButtonGroupvue_type_script_lang_js_ = ({
   name: 'SButtonGroup',
   props: {
-    groupColor: {
+    color: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || colors.includes(value)) return true;
-        return console.error("`groupColor` ".concat(value, " not found. Allowed colors: ").concat(_toConsumableArray(colors)));
+        return console.error("`color` ".concat(value, " not found. Allowed colors: ").concat(_toConsumableArray(colors)));
       }
     },
-    groupOutlineColor: {
-      type: String,
-      default: '',
-      validator: function validator(value) {
-        if (!value || colors.includes(value)) return true;
-        return console.error("`groupColor` ".concat(value, " not found. Allowed colors: ").concat(_toConsumableArray(colors)));
-      }
+    isOutlined: {
+      type: Boolean,
+      default: false
     },
     isGrouped: {
       type: Boolean,
@@ -3648,9 +3594,16 @@ var sizes = ['small', 'regular', 'large'];
   },
   computed: {
     classList: function classList() {
-      var _ref;
-
-      return _ref = {}, _defineProperty(_ref, "button-group--color-".concat(this.groupColor), this.groupColor), _defineProperty(_ref, "button-group--color-".concat(this.groupOutlineColor, "-outlined"), this.groupOutlineColor), _defineProperty(_ref, 'button-group--grouped', this.isGrouped), _defineProperty(_ref, 'button-group--disabled', this.isDisabled), _ref;
+      return [this.groupStyle, {
+        'button-group--grouped': this.isGrouped,
+        'button-group--disabled': this.isDisabled
+      }];
+    },
+    groupStyle: function groupStyle() {
+      var style = '';
+      if (this.color) style += "button-group--color-".concat(this.color);
+      if (style && this.isOutlined) style += '-outlined';
+      return style;
     }
   },
   updated: function updated() {

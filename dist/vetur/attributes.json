@@ -1,15 +1,15 @@
 {
-  "s-button/button-color": {
+  "s-button/color": {
     "description": "String value.",
     "type": "string"
   },
-  "s-button/outline-color": {
+  "s-button/size": {
     "description": "String value.",
     "type": "string"
   },
-  "s-button/button-size": {
-    "description": "String value.",
-    "type": "string"
+  "s-button/is-outlined": {
+    "description": "Boolean value.",
+    "type": "boolean"
   },
   "s-button/is-loading": {
     "description": "Boolean value.",
@@ -27,19 +27,19 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-button-group/group-color": {
+  "s-button-group/color": {
     "description": "String value.",
     "type": "string"
   },
-  "s-button-group/group-outline-color": {
-    "description": "String value.",
-    "type": "string"
+  "s-button-group/is-outlined": {
+    "description": "Boolean value.",
+    "type": "boolean"
   },
   "s-button-group/is-grouped": {
     "description": "Boolean value.",
     "type": "boolean"
   },
-  "s-callout/callout-type": {
+  "s-callout/type": {
     "description": "String value.",
     "type": "string"
   },
@@ -231,11 +231,11 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-form-validation/validation-text": {
+  "s-form-validation/text": {
     "description": "String value.",
     "type": "string"
   },
-  "s-form-validation/validation-state": {
+  "s-form-validation/state": {
     "description": "String value.",
     "type": "string"
   },
@@ -243,15 +243,11 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-form-validation/has-icon": {
+  "s-form-validation/hide-icon": {
     "description": "Boolean value.",
     "type": "boolean"
   },
   "s-heading/level": {
-    "description": "One of string or number",
-    "type": "string|number"
-  },
-  "s-heading/display-level": {
     "description": "One of string or number",
     "type": "string|number"
   },
@@ -295,11 +291,11 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-icon/icon-color": {
+  "s-icon/color": {
     "description": "String value.",
     "type": "string"
   },
-  "s-icon/icon-size": {
+  "s-icon/size": {
     "description": "String value.",
     "type": "string"
   },
@@ -311,7 +307,7 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-label/is-optional": {
+  "s-label/is-required": {
     "description": "Boolean value.",
     "type": "boolean"
   },
@@ -327,7 +323,7 @@
     "description": "Boolean value.",
     "type": "boolean"
   },
-  "s-label/show-optional": {
+  "s-label/hide-optional": {
     "description": "Boolean value.",
     "type": "boolean"
   },
@@ -355,7 +351,7 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-progress-bar/show-percent-complete": {
+  "s-progress-bar/hide-percent-complete": {
     "description": "Boolean value.",
     "type": "boolean"
   },
@@ -431,19 +427,19 @@
     "description": "Boolean value.",
     "type": "boolean"
   },
-  "s-toast/toast-type": {
+  "s-toast/type": {
     "description": "String value.",
     "type": "string"
   },
-  "s-toast/has-icon": {
+  "s-toast/hide-icon": {
     "description": "Boolean value.",
     "type": "boolean"
   },
-  "s-toast/toast-title": {
+  "s-toast/title": {
     "description": "String value.",
     "type": "string"
   },
-  "s-toast/toast-body": {
+  "s-toast/body": {
     "description": "String value.",
     "type": "string"
   },

@@ -5274,12 +5274,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFormValidation/SFormValidation.vue?vue&type=template&id=7947f320&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"fade"}},[_c('div',{staticClass:"form-validation",class:_vm.classList},[(_vm.icons[_vm.validationState] && _vm.hasIcon)?_c('div',{staticClass:"form-validation__icon"},[_c('SIcon',{attrs:{"icon":_vm.icons[_vm.validationState],"icon-color":_vm.iconColors[_vm.validationState] || 'night'}})],1):_vm._e(),_c('div',{staticClass:"form-validation__text"},[_vm._t("default",[_vm._v(_vm._s(_vm.validationText))])],2)])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFormValidation/SFormValidation.vue?vue&type=template&id=77a10e68&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"fade"}},[_c('div',{staticClass:"form-validation",class:_vm.classList},[(_vm.icons[_vm.state] && !_vm.hideIcon)?_c('div',{staticClass:"form-validation__icon"},[_c('SIcon',{attrs:{"icon":_vm.icons[_vm.state],"icon-color":_vm.iconColors[_vm.state] || 'night'}})],1):_vm._e(),_c('div',{staticClass:"form-validation__text"},[_vm._t("default",[_vm._v(_vm._s(_vm.text))])],2)])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SFormValidation/SFormValidation.vue?vue&type=template&id=7947f320&
+// CONCATENATED MODULE: ./src/components/SFormValidation/SFormValidation.vue?vue&type=template&id=77a10e68&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -5307,12 +5307,12 @@ var es7_array_includes = __webpack_require__("6762");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
 var es6_string_includes = __webpack_require__("2fdb");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"756be7cc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
-var SIconvue_type_template_id_31b076cc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
-var SIconvue_type_template_id_31b076cc_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=d8e5f004&
+var SIconvue_type_template_id_d8e5f004_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
+var SIconvue_type_template_id_d8e5f004_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SIcon/SIcon.vue?vue&type=template&id=31b076cc&
+// CONCATENATED MODULE: ./src/components/SIcon/SIcon.vue?vue&type=template&id=d8e5f004&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -5411,6 +5411,7 @@ var dist_icons = __webpack_require__("9eb1");
 
 
 
+
 //
 //
 //
@@ -5435,26 +5436,28 @@ var list = Object.keys(dist_icons);
         return list.includes(v) || console.error("`icon` must be one of: ".concat(list.join(', ')));
       }
     },
-    iconColor: {
+    color: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || colors.includes(value)) return true;
-        return console.error("`iconColor` ".concat(value, " not found. Allowed colors: ").concat(colors));
+        return console.error("`color` ".concat(value, " not found. Allowed colors: ").concat(colors));
       }
     },
-    iconSize: {
+    size: {
       type: String,
       default: '',
       validator: function validator(value) {
         if (!value || sizes.includes(value)) return true;
-        return console.error("`iconSizes` ".concat(value, " not found. Allowed sizes: ").concat(sizes));
+        return console.error("`sizes` ".concat(value, " not found. Allowed sizes: ").concat(sizes));
       }
     }
   },
   computed: {
     classList: function classList() {
-      return [this.iconColor ? "icon--color-".concat(this.iconColor) : '', this.iconSize ? "icon--size-".concat(this.iconSize) : ''];
+      var _ref;
+
+      return _ref = {}, _defineProperty(_ref, "icon--color-".concat(this.color), this.color), _defineProperty(_ref, "icon--size-".concat(this.size), this.size), _ref;
     },
     featherIcon: function featherIcon() {
       return feather_default.a.icons[this.icon] || {
@@ -5570,8 +5573,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   SIcon_SIconvue_type_script_lang_js_,
-  SIconvue_type_template_id_31b076cc_render,
-  SIconvue_type_template_id_31b076cc_staticRenderFns,
+  SIconvue_type_template_id_d8e5f004_render,
+  SIconvue_type_template_id_d8e5f004_staticRenderFns,
   false,
   null,
   null,
@@ -5625,24 +5628,24 @@ var states = ['', 'success', 'warning', 'error'];
     SIcon: SIcon
   },
   props: {
-    validationText: {
+    text: {
       type: String,
       default: ''
     },
-    validationState: {
+    state: {
       type: String,
       default: 'error',
       validator: function validator(v) {
-        return states.includes(v) || console.error("`validationState` should be one of ".concat(states.join(', ')));
+        return states.includes(v) || console.error("`state` should be one of ".concat(states.join(', ')));
       }
     },
     icon: {
       type: String,
       default: ''
     },
-    hasIcon: {
+    hideIcon: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   data: function data() {
@@ -5656,10 +5659,10 @@ var states = ['', 'success', 'warning', 'error'];
   },
   computed: {
     classList: function classList() {
-      return _defineProperty({}, "form-validation--".concat(this.validationState), this.validationState);
+      return _defineProperty({}, "form-validation--".concat(this.state), this.state);
     },
     icons: function icons() {
-      if (this.icon) return _defineProperty({}, this.validationState, this.icon);
+      if (this.icon) return _defineProperty({}, this.state, this.icon);
       return {
         success: 'check-circle',
         warning: 'alert-triangle',

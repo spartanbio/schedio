@@ -1,9 +1,9 @@
 {
   "s-button": {
     "attributes": [
-      "button-color",
-      "outline-color",
-      "button-size",
+      "color",
+      "size",
+      "is-outlined",
       "is-loading",
       "icon-only",
       "icon-left",
@@ -14,8 +14,8 @@
   },
   "s-button-group": {
     "attributes": [
-      "group-color",
-      "group-outline-color",
+      "color",
+      "is-outlined",
       "is-grouped"
     ],
     "subtags": [],
@@ -23,7 +23,7 @@
   },
   "s-callout": {
     "attributes": [
-      "callout-type"
+      "type"
     ],
     "subtags": [],
     "description": "Schedio component: <s-callout>"
@@ -101,10 +101,10 @@
   },
   "s-form-validation": {
     "attributes": [
-      "validation-text",
-      "validation-state",
+      "text",
+      "state",
       "icon",
-      "has-icon"
+      "hide-icon"
     ],
     "subtags": [],
     "description": "Schedio component: <s-form-validation>"
@@ -112,7 +112,6 @@
   "s-heading": {
     "attributes": [
       "level",
-      "display-level",
       "is-display",
       "has-no-case",
       "is-subtle",
@@ -135,8 +134,8 @@
   "s-icon": {
     "attributes": [
       "icon",
-      "icon-color",
-      "icon-size"
+      "color",
+      "size"
     ],
     "subtags": [],
     "description": "Schedio component: <s-icon>"
@@ -151,11 +150,11 @@
   "s-label": {
     "attributes": [
       "label",
-      "is-optional",
+      "is-required",
       "is-inline",
       "is-fullwidth",
       "is-reversed",
-      "show-optional"
+      "hide-optional"
     ],
     "subtags": [],
     "description": "Schedio component: <s-label>"
@@ -174,7 +173,7 @@
       "size",
       "color",
       "message",
-      "show-percent-complete"
+      "hide-percent-complete"
     ],
     "subtags": [],
     "description": "Schedio component: <s-progress-bar>"
@@ -229,10 +228,10 @@
   },
   "s-toast": {
     "attributes": [
-      "toast-type",
-      "has-icon",
-      "toast-title",
-      "toast-body",
+      "type",
+      "hide-icon",
+      "title",
+      "body",
       "action",
       "action-text",
       "position"
