@@ -44,7 +44,7 @@ import PropList from '@/docs/PropList'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/${componentName}', module)
-  .addParameters({ jest: ${componentName} })
+  .addParameters({ jest: '${componentName}' })
   .add('${componentName}', () => {
     return {
       render(h) {
