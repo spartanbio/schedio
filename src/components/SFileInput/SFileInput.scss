@@ -1,0 +1,144 @@
+.file-input {
+  // hides the default element
+  &__control {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: spacing('none');
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  // inner wrapper around control and count
+  &__inner {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-weight: $font-weight-regular;
+    margin-top: spacing();
+    text-transform: none;
+  }
+
+  // the element being displayed in place of the <input />
+  &__display {
+    transition: all duration() easing();
+
+    &--invalid {
+      @include control-invalid;
+
+      border: none !important;
+    }
+  }
+
+  // count of files
+  &__count {
+    margin-left: spacing('half');
+  }
+
+  // limit of files
+  &__limit {
+    @include font-size(6);
+
+    color: color('night', 'lighter');
+    margin: spacing() spacing('none');
+  }
+
+  // list of files
+  &__list {
+    @include font-size(6);
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: spacing('none');
+
+    // a file
+    &-item {
+      align-items: center;
+      background-color: color('ice');
+      border-radius: border-radius('small');
+      display: flex;
+      flex: 0 1 auto;
+      margin-bottom: spacing();
+      margin-right: spacing();
+      padding-left: spacing();
+      padding-right: spacing('half');
+
+      &:last-child {
+        margin-right: spacing('none');
+      }
+    }
+  }
+
+  // bind parent class name
+  $parent: &;
+
+  // look like a button
+  &--button {
+    #{$parent}__display {
+      @include button-base;
+      @include button-outline('night');
+    }
+  }
+
+  // an area with an icon (future drag and drop?)
+  &--area {
+    #{$parent}__inner {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #{$parent}__icon {
+      margin: spacing('half');
+      margin-top: spacing('none');
+      opacity: 0.2;
+      transition: all duration() easing();
+    }
+
+    #{$parent}__display {
+      $area-width: 12em;
+
+      align-items: center;
+      border: border();
+      border-color: color('grey', 'light');
+      border-radius: border-radius('small');
+      border-style: dashed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: spacing('quarter');
+      width: $area-width;
+
+      &:hover {
+        border-color: color('spartan_blue', 'lighter');
+        background-color: color('ice');
+
+        #{$parent}__icon {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    #{$parent}__count {
+      margin-left: spacing('none');
+      margin-top: spacing('half');
+    }
+  }
+
+  // disabled state
+  &__control:disabled + #{$parent}__display {
+    background-color: color('grey', 'light') !important;
+    border-color: color('grey') !important;
+    border-style: solid;
+    box-shadow: none !important;
+    color: color('night', 'lighter');
+    cursor: not-allowed;
+    text-shadow: none !important;
+
+    #{$parent}__icon {
+      opacity: 0.2;
+    }
+  }
+}

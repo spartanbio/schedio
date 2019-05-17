@@ -4,7 +4,7 @@
     class="label"
   >
     <!-- Wrapped to keep optional on the right when reversed -->
-    <span>
+    <div>
       {{ label }}
       <span
         v-if="!isRequired && !hideOptional"
@@ -12,7 +12,7 @@
       >
         &mdash;&nbsp;Optional
       </span>
-    </span>
+    </div>
 
     <slot />
   </label>

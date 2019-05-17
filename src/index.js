@@ -14,6 +14,7 @@ import SCheckbox from './components/SCheckbox'
 import SContainer from './components/SContainer'
 import SContainerColumn from './components/SContainerColumn'
 import SContainerRow from './components/SContainerRow'
+import SFileInput from './components/SFileInput'
 import SFormField from './components/SFormField'
 import SFormValidation from './components/SFormValidation'
 import SHeading from './components/SHeading'
@@ -44,6 +45,7 @@ const Schedio = {
     Vue.use(SContainer)
     Vue.use(SContainerColumn)
     Vue.use(SContainerRow)
+    Vue.use(SFileInput)
     Vue.use(SFormField)
     Vue.use(SFormValidation)
     Vue.use(SHeading)
@@ -78,6 +80,7 @@ export { SCheckbox } from './components/SCheckbox'
 export { SContainer } from './components/SContainer'
 export { SContainerColumn } from './components/SContainerColumn'
 export { SContainerRow } from './components/SContainerRow'
+export { SFileInput } from './components/SFileInput'
 export { SFormField } from './components/SFormField'
 export { SFormValidation } from './components/SFormValidation'
 export { SHeading } from './components/SHeading'
