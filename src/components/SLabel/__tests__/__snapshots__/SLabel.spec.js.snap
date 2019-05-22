@@ -1,47 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SLabel.vue can be fullwidth 1`] = `
-<label class="label label--inline label--fullwidth"><span>
+<label class="label label--inline label--fullwidth">
+  <div>
     label
     <span class="label__optional">
       —&nbsp;Optional
-    </span></span> </label>
+    </span></div>
+</label>
 `;
 
 exports[`SLabel.vue can be inline 1`] = `
-<label class="label label--inline"><span>
+<label class="label label--inline">
+  <div>
     label
     <span class="label__optional">
       —&nbsp;Optional
-    </span></span> </label>
+    </span></div>
+</label>
 `;
 
 exports[`SLabel.vue can be required 1`] = `
-<label class="label"><span>
+<label class="label">
+  <div>
     label
     <span class="label__optional">
       —&nbsp;Optional
-    </span></span> </label>
+    </span></div>
+</label>
 `;
 
 exports[`SLabel.vue can be reversed 1`] = `
-<label class="label label--inline label--reversed"><span>
+<label class="label label--inline label--reversed">
+  <div>
     label
     <span class="label__optional">
       —&nbsp;Optional
-    </span></span> </label>
+    </span></div>
+</label>
 `;
 
 exports[`SLabel.vue can hide the optional tag 1`] = `
-<label class="label"><span>
+<label class="label">
+  <div>
     label
-    <!----></span> </label>
+    <!---->
+  </div>
+</label>
 `;
 
 exports[`SLabel.vue renders correctly 1`] = `
-<label class="label"><span>
+<label class="label">
+  <div>
     label
     <span class="label__optional">
       —&nbsp;Optional
-    </span></span> </label>
+    </span></div>
+</label>
 `;

@@ -146,7 +146,7 @@ exports[`SSelect.vue can have an icon on the left 1`] = `
         two
       </option>
     </select>
-    <sicon-stub icon="activity" color="" size="" icon-color="green" class="select__icon select__icon--left"></sicon-stub>
+    <sicon-stub icon="activity" color="green" size="" class="select__icon select__icon--left"></sicon-stub>
     <!---->
   </div>
 </slabel-stub>
@@ -166,7 +166,7 @@ exports[`SSelect.vue can have an icon on the right 1`] = `
       </option>
     </select>
     <!---->
-    <sicon-stub icon="activity" color="" size="" icon-color="green" class="select__icon select__icon--right"></sicon-stub>
+    <sicon-stub icon="activity" color="green" size="" class="select__icon select__icon--right"></sicon-stub>
   </div>
 </slabel-stub>
 `;

@@ -30,7 +30,7 @@ exports[`STextarea.vue can have a placeholder 1`] = `
 exports[`STextarea.vue can have an icon on the left 1`] = `
 <slabel-stub label="textarea" isrequired="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-left"></textarea>
-    <sicon-stub icon="activity" color="" size="" icon-color="green" class="textarea__icon textarea__icon--left"></sicon-stub>
+    <sicon-stub icon="activity" color="green" size="" class="textarea__icon textarea__icon--left"></sicon-stub>
     <!---->
   </div>
 </slabel-stub>
@@ -40,7 +40,7 @@ exports[`STextarea.vue can have an icon on the right 1`] = `
 <slabel-stub label="textarea" isrequired="true" for="textarea">
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-right"></textarea>
     <!---->
-    <sicon-stub icon="activity" color="" size="" icon-color="green" class="textarea__icon textarea__icon--right"></sicon-stub>
+    <sicon-stub icon="activity" color="green" size="" class="textarea__icon textarea__icon--right"></sicon-stub>
   </div>
 </slabel-stub>
 `;

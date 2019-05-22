@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SFileInput.vue renders correctly 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub isrequired="true">
+    <div class="file-input__inner"><input type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </div>
+</div>
+`;

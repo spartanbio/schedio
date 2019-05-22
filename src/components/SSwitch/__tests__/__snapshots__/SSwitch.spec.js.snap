@@ -1,43 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SSwitch.vue can be invalid 1`] = `
-<label class="label label--inline" for="toggleSwitch"><span>
+<label class="label label--inline" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check switch__check--invalid"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check switch__check--invalid"></span>
+</label>
 `;
 
 exports[`SSwitch.vue can be reversed 1`] = `
-<label class="label label--inline label--reversed" for="toggleSwitch"><span>
+<label class="label label--inline label--reversed" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check"></span>
+</label>
 `;
 
 exports[`SSwitch.vue can be size large 1`] = `
-<label class="label label--inline" for="toggleSwitch"><span>
+<label class="label label--inline" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch switch--large"> <span class="switch__check"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch switch--large"> <span class="switch__check"></span>
+</label>
 `;
 
 exports[`SSwitch.vue can be size medium 1`] = `
-<label class="label label--inline" for="toggleSwitch"><span>
+<label class="label label--inline" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch switch--medium"> <span class="switch__check"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch switch--medium"> <span class="switch__check"></span>
+</label>
 `;
 
 exports[`SSwitch.vue can be size small 1`] = `
-<label class="label label--inline" for="toggleSwitch"><span>
+<label class="label label--inline" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch switch--small"> <span class="switch__check"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch switch--small"> <span class="switch__check"></span>
+</label>
 `;
 
 exports[`SSwitch.vue can hide the optional tag 1`] = `
-<label class="label label--inline" for="toggleSwitch"><span>
+<label class="label label--inline" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" type="checkbox" class="switch"> <span class="switch__check"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" type="checkbox" class="switch"> <span class="switch__check"></span>
+</label>
 `;
 
 exports[`SSwitch.vue renders correctly 1`] = `
-<label class="label label--inline" for="toggleSwitch"><span>
+<label class="label label--inline" for="toggleSwitch">
+  <div>
     Checkbox
-    <!----></span> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check"></span></label>
+    <!---->
+  </div> <input id="toggleSwitch" name="toggleSwitch" required="required" type="checkbox" class="switch"> <span class="switch__check"></span>
+</label>
 `;
