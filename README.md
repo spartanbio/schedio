@@ -93,7 +93,7 @@ project root.
 # Build Theo tokens
 $ yarn dist:tokens
 
-# Served at localhost:6006
+# Served at localhost:6006, with `@vue/devtools` on localhost:8989
 # Watches Vue components, SCSS, Storybook stories, and Theo tokens
 $ yarn dev
 

@@ -36,6 +36,7 @@ addParameters({
 addDecorator(withKnobs)
 addDecorator(withTests({ results }))
 addDecorator(story => ({
+  name: 'TheStory',
   components: { StoryContainer, story },
   template: `\
 <StoryContainer>
