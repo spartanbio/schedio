@@ -641,6 +641,51 @@ module.exports = function (it, S) {
 
 /***/ }),
 
+/***/ "1c4c":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var ctx = __webpack_require__("9b43");
+var $export = __webpack_require__("5ca1");
+var toObject = __webpack_require__("4bf8");
+var call = __webpack_require__("1fa8");
+var isArrayIter = __webpack_require__("33a4");
+var toLength = __webpack_require__("9def");
+var createProperty = __webpack_require__("f1ae");
+var getIterFn = __webpack_require__("27ee");
+
+$export($export.S + $export.F * !__webpack_require__("5cc5")(function (iter) { Array.from(iter); }), 'Array', {
+  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
+  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var aLen = arguments.length;
+    var mapfn = aLen > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var index = 0;
+    var iterFn = getIterFn(O);
+    var length, result, step, iterator;
+    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
+    // if object isn't iterable or it's array with default iterator - use simple case
+    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
+      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
+        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
+      }
+    } else {
+      length = toLength(O.length);
+      for (result = new C(length); length > index; index++) {
+        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
+      }
+    }
+    result.length = index;
+    return result;
+  }
+});
+
+
+/***/ }),
+
 /***/ "1ec9":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7149,6 +7194,22 @@ module.exports = __webpack_require__("584a").Object.getOwnPropertySymbols;
 
 /***/ }),
 
+/***/ "f1ae":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $defineProperty = __webpack_require__("86cc");
+var createDesc = __webpack_require__("4630");
+
+module.exports = function (object, index, value) {
+  if (index in object) $defineProperty.f(object, index, createDesc(0, value));
+  else object[index] = value;
+};
+
+
+/***/ }),
+
 /***/ "f410":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8003,12 +8064,12 @@ var SCheckboxvue_type_template_id_48797d70_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/SCheckbox/SCheckbox.vue?vue&type=template&id=48797d70&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=template&id=3eb6272e&
-var SLabelvue_type_template_id_3eb6272e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"label",class:_vm.classList},[_c('span',[_vm._v("\n    "+_vm._s(_vm.label)+"\n    "),(!_vm.isRequired && !_vm.hideOptional)?_c('span',{staticClass:"label__optional"},[_vm._v("\n      — Optional\n    ")]):_vm._e()]),_vm._t("default")],2)}
-var SLabelvue_type_template_id_3eb6272e_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=template&id=7d3dc063&
+var SLabelvue_type_template_id_7d3dc063_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"label",class:_vm.classList},[_c('div',[_vm._v("\n    "+_vm._s(_vm.label)+"\n    "),(!_vm.isRequired && !_vm.hideOptional)?_c('span',{staticClass:"label__optional"},[_vm._v("\n      — Optional\n    ")]):_vm._e()]),_vm._t("default")],2)}
+var SLabelvue_type_template_id_7d3dc063_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SLabel/SLabel.vue?vue&type=template&id=3eb6272e&
+// CONCATENATED MODULE: ./src/components/SLabel/SLabel.vue?vue&type=template&id=7d3dc063&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=script&lang=js&
 //
@@ -8086,8 +8147,8 @@ var SLabelvue_type_template_id_3eb6272e_staticRenderFns = []
 
 var SLabel_component = normalizeComponent(
   SLabel_SLabelvue_type_script_lang_js_,
-  SLabelvue_type_template_id_3eb6272e_render,
-  SLabelvue_type_template_id_3eb6272e_staticRenderFns,
+  SLabelvue_type_template_id_7d3dc063_render,
+  SLabelvue_type_template_id_7d3dc063_staticRenderFns,
   false,
   null,
   null,
@@ -8638,6 +8699,283 @@ var SContainerRow_component = normalizeComponent(
 /* harmony default export */ var components_SContainerRow = ({
   install: function install(Vue) {
     return Vue.component(SContainerRow.name, SContainerRow);
+  }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFileInput/SFileInput.vue?vue&type=template&id=39d40778&
+var SFileInputvue_type_template_id_39d40778_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"file-input",class:_vm.classList},[_c('SLabel',{attrs:{"for":_vm.id,"is-required":_vm.required,"hide-optional":_vm.hideOptional,"label":_vm.label}},[_c('div',{staticClass:"file-input__inner"},[_c('input',_vm._g(_vm._b({staticClass:"file-input__control",attrs:{"id":_vm.id,"label":_vm.label,"name":_vm.name,"type":"file"},on:{"change":_vm.handleChange}},'input',_vm.$attrs,false),_vm.listeners)),_c('div',{staticClass:"file-input__display",class:{
+          'file-input__display--invalid': _vm.isInvalid
+        }},[(!_vm.hideIcon && _vm.type === 'area')?_c('SIcon',{staticClass:"file-input__icon",attrs:{"icon":"upload-cloud","size":"large"}}):_vm._e(),_vm._v("\n\n        "+_vm._s(_vm.displayText)+"\n      ")],1),(!_vm.$attrs.disabled && !_vm.hideCount)?_c('span',{staticClass:"file-input__count"},[_vm._v(_vm._s(_vm.fileCountText))]):_vm._e()])]),_c('div',{staticClass:"file-input__info"},[(_vm.maxSize)?_c('p',{staticClass:"file-input__limit"},[_vm._v("\n      Maximum file size: "+_vm._s(_vm.maxSize)+" bytes\n    ")]):_vm._e(),_c('ul',{staticClass:"file-input__list"},_vm._l((_vm.fileList),function(file,idx){return _c('li',{key:file.name,staticClass:"file-input__list-item"},[_vm._v("\n        "+_vm._s(file.name)+"\n        "),_c('SButton',{attrs:{"icon-left":"trash-2","icon-only":"","size":"small"},on:{"click":function($event){return _vm.deleteThis({ idx: idx })}}},[_vm._v("\n          Delete\n        ")])],1)}),0)])],1)}
+var SFileInputvue_type_template_id_39d40778_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue?vue&type=template&id=39d40778&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.from.js
+var es6_array_from = __webpack_require__("1c4c");
+
+// CONCATENATED MODULE: ./src/components/SFileInput/options.js
+var SFileInput_options_types = ['button', 'area'];
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFileInput/SFileInput.vue?vue&type=script&lang=js&
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ var SFileInputvue_type_script_lang_js_ = ({
+  name: 'SFileInput',
+  components: {
+    SLabel: SLabel
+  },
+  mixins: [InputListeners_mixin, InputProps_mixin],
+  inheritAttrs: false,
+  props: {
+    maxSize: {
+      default: null,
+      type: [Number, String]
+    },
+    text: {
+      default: '',
+      type: String
+    },
+    type: {
+      default: SFileInput_options_types[0],
+      type: String,
+      validator: function validator(v) {
+        return SFileInput_options_types.includes(v) || console.error("`type` must be one of ".concat(SFileInput_options_types));
+      }
+    },
+    hideIcon: {
+      default: false,
+      type: Boolean
+    },
+    hideCount: {
+      default: false,
+      type: Boolean
+    }
+  },
+  data: function data() {
+    return {
+      fileList: []
+    };
+  },
+  computed: {
+    fileNames: function fileNames() {
+      return this.fileList.map(function (file) {
+        return file.name;
+      });
+    },
+    displayText: function displayText() {
+      var defaultDisplayText = this.$attrs.multiple ? 'Choose files' : 'Choose a file';
+      return this.text || defaultDisplayText;
+    },
+    fileCountText: function fileCountText() {
+      var count = this.fileList.length;
+      var text = "".concat(count, " file");
+      if (count !== 1) text += 's';
+      return "".concat(text, " selected");
+    },
+    classList: function classList() {
+      var _ref;
+
+      return _ref = {}, _defineProperty(_ref, "file-input--".concat(this.type), this.type), _defineProperty(_ref, 'file-input--multipe', this.$attrs.multiple), _ref;
+    }
+  },
+  methods: {
+    handleChange: function handleChange(event) {
+      var _this$getValidFiles = this.getValidFiles(Array.from(event.target.files)),
+          invalid = _this$getValidFiles.invalid,
+          valid = _this$getValidFiles.valid;
+
+      if (invalid.length > 0) {
+        var payload = invalid.map(function (_ref2) {
+          var name = _ref2.name,
+              failed = _ref2.failed;
+          return {
+            name: name,
+            failed: failed
+          };
+        }, []);
+        this.$emit('error', {
+          payload: payload
+        });
+      }
+
+      this.fileList = this.$attrs.multiple ? [].concat(_toConsumableArray(this.fileList), _toConsumableArray(valid)) : valid;
+    },
+
+    /**
+     * Validates files
+     * @param {Array.<File>} files - The array of files
+     *
+     * @return {{ invalid: File[], valid: File[] }} - An object of valid and invalid files
+     */
+    getValidFiles: function getValidFiles(files) {
+      var _this = this;
+
+      var validate = function validate(_ref3, file) {
+        var invalid = _ref3.invalid,
+            valid = _ref3.valid;
+
+        var _this$checkValidation = _this.checkValidations(file),
+            isValid = _this$checkValidation.isValid,
+            failed = _this$checkValidation.failed;
+
+        if (isValid) {
+          valid.push(file);
+        } else {
+          file.failed = failed;
+          invalid.push(file);
+        }
+
+        return {
+          invalid: invalid,
+          valid: valid
+        };
+      };
+
+      return files.reduce(validate, {
+        invalid: [],
+        valid: []
+      });
+    },
+    checkValidations: function checkValidations(file) {
+      var toValidate = [{
+        type: 'exceeds max size',
+        isValid: this.isValidSize(file)
+      }, {
+        type: 'duplicate name',
+        isValid: this.hasUniqueName(file)
+      }];
+      var failed = toValidate.reduce(function (r, _ref4) {
+        var isValid = _ref4.isValid,
+            type = _ref4.type;
+        return isValid ? r : r.concat(type);
+      }, []);
+      return {
+        isValid: failed.length === 0,
+        failed: failed
+      };
+    },
+    isValidSize: function isValidSize(file) {
+      return this.maxSize ? file.size <= this.maxSize : true;
+    },
+    hasUniqueName: function hasUniqueName(file) {
+      return !this.fileNames.includes(file.name);
+    },
+    deleteThis: function deleteThis(_ref5) {
+      var idx = _ref5.idx;
+      this.fileList.splice(idx, 1);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue?vue&type=script&lang=js&
+ /* harmony default export */ var SFileInput_SFileInputvue_type_script_lang_js_ = (SFileInputvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue
+
+
+
+
+
+/* normalize component */
+
+var SFileInput_component = normalizeComponent(
+  SFileInput_SFileInputvue_type_script_lang_js_,
+  SFileInputvue_type_template_id_39d40778_render,
+  SFileInputvue_type_template_id_39d40778_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var SFileInput = (SFileInput_component.exports);
+// CONCATENATED MODULE: ./src/components/SFileInput/index.js
+
+
+/* harmony default export */ var components_SFileInput = ({
+  install: function install(Vue) {
+    return Vue.component(SFileInput.name, SFileInput);
   }
 });
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5b005302-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFormField/SFormField.vue?vue&type=template&id=020b2534&
@@ -10790,6 +11128,7 @@ var SToastProgrammatic = {
 
 
 
+
 var Schedio = {
   install: function install(Vue) {
     Vue.use(components_SButton);
@@ -10801,6 +11140,7 @@ var Schedio = {
     Vue.use(components_SContainer);
     Vue.use(components_SContainerColumn);
     Vue.use(components_SContainerRow);
+    Vue.use(components_SFileInput);
     Vue.use(components_SFormField);
     Vue.use(components_SFormValidation);
     Vue.use(components_SHeading);
@@ -10850,6 +11190,7 @@ if (typeof window !== 'undefined' && window.Vue) external_commonjs_vue_commonjs2
 
 
 
+
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport SButton */__webpack_require__.d(__webpack_exports__, "SButton", function() { return SButton; });
 /* concated harmony reexport SButtonGroup */__webpack_require__.d(__webpack_exports__, "SButtonGroup", function() { return SButtonGroup; });
@@ -10860,6 +11201,7 @@ if (typeof window !== 'undefined' && window.Vue) external_commonjs_vue_commonjs2
 /* concated harmony reexport SContainer */__webpack_require__.d(__webpack_exports__, "SContainer", function() { return SContainer; });
 /* concated harmony reexport SContainerColumn */__webpack_require__.d(__webpack_exports__, "SContainerColumn", function() { return SContainerColumn; });
 /* concated harmony reexport SContainerRow */__webpack_require__.d(__webpack_exports__, "SContainerRow", function() { return SContainerRow; });
+/* concated harmony reexport SFileInput */__webpack_require__.d(__webpack_exports__, "SFileInput", function() { return SFileInput; });
 /* concated harmony reexport SFormField */__webpack_require__.d(__webpack_exports__, "SFormField", function() { return SFormField; });
 /* concated harmony reexport SFormValidation */__webpack_require__.d(__webpack_exports__, "SFormValidation", function() { return SFormValidation; });
 /* concated harmony reexport SHeading */__webpack_require__.d(__webpack_exports__, "SHeading", function() { return SHeading; });

@@ -1,3 +1,16 @@
+# [3.1.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.0.1...v3.1.0) (2019-05-23)
+
+
+### Bug Fixes
+
+* **scripts:** ensures string is passed to jest ([f3c9a2d](https://gitlab.com/spartanbio-ux/schedio/commit/f3c9a2d))
+* **scripts:** removes unused import ([03961f8](https://gitlab.com/spartanbio-ux/schedio/commit/03961f8))
+
+
+### Features
+
+* **file-input:** adds file input component ([bdc15a6](https://gitlab.com/spartanbio-ux/schedio/commit/bdc15a6))
+
 ## [3.0.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.0.0...v3.0.1) (2019-05-16)
 
 

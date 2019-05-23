@@ -231,6 +231,26 @@
     "description": "String value.",
     "type": "string"
   },
+  "s-file-input/max-size": {
+    "description": "One of number or string",
+    "type": "number|string"
+  },
+  "s-file-input/text": {
+    "description": "String value.",
+    "type": "string"
+  },
+  "s-file-input/type": {
+    "description": "String value.",
+    "type": "string"
+  },
+  "s-file-input/hide-icon": {
+    "description": "Boolean value.",
+    "type": "boolean"
+  },
+  "s-file-input/hide-count": {
+    "description": "Boolean value.",
+    "type": "boolean"
+  },
   "s-form-validation/text": {
     "description": "String value.",
     "type": "string"

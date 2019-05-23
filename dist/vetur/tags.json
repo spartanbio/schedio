@@ -99,6 +99,17 @@
     "subtags": [],
     "description": "Schedio component: <s-container-row>"
   },
+  "s-file-input": {
+    "attributes": [
+      "max-size",
+      "text",
+      "type",
+      "hide-icon",
+      "hide-count"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-file-input>"
+  },
   "s-form-validation": {
     "attributes": [
       "text",
