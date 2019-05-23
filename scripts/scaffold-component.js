@@ -41,11 +41,10 @@ export default {
 import { ${componentName} } from '@/components/${componentName}'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/${componentName}', module)
-  .addParameters({ jest: ${componentName} })
+  .addParameters({ jest: '${componentName}' })
   .add('${componentName}', () => {
     return {
       render(h) {

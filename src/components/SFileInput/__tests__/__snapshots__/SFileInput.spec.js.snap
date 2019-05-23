@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SFileInput.vue can have custom text 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Custom text
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue can have type area 1`] = `
+<div class="file-input file-input--area">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
+
+        Choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue can have type button 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue can hide a file count 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control" multiple="multiple">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div>
+      <!---->
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list">
+      <li class="file-input__list-item">
+        test-file-a.txt
+        <sbutton icon-left="trash-2" icon-only="" size="small">
+          Delete
+        </sbutton>
+      </li>
+      <li class="file-input__list-item">
+        test-file-b.txt
+        <sbutton icon-left="trash-2" icon-only="" size="small">
+          Delete
+        </sbutton>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue can hide the icon when it's an area 1`] = `
+<div class="file-input file-input--area">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue can upload multiple files 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div> <span class="file-input__count">2 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list">
+      <li class="file-input__list-item">
+        test-file-a.txt
+        <sbutton icon-left="trash-2" icon-only="" size="small">
+          Delete
+        </sbutton>
+      </li>
+      <li class="file-input__list-item">
+        test-file-b.txt
+        <sbutton icon-left="trash-2" icon-only="" size="small">
+          Delete
+        </sbutton>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue handles changes to the input 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div> <span class="file-input__count">1 file selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list">
+      <li class="file-input__list-item">
+        test-file-a.txt
+        <sbutton icon-left="trash-2" icon-only="" size="small">
+          Delete
+        </sbutton>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`SFileInput.vue renders correctly 1`] = `
+<div class="file-input file-input--button">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub>
+  <div class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </div>
+</div>
+`;

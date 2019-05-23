@@ -67,7 +67,7 @@ exports[`SToast.vue renders toast type  correctly 1`] = `
 exports[`SToast.vue renders toast type error correctly 1`] = `
 <div class="toast toast--error" style="" name="fade">
   <div class="toast__icon">
-    <sicon-stub icon="alert-circle" color="" size="" icon-color="red"></sicon-stub>
+    <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
   </div>
   <!---->
   <!---->
@@ -77,7 +77,7 @@ exports[`SToast.vue renders toast type error correctly 1`] = `
 exports[`SToast.vue renders toast type success correctly 1`] = `
 <div class="toast toast--success" style="" name="fade">
   <div class="toast__icon">
-    <sicon-stub icon="check-circle" color="" size="" icon-color="green"></sicon-stub>
+    <sicon-stub icon="check-circle" color="green" size=""></sicon-stub>
   </div>
   <!---->
   <!---->
@@ -87,7 +87,7 @@ exports[`SToast.vue renders toast type success correctly 1`] = `
 exports[`SToast.vue renders toast type warning correctly 1`] = `
 <div class="toast toast--warning" style="" name="fade">
   <div class="toast__icon">
-    <sicon-stub icon="alert-triangle" color="" size="" icon-color="gold"></sicon-stub>
+    <sicon-stub icon="alert-triangle" color="gold" size=""></sicon-stub>
   </div>
   <!---->
   <!---->

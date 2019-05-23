@@ -1,33 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SRadio.vue can be grouped 1`] = `
-<div><label class="label label--inline" for="radio-1"><span>
-    radio-1
-    <!----></span> <input id="radio-1" name="radio-group" required="required" type="radio" class="radio" value="radio-1"> <span class="radio__check"></span></label> <label class="label label--inline" for="radio-2"><span>
-    radio-2
-    <!----></span> <input id="radio-2" name="radio-group" required="required" type="radio" class="radio" value="radio-2"> <span class="radio__check"></span></label></div>
+<div><label class="label label--inline" for="radio-1">
+    <div>
+      radio-1
+      <!---->
+    </div> <input id="radio-1" name="radio-group" required="required" type="radio" class="radio" value="radio-1"> <span class="radio__check"></span>
+  </label> <label class="label label--inline" for="radio-2">
+    <div>
+      radio-2
+      <!---->
+    </div> <input id="radio-2" name="radio-group" required="required" type="radio" class="radio" value="radio-2"> <span class="radio__check"></span>
+  </label></div>
 `;
 
 exports[`SRadio.vue can be invalid 1`] = `
-<label class="label label--inline" for="radio"><span>
+<label class="label label--inline" for="radio">
+  <div>
     Radio
-    <!----></span> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check radio__check--invalid"></span></label>
+    <!---->
+  </div> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check radio__check--invalid"></span>
+</label>
 `;
 
 exports[`SRadio.vue can be reversed 1`] = `
-<label class="label label--inline label--reversed" for="radio"><span>
+<label class="label label--inline label--reversed" for="radio">
+  <div>
     Radio
-    <!----></span> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span></label>
+    <!---->
+  </div> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span>
+</label>
 `;
 
 exports[`SRadio.vue can hide the optional tag 1`] = `
-<label class="label label--inline" for="radio"><span>
+<label class="label label--inline" for="radio">
+  <div>
     Radio
-    <!----></span> <input id="radio" name="radio" type="radio" class="radio"> <span class="radio__check"></span></label>
+    <!---->
+  </div> <input id="radio" name="radio" type="radio" class="radio"> <span class="radio__check"></span>
+</label>
 `;
 
 exports[`SRadio.vue renders correctly 1`] = `
-<label class="label label--inline" for="radio"><span>
+<label class="label label--inline" for="radio">
+  <div>
     Radio
-    <!----></span> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span></label>
+    <!---->
+  </div> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span>
+</label>
 `;

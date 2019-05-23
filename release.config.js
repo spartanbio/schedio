@@ -14,7 +14,13 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['dist', 'package.json', 'package-lock.json', 'CHANGELOG.md']
+        assets: [
+          'dist',
+          'package.json',
+          'package-lock.json',
+          'CHANGELOG.md',
+          '.jest-test-results.json'
+        ]
       }
     ]
   ]
