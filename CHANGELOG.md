@@ -1,3 +1,12 @@
+## [3.2.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.2.0...v3.2.1) (2019-05-28)
+
+
+### Bug Fixes
+
+* **button:** no select when loading (closes [#18](https://gitlab.com/spartanbio-ux/schedio/issues/18)) ([5975fd5](https://gitlab.com/spartanbio-ux/schedio/commit/5975fd5))
+* **controls:** uses consistent disabled style (closes [#16](https://gitlab.com/spartanbio-ux/schedio/issues/16)) ([fd20059](https://gitlab.com/spartanbio-ux/schedio/commit/fd20059))
+* **table:** fixes slot usage ([d649db6](https://gitlab.com/spartanbio-ux/schedio/commit/d649db6))
+
 # [3.2.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.1.0...v3.2.0) (2019-05-28)
 
 
