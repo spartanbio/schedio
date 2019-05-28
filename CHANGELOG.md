@@ -1,3 +1,11 @@
+# [3.2.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.1.0...v3.2.0) (2019-05-28)
+
+
+### Features
+
+* **chip:** adds chip component ([852008a](https://gitlab.com/spartanbio-ux/schedio/commit/852008a))
+* **file-input:** uses `SChip` ([2fa1356](https://gitlab.com/spartanbio-ux/schedio/commit/2fa1356))
+
 # [3.1.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.0.1...v3.1.0) (2019-05-23)
 
 

@@ -55,6 +55,22 @@
     "description": "Boolean value.",
     "type": "boolean"
   },
+  "s-chip/color": {
+    "description": "String value.",
+    "type": "string"
+  },
+  "s-chip/is-closable": {
+    "description": "Boolean value.",
+    "type": "boolean"
+  },
+  "s-chip/is-active": {
+    "description": "Boolean value.",
+    "type": "boolean"
+  },
+  "s-chip/tag": {
+    "description": "String value.",
+    "type": "string"
+  },
   "s-container/is-fullwidth": {
     "description": "Boolean value.",
     "type": "boolean"

@@ -37,6 +37,16 @@
     "subtags": [],
     "description": "Schedio component: <s-card>"
   },
+  "s-chip": {
+    "attributes": [
+      "color",
+      "is-closable",
+      "is-active",
+      "tag"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-chip>"
+  },
   "s-container": {
     "attributes": [
       "is-fullwidth"
