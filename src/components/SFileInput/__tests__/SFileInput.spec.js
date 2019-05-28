@@ -1,7 +1,9 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import SFileInput from '../SFileInput.vue'
 import MockFile from '../../../../tests/__mocks__/MockFile'
 import { types } from '../options'
+import { SChip } from '@/components/SChip'
+import { SButton } from '@/components/SButton'
 
 describe('SFileInput.vue', () => {
   let wrapper
@@ -61,6 +63,7 @@ describe('SFileInput.vue', () => {
     expect(changeSpy).toBeCalled()
     // fake the change event input
     wrapper.vm.handleChange({ target: { files: [fileA] } })
+    expect(wrapper.contains(SChip)).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -77,22 +80,26 @@ describe('SFileInput.vue', () => {
 
   it('can remove files', () => {
     // single file
-    wrapper.vm.handleChange({ target: { files: [fileA] } })
-    expect(wrapper.vm.fileList.length).toBe(1)
-    // find the button stub and click it
-    wrapper.find('sbutton').trigger('click')
-    expect(wrapper.vm.fileList.length).toBe(0)
+    const deepWrapper = mount(SFileInput, {
+      propsData: defaultProps
+    })
+
+    deepWrapper.vm.handleChange({ target: { files: [fileA] } })
+    expect(deepWrapper.vm.fileList.length).toBe(1)
+    // find the button and click it
+    deepWrapper.find(SButton).trigger('click')
+    expect(deepWrapper.vm.fileList.length).toBe(0)
     // with multiple files
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
-    expect(wrapper.vm.fileList.length).toBe(2)
-    // find all button stubs, click the first
-    wrapper
-      .findAll('sbutton')
+    deepWrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    expect(deepWrapper.vm.fileList.length).toBe(2)
+    // find all buttons, click the first
+    deepWrapper
+      .findAll(SButton)
       .at(0)
       .trigger('click')
-    expect(wrapper.vm.fileList.length).toBe(1)
+    expect(deepWrapper.vm.fileList.length).toBe(1)
     // ensure only the desired file was deleted
-    expect(wrapper.vm.fileNames).toContain(fileB.name)
+    expect(deepWrapper.vm.fileNames).toContain(fileB.name)
   })
 
   it('displays a file count', () => {

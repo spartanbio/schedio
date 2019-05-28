@@ -11,6 +11,7 @@ import SCallout from './components/SCallout'
 import SCard from './components/SCard'
 import SCardContainer from './components/SCardContainer'
 import SCheckbox from './components/SCheckbox'
+import SChip from './components/SChip'
 import SContainer from './components/SContainer'
 import SContainerColumn from './components/SContainerColumn'
 import SContainerRow from './components/SContainerRow'
@@ -42,6 +43,7 @@ const Schedio = {
     Vue.use(SCard)
     Vue.use(SCardContainer)
     Vue.use(SCheckbox)
+    Vue.use(SChip)
     Vue.use(SContainer)
     Vue.use(SContainerColumn)
     Vue.use(SContainerRow)
@@ -77,6 +79,7 @@ export { SCallout } from './components/SCallout'
 export { SCard } from './components/SCard'
 export { SCardContainer } from './components/SCardContainer'
 export { SCheckbox } from './components/SCheckbox'
+export { SChip } from './components/SChip'
 export { SContainer } from './components/SContainer'
 export { SContainerColumn } from './components/SContainerColumn'
 export { SContainerRow } from './components/SContainerRow'
