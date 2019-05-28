@@ -52,21 +52,15 @@
       </p>
 
       <ul class="file-input__list">
-        <li
+        <SChip
           v-for="(file, idx) in fileList"
           :key="file.name"
-          class="file-input__list-item"
+          tag="li"
+          is-closable
+          @close="deleteThis({ idx })"
         >
           {{ file.name }}
-          <SButton
-            icon-left="trash-2"
-            icon-only
-            size="small"
-            @click="deleteThis({ idx })"
-          >
-            Delete
-          </SButton>
-        </li>
+        </SChip>
       </ul>
     </div>
   </div>
@@ -77,12 +71,14 @@ import InputListeners from '@/mixins/InputListeners.mixin'
 import InputProps from '@/mixins/InputProps.mixin'
 import { types } from './options'
 import { SLabel } from '@/components/SLabel'
+import { SChip } from '@/components/SChip'
 
 export default {
   name: 'SFileInput',
 
   components: {
-    SLabel
+    SLabel,
+    SChip
   },
 
   mixins: [InputListeners, InputProps],

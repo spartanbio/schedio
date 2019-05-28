@@ -69,18 +69,12 @@ exports[`SFileInput.vue can hide a file count 1`] = `
   <div class="file-input__info">
     <!---->
     <ul class="file-input__list">
-      <li class="file-input__list-item">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li">
         test-file-a.txt
-        <sbutton icon-left="trash-2" icon-only="" size="small">
-          Delete
-        </sbutton>
-      </li>
-      <li class="file-input__list-item">
+      </schip-stub>
+      <schip-stub color="" isclosable="true" isactive="true" tag="li">
         test-file-b.txt
-        <sbutton icon-left="trash-2" icon-only="" size="small">
-          Delete
-        </sbutton>
-      </li>
+      </schip-stub>
     </ul>
   </div>
 </div>
@@ -118,18 +112,12 @@ exports[`SFileInput.vue can upload multiple files 1`] = `
   <div class="file-input__info">
     <!---->
     <ul class="file-input__list">
-      <li class="file-input__list-item">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li">
         test-file-a.txt
-        <sbutton icon-left="trash-2" icon-only="" size="small">
-          Delete
-        </sbutton>
-      </li>
-      <li class="file-input__list-item">
+      </schip-stub>
+      <schip-stub color="" isclosable="true" isactive="true" tag="li">
         test-file-b.txt
-        <sbutton icon-left="trash-2" icon-only="" size="small">
-          Delete
-        </sbutton>
-      </li>
+      </schip-stub>
     </ul>
   </div>
 </div>
@@ -149,12 +137,9 @@ exports[`SFileInput.vue handles changes to the input 1`] = `
   <div class="file-input__info">
     <!---->
     <ul class="file-input__list">
-      <li class="file-input__list-item">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li">
         test-file-a.txt
-        <sbutton icon-left="trash-2" icon-only="" size="small">
-          Delete
-        </sbutton>
-      </li>
+      </schip-stub>
     </ul>
   </div>
 </div>

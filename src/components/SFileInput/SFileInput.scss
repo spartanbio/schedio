@@ -47,28 +47,9 @@
 
   // list of files
   &__list {
-    @include font-size(6);
-
     display: flex;
     flex-wrap: wrap;
     padding: spacing('none');
-
-    // a file
-    &-item {
-      align-items: center;
-      background-color: color('ice');
-      border-radius: border-radius('small');
-      display: flex;
-      flex: 0 1 auto;
-      margin-bottom: spacing();
-      margin-right: spacing();
-      padding-left: spacing();
-      padding-right: spacing('half');
-
-      &:last-child {
-        margin-right: spacing('none');
-      }
-    }
   }
 
   // bind parent class name
