@@ -7,7 +7,9 @@
 @mixin control-disabled {
   background-color: color('grey', 'light');
   border: border();
+  border-color: color('grey') !important;
   box-shadow: none !important;
+  color: color('night', 'lighter');
   cursor: not-allowed;
 }
 
@@ -27,6 +29,10 @@
   text-transform: none;
   transition: all duration() easing();
   width: 100%;
+
+  &::placeholder {
+    color: color('night', 'lighter');
+  }
 
   &:disabled {
     @include control-disabled;

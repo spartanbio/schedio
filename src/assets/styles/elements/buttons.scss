@@ -9,11 +9,8 @@
 @mixin button-disabled {
   &:disabled,
   &:disabled:hover {
-    background-color: color('grey', 'light') !important;
-    border-color: color('grey') !important;
-    box-shadow: none !important;
-    color: color('night', 'lighter');
-    cursor: not-allowed;
+    @include control-disabled;
+
     text-shadow: none !important;
   }
 }
