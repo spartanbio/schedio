@@ -1,0 +1,60 @@
+.chip {
+  @include font-size(6);
+
+  align-items: center;
+  background-color: color('ice');
+  border-radius: border-radius('small');
+  display: inline-flex;
+  margin-bottom: spacing();
+  margin-right: spacing();
+  padding: spacing('half') spacing();
+  transition: all easing() duration();
+  // ensures SVGs and text align as expected
+  vertical-align: top;
+
+  &:last-child {
+    margin-right: spacing('none');
+  }
+
+  &__content {
+    align-items: center;
+    display: inline-flex;
+  }
+
+  &__close {
+    border: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    box-shadow: none;
+    // allows the button to have padding while not increasing the box size
+    margin: -1 * spacing('half');
+    margin-left: spacing('half');
+    margin-right: -1 * spacing();
+    padding: spacing('half');
+
+    &:active,
+    &:not(:disabled):not(:active):hover {
+      box-shadow: none !important;
+    }
+  }
+
+  @each $color-name in $button-colors {
+    &--color-#{$color-name} {
+      $white-or-ice: ($color-name == 'white') or $color-name == 'ice';
+      $text-color: if($white-or-ice, color('night'), color('white'));
+      $base-color: color($color-name);
+
+      background-color: $base-color;
+      color: $text-color;
+
+      .chip__close {
+        box-shadow: none;
+
+        &:active,
+        &:not(:disabled):not(:active):hover {
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+}
