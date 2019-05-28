@@ -22,13 +22,18 @@
       Typography Calculator
     </SHeading>
 
-    <form>
-      <SInput
-        id="base-font-size"
-        v-model="calcFontSize"
-        name="base-font-size"
-        label="Base font size (pt)"
-      />
+    <form
+      style="margin-bottom: 1em;"
+      @submit.prevent
+    >
+      <SFormField>
+        <SInput
+          id="base-font-size"
+          v-model="calcFontSize"
+          name="base-font-size"
+          label="Base font size (pt)"
+        />
+      </SFormField>
     </form>
 
     <!-- Setting the key causes the component to re-render when font size is updated -->
