@@ -4,15 +4,11 @@ exports[`STable.vue allows slots to be used for data 1`] = `
 <div class="table__overlay">
   <div class="table__container">
     <table class="table">
-      <caption class="table__caption"><span>Caption</span>
-
-
-      </caption>
+      <caption class="table__caption"><span>Caption</span></caption>
       <thead class="table__header">
         <tr>
           <th>Header</th>
         </tr>
-        <tr class="table__row"></tr>
       </thead>
       <tbody class="table__body">
         <tr>
@@ -23,7 +19,6 @@ exports[`STable.vue allows slots to be used for data 1`] = `
         <tr>
           <td>Footer</td>
         </tr>
-        <tr class="table__row"></tr>
       </tfoot>
     </table>
   </div>
@@ -239,7 +234,6 @@ exports[`STable.vue can have a caption 1`] = `
   <div class="table__container">
     <table class="table">
       <caption class="table__caption">
-
         caption
       </caption>
       <thead class="table__header">
@@ -290,7 +284,6 @@ exports[`STable.vue can have the caption at the top 1`] = `
   <div class="table__container">
     <table class="table">
       <caption class="table__caption table__caption--top">
-
         caption
       </caption>
       <thead class="table__header">

@@ -30,6 +30,7 @@ storiesOf('Components/Tables.STableRow', module)
               <STableRow slot="header">
                 <STableCell>Header</STableCell>
               </STableRow>
+
               <STableRow>{this.slotContent}</STableRow>
             </STable>
 

@@ -22,70 +22,73 @@
       Typography Calculator
     </SHeading>
 
-    <form>
-      <SInput
-        id="base-font-size"
-        v-model="baseFontSize"
-        :value="baseFontSize"
-        name="base-font-size"
-        label="Base font size (pt)"
-      />
+    <form
+      style="margin-bottom: 1em;"
+      @submit.prevent
+    >
+      <SFormField>
+        <SInput
+          id="base-font-size"
+          v-model="calcFontSize"
+          name="base-font-size"
+          label="Base font size (pt)"
+        />
+      </SFormField>
     </form>
 
-    <div class="table__overlay">
-      <div class="table__container">
-        <table class="table table--bordered table--hoverable">
-          <thead class="table__header">
-            <tr class="table__row">
-              <th class="table__cell">
-                Level
-              </th>
-              <th class="table__cell">
-                Size
-              </th>
-              <th class="table__cell">
-                Leading
-              </th>
-              <th class="table__cell">
-                Tracking
-              </th>
-              <th class="table__cell">
-                example
-              </th>
-            </tr>
-          </thead>
+    <!-- Setting the key causes the component to re-render when font size is updated -->
+    <STable
+      :key="calcFontSize"
+      is-bordered
+      is-hoverable
+    >
+      <template v-slot:header>
+        <STableRow>
+          <th class="table__cell">
+            Level
+          </th>
+          <th class="table__cell">
+            Size
+          </th>
+          <th class="table__cell">
+            Leading
+          </th>
+          <th class="table__cell">
+            Tracking
+          </th>
+          <th class="table__cell">
+            example
+          </th>
+        </STableRow>
+      </template>
 
-          <tbody class="table__body">
-            <tr
-              v-for="{ name, value } in fontSizes"
-              :key="name"
-              class="table__row"
-            >
-              <td
-                class="table__cell"
-                style="text-transform: capitalize;"
-              >
-                {{ name | prettyName }}
-              </td>
-              <td class="table__cell table__cell--numeric">
-                <code>{{ computePrintSize(value) }}</code>
-              </td>
-              <td class="table__cell table__cell--numeric">
-                <code>{{ computeLeading(value) }}</code>
-              </td>
-              <td class="table__cell table__cell--numeric">
-                <code>{{ computeTracking(value) }}</code>
-              </td>
-              <td class="table__cell">
-                <span :style="{ fontSize: computePrintSize(value) }">
-                  Example text
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <template v-slot:default>
+        <STableRow
+          v-for="{ name, value } in fontSizes"
+          :key="name"
+        >
+          <STableCell
+            style="text-transform: capitalize;"
+          >
+            {{ name | prettyName }}
+          </STableCell>
+          <STableCell is-numeric>
+            <code>{{ computePrintSize(value) }}</code>
+          </STableCell>
+          <STableCell is-numeric>
+            <code>{{ computeLeading(value) }}</code>
+          </STableCell>
+          <STableCell is-numeric>
+            <code>{{ computeTracking(value) }}</code>
+          </STableCell>
+          <STableCell>
+            <span :style="{ fontSize: computePrintSize(value) }">
+              Example text
+            </span>
+          </STableCell>
+        </STableRow>
+      </template>
+    </STable>
   </div>
 </template>
 
@@ -98,6 +101,8 @@ const fontSizes = Object.values(props).filter(
   ({ category, name }) => category === 'font-size' && name !== 'base-font-size'
 )
 
+const baseFontSize = 10
+
 export default {
   name: 'TypographyPrint',
 
@@ -106,23 +111,26 @@ export default {
   },
 
   data: () => ({
-    baseFontSize: 11,
+    baseFontSize,
+    calcFontSize: baseFontSize,
     fontSizes: orderBy(fontSizes, 'name')
   }),
 
   methods: {
     computePrintSize(value) {
-      return value.replace('rem', '') * this.baseFontSize + 'pt'
+      return value.replace('rem', '') * this.calcFontSize + 'pt'
     },
     computeLeading(value) {
       const strippedVal = value.replace('rem', '')
       const leading = strippedVal > 3 ? 1.25 : 1.5
-      return strippedVal * this.baseFontSize * leading + 'pt'
+      return strippedVal * this.calcFontSize * leading + 'pt'
     },
     computeTracking(value) {
       return value.replace('rem', '') > 3 ? 0.025 : 0
     },
-
+    // forceUpdate() {
+    //   this.$nextTick(this.$forceUpdate())
+    // },
     linkToComponent: linkTo('Design.Typography', 'Headings & Displays')
   }
 }
