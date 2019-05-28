@@ -43,6 +43,7 @@ storiesOf('Components/Tables.STableCell', module)
                   Toggling <code style="text-transform: none;">isNumeric</code> will change this one
                 </STableCell>
               </STableRow>
+
               <STableRow>
                 <STableCell is-header={this.isHeader}>{this.headerCellSlotContent}</STableCell>
                 <STableCell is-numeric={this.isNumeric}>{this.numericCellSlotContent}</STableCell>

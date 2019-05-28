@@ -14,59 +14,59 @@
           :class="{ 'table__caption--top': hasCaptionTop }"
           class="table__caption"
         >
-          <slot name="caption" />
-
-          {{ caption }}
+          <slot name="caption">
+            {{ caption }}
+          </slot>
         </caption>
 
         <thead
           v-if="!hideHeader && ($slots.header || headerCells.length)"
           class="table__header"
         >
-          <slot name="header" />
-
-          <STableRow>
-            <STableCell
-              v-for="(cell, key) in headerCells"
-              :key="key"
-            >
-              {{ cell.value || cell | startCase }}
-            </STableCell>
-          </STableRow>
+          <slot name="header">
+            <STableRow>
+              <STableCell
+                v-for="(cell, key) in headerCells"
+                :key="key"
+              >
+                {{ cell.value || cell | startCase }}
+              </STableCell>
+            </STableRow>
+          </slot>
         </thead>
 
         <tbody class="table__body">
-          <slot />
-
-          <STableRow
-            v-for="(row, key) in tableData"
-            :key="key"
-          >
-            <STableCell
-              v-for="cell in row"
-              :key="cell"
-              :is-header="cell.header"
-              :is-numeric="typeof cell === 'number'"
+          <slot>
+            <STableRow
+              v-for="(row, key) in tableData"
+              :key="key"
             >
-              {{ cell.value || cell }}
-            </STableCell>
-          </STableRow>
+              <STableCell
+                v-for="cell in row"
+                :key="cell"
+                :is-header="cell.header"
+                :is-numeric="typeof cell === 'number'"
+              >
+                {{ cell.value || cell }}
+              </STableCell>
+            </STableRow>
+          </slot>
         </tbody>
 
         <tfoot
           v-if="$slots.footer || footerCells.length"
           class="table__footer"
         >
-          <slot name="footer" />
-
-          <STableRow>
-            <STableCell
-              v-for="(cell, key) in footerCells"
-              :key="key"
-            >
-              {{ cell.value || cell | startCase }}
-            </STableCell>
-          </STableRow>
+          <slot name="footer">
+            <STableRow>
+              <STableCell
+                v-for="(cell, key) in footerCells"
+                :key="key"
+              >
+                {{ cell.value || cell | startCase }}
+              </STableCell>
+            </STableRow>
+          </slot>
         </tfoot>
       </table>
     </div>

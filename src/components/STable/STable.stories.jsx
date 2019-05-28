@@ -142,13 +142,17 @@ storiesOf('Components/Tables.STable', module)
 
             <STable>
               <template slot="header">
-                <STableCell>Narrow</STableCell>
-                <STableCell>Very wide</STableCell>
+                <STableRow>
+                  <STableCell>Narrow</STableCell>
+                  <STableCell>Very wide</STableCell>
+                </STableRow>
               </template>
-              <STableCell>This is narrow.</STableCell>
-              <STableCell style="min-width: 100vw; background-color: whitesmoke;">
-                This is very wide.
-              </STableCell>
+              <STableRow>
+                <STableCell>This is narrow.</STableCell>
+                <STableCell style="min-width: 100vw; background-color: whitesmoke;">
+                  This is very wide.
+                </STableCell>
+              </STableRow>
             </STable>
 
             <PropList component={STable} />

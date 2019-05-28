@@ -12,10 +12,12 @@
       is-hoverable
     >
       <template v-slot:header>
-        <STableCell>Prop</STableCell>
-        <STableCell>Type</STableCell>
-        <STableCell>Default Value</STableCell>
-        <STableCell>Required</STableCell>
+        <STableRow>
+          <STableCell>Prop</STableCell>
+          <STableCell>Type</STableCell>
+          <STableCell>Default Value</STableCell>
+          <STableCell>Required</STableCell>
+        </STableRow>
       </template>
 
       <template>
@@ -33,6 +35,7 @@
 
           <STableCell>
             <code v-if="typeof defaultValue !== 'undefined'">{{ defaultValue }}</code>
+
             <template v-else>
               &mdash;
             </template>
@@ -42,6 +45,7 @@
             <template v-if="required">
               {{ required }}
             </template>
+
             <template v-else>
               &mdash;
             </template>
