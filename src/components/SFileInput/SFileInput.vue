@@ -261,6 +261,7 @@ export default {
 
     removeFile({ idx }) {
       this.fileList.splice(idx, 1)
+      this.$emit('input', { event: { target: { files: this.fileList } } })
     }
   }
 }
