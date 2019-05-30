@@ -184,6 +184,7 @@ export default {
       }
 
       this.fileList = this.$attrs.multiple ? [...this.fileList, ...valid] : valid
+      this.$emit('input', { target: { files: this.fileList } })
     },
     /**
      * Validates files
