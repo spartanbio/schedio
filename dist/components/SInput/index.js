@@ -110,12 +110,14 @@ var enumKeys = __webpack_require__("47ee");
 var isArray = __webpack_require__("9003");
 var anObject = __webpack_require__("e4ae");
 var isObject = __webpack_require__("f772");
+var toObject = __webpack_require__("241e");
 var toIObject = __webpack_require__("36c3");
 var toPrimitive = __webpack_require__("1bc3");
 var createDesc = __webpack_require__("aebd");
 var _create = __webpack_require__("a159");
 var gOPNExt = __webpack_require__("0395");
 var $GOPD = __webpack_require__("bf0b");
+var $GOPS = __webpack_require__("9aa9");
 var $DP = __webpack_require__("d9f6");
 var $keys = __webpack_require__("c3a1");
 var gOPD = $GOPD.f;
@@ -132,7 +134,7 @@ var SymbolRegistry = shared('symbol-registry');
 var AllSymbols = shared('symbols');
 var OPSymbols = shared('op-symbols');
 var ObjectProto = Object[PROTOTYPE];
-var USE_NATIVE = typeof $Symbol == 'function';
+var USE_NATIVE = typeof $Symbol == 'function' && !!$GOPS.f;
 var QObject = global.QObject;
 // Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
 var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
@@ -242,7 +244,7 @@ if (!USE_NATIVE) {
   $DP.f = $defineProperty;
   __webpack_require__("6abf").f = gOPNExt.f = $getOwnPropertyNames;
   __webpack_require__("355d").f = $propertyIsEnumerable;
-  __webpack_require__("9aa9").f = $getOwnPropertySymbols;
+  $GOPS.f = $getOwnPropertySymbols;
 
   if (DESCRIPTORS && !__webpack_require__("b8e3")) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -291,6 +293,16 @@ $export($export.S + $export.F * !USE_NATIVE, 'Object', {
   getOwnPropertyNames: $getOwnPropertyNames,
   // 19.1.2.8 Object.getOwnPropertySymbols(O)
   getOwnPropertySymbols: $getOwnPropertySymbols
+});
+
+// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
+// https://bugs.chromium.org/p/v8/issues/detail?id=3443
+var FAILS_ON_PRIMITIVES = $fails(function () { $GOPS.f(1); });
+
+$export($export.S + $export.F * FAILS_ON_PRIMITIVES, 'Object', {
+  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
+    return $GOPS.f(toObject(it));
+  }
 });
 
 // 24.3.2 JSON.stringify(value [, replacer [, space]])
@@ -1689,6 +1701,7 @@ module.exports = __webpack_require__("e0b8")(SET, function (get) {
 /***/ "504c":
 /***/ (function(module, exports, __webpack_require__) {
 
+var DESCRIPTORS = __webpack_require__("9e1e");
 var getKeys = __webpack_require__("0d58");
 var toIObject = __webpack_require__("6821");
 var isEnum = __webpack_require__("52a7").f;
@@ -1700,9 +1713,13 @@ module.exports = function (isEntries) {
     var i = 0;
     var result = [];
     var key;
-    while (length > i) if (isEnum.call(O, key = keys[i++])) {
-      result.push(isEntries ? [key, O[key]] : O[key]);
-    } return result;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || isEnum.call(O, key)) {
+        result.push(isEntries ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
   };
 };
 
@@ -1970,7 +1987,7 @@ $export($export.P + $export.F * (fails(function () {
 /***/ "584a":
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.5' };
+var core = module.exports = { version: '2.6.9' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -4381,7 +4398,7 @@ module.exports = function (it, tag, stat) {
 /***/ "8378":
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.5' };
+var core = module.exports = { version: '2.6.9' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -5789,7 +5806,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"f7e44ad0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SInput/SInput.vue?vue&type=template&id=3d18ca35&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SInput/SInput.vue?vue&type=template&id=3d18ca35&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('SLabel',{attrs:{"for":_vm.id,"is-inline":_vm.isInline,"is-fullwidth":_vm.isFullwidth,"is-required":_vm.required,"hide-optional":_vm.hideOptional,"label":_vm.label}},[_c('div',{staticClass:"input__container"},[_c('input',_vm._g(_vm._b({staticClass:"input",class:{
         'input--invalid': _vm.isInvalid,
         'input--has-icon-left': !!_vm.iconLeft,
@@ -5812,7 +5829,7 @@ var es6_array_sort = __webpack_require__("55dd");
 // CONCATENATED MODULE: ./src/components/SInput/options.js
 
 var allowed = ['text', 'email', 'number', 'password', 'search', 'tel', 'url', 'date', 'datetime-local', 'month', 'time', 'week'].sort();
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"f7e44ad0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=template&id=7d3dc063&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SLabel/SLabel.vue?vue&type=template&id=7d3dc063&
 var SLabelvue_type_template_id_7d3dc063_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"label",class:_vm.classList},[_c('div',[_vm._v("\n    "+_vm._s(_vm.label)+"\n    "),(!_vm.isRequired && !_vm.hideOptional)?_c('span',{staticClass:"label__optional"},[_vm._v("\n      — Optional\n    ")]):_vm._e()]),_vm._t("default")],2)}
 var SLabelvue_type_template_id_7d3dc063_staticRenderFns = []
 
@@ -6135,7 +6152,7 @@ function _objectSpread(target) {
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"f7e44ad0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=d8e5f004&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SIcon/SIcon.vue?vue&type=template&id=d8e5f004&
 var SIconvue_type_template_id_d8e5f004_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticClass:"icon",class:_vm.classList,attrs:{"viewBox":"0 0 24 24"},domProps:{"innerHTML":_vm._s(_vm.featherIcon.contents)}})}
 var SIconvue_type_template_id_d8e5f004_staticRenderFns = []
 
