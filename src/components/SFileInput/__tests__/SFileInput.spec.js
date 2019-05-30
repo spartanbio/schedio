@@ -1,7 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import SFileInput from '../SFileInput.vue'
 import MockFile from '../../../../tests/__mocks__/MockFile'
-import { types } from '../options'
 import { SChip } from '@/components/SChip'
 import { SButton } from '@/components/SButton'
 
@@ -52,17 +51,17 @@ describe('SFileInput.vue', () => {
   /**
    * We can't test the upload functionality with Jest currently.
    * jsdom is missing the `DataTransfer` object.
-   * Instead, we're just going to test the input's change handler.
+   * Instead, we're just going to test the input's input handler.
    */
-  it('handles changes to the input', () => {
-    // watch the change handler
-    const changeSpy = jest.spyOn(wrapper.vm, 'handleChange')
-    wrapper.setMethods({ handleChange: changeSpy })
-    // ensure change is triggered and handler is called
-    wrapper.find('input').trigger('change')
-    expect(changeSpy).toBeCalled()
-    // fake the change event input
-    wrapper.vm.handleChange({ target: { files: [fileA] } })
+  it('handles inputs', () => {
+    // watch the input handler
+    const inputSpy = jest.spyOn(wrapper.vm, 'handleFiles')
+    wrapper.setMethods({ handleFiles: inputSpy })
+    // ensure input is triggered and handler is called
+    wrapper.find('input').trigger('input')
+    expect(inputSpy).toBeCalled()
+    // fake the input event
+    wrapper.vm.handleFiles({ target: { files: [fileA] } })
     expect(wrapper.contains(SChip)).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -73,7 +72,7 @@ describe('SFileInput.vue', () => {
   })
 
   it('can upload multiple files', () => {
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     expect(wrapper.vm.fileList.length).toBe(2)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -84,13 +83,13 @@ describe('SFileInput.vue', () => {
       propsData: defaultProps
     })
 
-    deepWrapper.vm.handleChange({ target: { files: [fileA] } })
+    deepWrapper.vm.handleFiles({ target: { files: [fileA] } })
     expect(deepWrapper.vm.fileList.length).toBe(1)
     // find the button and click it
     deepWrapper.find(SButton).trigger('click')
     expect(deepWrapper.vm.fileList.length).toBe(0)
     // with multiple files
-    deepWrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    deepWrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     expect(deepWrapper.vm.fileList.length).toBe(2)
     // find all buttons, click the first
     deepWrapper
@@ -104,21 +103,21 @@ describe('SFileInput.vue', () => {
 
   it('displays a file count', () => {
     wrapper.setProps({ multiple: true })
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     expect(wrapper.text()).toContain('2 file')
   })
 
   it('can hide a file count', () => {
     wrapper.setProps({ multiple: true, hideCount: true })
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     expect(wrapper.text()).not.toContain('2 file')
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('checks for duplicate file names', () => {
     wrapper.setProps({ multiple: true })
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
-    wrapper.vm.handleChange({ target: { files: [fileA] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA] } })
 
     const emittedError = wrapper.emitted('error')
     expect(emittedError).toBeTruthy()
@@ -128,7 +127,7 @@ describe('SFileInput.vue', () => {
   })
 
   it('displays file names to users', () => {
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     expect(wrapper.vm.fileNames).toEqual([fileA, fileB].map(file => file.name))
     expect(wrapper.text()).toContain(fileA.name)
     expect(wrapper.text()).toContain(fileB.name)
@@ -136,7 +135,7 @@ describe('SFileInput.vue', () => {
 
   it('checks for max file size', () => {
     wrapper.setProps({ multiple: true, maxSize: 1024 })
-    wrapper.vm.handleChange({ target: { files: [fileA, fileB] } })
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
 
     const emittedError = wrapper.emitted('error')
     expect(emittedError).toBeTruthy()
@@ -158,26 +157,41 @@ describe('SFileInput.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it.each(types)(`can have type %s`, t => {
-    wrapper.setProps({ type: t })
-    expect(errorSpy).not.toBeCalled()
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+  describe('drop zone', () => {
+    let display
 
-  it('validates its type', () => {
-    shallowMount(SFileInput, {
-      propsData: {
-        ...defaultProps,
-        type: 'Not a type'
-      }
+    beforeEach(() => {
+      wrapper.setProps({ isDroppable: true })
+      display = wrapper.find('.file-input__display')
     })
 
-    expect(errorSpy).toBeCalledTimes(2)
-  })
+    it('can be a drop zone', () => {
+      expect(errorSpy).not.toBeCalled()
+      expect(wrapper.html()).toMatchSnapshot()
+    })
 
-  it("can hide the icon when it's an area", () => {
-    wrapper.setProps({ type: 'area', hideIcon: true })
-    expect(wrapper.contains('sicon')).toBe(false)
-    expect(wrapper.html()).toMatchSnapshot()
+    it('can hide the icon', () => {
+      wrapper.setProps({ hideIcon: true })
+      expect(wrapper.contains('sicon')).toBe(false)
+      expect(wrapper.html()).toMatchSnapshot()
+    })
+
+    it.each`
+      event          | handlers                         | includesClass                      | excludesClass
+      ${'dragenter'} | ${['handleDragenter']}           | ${'file-input__display--dragover'} | ${''}
+      ${'dragover'}  | ${['handleDragover']}            | ${''}                              | ${''}
+      ${'dragleave'} | ${['handleDragleave']}           | ${''}                              | ${'file-input__display--dragover'}
+      ${'drop'}      | ${['handleDrop', 'handleFiles']} | ${''}                              | ${''}
+    `('handles $event correctly', ({ event, handlers, includesClass, excludesClass }) => {
+      const spies = new Map(handlers.map(handler => [handler, jest.spyOn(wrapper.vm, handler)]))
+
+      spies.forEach((spy, handler) => wrapper.setMethods({ [handler]: spy }))
+      display.trigger(event)
+
+      spies.forEach(spy => expect(spy).toBeCalled())
+      if (includesClass) expect(display.classes()).toContain(includesClass)
+      if (excludesClass) expect(display.classes()).not.toContain(excludesClass)
+      expect(wrapper.html()).toMatchSnapshot()
+    })
   })
 })

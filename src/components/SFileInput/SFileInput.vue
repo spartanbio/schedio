@@ -10,6 +10,7 @@
       :label="label"
     >
       <div class="file-input__inner">
+        <!-- input receives non-drag events -->
         <input
           :id="id"
           v-bind="$attrs"
@@ -17,17 +18,20 @@
           :name="name"
           type="file"
           class="file-input__control"
-          v-on="listeners"
-          @change="handleChange"
+          v-on="listeners.nondragListeners"
         >
+
+        <!-- only handles drag listeners when component is not a button -->
         <div
           class="file-input__display"
           :class="{
-            'file-input__display--invalid': isInvalid
+            'file-input__display--invalid': isInvalid,
+            'file-input__display--dragover': hasDragover,
           }"
+          v-on="listeners.dragListeners"
         >
           <SIcon
-            v-if="!hideIcon && type === 'area'"
+            v-if="!hideIcon && isDroppable"
             icon="upload-cloud"
             size="large"
             class="file-input__icon"
@@ -43,7 +47,7 @@
       </div>
     </SLabel>
 
-    <div class="file-input__info">
+    <output class="file-input__info">
       <p
         v-if="maxSize"
         class="file-input__limit"
@@ -57,19 +61,17 @@
           :key="file.name"
           tag="li"
           is-closable
-          @close="deleteThis({ idx })"
+          @close="removeFile({ idx })"
         >
           {{ file.name }}
         </SChip>
       </ul>
-    </div>
+    </output>
   </div>
 </template>
 
 <script>
-import InputListeners from '@/mixins/InputListeners.mixin'
 import InputProps from '@/mixins/InputProps.mixin'
-import { types } from './options'
 import { SLabel } from '@/components/SLabel'
 import { SChip } from '@/components/SChip'
 
@@ -81,7 +83,7 @@ export default {
     SChip
   },
 
-  mixins: [InputListeners, InputProps],
+  mixins: [InputProps],
 
   inheritAttrs: false,
 
@@ -96,10 +98,9 @@ export default {
       type: String
     },
 
-    type: {
-      default: types[0],
-      type: String,
-      validator: v => types.includes(v) || console.error(`\`type\` must be one of ${types}`)
+    isDroppable: {
+      default: false,
+      type: Boolean
     },
 
     hideIcon: {
@@ -115,7 +116,8 @@ export default {
 
   data() {
     return {
-      fileList: []
+      fileList: [],
+      hasDragover: false
     }
   },
 
@@ -125,9 +127,11 @@ export default {
     },
 
     displayText() {
-      const defaultDisplayText = this.$attrs.multiple ? 'Choose files' : 'Choose a file'
+      const defaultText = this.$attrs.multiple ? 'Choose files' : 'Choose a file'
 
-      return this.text || defaultDisplayText
+      if (this.isDroppable) return `Drag and drop or click here to ${defaultText.toLowerCase()}`
+
+      return this.text || defaultText
     },
 
     fileCountText() {
@@ -141,15 +145,38 @@ export default {
 
     classList() {
       return {
-        [`file-input--${this.type}`]: this.type,
+        'file-input--droppable': this.isDroppable,
         'file-input--multipe': this.$attrs.multiple
       }
+    },
+
+    listeners() {
+      const { dragenter, dragover, dragleave, drop, ...otherListeners } = this.$listeners
+      let dragListeners = {}
+
+      if (this.isDroppable) {
+        dragListeners = {
+          dragenter: evt => this.handleDragenter(evt),
+          dragover: evt => this.handleDragover(evt),
+          dragleave: evt => this.handleDragleave(evt),
+          drop: evt => this.handleDrop(evt)
+        }
+      }
+
+      const nondragListeners = {
+        ...otherListeners,
+        input: evt => this.handleFiles(evt)
+      }
+
+      return { nondragListeners, dragListeners }
     }
   },
 
   methods: {
-    handleChange(event) {
-      const { invalid, valid } = this.getValidFiles(Array.from(event.target.files))
+    handleFiles(event) {
+      const eventItem = event.dataTransfer ? event.dataTransfer : event.target
+      const filesArray = eventItem.files.length ? Array.from(eventItem.files) : []
+      const { invalid, valid } = this.getValidFiles(filesArray)
 
       if (invalid.length > 0) {
         const payload = invalid.map(({ name, failed }) => ({ name, failed }), [])
@@ -206,7 +233,32 @@ export default {
       return !this.fileNames.includes(file.name)
     },
 
-    deleteThis({ idx }) {
+    handleDragenter(event) {
+      this.stopAndPrevent(event)
+      this.hasDragover = true
+    },
+
+    handleDragleave(event) {
+      this.stopAndPrevent(event)
+      this.hasDragover = false
+    },
+
+    handleDrop(event) {
+      this.stopAndPrevent(event)
+      this.hasDragover = false
+      this.handleFiles(event)
+    },
+
+    handleDragover(event) {
+      this.stopAndPrevent(event)
+    },
+
+    stopAndPrevent(event) {
+      event.stopPropagation()
+      event.preventDefault()
+    },
+
+    removeFile({ idx }) {
       this.fileList.splice(idx, 1)
     }
   }
