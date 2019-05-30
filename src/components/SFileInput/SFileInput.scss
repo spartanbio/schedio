@@ -23,7 +23,8 @@
 
   // the element being displayed in place of the <input />
   &__display {
-    transition: all duration() easing();
+    @include button-base;
+    @include button-outline('night');
 
     &--invalid {
       @include control-invalid;
@@ -55,16 +56,8 @@
   // bind parent class name
   $parent: &;
 
-  // look like a button
-  &--button {
-    #{$parent}__display {
-      @include button-base;
-      @include button-outline('night');
-    }
-  }
-
-  // an area with an icon (future drag and drop?)
-  &--area {
+  // an area with an icon
+  &--droppable {
     #{$parent}__inner {
       display: inline-flex;
       flex-direction: column;
@@ -75,6 +68,7 @@
       margin: spacing('half');
       margin-top: spacing('none');
       opacity: 0.2;
+      pointer-events: none;
       transition: all duration() easing();
     }
 
@@ -90,9 +84,11 @@
       flex-direction: column;
       justify-content: center;
       padding: spacing('quarter');
+      text-align: center;
       width: $area-width;
 
-      &:hover {
+      &:hover,
+      &--dragover {
         border-color: color('spartan_blue', 'lighter');
         background-color: color('ice');
 

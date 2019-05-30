@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SFileInput.vue can have custom text 1`] = `
-<div class="file-input file-input--button">
+<div class="file-input">
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
@@ -10,52 +10,15 @@ exports[`SFileInput.vue can have custom text 1`] = `
         Custom text
       </div> <span class="file-input__count">0 files selected</span>
     </div>
-  </slabel-stub>
-  <div class="file-input__info">
+  </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list"></ul>
-  </div>
-</div>
-`;
-
-exports[`SFileInput.vue can have type area 1`] = `
-<div class="file-input file-input--area">
-  <slabel-stub label="File input" isrequired="true" for="file-input">
-    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
-      <div class="file-input__display">
-        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
-
-        Choose a file
-      </div> <span class="file-input__count">0 files selected</span>
-    </div>
-  </slabel-stub>
-  <div class="file-input__info">
-    <!---->
-    <ul class="file-input__list"></ul>
-  </div>
-</div>
-`;
-
-exports[`SFileInput.vue can have type button 1`] = `
-<div class="file-input file-input--button">
-  <slabel-stub label="File input" isrequired="true" for="file-input">
-    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
-      <div class="file-input__display">
-        <!---->
-
-        Choose a file
-      </div> <span class="file-input__count">0 files selected</span>
-    </div>
-  </slabel-stub>
-  <div class="file-input__info">
-    <!---->
-    <ul class="file-input__list"></ul>
-  </div>
+  </output>
 </div>
 `;
 
 exports[`SFileInput.vue can hide a file count 1`] = `
-<div class="file-input file-input--button">
+<div class="file-input">
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control" multiple="multiple">
       <div class="file-input__display">
@@ -65,8 +28,7 @@ exports[`SFileInput.vue can hide a file count 1`] = `
       </div>
       <!---->
     </div>
-  </slabel-stub>
-  <div class="file-input__info">
+  </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list">
       <schip-stub color="" isclosable="true" isactive="true" tag="li">
@@ -76,30 +38,12 @@ exports[`SFileInput.vue can hide a file count 1`] = `
         test-file-b.txt
       </schip-stub>
     </ul>
-  </div>
-</div>
-`;
-
-exports[`SFileInput.vue can hide the icon when it's an area 1`] = `
-<div class="file-input file-input--area">
-  <slabel-stub label="File input" isrequired="true" for="file-input">
-    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
-      <div class="file-input__display">
-        <!---->
-
-        Choose a file
-      </div> <span class="file-input__count">0 files selected</span>
-    </div>
-  </slabel-stub>
-  <div class="file-input__info">
-    <!---->
-    <ul class="file-input__list"></ul>
-  </div>
+  </output>
 </div>
 `;
 
 exports[`SFileInput.vue can upload multiple files 1`] = `
-<div class="file-input file-input--button">
+<div class="file-input">
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
@@ -108,8 +52,7 @@ exports[`SFileInput.vue can upload multiple files 1`] = `
         Choose a file
       </div> <span class="file-input__count">2 files selected</span>
     </div>
-  </slabel-stub>
-  <div class="file-input__info">
+  </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list">
       <schip-stub color="" isclosable="true" isactive="true" tag="li">
@@ -119,12 +62,114 @@ exports[`SFileInput.vue can upload multiple files 1`] = `
         test-file-b.txt
       </schip-stub>
     </ul>
-  </div>
+  </output>
 </div>
 `;
 
-exports[`SFileInput.vue handles changes to the input 1`] = `
-<div class="file-input file-input--button">
+exports[`SFileInput.vue drop zone can be a drop zone 1`] = `
+<div class="file-input file-input--droppable">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
+
+        Drag and drop or click here to choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub> <output class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </output>
+</div>
+`;
+
+exports[`SFileInput.vue drop zone can hide the icon 1`] = `
+<div class="file-input file-input--droppable">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <!---->
+
+        Drag and drop or click here to choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub> <output class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </output>
+</div>
+`;
+
+exports[`SFileInput.vue drop zone handles "dragenter" correctly 1`] = `
+<div class="file-input file-input--droppable">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display file-input__display--dragover">
+        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
+
+        Drag and drop or click here to choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub> <output class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </output>
+</div>
+`;
+
+exports[`SFileInput.vue drop zone handles "dragleave" correctly 1`] = `
+<div class="file-input file-input--droppable">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
+
+        Drag and drop or click here to choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub> <output class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </output>
+</div>
+`;
+
+exports[`SFileInput.vue drop zone handles "dragover" correctly 1`] = `
+<div class="file-input file-input--droppable">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
+
+        Drag and drop or click here to choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub> <output class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </output>
+</div>
+`;
+
+exports[`SFileInput.vue drop zone handles "drop" correctly 1`] = `
+<div class="file-input file-input--droppable">
+  <slabel-stub label="File input" isrequired="true" for="file-input">
+    <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
+      <div class="file-input__display">
+        <sicon icon="upload-cloud" size="large" class="file-input__icon"></sicon>
+
+        Drag and drop or click here to choose a file
+      </div> <span class="file-input__count">0 files selected</span>
+    </div>
+  </slabel-stub> <output class="file-input__info">
+    <!---->
+    <ul class="file-input__list"></ul>
+  </output>
+</div>
+`;
+
+exports[`SFileInput.vue handles inputs 1`] = `
+<div class="file-input">
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
@@ -133,20 +178,19 @@ exports[`SFileInput.vue handles changes to the input 1`] = `
         Choose a file
       </div> <span class="file-input__count">1 file selected</span>
     </div>
-  </slabel-stub>
-  <div class="file-input__info">
+  </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list">
       <schip-stub color="" isclosable="true" isactive="true" tag="li">
         test-file-a.txt
       </schip-stub>
     </ul>
-  </div>
+  </output>
 </div>
 `;
 
 exports[`SFileInput.vue renders correctly 1`] = `
-<div class="file-input file-input--button">
+<div class="file-input">
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
@@ -155,10 +199,9 @@ exports[`SFileInput.vue renders correctly 1`] = `
         Choose a file
       </div> <span class="file-input__count">0 files selected</span>
     </div>
-  </slabel-stub>
-  <div class="file-input__info">
+  </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list"></ul>
-  </div>
+  </output>
 </div>
 `;

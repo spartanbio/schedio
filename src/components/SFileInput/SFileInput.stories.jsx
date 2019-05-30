@@ -3,9 +3,8 @@ import { SCallout } from '@/components/SCallout'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
 import { storiesOf } from '@storybook/vue'
-import { boolean, number, select } from '@storybook/addon-knobs'
+import { boolean, number } from '@storybook/addon-knobs'
 import { withAttrsAsProps } from '@/mixins/stories/form-fields'
-import { types } from './options'
 
 storiesOf('Components/Inputs.SFileInput', module)
   .addParameters({ jest: 'SFileInput' })
@@ -22,7 +21,7 @@ storiesOf('Components/Inputs.SFileInput', module)
           default: () => ({
             ...withAttrsAsProps({ id: 'file-input', name: 'file-input', label: 'File input' }),
             maxSize: number('max-size', 0, '', 'Optional Props'),
-            type: select('type', types, types[0], 'Optional Props'),
+            isDroppable: boolean('is-droppable', false, 'Optional Props'),
             hideCount: boolean('hide-count', false, 'Optional Props'),
             isInline: boolean('is-inline', false, 'Optional Props')
           })
@@ -42,25 +41,9 @@ storiesOf('Components/Inputs.SFileInput', module)
           <div>
             <SHeading level="1">SFileInput</SHeading>
             <p>
-              This component allows uses to submit files. It provides limited validation for maximum
-              file size and duplicate file names, but no more.
+              This component allows uses to submit files. The <code>is-droppable</code> prop enables
+              drag-and-drop functionality.
             </p>
-            <p>
-              On a validation error, it emits an <code>error</code> event, and you have to handle
-              reporting the error to the user yourself. The event looks like this:
-            </p>
-            <pre>
-              {`\
-{
-  payload: [
-    {
-      name: 'Failed file',
-      reasons: ['exceeds max size', 'duplicate name']
-    },
-    ...moreFiles
-  ]
-}`}
-            </pre>
 
             <SHeading level="2">Example</SHeading>
             <SFileInput
@@ -84,6 +67,26 @@ storiesOf('Components/Inputs.SFileInput', module)
             <SCallout>
               Note that the <code>max-size</code> prop is specified in bytes.
             </SCallout>
+
+            <SHeading level="2">Validation</SHeading>
+            <p>
+              <code>SFileInput</code> provides limited validation for maximum file size and
+              duplicate file names, but no more. On a validation error, it emits an{' '}
+              <code>error</code> event, and you have to handle reporting the error to the user
+              yourself. The event looks like this:
+            </p>
+            <pre>
+              {`\
+{
+  payload: [
+    {
+      name: 'Failed file',
+      reasons: ['exceeds max size', 'duplicate name']
+    },
+    ...moreFiles
+  ]
+}`}
+            </pre>
 
             {SFileInput.props && <PropList component={SFileInput} />}
           </div>
