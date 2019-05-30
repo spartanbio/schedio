@@ -255,9 +255,9 @@
     "description": "String value.",
     "type": "string"
   },
-  "s-file-input/type": {
-    "description": "String value.",
-    "type": "string"
+  "s-file-input/is-droppable": {
+    "description": "Boolean value.",
+    "type": "boolean"
   },
   "s-file-input/hide-icon": {
     "description": "Boolean value.",

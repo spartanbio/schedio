@@ -1,3 +1,10 @@
+# [3.3.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.2.1...v3.3.0) (2019-05-30)
+
+
+### Features
+
+* **file-input:** adds drag and drop ([439e728](https://gitlab.com/spartanbio-ux/schedio/commit/439e728))
+
 ## [3.2.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.2.0...v3.2.1) (2019-05-28)
 
 

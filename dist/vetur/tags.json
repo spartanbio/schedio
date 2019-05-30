@@ -113,7 +113,7 @@
     "attributes": [
       "max-size",
       "text",
-      "type",
+      "is-droppable",
       "hide-icon",
       "hide-count"
     ],
