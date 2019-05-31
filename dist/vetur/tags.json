@@ -115,7 +115,8 @@
       "text",
       "is-droppable",
       "hide-icon",
-      "hide-count"
+      "hide-count",
+      "files"
     ],
     "subtags": [],
     "description": "Schedio component: <s-file-input>"
