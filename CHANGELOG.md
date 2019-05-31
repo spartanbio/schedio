@@ -1,3 +1,10 @@
+## [3.3.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.0...v3.3.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **file-input:** emits files on input ([8ba785a](https://gitlab.com/spartanbio-ux/schedio/commit/8ba785a))
+
 # [3.3.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.2.1...v3.3.0) (2019-05-30)
 
 
