@@ -12,7 +12,8 @@ storiesOf('Components/Inputs.SFileInput', module)
     return {
       data() {
         return {
-          errors: []
+          errors: [],
+          files: []
         }
       },
 
@@ -44,12 +45,16 @@ storiesOf('Components/Inputs.SFileInput', module)
               This component allows uses to submit files. The <code>is-droppable</code> prop enables
               drag-and-drop functionality.
             </p>
+            <p>
+              <code>SFileInput</code> can be used with <code>v-model</code>. It will emit an
+              <code>input</code> event with an array of files as its payload.
+            </p>
 
             <SHeading level="2">Example</SHeading>
             <SFileInput
               {...{ props }}
               {...{ attrs }}
-              onerror={evt => (this.errors = evt.payload)}
+              onError={evt => (this.errors = evt.payload)}
             />
 
             {!!this.errors.length && (

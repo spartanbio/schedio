@@ -15,7 +15,7 @@ describe('SFileInput.vue', () => {
     type: 'text/plain'
   })
 
-  const fileB = new File([''], 'test-file-b.txt', {
+  const fileB = new MockFile({
     name: 'test-file-b.txt',
     size: 512,
     type: 'text/plain'
@@ -62,6 +62,7 @@ describe('SFileInput.vue', () => {
     expect(inputSpy).toBeCalled()
     // fake the input event
     wrapper.vm.handleFiles({ target: { files: [fileA] } })
+    expect(wrapper.emitted('input')).toBeTruthy()
     expect(wrapper.contains(SChip)).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -78,27 +79,52 @@ describe('SFileInput.vue', () => {
   })
 
   it('can remove files', () => {
-    // single file
-    const deepWrapper = mount(SFileInput, {
+    wrapper = mount(SFileInput, {
       propsData: defaultProps
     })
 
-    deepWrapper.vm.handleFiles({ target: { files: [fileA] } })
-    expect(deepWrapper.vm.fileList.length).toBe(1)
+    // emitted[0]
+    wrapper.vm.handleFiles({ target: { files: [fileA] } })
+    expect(wrapper.vm.fileList.length).toBe(1)
+    expect(wrapper.emitted('input')).toBeTruthy()
+    expect(wrapper.emitted('input')[0][0]).toEqual(wrapper.vm.fileList)
+
     // find the button and click it
-    deepWrapper.find(SButton).trigger('click')
-    expect(deepWrapper.vm.fileList.length).toBe(0)
+    // emitted[1] - `click` also triggers an input event
+    wrapper.find(SButton).trigger('click')
+    expect(wrapper.vm.fileList.length).toBe(0)
+    expect(wrapper.emitted('input')[1][0]).toEqual(wrapper.vm.fileList)
+
     // with multiple files
-    deepWrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
-    expect(deepWrapper.vm.fileList.length).toBe(2)
+    // emitted[2]
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    expect(wrapper.vm.fileList.length).toBe(2)
+    expect(wrapper.emitted('input')[2][0]).toEqual(wrapper.vm.fileList)
+
     // find all buttons, click the first
-    deepWrapper
+    // emitted[3]
+    wrapper
       .findAll(SButton)
       .at(0)
       .trigger('click')
-    expect(deepWrapper.vm.fileList.length).toBe(1)
+    expect(wrapper.vm.fileList.length).toBe(1)
+    expect(wrapper.emitted('input')[3][0]).toEqual(wrapper.vm.fileList)
+
     // ensure only the desired file was deleted
-    expect(deepWrapper.vm.fileNames).toContain(fileB.name)
+    expect(wrapper.vm.fileNames).toContain(fileB.name)
+  })
+
+  it('works with v-model', () => {
+    wrapper = mount({
+      components: { SFileInput },
+      data: () => ({ files: [], defaultProps }),
+      template: '<SFileInput v-bind="defaultProps" v-model="files" />'
+    })
+
+    const fileInput = wrapper.find(SFileInput)
+
+    fileInput.vm.handleFiles({ target: { files: [fileA] } })
+    expect(wrapper.vm.files).toEqual(fileInput.vm.fileList)
   })
 
   it('displays a file count', () => {

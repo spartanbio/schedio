@@ -87,6 +87,11 @@ export default {
 
   inheritAttrs: false,
 
+  model: {
+    event: 'input',
+    prop: 'files'
+  },
+
   props: {
     maxSize: {
       default: null,
@@ -111,6 +116,11 @@ export default {
     hideCount: {
       default: false,
       type: Boolean
+    },
+
+    files: {
+      default: () => [],
+      type: Array
     }
   },
 
@@ -184,7 +194,7 @@ export default {
       }
 
       this.fileList = this.$attrs.multiple ? [...this.fileList, ...valid] : valid
-      this.$emit('input', { target: { files: this.fileList } })
+      this.emitInput()
     },
     /**
      * Validates files
@@ -230,6 +240,10 @@ export default {
       return this.maxSize ? file.size <= this.maxSize : true
     },
 
+    emitInput(payload = this.fileList) {
+      this.$emit('input', payload)
+    },
+
     hasUniqueName(file) {
       return !this.fileNames.includes(file.name)
     },
@@ -261,7 +275,7 @@ export default {
 
     removeFile({ idx }) {
       this.fileList.splice(idx, 1)
-      this.$emit('input', { event: { target: { files: this.fileList } } })
+      this.emitInput()
     }
   }
 }
