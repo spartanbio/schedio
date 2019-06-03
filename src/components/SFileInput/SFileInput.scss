@@ -1,4 +1,6 @@
 .file-input {
+  display: inline-block;
+  
   // hides the default element
   &__control {
     border: 0;
