@@ -191,7 +191,7 @@ export default {
     },
 
     fileList(val) {
-      if (val && Array.isArray(val) && val.length) this.$emit('input', this.fileList)
+      this.$emit('input', this.fileList)
     }
   },
 

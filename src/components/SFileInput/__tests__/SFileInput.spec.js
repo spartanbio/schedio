@@ -90,26 +90,25 @@ describe('SFileInput.vue', () => {
     expect(wrapper.emitted('input')[0][0]).toEqual(wrapper.vm.fileList)
 
     // find the button and click it
-    // emitted[0] - `click` also triggers an input event
-    // for some reason, the previous array of events is not added to
+    // emitted[1] - `click` also triggers an input event
     wrapper.find(SButton).trigger('click')
     expect(wrapper.vm.fileList.length).toBe(0)
-    expect(wrapper.emitted('input')[0][0]).toEqual(wrapper.vm.fileList)
-
-    // with multiple files
-    // emitted[1]
-    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
-    expect(wrapper.vm.fileList.length).toBe(2)
     expect(wrapper.emitted('input')[1][0]).toEqual(wrapper.vm.fileList)
 
+    // with multiple files
+    // emitted[0]
+    wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    expect(wrapper.vm.fileList.length).toBe(2)
+    expect(wrapper.emitted('input')[2][0]).toEqual(wrapper.vm.fileList)
+
     // find all buttons, click the first
-    // emitted[2]
+    // emitted[3]
     wrapper
       .findAll(SButton)
       .at(0)
       .trigger('click')
     expect(wrapper.vm.fileList.length).toBe(1)
-    expect(wrapper.emitted('input')[2][0]).toEqual(wrapper.vm.fileList)
+    expect(wrapper.emitted('input')[3][0]).toEqual(wrapper.vm.fileList)
 
     // ensure only the desired file was deleted
     expect(wrapper.vm.fileNames).toContain(fileB.name)
