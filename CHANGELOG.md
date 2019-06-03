@@ -1,3 +1,11 @@
+## [3.3.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.1...v3.3.2) (2019-05-31)
+
+
+### Bug Fixes
+
+* **file-input:** emits input on file removal ([010f45c](https://gitlab.com/spartanbio-ux/schedio/commit/010f45c))
+* **file-input:** enables v-model ([a3f0875](https://gitlab.com/spartanbio-ux/schedio/commit/a3f0875))
+
 ## [3.3.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.0...v3.3.1) (2019-05-30)
 
 

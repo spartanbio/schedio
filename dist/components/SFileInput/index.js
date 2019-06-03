@@ -4209,7 +4209,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFileInput/SFileInput.vue?vue&type=template&id=290150c9&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFileInput/SFileInput.vue?vue&type=template&id=30a52578&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"file-input",class:_vm.classList},[_c('SLabel',{attrs:{"for":_vm.id,"is-required":_vm.required,"hide-optional":_vm.hideOptional,"label":_vm.label}},[_c('div',{staticClass:"file-input__inner"},[_c('input',_vm._g(_vm._b({staticClass:"file-input__control",attrs:{"id":_vm.id,"label":_vm.label,"name":_vm.name,"type":"file"}},'input',_vm.$attrs,false),_vm.listeners.nondragListeners)),_c('div',_vm._g({staticClass:"file-input__display",class:{
           'file-input__display--invalid': _vm.isInvalid,
           'file-input__display--dragover': _vm.hasDragover,
@@ -4217,7 +4217,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue?vue&type=template&id=290150c9&
+// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue?vue&type=template&id=30a52578&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
 var es7_array_includes = __webpack_require__("6762");
@@ -4974,6 +4974,10 @@ var SChip_component = normalizeComponent(
   },
   mixins: [InputProps_mixin],
   inheritAttrs: false,
+  model: {
+    event: 'input',
+    prop: 'files'
+  },
   props: {
     maxSize: {
       default: null,
@@ -4994,6 +4998,12 @@ var SChip_component = normalizeComponent(
     hideCount: {
       default: false,
       type: Boolean
+    },
+    files: {
+      default: function _default() {
+        return [];
+      },
+      type: Array
     }
   },
   data: function data() {
@@ -5090,11 +5100,7 @@ var SChip_component = normalizeComponent(
       }
 
       this.fileList = this.$attrs.multiple ? [].concat(_toConsumableArray(this.fileList), _toConsumableArray(valid)) : valid;
-      this.$emit('input', {
-        target: {
-          files: this.fileList
-        }
-      });
+      this.emitInput();
     },
 
     /**
@@ -5153,6 +5159,10 @@ var SChip_component = normalizeComponent(
     isValidSize: function isValidSize(file) {
       return this.maxSize ? file.size <= this.maxSize : true;
     },
+    emitInput: function emitInput() {
+      var payload = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.fileList;
+      this.$emit('input', payload);
+    },
     hasUniqueName: function hasUniqueName(file) {
       return !this.fileNames.includes(file.name);
     },
@@ -5179,6 +5189,7 @@ var SChip_component = normalizeComponent(
     removeFile: function removeFile(_ref4) {
       var idx = _ref4.idx;
       this.fileList.splice(idx, 1);
+      this.emitInput();
     }
   }
 });

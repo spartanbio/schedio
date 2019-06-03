@@ -267,6 +267,10 @@
     "description": "Boolean value.",
     "type": "boolean"
   },
+  "s-file-input/files": {
+    "description": "Array value.",
+    "type": "array"
+  },
   "s-form-validation/text": {
     "description": "String value.",
     "type": "string"
