@@ -1,3 +1,11 @@
+## [3.3.4](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.3...v3.3.4) (2019-06-03)
+
+
+### Bug Fixes
+
+* **file-input:** emits event on empty input ([2e1d676](https://gitlab.com/spartanbio-ux/schedio/commit/2e1d676))
+* **file-input:** makes control inline-block ([97cf127](https://gitlab.com/spartanbio-ux/schedio/commit/97cf127))
+
 ## [3.3.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.2...v3.3.3) (2019-06-03)
 
 
