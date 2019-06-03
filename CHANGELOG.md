@@ -1,3 +1,10 @@
+## [3.3.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.2...v3.3.3) (2019-06-03)
+
+
+### Bug Fixes
+
+* **file-input:** fixes v-model usage ([d52297f](https://gitlab.com/spartanbio-ux/schedio/commit/d52297f))
+
 ## [3.3.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.1...v3.3.2) (2019-05-31)
 
 

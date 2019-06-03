@@ -8848,15 +8848,15 @@ var SContainerRow_component = normalizeComponent(
     return Vue.component(SContainerRow.name, SContainerRow);
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFileInput/SFileInput.vue?vue&type=template&id=30a52578&
-var SFileInputvue_type_template_id_30a52578_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"file-input",class:_vm.classList},[_c('SLabel',{attrs:{"for":_vm.id,"is-required":_vm.required,"hide-optional":_vm.hideOptional,"label":_vm.label}},[_c('div',{staticClass:"file-input__inner"},[_c('input',_vm._g(_vm._b({staticClass:"file-input__control",attrs:{"id":_vm.id,"label":_vm.label,"name":_vm.name,"type":"file"}},'input',_vm.$attrs,false),_vm.listeners.nondragListeners)),_c('div',_vm._g({staticClass:"file-input__display",class:{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"788328bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SFileInput/SFileInput.vue?vue&type=template&id=47ca7a16&
+var SFileInputvue_type_template_id_47ca7a16_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"file-input",class:_vm.classList},[_c('SLabel',{attrs:{"for":_vm.id,"is-required":_vm.required,"hide-optional":_vm.hideOptional,"label":_vm.label}},[_c('div',{staticClass:"file-input__inner"},[_c('input',_vm._g(_vm._b({staticClass:"file-input__control",attrs:{"id":_vm.id,"label":_vm.label,"name":_vm.name,"type":"file"}},'input',_vm.$attrs,false),_vm.listeners.nondragListeners)),_c('div',_vm._g({staticClass:"file-input__display",class:{
           'file-input__display--invalid': _vm.isInvalid,
           'file-input__display--dragover': _vm.hasDragover,
-        }},_vm.listeners.dragListeners),[(!_vm.hideIcon && _vm.isDroppable)?_c('SIcon',{staticClass:"file-input__icon",attrs:{"icon":"upload-cloud","size":"large"}}):_vm._e(),_vm._v("\n\n        "+_vm._s(_vm.displayText)+"\n      ")],1),(!_vm.$attrs.disabled && !_vm.hideCount)?_c('span',{staticClass:"file-input__count"},[_vm._v(_vm._s(_vm.fileCountText))]):_vm._e()])]),_c('output',{staticClass:"file-input__info"},[(_vm.maxSize)?_c('p',{staticClass:"file-input__limit"},[_vm._v("\n      Maximum file size: "+_vm._s(_vm.maxSize)+" bytes\n    ")]):_vm._e(),_c('ul',{staticClass:"file-input__list"},_vm._l((_vm.fileList),function(file,idx){return _c('SChip',{key:file.name,attrs:{"tag":"li","is-closable":""},on:{"close":function($event){return _vm.removeFile({ idx: idx })}}},[_vm._v("\n        "+_vm._s(file.name)+"\n      ")])}),1)])],1)}
-var SFileInputvue_type_template_id_30a52578_staticRenderFns = []
+        }},_vm.listeners.dragListeners),[(!_vm.hideIcon && _vm.isDroppable)?_c('SIcon',{staticClass:"file-input__icon",attrs:{"icon":"upload-cloud","size":"large"}}):_vm._e(),_vm._v("\n\n        "+_vm._s(_vm.displayText)+"\n      ")],1),(!_vm.$attrs.disabled && !_vm.hideCount)?_c('span',{staticClass:"file-input__count"},[_vm._v(_vm._s(_vm.fileCountText))]):_vm._e()])]),_c('output',{staticClass:"file-input__info"},[(_vm.maxSize)?_c('p',{staticClass:"file-input__limit"},[_vm._v("\n      Maximum file size: "+_vm._s(_vm.maxSize)+" bytes\n    ")]):_vm._e(),_c('ul',{directives:[{name:"show",rawName:"v-show",value:(_vm.fileList.length),expression:"fileList.length"}],staticClass:"file-input__list"},_vm._l((_vm.fileList),function(file,idx){return _c('SChip',{key:file.name,attrs:{"tag":"li","is-closable":""},on:{"close":function($event){return _vm.removeFile({ idx: idx })}}},[_vm._v("\n        "+_vm._s(file.name)+"\n      ")])}),1)])],1)}
+var SFileInputvue_type_template_id_47ca7a16_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue?vue&type=template&id=30a52578&
+// CONCATENATED MODULE: ./src/components/SFileInput/SFileInput.vue?vue&type=template&id=47ca7a16&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.from.js
 var es6_array_from = __webpack_require__("1c4c");
@@ -8909,6 +8909,9 @@ function _objectWithoutProperties(source, excluded) {
 
 
 
+//
+//
+//
 //
 //
 //
@@ -9094,6 +9097,14 @@ function _objectWithoutProperties(source, excluded) {
       };
     }
   },
+  watch: {
+    files: function files(val) {
+      this.fileList = val;
+    },
+    fileList: function fileList(val) {
+      if (val && Array.isArray(val) && val.length) this.$emit('input', this.fileList);
+    }
+  },
   methods: {
     handleFiles: function handleFiles(event) {
       var eventItem = event.dataTransfer ? event.dataTransfer : event.target;
@@ -9117,8 +9128,9 @@ function _objectWithoutProperties(source, excluded) {
         });
       }
 
-      this.fileList = this.$attrs.multiple ? [].concat(_toConsumableArray(this.fileList), _toConsumableArray(valid)) : valid;
-      this.emitInput();
+      this.fileList = this.$attrs.multiple ? [].concat(_toConsumableArray(this.fileList), _toConsumableArray(valid)) : valid; // reset the input value
+
+      event.target.value = null;
     },
 
     /**
@@ -9177,12 +9189,8 @@ function _objectWithoutProperties(source, excluded) {
     isValidSize: function isValidSize(file) {
       return this.maxSize ? file.size <= this.maxSize : true;
     },
-    emitInput: function emitInput() {
-      var payload = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.fileList;
-      this.$emit('input', payload);
-    },
     hasUniqueName: function hasUniqueName(file) {
-      return !this.fileNames.includes(file.name);
+      return this.$attrs.multiple ? !this.fileNames.includes(file.name) : true;
     },
     handleDragenter: function handleDragenter(event) {
       this.stopAndPrevent(event);
@@ -9207,7 +9215,6 @@ function _objectWithoutProperties(source, excluded) {
     removeFile: function removeFile(_ref4) {
       var idx = _ref4.idx;
       this.fileList.splice(idx, 1);
-      this.emitInput();
     }
   }
 });
@@ -9223,8 +9230,8 @@ function _objectWithoutProperties(source, excluded) {
 
 var SFileInput_component = normalizeComponent(
   SFileInput_SFileInputvue_type_script_lang_js_,
-  SFileInputvue_type_template_id_30a52578_render,
-  SFileInputvue_type_template_id_30a52578_staticRenderFns,
+  SFileInputvue_type_template_id_47ca7a16_render,
+  SFileInputvue_type_template_id_47ca7a16_staticRenderFns,
   false,
   null,
   null,
