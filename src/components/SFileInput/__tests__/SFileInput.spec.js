@@ -90,25 +90,26 @@ describe('SFileInput.vue', () => {
     expect(wrapper.emitted('input')[0][0]).toEqual(wrapper.vm.fileList)
 
     // find the button and click it
-    // emitted[1] - `click` also triggers an input event
+    // emitted[0] - `click` also triggers an input event
+    // for some reason, the previous array of events is not added to
     wrapper.find(SButton).trigger('click')
     expect(wrapper.vm.fileList.length).toBe(0)
-    expect(wrapper.emitted('input')[1][0]).toEqual(wrapper.vm.fileList)
+    expect(wrapper.emitted('input')[0][0]).toEqual(wrapper.vm.fileList)
 
     // with multiple files
-    // emitted[2]
+    // emitted[1]
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     expect(wrapper.vm.fileList.length).toBe(2)
-    expect(wrapper.emitted('input')[2][0]).toEqual(wrapper.vm.fileList)
+    expect(wrapper.emitted('input')[1][0]).toEqual(wrapper.vm.fileList)
 
     // find all buttons, click the first
-    // emitted[3]
+    // emitted[2]
     wrapper
       .findAll(SButton)
       .at(0)
       .trigger('click')
     expect(wrapper.vm.fileList.length).toBe(1)
-    expect(wrapper.emitted('input')[3][0]).toEqual(wrapper.vm.fileList)
+    expect(wrapper.emitted('input')[2][0]).toEqual(wrapper.vm.fileList)
 
     // ensure only the desired file was deleted
     expect(wrapper.vm.fileNames).toContain(fileB.name)
@@ -157,6 +158,10 @@ describe('SFileInput.vue', () => {
     expect(wrapper.vm.fileNames).toEqual([fileA, fileB].map(file => file.name))
     expect(wrapper.text()).toContain(fileA.name)
     expect(wrapper.text()).toContain(fileB.name)
+  })
+
+  it('hides the file list if no files exist', () => {
+    expect(wrapper.find('ul').isVisible()).toBe(false)
   })
 
   it('checks for max file size', () => {

@@ -55,6 +55,8 @@ storiesOf('Components/Inputs.SFileInput', module)
               {...{ props }}
               {...{ attrs }}
               onError={evt => (this.errors = evt.payload)}
+              onInput={evt => (this.files = evt)}
+              files={this.files}
             />
 
             {!!this.errors.length && (

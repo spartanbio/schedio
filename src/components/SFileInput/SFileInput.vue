@@ -55,7 +55,10 @@
         Maximum file size: {{ maxSize }} bytes
       </p>
 
-      <ul class="file-input__list">
+      <ul
+        v-show="fileList.length"
+        class="file-input__list"
+      >
         <SChip
           v-for="(file, idx) in fileList"
           :key="file.name"
@@ -182,6 +185,16 @@ export default {
     }
   },
 
+  watch: {
+    files(val) {
+      this.fileList = val
+    },
+
+    fileList(val) {
+      if (val && Array.isArray(val) && val.length) this.$emit('input', this.fileList)
+    }
+  },
+
   methods: {
     handleFiles(event) {
       const eventItem = event.dataTransfer ? event.dataTransfer : event.target
@@ -194,7 +207,9 @@ export default {
       }
 
       this.fileList = this.$attrs.multiple ? [...this.fileList, ...valid] : valid
-      this.emitInput()
+
+      // reset the input value
+      event.target.value = null
     },
     /**
      * Validates files
@@ -240,12 +255,8 @@ export default {
       return this.maxSize ? file.size <= this.maxSize : true
     },
 
-    emitInput(payload = this.fileList) {
-      this.$emit('input', payload)
-    },
-
     hasUniqueName(file) {
-      return !this.fileNames.includes(file.name)
+      return this.$attrs.multiple ? !this.fileNames.includes(file.name) : true
     },
 
     handleDragenter(event) {
@@ -275,7 +286,6 @@ export default {
 
     removeFile({ idx }) {
       this.fileList.splice(idx, 1)
-      this.emitInput()
     }
   }
 }
