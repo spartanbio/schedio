@@ -51,25 +51,28 @@ storiesOf('Components/Inputs.SFileInput', module)
             </p>
 
             <SHeading level="2">Example</SHeading>
-            <SFileInput
-              {...{ props }}
-              {...{ attrs }}
-              onError={evt => (this.errors = evt.payload)}
-              onInput={evt => (this.files = evt)}
-              files={this.files}
-            />
 
-            {!!this.errors.length && (
-              <div>
-                <SFormValidation>
-                  Example error handling
-                  <pre class="text--color-red">{JSON.stringify(this.errors, null, 2)}</pre>
-                </SFormValidation>
-                <p>
-                  Error handler: <code>evt => (this.errors = evt.payload)</code>
-                </p>
-              </div>
-            )}
+            <SFormField style="margin-bottom: 1em;">
+              <SFileInput
+                {...{ props }}
+                {...{ attrs }}
+                onError={evt => (this.errors = evt.payload)}
+                onInput={evt => (this.files = evt)}
+                files={this.files}
+              />
+
+              {!!this.errors.length && (
+                <div>
+                  <SFormValidation>
+                    Example error handling
+                    <pre class="text--color-red">{JSON.stringify(this.errors, null, 2)}</pre>
+                  </SFormValidation>
+                  <p>
+                    Error handler: <code>evt => (this.errors = evt.payload)</code>
+                  </p>
+                </div>
+              )}
+            </SFormField>
 
             <SCallout>
               Note that the <code>max-size</code> prop is specified in bytes.
