@@ -26,7 +26,7 @@
           v-if="hasContent.title"
           class="toast__title"
         >
-          {{ toastTitle }}
+          {{ title }}
         </div>
 
         <!-- Body -->
@@ -34,7 +34,7 @@
           v-if="hasContent.body"
           class="toast__body"
         >
-          {{ toastBody }}
+          {{ body }}
         </div>
       </div>
 
@@ -138,8 +138,8 @@ export default {
     },
 
     hasContent() {
-      const title = this.toastTitle || this.$slots.title
-      const body = this.toastBody || this.$slots.default
+      const title = this.text || this.$slots.title
+      const body = this.body || this.$slots.default
       const any = title || body
 
       return { any, title, body }

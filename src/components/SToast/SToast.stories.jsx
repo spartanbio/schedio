@@ -21,7 +21,7 @@ storiesOf('Components/SToast', module)
             position: select('position', positions, positions[0], 'Optional Props'),
             actionText: text('action-text', 'Run an action', 'Optional Props'),
             title: text('toast-title', '', 'Optional Props'),
-            hideIcon: boolean('hideIcon', false, 'Optional Props'),
+            hideIcon: boolean('hide-icon', false, 'Optional Props'),
             isIndefinite: boolean('is-indefinite', false, 'Optional Props'),
             duration: number('duration', 3000, {}, 'Optional Props'),
 
@@ -35,6 +35,9 @@ storiesOf('Components/SToast', module)
               }, 750)
             }
           })
+        },
+        disableAction: {
+          default: boolean('Disable action', false)
         }
       },
 
@@ -53,7 +56,7 @@ storiesOf('Components/SToast', module)
             this.$toast.open({
               type: type,
               containerParent: '#all-toasts',
-              toastBody: 'Type: ' + upperCase(type || 'default'),
+              body: 'Type: ' + upperCase(type || 'default'),
               isIndefinite: true,
               action: () => this.toastCount--
             })
@@ -69,7 +72,7 @@ storiesOf('Components/SToast', module)
           this.$toast.open({
             type: type,
             containerParent: '#all-toasts',
-            toastBody: 'Type: ' + upperCase(type || 'default'),
+            body: 'Type: ' + upperCase(type || 'default'),
             isIndefinite: true
           })
         })
