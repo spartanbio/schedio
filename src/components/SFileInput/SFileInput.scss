@@ -1,25 +1,23 @@
 .file-input {
   display: inline-block;
-  
+
+  // bind parent class name
+  $parent: &;
+
   // hides the default element
   &__control {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    overflow: hidden;
-    padding: spacing('none');
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+    @include control-invisible-base;
+
+    &:focus ~ #{$parent}__display {
+      @include control-focused;
+    }
   }
 
   // inner wrapper around control and count
   &__inner {
     align-items: center;
-    cursor: pointer;
     display: flex;
     font-weight: $font-weight-regular;
-    margin-top: spacing();
     text-transform: none;
   }
 
@@ -55,9 +53,6 @@
     padding: spacing('none');
   }
 
-  // bind parent class name
-  $parent: &;
-
   // an area with an icon
   &--droppable {
     #{$parent}__inner {
@@ -75,13 +70,10 @@
     }
 
     #{$parent}__display {
+      @include control;
       $area-width: 12em;
 
       align-items: center;
-      border: border();
-      border-color: color('grey', 'light');
-      border-radius: border-radius('small');
-      border-style: dashed;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -107,17 +99,11 @@
   }
 
   // disabled state
-  &__control:disabled + #{$parent}__display {
-    background-color: color('grey', 'light') !important;
-    border-color: color('grey') !important;
-    border-style: solid;
-    box-shadow: none !important;
-    color: color('night', 'lighter');
-    cursor: not-allowed;
-    text-shadow: none !important;
+  &__control:disabled {
+    pointer-events: none;
 
-    #{$parent}__icon {
-      opacity: 0.2;
+    & + #{$parent}__display {
+      @include control-disabled;
     }
   }
 }

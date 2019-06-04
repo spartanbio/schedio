@@ -1,5 +1,6 @@
 import { SChip } from '@/components/SChip'
 import { SHeading } from '@/components/SHeading'
+import { SCallout } from '@/components/SCallout'
 import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 import { boolean, select, text } from '@storybook/addon-knobs'
@@ -18,7 +19,8 @@ storiesOf('Components/SChip', module)
           props: {
             default: {
               color: select('color', ['', 'no', ...colors], '', 'Optional Props'),
-              isClosable: boolean('is-closable', false, 'Optional Props')
+              isClosable: boolean('is-closable', false, 'Optional Props'),
+              closeAriaLabel: text('close-aria-label', 'Close toast', 'Optional Props')
             }
           },
           slots: {
@@ -38,6 +40,10 @@ storiesOf('Components/SChip', module)
 
               <SHeading level="2">Example</SHeading>
               <SChip {...{ props }}>{slots.defaultSlot}</SChip>
+
+              <SCallout type="warning">
+                <code>v-model</code> must be set for a <code>is-closable</code> to work.
+              </SCallout>
 
               {SChip.props && <PropList component={SChip} />}
             </div>

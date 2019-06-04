@@ -5,6 +5,7 @@
     v-show="isActive"
     class="chip"
     :class="classList"
+    :aria-hidden="!isActive"
   >
     <div class="chip__content">
       <slot>Chip content</slot>
@@ -17,6 +18,7 @@
       :color="buttonColor"
       icon-left="x"
       icon-only
+      :aria-label="closeAriaLabel"
       @click="$emit('close', false)"
     />
   </component>
@@ -67,6 +69,11 @@ export default {
     tag: {
       type: String,
       default: 'div'
+    },
+
+    closeAriaLabel: {
+      type: String,
+      default: 'Close chip'
     }
   },
 

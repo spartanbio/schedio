@@ -66,7 +66,7 @@ describe('SChip.vue', () => {
       expect(wrapper.emitted('close')).toBeTruthy()
     })
 
-    it('is hidden on close', () => {
+    it('works with v-model', () => {
       const chips = {
         chip1: true,
         chip2: true,
@@ -109,6 +109,23 @@ describe('SChip.vue', () => {
 
       expect(chipComponents.at(randIdx).isVisible()).toBe(false)
       expect(closeWrapper.vm.chips[randKey]).toBe(false)
+    })
+
+    it('sets `aria-hidden` on close', () => {
+      wrapper = mount({
+        components: { SChip },
+        data: () => ({ chip: true }),
+        template: `<SChip is-closable="true" v-model="chip">Chip</SChip>`
+      })
+      wrapper.find(SButton).trigger('click')
+      expect(wrapper.find(SChip).attributes('aria-hidden')).toBe('true')
+      expect(wrapper.html()).toMatchSnapshot()
+    })
+
+    it("can change the button's `aria-label`", () => {
+      wrapper.setProps({ closeAriaLabel: 'Changed' })
+      expect(wrapper.find('button').attributes('aria-label')).toBe('Changed')
+      expect(wrapper.html()).toMatchSnapshot()
     })
   })
 })

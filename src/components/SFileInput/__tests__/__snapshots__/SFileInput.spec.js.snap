@@ -31,10 +31,10 @@ exports[`SFileInput.vue can hide a file count 1`] = `
   </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="">
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-b.txt">
         test-file-b.txt
       </schip-stub>
     </ul>
@@ -55,10 +55,10 @@ exports[`SFileInput.vue can upload multiple files 1`] = `
   </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="">
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-b.txt">
         test-file-b.txt
       </schip-stub>
     </ul>
@@ -181,7 +181,7 @@ exports[`SFileInput.vue handles inputs 1`] = `
   </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="">
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
     </ul>

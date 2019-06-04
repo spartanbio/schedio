@@ -64,6 +64,7 @@
           :key="file.name"
           tag="li"
           is-closable
+          :close-aria-label="`Remove ${file.name}`"
           @close="removeFile({ idx })"
         >
           {{ file.name }}
