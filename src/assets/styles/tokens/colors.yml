@@ -60,36 +60,36 @@ props:
 
   # Green
   green-darker:
-    value: 'hsla(144, 74%, 20%, 1)'
+    value: 'hsla(144, 96%, 12%, 1)'
     paletteType: 'accent'
   green-dark:
-    value: 'hsla(144, 74%, 35%, 1)'
+    value: 'hsla(144, 94%, 20%, 1)'
     paletteType: 'accent'
   green:
-    value: 'hsla(144, 71%, 47%, 1)'
+    value: 'hsla(144, 92%, 28%, 1)'
     paletteType: 'accent'
   green-light:
-    value: 'hsla(144, 68%, 62%, 1)'
+    value: 'hsla(144, 74%, 38%, 1)'
     paletteType: 'accent'
   green-lighter:
-    value: 'hsla(144, 68%, 76%, 1)'
+    value: 'hsla(144, 68%, 50%, 1)'
     paletteType: 'accent'
 
   # Gold
   gold-darker:
-    value: 'hsla(38, 100%, 35%, 1)'
+    value: 'hsla(38, 100%, 40%, 1)'
     paletteType: 'accent'
   gold-dark:
-    value: 'hsla(40, 100%, 45%, 1)'
+    value: 'hsla(40, 100%, 50%, 1)'
     paletteType: 'accent'
   gold:
-    value: 'hsla(40, 97%, 55%, 1)'
+    value: 'hsla(40, 97%, 60%, 1)'
     paletteType: 'accent'
   gold-light:
-    value: 'hsla(40, 97%, 68%, 1)'
+    value: 'hsla(40, 97%, 73%, 1)'
     paletteType: 'accent'
   gold-lighter:
-    value: 'hsla(40, 97%, 78%, 1)'
+    value: 'hsla(40, 97%, 83%, 1)'
     paletteType: 'accent'
 
   # Turqoise
@@ -117,7 +117,7 @@ props:
     value: 'hsla(0, 87%, 31%, 1)'
     paletteType: 'accent'
   red:
-    value: 'hsla(0, 87%, 50%, 1)'
+    value: 'hsla(0, 87%, 49%, 1)'
     paletteType: 'accent'
   red-light:
     value: 'hsla(0, 87%, 68%, 1)'
@@ -134,7 +134,7 @@ props:
     value: 'hsla(330, 100%, 31%, 1)'
     paletteType: 'accent'
   magenta:
-    value: 'hsla(330, 100%, 47%, 1)'
+    value: 'hsla(330, 100%, 45%, 1)'
     paletteType: 'accent'
   magenta-light:
     value: 'hsla(330, 94%, 68%, 1)'

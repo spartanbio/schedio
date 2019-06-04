@@ -10,12 +10,12 @@
   }
 
   &--success {
-    background: lighten(color('green', 'lighter'), 20%);
+    background: lighten(color('green', 'lighter'), 40%);
     border-left-color: color('green');
   }
 
   &--warning {
-    background: lighten(color('gold', 'lighter'), 15%);
+    background: lighten(color('gold', 'lighter'), 13%);
     border-left-color: color('gold');
   }
 

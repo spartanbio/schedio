@@ -5,7 +5,7 @@
 
   & ~ &__check::after {
     background-color: transparent !important;
-    border: border-width('thick') solid color('green');
+    border: border-width('thick') solid color('green', 'light');
     border-left: none;
     border-top: none;
     content: '';

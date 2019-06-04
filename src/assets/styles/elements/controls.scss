@@ -181,10 +181,12 @@
 
   & ~ &__check {
     @include switch-size;
+
     // override border and shadow
     border: border() !important;
     box-shadow: shadow() !important;
     justify-content: flex-start;
+
     // the switch knob
     &::after {
       background: color('white');
@@ -228,11 +230,11 @@
     }
 
     &:not(:disabled) ~ #{$parent}__check {
-      background-color: color('green');
+      background-color: color('green', 'light');
     }
 
     &:not(:disabled):hover ~ #{$parent}__check {
-      background-color: color('green', 'dark');
+      background-color: color('green');
     }
   }
 
