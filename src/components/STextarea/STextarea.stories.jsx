@@ -1,7 +1,7 @@
 import { SHeading } from '@/components/SHeading'
 import { colors as iconColors } from '@/components/SIcon/options'
 import { STextarea } from '@/components/STextarea'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'

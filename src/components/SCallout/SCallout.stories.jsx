@@ -1,6 +1,6 @@
 import { SCallout } from '@/components/SCallout'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { generateHeading } from '@/utils/stories/render-functions'
 import { select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'

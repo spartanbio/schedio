@@ -1,7 +1,7 @@
 import { colors, sizes } from '@/components/SIcon/options'
 import { SHeading } from '@/components/SHeading'
 import { SIcon } from '@/components/SIcon'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import icons from 'feather-icons/dist/icons.json'

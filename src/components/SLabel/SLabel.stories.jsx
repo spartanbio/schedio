@@ -1,6 +1,6 @@
 import { SHeading } from '@/components/SHeading'
 import { SLabel } from '@/components/SLabel'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

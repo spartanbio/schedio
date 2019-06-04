@@ -6,11 +6,11 @@ import { create } from '@storybook/theming'
 import { addDecorator, addParameters, configure } from '@storybook/vue'
 import Vue from 'vue'
 import results from '../../.jest-test-results.json'
-import StoryContainer from '@/docs/StoryContainer.vue'
+import StoryContainer from '@@/docs/components/StoryContainer.vue'
 
 Vue.use(Schedio)
 
-const docStories = require.context('@/docs', true, /.stories.(js|jsx)$/)
+const docStories = require.context('@@/docs', true, /.stories.(js|jsx)$/)
 const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
 
 function loadStories() {

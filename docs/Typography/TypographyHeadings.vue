@@ -107,7 +107,7 @@
 </template>
 
 <script>
-import StoryLink from '@/docs/StoryLink.vue'
+import StoryLink from '@@/docs/components/StoryLink'
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
 
 export default {

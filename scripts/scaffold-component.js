@@ -41,7 +41,7 @@ export default {
     contents: `\
 import { ${componentName} } from '@/components/${componentName}'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/${componentName}', module)

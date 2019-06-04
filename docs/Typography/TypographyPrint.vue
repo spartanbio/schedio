@@ -187,7 +187,7 @@
 <script>
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-import StoryLink from '../StoryLink'
+import StoryLink from '@@/docs/components/StoryLink'
 
 const fontSizes = Object.values(props).filter(
   ({ category, name }) => category === 'font-size' && name !== 'base-font-size'

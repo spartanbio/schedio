@@ -1,7 +1,7 @@
 import { SHero } from '@/components/SHero'
 import { SHeading } from '@/components/SHeading'
 import { SContainer } from '@/components/SContainer'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import { colors, heights } from './options'

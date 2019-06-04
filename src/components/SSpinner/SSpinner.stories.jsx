@@ -1,7 +1,7 @@
 import { SSpinner } from '@/components/SSpinner'
 import { colors, sizes } from '@/components/SSpinner/options'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import { generateHeading } from '@/utils/stories/render-functions'

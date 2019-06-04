@@ -1,6 +1,6 @@
 import { SChip } from '@/components/SChip'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { colors } from './options'

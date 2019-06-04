@@ -6,7 +6,7 @@ import { SHeading } from '@/components/SHeading'
 import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import orderBy from 'lodash.orderby'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import kebabCase from 'lodash.kebabcase'
 
 storiesOf('Components/Layout.SContainer', module)

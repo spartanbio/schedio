@@ -1,7 +1,7 @@
 import { SHeading } from '@/components/SHeading'
 import { SLink } from '@/components/SLink'
-import PropList from '@/docs/PropList'
-import StoryLink from '@/docs/StoryLink'
+import PropList from '@@/docs/components/PropList'
+import StoryLink from '@@/docs/components/StoryLink'
 import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

@@ -6,7 +6,7 @@ import { boolean, number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import orderBy from 'lodash.orderby'
 import mobileBreakpoints from '../SContainer/mobile-breakpoints'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainerColumn' })

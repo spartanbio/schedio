@@ -1,7 +1,7 @@
 import { SToast } from '@/components/SToast'
 import { SHeading } from '@/components/SHeading'
 import { SButton } from '@/components/SButton'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import { types, positions } from './options'

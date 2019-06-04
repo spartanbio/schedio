@@ -1,6 +1,6 @@
 import { SFormValidation } from '@/components/SFormValidation'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import { states } from './options'

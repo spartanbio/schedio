@@ -1,7 +1,7 @@
 import { SFileInput } from '@/components/SFileInput'
 import { SCallout } from '@/components/SCallout'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 import { boolean, number } from '@storybook/addon-knobs'
 import { withAttrsAsProps } from '@/mixins/stories/form-fields'

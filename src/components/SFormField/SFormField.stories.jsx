@@ -1,6 +1,6 @@
 import { SFormField } from '@/components/SFormField'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Forms.SFormField', module)

@@ -1,6 +1,6 @@
 import { SCardContainer } from '@/components/SCardContainer'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
