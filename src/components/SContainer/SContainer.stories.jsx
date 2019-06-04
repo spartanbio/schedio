@@ -8,7 +8,7 @@ import PropList from '@/docs/PropList'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainer' })
-  .add('SContainer', function SContainerDocs() {
+  .add('Container', function SContainerDocs() {
     return {
       props: {
         props: {

@@ -8,7 +8,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STable', module)
   .addParameters({ jest: 'STable' })
-  .add('STable', function STableDocs() {
+  .add('Table', function STableDocs() {
     const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
     const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
     const slotExampleProps = {

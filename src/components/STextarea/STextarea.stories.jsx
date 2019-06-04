@@ -57,3 +57,36 @@ storiesOf('Components/Inputs.STextarea', module)
       }
     }
   })
+  .add(
+    'Textarea with icons',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Textarea with icons</SHeading>
+            <p>Colors can be provided for each icon.</p>
+            <SFormField>
+              <STextarea icon-left="activity" id="icon-l" name="icon-l" label="Textarea" />
+            </SFormField>
+            <SFormField>
+              <STextarea icon-right="activity" id="icon-r" name="icon-r" label="Textarea" />
+            </SFormField>
+            <SFormField>
+              <STextarea
+                icon-left="activity"
+                icon-right="activity"
+                id="icon-b"
+                name="icon-b"
+                label="Textarea"
+              />
+            </SFormField>
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

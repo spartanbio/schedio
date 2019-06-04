@@ -1,10 +1,13 @@
 import { SButton } from '@/components/SButton'
 import { colors } from '@/components/SButton/options'
-import { SHeading } from '@/components/SHeading'
 import { SButtonGroup } from '@/components/SButtonGroup'
+import { SContainerColumn } from '@/components/SContainerColumn'
+import { SContainerRow } from '@/components/SContainerRow'
+import { SHeading } from '@/components/SHeading'
 import PropList from '@/docs/PropList'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
+import { generateHeading } from '@/utils/stories/render-functions'
 
 storiesOf('Components/Buttons.SButtonGroup', module)
   .addParameters({ jest: 'SButtonGroup' })
@@ -50,3 +53,73 @@ storiesOf('Components/Buttons.SButtonGroup', module)
       }
     }
   })
+  .add(
+    'Solid Group',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Solid Group</SHeading>
+            {colorsToGroups(h)}
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )
+  .add(
+    'Outlined Group',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Outlined Group</SHeading>
+            {colorsToGroups(h, { isOutlined: true })}
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )
+
+function colorsToGroups(h, props = { color: '' }) {
+  return colors.map(color => generateGroups(h, { ...props, color }))
+}
+
+function generateGroups(h, props = { color: '' }) {
+  return h(SContainerRow, [
+    h(SContainerColumn, [
+      generateHeading(h, { level: 2, content: props.color }),
+      h(SContainerRow, [
+        generateNarrowColumn(h, [
+          generateHeading(h, { level: 3, content: 'Ungrouped' }),
+          generateSingleGroup(h, { ...props })
+        ]),
+        generateNarrowColumn(h, [
+          generateHeading(h, { level: 3, content: 'Grouped' }),
+          generateSingleGroup(h, { ...props, isGrouped: true })
+        ])
+      ])
+    ])
+  ])
+}
+
+function generateNarrowColumn(h, content) {
+  return h(SContainerColumn, { props: { narrow: true } }, content)
+}
+
+function generateSingleGroup(h, props) {
+  return h(SButtonGroup, { props }, generateTheeButtons(h))
+}
+
+function generateTheeButtons(h) {
+  return Array.from({ length: 3 }, (v, idx) => h(SButton, `Button ${idx + 1}`))
+}

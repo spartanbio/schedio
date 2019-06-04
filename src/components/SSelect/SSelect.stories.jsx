@@ -14,7 +14,7 @@ const iconColor = side =>
 
 storiesOf('Components/Inputs.SSelect', module)
   .addParameters({ jest: 'SSelect' })
-  .add('SSelect', () => {
+  .add('Select', () => {
     const object1 = { label: 'Option 1', value: 'option1' }
     const object2 = { label: 'Option 2', value: 'option2' }
     const object3 = { label: 'Option 3', value: 'option3' }
@@ -97,3 +97,110 @@ storiesOf('Components/Inputs.SSelect', module)
       }
     }
   })
+  .add(
+    'Standard Select',
+    () => ({
+      render(h) {
+        const options = ['Option 1', 'Option 2', 'Option 3']
+        return (
+          <div>
+            <SHeading>Standard Select</SHeading>
+
+            <SHeading level="2">Base</SHeading>
+            <SSelect id="select" name="select" label="select" select-options={options} />
+
+            <SHeading level="2">Icons</SHeading>
+            <p>Colors can also be provided for each icon.</p>
+            <SFormField>
+              <SSelect
+                id="select-icon-l"
+                name="select-icon-l"
+                label="select"
+                select-options={options}
+                icon-left="activity"
+              />
+            </SFormField>
+            <SFormField>
+              <SSelect
+                id="select-icon-r"
+                name="select-icon-r"
+                label="select"
+                select-options={options}
+                icon-right="activity"
+              />
+            </SFormField>
+            <SFormField>
+              <SSelect
+                id="select-icon-b"
+                name="select-icon-b"
+                label="select"
+                select-options={options}
+                icon-left="activity"
+                icon-right="activity"
+              />
+            </SFormField>
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )
+  .add(
+    'Multiple Select',
+    () => ({
+      render(h) {
+        const options = ['Option 1', 'Option 2', 'Option 3']
+        return (
+          <div>
+            <SHeading>Multiple Select</SHeading>
+
+            <SHeading level="2">Base</SHeading>
+            <SSelect id="select" name="select" label="select" select-options={options} />
+
+            <SHeading level="2">Icons</SHeading>
+            <p>Colors can also be provided for each icon.</p>
+            <SFormField>
+              <SSelect
+                id="select-icon-l"
+                name="select-icon-l"
+                label="select"
+                select-options={options}
+                icon-left="activity"
+                multiple
+              />
+            </SFormField>
+            <SFormField>
+              <SSelect
+                id="select-icon-r"
+                name="select-icon-r"
+                label="select"
+                select-options={options}
+                icon-right="activity"
+                multiple
+              />
+            </SFormField>
+            <SFormField>
+              <SSelect
+                id="select-icon-b"
+                name="select-icon-b"
+                label="select"
+                select-options={options}
+                icon-left="activity"
+                icon-right="activity"
+                multiple
+              />
+            </SFormField>
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

@@ -8,7 +8,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STableCell', module)
   .addParameters({ jest: 'STableCell' })
-  .add('STableCell', function STableCellDocs() {
+  .add('Table Cell', function STableCellDocs() {
     return {
       props: {
         isNumeric: { default: boolean('is-numeric', true, 'Optional Props') },

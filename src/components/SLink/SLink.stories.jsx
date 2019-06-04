@@ -7,7 +7,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/SLink', module)
   .addParameters({ jest: 'SLink' })
-  .add('SLink', () => {
+  .add('Link', () => {
     // TODO: document visited/unvisited states.
     return {
       props: {
@@ -65,3 +65,36 @@ storiesOf('Components/SLink', module)
       }
     }
   })
+  .add(
+    'Link Types',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Link Types</SHeading>
+
+            <SHeading level="2">Base</SHeading>
+            <SLink to="anunvisitedwebsite.com" onClick={e => e.preventDefault()} />
+
+            <SHeading level="2">External</SHeading>
+            <SLink to="https://anunvisitedwebsite.com" onClick={e => e.preventDefault()} />
+
+            <SHeading level="2">Custom text</SHeading>
+            <SLink to="https://anunvisitedwebsite.com" onClick={e => e.preventDefault()}>
+              Some text
+            </SLink>
+
+            <SHeading level="2">Visited</SHeading>
+            <SLink to="https://spartanbio.com">
+              If you haven't spartanbio.com already, click here
+            </SLink>
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

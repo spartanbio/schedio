@@ -7,7 +7,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Inputs.SSwitch', module)
   .addParameters({ jest: 'SSwitch' })
-  .add('SSwitch', () => {
+  .add('Switch', () => {
     return {
       props: {
         props: {

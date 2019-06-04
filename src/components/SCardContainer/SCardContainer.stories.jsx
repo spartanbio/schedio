@@ -6,10 +6,10 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Layout.SCard', module)
   .addParameters({ jest: 'SCardContainer' })
-  .add('SCardContainer', () => {
+  .add('Card Container', () => {
     return {
       props: {
-        slotContent: { default: text('default', 'This is a SCardContainer!', 'Slots') }
+        slotContent: { default: text('default', 'This is a card container!', 'Slots') }
       },
       render(h) {
         return (

@@ -1,5 +1,6 @@
 import { SHero } from '@/components/SHero'
 import { SHeading } from '@/components/SHeading'
+import { SContainer } from '@/components/SContainer'
 import PropList from '@/docs/PropList'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
@@ -7,7 +8,7 @@ import { colors, heights } from './options'
 
 storiesOf('Components/Layout.SHero', module)
   .addParameters({ jest: 'SHero' })
-  .add('SHero', () => {
+  .add('Hero', () => {
     return {
       props: {
         color: {
@@ -34,7 +35,7 @@ storiesOf('Components/Layout.SHero', module)
         const { slots, ...props } = this.$props
         return (
           <div>
-            <SHeading level="1">SHero</SHeading>
+            <SHeading level="1">Hero</SHeading>
             <p>
               Hero components are fullwidth banners. They are often the first visual element a user
               encounters on a page. They present an overview of a page's most important content.
@@ -54,3 +55,54 @@ storiesOf('Components/Layout.SHero', module)
       }
     }
   })
+  .add(
+    'Hero Colors',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Hero Colors</SHeading>
+
+            {colors.map(color => generateHero(h, color))}
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )
+
+function generateHero(h, color) {
+  return [
+    h(SHeading, { props: { level: 2 } }, color),
+    h(SHero, { props: { color, height: 'half' } }, [
+      h(SContainer, [
+        h(
+          SHeading,
+          {
+            props: {
+              isDisplay: true,
+              isTitle: true
+            }
+          },
+          'First line'
+        ),
+        h(
+          SHeading,
+          {
+            props: {
+              isDisplay: true,
+              isSubtitle: true,
+              level: 2,
+              isSubtle: true
+            }
+          },
+          'Second line'
+        )
+      ])
+    ])
+  ]
+}

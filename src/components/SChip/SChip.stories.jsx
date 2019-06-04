@@ -4,11 +4,14 @@ import PropList from '@/docs/PropList'
 import { storiesOf } from '@storybook/vue'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { colors } from './options'
+import { SContainerColumn } from '@/components/SContainerColumn'
+import { SContainerRow } from '@/components/SContainerRow'
+import { generateHeading } from '@/utils/stories/render-functions'
 
 storiesOf('Components/SChip', module)
   .addParameters({ jest: 'SChip' })
   .add(
-    'SChip',
+    'Chip',
     function SChipExample() {
       return {
         props: {
@@ -30,7 +33,7 @@ storiesOf('Components/SChip', module)
 
           return (
             <div>
-              <SHeading level="1">SChip</SHeading>
+              <SHeading level="1">Chip</SHeading>
               <p>Chips can be used to convey small bits of information.</p>
 
               <SHeading level="2">Example</SHeading>
@@ -92,6 +95,7 @@ storiesOf('Components/SChip', module)
               <SButton
                 icon-left={this.showComponentCode ? 'minus-circle' : 'plus-circle'}
                 color="night"
+                is-outlined
                 size="small"
                 style="margin-bottom: 1em;"
                 onClick={() => (this.showComponentCode = !this.showComponentCode)}
@@ -175,3 +179,34 @@ export default {
       }
     }
   )
+  .add(
+    'Chip Colors',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Chip Colors</SHeading>
+
+            {['', ...colors].map(color => generateChips(h, color))}
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )
+
+function generateChips(h, color) {
+  const chipName = `${color || 'base'} chip`
+
+  return h(SContainerRow, [
+    h(SContainerColumn, [
+      generateHeading(h, { level: 2, content: color || 'Base' }),
+      h(SChip, { props: { color } }, chipName),
+      h(SChip, { props: { color, isClosable: true } }, `Closable ${chipName}`)
+    ])
+  ])
+}

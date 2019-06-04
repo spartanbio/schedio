@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Layout.SCard', module)
   .addParameters({ jest: 'SCard' })
-  .add('SCard', () => {
+  .add('Card', () => {
     return {
       props: {
         image: {
@@ -23,6 +23,7 @@ storiesOf('Components/Layout.SCard', module)
       },
       render(h) {
         const { headerSlot, defaultSlot, footerSlot, ...props } = this.$props
+
         return (
           <div>
             <SHeading level="1">Card</SHeading>
@@ -44,3 +45,35 @@ storiesOf('Components/Layout.SCard', module)
       }
     }
   })
+  .add(
+    'Card Types',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Card Types</SHeading>
+
+            <SHeading level="2">Standard</SHeading>
+            <p>All slots are optional.</p>
+            <SCard>
+              <template slot="header">Header</template>
+              <template slot="default">Default</template>
+              <template slot="footer">Footer</template>
+            </SCard>
+
+            <SHeading level="2">Image</SHeading>
+            <p>You should only need to use the default or header slots with an image.</p>
+            <SCard image={{ src: ' https://picsum.photos/800', alt: 'A random image' }}>
+              <template slot="header">Header</template>
+              <template slot="default">Default</template>
+            </SCard>
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

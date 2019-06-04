@@ -8,7 +8,7 @@ import { withAttrsAsProps } from '@/mixins/stories/form-fields'
 
 storiesOf('Components/Inputs.SFileInput', module)
   .addParameters({ jest: 'SFileInput' })
-  .add('SFileInput', () => {
+  .add('File Input', () => {
     return {
       data() {
         return {
@@ -40,7 +40,7 @@ storiesOf('Components/Inputs.SFileInput', module)
 
         return (
           <div>
-            <SHeading level="1">SFileInput</SHeading>
+            <SHeading>File Input</SHeading>
             <p>
               This component allows uses to submit files. The <code>is-droppable</code> prop enables
               drag-and-drop functionality.
@@ -104,3 +104,26 @@ storiesOf('Components/Inputs.SFileInput', module)
       }
     }
   })
+  .add(
+    'File Input Types',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>File Input Types</SHeading>
+
+            <SHeading level="2">Base</SHeading>
+            <SFileInput id="file" name="file" label="File" />
+
+            <SHeading level="2">Droppable</SHeading>
+            <SFileInput id="file-drop" name="file-drop" label="File" is-droppable />
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

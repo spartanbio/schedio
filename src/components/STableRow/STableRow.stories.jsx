@@ -8,7 +8,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STableRow', module)
   .addParameters({ jest: 'STableRow' })
-  .add('STableRow', function STableRowDocs() {
+  .add('Table Row', function STableRowDocs() {
     return {
       props: {
         slotContent: {

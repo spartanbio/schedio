@@ -10,7 +10,7 @@ import PropList from '@/docs/PropList'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainerColumn' })
-  .add('SContainerColumn', function SContainerColumnDocs() {
+  .add('Container Column', function SContainerColumnDocs() {
     // get sorted column props from component
     const columnPropNames = orderBy(Object.keys(SContainerColumn.props))
 
