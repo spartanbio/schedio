@@ -25,7 +25,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em
+        1.25em | Tracking: 0.025em | Case: uppercase
       </p>
     </article>
 
@@ -38,7 +38,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.heading--has-no-case</code>
+        1.25em | Tracking: 0.025em
       </p>
     </article>
 
@@ -51,7 +51,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
+        1.25em | Tracking: 0.025em | Case: uppercase
       </p>
     </article>
 
@@ -65,7 +65,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.heading--has-no-case</code>
+        1.25em | Tracking: 0.025em
       </p>
     </article>
 
@@ -73,7 +73,7 @@
       <SHeading>Heading 1</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-3'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.5em
+        1.5em | Case: uppercase
       </p>
     </article>
 
@@ -82,7 +82,7 @@
         Heading 2
       </SHeading>
       <p class="caption">
-        Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }}
+        Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }} | Case: uppercase
       </p>
     </article>
 
@@ -91,7 +91,7 @@
         Heading 3
       </SHeading>
       <p class="caption">
-        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
+        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }} | Case: uppercase
       </p>
     </article>
 
