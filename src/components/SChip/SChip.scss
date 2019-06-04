@@ -41,11 +41,10 @@
   @each $color-name in $button-colors {
     &--color-#{$color-name} {
       $white-or-ice: ($color-name == 'white') or $color-name == 'ice';
-      $text-color: if($white-or-ice, color('night'), color('white'));
       $base-color: color($color-name);
 
       background-color: $base-color;
-      color: $text-color;
+      color: choose-contrast-color($color-name);
 
       .chip__close {
         box-shadow: none;
