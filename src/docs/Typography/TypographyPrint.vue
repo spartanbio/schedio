@@ -9,14 +9,15 @@
       calculator below can be used as a guide.
     </p>
 
-    <blockquote>
+    <SCallout>
       <strong>Note:</strong> The calculator below is <em>only</em> for font size. Other than size,
       all other parameters should match those in
-      <a
-        href="#"
-        @click.prevent="linkToComponent"
-      >Headings and Displays</a>.
-    </blockquote>
+      <StoryLink
+        to="Design.Typography"
+        story="Headings & Displays"
+        link-text="Headings & Displays"
+      />.
+    </SCallout>
 
     <SHeading level="2">
       Typography Calculator
@@ -62,32 +63,34 @@
         </STableRow>
       </template>
 
-      <template v-slot:default>
-        <STableRow
-          v-for="{ name, value } in fontSizes"
-          :key="name"
+      <STableRow
+        v-for="{ name, value } in fontSizes"
+        :key="name"
+      >
+        <STableCell
+          style="text-transform: capitalize;"
         >
-          <STableCell
-            style="text-transform: capitalize;"
-          >
-            {{ name | prettyName }}
-          </STableCell>
-          <STableCell is-numeric>
-            <code>{{ computePrintSize(value) }}</code>
-          </STableCell>
-          <STableCell is-numeric>
-            <code>{{ computeLeading(value) }}</code>
-          </STableCell>
-          <STableCell is-numeric>
-            <code>{{ computeTracking(value) }}</code>
-          </STableCell>
-          <STableCell>
-            <span :style="{ fontSize: computePrintSize(value) }">
-              Example text
-            </span>
-          </STableCell>
-        </STableRow>
-      </template>
+          {{ name | prettyName }}
+        </STableCell>
+
+        <STableCell is-numeric>
+          <code>{{ computePrintSize(value) }}</code>
+        </STableCell>
+
+        <STableCell is-numeric>
+          <code>{{ computeLeading(value) }}</code>
+        </STableCell>
+
+        <STableCell is-numeric>
+          <code>{{ computeTracking(value) }}</code>
+        </STableCell>
+
+        <STableCell>
+          <span :style="{ fontSize: computePrintSize(value) }">
+            Example text
+          </span>
+        </STableCell>
+      </STableRow>
     </STable>
   </div>
 </template>
@@ -96,6 +99,7 @@
 import { linkTo } from '@storybook/addon-links'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import StoryLink from '../StoryLink'
 
 const fontSizes = Object.values(props).filter(
   ({ category, name }) => category === 'font-size' && name !== 'base-font-size'
@@ -105,6 +109,10 @@ const baseFontSize = 10
 
 export default {
   name: 'TypographyPrint',
+
+  components: {
+    StoryLink
+  },
 
   filters: {
     prettyName: val => val.replace(/font-(size)-(\d*)/, '$1 $2')
@@ -128,10 +136,7 @@ export default {
     computeTracking(value) {
       return value.replace('rem', '') > 3 ? 0.025 : 0
     },
-    // forceUpdate() {
-    //   this.$nextTick(this.$forceUpdate())
-    // },
-    linkToComponent: linkTo('Design.Typography', 'Headings & Displays')
+    linkToComponent: linkTo()
   }
 }
 </script>

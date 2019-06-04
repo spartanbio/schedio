@@ -8,13 +8,14 @@
         <code>margin-bottom: 1em;</code>, but that has been disabled for example purposes.
       </p>
       <p>
-        The <code>SHeading</code> component can be used for headings and displays. Find it
+        The
         <StoryLink
           to="Components/Layout.SHeading"
           story="Heading"
         >
-          here.
+          SHeading
         </StoryLink>
+        component can be used for headings and displays.
       </p>
     </div>
 
