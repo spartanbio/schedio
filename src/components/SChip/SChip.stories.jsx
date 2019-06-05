@@ -18,7 +18,7 @@ storiesOf('Components/SChip', module)
         props: {
           props: {
             default: {
-              color: select('color', ['', 'no', ...colors], '', 'Optional Props'),
+              color: select('color', ['', ...colors], '', 'Optional Props'),
               isClosable: boolean('is-closable', false, 'Optional Props'),
               closeAriaLabel: text('close-aria-label', 'Close toast', 'Optional Props')
             }
