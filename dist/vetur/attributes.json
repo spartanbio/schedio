@@ -71,6 +71,10 @@
     "description": "String value.",
     "type": "string"
   },
+  "s-chip/close-aria-label": {
+    "description": "String value.",
+    "type": "string"
+  },
   "s-container/is-fullwidth": {
     "description": "Boolean value.",
     "type": "boolean"

@@ -42,7 +42,8 @@
       "color",
       "is-closable",
       "is-active",
-      "tag"
+      "tag",
+      "close-aria-label"
     ],
     "subtags": [],
     "description": "Schedio component: <s-chip>"

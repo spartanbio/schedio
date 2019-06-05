@@ -1,3 +1,13 @@
+# [3.4.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.5...v3.4.0) (2019-06-05)
+
+
+### Features
+
+* **accessibility:** adds `@storybook/addon-a11y` ([19a1d67](https://gitlab.com/spartanbio-ux/schedio/commit/19a1d67))
+* **colors:** ensures base colors have good contrast with white or night ([c2f4337](https://gitlab.com/spartanbio-ux/schedio/commit/c2f4337))
+* **controls:** adds focus mixin ([2d198dc](https://gitlab.com/spartanbio-ux/schedio/commit/2d198dc))
+* **scss:** adds `choose-contrast-color()` function ([e7e7a4f](https://gitlab.com/spartanbio-ux/schedio/commit/e7e7a4f))
+
 ## [3.3.5](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.4...v3.3.5) (2019-06-05)
 
 
