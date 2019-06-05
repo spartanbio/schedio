@@ -1,73 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`STextarea.vue can be invalid 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
+<label class="label" for="textarea">
+  <div>
+    textarea
+    <!---->
+  </div>
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--invalid"></textarea>
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`STextarea.vue can be required 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
+<label class="label" for="textarea">
+  <div>
+    textarea
+    <!---->
+  </div>
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`STextarea.vue can have a placeholder 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
+<label class="label" for="textarea">
+  <div>
+    textarea
+    <!---->
+  </div>
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="some placeholder" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`STextarea.vue can have an icon on the left 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
-  <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-left"></textarea>
-    <sicon-stub icon="activity" color="green" size="" class="textarea__icon textarea__icon--left"></sicon-stub>
+<label class="label" for="textarea">
+  <div>
+    textarea
     <!---->
   </div>
-</slabel-stub>
+  <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-left"></textarea> <svg viewBox="0 0 24 24" class="icon textarea__icon textarea__icon--left icon--color-green">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+    <!---->
+  </div>
+</label>
 `;
 
 exports[`STextarea.vue can have an icon on the right 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
-  <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-right"></textarea>
+<label class="label" for="textarea">
+  <div>
+    textarea
     <!---->
-    <sicon-stub icon="activity" color="green" size="" class="textarea__icon textarea__icon--right"></sicon-stub>
   </div>
-</slabel-stub>
+  <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea textarea--has-icon-right"></textarea>
+    <!----> <svg viewBox="0 0 24 24" class="icon textarea__icon textarea__icon--right icon--color-green">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg></div>
+</label>
 `;
 
 exports[`STextarea.vue can hide the optional tag 1`] = `
-<slabel-stub label="textarea" for="textarea" hideoptional="true">
+<label class="label" for="textarea">
+  <div>
+    textarea
+    <!---->
+  </div>
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`STextarea.vue can set each icon color 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
+<label class="label" for="textarea">
+  <div>
+    textarea
+    <!---->
+  </div>
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`STextarea.vue renders correctly 1`] = `
-<slabel-stub label="textarea" isrequired="true" for="textarea">
+<label class="label" for="textarea">
+  <div>
+    textarea
+    <!---->
+  </div>
   <div class="textarea__container"><textarea id="textarea" name="textarea" placeholder="" required="required" rows="10" class="textarea"></textarea>
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;

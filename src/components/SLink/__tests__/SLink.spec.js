@@ -1,5 +1,8 @@
 import { RouterLinkStub, shallowMount } from '@vue/test-utils'
 import SLink from '@/components/SLink/SLink.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SLink.vue', () => {
   let wrapper
@@ -26,9 +29,10 @@ describe('SLink.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('can display link text', () => {
+  it('can display link text', async () => {
     expect(wrapper.vm.$slots.default).toBeTruthy()
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires a url', () => {
@@ -36,10 +40,11 @@ describe('SLink.vue', () => {
     expect(errorSpy).toBeCalled()
   })
 
-  it('detects external links and uses `a` tag for them', () => {
+  it('detects external links and uses `a` tag for them', async () => {
     expect(wrapper.vm.isExternalLink).toBe(true)
     expect(wrapper.vm.componentIs).toBe('a')
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('uses `a` when no router is present', () => {
@@ -54,9 +59,10 @@ describe('SLink.vue', () => {
     expect(noRouter.html()).toMatchSnapshot()
   })
 
-  it('can be plain', () => {
+  it('can be plain', async () => {
     wrapper.setProps({ isPlain: true })
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('uses best practices for [target="_blank"]', () => {

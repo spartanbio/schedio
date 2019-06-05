@@ -1,6 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
 import SHero from '@/components/SHero/SHero.vue'
 import * as options from '@/components/SHero/options'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SHero.vue', () => {
   let wrapper
@@ -20,8 +23,9 @@ describe('SHero.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('has a header', () => {
@@ -47,9 +51,10 @@ describe('SHero.vue', () => {
   })
 
   options.colors.forEach(color => {
-    it(`can be ${color}`, () => {
+    it(`can be ${color}`, async () => {
       wrapper.setProps({ color })
       expect(wrapper.html()).toMatchSnapshot()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
     })
   })
 

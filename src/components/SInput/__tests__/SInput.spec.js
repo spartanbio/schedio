@@ -1,9 +1,11 @@
 import { colors as iconColors } from '@/components/SIcon/options'
 import { allowed as options } from '@/components/SInput/options'
 import SInput from '@/components/SInput/SInput.vue'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
+expect.extend(toHaveNoViolations)
 const iconList = Object.keys(icons)
 
 describe('SInput.vue', () => {
@@ -12,7 +14,7 @@ describe('SInput.vue', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(SInput, {
+    wrapper = mount(SInput, {
       propsData: {
         id: 'input',
         name: 'input',
@@ -28,8 +30,9 @@ describe('SInput.vue', () => {
     jest.resetAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires required props', () => {

@@ -3,6 +3,9 @@ import SFormValidation from '@/components/SFormValidation/SFormValidation.vue'
 import SIcon from '@/components/SIcon/SIcon.vue'
 import { states } from '../options'
 import icons from 'feather-icons/dist/icons.json'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SFormValidation.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -16,8 +19,9 @@ describe('SFormValidation.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('validates its visual state', () => {
@@ -37,12 +41,13 @@ describe('SFormValidation.vue', () => {
   })
 
   states.forEach(state => {
-    it(`sets a visual state for ${state} state`, () => {
+    it(`sets a visual state for ${state} state`, async () => {
       wrapper.setProps({ state })
       // test if `state = ''` does not show an icon while other states do
       expect(wrapper.contains(SIcon)).toBe(!!state)
       expect(errorSpy).not.toBeCalled()
       expect(wrapper.html()).toMatchSnapshot()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
     })
   })
 

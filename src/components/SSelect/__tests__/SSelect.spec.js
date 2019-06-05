@@ -1,8 +1,10 @@
 import { colors as iconColors } from '@/components/SIcon/options'
 import SSelect from '@/components/SSelect/SSelect.vue'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
+expect.extend(toHaveNoViolations)
 const iconList = Object.keys(icons)
 
 describe('SSelect.vue', () => {
@@ -13,7 +15,7 @@ describe('SSelect.vue', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(SSelect, {
+    wrapper = mount(SSelect, {
       propsData: {
         id: 'select',
         name: 'select',
@@ -31,8 +33,9 @@ describe('SSelect.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires required props', () => {
@@ -84,10 +87,11 @@ describe('SSelect.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be a multiple select', () => {
+  it('can be a multiple select', async () => {
     wrapper.setProps({ multiple: true })
     expect(wrapper.find('select').element.multiple).toBeTruthy()
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('accepts input', () => {

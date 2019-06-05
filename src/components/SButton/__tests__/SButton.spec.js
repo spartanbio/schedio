@@ -2,6 +2,9 @@ import * as options from '@/components/SButton/options'
 import SButton from '@/components/SButton/SButton.vue'
 import { shallowMount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 const iconList = Object.keys(icons)
 
@@ -23,9 +26,10 @@ describe('SButton.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.text()).toBe('Button Text')
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('handles clicks', () => {
@@ -33,21 +37,27 @@ describe('SButton.vue', () => {
     expect(click).toHaveBeenCalled()
   })
 
-  options.colors.forEach(color => {
-    it(`can be ${color}`, () => {
-      wrapper.setProps({ color })
-      expect(wrapper.classes()).toContain(`button--color-${color}`)
-      expect(wrapper.html()).toMatchSnapshot()
+  Promise.all(
+    options.colors.map(color => {
+      it(`can be ${color}`, async () => {
+        wrapper.setProps({ color })
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
     })
-  })
+  )
 
-  options.colors.forEach(color => {
-    it(`can be outlined with ${color}`, () => {
-      wrapper.setProps({ color, isOutlined: true })
-      expect(wrapper.classes()).toContain(`button--color-${color}-outlined`)
-      expect(wrapper.html()).toMatchSnapshot()
+  Promise.all(
+    options.colors.map(color => {
+      it(`can be outlined with ${color}`, async () => {
+        wrapper.setProps({ color, isOutlined: true })
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-outlined`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
     })
-  })
+  )
 
   it('validates fill color', () => {
     shallowMount(SButton, { propsData: { color: 'not a color' } })
@@ -77,7 +87,27 @@ describe('SButton.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can an icon and no text', () => {
+  it('can have an icon and no text', async () => {
+    const iconButton = shallowMount(SButton, {
+      slots: {
+        default: 'Button Text'
+      },
+      listeners: { click },
+      attrs: {
+        'aria-label': 'Button'
+      },
+      propsData: {
+        iconOnly: true,
+        iconLeft: iconList[0]
+      }
+    })
+
+    expect(await axe(iconButton.html())).toHaveNoViolations()
+    expect(iconButton.text()).toBeFalsy()
+    expect(iconButton.html()).toMatchSnapshot()
+  })
+
+  it('errors if no discernible text', async () => {
     const iconButton = shallowMount(SButton, {
       slots: {
         default: 'Button Text'
@@ -89,12 +119,13 @@ describe('SButton.vue', () => {
       }
     })
 
-    expect(iconButton.text()).toBeFalsy()
-    expect(iconButton.html()).toMatchSnapshot()
+    expect(errorSpy).toBeCalled()
+    expect(await axe(iconButton.html())).not.toHaveNoViolations()
   })
 
-  it('can have a loading spinner', () => {
+  it('can have a loading spinner', async () => {
     wrapper.setProps({ isLoading: true })
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 })

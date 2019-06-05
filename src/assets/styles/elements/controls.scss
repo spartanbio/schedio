@@ -4,13 +4,18 @@
   outline: none;
 }
 
+@mixin control-focused {
+  outline: 2px dotted color('night', 'lightest');
+  outline-offset: 4px;
+}
+
 @mixin control-disabled {
   background-color: color('grey', 'light');
   border: border();
   border-color: color('grey') !important;
   box-shadow: none !important;
   color: color('night', 'lighter');
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 @mixin control-invalid {
@@ -27,7 +32,7 @@
   margin-top: spacing('half');
   padding: spacing('half') spacing();
   text-transform: none;
-  transition: all duration() easing();
+  transition: all duration() easing(), outline 0ms, outline-offset 0ms;
   width: 100%;
 
   &::placeholder {
@@ -38,17 +43,16 @@
     @include control-disabled;
   }
 
-  &:focus:not(:disabled) {
+  &:focus {
     @include control-border-shadow;
+    @include control-focused;
   }
 
   // stylelint-disable no-descending-specificity
   &:hover,
   &:active,
   &:hover:active {
-    &:not(:disabled) {
-      @include control-border-shadow;
-    }
+    @include control-border-shadow;
   }
   // stylelint-enable
 
@@ -92,7 +96,6 @@
 
 @mixin control-inline-label {
   align-items: center;
-  cursor: pointer;
   display: inline-flex;
   flex-direction: row-reverse;
   margin-top: 0 !important;
@@ -102,9 +105,19 @@
   }
 }
 
-@mixin check-or-radio {
-  opacity: 0;
+@mixin control-invisible-base {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: spacing('none');
   position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@mixin check-or-radio {
+  @include control-invisible-base();
 
   & ~ &__check {
     align-items: center;
@@ -114,7 +127,7 @@
     height: 1em;
     justify-content: center;
     margin: spacing('half');
-    transition: all duration() easing();
+    transition: all duration() easing(), outline 0ms, outline-offset 0ms;
     width: 1em;
 
     @content;
@@ -128,19 +141,20 @@
     @include control-disabled;
   }
 
-  &:not(:disabled) ~ &__check:hover {
+  &:hover ~ &__check {
     @include control-border-shadow;
   }
 
-  &:active:not(:disabled) ~ &__check {
+  &:active ~ &__check {
     @include control-border-shadow;
   }
 
-  &:focus:not(:disabled) ~ &__check {
+  &:focus ~ &__check {
     @include control-border-shadow;
+    @include control-focused;
   }
 
-  &:checked:not(:focus):not(:disabled) ~ &__check {
+  &:checked:not(:focus) ~ &__check {
     border-color: transparent;
     box-shadow: 0 0 0 1px color('spartan_blue', 'light'), shadow();
   }
@@ -181,10 +195,11 @@
 
   & ~ &__check {
     @include switch-size;
+
     // override border and shadow
     border: border() !important;
-    box-shadow: shadow() !important;
     justify-content: flex-start;
+
     // the switch knob
     &::after {
       background: color('white');
@@ -202,12 +217,9 @@
     box-shadow: 0 0 0 2px color('red'), shadow() !important;
   }
 
-  // use default browser focus styling
   &:focus ~ &__check {
-    outline-color: rgb(77, 144, 254) !important;
-    outline-offset: -2px !important;
-    outline-style: auto !important;
-    outline-width: 5px !important;
+    @include control-focused;
+    box-shadow: shadow() !important;
   }
 
   // disabled switch knob
@@ -216,32 +228,32 @@
     border: border() !important;
   }
 
-  // pointer on hover
-  &:not(:disabled) ~ &__check {
-    cursor: pointer;
-  }
-
   // slide the switch and change background
   &:checked {
-    ~ #{$parent}__check::after {
+    & ~ #{$parent}__check::after {
       transform: translateX(calc(100%));
     }
 
-    &:not(:disabled) ~ #{$parent}__check {
-      background-color: color('green');
+    & ~ #{$parent}__check {
+      background-color: color('green', 'light');
     }
 
-    &:not(:disabled):hover ~ #{$parent}__check {
-      background-color: color('green', 'dark');
+    &:not(:focus) ~ #{$parent}__check {
+      box-shadow: none;
+    }
+
+    &:hover ~ #{$parent}__check {
+      background-color: color('green');
     }
   }
 
-  &:not(:disabled):hover ~ #{$parent}__check {
+  &:hover ~ #{$parent}__check {
     background-color: color('grey', 'lighter');
+    box-shadow: shadow() !important;
   }
 
   // slide the switch a little on hover
-  &:hover:not(:focus):not(:disabled) {
+  &:hover:not(:focus) {
     // unchecked comes from left
     &:not(:checked) ~ #{$parent}__check::after {
       transform: translateX(spacing('half'));

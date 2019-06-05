@@ -31,10 +31,10 @@ exports[`SFileInput.vue can hide a file count 1`] = `
   </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="">
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-b.txt">
         test-file-b.txt
       </schip-stub>
     </ul>
@@ -55,10 +55,10 @@ exports[`SFileInput.vue can upload multiple files 1`] = `
   </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="">
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-b.txt">
         test-file-b.txt
       </schip-stub>
     </ul>
@@ -181,7 +181,7 @@ exports[`SFileInput.vue handles inputs 1`] = `
   </slabel-stub> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="">
-      <schip-stub color="" isclosable="true" isactive="true" tag="li">
+      <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
     </ul>
@@ -190,8 +190,11 @@ exports[`SFileInput.vue handles inputs 1`] = `
 `;
 
 exports[`SFileInput.vue renders correctly 1`] = `
-<div class="file-input">
-  <slabel-stub label="File input" isrequired="true" for="file-input">
+<div class="file-input"><label class="label" for="file-input">
+    <div>
+      File input
+      <!---->
+    </div>
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
         <!---->
@@ -199,9 +202,8 @@ exports[`SFileInput.vue renders correctly 1`] = `
         Choose a file
       </div> <span class="file-input__count">0 files selected</span>
     </div>
-  </slabel-stub> <output class="file-input__info">
+  </label> <output class="file-input__info">
     <!---->
     <ul class="file-input__list" style="display: none;"></ul>
-  </output>
-</div>
+  </output></div>
 `;

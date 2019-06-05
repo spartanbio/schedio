@@ -4,17 +4,17 @@
     "green-dark": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(23, 155, 76)",
+      "value": "rgb(3, 99, 41)",
       "paletteType": "accent",
-      "originalValue": "hsla(144, 74%, 35%, 1)",
+      "originalValue": "hsla(144, 94%, 20%, 1)",
       "name": "green-dark"
     },
     "gold": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(252, 177, 29)",
+      "value": "rgb(252, 186, 54)",
       "paletteType": "accent",
-      "originalValue": "hsla(40, 97%, 55%, 1)",
+      "originalValue": "hsla(40, 97%, 60%, 1)",
       "name": "gold"
     },
     "turquoise": {
@@ -44,17 +44,17 @@
     "gold-dark": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(230, 153, 0)",
+      "value": "rgb(255, 170, 0)",
       "paletteType": "accent",
-      "originalValue": "hsla(40, 100%, 45%, 1)",
+      "originalValue": "hsla(40, 100%, 50%, 1)",
       "name": "gold-dark"
     },
     "green": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(35, 205, 103)",
+      "value": "rgb(6, 137, 58)",
       "paletteType": "accent",
-      "originalValue": "hsla(144, 71%, 47%, 1)",
+      "originalValue": "hsla(144, 92%, 28%, 1)",
       "name": "green"
     },
     "grey-dark": {
@@ -116,17 +116,17 @@
     "magenta": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(240, 0, 120)",
+      "value": "rgb(230, 0, 115)",
       "paletteType": "accent",
-      "originalValue": "hsla(330, 100%, 47%, 1)",
+      "originalValue": "hsla(330, 100%, 45%, 1)",
       "name": "magenta"
     },
     "gold-light": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(253, 200, 94)",
+      "value": "rgb(253, 208, 119)",
       "paletteType": "accent",
-      "originalValue": "hsla(40, 97%, 68%, 1)",
+      "originalValue": "hsla(40, 97%, 73%, 1)",
       "name": "gold-light"
     },
     "turquoise-light": {
@@ -156,17 +156,17 @@
     "green-light": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(92, 224, 145)",
+      "value": "rgb(25, 169, 83)",
       "paletteType": "accent",
-      "originalValue": "hsla(144, 68%, 62%, 1)",
+      "originalValue": "hsla(144, 74%, 38%, 1)",
       "name": "green-light"
     },
     "green-darker": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(13, 89, 43)",
+      "value": "rgb(1, 60, 25)",
       "paletteType": "accent",
-      "originalValue": "hsla(144, 74%, 20%, 1)",
+      "originalValue": "hsla(144, 96%, 12%, 1)",
       "name": "green-darker"
     },
     "night-lighter": {
@@ -196,17 +196,17 @@
     "gold-darker": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(179, 113, 0)",
+      "value": "rgb(204, 129, 0)",
       "paletteType": "accent",
-      "originalValue": "hsla(38, 100%, 35%, 1)",
+      "originalValue": "hsla(38, 100%, 40%, 1)",
       "name": "gold-darker"
     },
     "red": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(238, 17, 17)",
+      "value": "rgb(234, 16, 16)",
       "paletteType": "accent",
-      "originalValue": "hsla(0, 87%, 50%, 1)",
+      "originalValue": "hsla(0, 87%, 49%, 1)",
       "name": "red"
     },
     "grey-darker": {
@@ -244,9 +244,9 @@
     "gold-lighter": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(253, 217, 144)",
+      "value": "rgb(254, 226, 170)",
       "paletteType": "accent",
-      "originalValue": "hsla(40, 97%, 78%, 1)",
+      "originalValue": "hsla(40, 97%, 83%, 1)",
       "name": "gold-lighter"
     },
     "turquoise-lighter": {
@@ -276,9 +276,9 @@
     "green-lighter": {
       "type": "color",
       "category": "background-color",
-      "value": "rgb(152, 235, 185)",
+      "value": "rgb(41, 214, 110)",
       "paletteType": "accent",
-      "originalValue": "hsla(144, 68%, 76%, 1)",
+      "originalValue": "hsla(144, 68%, 50%, 1)",
       "name": "green-lighter"
     },
     "red-light": {

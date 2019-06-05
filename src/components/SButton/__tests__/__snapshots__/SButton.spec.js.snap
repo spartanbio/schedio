@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SButton.vue can an icon and no text 1`] = `
-<button class="button button--has-icon button--icon-only">
-  <!---->
-  <sicon icon="activity" class="button__icon button__icon--left"></sicon>
-  <!---->
-  <!---->
-</button>
-`;
-
 exports[`SButton.vue can be gold 1`] = `
 <button class="button button--color-gold">
   <!---->
@@ -174,6 +165,15 @@ exports[`SButton.vue can have a loading spinner 1`] = `
 <button class="button button--loading"><span class="button__spinner"><sspinner></sspinner></span>
   <!----> Button Text
   <!----></button>
+`;
+
+exports[`SButton.vue can have an icon and no text 1`] = `
+<button aria-label="Button" class="button button--has-icon button--icon-only">
+  <!---->
+  <sicon icon="activity" class="button__icon button__icon--left"></sicon>
+  <!---->
+  <!---->
+</button>
 `;
 
 exports[`SButton.vue can have an icon on the left 1`] = `

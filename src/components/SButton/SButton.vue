@@ -100,6 +100,12 @@ export default {
 
       return buttonStyle
     }
+  },
+
+  watch: {
+    iconOnly(val) {
+      if (val && !this.$attrs['aria-label']) console.warn('Button requires `aria-label`')
+    }
   }
 }
 </script>

@@ -34,9 +34,8 @@
 
   @each $color-name in $hero-colors {
     &--color-#{$color-name} {
-      $white-or-ice: ($color-name == 'white') or ($color-name == 'ice');
 
-      color: if($white-or-ice, color('night'), color('white'));
+      color: choose-contrast-color($color-name);
       background-color: color($color-name);
     }
   }

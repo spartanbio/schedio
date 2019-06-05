@@ -1,8 +1,10 @@
 import { colors as iconColors } from '@/components/SIcon/options'
 import STextarea from '@/components/STextarea/STextarea.vue'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
+expect.extend(toHaveNoViolations)
 const iconList = Object.keys(icons)
 
 describe('STextarea.vue', () => {
@@ -11,7 +13,7 @@ describe('STextarea.vue', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(STextarea, {
+    wrapper = mount(STextarea, {
       propsData: {
         id: 'textarea',
         name: 'textarea',
@@ -27,8 +29,9 @@ describe('STextarea.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires required props', () => {
