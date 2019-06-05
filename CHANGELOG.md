@@ -1,3 +1,13 @@
+## [3.3.5](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.4...v3.3.5) (2019-06-05)
+
+
+### Bug Fixes
+
+* **button-group:** adds margin-bottom ([34fd9fc](https://gitlab.com/spartanbio-ux/schedio/commit/34fd9fc))
+* **container-row:** accounts for column padding ([8886b00](https://gitlab.com/spartanbio-ux/schedio/commit/8886b00))
+* **label:** does not force case ([0431977](https://gitlab.com/spartanbio-ux/schedio/commit/0431977))
+* **toast:** uses correct prop names/bindings ([877dd43](https://gitlab.com/spartanbio-ux/schedio/commit/877dd43))
+
 ## [3.3.4](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.3...v3.3.4) (2019-06-03)
 
 
