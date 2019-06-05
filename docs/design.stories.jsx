@@ -1,12 +1,12 @@
-import Color from '@/docs/Color'
-import Graphics from '@/docs/Graphics.vue'
-import Interaction from '@/docs/InteractionStates.vue'
-import Spacing from '@/docs/Spacing.vue'
-import TypographyBase from '@/docs/Typography/TypographyBase.vue'
-import TypographyHeadings from '@/docs/Typography/TypographyHeadings.vue'
-import TypographyPrint from '@/docs/Typography/TypographyPrint.vue'
+import Color from '@@/docs/Color'
+import Graphics from '@@/docs/Graphics.vue'
+import Interaction from '@@/docs/InteractionStates.vue'
+import Spacing from '@@/docs/Spacing.vue'
+import TypographyBase from '@@/docs/Typography/TypographyBase.vue'
+import TypographyHeadings from '@@/docs/Typography/TypographyHeadings.vue'
+import TypographyPrint from '@@/docs/Typography/TypographyPrint.vue'
 import { storiesOf } from '@storybook/vue'
-import { SHeading } from '@/components/SHeading/index'
+import { SHeading } from '@/components/SHeading'
 
 const hideAddons = {
   options: {

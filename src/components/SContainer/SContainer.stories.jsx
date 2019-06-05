@@ -4,11 +4,11 @@ import { SContainerRow } from '@/components/SContainerRow'
 import { SHeading } from '@/components/SHeading'
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainer' })
-  .add('SContainer', function SContainerDocs() {
+  .add('Container', function SContainerDocs() {
     return {
       props: {
         props: {

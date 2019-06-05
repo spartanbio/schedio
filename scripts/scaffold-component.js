@@ -7,7 +7,8 @@ const generateVueIndex = require('./generate-vue-index')
 const generateScssIndex = require('./generate-scss-index')
 
 // params
-const componentName = process.argv[2]
+const rawName = process.argv[2]
+const componentName = `S${rawName}`
 const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
 
 // don't overwrite existing components
@@ -40,22 +41,23 @@ export default {
     contents: `\
 import { ${componentName} } from '@/components/${componentName}'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/${componentName}', module)
   .addParameters({ jest: '${componentName}' })
-  .add('${componentName}', () => {
+  .add('${rawName}', () => {
     return {
       render(h) {
         return (
           <div>
-            <SHeading level="1">${componentName}</SHeading>
+            <SHeading>${rawName}</SHeading>
             <p>Describe the component here</p>
 
             <SHeading level="2">Example</SHeading>
             <${componentName} />
 
+            {/* This doesn't work if props are only generated through a mixin */}
             {${componentName}.props && <PropList component={${componentName}} />}
           </div>
         )

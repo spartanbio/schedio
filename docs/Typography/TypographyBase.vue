@@ -10,10 +10,16 @@
           <li>Font: <code>Avenir Next</code></li>
           <li>Size: <code>{{ tokens['base-font-size'] }}</code></li>
           <li>Weight: <code>{{ tokens['font-weight-regular'] }}</code> (Regular)</li>
-          <li>Color: <code>{{ tokens['night'] }}</code></li>
+          <li>Color: <code>{{ tokens['night'] }}</code> (night)</li>
           <li>Leading: <code>{{ tokens['base-line-height'] }}</code></li>
         </ul>
       </p>
+
+      <SCallout type="warning">
+        Due to the cost of licensing <code>Avenir Next</code>, another font may be required.
+        <code>Averta</code> with stylistic set 1 enabled is the preferred alternative. The base
+        font-weight should also be set to <code>300</code> when using <code>Averta</code>
+      </SCallout>
     </div>
 
     <article class="typography-example">
@@ -37,9 +43,12 @@
 
 <script>
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
+import { SCallout } from '@/components/SCallout'
 
 export default {
   name: 'TypographyBase',
+
+  components: { SCallout },
 
   data: () => ({
     tokens

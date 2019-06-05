@@ -1,13 +1,14 @@
 import { SSpinner } from '@/components/SSpinner'
 import { colors, sizes } from '@/components/SSpinner/options'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
+import { generateHeading } from '@/utils/stories/render-functions'
 
 storiesOf('Components/Loading.SSpinner', module)
   .addParameters({ jest: 'SSpinner' })
-  .add('SSpinner', () => {
+  .add('Spinner', () => {
     return {
       props: {
         props: {
@@ -35,3 +36,22 @@ storiesOf('Components/Loading.SSpinner', module)
       }
     }
   })
+  .add(
+    'Spinner Colors',
+    () => ({
+      render(h) {
+        return h('div', [
+          generateHeading(h, { content: 'Spinner Colors' }),
+          colors.map(color => [
+            generateHeading(h, { level: 2, content: color }),
+            h(SSpinner, { props: { color } })
+          ])
+        ])
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

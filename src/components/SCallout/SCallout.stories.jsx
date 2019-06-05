@@ -1,15 +1,17 @@
 import { SCallout } from '@/components/SCallout'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
+import { generateHeading } from '@/utils/stories/render-functions'
 import { select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import jeffsum from 'jeffsum'
 import { types } from './options'
 
 const defaultSlotPlaceholder = jeffsum(5, 'sentences')
+
 storiesOf('Components/SCallout', module)
-  .addParameters({ jest: SCallout })
-  .add('SCallout', () => {
+  .addParameters({ jest: 'SCallout' })
+  .add('Callout', () => {
     return {
       props: {
         props: {
@@ -28,7 +30,7 @@ storiesOf('Components/SCallout', module)
         const { slots, props } = this.$props
         return (
           <div>
-            <SHeading level="1">SCallout</SHeading>
+            <SHeading>Callout</SHeading>
             <p>Callouts are used to place special emphasis on text and call attention to it.</p>
 
             <SHeading level="2">Example</SHeading>
@@ -40,3 +42,22 @@ storiesOf('Components/SCallout', module)
       }
     }
   })
+  .add(
+    'Callout Types',
+    () => ({
+      render(h) {
+        return h('div', [
+          generateHeading(h, { content: 'Callout Types' }),
+          types.map(type => [
+            generateHeading(h, { level: 3, content: type || 'Base' }),
+            h(SCallout, { props: { type } }, jeffsum(5))
+          ])
+        ])
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

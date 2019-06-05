@@ -64,7 +64,7 @@ describe('SToast.vue', () => {
     const title = mountToast({ title: 'title' })
     expect(title.html()).toMatchSnapshot()
 
-    expect(errorSpy).toBeCalledTimes(4)
+    expect(errorSpy).toBeCalledTimes(2)
   })
 
   positions.forEach(position => {

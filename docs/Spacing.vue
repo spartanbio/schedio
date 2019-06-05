@@ -14,14 +14,16 @@
       is-bordered
       is-hoverable
     >
-      <STableRow v-slot:header>
-        <STableCell>Name</STableCell>
-        <STableCell>Value</STableCell>
-        <STableCell>Example</STableCell>
-      </STableRow>
+      <template v-slot:header>
+        <STableRow>
+          <STableCell>Name</STableCell>
+          <STableCell>Value</STableCell>
+          <STableCell>Example</STableCell>
+        </STableRow>
+      </template>
 
       <STableRow
-        v-for="{ name, value } in spacing"
+        v-for="{ name, value } in orderedSpacing"
         :key="name"
       >
         <STableCell>
@@ -45,13 +47,22 @@
 
 <script>
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
-
+import orderBy from 'lodash.orderby'
 export default {
   name: 'Spacing',
 
   data() {
     return {
       spacing: Object.values(props).filter(p => p.category === 'spacing')
+    }
+  },
+
+  computed: {
+    orderedSpacing() {
+      const sizeToNumber = size => Number(size.replace('em', ''))
+      const orderFn = ({ value }) => (typeof value === 'string' ? sizeToNumber(value) : value)
+
+      return orderBy(this.spacing, orderFn)
     }
   }
 }

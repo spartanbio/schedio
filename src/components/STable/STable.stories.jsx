@@ -2,13 +2,13 @@ import { SHeading } from '@/components/SHeading'
 import { STable } from '@/components/STable'
 import { STableCell } from '@/components/STableCell'
 import { STableRow } from '@/components/STableRow'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, number, object, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STable', module)
   .addParameters({ jest: 'STable' })
-  .add('STable', function STableDocs() {
+  .add('Table', function STableDocs() {
     const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
     const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
     const slotExampleProps = {

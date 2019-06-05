@@ -1,16 +1,18 @@
 import { SFormValidation } from '@/components/SFormValidation'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import { states } from './options'
 import icons from 'feather-icons/dist/icons.json'
 import { SInput } from '@/components/SInput'
 import { SFormField } from '../SFormField/index'
+import jeffsum from 'jeffsum'
+import { generateHeading } from '@/utils/stories/render-functions'
 
 storiesOf('Components/Forms.SFormValidation', module)
   .addParameters({ jest: 'SFormValidation' })
-  .add('SFormValidation', () => {
+  .add('Form Validation', () => {
     return {
       props: {
         props: {
@@ -42,7 +44,7 @@ storiesOf('Components/Forms.SFormValidation', module)
 
         return (
           <div>
-            <SHeading level="1">SFormValidation</SHeading>
+            <SHeading level="1">Form Validation</SHeading>
             <p>
               The form validation component is to provides feedback on the validity of forms or
               their inputs. <code>{'<SFormValidation />'}</code> should be wrapped in the same{' '}
@@ -110,3 +112,29 @@ storiesOf('Components/Forms.SFormValidation', module)
       }
     }
   })
+  .add(
+    'Form Validation States',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Form Validation States</SHeading>
+
+            {states.map(state => generateValidations(h, state))}
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )
+
+function generateValidations(h, state) {
+  return [
+    generateHeading(h, { level: 2, content: state || 'Base' }),
+    h(SFormValidation, { props: { state, text: jeffsum(2) } })
+  ]
+}

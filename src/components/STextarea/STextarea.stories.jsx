@@ -1,7 +1,7 @@
 import { SHeading } from '@/components/SHeading'
 import { colors as iconColors } from '@/components/SIcon/options'
 import { STextarea } from '@/components/STextarea'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
@@ -57,3 +57,36 @@ storiesOf('Components/Inputs.STextarea', module)
       }
     }
   })
+  .add(
+    'Textarea with icons',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>Textarea with icons</SHeading>
+            <p>Colors can be provided for each icon.</p>
+            <SFormField>
+              <STextarea icon-left="activity" id="icon-l" name="icon-l" label="Textarea" />
+            </SFormField>
+            <SFormField>
+              <STextarea icon-right="activity" id="icon-r" name="icon-r" label="Textarea" />
+            </SFormField>
+            <SFormField>
+              <STextarea
+                icon-left="activity"
+                icon-right="activity"
+                id="icon-b"
+                name="icon-b"
+                label="Textarea"
+              />
+            </SFormField>
+          </div>
+        )
+      }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
+    }
+  )

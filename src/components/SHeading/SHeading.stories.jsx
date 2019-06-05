@@ -1,6 +1,6 @@
 // Global registration doesn't work with `jsx` templates
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, radios, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 

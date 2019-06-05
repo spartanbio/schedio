@@ -2,13 +2,13 @@ import { SHeading } from '@/components/SHeading'
 import { STable } from '@/components/STable'
 import { STableCell } from '@/components/STableCell'
 import { STableRow } from '@/components/STableRow'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STableRow', module)
   .addParameters({ jest: 'STableRow' })
-  .add('STableRow', function STableRowDocs() {
+  .add('Table Row', function STableRowDocs() {
     return {
       props: {
         slotContent: {

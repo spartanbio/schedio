@@ -1,11 +1,11 @@
 import { SFormField } from '@/components/SFormField'
 import { SHeading } from '@/components/SHeading'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Forms.SFormField', module)
   .addParameters({ jest: 'SFormField' })
-  .add('SFormField', () => {
+  .add('Form Field', () => {
     return {
       render(h) {
         const submitHandler = e => {
@@ -15,7 +15,7 @@ storiesOf('Components/Forms.SFormField', module)
 
         return (
           <div>
-            <SHeading level="1">SFormField</SHeading>
+            <SHeading level="1">Form Field</SHeading>
             <p>This is a simple wrapper component to group and space form elements.</p>
 
             <SHeading level="2">Example</SHeading>
@@ -42,7 +42,7 @@ storiesOf('Components/Forms.SFormField', module)
               </SFormField>
 
               <SFormField>
-                <SButton button-color="green">Submit</SButton>
+                <SButton color="green">Submit</SButton>
               </SFormField>
             </form>
 

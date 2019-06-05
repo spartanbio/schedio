@@ -8,13 +8,14 @@
         <code>margin-bottom: 1em;</code>, but that has been disabled for example purposes.
       </p>
       <p>
-        The <code>SHeading</code> component can be used for headings and displays. Find it
+        The
         <StoryLink
           to="Components/Layout.SHeading"
           story="Heading"
         >
-          here.
+          SHeading
         </StoryLink>
+        component can be used for headings and displays.
       </p>
     </div>
 
@@ -24,7 +25,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em
+        1.25em | Tracking: 0.025em | Case: uppercase
       </p>
     </article>
 
@@ -37,7 +38,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.heading--has-no-case</code>
+        1.25em | Tracking: 0.025em
       </p>
     </article>
 
@@ -50,7 +51,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.uppercase</code>
+        1.25em | Tracking: 0.025em | Case: uppercase
       </p>
     </article>
 
@@ -64,7 +65,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Class: <code>.heading--has-no-case</code>
+        1.25em | Tracking: 0.025em
       </p>
     </article>
 
@@ -72,7 +73,7 @@
       <SHeading>Heading 1</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-3'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.5em
+        1.5em | Case: uppercase
       </p>
     </article>
 
@@ -81,7 +82,7 @@
         Heading 2
       </SHeading>
       <p class="caption">
-        Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }}
+        Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }} | Case: uppercase
       </p>
     </article>
 
@@ -90,7 +91,7 @@
         Heading 3
       </SHeading>
       <p class="caption">
-        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }}
+        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }} | Case: uppercase
       </p>
     </article>
 
@@ -106,7 +107,7 @@
 </template>
 
 <script>
-import StoryLink from '@/docs/StoryLink.vue'
+import StoryLink from '@@/docs/components/StoryLink'
 import tokens from '@/assets/styles/tokens/dist/tokens.json'
 
 export default {

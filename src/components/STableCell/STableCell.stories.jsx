@@ -2,13 +2,13 @@ import { SHeading } from '@/components/SHeading'
 import { STable } from '@/components/STable'
 import { STableCell } from '@/components/STableCell'
 import { STableRow } from '@/components/STableRow'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { boolean, number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STableCell', module)
   .addParameters({ jest: 'STableCell' })
-  .add('STableCell', function STableCellDocs() {
+  .add('Table Cell', function STableCellDocs() {
     return {
       props: {
         isNumeric: { default: boolean('is-numeric', true, 'Optional Props') },

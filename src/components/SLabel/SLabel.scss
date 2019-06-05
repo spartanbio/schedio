@@ -2,7 +2,6 @@
   @include font-size(5);
   display: block;
   font-weight: $font-weight-demi;
-  text-transform: capitalize;
 
   &--fullwidth {
     width: 100%;

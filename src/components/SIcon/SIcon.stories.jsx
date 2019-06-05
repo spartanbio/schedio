@@ -1,19 +1,18 @@
 import { colors, sizes } from '@/components/SIcon/options'
 import { SHeading } from '@/components/SHeading'
 import { SIcon } from '@/components/SIcon'
-import PropList from '@/docs/PropList'
+import PropList from '@@/docs/components/PropList'
 import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/vue'
 import icons from 'feather-icons/dist/icons.json'
 
 const colorOptions = ['', ...colors]
 const sizeOptions = ['', ...sizes]
+const iconList = Object.keys(icons)
 
 storiesOf('Components/SIcon', module)
   .addParameters({ jest: 'SIcon' })
-  .add('SIcon', () => {
-    const iconList = Object.keys(icons)
-
+  .add('Icon', () => {
     return {
       props: {
         props: {
@@ -58,8 +57,20 @@ storiesOf('Components/SIcon', module)
             </div>
 
             {SIcon.props && <PropList component={SIcon} />}
+          </div>
+        )
+      }
+    }
+  })
+  .add(
+    'All icons',
+    () => ({
+      render(h) {
+        return (
+          <div>
+            <SHeading>All icons</SHeading>
+            <p>Icons are available in all of Schédio's base colors</p>
 
-            <SHeading level="2">All icons</SHeading>
             <div style="display: flex; flex-wrap: wrap;">
               {iconList.map(icon => {
                 return (
@@ -73,5 +84,10 @@ storiesOf('Components/SIcon', module)
           </div>
         )
       }
+    }),
+    {
+      options: {
+        showPanel: false
+      }
     }
-  })
+  )
