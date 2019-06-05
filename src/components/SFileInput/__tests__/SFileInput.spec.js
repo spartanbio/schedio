@@ -3,6 +3,9 @@ import SFileInput from '../SFileInput.vue'
 import MockFile from '../../../../tests/__mocks__/MockFile'
 import { SChip } from '@/components/SChip'
 import { SButton } from '@/components/SButton'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SFileInput.vue', () => {
   let wrapper
@@ -37,8 +40,10 @@ describe('SFileInput.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
+    wrapper = mount(SFileInput, { propsData: defaultProps })
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires id, name, and label', () => {
@@ -67,9 +72,10 @@ describe('SFileInput.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('passes `multiple` to the input', () => {
-    wrapper.setProps({ multiple: true })
+  it('passes `multiple` to the input', async () => {
+    wrapper = mount(SFileInput, { propsData: { ...defaultProps, multiple: true } })
     expect(wrapper.find('input').element.multiple).toBeTruthy()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can upload multiple files', () => {

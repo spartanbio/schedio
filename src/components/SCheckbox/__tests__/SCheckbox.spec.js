@@ -1,6 +1,9 @@
 import { mount } from '@vue/test-utils'
 import SCheckbox from '@/components/SCheckbox/SCheckbox.vue'
 import SLabel from '@/components/SLabel/SLabel.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SCheckbox.vue', () => {
   const inputEvent = jest.fn()
@@ -22,8 +25,9 @@ describe('SCheckbox.vue', () => {
     checkbox = wrapper.find('#checkbox')
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires required props', () => {

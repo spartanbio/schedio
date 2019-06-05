@@ -1,6 +1,9 @@
 import { mount } from '@vue/test-utils'
 import SButton from '@/components/SButton/SButton.vue'
 import SButtonGroup from '@/components/SButtonGroup/SButtonGroup.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SButtonGroup.vue', () => {
   let wrapper
@@ -24,8 +27,9 @@ describe('SButtonGroup.vue', () => {
     buttonGroup = wrapper.find(SButtonGroup)
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('renders child buttons', () => {
@@ -34,16 +38,18 @@ describe('SButtonGroup.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('changes child button colors', () => {
+  it('changes child button colors', async () => {
     buttonGroup.setProps({ color: 'red' })
     expect(buttonGroup.classes()).toContain(`button-group--color-red`)
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('changes child button outlines', () => {
+  it('changes child button outlines', async () => {
     buttonGroup.setProps({ color: 'red', isOutlined: true, isGrouped: true })
     expect(buttonGroup.classes()).toContain('button-group--color-red-outlined')
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('groups child buttons', () => {
@@ -52,7 +58,7 @@ describe('SButtonGroup.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('disables shadow based on children disabled status', () => {
+  it('disables shadow based on children disabled status', async () => {
     const disabledWrapper = mount({
       components: { SButton, SButtonGroup },
       props: {
@@ -74,5 +80,6 @@ describe('SButtonGroup.vue', () => {
 
     expect(disabledWrapper.classes()).toContain('button-group--disabled')
     expect(disabledWrapper.html()).toMatchSnapshot()
+    expect(await axe(disabledWrapper.html())).toHaveNoViolations()
   })
 })

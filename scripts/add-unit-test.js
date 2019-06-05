@@ -25,14 +25,19 @@ async function addUnitTest(fileName, componentDir = defaultComponentDir) {
     // only run if there are no tests
     if (!testDirHasFiles) {
       const testFile = path.resolve(testDir, `${fileName}.spec.js`)
-      const testContents = `import { shallowMount } from '@vue/test-utils'
+      const testContents = `\
+import { shallowMount } from '@vue/test-utils'
 import ${fileName} from '@/components/${fileName}/${fileName}.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('${fileName}.vue', () => {
-  it('renders correctly', () => {
+  it('renders correctly', await () => {
     const wrapper = shallowMount(${fileName})
 
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 })\n`
 

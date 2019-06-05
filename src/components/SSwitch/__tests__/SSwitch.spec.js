@@ -1,6 +1,9 @@
 import { mount } from '@vue/test-utils'
 import SSwitch from '@/components/SSwitch/SSwitch.vue'
 import SLabel from '@/components/SLabel/SLabel.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SSwitch.vue', () => {
   const sizes = ['small', 'medium', 'large']
@@ -29,8 +32,9 @@ describe('SSwitch.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires required props', () => {
@@ -41,7 +45,7 @@ describe('SSwitch.vue', () => {
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
-  it('can be checked and unchecked', () => {
+  it('can be checked and unchecked', async () => {
     // check
     wrapper.trigger('click')
     expect(toggleSwitch.element.checked).toBe(true)
@@ -52,6 +56,7 @@ describe('SSwitch.vue', () => {
 
     // check that events were emitted correctly
     expect(wrapper.emitted('input')).toEqual([[true], [false]])
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can be a required input', () => {

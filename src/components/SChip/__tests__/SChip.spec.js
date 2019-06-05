@@ -2,6 +2,9 @@ import { shallowMount, mount } from '@vue/test-utils'
 import SChip from '@/components/SChip/SChip.vue'
 import SButton from '@/components/SButton/SButton.vue'
 import { colors } from '../options'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SChip.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -20,15 +23,17 @@ describe('SChip.vue', () => {
       })
     })
 
-    it('renders correctly', () => {
+    it('renders correctly', async () => {
       expect(wrapper.html()).toMatchSnapshot()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
     })
 
-    it.each(colors)('can have color %s', color => {
+    it.each(colors)('can have color %s', async color => {
       const colorWrapper = shallowMount(SChip, { propsData: { color } })
 
       expect(errorSpy).not.toBeCalled()
       expect(colorWrapper.html()).toMatchSnapshot()
+      expect(await axe(colorWrapper.html())).toHaveNoViolations()
     })
 
     it('validates colors', () => {
@@ -55,9 +60,10 @@ describe('SChip.vue', () => {
       })
     })
 
-    it('can be closable', () => {
+    it('can be closable', async () => {
       expect(wrapper.contains(SButton)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
     })
 
     it('emits a close event when the button is clicked', () => {
@@ -111,7 +117,7 @@ describe('SChip.vue', () => {
       expect(closeWrapper.vm.chips[randKey]).toBe(false)
     })
 
-    it('sets `aria-hidden` on close', () => {
+    it('sets `aria-hidden` on close', async () => {
       wrapper = mount({
         components: { SChip },
         data: () => ({ chip: true }),
@@ -120,12 +126,14 @@ describe('SChip.vue', () => {
       wrapper.find(SButton).trigger('click')
       expect(wrapper.find(SChip).attributes('aria-hidden')).toBe('true')
       expect(wrapper.html()).toMatchSnapshot()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
     })
 
-    it("can change the button's `aria-label`", () => {
+    it("can change the button's `aria-label`", async () => {
       wrapper.setProps({ closeAriaLabel: 'Changed' })
       expect(wrapper.find('button').attributes('aria-label')).toBe('Changed')
       expect(wrapper.html()).toMatchSnapshot()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
     })
   })
 })

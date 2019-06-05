@@ -1,73 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SInput.vue can be invalid 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
+<label class="label" for="input">
+  <div>
+    input
+    <!---->
+  </div>
   <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--invalid">
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`SInput.vue can be required 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
+<label class="label" for="input">
+  <div>
+    input
+    <!---->
+  </div>
   <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input">
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`SInput.vue can have a placeholder 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
+<label class="label" for="input">
+  <div>
+    input
+    <!---->
+  </div>
   <div class="input__container"><input id="input" name="input" placeholder="some placeholder" required="required" type="text" class="input">
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`SInput.vue can have an icon on the left 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
-  <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-left">
-    <sicon-stub icon="activity" color="green" size="" class="input__icon input__icon--left"></sicon-stub>
+<label class="label" for="input">
+  <div>
+    input
     <!---->
   </div>
-</slabel-stub>
+  <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-left"> <svg viewBox="0 0 24 24" class="icon input__icon input__icon--left icon--color-green">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+    <!---->
+  </div>
+</label>
 `;
 
 exports[`SInput.vue can have an icon on the right 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
-  <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-right">
+<label class="label" for="input">
+  <div>
+    input
     <!---->
-    <sicon-stub icon="activity" color="green" size="" class="input__icon input__icon--right"></sicon-stub>
   </div>
-</slabel-stub>
+  <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-right">
+    <!----> <svg viewBox="0 0 24 24" class="icon input__icon input__icon--right icon--color-green">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg></div>
+</label>
 `;
 
 exports[`SInput.vue can hide the optional tag 1`] = `
-<slabel-stub label="input" for="input" hideoptional="true">
+<label class="label" for="input">
+  <div>
+    input
+    <!---->
+  </div>
   <div class="input__container"><input id="input" name="input" placeholder="" type="text" class="input">
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`SInput.vue can set each icon color 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
+<label class="label" for="input">
+  <div>
+    input
+    <!---->
+  </div>
   <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input">
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;
 
 exports[`SInput.vue renders correctly 1`] = `
-<slabel-stub label="input" isrequired="true" for="input">
+<label class="label" for="input">
+  <div>
+    input
+    <!---->
+  </div>
   <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input">
     <!---->
     <!---->
   </div>
-</slabel-stub>
+</label>
 `;

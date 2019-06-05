@@ -1,6 +1,9 @@
 import SToast from '@/components/SToast/SToast.vue'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import { types, positions } from '../options'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SToast.vue', () => {
   jest.useFakeTimers()
@@ -21,8 +24,8 @@ describe('SToast.vue', () => {
   })
 
   types.forEach(type => {
-    it(`renders toast type ${type} correctly`, () => {
-      const tempWrapper = shallowMount(SToast, {
+    it(`renders toast type ${type} correctly`, async () => {
+      const tempWrapper = mount(SToast, {
         propsData: {
           type: type,
           body: 'Text'
@@ -30,6 +33,7 @@ describe('SToast.vue', () => {
       })
 
       expect(tempWrapper.html()).toMatchSnapshot()
+      expect(await axe(tempWrapper.html())).toHaveNoViolations()
     })
   })
 
@@ -86,7 +90,7 @@ describe('SToast.vue', () => {
     expect(errorSpy).toBeCalled()
   })
 
-  it('can have a clickable action', () => {
+  it('can have a clickable action', async () => {
     const action = jest.fn()
 
     wrapper.setProps({ action })
@@ -95,6 +99,7 @@ describe('SToast.vue', () => {
 
     wrapper.find('button').trigger('click')
     expect(action).toBeCalled()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('closes on action click', () => {

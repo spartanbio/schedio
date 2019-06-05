@@ -1,5 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
 import SCard from '@/components/SCard/SCard.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SCard.vue', () => {
   let wrapper
@@ -12,9 +15,10 @@ describe('SCard.vue', () => {
     })
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.contains('.card')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can use different HTML tags', () => {
@@ -23,7 +27,7 @@ describe('SCard.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can show an image', () => {
+  it('can show an image', async () => {
     const props = {
       image: {
         src: '/some-image.jpg',
@@ -39,6 +43,7 @@ describe('SCard.vue', () => {
 
     expect(imageAttributes).toMatchObject(props.image)
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can have content', () => {

@@ -1,6 +1,9 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import SRadio from '@/components/SRadio/SRadio.vue'
 import SLabel from '@/components/SLabel/SLabel.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SRadio.vue', () => {
   const inputEvent = jest.fn()
@@ -22,8 +25,9 @@ describe('SRadio.vue', () => {
     radio = wrapper.find('#radio')
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires required props', () => {
@@ -35,11 +39,12 @@ describe('SRadio.vue', () => {
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
-  it('can be checked', () => {
+  it('can be checked', async () => {
     wrapper.trigger('click')
     expect(radio.element.checked).toBe(true)
     // check that radio emitted input/its value
     expect(wrapper.emitted('input')[0][0]).toBe(radio.element.value)
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can be a required input', () => {

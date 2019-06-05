@@ -1,6 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
 import SCallout from '@/components/SCallout/SCallout.vue'
 import { types } from '../options'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SCallout.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -14,20 +17,24 @@ describe('SCallout.vue', () => {
     jest.resetAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     const wrapper = shallowMount(SCallout)
 
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  types.forEach(type => {
-    it(`can have type ${type}`, () => {
-      wrapper.setProps({ type })
+  Promise.all(
+    types.map(type => {
+      it(`can have type ${type}`, async () => {
+        wrapper.setProps({ type })
 
-      expect(errorSpy).not.toBeCalled()
-      expect(wrapper.html()).toMatchSnapshot()
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(errorSpy).not.toBeCalled()
+        expect(wrapper.html()).toMatchSnapshot()
+      })
     })
-  })
+  )
 
   it('validates the `type`', () => {
     shallowMount(SCallout, {

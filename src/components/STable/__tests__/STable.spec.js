@@ -1,5 +1,8 @@
 import { mount } from '@vue/test-utils'
 import STable from '@/components/STable/STable.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('STable.vue', () => {
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -28,8 +31,9 @@ describe('STable.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('requires data', () => {

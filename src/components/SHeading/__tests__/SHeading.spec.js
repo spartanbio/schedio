@@ -1,5 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
 import SHeading from '@/components/SHeading/SHeading.vue'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+expect.extend(toHaveNoViolations)
 
 describe('SHeading.vue', () => {
   let errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
@@ -20,8 +23,9 @@ describe('SHeading.vue', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can have the tag specified', () => {
