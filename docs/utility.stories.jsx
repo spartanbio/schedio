@@ -1,8 +1,13 @@
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import { SHeading } from '@/components/SHeading'
-import { storiesOf } from '@storybook/vue'
+import { storiesOf, addParameters } from '@storybook/vue'
 
 storiesOf('Utilities/Typography', module)
+  .addParameters({
+    options: {
+      showPanel: false
+    }
+  })
   .add('Alignment', () => ({
     render(h) {
       const alignments = ['center', 'left', 'right', 'justify']

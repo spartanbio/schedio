@@ -14,20 +14,24 @@ const hideAddons = {
   }
 }
 
-storiesOf('* Design/Assets', module).add('Design Assets', () => ({
-  render(h) {
-    return (
-      <div>
-        <SHeading>Design assets</SHeading>
+storiesOf('* Design/Assets', module).add(
+  'Design Assets',
+  () => ({
+    render(h) {
+      return (
+        <div>
+          <SHeading>Design assets</SHeading>
 
-        <p>
-          The latest version of that file can be found on Spartan's server at{' '}
-          <code>S:\Sales & Marketing\Marketing and UI\</code>
-        </p>
-      </div>
-    )
-  }
-}))
+          <p>
+            The latest version of that file can be found on Spartan's server at{' '}
+            <code>S:\Sales & Marketing\Marketing and UI\</code>
+          </p>
+        </div>
+      )
+    }
+  }),
+  hideAddons
+)
 
 storiesOf('* Design/Color', module).add('Color', () => ({ render: h => <Color /> }), hideAddons)
 
