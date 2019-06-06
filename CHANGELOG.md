@@ -1,3 +1,10 @@
+## [3.4.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.0...v3.4.1) (2019-06-06)
+
+
+### Bug Fixes
+
+* builds ASE colors when tokens change ([476fad4](https://gitlab.com/spartanbio-ux/schedio/commit/476fad4))
+
 # [3.4.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.3.5...v3.4.0) (2019-06-05)
 
 
