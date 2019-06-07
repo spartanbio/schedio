@@ -58,7 +58,7 @@
 
     // Add an obvious highlight
     &::before {
-      background-color: color('green', 'lighter');
+      background-color: lighten(color('green', 'lighter'), 30%);
       border-radius: border-radius('small');
       // Move it up a bit. Uses bottom so highlight animates up
       // Percentages are favoured over ems as measurements are based on line-height.
