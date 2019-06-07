@@ -1,3 +1,12 @@
+## [3.4.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.1...v3.4.2) (2019-06-07)
+
+
+### Bug Fixes
+
+* **button-group:** removes bottom margin from grouped ([ab20027](https://gitlab.com/spartanbio-ux/schedio/commit/ab20027))
+* **controls:** enables focus ring on hover ([6eabb77](https://gitlab.com/spartanbio-ux/schedio/commit/6eabb77))
+* **markdown:** lightens green on markdown links ([6ce956a](https://gitlab.com/spartanbio-ux/schedio/commit/6ce956a))
+
 ## [3.4.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.0...v3.4.1) (2019-06-06)
 
 
