@@ -1,7 +1,6 @@
 @mixin control-border-shadow {
   box-shadow: 0 0 0 2px color('spartan_blue', 'light'), shadow();
   border-color: transparent;
-  outline: none;
 }
 
 @mixin control-focused {
