@@ -15,6 +15,7 @@
   box-shadow: none !important;
   color: color('night', 'lighter');
   pointer-events: none;
+  user-select: none;
 }
 
 @mixin control-invalid {
