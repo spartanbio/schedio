@@ -8,8 +8,11 @@
     border-radius: border-radius('circle');
     content: '';
     height: 0.65em;
+    left: 50%;
     opacity: 0;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     transition: all duration() ease;
     width: 0.65em;
   }
