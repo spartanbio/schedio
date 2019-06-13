@@ -1309,7 +1309,7 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
-"@storybook/addon-a11y@5.1.4":
+"@storybook/addon-a11y@^5.1.4":
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.1.4.tgz#303421e85f54aeae606038b418b1d803cf89488a"
   integrity sha512-abzFafyMkOMOtcTeqSRqx9XaN0A3uq/M/EYgTdKr44B8NyTnmOrdj/HgeDMTg0ybhqrtAvZjf9xUiuzfuws/UA==
