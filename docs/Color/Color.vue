@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ColorList from './ColorList'
+import ColorList from '../components/ColorList'
 import groupBy from 'lodash.groupby'
 import orderBy from 'lodash.orderby'
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
