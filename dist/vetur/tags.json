@@ -205,7 +205,8 @@
     "attributes": [
       "select-options",
       "placeholder",
-      "multiple"
+      "multiple",
+      "value"
     ],
     "subtags": [],
     "description": "Schedio component: <s-select>"
