@@ -91,6 +91,11 @@ export default {
 
   mixins: [InputText, ControlIcons],
 
+  model: {
+    event: 'input',
+    prop: 'value'
+  },
+
   props: {
     selectOptions: {
       type: [Object, Array],
@@ -105,6 +110,11 @@ export default {
     multiple: {
       type: Boolean,
       default: false
+    },
+
+    value: {
+      type: [String, Array],
+      default: ''
     }
   },
 
@@ -129,6 +139,20 @@ export default {
 
       return Object.values(this.selectOptions).every(value => Array.isArray(value))
     }
+  },
+
+  watch: {
+    selected(val) {
+      this.$emit('input', val)
+    },
+
+    value(val) {
+      this.selected = val
+    }
+  },
+
+  mounted() {
+    if (this.value) this.selected = this.value
   },
 
   methods: {

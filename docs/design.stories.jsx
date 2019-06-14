@@ -1,12 +1,13 @@
-import Color from '@@/docs/Color'
-import Graphics from '@@/docs/Graphics.vue'
-import Interaction from '@@/docs/InteractionStates.vue'
-import Spacing from '@@/docs/Spacing.vue'
-import TypographyBase from '@@/docs/Typography/TypographyBase.vue'
-import TypographyHeadings from '@@/docs/Typography/TypographyHeadings.vue'
-import TypographyPrint from '@@/docs/Typography/TypographyPrint.vue'
-import { storiesOf } from '@storybook/vue'
 import { SHeading } from '@/components/SHeading'
+import Color from '@@/docs/Color'
+import ColorAccessibility from '@@/docs/Color/ColorAccessibility'
+import Graphics from '@@/docs/Graphics'
+import Interaction from '@@/docs/InteractionStates'
+import Spacing from '@@/docs/Spacing'
+import TypographyBase from '@@/docs/Typography/TypographyBase'
+import TypographyHeadings from '@@/docs/Typography/TypographyHeadings'
+import TypographyPrint from '@@/docs/Typography/TypographyPrint.vue'
+import { storiesOf, addParameters } from '@storybook/vue'
 
 const hideAddons = {
   options: {
@@ -14,9 +15,9 @@ const hideAddons = {
   }
 }
 
-storiesOf('* Design/Assets', module).add(
-  'Design Assets',
-  () => ({
+storiesOf('* Design/Assets', module)
+  .addParameters(hideAddons)
+  .add('Design Assets', () => ({
     render(h) {
       return (
         <div>
@@ -29,31 +30,27 @@ storiesOf('* Design/Assets', module).add(
         </div>
       )
     }
-  }),
-  hideAddons
-)
+  }))
 
-storiesOf('* Design/Color', module).add('Color', () => ({ render: h => <Color /> }), hideAddons)
+storiesOf('* Design/Color', module)
+  .addParameters(hideAddons)
+  .add('Color', () => ({ render: h => <Color /> }))
+  .add('Accessibility', () => ({ render: h => <ColorAccessibility /> }), hideAddons)
 
-storiesOf('* Design/Interaction', module).add(
-  'Interaction',
-  () => ({ render: h => <Interaction /> }),
-  hideAddons
-)
+storiesOf('* Design/Interaction', module).add('Interaction', () => ({
+  render: h => <Interaction />
+}))
 
-storiesOf('* Design/Graphics', module).add(
-  'Graphics',
-  () => ({ render: h => <Graphics /> }),
-  hideAddons
-)
+storiesOf('* Design/Graphics', module)
+  .addParameters(hideAddons)
+  .add('Graphics', () => ({ render: h => <Graphics /> }))
 
-storiesOf('* Design/Spacing', module).add(
-  'Spacing',
-  () => ({ render: h => <Spacing /> }),
-  hideAddons
-)
+storiesOf('* Design/Spacing', module)
+  .addParameters(hideAddons)
+  .add('Spacing', () => ({ render: h => <Spacing /> }))
 
 storiesOf('* Design/Typography', module)
-  .add('Base', () => ({ render: h => <TypographyBase /> }), hideAddons)
-  .add('Headings & Displays', () => ({ render: h => <TypographyHeadings /> }), hideAddons)
-  .add('Print', () => ({ render: h => <TypographyPrint /> }), hideAddons)
+  .addParameters(hideAddons)
+  .add('Base', () => ({ render: h => <TypographyBase /> }))
+  .add('Headings & Displays', () => ({ render: h => <TypographyHeadings /> }))
+  .add('Print', () => ({ render: h => <TypographyPrint /> }))

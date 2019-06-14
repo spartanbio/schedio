@@ -15,6 +15,7 @@
   box-shadow: none !important;
   color: color('night', 'lighter');
   pointer-events: none;
+  user-select: none;
 }
 
 @mixin control-invalid {
@@ -126,6 +127,7 @@
     height: 1em;
     justify-content: center;
     margin: spacing('half');
+    position: relative;
     transition: all duration() easing(), outline 0ms, outline-offset 0ms;
     width: 1em;
 
