@@ -411,6 +411,10 @@
     "description": "Boolean value.",
     "type": "boolean"
   },
+  "s-select/value": {
+    "description": "One of string or array",
+    "type": "string|array"
+  },
   "s-spinner/color": {
     "description": "String value.",
     "type": "string"

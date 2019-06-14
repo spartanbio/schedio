@@ -1,3 +1,13 @@
+## [3.4.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.2...v3.4.3) (2019-06-14)
+
+
+### Bug Fixes
+
+* **callout:** improves background-color ([8710204](https://gitlab.com/spartanbio-ux/schedio/commit/8710204))
+* **controls:** makes text unselectable when disabled ([89ff7fc](https://gitlab.com/spartanbio-ux/schedio/commit/89ff7fc))
+* **inputs:** centers check mark properly ([201a01c](https://gitlab.com/spartanbio-ux/schedio/commit/201a01c))
+* **select:** fixes default value selection ([2cfdf40](https://gitlab.com/spartanbio-ux/schedio/commit/2cfdf40))
+
 ## [3.4.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.1...v3.4.2) (2019-06-07)
 
 
