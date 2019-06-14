@@ -7,7 +7,12 @@ import camelCase from 'lodash.camelcase'
 describe('SContainerRow.vue', () => {
   const staticProps = ['justify', 'align']
   // Generate the same props generated in `SContainerRow.vue`
-  const propsToGenerate = ['align-until', 'align-after', 'justify-until', 'justify-after']
+  const propsToGenerate = [
+    'align-until',
+    'align-after',
+    'justify-until',
+    'justify-after',
+  ]
   const propList = propsToGenerate.reduce((list, prop) => {
     mobileBreakpoints.forEach(breakPoint => list.push(camelCase(`${prop}-${breakPoint}`)))
     return list
@@ -24,8 +29,8 @@ describe('SContainerRow.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SContainerRow, {
       slots: {
-        default: '<div>Row Content</div>'
-      }
+        default: '<div>Row Content</div>',
+      },
     })
   })
 
@@ -41,9 +46,9 @@ describe('SContainerRow.vue', () => {
     propList.forEach(expect(wrapper.props()).toHaveProperty)
   })
 
-  propList.forEach(propName => {
+  propList.forEach((propName) => {
     const flexOptions = Object.values(rowOptions).filter(opt => !!opt)
-    flexOptions.forEach(option => {
+    flexOptions.forEach((option) => {
       it(`can be ${propName} ${option}`, () => rowPropTest(propName, option))
     })
   })

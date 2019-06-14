@@ -19,7 +19,7 @@ describe('SButtonGroup.vue', () => {
               Button {{ i }}
             </SButton>
           </SButtonGroup>
-        `
+        `,
       },
       { stubs: { SButton: true } }
     )
@@ -64,8 +64,8 @@ describe('SButtonGroup.vue', () => {
       props: {
         disabled: {
           type: Boolean,
-          default: false
-        }
+          default: false,
+        },
       },
       template: `
           <SButtonGroup>
@@ -73,7 +73,7 @@ describe('SButtonGroup.vue', () => {
               Button {{ i }}
             </SButton>
           </SButtonGroup>
-        `
+        `,
     })
 
     disabledWrapper.setProps({ disabled: true })

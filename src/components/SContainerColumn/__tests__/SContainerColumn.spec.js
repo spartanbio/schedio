@@ -4,9 +4,19 @@ import SContainerColumn from '@/components/SContainerColumn/SContainerColumn.vue
 import camelCase from 'lodash.camelcase'
 
 describe('SContainerColumn.vue', () => {
-  const staticProps = ['size', 'offset', 'narrow', 'order']
+  const staticProps = [
+    'size',
+    'offset',
+    'narrow',
+    'order',
+  ]
   // Generate the same props generated in `SContainerColumn.vue`
-  const propsToGenerate = ['narrow-until', 'narrow-after', 'offset', 'order']
+  const propsToGenerate = [
+    'narrow-until',
+    'narrow-after',
+    'offset',
+    'order',
+  ]
   const propList = propsToGenerate.reduce((list, prop) => {
     mobileBreakpoints.forEach(breakPoint => list.push(camelCase(`${prop}-${breakPoint}`)))
     return list
@@ -23,8 +33,8 @@ describe('SContainerColumn.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SContainerColumn, {
       slots: {
-        default: '<div>Column Content</div>'
-      }
+        default: '<div>Column Content</div>',
+      },
     })
   })
 
@@ -41,7 +51,7 @@ describe('SContainerColumn.vue', () => {
     propList.forEach(expect(wrapper.props()).toHaveProperty)
   })
 
-  propList.forEach(propName => {
+  propList.forEach((propName) => {
     if (propName.match(/offset|order|size/)) {
       // props accepting column number
       for (let i = 1; i <= 12; i++) it(`can be ${propName} ${i}`, () => columnPropTest(propName, i))

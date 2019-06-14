@@ -31,6 +31,6 @@
 
 <script>
 export default {
-  name: 'InteractionStates'
+  name: 'InteractionStates',
 }
 </script>

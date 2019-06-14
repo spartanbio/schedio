@@ -10,5 +10,5 @@ export const allowed = [
   'datetime-local',
   'month',
   'time',
-  'week'
+  'week',
 ].sort()

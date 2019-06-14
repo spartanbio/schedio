@@ -15,11 +15,11 @@ describe('SCheckbox.vue', () => {
       propsData: {
         id: 'checkbox',
         name: 'checkbox',
-        label: 'Checkbox'
+        label: 'Checkbox',
       },
       listeners: {
-        input: inputEvent
-      }
+        input: inputEvent,
+      },
     })
 
     checkbox = wrapper.find('#checkbox')
@@ -35,7 +35,7 @@ describe('SCheckbox.vue', () => {
     const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
     // mounting component without required props
     mount(SCheckbox)
-    expect(spy).toBeCalled()
+    expect(spy).toHaveBeenCalled()
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
@@ -68,11 +68,11 @@ describe('SCheckbox.vue', () => {
       propsData: {
         id: 'checkbox',
         name: 'checkbox',
-        label: 'Checkbox'
+        label: 'Checkbox',
       },
       attrs: {
-        disabled: true
-      }
+        disabled: true,
+      },
     })
 
     // verifies disabled attr is passed through to checkbox input element

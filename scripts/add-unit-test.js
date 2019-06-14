@@ -10,7 +10,7 @@ const defaultComponentDir = path.resolve(__dirname, '../src/components')
  *
  * @return {Promise.<string>} The component name
  */
-async function addUnitTest(fileName, componentDir = defaultComponentDir) {
+async function addUnitTest (fileName, componentDir = defaultComponentDir) {
   const filePath = path.resolve(componentDir, fileName)
   const stat = await fs.stat(filePath)
 

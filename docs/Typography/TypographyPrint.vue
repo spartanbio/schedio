@@ -10,8 +10,6 @@
       calculator below can be used as a guide.
     </p>
 
-
-
     <SHeading level="2">
       Typography Calculator
     </SHeading>
@@ -34,7 +32,10 @@
       />
     </SFormField>
 
-    <!-- Setting the key causes the component to re-render when font size is updated. We want that -->
+    <!--
+      Setting the key causes the component to re-render when font size is updated.
+      We want that.
+    -->
     <STable
       :key="calcFontSize"
       is-bordered
@@ -64,9 +65,7 @@
         v-for="{ name, value } in fontSizes"
         :key="name"
       >
-        <STableCell
-          style="text-transform: capitalize;"
-        >
+        <STableCell style="text-transform: capitalize;">
           {{ name | prettyName }}
         </STableCell>
 
@@ -199,31 +198,31 @@ export default {
   name: 'TypographyPrint',
 
   components: {
-    StoryLink
+    StoryLink,
   },
 
   filters: {
-    prettyName: val => val.replace(/font-(size)-(\d*)/, '$1 $2')
+    prettyName: val => val.replace(/font-(size)-(\d*)/, '$1 $2'),
   },
 
   data: () => ({
     baseFontSize,
     calcFontSize: baseFontSize,
-    fontSizes: orderBy(fontSizes, 'name')
+    fontSizes: orderBy(fontSizes, 'name'),
   }),
 
   methods: {
-    computePrintSize(value) {
+    computePrintSize (value) {
       return value.replace('rem', '') * this.calcFontSize + 'pt'
     },
-    computeLeading(value) {
+    computeLeading (value) {
       const strippedVal = value.replace('rem', '')
       const leading = strippedVal > 3 ? 1.25 : 1.5
       return strippedVal * this.calcFontSize * leading + 'pt'
     },
-    computeTracking(value) {
+    computeTracking (value) {
       return (value.replace('rem', '') > 3 ? 0.025 : 0) + 'em'
-    }
-  }
+    },
+  },
 }
 </script>

@@ -14,8 +14,8 @@ describe('SHero.vue', () => {
       slots: {
         head: 'Header Content',
         default: 'Body Content',
-        foot: 'Foot Content'
-      }
+        foot: 'Foot Content',
+      },
     })
   })
 
@@ -38,7 +38,7 @@ describe('SHero.vue', () => {
 
   it('requires a default slot', () => {
     shallowMount(SHero)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('hides empty slots', () => {
@@ -50,7 +50,7 @@ describe('SHero.vue', () => {
     expect(wrapper.vm.$slots.foot).toBeTruthy()
   })
 
-  options.colors.forEach(color => {
+  options.colors.forEach((color) => {
     it(`can be ${color}`, async () => {
       wrapper.setProps({ color })
       expect(wrapper.html()).toMatchSnapshot()
@@ -58,7 +58,7 @@ describe('SHero.vue', () => {
     })
   })
 
-  options.heights.forEach(height => {
+  options.heights.forEach((height) => {
     it(`can be ${height}`, () => {
       wrapper.setProps({ height })
       expect(wrapper.html()).toMatchSnapshot()

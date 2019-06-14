@@ -11,11 +11,11 @@ describe('SHeading.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SHeading, {
       propsData: {
-        level: 1
+        level: 1,
       },
       slots: {
-        default: 'Heading Content'
-      }
+        default: 'Heading Content',
+      },
     })
   })
 
@@ -43,11 +43,11 @@ describe('SHeading.vue', () => {
   it('should have a level of 4 or less', () => {
     for (let i; i <= 4; i++) {
       shallowMount(SHeading, { propsData: { level: i } })
-      expect(errorSpy).not.toBeCalled()
+      expect(errorSpy).not.toHaveBeenCalled()
     }
 
     shallowMount(SHeading, { propsData: { level: 5 } })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can be display', () => {

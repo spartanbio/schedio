@@ -1,1 +1,6 @@
-export const types = ['', 'success', 'warning', 'error']
+export const types = [
+  '',
+  'success',
+  'warning',
+  'error',
+]

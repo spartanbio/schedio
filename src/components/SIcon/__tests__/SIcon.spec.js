@@ -12,8 +12,8 @@ describe('SIcon.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SIcon, {
       propsData: {
-        icon: iconList[0]
-      }
+        icon: iconList[0],
+      },
     })
   })
 
@@ -22,21 +22,21 @@ describe('SIcon.vue', () => {
   })
 
   it('renders correctly', () => {
-    expect(errorSpy).not.toBeCalled()
+    expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('requires an icon name', () => {
     shallowMount(SIcon)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('validates icons', () => {
     shallowMount(SIcon, { propsData: { icon: 'not an icon' } })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
-  options.colors.forEach(color => {
+  options.colors.forEach((color) => {
     it(`can be ${color}`, () => {
       wrapper.setProps({ color })
       expect(wrapper.contains(`.icon--color-${color}`))
@@ -46,10 +46,10 @@ describe('SIcon.vue', () => {
 
   it('validates color', () => {
     shallowMount(SIcon, { propsData: { icon: iconList[0], color: 'not a color' } })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
-  options.sizes.forEach(size => {
+  options.sizes.forEach((size) => {
     it(`can be ${size}`, () => {
       wrapper.setProps({ size })
       expect(wrapper.contains(`.icon--size-${size}`))
@@ -59,6 +59,6 @@ describe('SIcon.vue', () => {
 
   it('validates size', () => {
     shallowMount(SIcon, { propsData: { icon: iconList[0], size: 'not a size' } })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 })

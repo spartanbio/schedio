@@ -4,5 +4,5 @@ export default {
   center: 'center',
   end: 'end',
   around: 'around',
-  between: 'between'
+  between: 'between',
 }

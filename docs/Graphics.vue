@@ -121,6 +121,6 @@
 
 <script>
 export default {
-  name: 'Graphics'
+  name: 'Graphics',
 }
 </script>

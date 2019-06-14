@@ -1,1 +1,6 @@
-export default ['sm', 'md', 'lg', 'xl']
+export default [
+  'sm',
+  'md',
+  'lg',
+  'xl',
+]

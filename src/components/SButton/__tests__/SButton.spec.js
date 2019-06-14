@@ -16,9 +16,9 @@ describe('SButton.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SButton, {
       slots: {
-        default: 'Button Text'
+        default: 'Button Text',
       },
-      listeners: { click }
+      listeners: { click },
     })
   })
 
@@ -38,7 +38,7 @@ describe('SButton.vue', () => {
   })
 
   Promise.all(
-    options.colors.map(color => {
+    options.colors.map((color) => {
       it(`can be ${color}`, async () => {
         wrapper.setProps({ color })
         expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -49,7 +49,7 @@ describe('SButton.vue', () => {
   )
 
   Promise.all(
-    options.colors.map(color => {
+    options.colors.map((color) => {
       it(`can be outlined with ${color}`, async () => {
         wrapper.setProps({ color, isOutlined: true })
         expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -61,10 +61,10 @@ describe('SButton.vue', () => {
 
   it('validates fill color', () => {
     shallowMount(SButton, { propsData: { color: 'not a color' } })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
-  options.sizes.forEach(size => {
+  options.sizes.forEach((size) => {
     it(`can be ${size}`, () => {
       wrapper.setProps({ size })
       expect(wrapper.classes()).toContain(`button--size-${size}`)
@@ -74,7 +74,7 @@ describe('SButton.vue', () => {
 
   it('validates color', () => {
     shallowMount(SButton, { propsData: { size: 'not a size' } })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can have an icon on the left', () => {
@@ -90,16 +90,16 @@ describe('SButton.vue', () => {
   it('can have an icon and no text', async () => {
     const iconButton = shallowMount(SButton, {
       slots: {
-        default: 'Button Text'
+        default: 'Button Text',
       },
       listeners: { click },
       attrs: {
-        'aria-label': 'Button'
+        'aria-label': 'Button',
       },
       propsData: {
         iconOnly: true,
-        iconLeft: iconList[0]
-      }
+        iconLeft: iconList[0],
+      },
     })
 
     expect(await axe(iconButton.html())).toHaveNoViolations()
@@ -110,16 +110,16 @@ describe('SButton.vue', () => {
   it('errors if no discernible text', async () => {
     const iconButton = shallowMount(SButton, {
       slots: {
-        default: 'Button Text'
+        default: 'Button Text',
       },
       listeners: { click },
       propsData: {
         iconOnly: true,
-        iconLeft: iconList[0]
-      }
+        iconLeft: iconList[0],
+      },
     })
 
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
     expect(await axe(iconButton.html())).not.toHaveNoViolations()
   })
 

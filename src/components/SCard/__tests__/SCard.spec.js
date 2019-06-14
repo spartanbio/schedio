@@ -10,8 +10,8 @@ describe('SCard.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SCard, {
       slots: {
-        default: '<div>Default Slot</div>'
-      }
+        default: '<div>Default Slot</div>',
+      },
     })
   })
 
@@ -31,8 +31,8 @@ describe('SCard.vue', () => {
     const props = {
       image: {
         src: '/some-image.jpg',
-        alt: 'An image'
-      }
+        alt: 'An image',
+      },
     }
 
     wrapper.setProps(props)
@@ -59,8 +59,8 @@ describe('SCard.vue', () => {
   it('can have a header', () => {
     const withHeader = shallowMount(SCard, {
       slots: {
-        header: '<div>Header Slot</div>'
-      }
+        header: '<div>Header Slot</div>',
+      },
     })
 
     expect(withHeader.vm.$slots.header).toBeTruthy()
@@ -70,8 +70,8 @@ describe('SCard.vue', () => {
   it('can have a footer', () => {
     const withFooter = shallowMount(SCard, {
       slots: {
-        footer: '<div>Footer Slot</div>'
-      }
+        footer: '<div>Footer Slot</div>',
+      },
     })
 
     expect(withFooter.vm.$slots.footer).toBeTruthy()

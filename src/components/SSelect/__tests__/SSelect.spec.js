@@ -1,6 +1,6 @@
 import { colors as iconColors } from '@/components/SIcon/options'
 import SSelect from '@/components/SSelect/SSelect.vue'
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
@@ -20,12 +20,12 @@ describe('SSelect.vue', () => {
         id: 'select',
         name: 'select',
         label: 'Select',
-        selectOptions: defaultOptions
+        selectOptions: defaultOptions,
       },
       listeners: {
         change: inputListener,
-        input: inputListener
-      }
+        input: inputListener,
+      },
     })
   })
 
@@ -40,7 +40,7 @@ describe('SSelect.vue', () => {
 
   it('requires required props', () => {
     shallowMount(SSelect)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can have a single placeholder', () => {
@@ -68,8 +68,8 @@ describe('SSelect.vue', () => {
     wrapper.setProps({
       selectOptions: {
         optionOne: { label: 'One', value: 1 },
-        optionTwo: { label: 'Two', value: 2 }
-      }
+        optionTwo: { label: 'Two', value: 2 },
+      },
     })
     expect(wrapper.findAll('option').length).toBeGreaterThan(1)
     expect(wrapper.html()).toMatchSnapshot()
@@ -78,7 +78,7 @@ describe('SSelect.vue', () => {
   it('can use an object of arrays `selectOptions` with groups', () => {
     const optGroups = {
       groupOne: [{ label: 'One', value: 1 }],
-      groupTwo: [{ label: 'Two', value: 2 }]
+      groupTwo: [{ label: 'Two', value: 2 }],
     }
 
     wrapper.setProps({ selectOptions: optGroups })
@@ -96,7 +96,7 @@ describe('SSelect.vue', () => {
 
   it('accepts input', () => {
     wrapper.find('select').setValue(defaultOptions[0])
-    expect(inputListener).toBeCalled()
+    expect(inputListener).toHaveBeenCalled()
     expect(wrapper.emitted('change')[0][0]).toBe(defaultOptions[0])
   })
 
@@ -133,10 +133,10 @@ describe('SSelect.vue', () => {
   it('can set each icon color', () => {
     wrapper.setProps({
       iconLeftColor: iconColors[0],
-      iconRightColor: iconColors[1]
+      iconRightColor: iconColors[1],
     })
 
-    expect(errorSpy).not.toBeCalled()
+    expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
     expect(wrapper.html()).toMatchSnapshot()
   })

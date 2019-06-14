@@ -5,7 +5,7 @@ export const colors = [
     if (category === 'background-color') colorList.add(name.split('-')[0])
 
     return colorList
-  }, new Set())
+  }, new Set()),
 ].sort()
 
 export const heights = ['half', 'full']

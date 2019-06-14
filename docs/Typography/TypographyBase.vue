@@ -51,8 +51,8 @@ export default {
   components: { SCallout },
 
   data: () => ({
-    tokens
-  })
+    tokens,
+  }),
 }
 </script>
 

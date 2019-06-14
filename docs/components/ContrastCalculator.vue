@@ -10,7 +10,7 @@
           class="contrast-calculator__preview"
           :style="{
             color: foreground,
-            backgroundColor: background
+            backgroundColor: background,
           }"
         >
           Foreground
@@ -68,51 +68,51 @@ export default {
   name: 'ContrastCalculator',
 
   components: {
-    ColorPicker
+    ColorPicker,
   },
 
-  data() {
+  data () {
     return {
       foreground: 'rgb(255, 255, 255)',
-      background: 'rgb(6, 137, 58)'
+      background: 'rgb(6, 137, 58)',
     }
   },
 
   computed: {
-    contrastRatio() {
+    contrastRatio () {
       try {
         return this.ratio(this.foreground, this.background).toFixed(2)
       } catch {
         return 0
       }
     },
-    passesAccessibility() {
+    passesAccessibility () {
       try {
         return this.isAccessible(this.foreground, this.background)
       } catch {
         return false
       }
     },
-    wcagScore() {
+    wcagScore () {
       try {
         return this.score(this.foreground, this.background)
       } catch {
         return 'F'
       }
-    }
+    },
   },
 
   methods: {
-    ...contrast
-  }
+    ...contrast,
+  },
 }
 </script>
 
 <style lang="scss">
 .contrast-calculator__preview {
-  border-radius: border-radius('small');
+  border-radius: border-radius("small");
   display: inline-block;
-  margin-bottom: spacing('half');
-  padding: spacing('half') spacing();
+  margin-bottom: spacing("half");
+  padding: spacing("half") spacing();
 }
 </style>

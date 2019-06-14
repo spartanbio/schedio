@@ -33,7 +33,7 @@ export default {
   name: '${componentName}'
 }
 </script>
-`
+`,
   },
   // Storybook story
   {
@@ -64,12 +64,12 @@ storiesOf('Components/${componentName}', module)
       }
     }
   })
-`
+`,
   },
   // SCSS
   {
     extension: 'scss',
-    contents: '// component styles\n'
+    contents: '// component styles\n',
   },
   // index.js
   {
@@ -83,12 +83,12 @@ export { ${componentName} }
 export default {
   install: Vue => Vue.component(${componentName}.name, ${componentName})
 }
-`
-  }
+`,
+  },
 ]
 
 // write files
-async function scaffoldComponent() {
+async function scaffoldComponent () {
   console.log(chalk.yellow(`Building ${componentName}...\n`))
 
   try {

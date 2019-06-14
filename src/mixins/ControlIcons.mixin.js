@@ -2,28 +2,28 @@ import { SIcon } from '@/components/SIcon'
 
 export default {
   components: {
-    SIcon
+    SIcon,
   },
 
   props: {
     iconLeft: {
       type: String,
-      default: ''
+      default: '',
     },
 
     iconLeftColor: {
       type: String,
-      default: 'green'
+      default: 'green',
     },
 
     iconRight: {
       type: String,
-      default: ''
+      default: '',
     },
 
     iconRightColor: {
       type: String,
-      default: 'green'
-    }
-  }
+      default: 'green',
+    },
+  },
 }

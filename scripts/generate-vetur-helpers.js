@@ -11,7 +11,7 @@ const PropTypeMap = new Map([
   [Object, { description: 'Object value.', type: 'object' }],
   [Function, { description: 'Function value.', type: 'function' }],
   [RegExp, { description: 'RegExp value.', type: 'RegExp' }],
-  [Date, { description: 'Date value.', type: 'Date' }]
+  [Date, { description: 'Date value.', type: 'Date' }],
 ])
 
 const componentsDir = path.resolve(__dirname, '../dist/components')
@@ -50,7 +50,7 @@ const attributes = components.reduce((attributeList, name) => {
 
     return {
       ...attrs,
-      [componentProp]: details
+      [componentProp]: details,
     }
   }, {})
 
@@ -71,7 +71,7 @@ const tags = components.reduce((tagList, name) => {
 
   return {
     ...tagList,
-    [componentName]: details
+    [componentName]: details,
   }
 }, {})
 
@@ -79,7 +79,7 @@ const tags = components.reduce((tagList, name) => {
  * Loads component options
  * @param {String} name The component's name
  */
-function getComponent(name) {
+function getComponent (name) {
   return require(path.resolve(componentsDir, name))[name]
 }
 
@@ -87,7 +87,7 @@ function getComponent(name) {
  * Writes Vetur helpers for vscode
  * @param {Object} helpers The helpers to write
  */
-async function writeVeturHelpers(helpers) {
+async function writeVeturHelpers (helpers) {
   console.log(chalk.yellow('Writing vetur helpers...\n'))
   // clear the dierctory
   await fs.emptyDir(dest)
@@ -104,7 +104,7 @@ async function writeVeturHelpers(helpers) {
 /**
  * Write the JSON file
  */
-async function writeHelper([name, helper]) {
+async function writeHelper ([name, helper]) {
   await fs.outputFile(path.resolve(dest, name + '.json'), JSON.stringify(helper, null, 2))
 }
 

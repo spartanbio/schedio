@@ -1,6 +1,6 @@
 import SToast from '@/components/SToast/SToast.vue'
-import { shallowMount, mount } from '@vue/test-utils'
-import { types, positions } from '../options'
+import { mount, shallowMount } from '@vue/test-utils'
+import { positions, types } from '../options'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 expect.extend(toHaveNoViolations)
@@ -14,8 +14,8 @@ describe('SToast.vue', () => {
     wrapper = shallowMount(SToast, {
       propsData: {
         type: types[0],
-        body: 'Text'
-      }
+        body: 'Text',
+      },
     })
   })
 
@@ -23,13 +23,13 @@ describe('SToast.vue', () => {
     jest.resetAllMocks()
   })
 
-  types.forEach(type => {
+  types.forEach((type) => {
     it(`renders toast type ${type} correctly`, async () => {
       const tempWrapper = mount(SToast, {
         propsData: {
           type: type,
-          body: 'Text'
-        }
+          body: 'Text',
+        },
       })
 
       expect(tempWrapper.html()).toMatchSnapshot()
@@ -41,26 +41,26 @@ describe('SToast.vue', () => {
     shallowMount(SToast, {
       propsData: {
         type: 'not a type',
-        body: 'Text'
-      }
+        body: 'Text',
+      },
     })
 
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('requires a title or body', () => {
-    const mountToast = props => {
+    const mountToast = (props) => {
       return shallowMount(SToast, {
         propsData: {
           type: types[0],
-          ...(props && props)
-        }
+          ...(props && props),
+        },
       })
     }
 
     mountToast()
 
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
 
     const body = mountToast({ body: 'text' })
     expect(body.html()).toMatchSnapshot()
@@ -68,10 +68,10 @@ describe('SToast.vue', () => {
     const title = mountToast({ title: 'title' })
     expect(title.html()).toMatchSnapshot()
 
-    expect(errorSpy).toBeCalledTimes(2)
+    expect(errorSpy).toHaveBeenCalledTimes(2)
   })
 
-  positions.forEach(position => {
+  positions.forEach((position) => {
     it(`can have position ${position}`, () => {
       wrapper.setProps({ position })
       expect(wrapper.html()).toMatchSnapshot()
@@ -83,11 +83,11 @@ describe('SToast.vue', () => {
       propsData: {
         type: types[0],
         body: 'Text',
-        position: 'not a position'
-      }
+        position: 'not a position',
+      },
     })
 
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can have a clickable action', async () => {
@@ -98,7 +98,7 @@ describe('SToast.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
 
     wrapper.find('button').trigger('click')
-    expect(action).toBeCalled()
+    expect(action).toHaveBeenCalled()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
@@ -114,7 +114,7 @@ describe('SToast.vue', () => {
 
     wrapper.setProps({
       action: jest.fn(),
-      actionText
+      actionText,
     })
 
     expect(wrapper.text()).toContain(actionText)

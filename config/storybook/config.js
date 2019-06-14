@@ -15,7 +15,7 @@ Vue.use(Schedio)
 const docStories = require.context('@@/docs', true, /.stories.(js|jsx)$/)
 const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
 
-function loadStories() {
+function loadStories () {
   docStories.keys().forEach(filename => docStories(filename))
   componentStories.keys().forEach(filename => componentStories(filename))
 }
@@ -26,13 +26,13 @@ addParameters({
     theme: create({
       base: 'light',
       brandTitle: 'Schédio',
-      brandImage: null
+      brandImage: null,
     }),
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\//,
     sortStoriesByKind: true,
-    showPanel: true
-  }
+    showPanel: true,
+  },
 })
 
 addDecorator(withKnobs)
@@ -45,7 +45,7 @@ addDecorator(story => ({
 <StoryContainer>
   <story />
 </StoryContainer>
-`
+`,
 }))
 
 configure(loadStories, module)

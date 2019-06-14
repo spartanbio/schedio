@@ -12,8 +12,8 @@ describe('SProgressBar.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SProgressBar, {
       propsData: {
-        progress: '50'
-      }
+        progress: '50',
+      },
     })
   })
 
@@ -28,20 +28,20 @@ describe('SProgressBar.vue', () => {
 
   it('renders progress', () => {
     shallowMount(SProgressBar)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('only allows values between 0 and 100', () => {
     // we need to mount new components to test the prop validator
     const smallWrapper = shallowMount(SProgressBar, {
       propsData: {
-        progress: -100
-      }
+        progress: -100,
+      },
     })
     const bigWrapper = shallowMount(SProgressBar, {
       propsData: {
-        progress: 200
-      }
+        progress: 200,
+      },
     })
 
     wrapper.setProps({ progress: -100 })
@@ -49,13 +49,13 @@ describe('SProgressBar.vue', () => {
     wrapper.setProps({ progress: 200 })
     expect(bigWrapper.vm.computedProgress).toBe(100)
     // 4 times because Vue console.errors if prop is invalid, then we return consoe.error
-    expect(errorSpy).toBeCalledTimes(4)
+    expect(errorSpy).toHaveBeenCalledTimes(4)
   })
 
-  options.colors.forEach(color => {
+  options.colors.forEach((color) => {
     it(`can be ${color}`, async () => {
       wrapper.setProps({ color })
-      expect(errorSpy).not.toBeCalled()
+      expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.props('color')).toBe(color)
       expect(wrapper.html()).toMatchSnapshot()
       expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -65,16 +65,16 @@ describe('SProgressBar.vue', () => {
   it('only allows valid colors', () => {
     shallowMount(SProgressBar, {
       propsData: {
-        color: 'this is not a color'
-      }
+        color: 'this is not a color',
+      },
     })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
-  options.sizes.forEach(size => {
+  options.sizes.forEach((size) => {
     it(`can be ${size}`, () => {
       wrapper.setProps({ size })
-      expect(errorSpy).not.toBeCalled()
+      expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.props('size')).toBe(size)
       expect(wrapper.html()).toMatchSnapshot()
     })
@@ -83,10 +83,10 @@ describe('SProgressBar.vue', () => {
   it('only allows valid sizes', () => {
     shallowMount(SProgressBar, {
       propsData: {
-        size: 'this is not a size'
-      }
+        size: 'this is not a size',
+      },
     })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can display a message', () => {

@@ -51,40 +51,40 @@ export default {
     underscoreToSpace: str => str.replace(/_/g, ' '),
     rgbToHex: color => color.match(/\d+/g).reduce(valToHex, '#'),
     colorSpace: color => (color[0] === '#' ? 'HEX' : color.split('(')[0].toUpperCase()),
-    getShade: str => (str.split('-').length > 1 ? str.split('-').pop() : 'base')
+    getShade: str => (str.split('-').length > 1 ? str.split('-').pop() : 'base'),
   },
 
   components: {
-    SCard
+    SCard,
   },
 
   props: {
     palette: {
       type: Array,
-      required: true
+      required: true,
     },
 
     heading: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 $palette-border-radius: 0.5em;
-$shadow-color: color('grey', 'light');
-$left-border-shadow: -1px 0 color('grey', 'lighter');
+$shadow-color: color("grey", "light");
+$left-border-shadow: -1px 0 color("grey", "lighter");
 
 .palette-card {
-  margin-bottom: spacing('loose');
+  margin-bottom: spacing("loose");
 
   &__description {
-    background-color: color('white');
+    background-color: color("white");
     box-shadow: $left-border-shadow;
     margin-left: 6.5em;
-    padding: spacing('base');
+    padding: spacing("base");
   }
 
   &__row {
@@ -101,7 +101,7 @@ $left-border-shadow: -1px 0 color('grey', 'lighter');
     &:not(:first-child) {
       // Add a border to descriptions
       .palette-card__description {
-        box-shadow: $left-border-shadow, 0 -1px color('grey', 'lighter');
+        box-shadow: $left-border-shadow, 0 -1px color("grey", "lighter");
       }
     }
   }

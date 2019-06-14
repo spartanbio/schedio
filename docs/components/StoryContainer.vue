@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'StoryContainer'
+  name: 'StoryContainer',
 }
 </script>
 

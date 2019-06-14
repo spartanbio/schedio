@@ -1,7 +1,7 @@
 import { colors as iconColors } from '@/components/SIcon/options'
 import { allowed as options } from '@/components/SInput/options'
 import SInput from '@/components/SInput/SInput.vue'
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
@@ -18,11 +18,11 @@ describe('SInput.vue', () => {
       propsData: {
         id: 'input',
         name: 'input',
-        label: 'input'
+        label: 'input',
       },
       listeners: {
-        input: inputEvent
-      }
+        input: inputEvent,
+      },
     })
   })
 
@@ -38,7 +38,7 @@ describe('SInput.vue', () => {
   it('requires required props', () => {
     // mounting component without required props
     shallowMount(SInput)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
     expect(errorSpy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
@@ -50,18 +50,18 @@ describe('SInput.vue', () => {
     shallowMount(SInput, {
       propsData: {
         ...defaultProps,
-        type: option
-      }
+        type: option,
+      },
     })
-    expect(errorSpy).not.toBeCalled()
+    expect(errorSpy).not.toHaveBeenCalled()
 
     shallowMount(SInput, {
       propsData: {
         ...defaultProps,
-        type: 'checkbox'
-      }
+        type: 'checkbox',
+      },
     })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can be required', () => {
@@ -100,10 +100,10 @@ describe('SInput.vue', () => {
   it('can set each icon color', () => {
     wrapper.setProps({
       iconLeftColor: iconColors[0],
-      iconRightColor: iconColors[1]
+      iconRightColor: iconColors[1],
     })
 
-    expect(errorSpy).not.toBeCalled()
+    expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
     expect(wrapper.html()).toMatchSnapshot()
   })

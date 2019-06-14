@@ -33,30 +33,36 @@ export default {
   name: 'Color',
 
   components: {
-    ColorList
+    ColorList,
   },
 
-  data() {
+  data () {
     return {
-      colors: Object.values(props).filter(p => p.category === 'background-color')
+      colors: Object.values(props).filter(p => p.category === 'background-color'),
     }
   },
 
   computed: {
-    palettes() {
-      return this.colors.map(color => {
+    palettes () {
+      return this.colors.map((color) => {
         color.palette = color.name.split('-').shift()
         return color
       })
     },
-    mainPalettes() {
-      const order = ['spartan_blue', 'grey', 'night', 'ice', 'white']
+    mainPalettes () {
+      const order = [
+        'spartan_blue',
+        'grey',
+        'night',
+        'ice',
+        'white',
+      ]
       const toOrder = this.getPalette('main')
       return order.reduce((ordered, key) => ({ ...ordered, [key]: toOrder[key] }), {})
     },
-    accentPalettes() {
+    accentPalettes () {
       return this.getPalette('accent')
-    }
+    },
   },
 
   methods: {
@@ -65,7 +71,7 @@ export default {
      * @param {String} paletteType Get the primary or secondary palette
      * @returns {Object.<string, Object.<string, string>>}
      */
-    getPalette(paletteType) {
+    getPalette (paletteType) {
       const filtered = this.palettes.filter(palette => palette.paletteType === paletteType)
       const palette = groupBy(filtered, 'palette')
       return this.orderPalette(palette)
@@ -76,15 +82,23 @@ export default {
      * @param {Object.<string, Object.<string, string>>} palette Objects to order
      * @returns {Object.<string, Object.<string, string>>}
      */
-    orderPalette(palette) {
-      const ranks = ['darker', 'dark', 'base', 'light', 'lighter', 'lightest', 'text']
+    orderPalette (palette) {
+      const ranks = [
+        'darker',
+        'dark',
+        'base',
+        'light',
+        'lighter',
+        'lightest',
+        'text',
+      ]
       const colors = Object.keys(palette)
       // base shades do not contain '-'
       const shade = name => (name.match('-') ? name.split('-').pop() : 'base')
       // parse color shades to assign ranks. `base` if no shade named.
       const rank = color => ranks.indexOf(shade(color.name))
       return colors.reduce((pal, color) => ({ ...pal, [color]: orderBy(palette[color], rank) }), {})
-    }
-  }
+    },
+  },
 }
 </script>

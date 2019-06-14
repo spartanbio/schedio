@@ -3,34 +3,23 @@ module.exports = {
   env: {
     browser: true,
     jest: true,
-    node: true
+    node: true,
   },
-  extends: ['@vue/standard', 'plugin:prettier/recommended', 'plugin:vue/recommended'],
-  plugins: ['prettier'],
+  extends: ['@spartanbio/eslint-config-vue'],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        semi: false,
-        printWidth: 100
+    'max-len': [
+      'error', {
+        code: 100,
+        ignoreComments: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
       }
     ],
-    semi: [2, 'never'],
-    'no-console': 'off',
-    'no-debugger': 'off',
-    'vue/max-attributes-per-line': [
-      2,
-      {
-        singleline: 1,
-        multiline: {
-          max: 1,
-          allowFirstLine: false
-        }
-      }
-    ]
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    ecmaFeatures: {
+      jsx: true,
+    },
   }
 }

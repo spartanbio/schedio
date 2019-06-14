@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import SFileInput from '../SFileInput.vue'
 import MockFile from '../../../../tests/__mocks__/MockFile'
 import { SChip } from '@/components/SChip'
@@ -15,24 +15,24 @@ describe('SFileInput.vue', () => {
   const fileA = new MockFile({
     name: 'test-file-a.txt',
     size: 44320,
-    type: 'text/plain'
+    type: 'text/plain',
   })
 
   const fileB = new MockFile({
     name: 'test-file-b.txt',
     size: 512,
-    type: 'text/plain'
+    type: 'text/plain',
   })
 
   const defaultProps = {
     id: 'file-input',
     name: 'file-input',
-    label: 'File input'
+    label: 'File input',
   }
 
   beforeEach(() => {
     wrapper = shallowMount(SFileInput, {
-      propsData: defaultProps
+      propsData: defaultProps,
     })
   })
 
@@ -49,7 +49,7 @@ describe('SFileInput.vue', () => {
   it('requires id, name, and label', () => {
     shallowMount(SFileInput)
     // 4 times because we one of the props expects a string, but receives `undefined`
-    expect(errorSpy).toBeCalledTimes(4)
+    expect(errorSpy).toHaveBeenCalledTimes(4)
     expect(errorSpy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
@@ -64,7 +64,7 @@ describe('SFileInput.vue', () => {
     wrapper.setMethods({ handleFiles: inputSpy })
     // ensure input is triggered and handler is called
     wrapper.find('input').trigger('input')
-    expect(inputSpy).toBeCalled()
+    expect(inputSpy).toHaveBeenCalled()
     // fake the input event
     wrapper.vm.handleFiles({ target: { files: [fileA] } })
     expect(wrapper.emitted('input')).toBeTruthy()
@@ -86,7 +86,7 @@ describe('SFileInput.vue', () => {
 
   it('can remove files', () => {
     wrapper = mount(SFileInput, {
-      propsData: defaultProps
+      propsData: defaultProps,
     })
 
     // emitted[0]
@@ -124,7 +124,7 @@ describe('SFileInput.vue', () => {
     wrapper = mount({
       components: { SFileInput },
       data: () => ({ files: [], defaultProps }),
-      template: '<SFileInput v-bind="defaultProps" v-model="files" />'
+      template: '<SFileInput v-bind="defaultProps" v-model="files" />',
     })
 
     const fileInput = wrapper.find(SFileInput)
@@ -202,7 +202,7 @@ describe('SFileInput.vue', () => {
     })
 
     it('can be a drop zone', () => {
-      expect(errorSpy).not.toBeCalled()
+      expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.html()).toMatchSnapshot()
     })
 
@@ -219,15 +219,15 @@ describe('SFileInput.vue', () => {
       ${'dragleave'} | ${['handleDragleave']}           | ${''}                              | ${'file-input__display--dragover'}
       ${'drop'}      | ${['handleDrop', 'handleFiles']} | ${''}                              | ${''}
     `('handles $event correctly', ({ event, handlers, includesClass, excludesClass }) => {
-      const spies = new Map(handlers.map(handler => [handler, jest.spyOn(wrapper.vm, handler)]))
+  const spies = new Map(handlers.map(handler => [handler, jest.spyOn(wrapper.vm, handler)]))
 
-      spies.forEach((spy, handler) => wrapper.setMethods({ [handler]: spy }))
-      display.trigger(event)
+  spies.forEach((spy, handler) => wrapper.setMethods({ [handler]: spy }))
+  display.trigger(event)
 
-      spies.forEach(spy => expect(spy).toBeCalled())
-      if (includesClass) expect(display.classes()).toContain(includesClass)
-      if (excludesClass) expect(display.classes()).not.toContain(excludesClass)
-      expect(wrapper.html()).toMatchSnapshot()
-    })
+  spies.forEach(spy => expect(spy).toHaveBeenCalled())
+  if (includesClass) expect(display.classes()).toContain(includesClass)
+  if (excludesClass) expect(display.classes()).not.toContain(excludesClass)
+  expect(wrapper.html()).toMatchSnapshot()
+})
   })
 })

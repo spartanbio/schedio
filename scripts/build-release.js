@@ -15,7 +15,7 @@ console.log(chalk.yellow('Building individual component bundles...\n'))
 const componentsDir = './src/components'
 
 Promise.all(
-  fs.readdirSync(componentsDir).map(async component => {
+  fs.readdirSync(componentsDir).map(async (component) => {
     const stat = await fs.stat(path.join(componentsDir, component))
     const dest = `${destDir}/${component}`
     const entry = `${componentsDir}/${component}/index.js`

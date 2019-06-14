@@ -18,14 +18,14 @@ export const withAttrsAsProps = ({
   label = 'label',
   required = true,
   hideOptional = false,
-  isInvalid = false
+  isInvalid = false,
 } = {}) => ({
   id: text(`${identifier} id`.trim(), id, 'Required Props'),
   name: text(`${identifier} name`.trim(), name, 'Required Props'),
   label: text(`${identifier} label`.trim(), label, 'Required Props'),
   required: boolean(`${identifier} required`.trim(), required, 'Optional Props'),
   hideOptional: boolean(`${identifier} hide-optional`.trim(), hideOptional, 'Optional Props'),
-  isInvalid: boolean(`${identifier} is-invalid`.trim(), isInvalid, 'Optional Props')
+  isInvalid: boolean(`${identifier} is-invalid`.trim(), isInvalid, 'Optional Props'),
 })
 
 /**
@@ -38,5 +38,5 @@ export const withAttrsAsProps = ({
  */
 export const withUnboundAttrs = ({ identifier = '', value = '', disabled = false } = {}) => ({
   value: text(`${identifier} value`.trim(), value, '$attrs'),
-  disabled: boolean(`${identifier} disabled`.trim(), disabled, '$attrs')
+  disabled: boolean(`${identifier} disabled`.trim(), disabled, '$attrs'),
 })

@@ -15,11 +15,11 @@ describe('SRadio.vue', () => {
       propsData: {
         id: 'radio',
         name: 'radio',
-        label: 'Radio'
+        label: 'Radio',
       },
       listeners: {
-        input: inputEvent
-      }
+        input: inputEvent,
+      },
     })
 
     radio = wrapper.find('#radio')
@@ -35,7 +35,7 @@ describe('SRadio.vue', () => {
     const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
     // mounting component without required props
     shallowMount(SRadio)
-    expect(spy).toBeCalled()
+    expect(spy).toHaveBeenCalled()
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
@@ -63,11 +63,11 @@ describe('SRadio.vue', () => {
       propsData: {
         id: 'radio',
         name: 'radio',
-        label: 'Radio'
+        label: 'Radio',
       },
       attrs: {
-        disabled: true
-      }
+        disabled: true,
+      },
     })
 
     // verifies disabled attr is passed through to radio input element
@@ -84,7 +84,7 @@ describe('SRadio.vue', () => {
   it('can be grouped', () => {
     const groupWrapper = mount({
       components: {
-        SRadio
+        SRadio,
       },
       template: `
         <div>
@@ -101,7 +101,7 @@ describe('SRadio.vue', () => {
             value="radio-2"
           />
         </div>
-      `
+      `,
     })
 
     const radios = groupWrapper.findAll(SRadio)

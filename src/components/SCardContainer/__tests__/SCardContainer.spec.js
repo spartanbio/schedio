@@ -10,8 +10,8 @@ describe('SCardContainer.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SCardContainer, {
       slots: {
-        default: '<div>Slot content</div>'
-      }
+        default: '<div>Slot content</div>',
+      },
     })
   })
 

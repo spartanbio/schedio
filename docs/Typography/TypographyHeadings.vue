@@ -82,7 +82,8 @@
         Heading 2
       </SHeading>
       <p class="caption">
-        Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }} | Case: uppercase
+        Size: {{ tokens['font-size-4'] }} | Weight: {{ tokens['font-weight-bold'] }} |
+        Case: uppercase
       </p>
     </article>
 
@@ -91,7 +92,8 @@
         Heading 3
       </SHeading>
       <p class="caption">
-        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }} | Case: uppercase
+        Size: {{ tokens['font-size-5'] }} | Weight: {{ tokens['font-weight-bold'] }} |
+        Case: uppercase
       </p>
     </article>
 
@@ -114,15 +116,15 @@ export default {
   name: 'TypographyHeadings',
 
   components: {
-    StoryLink
+    StoryLink,
   },
 
   data: () => ({
-    tokens
-  })
+    tokens,
+  }),
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'typography.stories';
+@import "typography.stories";
 </style>

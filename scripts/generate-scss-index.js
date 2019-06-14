@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-module.exports = function generateScssIndex(componentNames) {
+module.exports = function generateScssIndex (componentNames) {
   const importList = componentNames
     .filter(name =>
       fs.existsSync(path.resolve(__dirname, `../src/components/${name}/${name}.scss`))

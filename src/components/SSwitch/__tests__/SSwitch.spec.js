@@ -6,13 +6,17 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('SSwitch.vue', () => {
-  const sizes = ['small', 'medium', 'large']
+  const sizes = [
+    'small',
+    'medium',
+    'large',
+  ]
   const inputEvent = jest.fn()
   const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
   const defaultProps = {
     id: 'toggleSwitch',
     name: 'toggleSwitch',
-    label: 'Checkbox'
+    label: 'Checkbox',
   }
   let wrapper
   let toggleSwitch
@@ -21,8 +25,8 @@ describe('SSwitch.vue', () => {
     wrapper = mount(SSwitch, {
       propsData: { ...defaultProps },
       listeners: {
-        input: inputEvent
-      }
+        input: inputEvent,
+      },
     })
 
     toggleSwitch = wrapper.find('#toggleSwitch')
@@ -41,7 +45,7 @@ describe('SSwitch.vue', () => {
     // spies on `console.error` without calling `console.error`
     // mounting component without required props
     mount(SSwitch)
-    expect(spy).toBeCalled()
+    expect(spy).toHaveBeenCalled()
     expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
@@ -75,11 +79,11 @@ describe('SSwitch.vue', () => {
       propsData: {
         id: 'toggleSwitch',
         name: 'toggleSwitch',
-        label: 'Checkbox'
+        label: 'Checkbox',
       },
       attrs: {
-        disabled: true
-      }
+        disabled: true,
+      },
     })
 
     // verifies disabled attr is passed through to toggleSwitch input element
@@ -93,15 +97,15 @@ describe('SSwitch.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  sizes.forEach(size => {
+  sizes.forEach((size) => {
     it(`can be size ${size}`, () => {
       const sizeWrapper = mount(SSwitch, {
         propsData: {
           ...defaultProps,
-          size
-        }
+          size,
+        },
       })
-      expect(spy).not.toBeCalled()
+      expect(spy).not.toHaveBeenCalled()
       expect(sizeWrapper.html()).toMatchSnapshot()
     })
   })
@@ -110,10 +114,10 @@ describe('SSwitch.vue', () => {
     mount(SSwitch, {
       propsData: {
         ...defaultProps,
-        size: 'this is not a size'
-      }
+        size: 'this is not a size',
+      },
     })
-    expect(spy).toBeCalledTimes(2)
+    expect(spy).toHaveBeenCalledTimes(2)
   })
 
   it('can hide the optional tag', () => {

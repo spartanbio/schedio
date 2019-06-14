@@ -25,12 +25,12 @@ describe('SCallout.vue', () => {
   })
 
   Promise.all(
-    types.map(type => {
+    types.map((type) => {
       it(`can have type ${type}`, async () => {
         wrapper.setProps({ type })
 
         expect(await axe(wrapper.html())).toHaveNoViolations()
-        expect(errorSpy).not.toBeCalled()
+        expect(errorSpy).not.toHaveBeenCalled()
         expect(wrapper.html()).toMatchSnapshot()
       })
     })
@@ -39,19 +39,19 @@ describe('SCallout.vue', () => {
   it('validates the `type`', () => {
     shallowMount(SCallout, {
       propsData: {
-        type: 'not a type'
-      }
+        type: 'not a type',
+      },
     })
 
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('accepts slot content', () => {
     const slotText = 'I am slot text'
     const slotWrapper = shallowMount(SCallout, {
       slots: {
-        default: slotText
-      }
+        default: slotText,
+      },
     })
 
     expect(slotWrapper.text()).toBe(slotText)

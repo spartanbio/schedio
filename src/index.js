@@ -36,7 +36,7 @@ import STextarea from './components/STextarea'
 import SToast from './components/SToast'
 
 const Schedio = {
-  install(Vue) {
+  install (Vue) {
     Vue.use(SButton)
     Vue.use(SButtonGroup)
     Vue.use(SCallout)
@@ -66,7 +66,7 @@ const Schedio = {
     Vue.use(STableRow)
     Vue.use(STextarea)
     Vue.use(SToast)
-  }
+  },
 }
 
 if (typeof window !== 'undefined' && window.Vue) Vue.use(Schedio)

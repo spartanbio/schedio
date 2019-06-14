@@ -11,17 +11,17 @@ describe('SLink.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SLink, {
       slots: {
-        default: 'link text'
+        default: 'link text',
       },
       mocks: {
-        $router: 'vue-router'
+        $router: 'vue-router',
       },
       propsData: {
-        to: 'https://spartanbio.com'
+        to: 'https://spartanbio.com',
       },
       stubs: {
-        RouterLink: RouterLinkStub
-      }
+        RouterLink: RouterLinkStub,
+      },
     })
   })
 
@@ -37,7 +37,7 @@ describe('SLink.vue', () => {
 
   it('requires a url', () => {
     shallowMount(SLink)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('detects external links and uses `a` tag for them', async () => {
@@ -50,8 +50,8 @@ describe('SLink.vue', () => {
   it('uses `a` when no router is present', () => {
     const noRouter = shallowMount(SLink, {
       propsData: {
-        to: '/about'
-      }
+        to: '/about',
+      },
     })
 
     expect(noRouter.vm.isExternalLink).toBe(false)
@@ -83,15 +83,15 @@ describe('SLink.vue', () => {
   it('detects nuxt and uses `nuxt-link` instead of `router-link`', () => {
     const nuxtWrapper = shallowMount(SLink, {
       propsData: {
-        to: '/about'
+        to: '/about',
       },
       mocks: {
         $router: 'vue-router',
-        nuxt: true
+        nuxt: true,
       },
       stubs: {
-        NuxtLink: RouterLinkStub
-      }
+        NuxtLink: RouterLinkStub,
+      },
     })
 
     expect(nuxtWrapper.vm.componentIs).toBe('nuxt-link')

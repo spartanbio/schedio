@@ -16,7 +16,7 @@ describe('STableCell.vue', () => {
             <STableCell>Content</STableCell>
           </STableRow>
         </tbody>
-      `
+      `,
     })
 
     tableCell = wrapper.find(STableCell)
@@ -37,10 +37,10 @@ describe('STableCell.vue', () => {
             <STableCell>Content</STableCell>
           </STableRow>
         </thead>
-      `
+      `,
     },
     {
-      attachToDocument: true
+      attachToDocument: true,
     }
   )
 

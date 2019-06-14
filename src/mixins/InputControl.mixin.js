@@ -5,7 +5,7 @@ import InputProps from './InputProps.mixin'
 
 export default {
   components: {
-    SLabel
+    SLabel,
   },
 
   // prevent `<label/>` from inheriting attrs
@@ -16,7 +16,7 @@ export default {
   props: {
     isReversed: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }

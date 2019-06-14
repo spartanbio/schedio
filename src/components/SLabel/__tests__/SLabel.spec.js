@@ -9,7 +9,7 @@ describe('SLabel.vue', () => {
 
   const shallowMountWrapper = (additionalProps = {}) => {
     return shallowMount(SLabel, {
-      propsData: { label: 'label', ...additionalProps }
+      propsData: { label: 'label', ...additionalProps },
     })
   }
 
@@ -31,7 +31,7 @@ describe('SLabel.vue', () => {
 
   it('requires label text', () => {
     shallowMount(SLabel)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('can be required', () => {
@@ -61,9 +61,9 @@ describe('SLabel.vue', () => {
 
   it('validates `is-fullwidth` and `is-reversed` are used with `is-inline`', () => {
     shallowMountWrapper({ isFullwidth: true })
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
 
     shallowMountWrapper({ isReversed: true })
-    expect(errorSpy).toBeCalledTimes(2)
+    expect(errorSpy).toHaveBeenCalledTimes(2)
   })
 })

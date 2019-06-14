@@ -1,16 +1,21 @@
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import { SHeading } from '@/components/SHeading'
-import { storiesOf, addParameters } from '@storybook/vue'
+import { storiesOf } from '@storybook/vue'
 
 storiesOf('Utilities/Typography', module)
   .addParameters({
     options: {
-      showPanel: false
-    }
+      showPanel: false,
+    },
   })
   .add('Alignment', () => ({
-    render(h) {
-      const alignments = ['center', 'left', 'right', 'justify']
+    render (h) {
+      const alignments = [
+        'center',
+        'left',
+        'right',
+        'justify',
+      ]
 
       return (
         <div>
@@ -27,10 +32,10 @@ storiesOf('Utilities/Typography', module)
           </p>
         </div>
       )
-    }
+    },
   }))
   .add('Color', () => ({
-    render(h) {
+    render (h) {
       const colors = Object.values(props)
         .filter(prop => prop.type === 'color')
         .map(color => color.name)
@@ -51,10 +56,10 @@ storiesOf('Utilities/Typography', module)
           </p>
         </div>
       )
-    }
+    },
   }))
   .add('Italic and Weight', () => ({
-    render(h) {
+    render (h) {
       const weights = Object.values(props)
         .filter(prop => prop.name.includes('-weight-'))
         .map(weight => weight.name.split('-').pop())
@@ -75,10 +80,10 @@ storiesOf('Utilities/Typography', module)
           </p>
         </div>
       )
-    }
+    },
   }))
   .add('Size', () => ({
-    render(h) {
+    render (h) {
       const sizes = Array.from({ length: 7 })
 
       return (
@@ -96,10 +101,10 @@ storiesOf('Utilities/Typography', module)
           </p>
         </div>
       )
-    }
+    },
   }))
   .add('Markdown', () => ({
-    render(h) {
+    render (h) {
       return (
         <div>
           <SHeading>Markdown</SHeading>
@@ -109,5 +114,5 @@ storiesOf('Utilities/Typography', module)
           </p>
         </div>
       )
-    }
+    },
   }))

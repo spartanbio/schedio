@@ -15,15 +15,15 @@ describe('STable.vue', () => {
           {
             col1: 'Cell 1',
             col2: 'Cell 2',
-            col3: 'Cell 3'
+            col3: 'Cell 3',
           },
           {
             col1: 'Cell 4',
             col2: 'Cell 5',
-            col3: 'Cell 6'
-          }
-        ]
-      }
+            col3: 'Cell 6',
+          },
+        ],
+      },
     })
   })
 
@@ -38,7 +38,7 @@ describe('STable.vue', () => {
 
   it('requires data', () => {
     mount(STable)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 
   it('allows slots to be used for data', () => {
@@ -47,11 +47,11 @@ describe('STable.vue', () => {
         caption: '<span>Caption</span>',
         header: '<tr><th>Header</th></tr>',
         default: '<tr><td>Slot content</td></tr>',
-        footer: '<tr><td>Footer</td></tr>'
-      }
+        footer: '<tr><td>Footer</td></tr>',
+      },
     })
 
-    expect(errorSpy).not.toBeCalled()
+    expect(errorSpy).not.toHaveBeenCalled()
     expect(slotWrapper.contains('caption')).toBe(true)
     expect(slotWrapper.contains('tbody')).toBe(true)
     expect(slotWrapper.contains('thead')).toBe(true)
@@ -65,7 +65,13 @@ describe('STable.vue', () => {
   })
 
   it('can override generated headers', () => {
-    wrapper.setProps({ header: ['One', 'Two', 'Three'] })
+    wrapper.setProps({
+      header: [
+        'One',
+        'Two',
+        'Three',
+      ],
+    })
     expect(wrapper.html()).toMatchSnapshot()
   })
 

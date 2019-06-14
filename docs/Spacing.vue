@@ -3,7 +3,9 @@
     <SHeading level="1">
       Spacing
     </SHeading>
-    <p>Consistent spacing allows elements to stand out. It improves scannability and reduces noise.</p>
+    <p>
+      Consistent spacing allows elements to stand out. It improves scannability and reduces noise.
+    </p>
     <p>
       All spacing is defined using the
       <code>em</code> unit. This ensures spacing is relative to the parent element's
@@ -51,20 +53,20 @@ import orderBy from 'lodash.orderby'
 export default {
   name: 'Spacing',
 
-  data() {
+  data () {
     return {
-      spacing: Object.values(props).filter(p => p.category === 'spacing')
+      spacing: Object.values(props).filter(p => p.category === 'spacing'),
     }
   },
 
   computed: {
-    orderedSpacing() {
+    orderedSpacing () {
       const sizeToNumber = size => Number(size.replace('em', ''))
       const orderFn = ({ value }) => (typeof value === 'string' ? sizeToNumber(value) : value)
 
       return orderBy(this.spacing, orderFn)
-    }
-  }
+    },
+  },
 }
 </script>
 

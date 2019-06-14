@@ -66,11 +66,11 @@ export default {
   props: {
     component: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
-  data() {
+  data () {
     return {
       PropTypeMap: new Map([
         [String, 'string'],
@@ -80,15 +80,15 @@ export default {
         [Object, 'object'],
         [Function, 'function'],
         [RegExp, 'RegExp'],
-        [Date, 'Date']
+        [Date, 'Date'],
       ]),
 
-      rawProps: {}
+      rawProps: {},
     }
   },
 
   computed: {
-    propList() {
+    propList () {
       return Object.entries(this.rawProps).reduce((list, [name, details]) => {
         const type = Array.isArray(details.type)
           ? details.type.map(type => this.PropTypeMap.get(type)).join(', ')
@@ -112,26 +112,26 @@ export default {
           name: kebabCase(name),
           type,
           defaultValue,
-          ...(details.hasOwnProperty('required') && { required: 'Required' })
+          ...(details.hasOwnProperty('required') && { required: 'Required' }),
         }
 
         return [...list, prop]
       }, [])
     },
 
-    sortedProps() {
+    sortedProps () {
       return this.orderBy(this.propList, 'name')
-    }
+    },
   },
 
-  beforeMount() {
+  beforeMount () {
     this.getProps(this.component)
   },
 
   methods: {
     orderBy,
 
-    getProps({ mixins, props }) {
+    getProps ({ mixins, props }) {
       for (let name in props) {
         if (props.hasOwnProperty(name)) {
           this.$set(this.rawProps, name, props[name])
@@ -140,7 +140,7 @@ export default {
 
       // get props recursively if comopnent has mixins
       if (mixins) mixins.forEach(mixin => this.getProps(mixin))
-    }
-  }
+    },
+  },
 }
 </script>

@@ -7,8 +7,8 @@ describe('SContainer.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(SContainer, {
       slots: {
-        default: '<div>Container Content</div>'
-      }
+        default: '<div>Container Content</div>',
+      },
     })
   })
 

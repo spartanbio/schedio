@@ -3,40 +3,40 @@ export default {
     containerParent: {
       type: String,
       default: '',
-      validator: v => !v || v[0] === '#' || console.error('`containerParent` should be an id')
+      validator: v => !v || v[0] === '#' || console.error('`containerParent` should be an id'),
     },
     // should the notification persist indefinitely?
     isIndefinite: {
       type: Boolean,
-      default: false
+      default: false,
     },
     // how long should the notification last for?
     duration: {
       type: Number,
-      default: 3000
-    }
+      default: 3000,
+    },
   },
 
-  data() {
+  data () {
     return {
       isVisible: false,
       // ensures we can have multiple, independent notification locations
       container: document.querySelector(
         `${this.containerParent || '#main'}-notifications.notification__container`
-      )
+      ),
     }
   },
 
-  beforeMount() {
+  beforeMount () {
     this.initContainer()
   },
 
-  mounted() {
+  mounted () {
     this.showNotification()
   },
 
   methods: {
-    closeNotification() {
+    closeNotification () {
       clearTimeout(this.timer)
       // hide it
       this.isVisible = false
@@ -53,7 +53,7 @@ export default {
       }, 200)
     },
 
-    showNotification() {
+    showNotification () {
       // add the notification
       this.container.appendChild(this.$el)
       // show it
@@ -65,7 +65,7 @@ export default {
     /**
      * adds the notification container if it doesn't exist
      */
-    initContainer() {
+    initContainer () {
       if (!this.container) {
         // create the container
         this.container = document.createElement('div')
@@ -79,6 +79,6 @@ export default {
         // append the container
         document.querySelector(this.containerParent || 'body').appendChild(this.container)
       }
-    }
-  }
+    },
+  },
 }

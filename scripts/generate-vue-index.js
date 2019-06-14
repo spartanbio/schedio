@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-module.exports = function generateVueIndex(componentNames) {
+module.exports = function generateVueIndex (componentNames) {
   const importList = componentNames
     .map(name => `import ${name} from './components/${name}'`)
     .join('\n')

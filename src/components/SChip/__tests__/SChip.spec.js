@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import SChip from '@/components/SChip/SChip.vue'
 import SButton from '@/components/SButton/SButton.vue'
 import { colors } from '../options'
@@ -18,8 +18,8 @@ describe('SChip.vue', () => {
     beforeEach(() => {
       wrapper = shallowMount(SChip, {
         slots: {
-          default: 'Slot content'
-        }
+          default: 'Slot content',
+        },
       })
     })
 
@@ -28,17 +28,17 @@ describe('SChip.vue', () => {
       expect(await axe(wrapper.html())).toHaveNoViolations()
     })
 
-    it.each(colors)('can have color %s', async color => {
+    it.each(colors)('can have color %s', async (color) => {
       const colorWrapper = shallowMount(SChip, { propsData: { color } })
 
-      expect(errorSpy).not.toBeCalled()
+      expect(errorSpy).not.toHaveBeenCalled()
       expect(colorWrapper.html()).toMatchSnapshot()
       expect(await axe(colorWrapper.html())).toHaveNoViolations()
     })
 
     it('validates colors', () => {
       shallowMount(SChip, { propsData: { color: 'Not a color' } })
-      expect(errorSpy).toBeCalledTimes(2)
+      expect(errorSpy).toHaveBeenCalledTimes(2)
     })
 
     it('can have its HTML tag set', () => {
@@ -52,11 +52,11 @@ describe('SChip.vue', () => {
     beforeEach(() => {
       wrapper = mount(SChip, {
         slots: {
-          default: 'Slot content'
+          default: 'Slot content',
         },
         propsData: {
-          isClosable: true
-        }
+          isClosable: true,
+        },
       })
     })
 
@@ -76,14 +76,14 @@ describe('SChip.vue', () => {
       const chips = {
         chip1: true,
         chip2: true,
-        chip3: true
+        chip3: true,
       }
       const closeWrapper = mount({
         name: 'CloseWrapper',
         components: { SChip },
-        data() {
+        data () {
           return {
-            chips
+            chips,
           }
         },
         template: `
@@ -97,7 +97,7 @@ describe('SChip.vue', () => {
               {{ chip }}
             </SChip>
           </div>
-        `
+        `,
       })
 
       const chipComponents = closeWrapper.findAll(SChip)
@@ -121,7 +121,7 @@ describe('SChip.vue', () => {
       wrapper = mount({
         components: { SChip },
         data: () => ({ chip: true }),
-        template: `<SChip is-closable="true" v-model="chip">Chip</SChip>`
+        template: `<SChip is-closable="true" v-model="chip">Chip</SChip>`,
       })
       wrapper.find(SButton).trigger('click')
       expect(wrapper.find(SChip).attributes('aria-hidden')).toBe('true')

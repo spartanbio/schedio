@@ -15,22 +15,22 @@ export default {
   props: {
     to: {
       type: String,
-      required: true
+      required: true,
     },
 
     story: {
       type: String,
-      default: undefined
+      default: undefined,
     },
 
     linkText: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   computed: {
-    text() {
+    text () {
       return (
         this.linkText ||
         this.to
@@ -38,13 +38,13 @@ export default {
           .split('.')
           .pop()
       ).trim()
-    }
+    },
   },
 
   methods: {
-    navigate(kind, story) {
+    navigate (kind, story) {
       linkTo(kind, story)()
-    }
-  }
+    },
+  },
 }
 </script>

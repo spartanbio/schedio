@@ -1,1 +1,6 @@
-export const states = ['', 'success', 'warning', 'error']
+export const states = [
+  '',
+  'success',
+  'warning',
+  'error',
+]

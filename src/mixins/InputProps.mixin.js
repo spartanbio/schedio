@@ -3,32 +3,32 @@ export default {
   props: {
     id: {
       type: String,
-      required: true
+      required: true,
     },
 
     name: {
       type: String,
-      required: true
+      required: true,
     },
 
     label: {
       type: String,
-      required: true
+      required: true,
     },
 
     required: {
       type: Boolean,
-      default: true
+      default: true,
     },
 
     hideOptional: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isInvalid: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }

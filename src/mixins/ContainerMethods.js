@@ -7,7 +7,7 @@ export default {
      * @param {(string|RegExp)} modifier - Class modifier (i.e.: size, narrow, order, offset)
      * @returns {Object.<string, (number|string|boolean)>}
      */
-    getClassNameProps(modifier) {
+    getClassNameProps (modifier) {
       const pattern = modifier instanceof RegExp ? modifier : new RegExp(modifier)
 
       return Object.keys(this.$props).reduce((classes, className) => {
@@ -25,9 +25,9 @@ export default {
      * @param {(string|RegExp)} modifier - Class modifier (i.e.: size, narrow, order, offset)
      * @returns {Array.<string>}
      */
-    generateResponsiveClassNames(modifier) {
+    generateResponsiveClassNames (modifier) {
       const classes = this.getClassNameProps(modifier)
       return Object.keys(classes).reduce(this.classNameReducer(classes), [])
-    }
-  }
+    },
+  },
 }

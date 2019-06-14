@@ -20,7 +20,8 @@
             style="width: 100%;"
             @change="() => {
               emitInput()
-              displayColor = convertedColors[colorMode]}"
+              displayColor = convertedColors[colorMode]
+            }"
           />
         </SFormField>
       </SContainerColumn>
@@ -76,7 +77,9 @@
           </SFormField>
 
           <SFormField>
-            <SCallout>Input will be converted to six-character hex if it is a valid color.</SCallout>
+            <SCallout>
+              Input will be converted to six-character hex if it is a valid color.
+            </SCallout>
           </SFormField>
         </SContainerColumn>
 
@@ -125,120 +128,148 @@ const defaultCanvasProperties = {
   y: 0,
   ctx: null,
   rect: null,
-  shouldFollow: false
+  shouldFollow: false,
 }
 
 export default {
   name: 'ColorPicker',
 
   filters: {
-    stringifyColor
+    stringifyColor,
   },
 
   model: {
     event: 'input',
-    prop: 'color'
+    prop: 'color',
   },
 
   props: {
     color: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
-  data() {
+  data () {
     return {
       pickedColor: 'rgb(0, 0, 0)',
       picker: { ...defaultCanvasProperties },
       hue: { ...defaultCanvasProperties },
-      colorSpaces: ['rgb', 'hex', 'hsl'],
+      colorSpaces: [
+        'rgb',
+        'hex',
+        'hsl',
+      ],
       colorMode: 'rgb',
       displayColor: [],
       hsl: {
         h: 0,
         s: 100,
-        l: 50
+        l: 50,
       },
       value: null,
       colorMaxes: {
-        rgb: [255, 255, 255],
-        hsl: [360, 100, 100]
-      }
+        rgb: [
+          255,
+          255,
+          255,
+        ],
+        hsl: [
+          360,
+          100,
+          100,
+        ],
+      },
     }
   },
 
   computed: {
-    previewStyle() {
+    previewStyle () {
       const { h, s, l } = this.hsl
 
       return {
-        backgroundColor: `hsl(${h}, ${s}%, ${l}%)`
+        backgroundColor: `hsl(${h}, ${s}%, ${l}%)`,
       }
     },
 
-    convertedColors() {
+    convertedColors () {
       const hsl = Object.values(this.hsl)
       const rgb = this.roundColorValues(convert.hsl.rgb(hsl))
 
       return {
         rgb,
         hex: this.roundColorValues(convert.rgb.hex(rgb)),
-        hsl: this.roundColorValues(hsl)
+        hsl: this.roundColorValues(hsl),
       }
-    }
+    },
   },
 
   watch: {
-    color(val) {
+    color (val) {
       if (val) this.pickedColor = val
 
       this.displayColor = this.convertedColors[this.colorMode]
     },
 
-    displayColor(val) {
+    displayColor (val) {
       const colorModes = {
         rgb: () => {
-          const [h, s, l] = convert.rgb.hsl(val)
+          const [
+            h,
+            s,
+            l,
+          ] = convert.rgb.hsl(val)
           return { h, s, l }
         },
         hsl: () => {
-          const [h, s, l] = val
+          const [
+            h,
+            s,
+            l,
+          ] = val
           return { h, s, l }
         },
         hex: () => {
           if (val.replace('#', '').length >= 3) {
             const toParse = val.includes('#') ? val : `#${val}`
             const rgb = parse(toParse)
-            const [h, s, l] = convert.rgb.hsl(rgb)
+            const [
+              h,
+              s,
+              l,
+            ] = convert.rgb.hsl(rgb)
 
             return { h, s, l }
           } else {
             return this.hsl
           }
-        }
+        },
       }
 
       this.hsl = colorModes[this.colorMode]()
     },
 
-    pickedColor(val) {
+    pickedColor (val) {
       this.$emit('input', val)
     },
 
-    'hsl.h'(val) {
+    'hsl.h' (val) {
       this.applyHue(this.picker.ctx)
       this.buildLightnessGradient(this.picker.ctx)
       this.buildSaturationGradient(this.picker.ctx)
-    }
+    },
   },
 
-  mounted() {
+  mounted () {
     if (!this.color) this.$emit('input', this.pickedColor)
 
     if (this.color) {
       const rgbColor = parse(this.color)
-      const [h, s, l] = convert.rgb.hsl(rgbColor)
+      const [
+        h,
+        s,
+        l,
+      ] = convert.rgb.hsl(rgbColor)
       this.hsl.h = h
       this.hsl.s = s
       this.hsl.l = l
@@ -250,7 +281,7 @@ export default {
   },
 
   methods: {
-    buildColorPalette() {
+    buildColorPalette () {
       this.hue.ctx = this.$refs.hues.getContext('2d')
       this.hue.rect = this.$refs.hues.getBoundingClientRect()
       this.picker.ctx = this.$refs.colorPalette.getContext('2d')
@@ -264,7 +295,7 @@ export default {
       this.buildSaturationGradient(this.picker.ctx)
     },
 
-    buildHueGradient(context) {
+    buildHueGradient (context) {
       const colorGradient = context.createLinearGradient(0, 0, 0, context.canvas.height)
       colorGradient.addColorStop(0, 'rgb(255, 0, 0)') // red
       colorGradient.addColorStop(0.84, 'rgb(255, 255, 0)') // yellow
@@ -278,12 +309,12 @@ export default {
       context.fillRect(0, 0, context.canvas.width, context.canvas.height)
     },
 
-    applyHue(context) {
+    applyHue (context) {
       context.fillStyle = `hsl(${this.hsl.h}, 100%, 50%)`
       context.fillRect(0, 0, context.canvas.width, context.canvas.height)
     },
 
-    buildLightnessGradient(context) {
+    buildLightnessGradient (context) {
       const lightGradient = context.createLinearGradient(0, 0, context.canvas.width, 0)
       lightGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
       lightGradient.addColorStop(1, 'rgba(255, 255, 255, 0)')
@@ -292,7 +323,7 @@ export default {
       context.fillRect(0, 0, context.canvas.width, context.canvas.height)
     },
 
-    buildSaturationGradient(context) {
+    buildSaturationGradient (context) {
       const darkGradient = context.createLinearGradient(0, 0, 0, context.canvas.height)
       darkGradient.addColorStop(0, 'rgba(0, 0, 0, 0)')
       darkGradient.addColorStop(1, 'rgba(0, 0, 0, 1)')
@@ -301,32 +332,36 @@ export default {
       context.fillRect(0, 0, context.canvas.width, context.canvas.height)
     },
 
-    startFollow(canvas, event) {
+    startFollow (canvas, event) {
       this[canvas].shouldFollow = true
       this.setCoordinates(canvas, event)
     },
 
-    followInput: throttle(function(canvas, event) {
+    followInput: throttle(function (canvas, event) {
       if (!this[canvas].shouldFollow) return
 
       this.setCoordinates(canvas, event)
       this.pickColor(canvas)
     }, 50),
 
-    endFollow(canvas) {
+    endFollow (canvas) {
       this[canvas].shouldFollow = false
     },
 
-    setCoordinates(canvas, event) {
+    setCoordinates (canvas, event) {
       const { pageX, pageY } = event.touches ? event.touches[0] : event
       // get coordinates relative to canvas bounding box
       if (this[canvas].hasOwnProperty('x')) this[canvas].x = pageX - this[canvas].rect.left
       if (this[canvas].hasOwnProperty('y')) this[canvas].y = pageY - this[canvas].rect.top
     },
 
-    pickColor(canvas) {
+    pickColor (canvas) {
       const { data } = this[canvas].ctx.getImageData(this[canvas].x, this[canvas].y, 1, 1)
-      const [h, s, l] = convert.rgb.hsl(data)
+      const [
+        h,
+        s,
+        l,
+      ] = convert.rgb.hsl(data)
 
       if (canvas === 'hue') {
         this.hsl.h = Math.round(h)
@@ -338,22 +373,22 @@ export default {
       this.emitInput()
     },
 
-    emitInput() {
+    emitInput () {
       const { colorMode: mode } = this
       this.pickedColor = this.stringifyColor(this.convertedColors[mode], mode)
       this.$emit('input', this.pickedColor)
     },
 
-    roundColorValues(values) {
+    roundColorValues (values) {
       return Array.isArray(values) ? values.map(val => Math.round(val)) : values
     },
 
     stringifyColor,
 
-    debounceInput: debounce(function() {
+    debounceInput: debounce(function () {
       this.emitInput()
-    }, 300)
-  }
+    }, 300),
+  },
 }
 </script>
 
@@ -367,11 +402,11 @@ export default {
   }
 
   &__preview {
-    border: 1px solid color('night', 'lighter');
-    border-radius: border-radius('small');
-    height: spacing('triple');
-    margin-right: spacing('half');
-    width: spacing('triple');
+    border: 1px solid color("night", "lighter");
+    border-radius: border-radius("small");
+    height: spacing("triple");
+    margin-right: spacing("half");
+    width: spacing("triple");
   }
 }
 </style>

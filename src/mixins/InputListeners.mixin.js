@@ -1,15 +1,15 @@
 export default {
   computed: {
-    listeners() {
+    listeners () {
       return {
         ...this.$listeners,
-        input: event => {
+        input: (event) => {
           this.$emit(
             'input',
             event.target.type === 'checkbox' ? event.target.checked : event.target.value
           )
-        }
+        },
       }
-    }
-  }
+    },
+  },
 }

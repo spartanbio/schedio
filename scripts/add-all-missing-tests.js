@@ -5,15 +5,15 @@ const path = require('path')
 
 const workingDir = path.resolve(__dirname, '../src/components')
 
-const generateTests = files => {
+const generateTests = (files) => {
   const testsToGenerate = files.map(fileName => addUnitTest(fileName))
   return Promise.all(testsToGenerate)
 }
 
-const logGeneratedTests = successfulFiles => {
+const logGeneratedTests = (successfulFiles) => {
   console.log(chalk.green('Successfully generated tests for:'))
 
-  successfulFiles.forEach(file => {
+  successfulFiles.forEach((file) => {
     if (typeof file === 'string') console.log(chalk.green(`  - ${file}`))
   })
 }

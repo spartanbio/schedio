@@ -7,18 +7,18 @@ import Spacing from '@@/docs/Spacing'
 import TypographyBase from '@@/docs/Typography/TypographyBase'
 import TypographyHeadings from '@@/docs/Typography/TypographyHeadings'
 import TypographyPrint from '@@/docs/Typography/TypographyPrint.vue'
-import { storiesOf, addParameters } from '@storybook/vue'
+import { storiesOf } from '@storybook/vue'
 
 const hideAddons = {
   options: {
-    showPanel: false
-  }
+    showPanel: false,
+  },
 }
 
 storiesOf('* Design/Assets', module)
   .addParameters(hideAddons)
   .add('Design Assets', () => ({
-    render(h) {
+    render (h) {
       return (
         <div>
           <SHeading>Design assets</SHeading>
@@ -29,16 +29,20 @@ storiesOf('* Design/Assets', module)
           </p>
         </div>
       )
-    }
+    },
   }))
 
 storiesOf('* Design/Color', module)
   .addParameters(hideAddons)
   .add('Color', () => ({ render: h => <Color /> }))
-  .add('Accessibility', () => ({ render: h => <ColorAccessibility /> }), hideAddons)
+  .add(
+    'Accessibility',
+    () => ({ render: h => <ColorAccessibility /> }),
+    hideAddons
+  )
 
 storiesOf('* Design/Interaction', module).add('Interaction', () => ({
-  render: h => <Interaction />
+  render: h => <Interaction />,
 }))
 
 storiesOf('* Design/Graphics', module)

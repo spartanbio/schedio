@@ -5,7 +5,7 @@ import InputProps from './InputProps.mixin'
 
 export default {
   components: {
-    SLabel
+    SLabel,
   },
 
   inheritAttrs: false,
@@ -15,17 +15,17 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: ''
+      default: '',
     },
 
     isInline: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isFullwidth: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }

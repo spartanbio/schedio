@@ -1,6 +1,6 @@
 import { colors as iconColors } from '@/components/SIcon/options'
 import STextarea from '@/components/STextarea/STextarea.vue'
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import icons from 'feather-icons/dist/icons.json'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
@@ -17,11 +17,11 @@ describe('STextarea.vue', () => {
       propsData: {
         id: 'textarea',
         name: 'textarea',
-        label: 'textarea'
+        label: 'textarea',
       },
       listeners: {
-        input: inputEvent
-      }
+        input: inputEvent,
+      },
     })
   })
 
@@ -37,7 +37,7 @@ describe('STextarea.vue', () => {
   it('requires required props', () => {
     // mounting component without required props
     shallowMount(STextarea)
-    expect(errorSpy).toBeCalled()
+    expect(errorSpy).toHaveBeenCalled()
     expect(errorSpy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
@@ -76,10 +76,10 @@ describe('STextarea.vue', () => {
   it('can set each icon color', () => {
     wrapper.setProps({
       iconLeftColor: iconColors[0],
-      iconRightColor: iconColors[1]
+      iconRightColor: iconColors[1],
     })
 
-    expect(errorSpy).not.toBeCalled()
+    expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
     expect(wrapper.html()).toMatchSnapshot()
   })
