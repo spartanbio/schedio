@@ -6,7 +6,7 @@ import icons from 'feather-icons/dist/icons.json'
 const iconList = Object.keys(icons)
 
 describe('SIcon.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   beforeEach(() => {
@@ -39,7 +39,7 @@ describe('SIcon.vue', () => {
   options.colors.forEach((color) => {
     it(`can be ${color}`, () => {
       wrapper.setProps({ color })
-      expect(wrapper.contains(`.icon--color-${color}`))
+      expect(wrapper.contains(`.icon--color-${color}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
@@ -52,7 +52,7 @@ describe('SIcon.vue', () => {
   options.sizes.forEach((size) => {
     it(`can be ${size}`, () => {
       wrapper.setProps({ size })
-      expect(wrapper.contains(`.icon--size-${size}`))
+      expect(wrapper.contains(`.icon--size-${size}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
