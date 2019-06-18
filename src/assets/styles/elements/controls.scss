@@ -1,6 +1,6 @@
 @mixin control-border-shadow {
-  box-shadow: 0 0 0 2px color('spartan_blue', 'light'), shadow();
   border-color: transparent;
+  box-shadow: 0 0 0 2px color('spartan_blue', 'light'), shadow();
 }
 
 @mixin control-focused {
@@ -64,6 +64,7 @@
 
 @mixin control-with-icons {
   $root-class: &;
+
   display: block;
   position: relative;
 
@@ -131,11 +132,11 @@
     transition: all duration() easing(), outline 0ms, outline-offset 0ms;
     width: 1em;
 
-    @content;
-
     &--invalid {
       @include control-invalid;
     }
+
+    @content;
   }
 
   &:disabled ~ &__check {
@@ -170,14 +171,6 @@
 @mixin switch-size($switch-size: 'base') {
   $toggle-size: 1.5em;
 
-  @if $switch-size == 'base' {
-    $toggle-size: 1.5em;
-  } @else if $switch-size == 'medium' {
-    $toggle-size: 2em;
-  } @else if $switch-size == 'large' {
-    $toggle-size: 3em;
-  }
-
   border-radius: $toggle-size;
   height: $toggle-size;
   min-width: 2 * $toggle-size;
@@ -187,12 +180,21 @@
     height: $toggle-size;
     width: $toggle-size;
   }
+
+  @if $switch-size == 'base' {
+    $toggle-size: 1.5em;
+  } @else if $switch-size == 'medium' {
+    $toggle-size: 2em;
+  } @else if $switch-size == 'large' {
+    $toggle-size: 3em;
+  }
 }
 
 @mixin switch {
-  @include check-or-radio;
   // save the parent to make nesting easier
   $parent: &;
+
+  @include check-or-radio;
 
   & ~ &__check {
     @include switch-size;
@@ -220,6 +222,7 @@
 
   &:focus ~ &__check {
     @include control-focused;
+
     box-shadow: shadow() !important;
   }
 

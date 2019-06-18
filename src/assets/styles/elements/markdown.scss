@@ -13,6 +13,7 @@
 
   h4 {
     @include font-size(5);
+
     text-transform: none;
   }
 
@@ -22,6 +23,7 @@
 
   h6 {
     @include font-size(6);
+
     font-weight: $font-weight-regular;
   }
 
@@ -32,8 +34,8 @@
   h5,
   h6 {
     font-weight: $font-weight-bold;
-    margin-top: 2rem;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     text-transform: uppercase;
 
     &:first-child {
@@ -64,10 +66,10 @@
       // Percentages are favoured over ems as measurements are based on line-height.
       bottom: 10%;
       content: '';
-      // Give it just a bit of visual padding
-      left: -1 * $highlight-spacing;
       // Approximately align top with baseline
       height: 20%;
+      // Give it just a bit of visual padding
+      left: -1 * $highlight-spacing;
       position: absolute;
       transition: all duration('fast') easing();
       // Adjusts for left offset
@@ -107,8 +109,8 @@
   iframe,
   object,
   embed {
-    left: 0;
     height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
     width: 100%;

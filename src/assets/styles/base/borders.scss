@@ -29,11 +29,11 @@
 $borders-width: (
   'base': 1px,
   'thick': 2px,
-  'thickest': 4px
+  'thickest': 4px,
 );
 
 $borders-data: (
   'light': border-width() solid color('night', 'lightest'),
   'base': border-width() solid color('night', 'lighter'),
-  'dark': border-width() solid color('night', 'light')
+  'dark': border-width() solid color('night', 'light'),
 );

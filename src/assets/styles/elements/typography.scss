@@ -5,8 +5,8 @@ html {
 
 * {
   &,
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     box-sizing: inherit;
   }
 }
@@ -14,14 +14,15 @@ html {
 html,
 body {
   @include font-size(5);
+
   color: color('night');
   font-family: $font-family-sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-regular;
   margin: spacing('none');
-  text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
 }
 
 code,
@@ -127,6 +128,7 @@ ul.no-bullets {
 
 .caption {
   @include font-size(6);
+
   color: color('night', 'lighter');
   font-weight: $font-weight-regular;
 

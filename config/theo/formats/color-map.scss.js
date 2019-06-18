@@ -34,7 +34,8 @@ class ColorMap {
       .map(palettes => this.renderPalette(palettes))
       // `\n  ` formats indent
       .join(',\n  ')}
-);`
+);
+`
   }
 }
 

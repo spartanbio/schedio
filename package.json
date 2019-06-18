@@ -44,6 +44,7 @@
     "@semantic-release/release-notes-generator": "^7.1.4",
     "@spartanbio/eslint-config": "^1.0.4",
     "@spartanbio/eslint-config-vue": "^1.0.0",
+    "@spartanbio/stylelint-config-scss": "^1.0.2",
     "@storybook/addon-a11y": "^5.1.4",
     "@storybook/addon-jest": "^5.1.4",
     "@storybook/addon-knobs": "^5.1.4",

@@ -9,7 +9,7 @@ expect.extend(toHaveNoViolations)
 
 describe('SFileInput.vue', () => {
   let wrapper
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
 
   // mock files
   const fileA = new MockFile({
@@ -212,22 +212,24 @@ describe('SFileInput.vue', () => {
       expect(wrapper.html()).toMatchSnapshot()
     })
 
-    it.each`
-      event          | handlers                         | includesClass                      | excludesClass
-      ${'dragenter'} | ${['handleDragenter']}           | ${'file-input__display--dragover'} | ${''}
-      ${'dragover'}  | ${['handleDragover']}            | ${''}                              | ${''}
-      ${'dragleave'} | ${['handleDragleave']}           | ${''}                              | ${'file-input__display--dragover'}
-      ${'drop'}      | ${['handleDrop', 'handleFiles']} | ${''}                              | ${''}
-    `('handles $event correctly', ({ event, handlers, includesClass, excludesClass }) => {
-  const spies = new Map(handlers.map(handler => [handler, jest.spyOn(wrapper.vm, handler)]))
+    const events = [
+      ['dragenter', ['handleDragenter'], 'file-input__display--dragover', ''],
+      ['dragover', ['handleDragover'], '', ''],
+      ['dragleave', ['handleDragleave'], '', 'file-input__display--dragover'],
+      ['drop', ['handleDrop', 'handleFiles'], '', ''],
+    ]
 
-  spies.forEach((spy, handler) => wrapper.setMethods({ [handler]: spy }))
-  display.trigger(event)
+    it.each(events)('handles "%s" correctly', (event, handlers, included, excluded) => {
+      const spies = new Map(handlers.map(handler => [handler, jest.spyOn(wrapper.vm, handler)]))
 
-  spies.forEach(spy => expect(spy).toHaveBeenCalled())
-  if (includesClass) expect(display.classes()).toContain(includesClass)
-  if (excludesClass) expect(display.classes()).not.toContain(excludesClass)
-  expect(wrapper.html()).toMatchSnapshot()
-})
+      spies.forEach((spy, handler) => wrapper.setMethods({ [handler]: spy }))
+      display.trigger(event)
+      spies.forEach(spy => expect(spy).toHaveBeenCalled())
+
+      if (included) expect(display.classes()).toContain(included)
+      if (excluded) expect(display.classes()).not.toContain(excluded)
+
+      expect(wrapper.html()).toMatchSnapshot()
+    })
   })
 })

@@ -10,7 +10,6 @@
   &:disabled,
   &:disabled:hover {
     @include control-disabled;
-
   }
 }
 
@@ -28,8 +27,8 @@
   background-color: transparent;
   border: border();
   border-color: transparent;
-  color: color('spartan_blue', 'light');
   border-radius: border-radius('small');
+  color: color('spartan_blue', 'light');
   display: inline-flex;
   padding: spacing('half') spacing();
   transition: all duration() easing(), outline 0ms, outline-offset 0ms;
