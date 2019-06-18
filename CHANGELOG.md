@@ -1,3 +1,10 @@
+## [3.4.4](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.3...v3.4.4) (2019-06-18)
+
+
+### Bug Fixes
+
+* **fonts:** removes fonts from main bundle ([3da1325](https://gitlab.com/spartanbio-ux/schedio/commit/3da1325))
+
 ## [3.4.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.2...v3.4.3) (2019-06-14)
 
 
