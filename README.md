@@ -1,8 +1,10 @@
 # schedio-design
 
-Docs status: [![Netlify Status](https://api.netlify.com/api/v1/badges/aed4d7e6-2fb2-4c4d-bc03-6eccf5598462/deploy-status)](https://app.netlify.com/sites/spartanbio-design/deploys)
+Docs status:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aed4d7e6-2fb2-4c4d-bc03-6eccf5598462/deploy-status)](https://app.netlify.com/sites/spartanbio-design/deploys)
 
-Build status: [![pipeline status](https://gitlab.com/spartanbio-marketing/schedio/badges/master/pipeline.svg)](https://gitlab.com/spartanbio-marketing/schedio/commits/master)
+Build status:
+[![pipeline status](https://gitlab.com/spartanbio-marketing/schedio/badges/master/pipeline.svg)](https://gitlab.com/spartanbio-marketing/schedio/commits/master)
 
 [Spartan's design system](https://spartanbio-design.netlify.com).
 
@@ -18,7 +20,7 @@ Built for [Vue](https://vuejs.org) with [Theo](https://github.com/salesforce-ux/
 ## Installation
 
 ```bash
-$ npm install gitlab:spartanbio-marketing/schedio
+$ yarn add gitlab:spartanbio-marketing/schedio
 ```
 
 ## Usage
@@ -47,24 +49,27 @@ Vue.use(SContainer)
 
 Components can also be registered locally:
 
-<!-- prettier-ignore-start -->
 ```vue
+<!-- ALocalComponent.vue -->
+
+<script>
 import { SButton } from 'schedio-design'
 
 export default {
   name: 'ALocalComponent',
   components: {
-    SButton
-  }
+    SButton,
+  },
 }
+</script>
 ```
-<!-- prettier-ignore-end -->
 
-Place the required fonts in a directory relative to the web root.
+**N.B.:** Fonts are not included in this bundle.
 
 ### SCSS Resources
 
-SCSS can be used with `sass` and `sass-loader` by importing `'schedio-design/src/assets/styles.scss'`
+SCSS can be used with `sass` and `sass-loader` by importing
+`'schedio-design/src/assets/styles.scss'`
 
 To use SCSS resources, import the following in this order:
 
@@ -81,8 +86,6 @@ $ cd schedio && npm install
 # work should not be committed to master
 $ git checkout -b <feature-branch>
 ```
-
-> Make sure to run the terminal as an administrator.
 
 `@` and `~` have been aliased to `src/` in webpack. `@@` and `~~` have also been aliased to the
 project root.

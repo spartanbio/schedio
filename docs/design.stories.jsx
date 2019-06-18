@@ -7,13 +7,32 @@ import Spacing from '@@/docs/Spacing'
 import TypographyBase from '@@/docs/Typography/TypographyBase'
 import TypographyHeadings from '@@/docs/Typography/TypographyHeadings'
 import TypographyPrint from '@@/docs/Typography/TypographyPrint.vue'
+import markdownContent from '@@/README.md'
 import { storiesOf } from '@storybook/vue'
+import 'highlight.js/styles/nord.css'
+import './reset-pre.css'
+import showdown from 'showdown'
+import showdownHighlight from 'showdown-highlight'
 
 const hideAddons = {
   options: {
     showPanel: false,
   },
 }
+const converter = new showdown.Converter({
+  extensions: [showdownHighlight],
+})
+const readme = converter.makeHtml(markdownContent)
+
+storiesOf('* Design/Library', module)
+  .addParameters(hideAddons)
+  .add('README', () => ({
+    template: `\
+<div class="markdown">
+  ${readme}
+</div>\
+`,
+  }))
 
 storiesOf('* Design/Assets', module)
   .addParameters(hideAddons)
@@ -35,11 +54,7 @@ storiesOf('* Design/Assets', module)
 storiesOf('* Design/Color', module)
   .addParameters(hideAddons)
   .add('Color', () => ({ render: h => <Color /> }))
-  .add(
-    'Accessibility',
-    () => ({ render: h => <ColorAccessibility /> }),
-    hideAddons
-  )
+  .add('Accessibility', () => ({ render: h => <ColorAccessibility /> }), hideAddons)
 
 storiesOf('* Design/Interaction', module).add('Interaction', () => ({
   render: h => <Interaction />,

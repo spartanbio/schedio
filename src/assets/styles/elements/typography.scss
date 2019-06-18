@@ -38,6 +38,10 @@ code {
 
 pre {
   padding: spacing('half') spacing();
+
+  code {
+    padding: 0;
+  }
 }
 
 h1,
