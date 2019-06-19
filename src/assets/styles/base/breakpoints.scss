@@ -2,14 +2,14 @@ $container-breakpoints: (
   sm: 32em,
   md: 44em,
   lg: 60em,
-  xl: 72em
+  xl: 72em,
 );
 
 $media-breakpoints: (
   sm: 36em,
   md: 48em,
   lg: 64em,
-  xl: 76em
+  xl: 76em,
 );
 
 @mixin after-breakpoint($name, $breakpoints: $media-breakpoints) {
