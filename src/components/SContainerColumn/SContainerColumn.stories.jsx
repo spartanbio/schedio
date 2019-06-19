@@ -10,7 +10,7 @@ import PropList from '@@/docs/components/PropList'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainerColumn' })
-  .add('Container Column', function SContainerColumnDocs() {
+  .add('Container Column', function SContainerColumnDocs () {
     // get sorted column props from component
     const columnPropNames = orderBy(Object.keys(SContainerColumn.props))
 
@@ -21,16 +21,19 @@ storiesOf('Components/Layout.SContainer', module)
     // convert props to storybook knobs
     const sizeProps = columnPropNames
       .filter(propName => mobileBreakpoints.includes(propName))
-      .reduce((p, n) => ({ ...p, [n]: select(n, colSizes, '', 'Sizes') }), {})
+      .reduce((props, name) => ({
+        ...props,
+        [name]: select(name, [false, true, ...colSizes.filter(val => val)], false, 'Sizes'),
+      }), {})
 
     const offsetProps = columnPropNames
       .filter(propName => /^offset/.test(propName))
-      .reduce((p, n) => ({ ...p, [n]: select(n, colSizes, '', 'Offsets') }), {})
+      .reduce((props, name) => ({ ...props, [name]: select(name, colSizes, '', 'Offsets') }), {})
 
     const orderProps = columnPropNames.filter(propName => /^order/.test(propName)).reduce(
-      (p, n) => ({
-        ...p,
-        [n]: select(n, { ...colSizes, first: 'first', last: 'last' }, '', 'Order')
+      (props, name) => ({
+        ...props,
+        [name]: select(name, { ...colSizes, first: 'first', last: 'last' }, '', 'Order'),
       }),
       {}
     )
@@ -47,12 +50,13 @@ storiesOf('Components/Layout.SContainer', module)
             ...sizeProps,
             ...offsetProps,
             ...orderProps,
-            ...narrowBreakpoints
-          })
-        }
+            ...narrowBreakpoints,
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         const { props } = this.$props
+
         return (
           <div>
             <SHeading level="1">Columns</SHeading>
@@ -139,6 +143,7 @@ storiesOf('Components/Layout.SContainer', module)
                 <SContainerColumn {...{ props }} style="border: 2px solid red">
                   Column 1 content
                 </SContainerColumn>
+
                 <SContainerColumn style="border: 2px solid red">Column 2 content</SContainerColumn>
               </SContainerRow>
             </SContainer>
@@ -146,6 +151,6 @@ storiesOf('Components/Layout.SContainer', module)
             <PropList component={SContainerColumn} />
           </div>
         )
-      }
+      },
     }
   })

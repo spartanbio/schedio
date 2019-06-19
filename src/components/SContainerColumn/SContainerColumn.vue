@@ -12,13 +12,13 @@ import ContainerMethods from '@/mixins/ContainerMethods'
 import mobileBreakpoints from '@/components/SContainer/mobile-breakpoints'
 
 // Validator function for most $props
-const sizeValidator = value => {
+const sizeValidator = (value) => {
   if (Number(value) > 12) return console.error('Value cannot exceed 12')
   return true
 }
 
 // Validator function for $props.order*
-const orderValidator = value => {
+const orderValidator = (value) => {
   if (!value) return true
 
   if (!['first', 'last'].includes(value) || Number(value > 12)) {
@@ -30,19 +30,19 @@ const orderValidator = value => {
 
 // Default props. Function allows reuse and cusomization.
 const propSettings = ({ types = [], validator = sizeValidator, defaultVal = '' } = {}) => ({
-  type: [Number, String, ...types],
+  type: [...types, Number, String],
   default: defaultVal,
-  validator
+  validator,
 })
 
 const narrowSettings = () => ({
   type: Boolean,
-  default: false
+  default: false,
 })
 
 // set up all $props relying on mobile breakpoints
 const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
-  props[breakpoint] = propSettings({ types: [Boolean] })
+  props[breakpoint] = propSettings({ types: [Boolean], defaultVal: false })
   props[`narrow-after-${breakpoint}`] = narrowSettings()
   props[`narrow-until-${breakpoint}`] = narrowSettings()
   props[`offset-${breakpoint}`] = propSettings()
@@ -64,13 +64,13 @@ export default {
     size: propSettings(),
     offset: propSettings(),
     narrow: narrowSettings(),
-    order: propSettings({ validator: orderValidator })
+    order: propSettings({ validator: orderValidator }),
     /* eslint-enable */
   },
 
-  data() {
+  data () {
     return {
-      mobileBreakpoints
+      mobileBreakpoints,
     }
   },
 
@@ -78,7 +78,7 @@ export default {
     /**
      * @returns {Array.<string>}
      */
-    responsiveSizeClasses() {
+    responsiveSizeClasses () {
       const breakpointModifiers = `(${this.mobileBreakpoints.join('|')})`
       return this.generateResponsiveClassNames(breakpointModifiers)
     },
@@ -86,28 +86,28 @@ export default {
     /**
      * @returns {Array.<string>}
      */
-    responsiveNarrowClasses() {
+    responsiveNarrowClasses () {
       return this.generateResponsiveClassNames('narrow')
     },
 
     /**
      * @returns {Array.<string>}
      */
-    responsiveOffsetClasses() {
+    responsiveOffsetClasses () {
       return this.generateResponsiveClassNames('offset')
     },
 
     /**
      * @returns {Array.<string>}
      */
-    responsiveOrderClasses() {
+    responsiveOrderClasses () {
       return this.generateResponsiveClassNames('order')
     },
 
     /**
      * @returns {Array.<string>}
      */
-    classList() {
+    classList () {
       const columnSize = this.size ? `column--${this.size}` : ''
 
       // concatenate all responsive classes from computed properties
@@ -115,7 +115,7 @@ export default {
         (classes, key) => (/responsive(.*)Classes/.test(key) ? classes.concat(this[key]) : classes),
         [columnSize]
       )
-    }
+    },
   },
 
   methods: {
@@ -126,7 +126,7 @@ export default {
       // e.g.: 'column--sm-1', 'column--offset-md-1', 'column--narrow-until-lg'
       if (classes[key]) return acc.concat(`column--${key}-${classes[key]}`)
       return acc
-    }
-  }
+    },
+  },
 }
 </script>
