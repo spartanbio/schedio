@@ -1,3 +1,10 @@
+## [3.4.5](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.4...v3.4.5) (2019-06-19)
+
+
+### Bug Fixes
+
+* **container-column:** ensures size props will be parsed as `boolean` ([0fef1d5](https://gitlab.com/spartanbio-ux/schedio/commit/0fef1d5))
+
 ## [3.4.4](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.3...v3.4.4) (2019-06-18)
 
 

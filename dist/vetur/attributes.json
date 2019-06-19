@@ -80,8 +80,8 @@
     "type": "boolean"
   },
   "s-container-column/sm": {
-    "description": "One of number, string, or boolean.",
-    "type": "number|string|boolean"
+    "description": "One of boolean, number, or string.",
+    "type": "boolean|number|string"
   },
   "s-container-column/narrow-after-sm": {
     "description": "Boolean value.",
@@ -100,8 +100,8 @@
     "type": "number|string"
   },
   "s-container-column/md": {
-    "description": "One of number, string, or boolean.",
-    "type": "number|string|boolean"
+    "description": "One of boolean, number, or string.",
+    "type": "boolean|number|string"
   },
   "s-container-column/narrow-after-md": {
     "description": "Boolean value.",
@@ -120,8 +120,8 @@
     "type": "number|string"
   },
   "s-container-column/lg": {
-    "description": "One of number, string, or boolean.",
-    "type": "number|string|boolean"
+    "description": "One of boolean, number, or string.",
+    "type": "boolean|number|string"
   },
   "s-container-column/narrow-after-lg": {
     "description": "Boolean value.",
@@ -140,8 +140,8 @@
     "type": "number|string"
   },
   "s-container-column/xl": {
-    "description": "One of number, string, or boolean.",
-    "type": "number|string|boolean"
+    "description": "One of boolean, number, or string.",
+    "type": "boolean|number|string"
   },
   "s-container-column/narrow-after-xl": {
     "description": "Boolean value.",
