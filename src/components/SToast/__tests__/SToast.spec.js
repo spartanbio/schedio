@@ -7,7 +7,7 @@ expect.extend(toHaveNoViolations)
 
 describe('SToast.vue', () => {
   jest.useFakeTimers()
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   beforeEach(() => {
@@ -90,7 +90,7 @@ describe('SToast.vue', () => {
     expect(errorSpy).toHaveBeenCalled()
   })
 
-  it('can have a clickable action', async () => {
+  it('can have a clickable action', () => {
     const action = jest.fn()
 
     wrapper.setProps({ action })
@@ -99,7 +99,6 @@ describe('SToast.vue', () => {
 
     wrapper.find('button').trigger('click')
     expect(action).toHaveBeenCalled()
-    expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('closes on action click', () => {
