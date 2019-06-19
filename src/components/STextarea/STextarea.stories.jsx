@@ -22,25 +22,25 @@ storiesOf('Components/Inputs.STextarea', module)
             ...withAttrsAsProps({
               id: 'base-textarea',
               name: 'base-textarea',
-              label: 'Base Textarea'
+              label: 'Base Textarea',
             }),
             placeholder: text('placeholder', 'Placeholder text', 'Required Props'),
             isInline: boolean('is-inline', false, 'Optional Props'),
             iconLeft: iconProp('left'),
             iconLeftColor: iconColor('left'),
             iconRight: iconProp('right'),
-            iconRightColor: iconColor('right')
-          })
+            iconRightColor: iconColor('right'),
+          }),
         },
 
         attrs: {
           default: () => ({
             ...withUnboundAttrs(),
-            numberOfRows: number('rows (default: 10)', 10, {}, '$attrs')
-          })
-        }
+            numberOfRows: number('rows (default: 10)', 10, {}, '$attrs'),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         const { props, attrs } = this.$props
 
         return (
@@ -54,13 +54,13 @@ storiesOf('Components/Inputs.STextarea', module)
             <PropList component={STextarea} />
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Textarea with icons',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Textarea with icons</SHeading>
@@ -82,11 +82,11 @@ storiesOf('Components/Inputs.STextarea', module)
             </SFormField>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

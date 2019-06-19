@@ -38,8 +38,14 @@ export default {
     size: {
       type: String,
       default: '',
-      validator: s => !s || (sizes.includes(s) || console.error(`\`size\` must be one of ${sizes}`))
-    }
-  }
+      validator: (size) => {
+        return !size ||
+          (
+            sizes.includes(size) ||
+            console.error(`\`size\` must be one of ${sizes}`)
+          )
+      },
+    },
+  },
 }
 </script>

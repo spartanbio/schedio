@@ -1,12 +1,12 @@
 <template>
-  <component
+  <Component
     :is="cellType"
     v-bind="$attrs"
     :class="{ 'table__cell--numeric': isNumeric }"
     class="table__cell"
   >
     <slot />
-  </component>
+  </Component>
 </template>
 
 <script>
@@ -16,38 +16,38 @@ export default {
   props: {
     isHeader: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isNumeric: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  data() {
+  data () {
     return {
-      parentTag: ''
+      parentTag: '',
     }
   },
 
   computed: {
-    cellType() {
+    cellType () {
       return this.isInHeaderRow ? 'th' : 'td'
     },
-    isInHeaderRow() {
+    isInHeaderRow () {
       return this.isHeader || this.parentTag === 'THEAD'
-    }
+    },
   },
 
-  mounted() {
+  mounted () {
     // make $el available to computed
     this.parentTag = this.$parent.$el.parentNode.tagName
   },
 
-  updated() {
+  updated () {
     if (this.isNumeric && isFinite(this.$el.innerText)) {
       this.$el.innerText = Number(this.$el.innerText).toLocaleString()
     }
-  }
+  },
 }
 </script>

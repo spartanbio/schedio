@@ -37,61 +37,61 @@ export default {
     color: {
       type: String,
       default: '',
-      validator: value => {
+      validator: (value) => {
         if (!value || colors.includes(value)) return true
 
         return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
-      }
+      },
     },
 
     size: {
       type: String,
       default: '',
-      validator: value => {
+      validator: (value) => {
         if (!value || sizes.includes(value)) return true
 
         return console.error(`\`size\` ${value} not found. Allowed sizes: ${sizes}`)
-      }
+      },
     },
 
     isOutlined: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isLoading: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     iconOnly: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     iconLeft: {
       type: String,
-      default: ''
+      default: '',
     },
 
     iconRight: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return [
         this.buttonStyle && this.buttonStyle,
         this.size && `button--size-${this.size}`,
         (this.iconLeft || this.iconRight) && 'button--has-icon',
         this.iconOnly && 'button--icon-only',
-        this.isLoading && 'button--loading'
+        this.isLoading && 'button--loading',
       ]
     },
 
-    buttonStyle() {
+    buttonStyle () {
       let buttonStyle = ''
 
       if (this.color) buttonStyle += `button--color-${this.color}`
@@ -99,13 +99,13 @@ export default {
       if (this.color && this.isOutlined) buttonStyle += '-outlined'
 
       return buttonStyle
-    }
+    },
   },
 
   watch: {
-    iconOnly(val) {
+    iconOnly (val) {
       if (val && !this.$attrs['aria-label']) console.warn('Button requires `aria-label`')
-    }
-  }
+    },
+  },
 }
 </script>

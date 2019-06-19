@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable vue/require-component-is -->
-  <component
+  <Component
     :is="tag"
     v-show="isActive"
     class="chip"
@@ -21,7 +21,7 @@
       :aria-label="closeAriaLabel"
       @click="$emit('close', false)"
     />
-  </component>
+  </Component>
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
   name: 'SChip',
 
   components: {
-    SButton
+    SButton,
   },
 
   /**
@@ -40,53 +40,53 @@ export default {
    */
   model: {
     event: 'close',
-    prop: 'isActive'
+    prop: 'isActive',
   },
 
   props: {
     color: {
       default: '',
       type: String,
-      validator: val => {
+      validator: (val) => {
         return (
           !val ||
           colors.includes(val) ||
           console.error(`\`color\` must be one of ${colors.join(', ')}`)
         )
-      }
+      },
     },
 
     isClosable: {
       default: false,
-      type: Boolean
+      type: Boolean,
     },
 
     isActive: {
       type: Boolean,
-      default: true
+      default: true,
     },
 
     tag: {
       type: String,
-      default: 'div'
+      default: 'div',
     },
 
     closeAriaLabel: {
       type: String,
-      default: 'Close chip'
-    }
+      default: 'Close chip',
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return {
-        [`chip--color-${this.color}`]: this.color
+        [`chip--color-${this.color}`]: this.color,
       }
     },
 
-    buttonColor() {
+    buttonColor () {
       return this.color || 'ice'
-    }
-  }
+    },
+  },
 }
 </script>

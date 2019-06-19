@@ -18,11 +18,11 @@ storiesOf('Components/Loading.SProgressBar', module)
             size: select('size', ['', ...sizes], '', 'Optional Props'),
             color: select('color', ['', ...colors], '', 'Optional Props'),
             message: text('message', 'Something is happening', 'Optional Props'),
-            hidePercentComplete: boolean('hide-percent-complete', true, 'Optional Props')
-          })
-        }
+            hidePercentComplete: boolean('hide-percent-complete', true, 'Optional Props'),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading level="1">Progress Bar</SHeading>
@@ -34,7 +34,7 @@ storiesOf('Components/Loading.SProgressBar', module)
             {SProgressBar.props && <PropList component={SProgressBar} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
@@ -43,20 +43,20 @@ storiesOf('Components/Loading.SProgressBar', module)
       components: {
         AnimatedProgressBar: {
           name: 'AnimatedProgressBar',
-          data() {
+          data () {
             return {
               start: null,
               barPosition: 0,
               shouldCountUp: true,
               duration: 10 * 1000, // 10 seconds
-              req: null
+              req: null,
             }
           },
-          destroyed() {
+          destroyed () {
             this.cancelAnimation()
           },
           methods: {
-            animateProgress(now) {
+            animateProgress (now) {
               /**
                * animate the progress bar over 10 seconds
                * Example: 10s = 10000ms, 10000ms / 100 ticks = 100 ms/tick
@@ -72,15 +72,15 @@ storiesOf('Components/Loading.SProgressBar', module)
 
               this.req = window.requestAnimationFrame(this.animateProgress)
             },
-            cancelAnimation() {
+            cancelAnimation () {
               window.cancelAnimationFrame(this.req)
               this.req = null
             },
-            startAnimation() {
+            startAnimation () {
               this.req = window.requestAnimationFrame(this.animateProgress)
-            }
+            },
           },
-          render(h) {
+          render (h) {
             return (
               <div>
                 <SProgressBar progress={this.barPosition} message="Animation" />
@@ -95,10 +95,10 @@ storiesOf('Components/Loading.SProgressBar', module)
                 </SButton>
               </div>
             )
-          }
-        }
+          },
+        },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Progress Bar Examples</SHeading>
@@ -110,18 +110,18 @@ storiesOf('Components/Loading.SProgressBar', module)
             {colors.map(color => generateProgressBar(h, color))}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
 
-function generateProgressBar(h, color) {
+function generateProgressBar (h, color) {
   return [
     generateHeading(h, { level: 3, content: color }),
-    h(SProgressBar, { props: { color, progress: Math.floor(Math.random() * 100) } })
+    h(SProgressBar, { props: { color, progress: Math.floor(Math.random() * 100) } }),
   ]
 }

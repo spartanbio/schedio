@@ -27,14 +27,14 @@ storiesOf('Components/Inputs.SSelect', module)
       'Group 1': [{ label: 'Group 1 option label', value: 'Group 1 option value' }],
       'Group 2': [{ label: 'Group 2 option label', value: 'Group 2 option value' }],
       'Group 3': [{ label: 'Group 3 option label', value: 'Group 3 option value' }],
-      'Group 4': [{ label: 'Group 4 option label', value: 'Group 4 option value' }]
+      'Group 4': [{ label: 'Group 4 option label', value: 'Group 4 option value' }],
     }
 
     const optionTypes = {
       'Object of objects': objectOfObjects,
       'Array of objects': arrayOfObjects,
       'Array of strings': arrayOfStrings,
-      'Labelled arrays of objects': labelledArraysOfObjects
+      'Labelled arrays of objects': labelledArraysOfObjects,
     }
 
     // enable setting of option structure.
@@ -49,7 +49,7 @@ storiesOf('Components/Inputs.SSelect', module)
             ...withAttrsAsProps({
               id: 'base-select',
               name: 'base-select',
-              label: 'Select'
+              label: 'Select',
             }),
             placeholder: text('placeholder', 'Select an option', 'Optional Props'),
             selectOptions: optionTypes[options],
@@ -59,14 +59,14 @@ storiesOf('Components/Inputs.SSelect', module)
             iconLeft: iconProp('left'),
             iconLeftColor: iconColor('left'),
             iconRight: iconProp('right'),
-            iconRightColor: iconColor('right')
-          })
+            iconRightColor: iconColor('right'),
+          }),
         },
         attrs: {
-          default: withUnboundAttrs()
-        }
+          default: withUnboundAttrs(),
+        },
       },
-      render(h) {
+      render (h) {
         const { props, attrs } = this.$props
 
         return (
@@ -94,13 +94,13 @@ storiesOf('Components/Inputs.SSelect', module)
             <PropList component={SSelect} />
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Standard Select',
     () => ({
-      render(h) {
+      render (h) {
         const options = ['Option 1', 'Option 2', 'Option 3']
         return (
           <div>
@@ -141,18 +141,18 @@ storiesOf('Components/Inputs.SSelect', module)
             </SFormField>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
   .add(
     'Multiple Select',
     () => ({
-      render(h) {
+      render (h) {
         const options = ['Option 1', 'Option 2', 'Option 3']
         return (
           <div>
@@ -196,11 +196,11 @@ storiesOf('Components/Inputs.SSelect', module)
             </SFormField>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

@@ -21,23 +21,23 @@ export default {
     color: {
       type: String,
       default: '',
-      validator: c => !c || colors.includes(c) || propError('color', colors)
+      validator: c => !c || colors.includes(c) || propError('color', colors),
     },
 
     size: {
       type: String,
       default: '',
-      validator: s => !s || sizes.includes(s) || propError('size', sizes)
-    }
+      validator: s => !s || sizes.includes(s) || propError('size', sizes),
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return {
         [`spinner--${this.size}`]: this.size,
-        [`spinner--color-${this.color}`]: this.color
+        [`spinner--color-${this.color}`]: this.color,
       }
-    }
-  }
+    },
+  },
 }
 </script>

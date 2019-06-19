@@ -11,7 +11,7 @@ const exampleContainerStyle = {
   minHeight: '12em',
   position: 'relative',
   padding: '1em',
-  backgroundColor: '#f2f5f7'
+  backgroundColor: '#f2f5f7',
 }
 
 storiesOf('Components/SToast', module)
@@ -31,20 +31,20 @@ storiesOf('Components/SToast', module)
             isIndefinite: boolean('is-indefinite', false, 'Optional Props'),
             duration: number('duration', 3000, {}, 'Optional Props'),
 
-            action() {
+            action () {
               setTimeout(() => {
                 this.$toast.open({
                   containerParent: '#example',
                   body: 'The action ran',
-                  type: 'warning'
+                  type: 'warning',
                 })
               }, 750)
-            }
-          })
-        }
+            },
+          }),
+        },
       },
 
-      render(h) {
+      render (h) {
         const { props } = this.$props
 
         return (
@@ -71,52 +71,52 @@ storiesOf('Components/SToast', module)
             {SToast.props && <PropList component={SToast} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Toast Types',
     () => ({
-      data() {
+      data () {
         return {
           toastCount: 0,
-          toastList: [...types].reverse()
+          toastList: [...types].reverse(),
         }
       },
 
       methods: {
-        mountToasts() {
+        mountToasts () {
           if (this.toastCount > 0) return
 
-          this.toastList.forEach(type => {
+          this.toastList.forEach((type) => {
             this.$toast.open({
               type: type,
               containerParent: '#all-toasts',
               body: 'Type: ' + upperCase(type || 'default'),
               isIndefinite: true,
-              action: () => this.toastCount--
+              action: () => this.toastCount--,
             })
 
             this.toastCount++
           })
-        }
+        },
       },
 
-      mounted() {
+      mounted () {
         // without actions
-        this.toastList.forEach(type => {
+        this.toastList.forEach((type) => {
           this.$toast.open({
             type: type,
             containerParent: '#all-toasts',
             body: 'Type: ' + upperCase(type || 'default'),
-            isIndefinite: true
+            isIndefinite: true,
           })
         })
 
         // with actions
         this.mountToasts()
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Toast Types</SHeading>
@@ -134,11 +134,11 @@ storiesOf('Components/SToast', module)
             </div>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

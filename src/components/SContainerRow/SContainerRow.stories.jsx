@@ -11,7 +11,7 @@ import kebabCase from 'lodash.kebabcase'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainerRow' })
-  .add('Container Row', function SContainerRowDocs() {
+  .add('Container Row', function SContainerRowDocs () {
     // get sorted row props from component
     const rowPropNames = orderBy(Object.keys(SContainerRow.props))
 
@@ -35,11 +35,11 @@ storiesOf('Components/Layout.SContainer', module)
           default: () => ({
             ...alignProps,
             ...justifyProps,
-            isReversed: boolean('is-reversed', false, 'Other')
-          })
-        }
+            isReversed: boolean('is-reversed', false, 'Other'),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         const { props } = this.$props
 
         return (
@@ -69,6 +69,6 @@ storiesOf('Components/Layout.SContainer', module)
             <PropList component={SContainerRow} />
           </div>
         )
-      }
+      },
     }
   })

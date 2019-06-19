@@ -16,17 +16,17 @@ storiesOf('Components/SCallout', module)
       props: {
         props: {
           default: {
-            type: select('type', types, types[0], 'Optional Props')
-          }
+            type: select('type', types, types[0], 'Optional Props'),
+          },
         },
         slots: {
           default: {
-            default: text('Default slot', defaultSlotPlaceholder, 'Slots')
-          }
-        }
+            default: text('Default slot', defaultSlotPlaceholder, 'Slots'),
+          },
+        },
       },
 
-      render(h) {
+      render (h) {
         const { slots, props } = this.$props
         return (
           <div>
@@ -39,25 +39,25 @@ storiesOf('Components/SCallout', module)
             {SCallout.props && <PropList component={SCallout} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Callout Types',
     () => ({
-      render(h) {
+      render (h) {
         return h('div', [
           generateHeading(h, { content: 'Callout Types' }),
           types.map(type => [
             generateHeading(h, { level: 3, content: type || 'Base' }),
-            h(SCallout, { props: { type } }, jeffsum(5))
-          ])
+            h(SCallout, { props: { type } }, jeffsum(5)),
+          ]),
         ])
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

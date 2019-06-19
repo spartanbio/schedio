@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'SFormField'
+  name: 'SFormField',
 }
 </script>

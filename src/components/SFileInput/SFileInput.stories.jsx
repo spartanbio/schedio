@@ -10,10 +10,10 @@ storiesOf('Components/Inputs.SFileInput', module)
   .addParameters({ jest: 'SFileInput' })
   .add('File Input', () => {
     return {
-      data() {
+      data () {
         return {
           errors: [],
-          files: []
+          files: [],
         }
       },
 
@@ -24,18 +24,18 @@ storiesOf('Components/Inputs.SFileInput', module)
             maxSize: number('max-size', 0, '', 'Optional Props'),
             isDroppable: boolean('is-droppable', false, 'Optional Props'),
             hideCount: boolean('hide-count', false, 'Optional Props'),
-            isInline: boolean('is-inline', false, 'Optional Props')
-          })
+            isInline: boolean('is-inline', false, 'Optional Props'),
+          }),
         },
 
         attrs: {
           default: {
             disabled: boolean('disabled', false, '$attrs'),
-            multiple: boolean('multiple', false, '$attrs')
-          }
-        }
+            multiple: boolean('multiple', false, '$attrs'),
+          },
+        },
       },
-      render(h) {
+      render (h) {
         const { props, attrs } = this.$props
 
         return (
@@ -56,8 +56,8 @@ storiesOf('Components/Inputs.SFileInput', module)
               <SFileInput
                 {...{ props }}
                 {...{ attrs }}
-                onError={evt => (this.errors = evt.payload)}
-                onInput={evt => (this.files = evt)}
+                onError={(evt) => { this.errors = evt.payload }}
+                onInput={(evt) => { this.files = evt }}
                 files={this.files}
               />
 
@@ -101,13 +101,13 @@ storiesOf('Components/Inputs.SFileInput', module)
             {SFileInput.props && <PropList component={SFileInput} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'File Input Types',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>File Input Types</SHeading>
@@ -119,11 +119,11 @@ storiesOf('Components/Inputs.SFileInput', module)
             <SFileInput id="file-drop" name="file-drop" label="File" is-droppable />
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

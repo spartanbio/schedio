@@ -14,11 +14,11 @@ storiesOf('Components/Loading.SSpinner', module)
         props: {
           default: () => ({
             size: select('size', ['', ...sizes], '', 'Optional Props'),
-            color: select('color', ['', ...colors], '', 'Optional Props')
-          })
-        }
+            color: select('color', ['', ...colors], '', 'Optional Props'),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading level="1">Spinner</SHeading>
@@ -33,25 +33,25 @@ storiesOf('Components/Loading.SSpinner', module)
             {SSpinner.props && <PropList component={SSpinner} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Spinner Colors',
     () => ({
-      render(h) {
+      render (h) {
         return h('div', [
           generateHeading(h, { content: 'Spinner Colors' }),
           colors.map(color => [
             generateHeading(h, { level: 2, content: color }),
-            h(SSpinner, { props: { color } })
-          ])
+            h(SSpinner, { props: { color } }),
+          ]),
         ])
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

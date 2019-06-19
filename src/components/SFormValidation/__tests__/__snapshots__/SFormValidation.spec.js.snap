@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SFormValidation.vue accepts an icon prop 1`] = `
-<div class="form-validation form-validation--error" name="fade">
+<div class="form-validation form-validation--error">
   <div class="form-validation__icon">
     <sicon-stub icon="activity" color="red" size=""></sicon-stub>
   </div>
@@ -10,7 +10,7 @@ exports[`SFormValidation.vue accepts an icon prop 1`] = `
 `;
 
 exports[`SFormValidation.vue accepts text as a prop or slot 1`] = `
-<div class="form-validation form-validation--error" name="fade">
+<div class="form-validation form-validation--error">
   <div class="form-validation__icon">
     <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
   </div>
@@ -19,7 +19,7 @@ exports[`SFormValidation.vue accepts text as a prop or slot 1`] = `
 `;
 
 exports[`SFormValidation.vue accepts text as a prop or slot 2`] = `
-<div class="form-validation form-validation--error" name="fade">
+<div class="form-validation form-validation--error">
   <div class="form-validation__icon">
     <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
   </div>
@@ -28,7 +28,7 @@ exports[`SFormValidation.vue accepts text as a prop or slot 2`] = `
 `;
 
 exports[`SFormValidation.vue renders correctly 1`] = `
-<div class="form-validation form-validation--error" name="fade">
+<div class="form-validation form-validation--error">
   <div class="form-validation__icon">
     <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
   </div>
@@ -37,14 +37,14 @@ exports[`SFormValidation.vue renders correctly 1`] = `
 `;
 
 exports[`SFormValidation.vue sets a visual state for  state 1`] = `
-<div class="form-validation" name="fade">
+<div class="form-validation">
   <!---->
   <div class="form-validation__text"></div>
 </div>
 `;
 
 exports[`SFormValidation.vue sets a visual state for error state 1`] = `
-<div class="form-validation form-validation--error" name="fade">
+<div class="form-validation form-validation--error">
   <div class="form-validation__icon">
     <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
   </div>
@@ -53,7 +53,7 @@ exports[`SFormValidation.vue sets a visual state for error state 1`] = `
 `;
 
 exports[`SFormValidation.vue sets a visual state for success state 1`] = `
-<div class="form-validation form-validation--success" name="fade">
+<div class="form-validation form-validation--success">
   <div class="form-validation__icon">
     <sicon-stub icon="check-circle" color="green" size=""></sicon-stub>
   </div>
@@ -62,7 +62,7 @@ exports[`SFormValidation.vue sets a visual state for success state 1`] = `
 `;
 
 exports[`SFormValidation.vue sets a visual state for warning state 1`] = `
-<div class="form-validation form-validation--warning" name="fade">
+<div class="form-validation form-validation--warning">
   <div class="form-validation__icon">
     <sicon-stub icon="alert-triangle" color="gold" size=""></sicon-stub>
   </div>

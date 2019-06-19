@@ -29,15 +29,15 @@ storiesOf('Components/Inputs.SInput', module)
             iconLeft: iconProp('left'),
             iconLeftColor: iconColor('left'),
             iconRight: iconProp('right'),
-            iconRightColor: iconColor('right')
-          })
+            iconRightColor: iconColor('right'),
+          }),
         },
 
         attrs: {
-          default: withUnboundAttrs()
-        }
+          default: withUnboundAttrs(),
+        },
       },
-      render(h) {
+      render (h) {
         const { props, attrs } = this.$props
         return (
           <div>
@@ -50,13 +50,13 @@ storiesOf('Components/Inputs.SInput', module)
             <PropList component={SInput} />
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Input with icons',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Input with icons</SHeading>
@@ -78,11 +78,11 @@ storiesOf('Components/Inputs.SInput', module)
             </SFormField>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

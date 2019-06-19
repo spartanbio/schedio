@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <Transition name="fade">
     <div
       :class="classList"
       class="form-validation"
@@ -18,7 +18,7 @@
         <slot>{{ text }}</slot>
       </div>
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <script>
@@ -29,62 +29,62 @@ export default {
   name: 'SFormValidation',
 
   components: {
-    SIcon
+    SIcon,
   },
 
   props: {
     text: {
       type: String,
-      default: ''
+      default: '',
     },
 
     state: {
       type: String,
       default: 'error',
-      validator: v => {
+      validator: (v) => {
         return (
           states.includes(v) || console.error(`\`state\` should be one of ${states.join(', ')}`)
         )
-      }
+      },
     },
 
     icon: {
       type: String,
-      default: ''
+      default: '',
     },
 
     hideIcon: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  data() {
+  data () {
     return {
       iconColors: {
         success: 'green',
         warning: 'gold',
-        error: 'red'
-      }
+        error: 'red',
+      },
     }
   },
 
   computed: {
-    classList() {
+    classList () {
       return {
-        [`form-validation--${this.state}`]: this.state
+        [`form-validation--${this.state}`]: this.state,
       }
     },
 
-    icons() {
+    icons () {
       if (this.icon) return { [this.state]: this.icon }
 
       return {
         success: 'check-circle',
         warning: 'alert-triangle',
-        error: 'alert-circle'
+        error: 'alert-circle',
       }
-    }
-  }
+    },
+  },
 }
 </script>

@@ -26,7 +26,7 @@
 <script>
 import * as options from './options'
 
-const limitValues = propName => v => {
+const limitValues = propName => (v) => {
   const validOptions = options[`${propName}s`]
 
   return (
@@ -43,35 +43,35 @@ export default {
     height: {
       type: String,
       default: '',
-      validator: limitValues('height')
+      validator: limitValues('height'),
     },
 
     color: {
       type: String,
       default: '',
-      validator: limitValues('color')
+      validator: limitValues('color'),
     },
 
     hasNoPadding: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return [
         this.height && `hero--height-${this.height}`,
         this.color && `hero--color-${this.color}`,
-        this.hasNoPadding && 'hero--has-no-padding'
+        this.hasNoPadding && 'hero--has-no-padding',
       ]
-    }
+    },
   },
 
-  created() {
+  created () {
     if (!this.$slots.default) {
       console.error(`\`${this.$options.name}\` requires default slot content.`)
     }
-  }
+  },
 }
 </script>

@@ -19,42 +19,42 @@ storiesOf('Components/Buttons.SButton', module)
     props: {
       color: {
         type: String,
-        default: select('color', ['', ...colors], '', 'Optional Props')
+        default: select('color', ['', ...colors], '', 'Optional Props'),
       },
       isOutlined: {
         type: String,
-        default: boolean('is-outlined', false, 'Optional Props')
+        default: boolean('is-outlined', false, 'Optional Props'),
       },
       size: {
         type: String,
-        default: select('size', ['', ...sizes], '', 'Optional Props')
+        default: select('size', ['', ...sizes], '', 'Optional Props'),
       },
       buttonText: {
         type: String,
-        default: text('Button text', 'Sample text', 'Slots')
+        default: text('Button text', 'Sample text', 'Slots'),
       },
       disabled: {
         type: Boolean,
-        default: boolean('disabled', false, '$attrs')
+        default: boolean('disabled', false, '$attrs'),
       },
       isLoading: {
         type: Boolean,
-        default: boolean('is-loading', false, 'Optional Props')
+        default: boolean('is-loading', false, 'Optional Props'),
       },
       iconOnly: {
         type: Boolean,
-        default: boolean('icon-only', false, 'Optional Props')
+        default: boolean('icon-only', false, 'Optional Props'),
       },
       iconLeft: {
         type: String,
-        default: iconProp('left')
+        default: iconProp('left'),
       },
       iconRight: {
         type: String,
-        default: iconProp('right')
-      }
+        default: iconProp('right'),
+      },
     },
-    render(h) {
+    render (h) {
       const { buttonText, disabled, ...props } = this.$props
 
       return (
@@ -83,50 +83,50 @@ storiesOf('Components/Buttons.SButton', module)
           <PropList component={SButton} />
         </div>
       )
-    }
+    },
   }))
   .add(
     'Colored Button',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Colored Buttons</SHeading>
             {generateButtons(h)}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
   .add(
     'Outlined Buttons',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Outlined Buttons</SHeading>
             {generateButtons(h, { isOutlined: true })}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
 
-function generateButtons(h, propsData = {}) {
-  return colors.map(color => {
+function generateButtons (h, propsData = {}) {
+  return colors.map((color) => {
     const props = {
       ...propsData,
-      color
+      color,
     }
 
     return [
@@ -135,20 +135,20 @@ function generateButtons(h, propsData = {}) {
         generateButtonColumn(h, props, 'No icons'),
         generateButtonColumn(h, { ...props, iconLeft: randIcon() }, 'Icon left'),
         generateButtonColumn(h, { ...props, iconRight: randIcon() }, 'Icon right'),
-        generateButtonColumn(h, { ...props, iconLeft: randIcon(), iconRight: randIcon() }, 'Both')
-      ])
+        generateButtonColumn(h, { ...props, iconLeft: randIcon(), iconRight: randIcon() }, 'Both'),
+      ]),
     ]
   })
 }
 
-function generateButtonColumn(h, props, heading) {
+function generateButtonColumn (h, props, heading) {
   return h(SContainerColumn, { props: { md: 3, lg: 2 } }, [
     generateHeading(h, { level: 3, content: heading }),
-    h(SButton, { props }, 'Button')
+    h(SButton, { props }, 'Button'),
   ])
 }
 
-function randIcon() {
+function randIcon () {
   const randIdx = Math.round(Math.random() * iconNames.length)
   return iconNames[randIdx]
 }

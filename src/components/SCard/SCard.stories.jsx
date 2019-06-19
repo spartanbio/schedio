@@ -12,16 +12,16 @@ storiesOf('Components/Layout.SCard', module)
         image: {
           default: () => ({
             src: text('image.src', '', 'Optional Props'),
-            alt: text('image.alt', '', 'Optional Props')
-          })
+            alt: text('image.alt', '', 'Optional Props'),
+          }),
         },
         hasNoPadding: { default: boolean('has-no-padding', false, 'Optional Props') },
         tag: { default: text('tag', 'div', 'Optional Props') },
         headerSlot: { default: text('Header', 'I am the header slot', 'Slots') },
         defaultSlot: { default: text('Default', 'I am the default slot', 'Slots') },
-        footerSlot: { default: text('Footer', 'I am the footer slot', 'Slots') }
+        footerSlot: { default: text('Footer', 'I am the footer slot', 'Slots') },
       },
-      render(h) {
+      render (h) {
         const { headerSlot, defaultSlot, footerSlot, ...props } = this.$props
 
         return (
@@ -42,13 +42,13 @@ storiesOf('Components/Layout.SCard', module)
             <PropList component={SCard} />
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Card Types',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Card Types</SHeading>
@@ -69,11 +69,11 @@ storiesOf('Components/Layout.SCard', module)
             </SCard>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

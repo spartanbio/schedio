@@ -16,15 +16,15 @@ storiesOf('Components/Inputs.SLabel', module)
             isInline: boolean('isInline', false, 'Optional Props'),
             isReversed: boolean('isReversed', false, 'Optional Props'),
             isRequired: boolean('iRrequired', false, 'Optional Props'),
-            hideOptional: boolean('hide-optional', false, 'Optional Props')
-          })
+            hideOptional: boolean('hide-optional', false, 'Optional Props'),
+          }),
         },
 
         defaultSlot: {
-          default: text('Default', 'SomeInputComponent', 'Slots')
-        }
+          default: text('Default', 'SomeInputComponent', 'Slots'),
+        },
       },
-      render(h) {
+      render (h) {
         const { props, defaultSlot } = this.$props
         return (
           <div>
@@ -48,6 +48,6 @@ storiesOf('Components/Inputs.SLabel', module)
             <PropList component={SLabel} />
           </div>
         )
-      }
+      },
     }
   })

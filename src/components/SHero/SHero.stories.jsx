@@ -13,25 +13,25 @@ storiesOf('Components/Layout.SHero', module)
       props: {
         color: {
           type: String,
-          default: select('color', ['', ...colors], '', 'Optional Props')
+          default: select('color', ['', ...colors], '', 'Optional Props'),
         },
         height: {
           type: String,
-          default: select('height', ['', ...heights], '', 'Optional Props')
+          default: select('height', ['', ...heights], '', 'Optional Props'),
         },
         hasNoPadding: {
           type: Boolean,
-          default: boolean('has-no-padding', false, 'Optional Props')
+          default: boolean('has-no-padding', false, 'Optional Props'),
         },
         slots: {
           default: () => ({
             head: text('head', 'Head slot', 'Slots'),
             default: text('default', 'Default slot', 'Slots'),
-            foot: text('foot', 'Foot slot', 'Slots')
-          })
-        }
+            foot: text('foot', 'Foot slot', 'Slots'),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         const { slots, ...props } = this.$props
         return (
           <div>
@@ -44,7 +44,7 @@ storiesOf('Components/Layout.SHero', module)
 
             <SHeading level="2">Example</SHeading>
             <SHero {...{ props }}>
-              {Object.entries(slots).map(slot => {
+              {Object.entries(slots).map((slot) => {
                 return <template slot={slot[0]}>{slot[1]}</template>
               })}
             </SHero>
@@ -52,13 +52,13 @@ storiesOf('Components/Layout.SHero', module)
             {SHero.props && <PropList component={SHero} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Hero Colors',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Hero Colors</SHeading>
@@ -66,16 +66,16 @@ storiesOf('Components/Layout.SHero', module)
             {colors.map(color => generateHero(h, color))}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
 
-function generateHero(h, color) {
+function generateHero (h, color) {
   return [
     h(SHeading, { props: { level: 2 } }, color),
     h(SHero, { props: { color, height: 'half' } }, [
@@ -85,8 +85,8 @@ function generateHero(h, color) {
           {
             props: {
               isDisplay: true,
-              isTitle: true
-            }
+              isTitle: true,
+            },
           },
           'First line'
         ),
@@ -97,12 +97,12 @@ function generateHero(h, color) {
               isDisplay: true,
               isSubtitle: true,
               level: 2,
-              isSubtle: true
-            }
+              isSubtle: true,
+            },
           },
           'Second line'
-        )
-      ])
-    ])
+        ),
+      ]),
+    ]),
   ]
 }

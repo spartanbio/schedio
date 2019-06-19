@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <Transition name="fade">
     <div
       v-show="isVisible"
       :class="classList"
@@ -46,7 +46,7 @@
         {{ actionText }}
       </button>
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <script>
@@ -58,7 +58,7 @@ export default {
   name: 'SToast',
 
   components: {
-    SIcon
+    SIcon,
   },
 
   mixins: [NotificationMixin],
@@ -67,94 +67,94 @@ export default {
     type: {
       type: String,
       default: '',
-      validator: v => {
+      validator: (v) => {
         return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`)
-      }
+      },
     },
 
     hideIcon: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     title: {
       type: String,
-      default: ''
+      default: '',
     },
 
     body: {
       type: String,
-      default: ''
+      default: '',
     },
 
     action: {
       type: Function,
-      default: null
+      default: null,
     },
 
     actionText: {
       type: String,
-      default: 'OK'
+      default: 'OK',
     },
 
     position: {
       type: String,
       default: '',
-      validator: v => {
+      validator: (v) => {
         return (
           positions.includes(v) ||
           console.error(`\`position\` should be one of ${positions.join(', ')}`)
         )
-      }
-    }
+      },
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return {
         [`toast--${this.type}`]: this.type,
-        [`toast--${this.position}`]: this.position
+        [`toast--${this.position}`]: this.position,
       }
     },
 
-    toastIcon() {
+    toastIcon () {
       const stateMap = {
         error: 'alert-circle',
         warning: 'alert-triangle',
-        success: 'check-circle'
+        success: 'check-circle',
       }
 
       return stateMap[this.type]
     },
 
-    toastIconColor() {
+    toastIconColor () {
       const stateMap = {
         error: 'red',
         warning: 'gold',
-        success: 'green'
+        success: 'green',
       }
 
       return stateMap[this.type]
     },
 
-    hasContent() {
+    hasContent () {
       const title = this.text || this.$slots.title
       const body = this.body || this.$slots.default
       const any = title || body
 
       return { any, title, body }
-    }
+    },
   },
 
-  mounted() {
+  mounted () {
     if (!this.hasContent.any) console.error(`\`SToast\` requires title or body text`)
   },
 
   methods: {
-    clickHandler() {
+    clickHandler () {
       this.action()
       this.closeNotification()
-    }
-  }
+    },
+  },
 }
 </script>

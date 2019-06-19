@@ -8,15 +8,15 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STableCell', module)
   .addParameters({ jest: 'STableCell' })
-  .add('Table Cell', function STableCellDocs() {
+  .add('Table Cell', function STableCellDocs () {
     return {
       props: {
         isNumeric: { default: boolean('is-numeric', true, 'Optional Props') },
         isHeader: { default: boolean('is-header', false, 'Optional Props') },
         headerCellSlotContent: { default: text('Header content', 'Header cell slot', 'Slots') },
-        numericCellSlotContent: { default: number('Numeric content', 1200, {}, 'Slots') }
+        numericCellSlotContent: { default: number('Numeric content', 1200, {}, 'Slots') },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading level="1">Table Cell</SHeading>
@@ -53,6 +53,6 @@ storiesOf('Components/Tables.STableCell', module)
             <PropList component={STableCell} />
           </div>
         )
-      }
+      },
     }
   })

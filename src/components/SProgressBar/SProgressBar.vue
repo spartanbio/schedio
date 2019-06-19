@@ -36,44 +36,44 @@ export default {
     progress: {
       type: [Number, String],
       required: true,
-      validator(value) {
+      validator (value) {
         if (value < 0) return console.error('Progress should be at least 0.')
         if (value > 100) return console.error('Progress should be less than 100.')
         return true
-      }
+      },
     },
 
     size: {
       type: String,
       default: '',
-      vaidator: s => !s || sizes.includes(s) || propError('size', sizes)
+      vaidator: s => !s || sizes.includes(s) || propError('size', sizes),
     },
 
     color: {
       type: String,
       default: '',
-      vaidator: c => !c || colors.includes(c) || propError('color', colors)
+      vaidator: c => !c || colors.includes(c) || propError('color', colors),
     },
 
     message: {
       type: String,
-      default: ''
+      default: '',
     },
 
     hidePercentComplete: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
-    computedProgress() {
+    computedProgress () {
       if (this.progress < 0) return 0
       if (this.progress > 100) return 100
       return this.progress
     },
 
-    computedMessage() {
+    computedMessage () {
       let stack = this.message
       if (this.message && !this.hidePercentComplete) stack += ': '
       if (!this.hidePercentComplete) stack += `${this.computedProgress}% complete.`
@@ -81,13 +81,13 @@ export default {
       return stack
     },
 
-    progressBarClassList() {
+    progressBarClassList () {
       return { [`progress-bar__background--${this.size}`]: this.size }
     },
 
-    progressIndicatorClassList() {
+    progressIndicatorClassList () {
       return { [`progress-bar__indicator--color-${this.color}`]: this.color }
-    }
-  }
+    },
+  },
 }
 </script>

@@ -21,7 +21,7 @@
         :class="{
           'select--invalid': isInvalid,
           'select--has-icon-left': !!iconLeft,
-          'select--has-icon-right': !!iconRight
+          'select--has-icon-right': !!iconRight,
         }"
         :multiple="multiple"
         :name="name"
@@ -93,75 +93,75 @@ export default {
 
   model: {
     event: 'input',
-    prop: 'value'
+    prop: 'value',
   },
 
   props: {
     selectOptions: {
       type: [Object, Array],
-      required: true
+      required: true,
     },
 
     placeholder: {
       type: String,
-      default: 'Select an option'
+      default: 'Select an option',
     },
 
     multiple: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     value: {
       type: [String, Array],
-      default: ''
-    }
+      default: '',
+    },
   },
 
-  data() {
+  data () {
     return {
       // <select multiple/> expects array
-      selected: this.multiple ? [] : ''
+      selected: this.multiple ? [] : '',
     }
   },
 
   computed: {
-    listeners() {
+    listeners () {
       return {
         ...this.$listeners,
         input: event => this.$emit('input', event.target.value),
-        change: event => this.$emit('change', event.target.value)
+        change: event => this.$emit('change', event.target.value),
       }
     },
 
-    optionsHaveGroups() {
+    optionsHaveGroups () {
       if (!this.selectOptions) return false
 
       return Object.values(this.selectOptions).every(value => Array.isArray(value))
-    }
+    },
   },
 
   watch: {
-    selected(val) {
+    selected (val) {
       this.$emit('input', val)
     },
 
-    value(val) {
+    value (val) {
       this.selected = val
-    }
+    },
   },
 
-  mounted() {
+  mounted () {
     if (this.value) this.selected = this.value
   },
 
   methods: {
-    getValue(option) {
+    getValue (option) {
       return option.value || option.label || option
     },
-    getLabel(option) {
+    getLabel (option) {
       return option.label || option.value || option
-    }
-  }
+    },
+  },
 }
 </script>

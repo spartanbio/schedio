@@ -9,9 +9,9 @@ storiesOf('Components/Layout.SCard', module)
   .add('Card Container', () => {
     return {
       props: {
-        slotContent: { default: text('default', 'This is a card container!', 'Slots') }
+        slotContent: { default: text('default', 'This is a card container!', 'Slots') },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading level="1">Card Container</SHeading>
@@ -23,6 +23,6 @@ storiesOf('Components/Layout.SCard', module)
             {SCardContainer.props && <PropList component={SCardContainer} />}
           </div>
         )
-      }
+      },
     }
   })

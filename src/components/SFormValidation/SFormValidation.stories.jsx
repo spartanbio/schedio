@@ -20,26 +20,26 @@ storiesOf('Components/Forms.SFormValidation', module)
             text: text('text', 'validation text', 'Optional Props'),
             state: select('state', states, 'error', 'Optional Props'),
             icon: select('icon', ['', ...Object.keys(icons)], '', 'Optional Props'),
-            hideIcon: boolean('hide-icon', false, 'Optional Props')
-          })
-        }
+            hideIcon: boolean('hide-icon', false, 'Optional Props'),
+          }),
+        },
       },
 
-      data() {
+      data () {
         return {
           inputOneValidity: null,
           shouldRespondInvalid: false,
-          formValidity: null
+          formValidity: null,
         }
       },
 
       methods: {
-        handleSubmit(e) {
+        handleSubmit (e) {
           e.preventDefault()
           this.formValidity = this.shouldRespondInvalid ? false : this.inputOneValidity
-        }
+        },
       },
-      render(h) {
+      render (h) {
         const { props } = this.$props
 
         return (
@@ -70,8 +70,8 @@ storiesOf('Components/Forms.SFormValidation', module)
                   label="Email address"
                   placeholder="email@domain.tld"
                   type="email"
-                  onkeyup={e => (this.inputOneValidity = e.target.validity.valid)}
-                  onblur={e => (this.inputOneValidity = e.target.validity.valid)}
+                  onkeyup={(e) => { this.inputOneValidity = e.target.validity.valid }}
+                  onblur={(e) => { this.inputOneValidity = e.target.validity.valid }}
                 />
 
                 <SFormValidation
@@ -87,7 +87,7 @@ storiesOf('Components/Forms.SFormValidation', module)
                   name="show-invalid"
                   label="Respond as invalid"
                   value={this.shouldRespondInvalid}
-                  oninput={e => (this.shouldRespondInvalid = e)}
+                  oninput={(e) => { this.shouldRespondInvalid = e }}
                   required={false}
                   hideOptional={true}
                 />
@@ -109,13 +109,13 @@ storiesOf('Components/Forms.SFormValidation', module)
             {SFormValidation.props && <PropList component={SFormValidation} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Form Validation States',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Form Validation States</SHeading>
@@ -123,18 +123,18 @@ storiesOf('Components/Forms.SFormValidation', module)
             {states.map(state => generateValidations(h, state))}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
 
-function generateValidations(h, state) {
+function generateValidations (h, state) {
   return [
     generateHeading(h, { level: 2, content: state || 'Base' }),
-    h(SFormValidation, { props: { state, text: jeffsum(2) } })
+    h(SFormValidation, { props: { state, text: jeffsum(2) } }),
   ]
 }

@@ -7,8 +7,8 @@ storiesOf('Components/Forms.SFormField', module)
   .addParameters({ jest: 'SFormField' })
   .add('Form Field', () => {
     return {
-      render(h) {
-        const submitHandler = e => {
+      render (h) {
+        const submitHandler = (e) => {
           e.preventDefault()
           alert('You submitted the form')
         }
@@ -49,6 +49,6 @@ storiesOf('Components/Forms.SFormField', module)
             {SFormField.props && <PropList component={SFormField} />}
           </div>
         )
-      }
+      },
     }
   })

@@ -10,7 +10,7 @@ const tagOptions = ['', 'div', 'span', 'a']
 
 storiesOf('Components/Layout.SHeading', module)
   .addParameters({ jest: 'SHeading' })
-  .add('Heading', function Heading() {
+  .add('Heading', function Heading () {
     const options = radios(
       'Pick one',
       ['Default', 'has-no-case', 'is-subtle'],
@@ -28,14 +28,14 @@ storiesOf('Components/Layout.SHeading', module)
             isDisplay: boolean('is-display', false, 'Optional Props'),
             isTitle: boolean('is-title', false, 'Optional Props'),
             isSubtitle: boolean('is-subtitle', false, 'Optional Props'),
-            tag: select('tag', tagOptions, '', 'Optional Props')
-          })
+            tag: select('tag', tagOptions, '', 'Optional Props'),
+          }),
         },
         slotContent: {
-          default: text('Default', 'Slot content', 'Slots')
-        }
+          default: text('Default', 'Slot content', 'Slots'),
+        },
       },
-      render(h) {
+      render (h) {
         const { props } = this.$props
 
         return (
@@ -57,10 +57,10 @@ storiesOf('Components/Layout.SHeading', module)
             <PropList component={SHeading} />
           </div>
         )
-      }
+      },
     }
   })
-  .add('Usage: Headings', function UsageHeadings() {
+  .add('Usage: Headings', function UsageHeadings () {
     const options = radios(
       'Pick one',
       ['Default', 'has-no-case', 'is-subtle'],
@@ -76,14 +76,14 @@ storiesOf('Components/Layout.SHeading', module)
             hasNoCase: options === 'has-no-case',
             isSubtle: options === 'is-subtle',
             isTitle: boolean('is-title', false, 'Optional Props'),
-            isSubtitle: boolean('is-subtitle', false, 'Optional Props')
-          })
+            isSubtitle: boolean('is-subtitle', false, 'Optional Props'),
+          }),
         },
         slotContent: {
-          default: text('Default', 'Slot content', 'Slots')
-        }
+          default: text('Default', 'Slot content', 'Slots'),
+        },
       },
-      render(h) {
+      render (h) {
         const { slotContent, props } = this.$props
 
         return (
@@ -115,10 +115,10 @@ storiesOf('Components/Layout.SHeading', module)
             <PropList component={SHeading} />
           </div>
         )
-      }
+      },
     }
   })
-  .add('Usage: Display', function UsageDisplay() {
+  .add('Usage: Display', function UsageDisplay () {
     const options = radios(
       'Pick one',
       ['Default', 'has-no-case', 'is-subtle'],
@@ -136,14 +136,14 @@ storiesOf('Components/Layout.SHeading', module)
             isDisplay: true,
             isTitle: boolean('is-title', false, 'Optional Props'),
             isSubtitle: boolean('is-subtitle', false, 'Optional Props'),
-            tag: select('tag', tagOptions, '', 'Optional Props')
-          })
+            tag: select('tag', tagOptions, '', 'Optional Props'),
+          }),
         },
         slotContent: {
-          default: text('Default', 'Slot content', 'Slots')
-        }
+          default: text('Default', 'Slot content', 'Slots'),
+        },
       },
-      render(h) {
+      render (h) {
         const { slotContent, props } = this.$props
 
         return (
@@ -164,6 +164,6 @@ storiesOf('Components/Layout.SHeading', module)
             <PropList component={SHeading} />
           </div>
         )
-      }
+      },
     }
   })

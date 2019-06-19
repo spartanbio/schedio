@@ -14,7 +14,7 @@
     "devtools": "vue-devtools",
     "dist:tokens": "run-s theo ase-encode",
     "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
-    "lint:vue": "vue-cli-service lint ./{src,config,scripts}/**/*.js",
+    "lint:vue": "vue-cli-service lint ./{src,config,scripts,docs,tests}/**/*.{js,jsx,vue}",
     "scaffold": "node ./scripts/scaffold-component.js",
     "semantic-release": "semantic-release",
     "serve:storybook": "start-storybook -p 6006 -s ./static -c ./config/storybook",
@@ -122,7 +122,6 @@
     ],
     "*.vue": [
       "vue-cli-service lint",
-      "stylelint ./src/**/*.vue",
       "git add"
     ],
     "*.scss": [

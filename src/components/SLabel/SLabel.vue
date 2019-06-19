@@ -25,49 +25,49 @@ export default {
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
 
     isRequired: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isInline: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isFullwidth: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isReversed: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     hideOptional: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return {
         'label--inline': this.isInline,
         'label--fullwidth': this.isFullwidth,
-        'label--reversed': this.isReversed
+        'label--reversed': this.isReversed,
       }
-    }
+    },
   },
 
-  mounted() {
+  mounted () {
     if ((this.isFullwidth || this.isReversed) && !this.isInline) {
       console.error('`isFullwidth` and `isReversed` require `isInline`')
     }
-  }
+  },
 }
 </script>

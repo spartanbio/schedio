@@ -58,14 +58,11 @@ export default {
 
   props: {
     ...breakpointProps,
-    /* eslint-disable vue/require-default-prop */
-    // eslint doesn't see prop defaults in functions
     // Add base props without breakpoints
     size: propSettings(),
     offset: propSettings(),
     narrow: narrowSettings(),
     order: propSettings({ validator: orderValidator }),
-    /* eslint-enable */
   },
 
   data () {

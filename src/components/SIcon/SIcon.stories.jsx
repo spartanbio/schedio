@@ -19,11 +19,11 @@ storiesOf('Components/SIcon', module)
           default: () => ({
             icon: select('icon', iconList, iconList[0], 'Required Props'),
             color: select('color', colorOptions, '', 'Optional Props'),
-            size: select('size', sizeOptions, '', 'Optional Props')
-          })
-        }
+            size: select('size', sizeOptions, '', 'Optional Props'),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         const { props } = this.$props
         return (
           <div>
@@ -59,20 +59,20 @@ storiesOf('Components/SIcon', module)
             {SIcon.props && <PropList component={SIcon} />}
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'All icons',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>All icons</SHeading>
             <p>Icons are available in all of Schédio's base colors</p>
 
             <div style="display: flex; flex-wrap: wrap;">
-              {iconList.map(icon => {
+              {iconList.map((icon) => {
                 return (
                   <div style="align-items: center; display: flex; flex-direction: column; padding: 1em; width: 25%">
                     <SIcon icon={icon} />
@@ -83,11 +83,11 @@ storiesOf('Components/SIcon', module)
             </div>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

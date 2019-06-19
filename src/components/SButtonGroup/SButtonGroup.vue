@@ -17,40 +17,40 @@ export default {
     color: {
       type: String,
       default: '',
-      validator: value => {
+      validator: (value) => {
         if (!value || colors.includes(value)) return true
         return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
-      }
+      },
     },
 
     isOutlined: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     isGrouped: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  data() {
+  data () {
     return {
-      isDisabled: false
+      isDisabled: false,
     }
   },
 
   computed: {
-    classList() {
+    classList () {
       return [
         this.groupStyle,
         {
           'button-group--grouped': this.isGrouped,
-          'button-group--disabled': this.isDisabled
-        }
+          'button-group--disabled': this.isDisabled,
+        },
       ]
     },
-    groupStyle() {
+    groupStyle () {
       let style = ''
 
       if (this.color) style += `button-group--color-${this.color}`
@@ -58,12 +58,12 @@ export default {
       if (style && this.isOutlined) style += '-outlined'
 
       return style
-    }
+    },
   },
 
-  updated() {
+  updated () {
     const buttons = this.$children.filter(child => child.$options.name === 'SButton')
     this.isDisabled = buttons.every(button => !!button.$attrs.disabled)
-  }
+  },
 }
 </script>

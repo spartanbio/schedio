@@ -15,15 +15,15 @@ storiesOf('Components/Inputs.SCheckbox', module)
             ...withAttrsAsProps({
               id: 'base-checkbox',
               name: 'base-checkbox',
-              label: 'Base Checkbox'
+              label: 'Base Checkbox',
             }),
-            isReversed: boolean('is-reversed', false, 'Optional Props')
-          })
+            isReversed: boolean('is-reversed', false, 'Optional Props'),
+          }),
         },
-        attrs: { default: withUnboundAttrs({ value: 'base-checkbox' }) }
+        attrs: { default: withUnboundAttrs({ value: 'base-checkbox' }) },
       },
 
-      render(h) {
+      render (h) {
         const { attrs, props } = this.$props
         return (
           <div>
@@ -39,6 +39,6 @@ storiesOf('Components/Inputs.SCheckbox', module)
             <PropList component={SCheckbox} />
           </div>
         )
-      }
+      },
     }
   })

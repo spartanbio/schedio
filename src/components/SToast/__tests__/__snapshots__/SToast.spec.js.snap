@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SToast.vue can have a clickable action 1`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -15,7 +15,7 @@ exports[`SToast.vue can have a clickable action 1`] = `
 `;
 
 exports[`SToast.vue can have action text configured 1`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -29,7 +29,7 @@ exports[`SToast.vue can have action text configured 1`] = `
 `;
 
 exports[`SToast.vue can have position  1`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -42,7 +42,7 @@ exports[`SToast.vue can have position  1`] = `
 `;
 
 exports[`SToast.vue can have position center 1`] = `
-<div class="toast toast--center" style="" name="fade">
+<div class="toast toast--center fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -55,7 +55,7 @@ exports[`SToast.vue can have position center 1`] = `
 `;
 
 exports[`SToast.vue can have position right 1`] = `
-<div class="toast toast--right" style="" name="fade">
+<div class="toast toast--right fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -68,7 +68,7 @@ exports[`SToast.vue can have position right 1`] = `
 `;
 
 exports[`SToast.vue can have the icon hidden 1`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -81,7 +81,7 @@ exports[`SToast.vue can have the icon hidden 1`] = `
 `;
 
 exports[`SToast.vue closes on action click 1`] = `
-<div class="toast" style="display: none;" name="fade">
+<div class="toast fade-leave fade-leave-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -95,7 +95,7 @@ exports[`SToast.vue closes on action click 1`] = `
 `;
 
 exports[`SToast.vue renders toast type  correctly 1`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -108,7 +108,7 @@ exports[`SToast.vue renders toast type  correctly 1`] = `
 `;
 
 exports[`SToast.vue renders toast type error correctly 1`] = `
-<div class="toast toast--error" style="" name="fade">
+<div class="toast toast--error fade-enter fade-enter-active" style="">
   <div class="toast__icon"><svg viewBox="0 0 24 24" class="icon icon--color-red">
       <circle cx="12" cy="12" r="10"></circle>
       <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -125,7 +125,7 @@ exports[`SToast.vue renders toast type error correctly 1`] = `
 `;
 
 exports[`SToast.vue renders toast type success correctly 1`] = `
-<div class="toast toast--success" style="" name="fade">
+<div class="toast toast--success fade-enter fade-enter-active" style="">
   <div class="toast__icon"><svg viewBox="0 0 24 24" class="icon icon--color-green">
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
       <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -141,7 +141,7 @@ exports[`SToast.vue renders toast type success correctly 1`] = `
 `;
 
 exports[`SToast.vue renders toast type warning correctly 1`] = `
-<div class="toast toast--warning" style="" name="fade">
+<div class="toast toast--warning fade-enter fade-enter-active" style="">
   <div class="toast__icon"><svg viewBox="0 0 24 24" class="icon icon--color-gold">
       <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
       <line x1="12" y1="9" x2="12" y2="13"></line>
@@ -158,7 +158,7 @@ exports[`SToast.vue renders toast type warning correctly 1`] = `
 `;
 
 exports[`SToast.vue requires a title or body 1`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <div class="toast__text">
     <!---->
@@ -171,7 +171,7 @@ exports[`SToast.vue requires a title or body 1`] = `
 `;
 
 exports[`SToast.vue requires a title or body 2`] = `
-<div class="toast" style="" name="fade">
+<div class="toast fade-enter fade-enter-active" style="">
   <!---->
   <!---->
   <!---->

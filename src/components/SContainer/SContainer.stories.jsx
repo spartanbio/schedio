@@ -8,16 +8,16 @@ import PropList from '@@/docs/components/PropList'
 
 storiesOf('Components/Layout.SContainer', module)
   .addParameters({ jest: 'SContainer' })
-  .add('Container', function SContainerDocs() {
+  .add('Container', function SContainerDocs () {
     return {
       props: {
         props: {
           default: () => ({
-            isFullwidth: boolean('is-fullwidth', false)
-          })
-        }
+            isFullwidth: boolean('is-fullwidth', false),
+          }),
+        },
       },
-      render(h) {
+      render (h) {
         const { props } = this.$props
         return (
           <div>
@@ -41,6 +41,6 @@ storiesOf('Components/Layout.SContainer', module)
             <PropList component={SContainer} />
           </div>
         )
-      }
+      },
     }
   })

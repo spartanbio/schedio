@@ -15,7 +15,7 @@ export default {
 
   components: {
     SCard,
-    SContainer
-  }
+    SContainer,
+  },
 }
 </script>

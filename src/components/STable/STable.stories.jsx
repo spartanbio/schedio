@@ -8,7 +8,7 @@ import { storiesOf } from '@storybook/vue'
 
 storiesOf('Components/Tables.STable', module)
   .addParameters({ jest: 'STable' })
-  .add('Table', function STableDocs() {
+  .add('Table', function STableDocs () {
     const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
     const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
     const slotExampleProps = {
@@ -17,16 +17,16 @@ storiesOf('Components/Tables.STable', module)
       hideHeader: makeOptionalBoolean('hide-header'),
       isBordered: makeOptionalBoolean('is-bordered'),
       isHoverable: makeOptionalBoolean('is-hoverable'),
-      isStriped: makeOptionalBoolean('is-striped')
+      isStriped: makeOptionalBoolean('is-striped'),
     }
     const tableData = [
       { col1: 'Cell 1', col2: 'Cell 2', col3: 'Cell 3' },
-      { col1: 'Cell 4', col2: 'Cell 5', col3: 'Cell 6' }
+      { col1: 'Cell 4', col2: 'Cell 5', col3: 'Cell 6' },
     ]
     const propExampleProps = {
       ...slotExampleProps,
       caption: text('caption', 'This is a caption', 'Optional Props'),
-      tableData: object('table-data', tableData, 'Optional Props')
+      tableData: object('table-data', tableData, 'Optional Props'),
     }
 
     return {
@@ -34,14 +34,14 @@ storiesOf('Components/Tables.STable', module)
         props: {
           default: () => ({
             slotExampleProps,
-            propExampleProps
-          })
+            propExampleProps,
+          }),
         },
         headerCells: { default: makeDummySlotData('header (cells)') },
         bodyRows: { default: makeDummySlotData('default (rows)') },
-        footerRows: { default: makeDummySlotData('footer (rows)', 1) }
+        footerRows: { default: makeDummySlotData('footer (rows)', 1) },
       },
-      render(h) {
+      render (h) {
         const { props, headerCells, bodyRows, footerRows } = this.$props
 
         return (
@@ -158,6 +158,6 @@ storiesOf('Components/Tables.STable', module)
             <PropList component={STable} />
           </div>
         )
-      }
+      },
     }
   })

@@ -1,5 +1,5 @@
 <template>
-  <component
+  <Component
     :is="tag"
     class="card"
   >
@@ -31,14 +31,14 @@
     >
       <slot name="footer" />
     </div>
-  </component>
+  </Component>
 </template>
 
 <script>
-const imageValidator = obj => {
+const imageValidator = (obj) => {
   const requiredAttrs = ['src', 'alt']
 
-  return requiredAttrs.every(attr => {
+  return requiredAttrs.every((attr) => {
     const hasAttr = obj.hasOwnProperty(attr)
 
     if (!hasAttr) console.error(`\`image\` requires attribute: ${attr}`)
@@ -53,19 +53,19 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'div'
+      default: 'div',
     },
 
     image: {
       type: Object,
       default: () => ({ src: '', alt: '' }),
-      validator: imageValidator
+      validator: imageValidator,
     },
 
     hasNoPadding: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

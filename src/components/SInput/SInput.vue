@@ -14,7 +14,7 @@
         :class="{
           'input--invalid': isInvalid,
           'input--has-icon-left': !!iconLeft,
-          'input--has-icon-right': !!iconRight
+          'input--has-icon-right': !!iconRight,
         }"
         :name="name"
         :placeholder="placeholder"
@@ -60,10 +60,10 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validator: value => {
+      validator: (value) => {
         return !value || allowed.includes(value) || console.error(`type must be one of: ${allowed}`)
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>

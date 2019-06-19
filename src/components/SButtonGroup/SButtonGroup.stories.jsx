@@ -16,7 +16,7 @@ storiesOf('Components/Buttons.SButtonGroup', module)
       props: {
         color: { default: select('color', ['', ...colors], '', 'Optional Props') },
         isOutlined: {
-          default: boolean('is-outlined', false, 'Optional Props')
+          default: boolean('is-outlined', false, 'Optional Props'),
         },
         isGrouped: { default: boolean('is-grouped', false, 'Optional Props') },
         button1Text: { default: text('Button 1 text', 'Button 1', 'Slots') },
@@ -24,9 +24,9 @@ storiesOf('Components/Buttons.SButtonGroup', module)
         button3Text: { default: text('Button 3 text', 'Button 3', 'Slots') },
         button1Disabled: { default: boolean('Button 1 disabled', false, '$attrs') },
         button2Disabled: { default: boolean('Button 2 disabled', false, '$attrs') },
-        button3Disabled: { default: boolean('Button 3 disabled', false, '$attrs') }
+        button3Disabled: { default: boolean('Button 3 disabled', false, '$attrs') },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading level="1">Button Group</SHeading>
@@ -50,76 +50,76 @@ storiesOf('Components/Buttons.SButtonGroup', module)
             <PropList component={SButtonGroup} />
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Solid Group',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Solid Group</SHeading>
             {colorsToGroups(h)}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
   .add(
     'Outlined Group',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Outlined Group</SHeading>
             {colorsToGroups(h, { isOutlined: true })}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
 
-function colorsToGroups(h, props = { color: '' }) {
+function colorsToGroups (h, props = { color: '' }) {
   return colors.map(color => generateGroups(h, { ...props, color }))
 }
 
-function generateGroups(h, props = { color: '' }) {
+function generateGroups (h, props = { color: '' }) {
   return h(SContainerRow, [
     h(SContainerColumn, [
       generateHeading(h, { level: 2, content: props.color }),
       h(SContainerRow, [
         generateNarrowColumn(h, [
           generateHeading(h, { level: 3, content: 'Ungrouped' }),
-          generateSingleGroup(h, { ...props })
+          generateSingleGroup(h, { ...props }),
         ]),
         generateNarrowColumn(h, [
           generateHeading(h, { level: 3, content: 'Grouped' }),
-          generateSingleGroup(h, { ...props, isGrouped: true })
-        ])
-      ])
-    ])
+          generateSingleGroup(h, { ...props, isGrouped: true }),
+        ]),
+      ]),
+    ]),
   ])
 }
 
-function generateNarrowColumn(h, content) {
+function generateNarrowColumn (h, content) {
   return h(SContainerColumn, { props: { narrow: true } }, content)
 }
 
-function generateSingleGroup(h, props) {
+function generateSingleGroup (h, props) {
   return h(SButtonGroup, { props }, generateTheeButtons(h))
 }
 
-function generateTheeButtons(h) {
+function generateTheeButtons (h) {
   return Array.from({ length: 3 }, (v, idx) => h(SButton, `Button ${idx + 1}`))
 }

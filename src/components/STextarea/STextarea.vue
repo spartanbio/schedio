@@ -14,7 +14,7 @@
         :class="{
           'textarea--invalid': isInvalid,
           'textarea--has-icon-left': !!iconLeft,
-          'textarea--has-icon-right': !!iconRight
+          'textarea--has-icon-right': !!iconRight,
         }"
         :name="name"
         :placeholder="placeholder"
@@ -48,6 +48,6 @@ import InputText from '@/mixins/InputText.mixin'
 export default {
   name: 'STextarea',
 
-  mixins: [InputText, ControlIcons]
+  mixins: [InputText, ControlIcons],
 }
 </script>

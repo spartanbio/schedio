@@ -1,5 +1,5 @@
 <template>
-  <component
+  <Component
     :is="componentIs"
     v-bind="[linkProperties, $attrs]"
     :class="classList"
@@ -7,7 +7,7 @@
     v-on="$listeners"
   >
     <slot>{{ to }}</slot>
-  </component>
+  </Component>
 </template>
 
 <script>
@@ -17,51 +17,51 @@ export default {
   props: {
     to: {
       type: [String, Object],
-      required: true
+      required: true,
     },
 
     isPlain: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
-    classList() {
+    classList () {
       return { 'link--external': this.isExternalLink, 'link--plain': this.isPlain }
     },
 
-    isExternalLink() {
+    isExternalLink () {
       return typeof this.to === 'string' && /^(http(s)?|ftp):\/\//.test(this.to)
     },
 
-    componentIs() {
+    componentIs () {
       if (this.isExternalLink || (!this.$router && !this.isExternalLink)) return 'a'
       if (this.$root.nuxt) return 'nuxt-link'
       return 'router-link'
     },
 
-    linkProperties() {
+    linkProperties () {
       if (this.isExternalLink) {
         return {
           href: this.to,
           target: '_blank',
-          rel: 'noopener noreferrer'
+          rel: 'noopener noreferrer',
         }
       }
 
       // handles internal links if `vue-router` is not present
       if (!this.$router && !this.isExternalLink) {
         return {
-          href: this.to
+          href: this.to,
         }
       }
 
       return {
         // nuxt compatibility
-        to: this.to
+        to: this.to,
       }
-    }
-  }
+    },
+  },
 }
 </script>

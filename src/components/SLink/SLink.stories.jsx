@@ -12,12 +12,12 @@ storiesOf('Components/SLink', module)
     return {
       props: {
         to: {
-          default: text('to', 'https://anunvisitedwebsite.com', 'Required Props')
+          default: text('to', 'https://anunvisitedwebsite.com', 'Required Props'),
         },
         isPlain: { default: boolean('is-plain', false, 'Optional Props') },
-        linkText: { default: text('Link text', '', 'Slots') }
+        linkText: { default: text('Link text', '', 'Slots') },
       },
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading level="1">Links</SHeading>
@@ -62,13 +62,13 @@ storiesOf('Components/SLink', module)
             <PropList component={SLink} />
           </div>
         )
-      }
+      },
     }
   })
   .add(
     'Link Types',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Link Types</SHeading>
@@ -90,11 +90,11 @@ storiesOf('Components/SLink', module)
             </SLink>
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )

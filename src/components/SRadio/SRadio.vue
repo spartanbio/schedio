@@ -29,6 +29,6 @@ import InputControl from '@/mixins/InputControl.mixin'
 export default {
   name: 'SRadio',
 
-  mixins: [InputControl]
+  mixins: [InputControl],
 }
 </script>

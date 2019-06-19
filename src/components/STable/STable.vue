@@ -83,91 +83,91 @@ export default {
 
   components: {
     STableRow,
-    STableCell
+    STableCell,
   },
 
   filters: {
-    startCase
+    startCase,
   },
 
   props: {
     tableData: {
       type: [Array, Object],
-      default: () => []
+      default: () => [],
     },
     header: {
       type: [Array, Object],
-      default: () => []
+      default: () => [],
     },
     footer: {
       type: [Array, Object],
-      default: () => []
+      default: () => [],
     },
     caption: {
       type: String,
-      default: ''
+      default: '',
     },
     hasCaptionTop: {
       type: Boolean,
-      default: false
+      default: false,
     },
     headerInFooter: {
       type: Boolean,
-      default: false
+      default: false,
     },
     hideHeader: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isBordered: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isHoverable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isStriped: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  data() {
+  data () {
     return {
       container: null,
       containerWidth: 0,
       tableWidth: 0,
       distanceToScroll: 0,
-      horizontalScrollPosition: 0
+      horizontalScrollPosition: 0,
     }
   },
 
   computed: {
-    overlayClassList() {
+    overlayClassList () {
       return {
         'table__overlay--left': this.isScrolled,
-        'table__overlay--right': this.isFullyScrolled
+        'table__overlay--right': this.isFullyScrolled,
       }
     },
 
-    tableClassList() {
+    tableClassList () {
       return {
         'table--bordered': this.isBordered,
         'table--hoverable': this.isHoverable,
-        'table--striped': this.isStriped
+        'table--striped': this.isStriped,
       }
     },
 
-    isScrolled() {
+    isScrolled () {
       return this.horizontalScrollPosition > 0
     },
 
-    isFullyScrolled() {
+    isFullyScrolled () {
       return this.horizontalScrollPosition < this.distanceToScroll
     },
 
-    headerCells() {
+    headerCells () {
       // check keys in case object is passed
       if (Object.keys(this.header).length) return this.header
 
@@ -180,15 +180,15 @@ export default {
       return [...new Set(headers)]
     },
 
-    footerCells() {
+    footerCells () {
       // give `this.footer` priority
       if (Object.keys(this.footer).length) return this.footer
       // always return something since we only check for this.footerCells.length
       return this.headerInFooter ? this.headerCells : this.footer
-    }
+    },
   },
 
-  created() {
+  created () {
     // warn if `tableData` prop or default slot not provided.
     // check keys in case object is passed
     if (!Object.keys(this.tableData).length && !this.$slots.default) {
@@ -196,7 +196,7 @@ export default {
     }
   },
 
-  mounted() {
+  mounted () {
     this.container = this.$el.querySelector('.table__container')
     this.checkForOverflow()
 
@@ -206,7 +206,7 @@ export default {
     }
   },
 
-  destroyed() {
+  destroyed () {
     if (typeof window !== 'undefined') {
       window.removeEventListener('resize', this.checkForOverflow)
       this.container.removeEventListener('scroll', this.checkOverflowSide)
@@ -214,7 +214,7 @@ export default {
   },
 
   methods: {
-    checkForOverflow(e) {
+    checkForOverflow (e) {
       const table = this.$el.querySelector('.table')
 
       this.containerWidth = this.container.clientWidth
@@ -223,9 +223,9 @@ export default {
       this.horizontalScrollPosition = table.scrollLeft
     },
 
-    checkOverflowSide(e) {
+    checkOverflowSide (e) {
       this.horizontalScrollPosition = e.target.scrollLeft
-    }
-  }
+    },
+  },
 }
 </script>

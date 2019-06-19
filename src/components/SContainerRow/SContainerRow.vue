@@ -18,7 +18,7 @@ const validator = v => (flexOptions.includes(v) ? true : console.error(`Allowed:
 const propSettings = () => ({
   type: String,
   default: '',
-  validator
+  validator,
 })
 
 // set up all $props relying on mobile breakpoints
@@ -41,7 +41,7 @@ export default {
 
     isReversed: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     /* eslint-disable vue/require-default-prop */
@@ -49,23 +49,23 @@ export default {
     // Add base props without breakpoints
     justify: propSettings(),
 
-    align: propSettings()
+    align: propSettings(),
     /* eslint-enable */
   },
 
   computed: {
-    theNames() {
+    theNames () {
       return this.generateResponsiveClassNames('align|justify')
     },
 
-    classList() {
+    classList () {
       return [
         this.align ? `row--align-${this.align}` : '',
         this.justify ? `row--justify-${this.justify}` : '',
         this.isReversed ? `row--reverse` : '',
-        ...this.generateResponsiveClassNames('align|justify')
+        ...this.generateResponsiveClassNames('align|justify'),
       ]
-    }
+    },
   },
 
   methods: {
@@ -78,7 +78,7 @@ export default {
       if (classes[key] && key.match(rx)) return acc.concat(name)
 
       return acc
-    }
-  }
+    },
+  },
 }
 </script>

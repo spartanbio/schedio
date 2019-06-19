@@ -15,17 +15,17 @@ storiesOf('Components/Inputs.SSwitch', module)
             ...withAttrsAsProps({
               id: 'toggle-switch',
               name: 'toggle-switch',
-              label: 'Toggle Switch'
+              label: 'Toggle Switch',
             }),
             isReversed: boolean('is-reversed', false, 'Optional Props'),
-            size: select('size', ['', 'base', 'medium', 'large'], '', 'Optional Props')
-          })
+            size: select('size', ['', 'base', 'medium', 'large'], '', 'Optional Props'),
+          }),
         },
         attrs: {
-          default: withUnboundAttrs({ value: 'toggle-switch' })
-        }
+          default: withUnboundAttrs({ value: 'toggle-switch' }),
+        },
       },
-      render(h) {
+      render (h) {
         const { props, attrs } = this.$props
         return (
           <div>
@@ -37,6 +37,6 @@ storiesOf('Components/Inputs.SSwitch', module)
             {SSwitch.props && <PropList component={SSwitch} />}
           </div>
         )
-      }
+      },
     }
   })

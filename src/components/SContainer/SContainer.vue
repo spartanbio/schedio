@@ -14,8 +14,8 @@ export default {
   props: {
     isFullwidth: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

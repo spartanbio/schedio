@@ -13,24 +13,24 @@ storiesOf('Components/SChip', module)
   .addParameters({ jest: 'SChip' })
   .add(
     'Chip',
-    function SChipExample() {
+    function SChipExample () {
       return {
         props: {
           props: {
             default: {
               color: select('color', ['', ...colors], '', 'Optional Props'),
               isClosable: boolean('is-closable', false, 'Optional Props'),
-              closeAriaLabel: text('close-aria-label', 'Close toast', 'Optional Props')
-            }
+              closeAriaLabel: text('close-aria-label', 'Close toast', 'Optional Props'),
+            },
           },
           slots: {
             default: {
-              defaultSlot: text('default', 'Some content', '$slots')
-            }
-          }
+              defaultSlot: text('default', 'Some content', '$slots'),
+            },
+          },
         },
 
-        render(h) {
+        render (h) {
           const { props, slots } = this.$props
 
           return (
@@ -48,20 +48,20 @@ storiesOf('Components/SChip', module)
               {SChip.props && <PropList component={SChip} />}
             </div>
           )
-        }
+        },
       }
     },
     {
       options: {
-        showPanel: true
-      }
+        showPanel: true,
+      },
     }
   )
   .add(
     'Closable Chip',
-    function ClosableChipExample() {
+    function ClosableChipExample () {
       return {
-        data() {
+        data () {
           return {
             showComponentCode: false,
             chips: {
@@ -69,24 +69,24 @@ storiesOf('Components/SChip', module)
               chip2: true,
               chip3: true,
               chip4: true,
-              chip5: true
-            }
+              chip5: true,
+            },
           }
         },
 
         methods: {
-          handleClose(evt, chip) {
+          handleClose (evt, chip) {
             this.chips[chip] = evt
             console.log(`[SChip]: ${chip} is ${evt} now`)
           },
-          resetChips() {
+          resetChips () {
             for (let chip in this.chips) {
               if (this.chips.hasOwnProperty(chip)) this.chips[chip] = true
             }
-          }
+          },
         },
 
-        render(h) {
+        render (h) {
           return (
             <div>
               <SHeading level="1">Closable Chip</SHeading>
@@ -104,7 +104,7 @@ storiesOf('Components/SChip', module)
                 is-outlined
                 size="small"
                 style="margin-bottom: 1em;"
-                onClick={() => (this.showComponentCode = !this.showComponentCode)}
+                onClick={() => { this.showComponentCode = !this.showComponentCode }}
               >
                 {this.showComponentCode ? 'Hide' : 'Show'} component code
               </SButton>
@@ -176,19 +176,19 @@ export default {
               </SButton>
             </div>
           )
-        }
+        },
       }
     },
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
   .add(
     'Chip Colors',
     () => ({
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>Chip Colors</SHeading>
@@ -196,23 +196,23 @@ export default {
             {['', ...colors].map(color => generateChips(h, color))}
           </div>
         )
-      }
+      },
     }),
     {
       options: {
-        showPanel: false
-      }
+        showPanel: false,
+      },
     }
   )
 
-function generateChips(h, color) {
+function generateChips (h, color) {
   const chipName = `${color || 'base'} chip`
 
   return h(SContainerRow, [
     h(SContainerColumn, [
       generateHeading(h, { level: 2, content: color || 'Base' }),
       h(SChip, { props: { color } }, chipName),
-      h(SChip, { props: { color, isClosable: true } }, `Closable ${chipName}`)
-    ])
+      h(SChip, { props: { color, isClosable: true } }, `Closable ${chipName}`),
+    ]),
   ])
 }

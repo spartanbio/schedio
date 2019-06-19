@@ -29,6 +29,6 @@ import InputControl from '@/mixins/InputControl.mixin'
 export default {
   name: 'SCheckbox',
 
-  mixins: [InputControl]
+  mixins: [InputControl],
 }
 </script>
