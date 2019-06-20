@@ -3660,12 +3660,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3c21d848-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SContainerColumn/SContainerColumn.vue?vue&type=template&id=cdff7532&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3c21d848-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SContainerColumn/SContainerColumn.vue?vue&type=template&id=0eeb1a72&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"column",class:_vm.classList},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SContainerColumn/SContainerColumn.vue?vue&type=template&id=cdff7532&
+// CONCATENATED MODULE: ./src/components/SContainerColumn/SContainerColumn.vue?vue&type=template&id=0eeb1a72&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -3876,7 +3876,7 @@ var SContainerColumnvue_type_script_lang_js_propSettings = function propSettings
       defaultVal = _ref$defaultVal === void 0 ? '' : _ref$defaultVal;
 
   return {
-    type: [Number, String].concat(_toConsumableArray(types)),
+    type: [].concat(_toConsumableArray(types), [Number, String]),
     default: defaultVal,
     validator: validator
   };
@@ -3892,7 +3892,8 @@ var narrowSettings = function narrowSettings() {
 
 var breakpointProps = mobile_breakpoints.reduce(function (props, breakpoint) {
   props[breakpoint] = SContainerColumnvue_type_script_lang_js_propSettings({
-    types: [Boolean]
+    types: [Boolean],
+    defaultVal: false
   });
   props["narrow-after-".concat(breakpoint)] = narrowSettings();
   props["narrow-until-".concat(breakpoint)] = narrowSettings();
@@ -3906,8 +3907,6 @@ var breakpointProps = mobile_breakpoints.reduce(function (props, breakpoint) {
   name: 'SContainerColumn',
   mixins: [ContainerMethods],
   props: _objectSpread({}, breakpointProps, {
-    /* eslint-disable vue/require-default-prop */
-    // eslint doesn't see prop defaults in functions
     // Add base props without breakpoints
     size: SContainerColumnvue_type_script_lang_js_propSettings(),
     offset: SContainerColumnvue_type_script_lang_js_propSettings(),
@@ -3915,8 +3914,6 @@ var breakpointProps = mobile_breakpoints.reduce(function (props, breakpoint) {
     order: SContainerColumnvue_type_script_lang_js_propSettings({
       validator: orderValidator
     })
-    /* eslint-enable */
-
   }),
   data: function data() {
     return {
