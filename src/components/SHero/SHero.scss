@@ -15,10 +15,10 @@
   }
 
   &__body {
-    display: flex;
     align-items: center;
+    display: flex;
     flex: 1 0 auto;
-    padding: spacing();
+    padding: spacing('triple') spacing('loose');
   }
 
   &--has-no-padding {
@@ -34,9 +34,8 @@
 
   @each $color-name in $hero-colors {
     &--color-#{$color-name} {
-
-      color: choose-contrast-color($color-name);
       background-color: color($color-name);
+      color: choose-contrast-color($color-name);
     }
   }
 }
