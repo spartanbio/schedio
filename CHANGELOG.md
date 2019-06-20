@@ -1,3 +1,12 @@
+## [3.4.6](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.5...v3.4.6) (2019-06-20)
+
+
+### Bug Fixes
+
+* **hero:** improves padding ([6eca329](https://gitlab.com/spartanbio-ux/schedio/commit/6eca329))
+* **typography:** ensures correct property is being set ([bbd63d0](https://gitlab.com/spartanbio-ux/schedio/commit/bbd63d0))
+* **typography:** only add margin to non-last child paragraphs ([1190a6e](https://gitlab.com/spartanbio-ux/schedio/commit/1190a6e))
+
 ## [3.4.5](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.4...v3.4.5) (2019-06-19)
 
 
