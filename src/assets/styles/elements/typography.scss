@@ -151,7 +151,7 @@ ul.no-bullets {
 
   @each $weight in $font-weights {
     &--weight-#{$weight} {
-      text-align: $weight;
+      font-weight: $weight;
     }
   }
 
