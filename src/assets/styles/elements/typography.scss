@@ -69,7 +69,7 @@ a {
 }
 
 p {
-  margin-top: spacing('none');
+  margin: spacing('none');
 
   &:not(:last-child) {
     margin-bottom: spacing();
