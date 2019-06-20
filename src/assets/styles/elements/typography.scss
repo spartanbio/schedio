@@ -69,8 +69,11 @@ a {
 }
 
 p {
-  margin-bottom: spacing('base');
   margin-top: spacing('none');
+
+  &:not(:last-child) {
+    margin-bottom: spacing();
+  }
 }
 
 ul {
