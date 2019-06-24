@@ -1,3 +1,10 @@
+## [3.4.7](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.6...v3.4.7) (2019-06-20)
+
+
+### Bug Fixes
+
+* **typography:** fixes paragraph spacing ([1cf6ee9](https://gitlab.com/spartanbio-ux/schedio/commit/1cf6ee9))
+
 ## [3.4.6](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.5...v3.4.6) (2019-06-20)
 
 
