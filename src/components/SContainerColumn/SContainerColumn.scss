@@ -1,18 +1,8 @@
 .column {
-  /*
-   *`0px` is for IE11
-   * stylelint-disable length-zero-no-unit
-   * prettier-disable-start
-   */
   flex: 1 1 0;
   max-width: 100%;
-  padding: spacing('half');
+  padding: spacing();
   position: relative;
-
-  /*
-   * prettier-disable-end
-   * stylelint-enable length-zero-no-unit
-   */
 
   // Responsive columns (sm, md, lg, xl)
   @each $breakpoint in map-keys($media-breakpoints) {
