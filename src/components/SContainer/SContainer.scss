@@ -1,5 +1,6 @@
 .container {
   margin: 0 auto;
+  padding: spacing();
   width: 100%;
 
   &:not(.container--fullwidth) {
