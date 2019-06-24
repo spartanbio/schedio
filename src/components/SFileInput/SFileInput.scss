@@ -1,8 +1,9 @@
 .file-input {
-  display: inline-block;
 
   // bind parent class name
   $parent: &;
+
+  display: inline-block;
 
   // hides the default element
   &__control {
@@ -70,8 +71,9 @@
     }
 
     #{$parent}__display {
-      @include control;
       $area-width: 12em;
+
+      @include control;
 
       align-items: center;
       display: flex;
@@ -83,8 +85,8 @@
 
       &:hover,
       &--dragover {
-        border-color: color('spartan_blue', 'lighter');
         background-color: color('ice');
+        border-color: color('spartan_blue', 'lighter');
 
         #{$parent}__icon {
           opacity: 0.8;

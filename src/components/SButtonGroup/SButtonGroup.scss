@@ -1,7 +1,7 @@
 .button-group {
   .button {
-    margin-right: spacing();
     margin-bottom: spacing();
+    margin-right: spacing();
   }
 
   @each $color-name in $button-colors {
@@ -30,13 +30,13 @@
       position: relative;
 
       &:first-child {
-        border-top-left-radius: border-radius('small');
         border-bottom-left-radius: border-radius('small');
+        border-top-left-radius: border-radius('small');
       }
 
       &:last-child {
-        border-top-right-radius: border-radius('small');
         border-bottom-right-radius: border-radius('small');
+        border-top-right-radius: border-radius('small');
       }
 
       &:not(:last-child) {

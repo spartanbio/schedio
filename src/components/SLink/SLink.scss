@@ -16,10 +16,10 @@
     // Percentages are favoured over ems as measurements are based on line-height.
     bottom: 10%;
     content: '';
-    // Give it just a bit of visual padding
-    left: -1 * $highlight-spacing;
     // Approximately align top with baseline
     height: 20%;
+    // Give it just a bit of visual padding
+    left: -1 * $highlight-spacing;
     position: absolute;
     transition: all duration('fast') easing();
     // Adjusts for left offset

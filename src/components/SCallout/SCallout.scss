@@ -1,8 +1,8 @@
 .callout {
   background: color('ice');
-  border-radius: border-radius('small');
   border-left: border();
   border-left-width: border-width('thickest');
+  border-radius: border-radius('small');
   padding: spacing();
 
   & + & {

@@ -13,7 +13,7 @@
     "dev": "run-p serve:storybook theo:onchange devtools",
     "devtools": "vue-devtools",
     "dist:tokens": "run-s theo ase-encode",
-    "lint:style": "stylelint ./src/assets/**/*.scss ./src/**/*.vue",
+    "lint:style": "stylelint ./src/**/*.{scss,vue}",
     "lint:vue": "vue-cli-service lint ./{src,config,scripts,docs,tests}/**/*.{js,jsx,vue}",
     "scaffold": "node ./scripts/scaffold-component.js",
     "semantic-release": "semantic-release",
@@ -117,15 +117,19 @@
   },
   "lint-staged": {
     "*.js": [
-      "vue-cli-service lint",
+      "vue-cli-service lint:vue",
+      "git add"
+    ],
+    "*.jsx": [
+      "vue-cli-service lint:vue",
       "git add"
     ],
     "*.vue": [
-      "vue-cli-service lint",
+      "vue-cli-service lint:vue",
       "git add"
     ],
     "*.scss": [
-      "stylelint ./src/assets/**/*.scss",
+      "lint:style",
       "git add"
     ]
   },

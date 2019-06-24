@@ -37,8 +37,8 @@
   }
 
   &__footer {
-    border-top: border();
     border-color: color('grey', 'light');
+    border-top: border();
     flex: 1 1 auto;
     padding: spacing('double');
   }

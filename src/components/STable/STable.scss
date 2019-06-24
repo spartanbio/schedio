@@ -13,6 +13,7 @@
 
   &__caption {
     @include font-size(6);
+
     caption-side: bottom;
     color: color('night', 'light');
     font-weight: $font-weight-regular;
