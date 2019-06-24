@@ -1,3 +1,10 @@
+## [3.4.9](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.8...v3.4.9) (2019-06-24)
+
+
+### Bug Fixes
+
+* **row:** applies negative margin to all sides ([c1c1dfa](https://gitlab.com/spartanbio-ux/schedio/commit/c1c1dfa))
+
 ## [3.4.8](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.7...v3.4.8) (2019-06-24)
 
 
