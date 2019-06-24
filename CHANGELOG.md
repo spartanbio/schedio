@@ -1,3 +1,11 @@
+## [3.4.8](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.7...v3.4.8) (2019-06-24)
+
+
+### Bug Fixes
+
+* **column:** increases column padding ([44947a9](https://gitlab.com/spartanbio-ux/schedio/commit/44947a9))
+* **container:** adds padding to ensure rows do not cause page to scroll horizontally ([c98b367](https://gitlab.com/spartanbio-ux/schedio/commit/c98b367))
+
 ## [3.4.7](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.6...v3.4.7) (2019-06-20)
 
 
