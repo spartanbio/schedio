@@ -48,7 +48,7 @@ storiesOf('Components/${componentName}', module)
   .addParameters({ jest: '${componentName}' })
   .add('${rawName}', () => {
     return {
-      render(h) {
+      render (h) {
         return (
           <div>
             <SHeading>${rawName}</SHeading>
