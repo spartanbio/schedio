@@ -1,3 +1,10 @@
+# [3.5.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.9...v3.5.0) (2019-07-02)
+
+
+### Features
+
+* **s-collapse:** adds `SCollapse` component ([ee147e4](https://gitlab.com/spartanbio-ux/schedio/commit/ee147e4))
+
 ## [3.4.9](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.8...v3.4.9) (2019-06-24)
 
 

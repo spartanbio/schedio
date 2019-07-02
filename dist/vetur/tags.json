@@ -48,6 +48,14 @@
     "subtags": [],
     "description": "Schedio component: <s-chip>"
   },
+  "s-collapse": {
+    "attributes": [
+      "trigger-text",
+      "content"
+    ],
+    "subtags": [],
+    "description": "Schedio component: <s-collapse>"
+  },
   "s-container": {
     "attributes": [
       "is-fullwidth"

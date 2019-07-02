@@ -75,6 +75,14 @@
     "description": "String value.",
     "type": "string"
   },
+  "s-collapse/trigger-text": {
+    "description": "String value.",
+    "type": "string"
+  },
+  "s-collapse/content": {
+    "description": "String value.",
+    "type": "string"
+  },
   "s-container/is-fullwidth": {
     "description": "Boolean value.",
     "type": "boolean"
