@@ -33,7 +33,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('${fileName}.vue', () => {
-  it('renders correctly', await () => {
+  it('renders correctly', async () => {
     const wrapper = shallowMount(${fileName})
 
     expect(wrapper.html()).toMatchSnapshot()
