@@ -1,0 +1,36 @@
+.collapse {
+  $root: &;
+
+  &:not(:last-child) {
+    border-bottom: border();
+    border-color: color('grey', 'lighter');
+    margin-bottom: spacing('half') + spacing('quarter');
+  }
+
+  &__trigger {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: spacing('half');
+    width: 100%;
+  }
+
+  &__icon {
+    margin-left: spacing('half');
+    transition: all duration() easing();
+  }
+
+  &__content {
+    padding: spacing();
+    padding-top: spacing('half') + spacing('quarter');
+  }
+
+  &--active {
+    #{$root}__trigger {
+      background: color('ice');
+    }
+
+    #{$root}__icon {
+      transform: rotate(-180deg);
+    }
+  }
+}

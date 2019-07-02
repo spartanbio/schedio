@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SCollapse.vue accepts props for text 1`] = `
+<article class="collapse">
+  <header>
+    <sbutton-stub color="" size="" iconleft="" iconright="" class="collapse__trigger">
+      trigger text
+      <sicon-stub icon="chevron-down" color="" size="" class="collapse__icon"></sicon-stub>
+    </sbutton-stub>
+  </header>
+  <main aria-hidden="true" class="collapse__content" style="display: none;">
+    content
+  </main>
+</article>
+`;
+
+exports[`SCollapse.vue accepts slots for text 1`] = `
+<article class="collapse">
+  <header>
+    <sbutton-stub color="" size="" iconleft="" iconright="" class="collapse__trigger">
+      Collapse trigger text
+      <sicon-stub icon="chevron-down" color="" size="" class="collapse__icon"></sicon-stub>
+    </sbutton-stub>
+  </header>
+  <main aria-hidden="true" class="collapse__content" style="display: none;">content</main>
+</article>
+`;
+
+exports[`SCollapse.vue opens and closes 1`] = `
+<article class="collapse collapse--active">
+  <header><button class="button collapse__trigger">
+      <!---->
+      <!---->
+      Collapse trigger text
+      <svg viewBox="0 0 24 24" class="icon collapse__icon">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+      <!----></button></header>
+  <main class="collapse__content fade-enter fade-enter-active" style="">
+    Collapse content
+  </main>
+</article>
+`;
+
+exports[`SCollapse.vue opens and closes 2`] = `
+<article class="collapse">
+  <header><button class="button collapse__trigger">
+      <!---->
+      <!---->
+      Collapse trigger text
+      <svg viewBox="0 0 24 24" class="icon collapse__icon">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+      <!----></button></header>
+  <main class="collapse__content fade-leave fade-leave-active" style="" aria-hidden="true">
+    Collapse content
+  </main>
+</article>
+`;
+
+exports[`SCollapse.vue renders correctly 1`] = `
+<article class="collapse">
+  <header>
+    <sbutton-stub color="" size="" iconleft="" iconright="" class="collapse__trigger">
+      Collapse trigger text
+      <sicon-stub icon="chevron-down" color="" size="" class="collapse__icon"></sicon-stub>
+    </sbutton-stub>
+  </header>
+  <main aria-hidden="true" class="collapse__content" style="display: none;">
+    Collapse content
+  </main>
+</article>
+`;
