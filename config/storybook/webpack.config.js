@@ -24,6 +24,7 @@ module.exports = ({ config }) => {
   })
 
   Object.assign(config.resolve.alias, sharedConf.aliases)
+  config.parallelism = 1
 
   return config
 }
