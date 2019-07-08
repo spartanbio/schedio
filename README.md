@@ -1,11 +1,5 @@
 # schedio-design
 
-Docs status:
-[![Netlify Status](https://api.netlify.com/api/v1/badges/aed4d7e6-2fb2-4c4d-bc03-6eccf5598462/deploy-status)](https://app.netlify.com/sites/spartanbio-design/deploys)
-
-Build status:
-[![pipeline status](https://gitlab.com/spartanbio-marketing/schedio/badges/master/pipeline.svg)](https://gitlab.com/spartanbio-marketing/schedio/commits/master)
-
 [Spartan's design system](https://spartanbio-design.netlify.com).
 
 Built for [Vue](https://vuejs.org) with [Theo](https://github.com/salesforce-ux/theo) and
@@ -13,7 +7,7 @@ Built for [Vue](https://vuejs.org) with [Theo](https://github.com/salesforce-ux/
 
 ## Requirements
 
-- Node 8.11.4+
+- Node 10.16.0+
 - Vue 2.6+
 - @vue/cli 3.4.0+
 
