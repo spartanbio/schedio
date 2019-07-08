@@ -12,6 +12,9 @@ cache:
 
 build:
   stage: build
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^chore\(release\).*/
   script:
     - yarn --frozen-lockfile --non-interactive
     - yarn build
@@ -21,6 +24,9 @@ build:
 
 test:
   stage: test
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^chore\(release\).*/
   script: yarn test:generate
   dependencies:
     - build
@@ -33,9 +39,31 @@ publish:
   stage: publish
   only:
     - master
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^chore\(release\).*/
   script:
     - yarn build:release
     - yarn semantic-release
   dependencies:
     - build
     - test
+
+publish:docs:
+  stage: publish
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^chore(release).*/
+  only:
+    - master
+  script:
+    - yarn add netlify-cli
+    - rm config/storybook/preview-head.html
+    - yarn build:storybook
+    - netlify deploy -a $NETLIFY_AUTH_TOKEN -d storybook-static/ -p -m
+      "$CI_COMMIT_REF_SLUG@$CI_COMMIT_SHORT_SHA - $CI_COMMIT_TITLE"
+  dependencies:
+    - test
+  artifacts:
+    paths:
+      - storybook-static/
