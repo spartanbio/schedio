@@ -1,3 +1,10 @@
+## [3.5.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.5.0...v3.5.1) (2019-07-11)
+
+
+### Bug Fixes
+
+* **collapse:** fixes alignment and icon sizing ([26f3813](https://gitlab.com/spartanbio-ux/schedio/commit/26f3813))
+
 # [3.5.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.4.9...v3.5.0) (2019-07-02)
 
 
