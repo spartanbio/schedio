@@ -1,4 +1,4 @@
-# schedio-design
+# Schedio
 
 [Spartan's design system](https://spartanbio-design.netlify.com).
 
@@ -14,7 +14,7 @@ Built for [Vue](https://vuejs.org) with [Theo](https://github.com/salesforce-ux/
 ## Installation
 
 ```bash
-$ yarn add gitlab:spartanbio-marketing/schedio
+$ yarn add @spartanbio/schedio
 ```
 
 ## Usage
@@ -23,8 +23,8 @@ Import and register all components globally:
 
 ```js
 import Vue from 'vue'
-import Schedio from 'schedio-design'
-import 'schedio-design/dist/schedio-design.css'
+import Schedio from '@spartanbio/schedio'
+import '@spartanbio/schedio/dist/schedio.css'
 
 Vue.use(Schedio)
 ```
@@ -33,9 +33,9 @@ Or, import and register individual components to keep the bundle smaller:
 
 ```js
 import Vue from 'vue'
-import SButton from 'schedio-design/dist/components/SButton'
-import SContainer from 'schedio-design/dist/components/SContainer'
-import 'schedio-design/dist/schedio-design.css'
+import SButton from '@spartanbio/schedio/dist/components/SButton'
+import SContainer from '@spartanbio/schedio/dist/components/SContainer'
+import '@spartanbio/schedio/dist/schedio.css'
 
 Vue.use(SButton)
 Vue.use(SContainer)
@@ -47,7 +47,7 @@ Components can also be registered locally:
 <!-- ALocalComponent.vue -->
 
 <script>
-import { SButton } from 'schedio-design'
+import { SButton } from '@spartanbio/schedio'
 
 export default {
   name: 'ALocalComponent',
@@ -63,13 +63,13 @@ export default {
 ### SCSS Resources
 
 SCSS can be used with `sass` and `sass-loader` by importing
-`'schedio-design/src/assets/styles.scss'`
+`'@spartanbio/schedio/src/assets/styles.scss'`
 
 To use SCSS resources, import the following in this order:
 
-1. Required: `'schedio-design/src/assets/styles/tokens.scss'`
-1. `'schedio-design/src/assets/styles/base.scss'`
-1. `'schedio-design/src/assets/styles/global.scss'`
+1. Required: `'@spartanbio/schedio/src/assets/styles/tokens.scss'`
+1. `'@spartanbio/schedio/src/assets/styles/base.scss'`
+1. `'@spartanbio/schedio/src/assets/styles/global.scss'`
 
 ## Dev setup
 

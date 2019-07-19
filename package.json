@@ -1,12 +1,14 @@
 {
-  "name": "schedio-design",
+  "name": "@spartanbio/schedio",
   "version": "3.5.1",
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "ase-encode": " node ./scripts/ase-encode.js",
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "serve": "yarn run serve:storybook",
-    "build": "vue-cli-service build --target lib ./src/index.js && rm dist/demo.html",
+    "build": "vue-cli-service build --target lib --name schedio ./src/index.js && rm dist/demo.html",
     "build:release": "node ./scripts/build-release.js",
     "lint": "run-p lint:vue lint:style",
     "build:storybook": "build-storybook -s ./static -c config/storybook",
@@ -133,8 +135,8 @@
       "git add"
     ]
   },
-  "main": "dist/schedio-design.common.js",
-  "browser": "dist/schedio-design.umd.min.js",
+  "main": "dist/schedio.common.js",
+  "browser": "dist/schedio.umd.min.js",
   "files": [
     "dist",
     "src"
