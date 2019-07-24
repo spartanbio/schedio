@@ -5,16 +5,16 @@ module.exports = {
   lintOnSave: true,
   pluginOptions: {
     stylelint: {
-      formatter: () => require('prettier')
+      formatter: () => require('prettier'),
     },
-    'style-resources-loader': sharedConf.styleResourcesLoaderOptions
+    'style-resources-loader': sharedConf.styleResourcesLoaderOptions,
   },
   css: {
-    extract: true
+    extract: true,
   },
   configureWebpack: {
     resolve: {
-      alias: sharedConf.aliases
-    }
-  }
+      alias: sharedConf.aliases,
+    },
+  },
 }
