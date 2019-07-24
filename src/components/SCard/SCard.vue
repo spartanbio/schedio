@@ -39,7 +39,7 @@ const imageValidator = (obj) => {
   const requiredAttrs = ['src', 'alt']
 
   return requiredAttrs.every((attr) => {
-    const hasAttr = obj.hasOwnProperty(attr)
+    const hasAttr = {}.hasOwnProperty.call(obj, attr)
 
     if (!hasAttr) console.error(`\`image\` requires attribute: ${attr}`)
 

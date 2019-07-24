@@ -85,7 +85,7 @@
 
         <SContainerColumn
           v-else
-          style="display:flex; flex-direction: column; justify-content: space-between;"
+          style="display: flex; flex-direction: column; justify-content: space-between;"
         >
           <SFormField
             v-for="(v, k) in 3"
@@ -351,8 +351,13 @@ export default {
     setCoordinates (canvas, event) {
       const { pageX, pageY } = event.touches ? event.touches[0] : event
       // get coordinates relative to canvas bounding box
-      if (this[canvas].hasOwnProperty('x')) this[canvas].x = pageX - this[canvas].rect.left
-      if (this[canvas].hasOwnProperty('y')) this[canvas].y = pageY - this[canvas].rect.top
+      if ({}.hasOwnProperty.call(this[canvas], 'x')) {
+        this[canvas].x = pageX - this[canvas].rect.left
+      }
+
+      if ({}.hasOwnProperty.call(this[canvas], 'y')) {
+        this[canvas].y = pageY - this[canvas].rect.top
+      }
     },
 
     pickColor (canvas) {
@@ -402,11 +407,11 @@ export default {
   }
 
   &__preview {
-    border: 1px solid color("night", "lighter");
-    border-radius: border-radius("small");
-    height: spacing("triple");
-    margin-right: spacing("half");
-    width: spacing("triple");
+    border: 1px solid color('night', 'lighter');
+    border-radius: border-radius('small');
+    height: spacing('triple');
+    margin-right: spacing('half');
+    width: spacing('triple');
   }
 }
 </style>

@@ -9,6 +9,18 @@
       min-height: 50vh;
     }
 
+    &-two-thirds {
+      min-height: 66vh;
+    }
+
+    &-three-quarters {
+      min-height: 75vh;
+    }
+
+    &-almost-full {
+      min-height: 90vh;
+    }
+
     &-full {
       min-height: 100vh;
     }

@@ -12,7 +12,7 @@ export default class MockFile {
     this.lastModified = lastModified
     this.lastModifiedDate = lastModifiedDate
 
-    let blob = new Blob([this._range(this.size)], { type: this.type })
+    const blob = new Blob([this._range(this.size)], { type: this.type })
     blob.lastModifiedDate = new Date()
     blob.name = name
 
