@@ -1,5 +1,10 @@
 image: node:10
 
+.except_release_commits:
+  except: &except_release_definition
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^chore(release).*/
+
 stages:
   - build
   - test
@@ -12,9 +17,10 @@ cache:
 
 build:
   stage: build
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /^chore\(release\).*/
+  only:
+    - merge_requests
+    - master@spartanbio-ux/schedio
+  except: *except_release_definition
   script:
     - yarn --frozen-lockfile --non-interactive
     - yarn build
@@ -24,46 +30,43 @@ build:
 
 test:
   stage: test
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /^chore\(release\).*/
+  only:
+    - merge_requests
+  script: yarn test
+
+test:generate:
+  stage: test
+  only:
+    - master@spartanbio-ux/schedio
+  except: *except_release_definition
   script: yarn test:generate
-  dependencies:
-    - build
   artifacts:
     paths:
-      - dist/
       - .jest-test-results.json
 
-publish:
+publish:npm:
   stage: publish
   only:
-    - master
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /^chore\(release\).*/
+    - master@spartanbio-ux/schedio
+  except: *except_release_definition
   script:
     - yarn build:release
     - yarn semantic-release
-  dependencies:
-    - build
-    - test
+  artifacts:
+    paths:
+      - dist/
 
 publish:docs:
   stage: publish
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /^chore(release).*/
   only:
-    - master
+    - master@spartanbio-ux/schedio
+  except: *except_release_definition
   script:
     - yarn global add netlify-cli
     - rm config/storybook/preview-head.html
     - yarn build:storybook
     - netlify deploy -a $NETLIFY_AUTH_TOKEN -d storybook-static/ -p -m
       "$CI_COMMIT_REF_SLUG@$CI_COMMIT_SHORT_SHA - $CI_COMMIT_TITLE"
-  dependencies:
-    - test
   artifacts:
     paths:
       - storybook-static/
