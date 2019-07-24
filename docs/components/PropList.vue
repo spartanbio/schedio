@@ -112,7 +112,7 @@ export default {
           name: kebabCase(name),
           type,
           defaultValue,
-          ...(details.hasOwnProperty('required') && { required: 'Required' }),
+          ...({}.hasOwnProperty.call(details, 'required') && { required: 'Required' }),
         }
 
         return [...list, prop]
@@ -132,8 +132,8 @@ export default {
     orderBy,
 
     getProps ({ mixins, props }) {
-      for (let name in props) {
-        if (props.hasOwnProperty(name)) {
+      for (const name in props) {
+        if ({}.hasOwnProperty.call(props, name)) {
           this.$set(this.rawProps, name, props[name])
         }
       }

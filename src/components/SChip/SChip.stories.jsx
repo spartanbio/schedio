@@ -80,8 +80,8 @@ storiesOf('Components/SChip', module)
             console.log(`[SChip]: ${chip} is ${evt} now`)
           },
           resetChips () {
-            for (let chip in this.chips) {
-              if (this.chips.hasOwnProperty(chip)) this.chips[chip] = true
+            for (const chip in this.chips) {
+              if ({}.hasOwnProperty.call(this.chips, chip)) this.chips[chip] = true
             }
           },
         },

@@ -35,7 +35,7 @@ const attributes = components.reduce((attributeList, name) => {
         description += types.join(' or ')
       } else {
         for (let i = 0; i < types.length; i++) {
-          let shouldUseConjunction = i < types.length - 1
+          const shouldUseConjunction = i < types.length - 1
           description += shouldUseConjunction ? `${types[i]}, ` : `or ${types[i]}.`
         }
       }
