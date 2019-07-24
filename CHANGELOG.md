@@ -1,3 +1,10 @@
+# [3.6.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.5.1...v3.6.0) (2019-07-24)
+
+
+### Features
+
+* **hero:** adds additional heights ([acf8cb2](https://gitlab.com/spartanbio-ux/schedio/commit/acf8cb2))
+
 ## [3.5.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.5.0...v3.5.1) (2019-07-11)
 
 
