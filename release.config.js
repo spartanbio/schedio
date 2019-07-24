@@ -5,14 +5,21 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     '@semantic-release/npm',
-    '@semantic-release/gitlab',
+    [
+      '@semantic-release/gitlab',
+      {
+        assets: [
+          'dist',
+        ],
+      },
+    ],
     [
       '@semantic-release/git',
       {
         assets: [
           'dist',
           'package.json',
-          'package-lock.json',
+          'yarn.lock',
           'CHANGELOG.md',
           '.jest-test-results.json',
         ],
