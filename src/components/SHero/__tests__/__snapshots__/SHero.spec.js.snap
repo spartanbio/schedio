@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SHero.vue can be almost-full 1`] = `
+<div class="hero hero--height-almost-full">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
 exports[`SHero.vue can be full 1`] = `
 <div class="hero hero--height-full">
   <div class="hero__head">Header Content</div>
@@ -80,8 +88,24 @@ exports[`SHero.vue can be spartan_blue 1`] = `
 </div>
 `;
 
+exports[`SHero.vue can be three-quarters 1`] = `
+<div class="hero hero--height-three-quarters">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
 exports[`SHero.vue can be turquoise 1`] = `
 <div class="hero hero--color-turquoise">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
+exports[`SHero.vue can be two-thirds 1`] = `
+<div class="hero hero--height-two-thirds">
   <div class="hero__head">Header Content</div>
   <div class="hero__body">Body Content</div>
   <div class="hero__foot">Foot Content</div>

@@ -8,4 +8,10 @@ export const colors = [
   }, new Set()),
 ].sort()
 
-export const heights = ['half', 'full']
+export const heights = [
+  'half',
+  'two-thirds',
+  'three-quarters',
+  'almost-full',
+  'full',
+]
