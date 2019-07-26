@@ -46,16 +46,12 @@
         }
       }
     }
-  }
 
-  &--order-first {
-    @include generate-all-breakpoints-after {
+    @include generate-all-breakpoints-after($suffix: 'first') {
       order: -1;
     }
-  }
 
-  &--order-last {
-    @include generate-all-breakpoints-after {
+    @include generate-all-breakpoints-after($suffix: 'last') {
       order: $grid-columns + 1;
     }
   }
