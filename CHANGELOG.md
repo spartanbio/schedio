@@ -1,3 +1,10 @@
+## [3.6.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.6.0...v3.6.1) (2019-07-26)
+
+
+### Bug Fixes
+
+* **container-column:** generates response order classes correctly ([35d8c69](https://gitlab.com/spartanbio-ux/schedio/commit/35d8c69))
+
 # [3.6.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.5.1...v3.6.0) (2019-07-24)
 
 
