@@ -149,9 +149,9 @@ ul.no-bullets {
     font-style: italic;
   }
 
-  @each $weight in $font-weights {
+  @each $weight in map-keys($font-weights) {
     &--weight-#{$weight} {
-      font-weight: $weight;
+      font-weight: map-get($font-weights, $weight);
     }
   }
 

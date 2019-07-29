@@ -50,4 +50,8 @@ $sizes: ($size-1, $size-2, $size-3, $size-4, $size-5, $size-6, $size-7);
 
 $text-alignments: (left, right, center, justify);
 
-$font-weights: ($font-weight-regular, $font-weight-demi, $font-weight-bold);
+$font-weights: (
+  'regular': $font-weight-regular,
+  'demi': $font-weight-demi,
+  'bold': $font-weight-bold
+);
