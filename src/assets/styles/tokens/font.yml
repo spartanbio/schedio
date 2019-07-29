@@ -11,6 +11,9 @@ props:
   font-weight-demi:
     value: '600'
     category: font-weight
+  font-weight-light:
+    value: '300'
+    category: font-weight
   font-weight-regular:
     value: '400'
     category: font-weight

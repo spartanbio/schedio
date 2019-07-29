@@ -367,6 +367,13 @@
       "originalValue": "600",
       "name": "font-weight-demi"
     },
+    "font-weight-light": {
+      "type": "...",
+      "category": "font-weight",
+      "value": "300",
+      "originalValue": "300",
+      "name": "font-weight-light"
+    },
     "font-weight-regular": {
       "type": "...",
       "category": "font-weight",
