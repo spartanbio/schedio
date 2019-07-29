@@ -1,3 +1,16 @@
+# [3.7.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.6.1...v3.7.0) (2019-07-29)
+
+
+### Bug Fixes
+
+* **typography:** fixes weight class names ([3a5a807](https://gitlab.com/spartanbio-ux/schedio/commit/3a5a807))
+* only ignore root level dist ([862a618](https://gitlab.com/spartanbio-ux/schedio/commit/862a618))
+
+
+### Features
+
+* **typography:** uses `$font-weight-light` if bigger than 16px ([9e1f83b](https://gitlab.com/spartanbio-ux/schedio/commit/9e1f83b))
+
 ## [3.6.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.6.0...v3.6.1) (2019-07-26)
 
 
