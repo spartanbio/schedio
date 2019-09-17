@@ -1,5 +1,5 @@
 module.exports = {
-  'extends': [
+  extends: [
     '@spartanbio/stylelint-config-scss',
   ],
 }
