@@ -121,7 +121,7 @@ describe('SChip.vue', () => {
       wrapper = mount({
         components: { SChip },
         data: () => ({ chip: true }),
-        template: `<SChip is-closable="true" v-model="chip">Chip</SChip>`,
+        template: '<SChip is-closable="true" v-model="chip">Chip</SChip>',
       })
       wrapper.find(SButton).trigger('click')
       expect(wrapper.find(SChip).attributes('aria-hidden')).toBe('true')

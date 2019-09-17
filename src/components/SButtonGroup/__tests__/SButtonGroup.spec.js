@@ -40,7 +40,7 @@ describe('SButtonGroup.vue', () => {
 
   it('changes child button colors', async () => {
     buttonGroup.setProps({ color: 'red' })
-    expect(buttonGroup.classes()).toContain(`button-group--color-red`)
+    expect(buttonGroup.classes()).toContain('button-group--color-red')
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })

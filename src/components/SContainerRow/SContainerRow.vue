@@ -62,7 +62,7 @@ export default {
       return [
         this.align ? `row--align-${this.align}` : '',
         this.justify ? `row--justify-${this.justify}` : '',
-        this.isReversed ? `row--reverse` : '',
+        this.isReversed ? 'row--reverse' : '',
         ...this.generateResponsiveClassNames('align|justify'),
       ]
     },

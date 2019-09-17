@@ -147,7 +147,7 @@ export default {
   },
 
   mounted () {
-    if (!this.hasContent.any) console.error(`\`SToast\` requires title or body text`)
+    if (!this.hasContent.any) console.error('`SToast` requires title or body text')
   },
 
   methods: {
