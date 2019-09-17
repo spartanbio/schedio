@@ -6,7 +6,6 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('SToast.vue', () => {
-  jest.useFakeTimers()
   const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
@@ -25,12 +24,19 @@ describe('SToast.vue', () => {
 
   types.forEach((type) => {
     it(`renders toast type ${type} correctly`, async () => {
+      jest.useFakeTimers()
+
       const tempWrapper = mount(SToast, {
         propsData: {
           type: type,
           body: 'Text',
         },
       })
+
+      // workaround for async callback not running in expected timeframe
+      // https://github.com/testing-library/react-testing-library/issues/244
+      // eslint-disable-next-line jest/valid-expect-in-promise
+      Promise.resolve().then(() => jest.runAllTimers())
 
       expect(tempWrapper.html()).toMatchSnapshot()
       expect(await axe(tempWrapper.html())).toHaveNoViolations()
