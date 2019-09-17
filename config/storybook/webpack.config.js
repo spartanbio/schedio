@@ -12,7 +12,6 @@ module.exports = ({ config }) => {
         loader: 'sass-loader',
         options: {
           implementation: require('sass'),
-          fibers: require('fibers'),
         },
       },
       {
