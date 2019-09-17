@@ -17,7 +17,6 @@ module.exports = {
       '@semantic-release/git',
       {
         assets: [
-          'dist',
           'package.json',
           'yarn.lock',
           'CHANGELOG.md',
