@@ -70,7 +70,7 @@ export default {
     },
 
     componentIs () {
-      if (this.isExternalLink || (!this.$router && !this.isExternalLink)) return 'a'
+      if (this.isExternalLink || !this.$router) return 'a'
       if (this.$root.nuxt) return 'nuxt-link'
       return 'router-link'
     },
@@ -84,16 +84,15 @@ export default {
         }
       }
 
-      // handles internal links if `vue-router` is not present
-      if (!this.$router && !this.isExternalLink) {
+      // handles internal links if `$router` is not present (i.e.: vue and nuxt)
+      if (this.$router) {
         return {
-          href: this.to,
+          to: this.to,
         }
       }
 
       return {
-        // nuxt compatibility
-        to: this.to,
+        href: this.to,
       }
     },
   },
