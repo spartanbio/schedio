@@ -4,9 +4,6 @@ module.exports = {
   productionSourceMap: false,
   lintOnSave: true,
   pluginOptions: {
-    stylelint: {
-      formatter: () => require('prettier'),
-    },
     'style-resources-loader': sharedConf.styleResourcesLoaderOptions,
   },
   css: {

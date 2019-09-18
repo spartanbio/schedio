@@ -42,28 +42,35 @@ export default {
 import { ${componentName} } from '@/components/${componentName}'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@@/docs/components/PropList'
-import { storiesOf } from '@storybook/vue'
 
-storiesOf('Components/${componentName}', module)
-  .addParameters({ jest: '${componentName}' })
-  .add('${rawName}', () => {
-    return {
-      render (h) {
-        return (
-          <div>
-            <SHeading>${rawName}</SHeading>
-            <p>Describe the component here</p>
+export default {
+  title: 'Components/${componentName}',
+  component: ${componentName},
+  parameters: {
+    jest: '${componentName}',
+  }
+}
 
-            <SHeading level="2">Example</SHeading>
-            <${componentName} />
+export const ${rawName} = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>${rawName}</SHeading>
+        <p>Describe the component here</p>
 
-            {/* This doesn't work if props are only generated through a mixin */}
-            {${componentName}.props && <PropList component={${componentName}} />}
-          </div>
-        )
-      }
-    }
-  })
+        <SHeading level="2">Example</SHeading>
+        <${componentName} />
+
+        {/* This doesn't work if props are only generated through a mixin */}
+        {${componentName}.props && <PropList component={${componentName}} />}
+      </div>
+    )
+  }
+})
+
+${rawName}.story = {
+  name: '${rawName}',
+}
 `,
   },
   // SCSS
@@ -81,7 +88,7 @@ import ${componentName} from './${componentName}.vue'
 export { ${componentName} }
 
 export default {
-  install: Vue => Vue.component(${componentName}.name, ${componentName})
+  install: Vue => Vue.component(${componentName}.name, ${componentName}),
 }
 `,
   },

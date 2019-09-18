@@ -9,7 +9,7 @@ Built for [Vue](https://vuejs.org) with [Theo](https://github.com/salesforce-ux/
 
 - Node 10.16.0+
 - Vue 2.6+
-- @vue/cli 3.4.0+
+- @vue/cli 4.0+
 
 ## Installation
 
@@ -75,7 +75,7 @@ To use SCSS resources, import the following in this order:
 
 ```bash
 $ git clone https://gitlab.com/spartanbio-marketing/schedio.git
-$ cd schedio && npm install
+$ cd schedio && yarn install
 
 # work should not be committed to master
 $ git checkout -b <feature-branch>

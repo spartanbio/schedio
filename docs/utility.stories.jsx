@@ -1,118 +1,140 @@
 import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import { SHeading } from '@/components/SHeading'
-import { storiesOf } from '@storybook/vue'
 
-storiesOf('Utilities/Typography', module)
-  .addParameters({
+export default {
+  title: 'Utilities/Typography',
+
+  parameters: {
     options: {
       showPanel: false,
     },
-  })
-  .add('Alignment', () => ({
-    render (h) {
-      const alignments = [
-        'center',
-        'left',
-        'right',
-        'justify',
-      ]
+  },
+}
 
-      return (
-        <div>
-          <SHeading>Alignment</SHeading>
-          <p>
-            You can change text alignment witht the following classes:
-            <ul>
-              {alignments.map(alignment => (
-                <li>
-                  <code>{`.text--align-${alignment}`}</code>
-                </li>
-              ))}
-            </ul>
-          </p>
-        </div>
-      )
-    },
-  }))
-  .add('Color', () => ({
-    render (h) {
-      const colors = Object.values(props)
-        .filter(prop => prop.type === 'color')
-        .map(color => color.name)
-        .sort()
+export const alignment = () => ({
+  render (h) {
+    const alignments = ['center', 'left', 'right', 'justify']
 
-      return (
-        <div>
-          <SHeading>Color</SHeading>
-          <p>
-            The following classes exist to change the color of the text:
-            <ul>
-              {colors.map(color => (
-                <li>
-                  <code>{`.text--color-${color}`}</code>
-                </li>
-              ))}
-            </ul>
-          </p>
-        </div>
-      )
-    },
-  }))
-  .add('Italic and Weight', () => ({
-    render (h) {
-      const weights = Object.values(props)
-        .filter(prop => prop.name.includes('-weight-'))
-        .map(weight => weight.name.split('-').pop())
+    return (
+      <div>
+        <SHeading>Alignment</SHeading>
+        <p>
+          You can change text alignment witht the following classes:
+          <ul>
+            {alignments.map(alignment => (
+              <li>
+                <code>{`.text--align-${alignment}`}</code>
+              </li>
+            ))}
+          </ul>
+        </p>
+      </div>
+    )
+  },
+})
 
-      return (
-        <div>
-          <SHeading>Italic and Weight</SHeading>
-          <p>
-            <code>.text--italic</code> will make text italic and the following classes can change
-            its weight:
-            <ul>
-              {weights.map(weight => (
-                <li>
-                  <code>{`.text--weight-${weight}`}</code>
-                </li>
-              ))}
-            </ul>
-          </p>
-        </div>
-      )
-    },
-  }))
-  .add('Size', () => ({
-    render (h) {
-      const sizes = Array.from({ length: 7 })
+alignment.story = {
+  name: 'Alignment',
+}
 
-      return (
-        <div>
-          <SHeading>Size</SHeading>
-          <p>
-            You can change text size witht the following classes:
-            <ul>
-              {sizes.map((v, idx) => (
-                <li>
-                  <code>{`.text--size-${idx + 1}`}</code>
-                </li>
-              ))}
-            </ul>
-          </p>
-        </div>
-      )
-    },
-  }))
-  .add('Markdown', () => ({
-    render (h) {
-      return (
-        <div>
-          <SHeading>Markdown</SHeading>
-          <p>
-            To format markdown converted to HTML, add the <code>.markdown</code> class to its
-            container.
-          </p>
-        </div>
-      )
-    },
-  }))
+export const color = () => ({
+  render (h) {
+    const colors = Object.values(props)
+      .filter(prop => prop.type === 'color')
+      .map(color => color.name)
+      .sort()
+
+    return (
+      <div>
+        <SHeading>Color</SHeading>
+        <p>
+          The following classes exist to change the color of the text:
+          <ul>
+            {colors.map(color => (
+              <li>
+                <code>{`.text--color-${color}`}</code>
+              </li>
+            ))}
+          </ul>
+        </p>
+      </div>
+    )
+  },
+})
+
+color.story = {
+  name: 'Color',
+}
+
+export const italicAndWeight = () => ({
+  render (h) {
+    const weights = Object.values(props)
+      .filter(prop => prop.name.includes('-weight-'))
+      .map(weight => weight.name.split('-').pop())
+
+    return (
+      <div>
+        <SHeading>Italic and Weight</SHeading>
+        <p>
+          <code>.text--italic</code> will make text italic and the following classes can change its
+          weight:
+          <ul>
+            {weights.map(weight => (
+              <li>
+                <code>{`.text--weight-${weight}`}</code>
+              </li>
+            ))}
+          </ul>
+        </p>
+      </div>
+    )
+  },
+})
+
+italicAndWeight.story = {
+  name: 'Italic and Weight',
+}
+
+export const size = () => ({
+  render (h) {
+    const sizes = Array.from({ length: 7 })
+
+    return (
+      <div>
+        <SHeading>Size</SHeading>
+        <p>
+          You can change text size witht the following classes:
+          <ul>
+            {sizes.map((v, idx) => (
+              <li>
+                <code>{`.text--size-${idx + 1}`}</code>
+              </li>
+            ))}
+          </ul>
+        </p>
+      </div>
+    )
+  },
+})
+
+size.story = {
+  name: 'Size',
+}
+
+export const markdown = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>Markdown</SHeading>
+        <p>
+          To format markdown converted to HTML, add the <code>.markdown</code> class to its
+          container.
+        </p>
+      </div>
+    )
+  },
+})
+
+markdown.story = {
+  name: 'Markdown',
+}

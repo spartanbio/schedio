@@ -2,91 +2,99 @@ import { SFileInput } from '@/components/SFileInput'
 import { SCallout } from '@/components/SCallout'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@@/docs/components/PropList'
-import { storiesOf } from '@storybook/vue'
 import { boolean, number } from '@storybook/addon-knobs'
 import { withAttrsAsProps } from '@/mixins/stories/form-fields'
 
-storiesOf('Components/Inputs.SFileInput', module)
-  .addParameters({ jest: 'SFileInput' })
-  .add('File Input', () => {
+export default {
+  title: 'Components/Inputs.SFileInput',
+
+  parameters: {
+    jest: 'SFileInput',
+  },
+}
+
+export const fileInput = () => ({
+  data () {
     return {
-      data () {
-        return {
-          errors: [],
-          files: [],
-        }
+      errors: [],
+      files: [],
+    }
+  },
+
+  props: {
+    props: {
+      default: () => ({
+        ...withAttrsAsProps({ id: 'file-input', name: 'file-input', label: 'File input' }),
+        maxSize: number('max-size', 0, '', 'Optional Props'),
+        isDroppable: boolean('is-droppable', false, 'Optional Props'),
+        hideCount: boolean('hide-count', false, 'Optional Props'),
+        isInline: boolean('is-inline', false, 'Optional Props'),
+      }),
+    },
+
+    attrs: {
+      default: {
+        disabled: boolean('disabled', false, '$attrs'),
+        multiple: boolean('multiple', false, '$attrs'),
       },
+    },
+  },
+  render (h) {
+    const { props, attrs } = this.$props
 
-      props: {
-        props: {
-          default: () => ({
-            ...withAttrsAsProps({ id: 'file-input', name: 'file-input', label: 'File input' }),
-            maxSize: number('max-size', 0, '', 'Optional Props'),
-            isDroppable: boolean('is-droppable', false, 'Optional Props'),
-            hideCount: boolean('hide-count', false, 'Optional Props'),
-            isInline: boolean('is-inline', false, 'Optional Props'),
-          }),
-        },
+    return (
+      <div>
+        <SHeading>File Input</SHeading>
+        <p>
+          This component allows uses to submit files. The <code>is-droppable</code> prop enables
+          drag-and-drop functionality.
+        </p>
+        <p>
+          <code>SFileInput</code> can be used with <code>v-model</code>. It will emit an
+          <code>input</code> event with an array of files as its payload.
+        </p>
 
-        attrs: {
-          default: {
-            disabled: boolean('disabled', false, '$attrs'),
-            multiple: boolean('multiple', false, '$attrs'),
-          },
-        },
-      },
-      render (h) {
-        const { props, attrs } = this.$props
+        <SHeading level="2">Example</SHeading>
 
-        return (
-          <div>
-            <SHeading>File Input</SHeading>
-            <p>
-              This component allows uses to submit files. The <code>is-droppable</code> prop enables
-              drag-and-drop functionality.
-            </p>
-            <p>
-              <code>SFileInput</code> can be used with <code>v-model</code>. It will emit an
-              <code>input</code> event with an array of files as its payload.
-            </p>
+        <SFormField style="margin-bottom: 1em;">
+          <SFileInput
+            {...{ props }}
+            {...{ attrs }}
+            onError={(evt) => {
+              this.errors = evt.payload
+            }}
+            onInput={(evt) => {
+              this.files = evt
+            }}
+            files={this.files}
+          />
 
-            <SHeading level="2">Example</SHeading>
+          {!!this.errors.length && (
+            <div>
+              <SFormValidation>
+                Example error handling
+                <pre class="text--color-red">{JSON.stringify(this.errors, null, 2)}</pre>
+              </SFormValidation>
+              <p>
+                Error handler: <code>evt => (this.errors = evt.payload)</code>
+              </p>
+            </div>
+          )}
+        </SFormField>
 
-            <SFormField style="margin-bottom: 1em;">
-              <SFileInput
-                {...{ props }}
-                {...{ attrs }}
-                onError={(evt) => { this.errors = evt.payload }}
-                onInput={(evt) => { this.files = evt }}
-                files={this.files}
-              />
+        <SCallout>
+          Note that the <code>max-size</code> prop is specified in bytes.
+        </SCallout>
 
-              {!!this.errors.length && (
-                <div>
-                  <SFormValidation>
-                    Example error handling
-                    <pre class="text--color-red">{JSON.stringify(this.errors, null, 2)}</pre>
-                  </SFormValidation>
-                  <p>
-                    Error handler: <code>evt => (this.errors = evt.payload)</code>
-                  </p>
-                </div>
-              )}
-            </SFormField>
-
-            <SCallout>
-              Note that the <code>max-size</code> prop is specified in bytes.
-            </SCallout>
-
-            <SHeading level="2">Validation</SHeading>
-            <p>
-              <code>SFileInput</code> provides limited validation for maximum file size and
-              duplicate file names, but no more. On a validation error, it emits an{' '}
-              <code>error</code> event, and you have to handle reporting the error to the user
-              yourself. The event looks like this:
-            </p>
-            <pre>
-              {`\
+        <SHeading level="2">Validation</SHeading>
+        <p>
+          <code>SFileInput</code> provides limited validation for maximum file size and duplicate
+            file names, but no more. On a validation error, it emits an <code>error</code> event,
+          and you have to handle reporting the error to the user yourself. The event looks like
+          this:
+        </p>
+        <pre>
+          {`\
 {
   payload: [
     {
@@ -96,34 +104,40 @@ storiesOf('Components/Inputs.SFileInput', module)
     ...moreFiles
   ]
 }`}
-            </pre>
+        </pre>
 
-            {SFileInput.props && <PropList component={SFileInput} />}
-          </div>
-        )
-      },
-    }
-  })
-  .add(
-    'File Input Types',
-    () => ({
-      render (h) {
-        return (
-          <div>
-            <SHeading>File Input Types</SHeading>
+        {SFileInput.props && <PropList component={SFileInput} />}
+      </div>
+    )
+  },
+})
 
-            <SHeading level="2">Base</SHeading>
-            <SFileInput id="file" name="file" label="File" />
+fileInput.story = {
+  name: 'File Input',
+}
 
-            <SHeading level="2">Droppable</SHeading>
-            <SFileInput id="file-drop" name="file-drop" label="File" is-droppable />
-          </div>
-        )
-      },
-    }),
-    {
-      options: {
-        showPanel: false,
-      },
-    }
-  )
+export const fileInputTypes = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>File Input Types</SHeading>
+
+        <SHeading level="2">Base</SHeading>
+        <SFileInput id="file" name="file" label="File" />
+
+        <SHeading level="2">Droppable</SHeading>
+        <SFileInput id="file-drop" name="file-drop" label="File" is-droppable />
+      </div>
+    )
+  },
+})
+
+fileInputTypes.story = {
+  name: 'File Input Types',
+
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+}

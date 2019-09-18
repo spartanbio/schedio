@@ -4,7 +4,6 @@ import { SHeading } from '@/components/SHeading'
 import PropList from '@@/docs/components/PropList'
 import StoryLink from '@@/docs/components/StoryLink'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/vue'
 import icons from 'feather-icons/dist/icons.json'
 import { generateHeading } from '@/utils/stories/render-functions'
 import { SContainerColumn } from '@/components/SContainerColumn'
@@ -13,114 +12,130 @@ import { SContainerRow } from '@/components/SContainerRow'
 const iconNames = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconNames], '', 'Optional Props')
 
-storiesOf('Components/Buttons.SButton', module)
-  .addParameters({ jest: 'SButton' })
-  .add('Button', () => ({
-    props: {
-      color: {
-        type: String,
-        default: select('color', ['', ...colors], '', 'Optional Props'),
-      },
-      isOutlined: {
-        type: String,
-        default: boolean('is-outlined', false, 'Optional Props'),
-      },
-      size: {
-        type: String,
-        default: select('size', ['', ...sizes], '', 'Optional Props'),
-      },
-      buttonText: {
-        type: String,
-        default: text('Button text', 'Sample text', 'Slots'),
-      },
-      disabled: {
-        type: Boolean,
-        default: boolean('disabled', false, '$attrs'),
-      },
-      isLoading: {
-        type: Boolean,
-        default: boolean('is-loading', false, 'Optional Props'),
-      },
-      iconOnly: {
-        type: Boolean,
-        default: boolean('icon-only', false, 'Optional Props'),
-      },
-      iconLeft: {
-        type: String,
-        default: iconProp('left'),
-      },
-      iconRight: {
-        type: String,
-        default: iconProp('right'),
-      },
+export default {
+  title: 'Components/Buttons.SButton',
+
+  parameters: {
+    jest: 'SButton',
+  },
+}
+
+export const button = () => ({
+  props: {
+    color: {
+      type: String,
+      default: select('color', ['', ...colors], '', 'Optional Props'),
     },
-    render (h) {
-      const { buttonText, disabled, ...props } = this.$props
-
-      return (
-        <div>
-          <SHeading>Buttons</SHeading>
-          <p>Buttons are used to make actions immediately visible and easy to click.</p>
-          <p>
-            Use <StoryLink to="Components/Buttons.SButtonGroup" story="Button Group" /> to group
-            multiple buttons.
-          </p>
-
-          <SHeading level="2">Accessibility</SHeading>
-          <p>
-            Many buttons have a <code>text-shadow</code> applied to improve acessibility.{' '}
-          </p>
-          <p>
-            If you want the button to just contain an icon, set the <code>icon-only</code> prop to{' '}
-            <code>true</code>.
-          </p>
-
-          <SHeading level="2">Example</SHeading>
-          <SButton {...{ props }} disabled={disabled}>
-            {buttonText}
-          </SButton>
-
-          <PropList component={SButton} />
-        </div>
-      )
+    isOutlined: {
+      type: String,
+      default: boolean('is-outlined', false, 'Optional Props'),
     },
-  }))
-  .add(
-    'Colored Button',
-    () => ({
-      render (h) {
-        return (
-          <div>
-            <SHeading>Colored Buttons</SHeading>
-            {generateButtons(h)}
-          </div>
-        )
-      },
-    }),
-    {
-      options: {
-        showPanel: false,
-      },
-    }
-  )
-  .add(
-    'Outlined Buttons',
-    () => ({
-      render (h) {
-        return (
-          <div>
-            <SHeading>Outlined Buttons</SHeading>
-            {generateButtons(h, { isOutlined: true })}
-          </div>
-        )
-      },
-    }),
-    {
-      options: {
-        showPanel: false,
-      },
-    }
-  )
+    size: {
+      type: String,
+      default: select('size', ['', ...sizes], '', 'Optional Props'),
+    },
+    buttonText: {
+      type: String,
+      default: text('Button text', 'Sample text', 'Slots'),
+    },
+    disabled: {
+      type: Boolean,
+      default: boolean('disabled', false, '$attrs'),
+    },
+    isLoading: {
+      type: Boolean,
+      default: boolean('is-loading', false, 'Optional Props'),
+    },
+    iconOnly: {
+      type: Boolean,
+      default: boolean('icon-only', false, 'Optional Props'),
+    },
+    iconLeft: {
+      type: String,
+      default: iconProp('left'),
+    },
+    iconRight: {
+      type: String,
+      default: iconProp('right'),
+    },
+  },
+  render (h) {
+    const { buttonText, disabled, ...props } = this.$props
+
+    return (
+      <div>
+        <SHeading>Buttons</SHeading>
+        <p>Buttons are used to make actions immediately visible and easy to click.</p>
+        <p>
+          Use <StoryLink to="Components/Buttons.SButtonGroup" story="Button Group" /> to group
+          multiple buttons.
+        </p>
+
+        <SHeading level="2">Accessibility</SHeading>
+        <p>
+          Many buttons have a <code>text-shadow</code> applied to improve acessibility.{' '}
+        </p>
+        <p>
+          If you want the button to just contain an icon, set the <code>icon-only</code> prop to{' '}
+          <code>true</code>.
+        </p>
+
+        <SHeading level="2">Example</SHeading>
+        <SButton {...{ props }} disabled={disabled}>
+          {buttonText}
+        </SButton>
+
+        <PropList component={SButton} />
+      </div>
+    )
+  },
+})
+
+button.story = {
+  name: 'Button',
+}
+
+export const coloredButton = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>Colored Buttons</SHeading>
+        {generateButtons(h)}
+      </div>
+    )
+  },
+})
+
+coloredButton.story = {
+  name: 'Colored Button',
+
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+}
+
+export const outlinedButtons = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>Outlined Buttons</SHeading>
+        {generateButtons(h, { isOutlined: true })}
+      </div>
+    )
+  },
+})
+
+outlinedButtons.story = {
+  name: 'Outlined Buttons',
+
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+}
 
 function generateButtons (h, propsData = {}) {
   return colors.map((color) => {

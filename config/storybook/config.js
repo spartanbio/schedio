@@ -13,11 +13,15 @@ import '@@/static/fonts/fonts.css'
 Vue.use(Schedio)
 
 const docStories = require.context('@@/docs', true, /.stories.(js|jsx)$/)
-const componentStories = require.context('@/components', true, /.stories.(js|jsx)$/)
+const componentStories = require.context('@/components', true, /.stories.(js|jsx|mdx)$/)
+
+const prepLoad = stories => stories.keys().map(name => stories(name)).filter(exp => !!exp.default)
 
 function loadStories () {
-  docStories.keys().forEach(filename => docStories(filename))
-  componentStories.keys().forEach(filename => componentStories(filename))
+  return [
+    ...prepLoad(docStories),
+    ...prepLoad(componentStories),
+  ]
 }
 
 // Set options
@@ -33,6 +37,8 @@ addParameters({
     sortStoriesByKind: true,
     showPanel: true,
   },
+  // TODO: remove once `@storybook/addon-docs` fully supports vue
+  docs: { page: null },
 })
 
 addDecorator(withKnobs)
