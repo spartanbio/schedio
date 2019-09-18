@@ -60,6 +60,11 @@ export default {
       default: false,
     },
 
+    isText: {
+      type: Boolean,
+      default: false,
+    },
+
     isLoading: {
       type: Boolean,
       default: false,
@@ -97,6 +102,8 @@ export default {
       if (this.color) buttonStyle += `button--color-${this.color}`
 
       if (this.color && this.isOutlined) buttonStyle += '-outlined'
+
+      if (this.color && this.isText) buttonStyle += '-text'
 
       return buttonStyle
     },

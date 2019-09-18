@@ -84,34 +84,46 @@
   }
 }
 
-@mixin button-outline($button-color) {
+@mixin button-text($button-color) {
   $white-or-ice: ($button-color == 'white') or ($button-color == 'ice');
 
   @include button-disabled;
 
-  border: border();
-  border-color: color($button-color);
   color: color($button-color);
 
   .spinner {
     stroke: color($button-color);
   }
 
+  &:hover {
+    background-color: if(
+      $white-or-ice,
+      rgba(darken(color($button-color), 3%), 0.2),
+      rgba(color($button-color, 'lighter'), 0.2)
+    );
+    color: color($button-color);
+  }
+
   &:active {
     background-color: if(
       $white-or-ice,
-      darken(color($button-color), 3%),
+      rgba(darken(color($button-color), 3%), 0.3),
       rgba(color($button-color, 'lighter'), 0.3)
     );
-  }
-
-  &:hover {
-    color: color($button-color);
   }
 
   &:not(:disabled):hover {
     box-shadow: shadow('light');
   }
+}
+
+@mixin button-outline($button-color) {
+  @include button-text($button-color);
+  @include button-disabled;
+
+  border: border();
+  border-color: color($button-color);
+  color: color($button-color);
 }
 
 @mixin button-size-small {

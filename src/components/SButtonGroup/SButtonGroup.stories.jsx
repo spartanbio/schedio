@@ -19,9 +19,8 @@ export default {
 export const buttonGroup = () => ({
   props: {
     color: { default: select('color', ['', ...colors], '', 'Optional Props') },
-    isOutlined: {
-      default: boolean('is-outlined', false, 'Optional Props'),
-    },
+    isOutlined: { default: boolean('is-outlined', false, 'Optional Props') },
+    isText: { default: boolean('is-text', false, 'Optional Props') },
     isGrouped: { default: boolean('is-grouped', false, 'Optional Props') },
     button1Text: { default: text('Button 1 text', 'Button 1', 'Slots') },
     button2Text: { default: text('Button 2 text', 'Button 2', 'Slots') },
@@ -41,7 +40,12 @@ export const buttonGroup = () => ({
         <p>Note that the button group's color will override an individual button's color.</p>
 
         <SHeading level="2">Example</SHeading>
-        <SButtonGroup color={this.color} isOutlined={this.isOutlined} isGrouped={this.isGrouped}>
+        <SButtonGroup
+          color={this.color}
+          isOutlined={this.isOutlined}
+          isText={this.isText}
+          isGrouped={this.isGrouped}
+        >
           <SButton disabled={this.button1Disabled}>{this.button1Text}</SButton>
           <SButton disabled={this.button2Disabled}>{this.button2Text}</SButton>
           <SButton disabled={this.button3Disabled}>{this.button3Text}</SButton>
@@ -91,6 +95,27 @@ export const outlinedGroup = () => ({
 
 outlinedGroup.story = {
   name: 'Outlined Group',
+
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+}
+
+export const textGroup = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>Text Group</SHeading>
+        {colorsToGroups(h, { isText: true })}
+      </div>
+    )
+  },
+})
+
+textGroup.story = {
+  name: 'Text Group',
 
   parameters: {
     options: {

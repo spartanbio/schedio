@@ -50,6 +50,17 @@ describe('SButton.vue', () => {
 
   Promise.all(
     options.colors.map((color) => {
+      it(`can be text with ${color}`, async () => {
+        wrapper.setProps({ color, isText: true })
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-text`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
+    })
+  )
+
+  Promise.all(
+    options.colors.map((color) => {
       it(`can be outlined with ${color}`, async () => {
         wrapper.setProps({ color, isOutlined: true })
         expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -72,7 +83,7 @@ describe('SButton.vue', () => {
     })
   })
 
-  it('validates color', () => {
+  it('validates size', () => {
     shallowMount(SButton, { propsData: { size: 'not a size' } })
     expect(errorSpy).toHaveBeenCalled()
   })

@@ -30,6 +30,10 @@ export const button = () => ({
       type: String,
       default: boolean('is-outlined', false, 'Optional Props'),
     },
+    isText: {
+      type: String,
+      default: boolean('is-text', false, 'Optional Props'),
+    },
     size: {
       type: String,
       default: select('size', ['', ...sizes], '', 'Optional Props'),
@@ -129,6 +133,27 @@ export const outlinedButtons = () => ({
 
 outlinedButtons.story = {
   name: 'Outlined Buttons',
+
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+}
+
+export const textButtons = () => ({
+  render (h) {
+    return (
+      <div>
+        <SHeading>Text Buttons</SHeading>
+        {generateButtons(h, { isText: true })}
+      </div>
+    )
+  },
+})
+
+textButtons.story = {
+  name: 'Text Buttons',
 
   parameters: {
     options: {

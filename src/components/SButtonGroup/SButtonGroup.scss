@@ -14,6 +14,14 @@
       }
     }
 
+    &--color-#{$color-name}-text {
+      box-shadow: none !important;
+
+      .button {
+        @include button-text($color-name);
+      }
+    }
+
     &--color-#{$color-name}-outlined {
       .button {
         @include button-outline($color-name);
