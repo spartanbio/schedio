@@ -2,11 +2,12 @@ $spacing-data: (
   'none': $spacing-none,
   'quarter': $spacing-quarter,
   'half': $spacing-half,
+  'tight': $spacing-tight,
   'base': $spacing-base,
   'loose': $spacing-loose,
   'double': $spacing-double,
   'triple': $spacing-triple,
-  '4x': $spacing-4x
+  '4x': $spacing-4x,
 );
 
 /// Returns the spacing value for a given variant.

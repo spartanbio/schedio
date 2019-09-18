@@ -49,11 +49,11 @@
   &__icon {
     &--left {
       margin-left: -1 * spacing('quarter');
-      margin-right: spacing('half') + spacing('quarter');
+      margin-right: spacing('tight');
     }
 
     &--right {
-      margin-left: spacing('half') + spacing('quarter');
+      margin-left: spacing('tight');
       margin-right: -1 * spacing('quarter');
     }
 
