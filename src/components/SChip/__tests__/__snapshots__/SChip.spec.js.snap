@@ -86,7 +86,7 @@ exports[`SChip.vue base renders correctly 1`] = `
 
 exports[`SChip.vue closable can be closable 1`] = `
 <div class="chip">
-  <div class="chip__content">Slot content</div> <button aria-label="Close chip" class="button chip__close button--color-ice button--size-small button--has-icon button--icon-only">
+  <div class="chip__content">Slot content</div> <button aria-label="Close chip" class="button chip__close button--color-ice button--size-small button--icon-only">
     <!---->
     <sicon icon="x" class="button__icon button__icon--left"></sicon>
     <!---->
@@ -97,7 +97,7 @@ exports[`SChip.vue closable can be closable 1`] = `
 
 exports[`SChip.vue closable can change the button's \`aria-label\` 1`] = `
 <div class="chip">
-  <div class="chip__content">Slot content</div> <button aria-label="Changed" class="button chip__close button--color-ice button--size-small button--has-icon button--icon-only">
+  <div class="chip__content">Slot content</div> <button aria-label="Changed" class="button chip__close button--color-ice button--size-small button--icon-only">
     <!---->
     <sicon icon="x" class="button__icon button__icon--left"></sicon>
     <!---->
@@ -108,7 +108,7 @@ exports[`SChip.vue closable can change the button's \`aria-label\` 1`] = `
 
 exports[`SChip.vue closable sets \`aria-hidden\` on close 1`] = `
 <div class="chip" aria-hidden="true" style="display: none;">
-  <div class="chip__content">Chip</div> <button aria-label="Close chip" class="button chip__close button--color-ice button--size-small button--has-icon button--icon-only">
+  <div class="chip__content">Chip</div> <button aria-label="Close chip" class="button chip__close button--color-ice button--size-small button--icon-only">
     <!---->
     <sicon icon="x" class="button__icon button__icon--left"></sicon>
     <!---->

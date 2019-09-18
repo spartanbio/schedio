@@ -166,7 +166,7 @@ describe('SFileInput.vue', () => {
   })
 
   it('hides the file list if no files exist', () => {
-    expect(wrapper.find('ul').isVisible()).toBe(false)
+    expect(wrapper.find('schipgroup-stub').isVisible()).toBe(false)
   })
 
   it('checks for max file size', () => {

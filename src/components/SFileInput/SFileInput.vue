@@ -55,8 +55,9 @@
         Maximum file size: {{ maxSize }} bytes
       </p>
 
-      <ul
+      <SChipGroup
         v-show="fileList.length"
+        tag="ul"
         class="file-input__list"
       >
         <SChip
@@ -69,7 +70,7 @@
         >
           {{ file.name }}
         </SChip>
-      </ul>
+      </SChipGroup>
     </output>
   </div>
 </template>
@@ -78,6 +79,7 @@
 import InputProps from '@/mixins/InputProps.mixin'
 import { SLabel } from '@/components/SLabel'
 import { SChip } from '@/components/SChip'
+import { SChipGroup } from '@/components/SChipGroup'
 
 export default {
   name: 'SFileInput',
@@ -85,6 +87,7 @@ export default {
   components: {
     SLabel,
     SChip,
+    SChipGroup,
   },
 
   mixins: [InputProps],

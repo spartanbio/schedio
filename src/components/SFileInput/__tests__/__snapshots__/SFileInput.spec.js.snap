@@ -12,7 +12,7 @@ exports[`SFileInput.vue can have custom text 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -30,14 +30,14 @@ exports[`SFileInput.vue can hide a file count 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="">
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="">
       <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
       <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-b.txt">
         test-file-b.txt
       </schip-stub>
-    </ul>
+    </schipgroup-stub>
   </output>
 </div>
 `;
@@ -54,14 +54,14 @@ exports[`SFileInput.vue can upload multiple files 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="">
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="">
       <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
       <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-b.txt">
         test-file-b.txt
       </schip-stub>
-    </ul>
+    </schipgroup-stub>
   </output>
 </div>
 `;
@@ -78,7 +78,7 @@ exports[`SFileInput.vue drop zone can be a drop zone 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -95,7 +95,7 @@ exports[`SFileInput.vue drop zone can hide the icon 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -112,7 +112,7 @@ exports[`SFileInput.vue drop zone handles "dragenter" correctly 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -129,7 +129,7 @@ exports[`SFileInput.vue drop zone handles "dragleave" correctly 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -146,7 +146,7 @@ exports[`SFileInput.vue drop zone handles "dragover" correctly 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -163,7 +163,7 @@ exports[`SFileInput.vue drop zone handles "drop" correctly 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="display: none;"></schipgroup-stub>
   </output>
 </div>
 `;
@@ -180,11 +180,11 @@ exports[`SFileInput.vue handles inputs 1`] = `
     </div>
   </slabel-stub> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="">
+    <schipgroup-stub color="" tag="ul" class="file-input__list" style="">
       <schip-stub color="" isclosable="true" isactive="true" tag="li" closearialabel="Remove test-file-a.txt">
         test-file-a.txt
       </schip-stub>
-    </ul>
+    </schipgroup-stub>
   </output>
 </div>
 `;
@@ -204,6 +204,6 @@ exports[`SFileInput.vue renders correctly 1`] = `
     </div>
   </label> <output class="file-input__info">
     <!---->
-    <ul class="file-input__list" style="display: none;"></ul>
+    <ul class="chip-group file-input__list" style="display: none;"></ul>
   </output></div>
 `;
