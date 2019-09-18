@@ -1,12 +1,14 @@
 import { RouterLinkStub, shallowMount } from '@vue/test-utils'
 import SLink from '@/components/SLink/SLink.vue'
 import { axe, toHaveNoViolations } from 'jest-axe'
+import icons from 'feather-icons/dist/icons.json'
+const iconNames = Object.keys(icons)
 
 expect.extend(toHaveNoViolations)
 
 describe('SLink.vue', () => {
   let wrapper
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
 
   beforeEach(() => {
     wrapper = shallowMount(SLink, {
@@ -61,6 +63,18 @@ describe('SLink.vue', () => {
 
   it('can be plain', async () => {
     wrapper.setProps({ isPlain: true })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+  })
+
+  it('can be light', async () => {
+    wrapper.setProps({ islight: true })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+  })
+
+  it('can have an icon', async () => {
+    wrapper.setProps({ icon: iconNames[0] })
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })

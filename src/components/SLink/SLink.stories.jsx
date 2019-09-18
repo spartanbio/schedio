@@ -2,8 +2,9 @@ import { SHeading } from '@/components/SHeading'
 import { SLink } from '@/components/SLink'
 import PropList from '@@/docs/components/PropList'
 import StoryLink from '@@/docs/components/StoryLink'
-import { boolean, text } from '@storybook/addon-knobs'
-
+import icons from 'feather-icons/dist/icons.json'
+import { boolean, text, select } from '@storybook/addon-knobs'
+const iconNames = Object.keys(icons)
 export default {
   title: 'Components/SLink',
 
@@ -15,13 +16,20 @@ export default {
 export const link = () => ({
   // TODO: document visited/unvisited states.
   props: {
-    to: {
-      default: text('to', 'https://anunvisitedwebsite.com', 'Required Props'),
+    props: {
+      default: {
+        to: text('to', 'https://anunvisitedwebsite.com', 'Required Props'),
+        isPlain: boolean('is-plain', false, 'Optional Props'),
+        isExternal: boolean('is-external', false, 'Optional Props'),
+        isLight: boolean('is-light', false, 'Optional Props'),
+        icon: select('icon', ['', ...iconNames], '', 'Optional Props'),
+      },
     },
-    isPlain: { default: boolean('is-plain', false, 'Optional Props') },
     linkText: { default: text('Link text', '', 'Slots') },
   },
   render (h) {
+    const { props } = this.$props
+
     return (
       <div>
         <SHeading level="1">Links</SHeading>
@@ -59,7 +67,7 @@ export const link = () => ({
           Storybook's knobs have been bound to the link below. It's called with{' '}
           <code>preventDefault()</code>.
         </p>
-        <SLink props={{ isPlain: this.isPlain, to: this.to }} onclick={e => e.preventDefault()}>
+        <SLink {...{ props }} onclick={e => e.preventDefault()}>
           {this.linkText}
         </SLink>
 
@@ -82,6 +90,18 @@ export const linkTypes = () => ({
         <SHeading level="2">Base</SHeading>
         <SLink to="anunvisitedwebsite.com" onClick={e => e.preventDefault()} />
 
+        <SHeading level="2">Light</SHeading>
+        <SLink to="https://anunvisitedwebsite.com" isLight onClick={e => e.preventDefault()}>
+          Some text
+        </SLink>
+
+        <SHeading level="2">Icon</SHeading>
+        <SLink
+          to="anunvisitedwebsite.com"
+          icon={iconNames[Math.floor(Math.random() * iconNames.length)]}
+          onClick={e => e.preventDefault()}
+        />
+
         <SHeading level="2">External</SHeading>
         <SLink to="https://anunvisitedwebsite.com" onClick={e => e.preventDefault()} />
 
@@ -92,6 +112,11 @@ export const linkTypes = () => ({
 
         <SHeading level="2">Visited</SHeading>
         <SLink to="https://spartanbio.com">If you haven't spartanbio.com already, click here</SLink>
+
+        <SHeading level="2">Visited - Light</SHeading>
+        <SLink isLight to="https://spartanbio.com">
+          If you haven't spartanbio.com already, click here
+        </SLink>
       </div>
     )
   },
