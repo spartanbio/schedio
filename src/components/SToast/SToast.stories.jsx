@@ -3,7 +3,6 @@ import { SHeading } from '@/components/SHeading'
 import { SButton } from '@/components/SButton'
 import PropList from '@@/docs/components/PropList'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/vue'
 import { types, positions } from './options'
 
 const upperCase = str => str[0].toUpperCase() + str.substr(1)
@@ -14,131 +13,145 @@ const exampleContainerStyle = {
   backgroundColor: '#f2f5f7',
 }
 
-storiesOf('Components/SToast', module)
-  .addParameters({ jest: 'SToast' })
-  .add('Toast', () => {
-    return {
-      props: {
-        props: {
-          default: () => ({
-            type: select('toast-type', types, types[0], 'Optional Props'),
-            containerParent: text('container-parent', '#example', 'Optional Props'),
-            body: text('toast-body', 'Some text', 'Optional Props'),
-            position: select('position', positions, positions[0], 'Optional Props'),
-            actionText: text('action-text', 'Run an action', 'Optional Props'),
-            title: text('toast-title', '', 'Optional Props'),
-            hideIcon: boolean('hide-icon', false, 'Optional Props'),
-            isIndefinite: boolean('is-indefinite', false, 'Optional Props'),
-            duration: number('duration', 3000, {}, 'Optional Props'),
+export default {
+  title: 'Components/SToast',
 
-            action () {
-              setTimeout(() => {
-                this.$toast.open({
-                  containerParent: '#example',
-                  body: 'The action ran',
-                  type: 'warning',
-                })
-              }, 750)
-            },
-          }),
-        },
-      },
+  parameters: {
+    jest: 'SToast',
+  },
+}
 
-      render (h) {
-        const { props } = this.$props
+export const toast = () => ({
+  props: {
+    props: {
+      default: () => ({
+        type: select('toast-type', types, types[0], 'Optional Props'),
+        containerParent: text('container-parent', '#example', 'Optional Props'),
+        body: text('toast-body', 'Some text', 'Optional Props'),
+        position: select('position', positions, positions[0], 'Optional Props'),
+        actionText: text('action-text', 'Run an action', 'Optional Props'),
+        title: text('toast-title', '', 'Optional Props'),
+        hideIcon: boolean('hide-icon', false, 'Optional Props'),
+        isIndefinite: boolean('is-indefinite', false, 'Optional Props'),
+        duration: number('duration', 3000, {}, 'Optional Props'),
 
-        return (
-          <div>
-            <SHeading level="1">Toast</SHeading>
-            <p>
-              Toasts are quick notifications, usually indicating the status of an action. They can
-              also be used to trigger another action. To do so, just pass a function to the{' '}
-              <code>action</code> prop.
-            </p>
-            <p>
-              <code>{'<SToast />'}</code> is registered programattically. To use it, call{' '}
-              <code>this.$toast.open()</code>.
-            </p>
-
-            <SHeading level="2">Example</SHeading>
-
-            <div id="example" style={exampleContainerStyle}>
-              <SButton is-outlined color="spartan_blue" onClick={() => this.$toast.open(props)}>
-                Open a toast
-              </SButton>
-            </div>
-
-            {SToast.props && <PropList component={SToast} />}
-          </div>
-        )
-      },
-    }
-  })
-  .add(
-    'Toast Types',
-    () => ({
-      data () {
-        return {
-          toastCount: 0,
-          toastList: [...types].reverse(),
-        }
-      },
-
-      methods: {
-        mountToasts () {
-          if (this.toastCount > 0) return
-
-          this.toastList.forEach((type) => {
+        action () {
+          setTimeout(() => {
             this.$toast.open({
-              type: type,
-              containerParent: '#all-toasts',
-              body: 'Type: ' + upperCase(type || 'default'),
-              isIndefinite: true,
-              action: () => this.toastCount--,
+              containerParent: '#example',
+              body: 'The action ran',
+              type: 'warning',
             })
-
-            this.toastCount++
-          })
+          }, 750)
         },
-      },
+      }),
+    },
+  },
 
-      mounted () {
-        // without actions
-        this.toastList.forEach((type) => {
-          this.$toast.open({
-            type: type,
-            containerParent: '#all-toasts',
-            body: 'Type: ' + upperCase(type || 'default'),
-            isIndefinite: true,
-          })
+  render (h) {
+    const { props } = this.$props
+
+    return (
+      <div>
+        <SHeading level="1">Toast</SHeading>
+        <p>
+          Toasts are quick notifications, usually indicating the status of an action. They can
+            also be used to trigger another action. To do so, just pass a function to the{' '}
+          <code>action</code> prop.
+        </p>
+        <p>
+          <code>{'<SToast />'}</code> is registered programattically. To use it, call{' '}
+          <code>this.$toast.open()</code>.
+        </p>
+
+        <SHeading level="2">Example</SHeading>
+
+        <div id="example" style={exampleContainerStyle}>
+          <SButton is-outlined color="spartan_blue" onClick={() => this.$toast.open(props)}>
+            Open a toast
+          </SButton>
+        </div>
+
+        {SToast.props && <PropList component={SToast} />}
+      </div>
+    )
+  },
+})
+
+toast.story = {
+  name: 'Toast',
+}
+
+export const toastTypes = () => ({
+  data () {
+    return {
+      toastCount: 0,
+      toastList: [...types].reverse(),
+    }
+  },
+
+  methods: {
+    mountToasts () {
+      if (this.toastCount > 0) return
+
+      this.toastList.forEach((type) => {
+        this.$toast.open({
+          type: type,
+          containerParent: '#all-toasts',
+          body: 'Type: ' + upperCase(type || 'default'),
+          isIndefinite: true,
+          action: () => this.toastCount--,
         })
 
-        // with actions
-        this.mountToasts()
-      },
-      render (h) {
-        return (
-          <div>
-            <SHeading>Toast Types</SHeading>
-            <SHeading level="2">All toasts</SHeading>
+        this.toastCount++
+      })
+    },
+  },
 
-            <div id="all-toasts" style={{ ...exampleContainerStyle, height: '41em' }}>
-              <SButton
-                color="spartan_blue"
-                is-outlined
-                onClick={this.mountToasts}
-                disabled={this.toastCount !== 0}
-              >
-                Reset toasts
-              </SButton>
-            </div>
-          </div>
-        )
-      },
-    }),
-    {
-      options: {
-        showPanel: false,
-      },
-    }
-  )
+  mounted () {
+    // without actions
+    this.toastList.forEach((type) => {
+      this.$toast.open({
+        type: type,
+        containerParent: '#all-toasts',
+        body: 'Type: ' + upperCase(type || 'default'),
+        isIndefinite: true,
+      })
+    })
+
+    // with actions
+    this.mountToasts()
+  },
+  render (h) {
+    return (
+      <div>
+        <SHeading>Toast Types</SHeading>
+        <SHeading level="2">All toasts</SHeading>
+
+        <div id="all-toasts" style={{
+          height: '41em',
+          ...exampleContainerStyle,
+        }}>
+          <SButton
+            color="spartan_blue"
+            is-outlined
+            onClick={this.mountToasts}
+            disabled={this.toastCount !== 0}
+          >
+            Reset toasts
+          </SButton>
+        </div>
+      </div>
+    )
+  },
+})
+
+toastTypes.story = {
+  name: 'Toast Types',
+
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+}
