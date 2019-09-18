@@ -46,6 +46,13 @@ exports[`SLink.vue detects nuxt and uses \`nuxt-link\` instead of \`router-link\
   <!----></a>
 `;
 
+exports[`SLink.vue respects \`isExternal\` prop 1`] = `
+<a href="/internal" target="_blank" rel="noopener noreferrer" class="link">link text
+  <!---->
+  <sicon icon="external-link" size="small" aria-label="External link" class="link__icon"></sicon>
+</a>
+`;
+
 exports[`SLink.vue uses \`a\` when no router is present 1`] = `
 <a href="/about" class="link">/about
   <!---->

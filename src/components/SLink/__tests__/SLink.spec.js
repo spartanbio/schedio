@@ -49,6 +49,14 @@ describe('SLink.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
+  it('respects `isExternal` prop', async () => {
+    wrapper.setProps({ to: '/internal', isExternal: true })
+    expect(wrapper.vm.isExternalLink).toBe(true)
+    expect(wrapper.vm.componentIs).toBe('a')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+  })
+
   it('uses `a` when no router is present', () => {
     const noRouter = shallowMount(SLink, {
       propsData: {
