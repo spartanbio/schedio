@@ -3,6 +3,7 @@
     v-bind="$attrs"
     :class="classList"
     class="button"
+    :aria-label="ariaLabel"
     v-on="$listeners"
   >
     <template v-if="isLoading">
@@ -59,6 +60,11 @@ export default {
       default: false,
     },
 
+    isText: {
+      type: Boolean,
+      default: false,
+    },
+
     isLoading: {
       type: Boolean,
       default: false,
@@ -85,7 +91,6 @@ export default {
       return [
         this.buttonStyle && this.buttonStyle,
         this.size && `button--size-${this.size}`,
-        (this.iconLeft || this.iconRight) && 'button--has-icon',
         this.iconOnly && 'button--icon-only',
         this.isLoading && 'button--loading',
       ]
@@ -98,13 +103,27 @@ export default {
 
       if (this.color && this.isOutlined) buttonStyle += '-outlined'
 
+      if (this.color && this.isText) buttonStyle += '-text'
+
       return buttonStyle
+    },
+
+    ariaLabel () {
+      if (this.$attrs['aria-label']) return this.$attrs['aria-label']
+
+      if (this.iconOnly && this.$slots.default && this.$slots.default[0]) {
+        return this.$slots.default[0].text
+      }
+
+      return null
     },
   },
 
   watch: {
     iconOnly (val) {
-      if (val && !this.$attrs['aria-label']) console.warn('Button requires `aria-label`')
+      if (val && !this.ariaLabel) {
+        console.warn('Button requires content or `aria-label`')
+      }
     },
   },
 }

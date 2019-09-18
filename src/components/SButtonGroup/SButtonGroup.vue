@@ -28,6 +28,11 @@ export default {
       default: false,
     },
 
+    isText: {
+      type: Boolean,
+      default: false,
+    },
+
     isGrouped: {
       type: Boolean,
       default: false,
@@ -56,6 +61,8 @@ export default {
       if (this.color) style += `button-group--color-${this.color}`
 
       if (style && this.isOutlined) style += '-outlined'
+
+      if (style && this.isText) style += '-text'
 
       return style
     },

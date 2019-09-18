@@ -1,4 +1,5 @@
 import { SChip } from '@/components/SChip'
+import { SChipGroup } from '@/components/SChipGroup'
 import { SHeading } from '@/components/SHeading'
 import { SCallout } from '@/components/SCallout'
 import PropList from '@@/docs/components/PropList'
@@ -9,51 +10,57 @@ import { SContainerRow } from '@/components/SContainerRow'
 import { generateHeading } from '@/utils/stories/render-functions'
 
 export default {
-  title: 'Components/SChip',
+  title: 'Components/Chips.SChip',
 
   parameters: {
     jest: 'SChip',
   },
 }
 
-export const chip = function SChipExample () {
-  return {
+export const chip = () => ({
+  props: {
     props: {
-      props: {
-        default: {
-          color: select('color', ['', ...colors], '', 'Optional Props'),
-          isClosable: boolean('is-closable', false, 'Optional Props'),
-          closeAriaLabel: text('close-aria-label', 'Close toast', 'Optional Props'),
-        },
-      },
-      slots: {
-        default: {
-          defaultSlot: text('default', 'Some content', '$slots'),
-        },
+      default: {
+        color: select('color', ['', ...colors], '', 'Optional Props'),
+        isClosable: boolean('is-closable', false, 'Optional Props'),
+        closeAriaLabel: text('close-aria-label', 'Close toast', 'Optional Props'),
       },
     },
-
-    render (h) {
-      const { props, slots } = this.$props
-
-      return (
-        <div>
-          <SHeading level="1">Chip</SHeading>
-          <p>Chips can be used to convey small bits of information.</p>
-
-          <SHeading level="2">Example</SHeading>
-          <SChip {...{ props }}>{slots.defaultSlot}</SChip>
-
-          <SCallout type="warning">
-            <code>v-model</code> must be set for a <code>is-closable</code> to work.
-          </SCallout>
-
-          {SChip.props && <PropList component={SChip} />}
-        </div>
-      )
+    slots: {
+      default: {
+        defaultSlot: text('default', 'Some content', '$slots'),
+      },
     },
-  }
-}
+  },
+
+  render (h) {
+    const { props, slots } = this.$props
+
+    return (
+      <div>
+        <SHeading level="1">Chip</SHeading>
+        <p>Chips can be used to convey small bits of information.</p>
+
+        <SHeading level="2">Example</SHeading>
+        <SContainerRow>
+          <SContainerColumn>
+            <SChip {...{ props }}>{slots.defaultSlot}</SChip>
+          </SContainerColumn>
+        </SContainerRow>
+
+        <SContainerRow>
+          <SContainerColumn>
+            <SCallout type="warning">
+              <code>v-model</code> must be set for a <code>is-closable</code> to work.
+            </SCallout>
+          </SContainerColumn>
+        </SContainerRow>
+
+        {SChip.props && <PropList component={SChip} />}
+      </div>
+    )
+  },
+})
 
 chip.story = {
   name: 'Chip',
@@ -158,17 +165,19 @@ template: \`
 
         <SHeading level="3">Output</SHeading>
 
-        {Object.keys(this.chips).map(chip => (
-          <SChip
-            is-closable
-            key={chip}
-            onClose={evt => this.handleClose(evt, chip)}
-            is-active={this.chips[chip]}
-            style="text-transform: capitalize;"
-          >
-            {chip}
-          </SChip>
-        ))}
+        <SChipGroup>
+          {Object.keys(this.chips).map(chip => (
+            <SChip
+              is-closable
+              key={chip}
+              onClose={evt => this.handleClose(evt, chip)}
+              is-active={this.chips[chip]}
+              style="text-transform: capitalize;"
+            >
+              {chip}
+            </SChip>
+          ))}
+        </SChipGroup>
 
         <pre>{JSON.stringify(this.chips, null, 2)}</pre>
 
@@ -219,13 +228,15 @@ chipColors.story = {
 }
 
 function generateChips (h, color) {
-  const chipName = `${color || 'base'} chip`
+  const chipName = `${color || ''} chip`
 
   return h(SContainerRow, [
     h(SContainerColumn, [
       generateHeading(h, { level: 2, content: color || 'Base' }),
-      h(SChip, { props: { color } }, chipName),
-      h(SChip, { props: { color, isClosable: true } }, `Closable ${chipName}`),
+      h(SChipGroup, [
+        h(SChip, { props: { color } }, chipName),
+        h(SChip, { props: { color, isClosable: true } }, `Closable ${chipName}`),
+      ]),
     ]),
   ])
 }

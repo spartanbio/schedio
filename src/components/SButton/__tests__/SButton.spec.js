@@ -10,7 +10,7 @@ const iconList = Object.keys(icons)
 
 describe('SButton.vue', () => {
   const click = jest.fn()
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   beforeEach(() => {
@@ -50,6 +50,17 @@ describe('SButton.vue', () => {
 
   Promise.all(
     options.colors.map((color) => {
+      it(`can be text with ${color}`, async () => {
+        wrapper.setProps({ color, isText: true })
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-text`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
+    })
+  )
+
+  Promise.all(
+    options.colors.map((color) => {
       it(`can be outlined with ${color}`, async () => {
         wrapper.setProps({ color, isOutlined: true })
         expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -72,7 +83,7 @@ describe('SButton.vue', () => {
     })
   })
 
-  it('validates color', () => {
+  it('validates size', () => {
     shallowMount(SButton, { propsData: { size: 'not a size' } })
     expect(errorSpy).toHaveBeenCalled()
   })
@@ -107,11 +118,25 @@ describe('SButton.vue', () => {
     expect(iconButton.html()).toMatchSnapshot()
   })
 
-  it('errors if no discernible text', async () => {
+  it('can use slot text for `aria-label`', async () => {
     const iconButton = shallowMount(SButton, {
       slots: {
         default: 'Button Text',
       },
+      listeners: { click },
+      propsData: {
+        iconOnly: true,
+        iconLeft: iconList[0],
+      },
+    })
+
+    expect(await axe(iconButton.html())).toHaveNoViolations()
+    expect(iconButton.text()).toBeFalsy()
+    expect(iconButton.html()).toMatchSnapshot()
+  })
+
+  it('errors if no discernible text', async () => {
+    const iconButton = shallowMount(SButton, {
       listeners: { click },
       propsData: {
         iconOnly: true,

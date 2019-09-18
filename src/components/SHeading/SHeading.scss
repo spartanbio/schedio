@@ -4,6 +4,10 @@
   margin-top: 2rem;
   text-transform: uppercase;
 
+  &:only-child {
+    margin-bottom: spacing('none');
+  }
+
   &--level-1 {
     @include font-size(3);
   }

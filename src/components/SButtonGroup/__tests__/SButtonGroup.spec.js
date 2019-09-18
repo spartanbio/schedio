@@ -52,6 +52,13 @@ describe('SButtonGroup.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
+  it('changes child button text', async () => {
+    buttonGroup.setProps({ color: 'red', isText: true, isGrouped: true })
+    expect(buttonGroup.classes()).toContain('button-group--color-red-text')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+  })
+
   it('groups child buttons', () => {
     buttonGroup.setProps({ isGrouped: true })
     expect(buttonGroup.contains('.button-group--grouped')).toBe(true)

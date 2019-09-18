@@ -4,7 +4,7 @@
   &:not(:last-child) {
     border-bottom: border();
     border-color: color('grey', 'lighter');
-    margin-bottom: spacing('half') + spacing('quarter');
+    margin-bottom: spacing('tight');
   }
 
   &__trigger {
@@ -23,7 +23,7 @@
 
   &__content {
     padding: spacing();
-    padding-top: spacing('half') + spacing('quarter');
+    padding-top: spacing('tight');
   }
 
   &--active {

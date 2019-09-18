@@ -7,6 +7,21 @@
     v-on="$listeners"
   >
     <slot>{{ to }}</slot>
+
+    <SIcon
+      v-if="icon"
+      :icon="icon"
+      size="small"
+      class="link__icon"
+    />
+
+    <SIcon
+      v-if="isExternalLink"
+      icon="external-link"
+      size="small"
+      class="link__icon"
+      aria-label="External link"
+    />
   </Component>
 </template>
 
@@ -20,23 +35,42 @@ export default {
       required: true,
     },
 
+    isExternal: {
+      type: Boolean,
+      default: false,
+    },
+
     isPlain: {
       type: Boolean,
       default: false,
+    },
+
+    isLight: {
+      type: Boolean,
+      default: false,
+    },
+
+    icon: {
+      type: String,
+      default: '',
     },
   },
 
   computed: {
     classList () {
-      return { 'link--external': this.isExternalLink, 'link--plain': this.isPlain }
+      return {
+        'link--plain': this.isPlain,
+        'link--light': this.isLight,
+      }
     },
 
     isExternalLink () {
-      return typeof this.to === 'string' && /^(http(s)?|ftp):\/\//.test(this.to)
+      return this.isExternal ||
+        (typeof this.to === 'string' && /^(http(s)?|ftp):\/\//.test(this.to))
     },
 
     componentIs () {
-      if (this.isExternalLink || (!this.$router && !this.isExternalLink)) return 'a'
+      if (this.isExternalLink || !this.$router) return 'a'
       if (this.$root.nuxt) return 'nuxt-link'
       return 'router-link'
     },
@@ -50,16 +84,15 @@ export default {
         }
       }
 
-      // handles internal links if `vue-router` is not present
-      if (!this.$router && !this.isExternalLink) {
+      // handles internal links if `$router` is not present (i.e.: vue and nuxt)
+      if (this.$router) {
         return {
-          href: this.to,
+          to: this.to,
         }
       }
 
       return {
-        // nuxt compatibility
-        to: this.to,
+        href: this.to,
       }
     },
   },

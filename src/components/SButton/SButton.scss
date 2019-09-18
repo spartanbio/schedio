@@ -34,27 +34,27 @@
     }
   }
 
-  &--has-icon {
-    padding: spacing('half');
-  }
-
   &--icon-only {
+    padding: spacing('half');
+
     .icon {
       margin: 0;
 
       & + .icon {
-        margin-left: spacing();
+        margin-left: spacing('half');
       }
     }
   }
 
   &__icon {
     &--left {
-      margin-right: spacing('half') + spacing('quarter');
+      margin-left: -1 * spacing('quarter');
+      margin-right: spacing('tight');
     }
 
     &--right {
-      margin-left: spacing('half') + spacing('quarter');
+      margin-left: spacing('tight');
+      margin-right: -1 * spacing('quarter');
     }
 
     .button:disabled & {
@@ -70,12 +70,10 @@
       &-outlined {
         @include button-outline($color-name);
       }
-    }
-  }
 
-  @each $color-name in $button-colors {
-    &--outline-#{$color-name} {
-      @include button-outline($color-name);
+      &-text {
+        @include button-text($color-name);
+      }
     }
   }
 }

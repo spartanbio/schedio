@@ -1,15 +1,16 @@
 .link {
   $highlight-spacing: 0.1em;
 
+  align-items: center;
   color: color('spartan_blue', 'light');
-  display: inline-block;
+  display: inline-flex;
   position: relative;
   text-decoration: none;
-  // Required for `z-index` to work properly on `::before`
+  // Required for `z-index` to work properly on `::after`
   z-index: 1;
 
   // Add an obvious highlight
-  &::before {
+  &::after {
     background-color: lighten(color('green', 'lighter'), 30%);
     border-radius: border-radius('small');
     // Move it up a bit. Uses bottom so highlight animates up
@@ -29,10 +30,8 @@
 
   // Animate the highlight
   &:hover {
-    color: color('spartan_blue');
-
-    &::before {
-      // Height is approximately from the bottom of `::before` to the top of the link text
+    &::after {
+      // Height is approximately from the bottom of `::after` to the top of the link text
       height: 80%;
     }
   }
@@ -41,30 +40,8 @@
   &:visited {
     color: color('spartan_blue');
 
-    &::before {
-      background-color: color('grey', 'light');
-    }
-  }
-
-  // add an icon to external links
-  &--external {
-    $icon-dimensions: 0.7em;
-    $icon-margin: (1 - $icon-dimensions) / 2;
-    // adds enough space before next character after link text
-    margin-right: $icon-dimensions + $icon-margin;
-
-    &::before {
-      // increases highlight size to include icon and spacing
-      width: unquote('calc(100% + #{2 * $highlight-spacing} + #{$icon-dimensions + $icon-margin})');
-    }
-
     &::after {
-      content: url('../assets/icons/external-link.svg');
-      height: $icon-dimensions;
-      // put some horizontal space around the icon
-      margin: 0 $icon-margin;
-      position: absolute;
-      width: $icon-dimensions;
+      background-color: color('grey', 'light');
     }
   }
 
@@ -79,8 +56,28 @@
       color: color('magenta', 'dark');
     }
 
-    &::before {
+    &::after {
       display: none;
     }
+  }
+
+  &--light {
+    color: color('ice');
+
+    &::after {
+      background-color: color('green');
+    }
+
+    &:visited {
+      color: color('grey', 'lighter');
+
+      &::after {
+        background-color: color('grey', 'darker');
+      }
+    }
+  }
+
+  &__icon {
+    margin-left: spacing('quarter');
   }
 }

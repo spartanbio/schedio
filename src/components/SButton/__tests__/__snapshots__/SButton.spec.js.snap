@@ -147,6 +147,76 @@ exports[`SButton.vue can be spartan_blue 1`] = `
   <!----></button>
 `;
 
+exports[`SButton.vue can be text with gold 1`] = `
+<button class="button button--color-gold-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with green 1`] = `
+<button class="button button--color-green-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with grey 1`] = `
+<button class="button button--color-grey-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with ice 1`] = `
+<button class="button button--color-ice-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with magenta 1`] = `
+<button class="button button--color-magenta-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with night 1`] = `
+<button class="button button--color-night-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with red 1`] = `
+<button class="button button--color-red-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with spartan_blue 1`] = `
+<button class="button button--color-spartan_blue-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with turquoise 1`] = `
+<button class="button button--color-turquoise-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue can be text with white 1`] = `
+<button class="button button--color-white-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
 exports[`SButton.vue can be turquoise 1`] = `
 <button class="button button--color-turquoise">
   <!---->
@@ -168,7 +238,7 @@ exports[`SButton.vue can have a loading spinner 1`] = `
 `;
 
 exports[`SButton.vue can have an icon and no text 1`] = `
-<button aria-label="Button" class="button button--has-icon button--icon-only">
+<button aria-label="Button" class="button button--icon-only">
   <!---->
   <sicon icon="activity" class="button__icon button__icon--left"></sicon>
   <!---->
@@ -177,7 +247,7 @@ exports[`SButton.vue can have an icon and no text 1`] = `
 `;
 
 exports[`SButton.vue can have an icon on the left 1`] = `
-<button class="button button--has-icon">
+<button class="button">
   <!---->
   <sicon icon="activity" class="button__icon button__icon--left"></sicon> Button Text
   <!---->
@@ -185,9 +255,18 @@ exports[`SButton.vue can have an icon on the left 1`] = `
 `;
 
 exports[`SButton.vue can have an icon on the right 1`] = `
-<button class="button button--has-icon">
+<button class="button">
   <!---->
   <!----> Button Text <sicon icon="activity" class="button__icon button__icon--right"></sicon></button>
+`;
+
+exports[`SButton.vue can use slot text for \`aria-label\` 1`] = `
+<button aria-label="Button Text" class="button button--icon-only">
+  <!---->
+  <sicon icon="activity" class="button__icon button__icon--left"></sicon>
+  <!---->
+  <!---->
+</button>
 `;
 
 exports[`SButton.vue renders correctly 1`] = `
