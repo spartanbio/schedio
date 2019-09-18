@@ -190,6 +190,15 @@ exports[`SButton.vue can have an icon on the right 1`] = `
   <!----> Button Text <sicon icon="activity" class="button__icon button__icon--right"></sicon></button>
 `;
 
+exports[`SButton.vue can use slot text for \`aria-label\` 1`] = `
+<button aria-label="Button Text" class="button button--icon-only">
+  <!---->
+  <sicon icon="activity" class="button__icon button__icon--left"></sicon>
+  <!---->
+  <!---->
+</button>
+`;
+
 exports[`SButton.vue renders correctly 1`] = `
 <button class="button">
   <!---->

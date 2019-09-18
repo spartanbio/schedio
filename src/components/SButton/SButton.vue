@@ -3,6 +3,7 @@
     v-bind="$attrs"
     :class="classList"
     class="button"
+    :aria-label="ariaLabel"
     v-on="$listeners"
   >
     <template v-if="isLoading">
@@ -99,11 +100,23 @@ export default {
 
       return buttonStyle
     },
+
+    ariaLabel () {
+      if (this.$attrs['aria-label']) return this.$attrs['aria-label']
+
+      if (this.iconOnly && this.$slots.default && this.$slots.default[0]) {
+        return this.$slots.default[0].text
+      }
+
+      return null
+    },
   },
 
   watch: {
     iconOnly (val) {
-      if (val && !this.$attrs['aria-label']) console.warn('Button requires `aria-label`')
+      if (val && !this.ariaLabel) {
+        console.warn('Button requires content or `aria-label`')
+      }
     },
   },
 }
