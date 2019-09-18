@@ -38,7 +38,6 @@ addParameters({
     showPanel: true,
   },
   // TODO: remove once `@storybook/addon-docs` fully supports vue
-  docs: { page: null },
 })
 
 addDecorator(withKnobs)
