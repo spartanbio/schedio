@@ -34,27 +34,27 @@
     }
   }
 
-  &--has-icon {
-    padding: spacing('half');
-  }
-
   &--icon-only {
+    padding: spacing('half');
+
     .icon {
       margin: 0;
 
       & + .icon {
-        margin-left: spacing();
+        margin-left: spacing('half');
       }
     }
   }
 
   &__icon {
     &--left {
+      margin-left: -1 * spacing('quarter');
       margin-right: spacing('half') + spacing('quarter');
     }
 
     &--right {
       margin-left: spacing('half') + spacing('quarter');
+      margin-right: -1 * spacing('quarter');
     }
 
     .button:disabled & {

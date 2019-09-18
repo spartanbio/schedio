@@ -85,7 +85,6 @@ export default {
       return [
         this.buttonStyle && this.buttonStyle,
         this.size && `button--size-${this.size}`,
-        (this.iconLeft || this.iconRight) && 'button--has-icon',
         this.iconOnly && 'button--icon-only',
         this.isLoading && 'button--loading',
       ]
