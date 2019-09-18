@@ -1,3 +1,26 @@
+# [3.8.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.7.0...v3.8.0) (2019-09-18)
+
+
+### Bug Fixes
+
+* **button:** improves icon spacing ([8315f97](https://gitlab.com/spartanbio-ux/schedio/commit/8315f97))
+* **button-group:** accounts for added button margin ([1b20d09](https://gitlab.com/spartanbio-ux/schedio/commit/1b20d09))
+* **headings:** removes `margin-bottom` from `:only-child` ([820dca0](https://gitlab.com/spartanbio-ux/schedio/commit/820dca0))
+* **link:** fallback to `href` instead of `to` ([8422008](https://gitlab.com/spartanbio-ux/schedio/commit/8422008))
+* **radio:** improves checkmark rendering ([1e38f97](https://gitlab.com/spartanbio-ux/schedio/commit/1e38f97))
+* **spacing:** makes `spacing('tight')` usable ([f41e307](https://gitlab.com/spartanbio-ux/schedio/commit/f41e307))
+* **toast:** improves `margin-bottom` ([6042f06](https://gitlab.com/spartanbio-ux/schedio/commit/6042f06))
+
+
+### Features
+
+* **borders:** improves border colors ([897b685](https://gitlab.com/spartanbio-ux/schedio/commit/897b685))
+* **button:** adds text buttons ([bea097c](https://gitlab.com/spartanbio-ux/schedio/commit/bea097c))
+* **button:** allows slot text to become aria-label ([2359315](https://gitlab.com/spartanbio-ux/schedio/commit/2359315))
+* **chip-group:** adds chip group ([a5c1e1f](https://gitlab.com/spartanbio-ux/schedio/commit/a5c1e1f))
+* **link:** adds `icon`, `isExternal` and `isLight` props ([cf2cfe6](https://gitlab.com/spartanbio-ux/schedio/commit/cf2cfe6))
+* **typography:** uses dark theme for `code` and `pre` ([19e8281](https://gitlab.com/spartanbio-ux/schedio/commit/19e8281))
+
 # [3.7.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.6.1...v3.7.0) (2019-07-29)
 
 
