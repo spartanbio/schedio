@@ -1,4 +1,5 @@
-pre.hljs {
+pre.hljs,
+code.hljs {
   background: none;
   padding: 0;
 }
