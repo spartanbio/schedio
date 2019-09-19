@@ -1,3 +1,10 @@
+## [3.8.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.8.0...v3.8.1) (2019-09-19)
+
+
+### Bug Fixes
+
+* **card:** specifies `border-color` correctly ([1548635](https://gitlab.com/spartanbio-ux/schedio/commit/1548635))
+
 # [3.8.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.7.0...v3.8.0) (2019-09-18)
 
 
