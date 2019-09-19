@@ -17,7 +17,7 @@
 
   &__header {
     border-bottom: border();
-    border-color: color('grey', 'light');
+    border-bottom-color: color('grey', 'light');
     flex: 1 1 auto;
     padding: spacing('double');
   }
@@ -37,8 +37,8 @@
   }
 
   &__footer {
-    border-color: color('grey', 'light');
     border-top: border();
+    border-top-color: color('grey', 'light');
     flex: 1 1 auto;
     padding: spacing('double');
   }
