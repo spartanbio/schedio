@@ -7,7 +7,7 @@ expect.extend(toHaveNoViolations)
 
 describe('SHero.vue', () => {
   let wrapper
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
 
   beforeEach(() => {
     wrapper = shallowMount(SHero, {
@@ -67,6 +67,12 @@ describe('SHero.vue', () => {
 
   it('can have no padding on the body', () => {
     wrapper.setProps({ hasNoPadding: true })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can be any html tag', () => {
+    wrapper.setProps({ tag: 'section' })
+    expect(wrapper.contains('section')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

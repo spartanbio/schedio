@@ -27,6 +27,10 @@ export const hero = () => ({
       type: Boolean,
       default: boolean('has-no-padding', false, 'Optional Props'),
     },
+    tag: {
+      type: String,
+      default: text('tag', 'div', 'Optional Props'),
+    },
     slots: {
       default: () => ({
         head: text('head', 'Head slot', 'Slots'),

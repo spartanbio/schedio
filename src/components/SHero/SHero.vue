@@ -1,5 +1,6 @@
 <template>
-  <div
+  <Component
+    :is="tag"
     :class="classList"
     class="hero"
   >
@@ -20,7 +21,7 @@
     >
       <slot name="foot" />
     </div>
-  </div>
+  </Component>
 </template>
 
 <script>
@@ -40,6 +41,11 @@ export default {
   name: 'SHero',
 
   props: {
+    tag: {
+      type: String,
+      default: 'div',
+    },
+
     height: {
       type: String,
       default: '',
