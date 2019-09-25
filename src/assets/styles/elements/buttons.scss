@@ -31,7 +31,7 @@
   color: color('spartan_blue', 'light');
   display: inline-flex;
   padding: spacing('half') spacing();
-  transition: all duration() easing(), outline 0ms, outline-offset 0ms;
+  transition: all duration() easing(), outline 0s, outline-offset 0s, height 0s, width 0s;
 
   &:hover {
     color: color('spartan_blue', 'dark');
