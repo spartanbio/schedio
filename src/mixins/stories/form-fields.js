@@ -21,7 +21,7 @@ export const withAttrsAsProps = ({
   isInvalid = false,
 } = {}) => ({
   id: text(`${identifier} id`.trim(), id, 'Required Props'),
-  name: text(`${identifier} name`.trim(), name, 'Required Props'),
+  name: text(`${identifier} name`.trim(), name, 'Optional Props'),
   label: text(`${identifier} label`.trim(), label, 'Required Props'),
   required: boolean(`${identifier} required`.trim(), required, 'Optional Props'),
   hideOptional: boolean(`${identifier} hide-optional`.trim(), hideOptional, 'Optional Props'),

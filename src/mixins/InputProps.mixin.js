@@ -8,7 +8,7 @@ export default {
 
     name: {
       type: String,
-      required: true,
+      default: '',
     },
 
     label: {
@@ -29,6 +29,12 @@ export default {
     isInvalid: {
       type: Boolean,
       default: false,
+    },
+  },
+
+  computed: {
+    _name () {
+      return this.name || this.id
     },
   },
 }

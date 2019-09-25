@@ -16,7 +16,7 @@
           'input--has-icon-left': !!iconLeft,
           'input--has-icon-right': !!iconRight,
         }"
-        :name="name"
+        :name="_name"
         :placeholder="placeholder"
         :required="required"
         :type="type"

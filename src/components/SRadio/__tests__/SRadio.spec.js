@@ -14,7 +14,6 @@ describe('SRadio.vue', () => {
     wrapper = mount(SRadio, {
       propsData: {
         id: 'radio',
-        name: 'radio',
         label: 'Radio',
       },
       listeners: {
@@ -32,7 +31,7 @@ describe('SRadio.vue', () => {
 
   it('requires required props', () => {
     // spies on `console.error` without calling `console.error`
-    const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+    const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
     // mounting component without required props
     shallowMount(SRadio)
     expect(spy).toHaveBeenCalled()
@@ -62,7 +61,6 @@ describe('SRadio.vue', () => {
     const disabledWrapper = shallowMount(SRadio, {
       propsData: {
         id: 'radio',
-        name: 'radio',
         label: 'Radio',
       },
       attrs: {

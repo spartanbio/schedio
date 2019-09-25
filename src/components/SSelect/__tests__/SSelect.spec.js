@@ -8,7 +8,7 @@ expect.extend(toHaveNoViolations)
 const iconList = Object.keys(icons)
 
 describe('SSelect.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   const inputListener = jest.fn()
   const defaultOptions = ['one', 'two']
 
@@ -18,7 +18,6 @@ describe('SSelect.vue', () => {
     wrapper = mount(SSelect, {
       propsData: {
         id: 'select',
-        name: 'select',
         label: 'Select',
         selectOptions: defaultOptions,
       },

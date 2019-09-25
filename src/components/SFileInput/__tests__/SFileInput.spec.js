@@ -46,10 +46,10 @@ describe('SFileInput.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('requires id, name, and label', () => {
+  it('requires id, and label', () => {
     shallowMount(SFileInput)
     // 4 times because we one of the props expects a string, but receives `undefined`
-    expect(errorSpy).toHaveBeenCalledTimes(4)
+    expect(errorSpy).toHaveBeenCalledTimes(3)
     expect(errorSpy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
   })
 
