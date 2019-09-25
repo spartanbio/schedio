@@ -131,6 +131,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isFullwidth: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data () {
@@ -156,6 +160,7 @@ export default {
         'table--bordered': this.isBordered,
         'table--hoverable': this.isHoverable,
         'table--striped': this.isStriped,
+        'table--fullwidth': this.isFullwidth,
       }
     },
 

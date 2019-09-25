@@ -5,7 +5,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('STable.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   beforeEach(() => {
@@ -118,6 +118,11 @@ describe('STable.vue', () => {
 
   it('can be striped', () => {
     wrapper.setProps({ isStriped: true })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('can be fullwidth', () => {
+    wrapper.setProps({ isFullwidth: true })
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
