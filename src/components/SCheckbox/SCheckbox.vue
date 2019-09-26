@@ -14,6 +14,7 @@
       :required="required"
       class="checkbox"
       type="checkbox"
+      :checked="!!value"
       v-on="listeners"
     >
     <span
@@ -30,5 +31,12 @@ export default {
   name: 'SCheckbox',
 
   mixins: [InputControl],
+
+  props: {
+    value: {
+      type: null,
+      default: null,
+    },
+  },
 }
 </script>
