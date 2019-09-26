@@ -1,3 +1,21 @@
+# [3.9.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.8.1...v3.9.0) (2019-09-26)
+
+
+### Bug Fixes
+
+* **buttons:** removes transition from height and width ([01495f4](https://gitlab.com/spartanbio-ux/schedio/commit/01495f4))
+* **checkbox:** binds checked attribute ([3b7df6f](https://gitlab.com/spartanbio-ux/schedio/commit/3b7df6f))
+* **controls:** removes transition from height and width ([fa271a5](https://gitlab.com/spartanbio-ux/schedio/commit/fa271a5))
+
+
+### Features
+
+* **card-container:** adds tag prop ([dde1b53](https://gitlab.com/spartanbio-ux/schedio/commit/dde1b53))
+* **container:** adds tag prop ([2dd32f8](https://gitlab.com/spartanbio-ux/schedio/commit/2dd32f8))
+* **hero:** adds tag prop ([24699ed](https://gitlab.com/spartanbio-ux/schedio/commit/24699ed))
+* **inputs:** computes field name ([134460e](https://gitlab.com/spartanbio-ux/schedio/commit/134460e))
+* **table:** adds `is-fullwidth` ([cb81183](https://gitlab.com/spartanbio-ux/schedio/commit/cb81183))
+
 ## [3.8.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.8.0...v3.8.1) (2019-09-19)
 
 
