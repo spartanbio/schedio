@@ -1,3 +1,10 @@
+## [3.9.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.9.0...v3.9.1) (2019-09-26)
+
+
+### Bug Fixes
+
+* **inputs:** renames `_name` to `computedName` ([a043f64](https://gitlab.com/spartanbio-ux/schedio/commit/a043f64))
+
 # [3.9.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.8.1...v3.9.0) (2019-09-26)
 
 
