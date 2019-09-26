@@ -24,7 +24,7 @@
           'select--has-icon-right': !!iconRight,
         }"
         :multiple="multiple"
-        :name="name"
+        :name="_name"
         :required="required"
         class="select"
         v-on="listeners"

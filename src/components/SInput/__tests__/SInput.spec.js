@@ -9,7 +9,7 @@ expect.extend(toHaveNoViolations)
 const iconList = Object.keys(icons)
 
 describe('SInput.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   const inputEvent = jest.fn()
   let wrapper
 
@@ -17,7 +17,6 @@ describe('SInput.vue', () => {
     wrapper = mount(SInput, {
       propsData: {
         id: 'input',
-        name: 'input',
         label: 'input',
       },
       listeners: {
@@ -43,7 +42,7 @@ describe('SInput.vue', () => {
   })
 
   it('validates the input type', () => {
-    const defaultProps = { id: 'input', name: 'input', label: 'input' }
+    const defaultProps = { id: 'input', label: 'input' }
     const randOptionIndex = Math.round(Math.random() * options.length)
     const option = options[randOptionIndex]
 

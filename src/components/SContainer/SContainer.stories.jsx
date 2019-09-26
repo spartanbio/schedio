@@ -2,8 +2,8 @@ import { SContainer } from '@/components/SContainer'
 import { SContainerColumn } from '@/components/SContainerColumn'
 import { SContainerRow } from '@/components/SContainerRow'
 import { SHeading } from '@/components/SHeading'
-import { boolean } from '@storybook/addon-knobs'
 import PropList from '@@/docs/components/PropList'
+import { boolean, text } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/Layout.SContainer',
@@ -17,7 +17,8 @@ export const container = () => ({
   props: {
     props: {
       default: () => ({
-        isFullwidth: boolean('is-fullwidth', false),
+        isFullwidth: boolean('is-fullwidth', false, 'Optional Props'),
+        tag: text('tag', 'div', 'Optional Props'),
       }),
     },
   },

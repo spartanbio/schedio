@@ -13,7 +13,14 @@ export default {
 
 export const cardContainer = () => ({
   props: {
-    slotContent: { default: text('default', 'This is a card container!', 'Slots') },
+    props: {
+      tag: {
+        default: text('tag', 'div', 'Optional Props'),
+      },
+    },
+    slotContent: {
+      default: text('default', 'This is a card container!', 'Slots'),
+    },
   },
   render (h) {
     return (
@@ -22,7 +29,7 @@ export const cardContainer = () => ({
         <p>Creates a container that also looks like a card.</p>
 
         <SHeading level="2">Example</SHeading>
-        <SCardContainer>{this.slotContent}</SCardContainer>
+        <SCardContainer {...{ props: this.props }}>{this.slotContent}</SCardContainer>
 
         {SCardContainer.props && <PropList component={SCardContainer} />}
       </div>

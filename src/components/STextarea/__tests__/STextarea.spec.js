@@ -8,7 +8,7 @@ expect.extend(toHaveNoViolations)
 const iconList = Object.keys(icons)
 
 describe('STextarea.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   const inputEvent = jest.fn()
   let wrapper
 
@@ -16,7 +16,6 @@ describe('STextarea.vue', () => {
     wrapper = mount(STextarea, {
       propsData: {
         id: 'textarea',
-        name: 'textarea',
         label: 'textarea',
       },
       listeners: {

@@ -8,6 +8,14 @@ exports[`SHero.vue can be almost-full 1`] = `
 </div>
 `;
 
+exports[`SHero.vue can be any html tag 1`] = `
+<section class="hero">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</section>
+`;
+
 exports[`SHero.vue can be full 1`] = `
 <div class="hero hero--height-full">
   <div class="hero__head">Header Content</div>

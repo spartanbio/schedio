@@ -26,4 +26,10 @@ describe('SContainer.vue', () => {
     expect(wrapper.vm.isFullwidth).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
+
+  it('can be any html element', () => {
+    wrapper.setProps({ tag: 'section' })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.contains('section')).toBe(true)
+  })
 })

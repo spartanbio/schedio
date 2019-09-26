@@ -12,10 +12,9 @@ describe('SSwitch.vue', () => {
     'large',
   ]
   const inputEvent = jest.fn()
-  const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   const defaultProps = {
     id: 'toggleSwitch',
-    name: 'toggleSwitch',
     label: 'Checkbox',
   }
   let wrapper
@@ -78,7 +77,6 @@ describe('SSwitch.vue', () => {
     const disabledWrapper = mount(SSwitch, {
       propsData: {
         id: 'toggleSwitch',
-        name: 'toggleSwitch',
         label: 'Checkbox',
       },
       attrs: {

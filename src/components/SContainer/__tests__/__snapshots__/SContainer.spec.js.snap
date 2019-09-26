@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SContainer.vue can be any html element 1`] = `
+<section class="container">
+  <div>Container Content</div>
+</section>
+`;
+
 exports[`SContainer.vue can be fullwidth 1`] = `
 <div class="container container--fullwidth">
   <div>Container Content</div>

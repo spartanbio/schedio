@@ -14,7 +14,6 @@ describe('SCheckbox.vue', () => {
     wrapper = mount(SCheckbox, {
       propsData: {
         id: 'checkbox',
-        name: 'checkbox',
         label: 'Checkbox',
       },
       listeners: {
@@ -32,7 +31,7 @@ describe('SCheckbox.vue', () => {
 
   it('requires required props', () => {
     // spies on `console.error` without calling `console.error`
-    const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+    const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
     // mounting component without required props
     mount(SCheckbox)
     expect(spy).toHaveBeenCalled()
@@ -67,7 +66,6 @@ describe('SCheckbox.vue', () => {
     const disabledWrapper = mount(SCheckbox, {
       propsData: {
         id: 'checkbox',
-        name: 'checkbox',
         label: 'Checkbox',
       },
       attrs: {

@@ -1,6 +1,6 @@
 <template>
   <SContainer>
-    <SCard>
+    <SCard :tag="tag">
       <slot />
     </SCard>
   </SContainer>
@@ -16,6 +16,13 @@ export default {
   components: {
     SCard,
     SContainer,
+  },
+
+  props: {
+    tag: {
+      type: String,
+      default: 'div',
+    },
   },
 }
 </script>

@@ -73,6 +73,54 @@ exports[`STable.vue can be bordered 1`] = `
 </div>
 `;
 
+exports[`STable.vue can be fullwidth 1`] = `
+<div class="table__overlay">
+  <div class="table__container">
+    <table class="table table--fullwidth">
+      <!---->
+      <thead class="table__header">
+        <tr class="table__row">
+          <th class="table__cell">
+            Col 1
+          </th>
+          <th class="table__cell">
+            Col 2
+          </th>
+          <th class="table__cell">
+            Col 3
+          </th>
+        </tr>
+      </thead>
+      <tbody class="table__body">
+        <tr class="table__row">
+          <td class="table__cell">
+            Cell 1
+          </td>
+          <td class="table__cell">
+            Cell 2
+          </td>
+          <td class="table__cell">
+            Cell 3
+          </td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__cell">
+            Cell 4
+          </td>
+          <td class="table__cell">
+            Cell 5
+          </td>
+          <td class="table__cell">
+            Cell 6
+          </td>
+        </tr>
+      </tbody>
+      <!---->
+    </table>
+  </div>
+</div>
+`;
+
 exports[`STable.vue can be hoverable 1`] = `
 <div class="table__overlay">
   <div class="table__container">

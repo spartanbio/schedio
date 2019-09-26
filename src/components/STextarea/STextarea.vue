@@ -16,7 +16,7 @@
           'textarea--has-icon-left': !!iconLeft,
           'textarea--has-icon-right': !!iconRight,
         }"
-        :name="name"
+        :name="_name"
         :placeholder="placeholder"
         :required="required"
         :rows="$attrs.rows || 10"

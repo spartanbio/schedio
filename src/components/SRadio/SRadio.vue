@@ -10,7 +10,7 @@
     <input
       :id="id"
       v-bind="$attrs"
-      :name="name"
+      :name="_name"
       :required="required"
       class="radio"
       type="radio"

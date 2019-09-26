@@ -23,6 +23,7 @@ export const table = () => {
     isBordered: makeOptionalBoolean('is-bordered'),
     isHoverable: makeOptionalBoolean('is-hoverable'),
     isStriped: makeOptionalBoolean('is-striped'),
+    isFullwidth: makeOptionalBoolean('is-fullwidth'),
   }
   const tableData = [
     { col1: 'Cell 1', col2: 'Cell 2', col3: 'Cell 3' },
