@@ -33,7 +33,7 @@ export default {
   },
 
   computed: {
-    _name () {
+    computedName () {
       return this.name || this.id
     },
   },

@@ -15,7 +15,7 @@
           :id="id"
           v-bind="$attrs"
           :label="label"
-          :name="_name"
+          :name="computedName"
           type="file"
           class="file-input__control"
           v-on="listeners.nondragListeners"
