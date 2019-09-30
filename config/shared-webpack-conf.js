@@ -13,4 +13,6 @@ exports.aliases = {
   '~': srcPath,
   '@@': rootPath,
   '~~': rootPath,
+  // reduces bundle size by ~100k
+  'core-js-pure': 'core-js',
 }
