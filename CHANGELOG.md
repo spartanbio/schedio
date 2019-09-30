@@ -1,3 +1,11 @@
+## [3.9.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.9.1...v3.9.2) (2019-09-30)
+
+
+### Performance Improvements
+
+* **icons:** reduces bundles size ([3fbf3f4](https://gitlab.com/spartanbio-ux/schedio/commit/3fbf3f4))
+* reduces bundle size ([2c7ca66](https://gitlab.com/spartanbio-ux/schedio/commit/2c7ca66))
+
 ## [3.9.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.9.0...v3.9.1) (2019-09-26)
 
 

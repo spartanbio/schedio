@@ -1,6 +1,6 @@
 {
   "name": "@spartanbio/schedio",
-  "version": "3.9.1",
+  "version": "3.9.2",
   "scripts": {
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "ase-encode": " node ./scripts/ase-encode.js",
