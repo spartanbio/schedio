@@ -1541,10 +1541,10 @@
     parse-github-url "^1.0.1"
     url-join "^4.0.0"
 
-"@semantic-release/gitlab@^3.1.2":
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/@semantic-release/gitlab/-/gitlab-3.1.7.tgz#87bb5bb03834a39c55f94719158a959fe3178669"
-  integrity sha512-gjzlksjoQU185jZ3kQmVwwAehWB6FqcxMfW8rOlfUddQnmZvXsnNBy67p6+ZABLrgtdMY0PR/9pkF5AUeFlXwA==
+"@semantic-release/gitlab@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/gitlab/-/gitlab-4.0.0.tgz#87bcfd77998484ff4a7657793f551a7b5a390a05"
+  integrity sha512-KqwDH7bsVJRM2E+rcoxpYWBWFvQNR2ukcakloNhafvCoKG9HlrFD4a8Wwm0kiaYUWSRUR/8SCPt4J8qyhZuARA==
   dependencies:
     "@semantic-release/error" "^2.2.0"
     aggregate-error "^3.0.0"
