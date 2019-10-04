@@ -25,6 +25,7 @@ import SHero from './components/SHero'
 import SIcon from './components/SIcon'
 import SInput from './components/SInput'
 import SLabel from './components/SLabel'
+import SLazyImage from './components/SLazyImage'
 import SLink from './components/SLink'
 import SProgressBar from './components/SProgressBar'
 import SRadio from './components/SRadio'
@@ -59,6 +60,7 @@ const Schedio = {
     Vue.use(SIcon)
     Vue.use(SInput)
     Vue.use(SLabel)
+    Vue.use(SLazyImage)
     Vue.use(SLink)
     Vue.use(SProgressBar)
     Vue.use(SRadio)
@@ -97,6 +99,7 @@ export { SHero } from './components/SHero'
 export { SIcon } from './components/SIcon'
 export { SInput } from './components/SInput'
 export { SLabel } from './components/SLabel'
+export { SLazyImage } from './components/SLazyImage'
 export { SLink } from './components/SLink'
 export { SProgressBar } from './components/SProgressBar'
 export { SRadio } from './components/SRadio'

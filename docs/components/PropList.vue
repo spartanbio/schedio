@@ -120,7 +120,7 @@ export default {
     },
 
     sortedProps () {
-      return this.orderBy(this.propList, 'name')
+      return this.orderBy(this.propList, ['required', 'name'])
     },
   },
 
