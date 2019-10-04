@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SLazyImage.vue renders correctly 1`] = `<img src="https://source.unsplash.com/a7XPK-oDsMk" class="lazy-image lazy-image--loading" style="padding-top: 100%; padding-left: 100%; width: 0px;" alt="alt">`;
