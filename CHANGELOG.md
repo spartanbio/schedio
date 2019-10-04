@@ -1,3 +1,10 @@
+# [3.10.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.9.2...v3.10.0) (2019-10-04)
+
+
+### Features
+
+* **lazy-image:** adds lazy image component ([4d0ab3f](https://gitlab.com/spartanbio-ux/schedio/commit/4d0ab3f))
+
 ## [3.9.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.9.1...v3.9.2) (2019-09-30)
 
 
