@@ -4,7 +4,6 @@ const fs = require('fs-extra')
 const path = require('path')
 const getComponentNames = require('./get-component-names')
 const generateVueIndex = require('./generate-vue-index')
-const generateScssIndex = require('./generate-scss-index')
 
 // params
 const rawName = process.argv[2]
@@ -30,9 +29,13 @@ const scaffold = [
 
 <script>
 export default {
-  name: '${componentName}'
+  name: '${componentName}',
 }
 </script>
+
+<style lang="scss">
+// component styles
+</style>
 `,
   },
   // Storybook story
@@ -73,11 +76,6 @@ ${rawName}.story = {
 }
 `,
   },
-  // SCSS
-  {
-    extension: 'scss',
-    contents: '// component styles\n',
-  },
   // index.js
   {
     fileName: 'index',
@@ -99,7 +97,7 @@ async function scaffoldComponent () {
   console.log(chalk.yellow(`Building ${componentName}...\n`))
 
   try {
-    // add vue, story, scss, index.js
+    // add vue, story, index.js
     await Promise.all(
       scaffold.map(async ({ fileName, extension, contents }) => {
         console.log(chalk.yellow(`Adding ${extension} file...\n`))
@@ -121,7 +119,6 @@ async function scaffoldComponent () {
     const allComponentNames = getComponentNames()
 
     generateVueIndex(allComponentNames)
-    generateScssIndex(allComponentNames)
 
     // great success!
     console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``))

@@ -67,3 +67,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.input {
+  @include control;
+  @include control-with-icons;
+}
+</style>

@@ -32,3 +32,29 @@ export default {
   mixins: [InputControl],
 }
 </script>
+
+<style lang="scss">
+.radio {
+  @include check-or-radio {
+    border-radius: border-radius('circle');
+  }
+
+  & ~ &__check::after {
+    background-color: color('green');
+    border-radius: border-radius('circle');
+    content: '';
+    height: 10px;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all duration() ease;
+    width: 10px;
+  }
+
+  &:checked ~ &__check::after {
+    opacity: 1;
+  }
+}
+</style>

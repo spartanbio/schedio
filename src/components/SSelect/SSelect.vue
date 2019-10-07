@@ -165,3 +165,41 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.select {
+  @include control;
+  @include control-with-icons;
+
+  appearance: none;
+  overflow: auto;
+
+  &__icon--right {
+    right: spacing('triple') !important;
+  }
+
+  &__container {
+    &::after {
+      @include arrow('down', 'right');
+
+      pointer-events: none;
+    }
+
+    &--disabled {
+      &::after {
+        border-color: color('night', 'lighter');
+      }
+    }
+
+    &--multiple {
+      &::after {
+        display: none;
+      }
+
+      .select__icon--right {
+        right: spacing() + spacing('quarter') !important;
+      }
+    }
+  }
+}
+</style>

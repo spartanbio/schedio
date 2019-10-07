@@ -91,3 +91,62 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.progress-bar {
+  margin-top: spacing();
+
+  &:not(:last-child) {
+    margin-bottom: spacing();
+  }
+
+  &__background {
+    background-color: color('grey', 'lighter');
+    border-radius: border-radius('small');
+    // provides some accessibility/contrast
+    box-shadow: inset 0 0 1px color('night', 'light');
+    height: 0.5em;
+    margin-bottom: spacing('half');
+    position: relative;
+
+    &--small {
+      height: 0.5em;
+    }
+
+    &--medium {
+      height: 1em;
+    }
+
+    &--large {
+      height: 2em;
+    }
+  }
+
+  &__progress {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 0;
+  }
+
+  &__indicator {
+    background-color: color('green', 'light');
+    border-radius: inherit;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width duration('fast') easing('out');
+
+    @each $color-name in $button-colors {
+      &--color-#{$color-name} {
+        background-color: color($color-name);
+      }
+    }
+  }
+
+  &__message {
+    text-align: center;
+  }
+}
+</style>

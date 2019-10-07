@@ -51,3 +51,10 @@ export default {
   mixins: [InputText, ControlIcons],
 }
 </script>
+
+<style lang="scss">
+.textarea {
+  @include control;
+  @include control-with-icons;
+}
+</style>

@@ -90,3 +90,56 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.chip {
+  @include font-size(6);
+
+  align-items: center;
+  background-color: color('ice');
+  border-radius: border-radius('small');
+  display: inline-flex;
+  padding: spacing('half') spacing();
+  transition: all easing() duration();
+  // ensures SVGs and text align as expected
+  vertical-align: top;
+
+  &__content {
+    align-items: center;
+    display: inline-flex;
+  }
+
+  &__close {
+    border: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    box-shadow: none;
+    // allows the button to have padding while not increasing the box size
+    margin: -1 * spacing('half');
+    margin-left: spacing('half');
+    margin-right: -1 * spacing();
+    padding: spacing('half');
+
+    &:active,
+    &:not(:disabled):not(:active):hover {
+      box-shadow: none !important;
+    }
+  }
+
+  @each $color-name in $button-colors {
+    &--color-#{$color-name} {
+      background-color: color($color-name);
+      color: choose-contrast-color($color-name);
+
+      .chip__close {
+        box-shadow: none;
+
+        &:active,
+        &:not(:disabled):not(:active):hover {
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+}
+</style>

@@ -63,3 +63,37 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.icon {
+  fill: none;
+  height: 1.5em;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  // using px because android browsers render stroke width twice as thick when using ems
+  stroke-width: 2px;
+  width: 1.5em;
+
+  &--size-small {
+    height: 0.75em;
+    width: 0.75em;
+  }
+
+  &--size-regular {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  &--size-large {
+    height: 4em;
+    width: 4em;
+  }
+
+  @each $color-name in $button-colors {
+    &--color-#{$color-name} {
+      stroke: color($color-name);
+    }
+  }
+}
+</style>

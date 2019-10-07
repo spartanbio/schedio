@@ -234,3 +234,82 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.table {
+  &__header {
+    border-bottom: border();
+    font-weight: $font-weight-bold;
+    table-layout: auto;
+    text-transform: uppercase;
+  }
+
+  &__footer {
+    border-top: border();
+    font-weight: $font-weight-bold;
+  }
+
+  &__caption {
+    @include font-size(6);
+
+    caption-side: bottom;
+    color: color('night', 'light');
+    font-weight: $font-weight-regular;
+    text-align: left;
+
+    &--top {
+      caption-side: top;
+    }
+  }
+
+  &__container,
+  &__overlay {
+    overflow-x: auto;
+    position: relative;
+  }
+
+  &__overlay--left {
+    &::before {
+      @include shadow-overlay(to right);
+    }
+  }
+
+  &__overlay--right {
+    &::after {
+      @include shadow-overlay(to left);
+    }
+  }
+
+  // These row variants have been left here because they're dependent on `.table--<variant>`
+  &--bordered {
+    .table__body {
+      .table__row {
+        border-top: border();
+      }
+    }
+  }
+
+  &--hoverable {
+    .table__body {
+      .table__row {
+        &:hover,
+        &:focus {
+          background-color: color('grey', 'light') !important;
+        }
+      }
+    }
+  }
+
+  &--striped {
+    .table__body {
+      .table__row:nth-child(even) {
+        background-color: lighten(color('grey', 'lighter'), 3%);
+      }
+    }
+  }
+
+  &--fullwidth {
+    min-width: 100%;
+  }
+}
+</style>

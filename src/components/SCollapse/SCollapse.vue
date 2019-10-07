@@ -72,3 +72,44 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.collapse {
+  $root: &;
+
+  &:not(:last-child) {
+    border-bottom: border();
+    border-color: color('grey', 'lighter');
+    margin-bottom: spacing('tight');
+  }
+
+  &__trigger {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: spacing('half');
+    text-align: left;
+    width: 100%;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    margin-left: spacing('half');
+    transition: all duration() easing();
+  }
+
+  &__content {
+    padding: spacing();
+    padding-top: spacing('tight');
+  }
+
+  &--active {
+    #{$root}__trigger {
+      background: color('ice');
+    }
+
+    #{$root}__icon {
+      transform: rotate(-180deg);
+    }
+  }
+}
+</style>

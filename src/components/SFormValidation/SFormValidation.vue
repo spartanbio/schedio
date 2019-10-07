@@ -88,3 +88,31 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.form-validation {
+  display: flex;
+  margin-top: spacing('half');
+
+  &--success {
+    color: color('green', 'dark');
+  }
+
+  &--warning {
+    color: color('gold', 'dark');
+  }
+
+  &--error {
+    color: color('red');
+  }
+
+  &__icon {
+    flex: none;
+    margin-right: spacing('half');
+  }
+
+  &__text {
+    flex: auto;
+  }
+}
+</style>

@@ -98,3 +98,89 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.link {
+  $highlight-spacing: 0.1em;
+
+  align-items: center;
+  color: color('spartan_blue', 'light');
+  display: inline-flex;
+  position: relative;
+  text-decoration: none;
+  // Required for `z-index` to work properly on `::after`
+  z-index: 1;
+
+  // Add an obvious highlight
+  &::after {
+    background-color: lighten(color('green', 'lighter'), 30%);
+    border-radius: border-radius('small');
+    // Move it up a bit. Uses bottom so highlight animates up
+    // Percentages are favoured over ems as measurements are based on line-height.
+    bottom: 10%;
+    content: '';
+    // Approximately align top with baseline
+    height: 20%;
+    // Give it just a bit of visual padding
+    left: -1 * $highlight-spacing;
+    position: absolute;
+    transition: all duration('fast') easing();
+    // Adjusts for left offset
+    width: unquote('calc(100% + #{2 * $highlight-spacing})');
+    z-index: -1;
+  }
+
+  // Animate the highlight
+  &:hover {
+    &::after {
+      // Height is approximately from the bottom of `::after` to the top of the link text
+      height: 80%;
+    }
+  }
+
+  // Tone-down visited links
+  &:visited {
+    color: color('spartan_blue');
+
+    &::after {
+      background-color: color('grey', 'light');
+    }
+  }
+
+  &--plain {
+    color: color('spartan_blue', 'light');
+
+    &:active {
+      color: color('green');
+    }
+
+    &:visited {
+      color: color('magenta', 'dark');
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--light {
+    color: color('ice');
+
+    &::after {
+      background-color: color('green');
+    }
+
+    &:visited {
+      color: color('grey', 'lighter');
+
+      &::after {
+        background-color: color('grey', 'darker');
+      }
+    }
+  }
+
+  &__icon {
+    margin-left: spacing('quarter');
+  }
+}
+</style>

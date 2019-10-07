@@ -24,3 +24,19 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.container {
+  margin: 0 auto;
+  padding: spacing();
+  width: 100%;
+
+  &:not(.container--fullwidth) {
+    @each $breakpoint in map-keys($media-breakpoints) {
+      @include after-breakpoint($breakpoint) {
+        max-width: map-get($container-breakpoints, $breakpoint);
+      }
+    }
+  }
+}
+</style>

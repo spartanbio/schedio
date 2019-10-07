@@ -40,3 +40,31 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.checkbox {
+  @include check-or-radio {
+    border-radius: border-radius('small');
+  }
+
+  & ~ &__check::after {
+    background-color: transparent !important;
+    border: border-width('thick') solid color('green', 'light');
+    border-left: none;
+    border-top: none;
+    content: '';
+    height: 0.65em;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transition: all duration() ease;
+    width: 0.35em;
+  }
+
+  &:checked ~ &__check::after {
+    opacity: 1;
+  }
+}
+</style>

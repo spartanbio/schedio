@@ -127,3 +127,17 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.lazy-image {
+  transition: filter duration() easing('out'), -webkit-filter duration() easing('out');
+
+  &--loading {
+    background-color: color('grey', 'light');
+    filter: blur(5px);
+
+    // this is needed so Safari keeps sharp edges
+    transform: scale(1);
+  }
+}
+</style>

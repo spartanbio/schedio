@@ -51,3 +51,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.table__cell {
+  padding: spacing('base');
+
+  &--numeric {
+    text-align: right;
+  }
+}
+</style>

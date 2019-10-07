@@ -128,3 +128,85 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.button {
+  @include button-base;
+
+  &--size-small {
+    @include button-size-small;
+  }
+
+  &--size-regular {
+    @include button-size-regular;
+  }
+
+  &--size-large {
+    @include button-size-large;
+  }
+
+  &--loading {
+    color: transparent !important;
+    pointer-events: none;
+    position: relative;
+    text-shadow: none !important;
+    user-select: none;
+
+    .icon {
+      filter: none;
+      stroke: transparent !important;
+    }
+
+    .button__spinner {
+      left: 50%;
+      padding-top: spacing('half');
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--icon-only {
+    padding: spacing('half');
+
+    .icon {
+      margin: 0;
+
+      & + .icon {
+        margin-left: spacing('half');
+      }
+    }
+  }
+
+  &__icon {
+    &--left {
+      margin-left: -1 * spacing('quarter');
+      margin-right: spacing('tight');
+    }
+
+    &--right {
+      margin-left: spacing('tight');
+      margin-right: -1 * spacing('quarter');
+    }
+
+    .button:disabled & {
+      filter: none;
+      stroke: color('night', 'lightest');
+    }
+  }
+
+  @each $color-name in $button-colors {
+    &--color-#{$color-name} {
+      @include button-color($color-name);
+
+      &-outlined {
+        @include button-outline($color-name);
+      }
+
+      &-text {
+        @include button-text($color-name);
+      }
+    }
+  }
+}
+</style>

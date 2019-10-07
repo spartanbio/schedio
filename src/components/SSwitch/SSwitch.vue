@@ -49,3 +49,21 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.switch {
+  @include switch;
+
+  &--base ~ &__check {
+    @include switch-size('base');
+  }
+
+  &--medium ~ &__check {
+    @include switch-size('medium');
+  }
+
+  &--large ~ &__check {
+    @include switch-size('large');
+  }
+}
+</style>
