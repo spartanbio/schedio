@@ -1,3 +1,11 @@
+## [3.10.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.1...v3.10.2) (2019-10-28)
+
+
+### Bug Fixes
+
+* **controls:** ensures checks and radios don't shrink ([ec0a44d](https://gitlab.com/spartanbio-ux/schedio/commit/ec0a44d))
+* **radio:** properly binds and emits value ([bb548e8](https://gitlab.com/spartanbio-ux/schedio/commit/bb548e8))
+
 ## [3.10.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.0...v3.10.1) (2019-10-28)
 
 
