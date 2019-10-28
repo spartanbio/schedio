@@ -1,3 +1,10 @@
+## [3.10.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.0...v3.10.1) (2019-10-28)
+
+
+### Bug Fixes
+
+* **radio:** ensures values are emitted ([ee4a8fd](https://gitlab.com/spartanbio-ux/schedio/commit/ee4a8fd))
+
 # [3.10.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.9.2...v3.10.0) (2019-10-04)
 
 
