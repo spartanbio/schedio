@@ -30,6 +30,13 @@ export default {
   name: 'SRadio',
 
   mixins: [InputControl],
+
+  props: {
+    value: {
+      type: null,
+      default: null,
+    },
+  },
 }
 </script>
 
