@@ -14,6 +14,7 @@
       :required="required"
       class="radio"
       type="radio"
+      :checked="isChecked"
       v-on="listeners"
     >
     <span
@@ -31,10 +32,34 @@ export default {
 
   mixins: [InputControl],
 
+  model: {
+    prop: 'modelValue',
+    event: 'input',
+  },
+
   props: {
-    value: {
-      type: null,
-      default: null,
+    modelValue: {
+      default: '',
+      type: String,
+    },
+  },
+
+  computed: {
+    isChecked () {
+      return this.modelValue === this.$attrs.value
+    },
+
+    listeners () {
+      return {
+        ...this.$listeners,
+        input: this.updateInput,
+      }
+    },
+  },
+
+  methods: {
+    updateInput () {
+      this.$emit('input', this.$attrs.value)
     },
   },
 }

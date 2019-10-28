@@ -19,7 +19,7 @@ exports[`SRadio.vue can be invalid 1`] = `
   <div>
     Radio
     <!---->
-  </div> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check radio__check--invalid"></span>
+  </div> <input id="radio" name="radio" required="required" type="radio" class="radio" value="this is a test"> <span class="radio__check radio__check--invalid"></span>
 </label>
 `;
 
@@ -28,7 +28,7 @@ exports[`SRadio.vue can be reversed 1`] = `
   <div>
     Radio
     <!---->
-  </div> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span>
+  </div> <input id="radio" name="radio" required="required" type="radio" class="radio" value="this is a test"> <span class="radio__check"></span>
 </label>
 `;
 
@@ -37,7 +37,7 @@ exports[`SRadio.vue can hide the optional tag 1`] = `
   <div>
     Radio
     <!---->
-  </div> <input id="radio" name="radio" type="radio" class="radio"> <span class="radio__check"></span>
+  </div> <input id="radio" name="radio" type="radio" class="radio" value="this is a test"> <span class="radio__check"></span>
 </label>
 `;
 
@@ -46,6 +46,6 @@ exports[`SRadio.vue renders correctly 1`] = `
   <div>
     Radio
     <!---->
-  </div> <input id="radio" name="radio" required="required" type="radio" class="radio"> <span class="radio__check"></span>
+  </div> <input id="radio" name="radio" required="required" type="radio" class="radio" value="this is a test"> <span class="radio__check"></span>
 </label>
 `;

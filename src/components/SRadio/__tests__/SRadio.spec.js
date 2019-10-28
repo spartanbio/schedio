@@ -9,12 +9,14 @@ describe('SRadio.vue', () => {
   const inputEvent = jest.fn()
   let wrapper
   let radio
+  const testValue = 'this is a test'
 
   beforeEach(() => {
     wrapper = mount(SRadio, {
       propsData: {
         id: 'radio',
         label: 'Radio',
+        value: testValue,
       },
       listeners: {
         input: inputEvent,
@@ -42,7 +44,7 @@ describe('SRadio.vue', () => {
     wrapper.trigger('click')
     expect(radio.element.checked).toBe(true)
     // check that radio emitted input/its value
-    expect(wrapper.emitted('input')[0][0]).toBe(radio.element.value)
+    expect(wrapper.emitted('input')[0][0]).toBe(testValue)
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
