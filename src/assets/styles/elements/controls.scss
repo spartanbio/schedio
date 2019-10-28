@@ -125,6 +125,7 @@
     background-color: color('white');
     border: border();
     display: flex;
+    flex-shrink: 0;
     height: 1em;
     justify-content: center;
     margin: spacing('half');
