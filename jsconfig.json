@@ -3,14 +3,26 @@
     "target": "es6",
     "baseUrl": ".",
     "paths": {
-      "@@/*": ["./"],
-      "@/*": ["./src/*"],
-      "~~/*": ["./"],
-      "~/*": ["./src/*"]
+      "@@/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "~~/*": [
+        "./*"
+      ],
+      "~/*": [
+        "./src/*"
+      ]
     }
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "typeAcquisition": {
-    "include": ["jest"]
+    "include": [
+      "jest"
+    ]
   }
 }

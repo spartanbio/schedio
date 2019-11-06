@@ -13,7 +13,7 @@ describe('SLabel.vue', () => {
     })
   }
 
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
 
   let wrapper
 
@@ -45,6 +45,7 @@ describe('SLabel.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  /* eslint-disable jest/expect-expect */
   it('can be inline', () => {
     testBooleanProp('isInline')
   })
@@ -58,6 +59,7 @@ describe('SLabel.vue', () => {
     wrapper.setProps({ isInline: true })
     testBooleanProp('isReversed')
   })
+  /* eslint-enable jest/expect-expect */
 
   it('validates `is-fullwidth` and `is-reversed` are used with `is-inline`', () => {
     shallowMountWrapper({ isFullwidth: true })
