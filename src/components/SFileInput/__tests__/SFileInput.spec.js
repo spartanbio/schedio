@@ -1,5 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import SFileInput from '../SFileInput.vue'
+// eslint-disable-next-line jest/no-mocks-import
 import MockFile from '../../../../tests/__mocks__/MockFile'
 import { SChip } from '@/components/SChip'
 import { SButton } from '@/components/SButton'

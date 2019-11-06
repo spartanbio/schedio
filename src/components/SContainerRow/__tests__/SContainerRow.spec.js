@@ -38,6 +38,7 @@ describe('SContainerRow.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  // eslint-disable-next-line jest/expect-expect
   it('can be reversed', () => {
     rowPropTest('isReversed', true)
   })
@@ -49,6 +50,7 @@ describe('SContainerRow.vue', () => {
   propList.forEach((propName) => {
     const flexOptions = Object.values(rowOptions).filter(opt => !!opt)
     flexOptions.forEach((option) => {
+      // eslint-disable-next-line jest/expect-expect
       it(`can be ${propName} ${option}`, () => rowPropTest(propName, option))
     })
   })
