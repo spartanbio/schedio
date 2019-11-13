@@ -127,10 +127,13 @@ export default {
 
   computed: {
     listeners () {
+      // input is handled by `this.watch.selected` and does not need to be caught here
+      const { input, ..._listeners } = this.$listeners
+
       return {
-        ...this.$listeners,
-        input: event => this.$emit('input', event.target.value),
-        change: event => this.$emit('change', event.target.value),
+        ..._listeners,
+        // ensure change emits like input
+        change: evt => this.$emit('change', this.selected),
       }
     },
 
