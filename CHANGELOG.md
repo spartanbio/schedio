@@ -1,3 +1,10 @@
+## [3.10.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.2...v3.10.3) (2019-11-13)
+
+
+### Bug Fixes
+
+* **select:** ensures duplicate events are not emitted ([7c4ee2e](https://gitlab.com/spartanbio-ux/schedio/commit/7c4ee2e))
+
 ## [3.10.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.1...v3.10.2) (2019-10-28)
 
 
