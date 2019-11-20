@@ -1,3 +1,10 @@
+## [3.10.4](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.3...v3.10.4) (2019-11-20)
+
+
+### Bug Fixes
+
+* **toast:** removes `module` from style ([ddae9ca](https://gitlab.com/spartanbio-ux/schedio/commit/ddae9ca))
+
 ## [3.10.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.2...v3.10.3) (2019-11-13)
 
 
