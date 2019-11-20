@@ -159,7 +159,7 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss">
 // component styles
 .toast {
   align-items: center;
