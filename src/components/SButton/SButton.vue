@@ -30,9 +30,14 @@
 
 <script>
 import { colors, sizes } from './options.js'
+import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 
 export default {
   name: 'SButton',
+
+  mixins: [
+    DeprecatePropsMixin(['isOutlined', 'isText'], 'type'),
+  ],
 
   props: {
     color: {
