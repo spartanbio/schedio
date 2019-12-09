@@ -7,7 +7,7 @@
     "build": "vue-cli-service build --target lib --name schedio ./src/index.js && rm dist/demo.html",
     "build:release": "node ./scripts/build-release.js",
     "build:storybook": "build-storybook -s ./static -c config/storybook",
-    "dev": "run-p serve:storybook theo:onchange devtools",
+    "dev": "run-p serve:storybook theo:onchange",
     "devtools": "vue-devtools",
     "dist:tokens": "run-s theo ase-encode",
     "lint": "run-p lint:vue lint:style",
