@@ -4,9 +4,9 @@
   ],
   "rangeStrategy": "replace",
   "nvm": {
-      "enabled": false
+    "enabled": false
   },
-    "automerge": true,
+  "automerge": true,
   "major": {
     "automerge": false
   }
