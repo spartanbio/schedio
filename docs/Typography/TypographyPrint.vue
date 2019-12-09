@@ -189,7 +189,7 @@ import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
 import StoryLink from '@@/docs/components/StoryLink'
 
 const fontSizes = Object.values(props).filter(
-  ({ category, name }) => category === 'font-size' && name !== 'base-font-size'
+  ({ category, name }) => category === 'font-size' && name !== 'base-font-size',
 )
 
 const baseFontSize = 10

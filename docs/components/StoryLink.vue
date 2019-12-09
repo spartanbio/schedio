@@ -2,8 +2,10 @@
   <a
     href="#"
     class="link"
-    @click.prevent="navigate(to, story)"
-  ><slot>{{ text }}</slot></a>
+    @click.prevent="() => navigate(to, story)"
+  >
+    <slot>{{ text }}</slot>
+  </a>
 </template>
 
 <script>

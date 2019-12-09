@@ -31,7 +31,7 @@ export const containerColumn = () => {
         ...props,
         [name]: select(name, [false, true, ...colSizes.filter(val => val)], false, 'Sizes'),
       }),
-      {}
+      {},
     )
 
   const offsetProps = columnPropNames
@@ -45,7 +45,7 @@ export const containerColumn = () => {
         ...props,
         [name]: select(name, { ...colSizes, first: 'first', last: 'last' }, '', 'Order'),
       }),
-      {}
+      {},
     )
 
   const narrowBreakpoints = columnPropNames

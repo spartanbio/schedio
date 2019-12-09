@@ -24,12 +24,12 @@ Promise.all(
       console.log(chalk.yellow(`Building ${component}...`))
       // compile the component
       shell.exec(
-        `${buildLib} --silent --formats commonjs --dest ${dest} --name ${component} ${entry}`
+        `${buildLib} --silent --formats commonjs --dest ${dest} --name ${component} ${entry}`,
       )
       // Rename for import
       shell.exec(`mv ${dest}/${component}.common.js ${dest}/index.js`)
     }
-  })
+  }),
 )
   .then(() => console.log(chalk.green('All Vue components built!\n')))
   .then(() => require('./generate-vetur-helpers'))

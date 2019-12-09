@@ -6,7 +6,7 @@ export default {
         input: (event) => {
           this.$emit(
             'input',
-            event.target.type === 'checkbox' ? event.target.checked : event.target.value
+            event.target.type === 'checkbox' ? event.target.checked : event.target.value,
           )
         },
       }

@@ -41,7 +41,7 @@ describe('STableCell.vue', () => {
     },
     {
       attachToDocument: true,
-    }
+    },
   )
 
   it("automatically detects if it's a header", () => {

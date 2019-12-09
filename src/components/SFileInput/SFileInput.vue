@@ -66,7 +66,7 @@
           tag="li"
           is-closable
           :close-aria-label="`Remove ${file.name}`"
-          @close="removeFile({ idx })"
+          @close="() => removeFile({ idx })"
         >
           {{ file.name }}
         </SChip>

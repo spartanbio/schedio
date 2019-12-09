@@ -102,7 +102,7 @@ function generateHero (h, color) {
               isTitle: true,
             },
           },
-          'First line'
+          'First line',
         ),
         h(
           SHeading,
@@ -114,7 +114,7 @@ function generateHero (h, color) {
               isSubtle: true,
             },
           },
-          'Second line'
+          'Second line',
         ),
       ]),
     ]),
