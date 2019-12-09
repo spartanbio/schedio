@@ -37,8 +37,9 @@ describe('SIcon.vue', () => {
   })
 
   options.colors.forEach((color) => {
-    it(`can be ${color}`, () => {
+    it(`can be ${color}`, async () => {
       wrapper.setProps({ color })
+      await wrapper.vm.$nextTick()
       expect(wrapper.contains(`.icon--color-${color}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
@@ -50,8 +51,9 @@ describe('SIcon.vue', () => {
   })
 
   options.sizes.forEach((size) => {
-    it(`can be ${size}`, () => {
+    it(`can be ${size}`, async () => {
       wrapper.setProps({ size })
+      await wrapper.vm.$nextTick()
       expect(wrapper.contains(`.icon--size-${size}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })

@@ -33,7 +33,7 @@ describe('SCallout.vue', () => {
         expect(errorSpy).not.toHaveBeenCalled()
         expect(wrapper.html()).toMatchSnapshot()
       })
-    })
+    }),
   )
 
   it('validates the `type`', () => {

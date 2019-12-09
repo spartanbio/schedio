@@ -1,4 +1,3 @@
-// eslint-disable-next-line jest/no-mocks-import
 import MockFile from '../__mocks__/MockFile'
 // mock file test harness
 describe('Mock file for file upload testing', function () {

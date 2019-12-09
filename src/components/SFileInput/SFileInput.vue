@@ -61,7 +61,7 @@
         class="file-input__list"
       >
         <SChip
-          v-for="(file, idx) in fileList"
+          v-for="(file) in fileList"
           :key="file.name"
           tag="li"
           is-closable
@@ -80,6 +80,7 @@ import InputProps from '@/mixins/InputProps.mixin'
 import { SLabel } from '@/components/SLabel'
 import { SChip } from '@/components/SChip'
 import { SChipGroup } from '@/components/SChipGroup'
+import { SIcon } from '@/components/SIcon'
 
 export default {
   name: 'SFileInput',
@@ -88,6 +89,7 @@ export default {
     SLabel,
     SChip,
     SChipGroup,
+    SIcon,
   },
 
   mixins: [InputProps],

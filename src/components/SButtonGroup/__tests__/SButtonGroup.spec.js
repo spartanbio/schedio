@@ -21,7 +21,7 @@ describe('SButtonGroup.vue', () => {
           </SButtonGroup>
         `,
       },
-      { stubs: { SButton: true } }
+      { stubs: { SButton: true } },
     )
 
     buttonGroup = wrapper.find(SButtonGroup)
@@ -29,17 +29,20 @@ describe('SButtonGroup.vue', () => {
 
   it('renders correctly', async () => {
     expect(wrapper.html()).toMatchSnapshot()
+    await wrapper.vm.$nextTick()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('renders child buttons', () => {
+  it('renders child buttons', async () => {
     expect(buttonGroup.is(SButtonGroup)).toBe(true)
+    await wrapper.vm.$nextTick()
     expect(wrapper.contains(SButton)).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('changes child button colors', async () => {
     buttonGroup.setProps({ color: 'red' })
+    await wrapper.vm.$nextTick()
     expect(buttonGroup.classes()).toContain('button-group--color-red')
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -47,6 +50,7 @@ describe('SButtonGroup.vue', () => {
 
   it('changes child button outlines', async () => {
     buttonGroup.setProps({ color: 'red', isOutlined: true, isGrouped: true })
+    await wrapper.vm.$nextTick()
     expect(buttonGroup.classes()).toContain('button-group--color-red-outlined')
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -54,13 +58,15 @@ describe('SButtonGroup.vue', () => {
 
   it('changes child button text', async () => {
     buttonGroup.setProps({ color: 'red', isText: true, isGrouped: true })
+    await wrapper.vm.$nextTick()
     expect(buttonGroup.classes()).toContain('button-group--color-red-text')
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('groups child buttons', () => {
+  it('groups child buttons', async () => {
     buttonGroup.setProps({ isGrouped: true })
+    await wrapper.vm.$nextTick()
     expect(buttonGroup.contains('.button-group--grouped')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -85,6 +91,7 @@ describe('SButtonGroup.vue', () => {
 
     disabledWrapper.setProps({ disabled: true })
 
+    await wrapper.vm.$nextTick()
     expect(disabledWrapper.classes()).toContain('button-group--disabled')
     expect(disabledWrapper.html()).toMatchSnapshot()
     expect(await axe(disabledWrapper.html())).toHaveNoViolations()

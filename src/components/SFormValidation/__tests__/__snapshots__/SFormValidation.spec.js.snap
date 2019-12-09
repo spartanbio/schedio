@@ -1,71 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SFormValidation.vue accepts an icon prop 1`] = `
-<div class="form-validation form-validation--error">
-  <div class="form-validation__icon">
-    <sicon-stub icon="activity" color="red" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--error">
+    <div class="form-validation__icon">
+      <sicon-stub icon="activity" color="red" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text"></div>
   </div>
-  <div class="form-validation__text"></div>
-</div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue accepts text as a prop or slot 1`] = `
-<div class="form-validation form-validation--error">
-  <div class="form-validation__icon">
-    <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--error">
+    <div class="form-validation__icon">
+      <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text">Some text</div>
   </div>
-  <div class="form-validation__text">Some text</div>
-</div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue accepts text as a prop or slot 2`] = `
-<div class="form-validation form-validation--error">
-  <div class="form-validation__icon">
-    <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--error">
+    <div class="form-validation__icon">
+      <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text">More text</div>
   </div>
-  <div class="form-validation__text">More text</div>
-</div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue renders correctly 1`] = `
-<div class="form-validation form-validation--error">
-  <div class="form-validation__icon">
-    <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--error">
+    <div class="form-validation__icon">
+      <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text"></div>
   </div>
-  <div class="form-validation__text"></div>
-</div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue sets a visual state for  state 1`] = `
-<div class="form-validation">
-  <!---->
-  <div class="form-validation__text"></div>
-</div>
+<transition-stub name="fade">
+  <div class="form-validation">
+    <!---->
+    <div class="form-validation__text"></div>
+  </div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue sets a visual state for error state 1`] = `
-<div class="form-validation form-validation--error">
-  <div class="form-validation__icon">
-    <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--error">
+    <div class="form-validation__icon">
+      <sicon-stub icon="alert-circle" color="red" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text"></div>
   </div>
-  <div class="form-validation__text"></div>
-</div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue sets a visual state for success state 1`] = `
-<div class="form-validation form-validation--success">
-  <div class="form-validation__icon">
-    <sicon-stub icon="check-circle" color="green" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--success">
+    <div class="form-validation__icon">
+      <sicon-stub icon="check-circle" color="green" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text"></div>
   </div>
-  <div class="form-validation__text"></div>
-</div>
+</transition-stub>
 `;
 
 exports[`SFormValidation.vue sets a visual state for warning state 1`] = `
-<div class="form-validation form-validation--warning">
-  <div class="form-validation__icon">
-    <sicon-stub icon="alert-triangle" color="gold" size=""></sicon-stub>
+<transition-stub name="fade">
+  <div class="form-validation form-validation--warning">
+    <div class="form-validation__icon">
+      <sicon-stub icon="alert-triangle" color="gold" size=""></sicon-stub>
+    </div>
+    <div class="form-validation__text"></div>
   </div>
-  <div class="form-validation__text"></div>
-</div>
+</transition-stub>
 `;

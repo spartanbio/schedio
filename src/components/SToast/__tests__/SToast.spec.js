@@ -35,7 +35,6 @@ describe('SToast.vue', () => {
 
       // workaround for async callback not running in expected timeframe
       // https://github.com/testing-library/react-testing-library/issues/244
-      // eslint-disable-next-line jest/valid-expect-in-promise
       Promise.resolve().then(() => jest.runAllTimers())
 
       expect(tempWrapper.html()).toMatchSnapshot()
@@ -78,8 +77,9 @@ describe('SToast.vue', () => {
   })
 
   positions.forEach((position) => {
-    it(`can have position ${position}`, () => {
+    it(`can have position ${position}`, async () => {
       wrapper.setProps({ position })
+      await wrapper.vm.$nextTick()
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
@@ -96,25 +96,29 @@ describe('SToast.vue', () => {
     expect(errorSpy).toHaveBeenCalled()
   })
 
-  it('can have a clickable action', () => {
+  it('can have a clickable action', async () => {
     const action = jest.fn()
 
     wrapper.setProps({ action })
+    await wrapper.vm.$nextTick()
     // button should be visible on setting an action
     expect(wrapper.html()).toMatchSnapshot()
 
     wrapper.find('button').trigger('click')
+    await wrapper.vm.$nextTick()
     expect(action).toHaveBeenCalled()
   })
 
-  it('closes on action click', () => {
+  it('closes on action click', async () => {
     wrapper.setProps({ action: jest.fn() })
+    await wrapper.vm.$nextTick()
     wrapper.find('button').trigger('click')
+    await wrapper.vm.$nextTick()
 
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can have action text configured', () => {
+  it('can have action text configured', async () => {
     const actionText = 'action text'
 
     wrapper.setProps({
@@ -122,12 +126,14 @@ describe('SToast.vue', () => {
       actionText,
     })
 
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).toContain(actionText)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can have the icon hidden', () => {
+  it('can have the icon hidden', async () => {
     wrapper.setProps({ hideIcon: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

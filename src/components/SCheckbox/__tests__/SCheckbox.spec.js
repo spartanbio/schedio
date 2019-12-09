@@ -51,13 +51,15 @@ describe('SCheckbox.vue', () => {
     expect(wrapper.emitted('input')).toEqual([[true], [false]])
   })
 
-  it('can be a required input', () => {
+  it('can be a required input', async () => {
     wrapper.setProps({ required: true })
+    await wrapper.vm.$nextTick()
     expect(checkbox.element.required).toBe(true)
   })
 
-  it('can be invalid', () => {
+  it('can be invalid', async () => {
     wrapper.setProps({ isInvalid: true })
+    await wrapper.vm.$nextTick()
     expect(checkbox.element.validity.valid).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -78,14 +80,16 @@ describe('SCheckbox.vue', () => {
     expect(disabledWrapper.find('#checkbox').element.disabled).toBeTruthy()
   })
 
-  it('can be reversed', () => {
+  it('can be reversed', async () => {
     wrapper.setProps({ isReversed: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.find(SLabel).props('isReversed')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can hide the optional tag', () => {
+  it('can hide the optional tag', async () => {
     wrapper.setProps({ hideOptional: true, required: false })
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).not.toContain('Optional')
     expect(wrapper.html()).toMatchSnapshot()
   })

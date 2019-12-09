@@ -50,15 +50,17 @@ describe('STableCell.vue', () => {
     expect(headerWrapper.contains('th')).toBe(true)
   })
 
-  it('can be manually set to use `th`', () => {
+  it('can be manually set to use `th`', async () => {
     expect(wrapper.contains('th')).toBe(false)
     tableCell.setProps({ isHeader: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.contains('th')).toBe(true)
     expect(tableCell.html()).toMatchSnapshot()
   })
 
-  it('can be numeric', () => {
+  it('can be numeric', async () => {
     tableCell.setProps({ isNumeric: true })
+    await wrapper.vm.$nextTick()
     expect(tableCell.html()).toMatchSnapshot()
   })
 })

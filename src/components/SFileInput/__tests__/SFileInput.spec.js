@@ -1,6 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import SFileInput from '../SFileInput.vue'
-// eslint-disable-next-line jest/no-mocks-import
 import MockFile from '../../../../tests/__mocks__/MockFile'
 import { SChip } from '@/components/SChip'
 import { SButton } from '@/components/SButton'
@@ -59,15 +58,18 @@ describe('SFileInput.vue', () => {
    * jsdom is missing the `DataTransfer` object.
    * Instead, we're just going to test the input's input handler.
    */
-  it('handles inputs', () => {
+  it('handles inputs', async () => {
     // watch the input handler
     const inputSpy = jest.spyOn(wrapper.vm, 'handleFiles')
     wrapper.setMethods({ handleFiles: inputSpy })
+    await wrapper.vm.$nextTick()
     // ensure input is triggered and handler is called
     wrapper.find('input').trigger('input')
+    await wrapper.vm.$nextTick()
     expect(inputSpy).toHaveBeenCalled()
     // fake the input event
     wrapper.vm.handleFiles({ target: { files: [fileA] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.emitted('input')).toBeTruthy()
     expect(wrapper.contains(SChip)).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
@@ -79,19 +81,21 @@ describe('SFileInput.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('can upload multiple files', () => {
+  it('can upload multiple files', async () => {
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.fileList.length).toBe(2)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can remove files', () => {
+  it('can remove files', async () => {
     wrapper = mount(SFileInput, {
       propsData: defaultProps,
     })
 
     // emitted[0]
     wrapper.vm.handleFiles({ target: { files: [fileA] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.fileList.length).toBe(1)
     expect(wrapper.emitted('input')).toBeTruthy()
     expect(wrapper.emitted('input')[0][0]).toEqual(wrapper.vm.fileList)
@@ -99,12 +103,14 @@ describe('SFileInput.vue', () => {
     // find the button and click it
     // emitted[1] - `click` also triggers an input event
     wrapper.find(SButton).trigger('click')
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.fileList.length).toBe(0)
     expect(wrapper.emitted('input')[1][0]).toEqual(wrapper.vm.fileList)
 
     // with multiple files
     // emitted[0]
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.fileList.length).toBe(2)
     expect(wrapper.emitted('input')[2][0]).toEqual(wrapper.vm.fileList)
 
@@ -114,6 +120,7 @@ describe('SFileInput.vue', () => {
       .findAll(SButton)
       .at(0)
       .trigger('click')
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.fileList.length).toBe(1)
     expect(wrapper.emitted('input')[3][0]).toEqual(wrapper.vm.fileList)
 
@@ -121,7 +128,7 @@ describe('SFileInput.vue', () => {
     expect(wrapper.vm.fileNames).toContain(fileB.name)
   })
 
-  it('works with v-model', () => {
+  it('works with v-model', async () => {
     wrapper = mount({
       components: { SFileInput },
       data: () => ({ files: [], defaultProps }),
@@ -131,26 +138,30 @@ describe('SFileInput.vue', () => {
     const fileInput = wrapper.find(SFileInput)
 
     fileInput.vm.handleFiles({ target: { files: [fileA] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.files).toEqual(fileInput.vm.fileList)
   })
 
-  it('displays a file count', () => {
+  it('displays a file count', async () => {
     wrapper.setProps({ multiple: true })
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).toContain('2 file')
   })
 
-  it('can hide a file count', () => {
+  it('can hide a file count', async () => {
     wrapper.setProps({ multiple: true, hideCount: true })
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).not.toContain('2 file')
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('checks for duplicate file names', () => {
+  it('checks for duplicate file names', async () => {
     wrapper.setProps({ multiple: true })
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
     wrapper.vm.handleFiles({ target: { files: [fileA] } })
+    await wrapper.vm.$nextTick()
 
     const emittedError = wrapper.emitted('error')
     expect(emittedError).toBeTruthy()
@@ -159,8 +170,9 @@ describe('SFileInput.vue', () => {
     expect(wrapper.vm.fileList.length).toBe(2)
   })
 
-  it('displays file names to users', () => {
+  it('displays file names to users', async () => {
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.fileNames).toEqual([fileA, fileB].map(file => file.name))
     expect(wrapper.text()).toContain(fileA.name)
     expect(wrapper.text()).toContain(fileB.name)
@@ -170,9 +182,10 @@ describe('SFileInput.vue', () => {
     expect(wrapper.find('schipgroup-stub').isVisible()).toBe(false)
   })
 
-  it('checks for max file size', () => {
+  it('checks for max file size', async () => {
     wrapper.setProps({ multiple: true, maxSize: 1024 })
     wrapper.vm.handleFiles({ target: { files: [fileA, fileB] } })
+    await wrapper.vm.$nextTick()
 
     const emittedError = wrapper.emitted('error')
     expect(emittedError).toBeTruthy()
@@ -181,15 +194,17 @@ describe('SFileInput.vue', () => {
     expect(wrapper.vm.fileList.length).toBe(1)
   })
 
-  it('displays the file size limit', () => {
+  it('displays the file size limit', async () => {
     const maxSize = 23829
     wrapper.setProps({ maxSize })
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).toContain(maxSize)
   })
 
-  it('can have custom text', () => {
+  it('can have custom text', async () => {
     const customText = 'Custom text'
     wrapper.setProps({ text: customText })
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).toContain(customText)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -202,13 +217,15 @@ describe('SFileInput.vue', () => {
       display = wrapper.find('.file-input__display')
     })
 
-    it('can be a drop zone', () => {
+    it('can be a drop zone', async () => {
+      await wrapper.vm.$nextTick()
       expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.html()).toMatchSnapshot()
     })
 
-    it('can hide the icon', () => {
+    it('can hide the icon', async () => {
       wrapper.setProps({ hideIcon: true })
+      await wrapper.vm.$nextTick()
       expect(wrapper.contains('sicon')).toBe(false)
       expect(wrapper.html()).toMatchSnapshot()
     })
@@ -220,11 +237,12 @@ describe('SFileInput.vue', () => {
       ['drop', ['handleDrop', 'handleFiles'], '', ''],
     ]
 
-    it.each(events)('handles "%s" correctly', (event, handlers, included, excluded) => {
+    it.each(events)('handles "%s" correctly', async (event, handlers, included, excluded) => {
       const spies = new Map(handlers.map(handler => [handler, jest.spyOn(wrapper.vm, handler)]))
 
       spies.forEach((spy, handler) => wrapper.setMethods({ [handler]: spy }))
       display.trigger(event)
+      await wrapper.vm.$nextTick()
       spies.forEach(spy => expect(spy).toHaveBeenCalled())
 
       if (included) expect(display.classes()).toContain(included)

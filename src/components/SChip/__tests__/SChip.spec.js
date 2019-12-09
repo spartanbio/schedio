@@ -7,7 +7,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('SChip.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   afterEach(() => {
@@ -41,8 +41,9 @@ describe('SChip.vue', () => {
       expect(errorSpy).toHaveBeenCalledTimes(2)
     })
 
-    it('can have its HTML tag set', () => {
+    it('can have its HTML tag set', async () => {
       wrapper.setProps({ tag: 'li' })
+      await wrapper.vm.$nextTick()
       expect(wrapper.contains('li')).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
@@ -72,7 +73,7 @@ describe('SChip.vue', () => {
       expect(wrapper.emitted('close')).toBeTruthy()
     })
 
-    it('works with v-model', () => {
+    it('works with v-model', async () => {
       const chips = {
         chip1: true,
         chip2: true,
@@ -104,6 +105,7 @@ describe('SChip.vue', () => {
       const buttons = closeWrapper.findAll(SButton)
       const chipNames = Object.keys(chips)
       const totalChips = chipNames.length
+      await wrapper.vm.$nextTick()
 
       expect(chipComponents.length).toBe(totalChips)
       expect(buttons.length).toBe(totalChips)
@@ -112,6 +114,7 @@ describe('SChip.vue', () => {
       const randKey = chipNames[randIdx]
 
       buttons.at(randIdx).trigger('click')
+      await wrapper.vm.$nextTick()
 
       expect(chipComponents.at(randIdx).isVisible()).toBe(false)
       expect(closeWrapper.vm.chips[randKey]).toBe(false)
@@ -124,6 +127,7 @@ describe('SChip.vue', () => {
         template: '<SChip is-closable="true" v-model="chip">Chip</SChip>',
       })
       wrapper.find(SButton).trigger('click')
+      await wrapper.vm.$nextTick()
       expect(wrapper.find(SChip).attributes('aria-hidden')).toBe('true')
       expect(wrapper.html()).toMatchSnapshot()
       expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -131,6 +135,7 @@ describe('SChip.vue', () => {
 
     it("can change the button's `aria-label`", async () => {
       wrapper.setProps({ closeAriaLabel: 'Changed' })
+      await wrapper.vm.$nextTick()
       expect(wrapper.find('button').attributes('aria-label')).toBe('Changed')
       expect(wrapper.html()).toMatchSnapshot()
       expect(await axe(wrapper.html())).toHaveNoViolations()
