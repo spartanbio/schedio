@@ -13,3 +13,8 @@ export const sizes = [
   'regular',
   'large',
 ]
+
+export const types = [
+  'outlined',
+  'text',
+]

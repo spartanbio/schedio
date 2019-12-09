@@ -1,231 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SButton.vue can be gold 1`] = `
-<button class="button button--color-gold">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be green 1`] = `
-<button class="button button--color-green">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be grey 1`] = `
-<button class="button button--color-grey">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be ice 1`] = `
-<button class="button button--color-ice">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be large 1`] = `
+exports[`SButton.vue can be size large 1`] = `
 <button class="button button--size-large">
   <!---->
   <!----> Button Text
   <!----></button>
 `;
 
-exports[`SButton.vue can be magenta 1`] = `
-<button class="button button--color-magenta">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be night 1`] = `
-<button class="button button--color-night">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with gold 1`] = `
-<button class="button button--color-gold-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with green 1`] = `
-<button class="button button--color-green-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with grey 1`] = `
-<button class="button button--color-grey-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with ice 1`] = `
-<button class="button button--color-ice-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with magenta 1`] = `
-<button class="button button--color-magenta-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with night 1`] = `
-<button class="button button--color-night-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with red 1`] = `
-<button class="button button--color-red-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with spartan_blue 1`] = `
-<button class="button button--color-spartan_blue-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with turquoise 1`] = `
-<button class="button button--color-turquoise-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with white 1`] = `
-<button class="button button--color-white-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be red 1`] = `
-<button class="button button--color-red">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be regular 1`] = `
+exports[`SButton.vue can be size regular 1`] = `
 <button class="button button--size-regular">
   <!---->
   <!----> Button Text
   <!----></button>
 `;
 
-exports[`SButton.vue can be small 1`] = `
+exports[`SButton.vue can be size small 1`] = `
 <button class="button button--size-small">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be spartan_blue 1`] = `
-<button class="button button--color-spartan_blue">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with gold 1`] = `
-<button class="button button--color-gold-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with green 1`] = `
-<button class="button button--color-green-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with grey 1`] = `
-<button class="button button--color-grey-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with ice 1`] = `
-<button class="button button--color-ice-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with magenta 1`] = `
-<button class="button button--color-magenta-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with night 1`] = `
-<button class="button button--color-night-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with red 1`] = `
-<button class="button button--color-red-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with spartan_blue 1`] = `
-<button class="button button--color-spartan_blue-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with turquoise 1`] = `
-<button class="button button--color-turquoise-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with white 1`] = `
-<button class="button button--color-white-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be turquoise 1`] = `
-<button class="button button--color-turquoise">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be white 1`] = `
-<button class="button button--color-white">
   <!---->
   <!----> Button Text
   <!----></button>
@@ -271,6 +61,216 @@ exports[`SButton.vue can use slot text for \`aria-label\` 1`] = `
 
 exports[`SButton.vue renders correctly 1`] = `
 <button class="button">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold can be outlined 1`] = `
+<button class="button button--color-gold-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold can be plain 1`] = `
+<button class="button button--color-gold">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold can be text 1`] = `
+<button class="button button--color-gold-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green can be outlined 1`] = `
+<button class="button button--color-green-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green can be plain 1`] = `
+<button class="button button--color-green">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green can be text 1`] = `
+<button class="button button--color-green-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey can be outlined 1`] = `
+<button class="button button--color-grey-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey can be plain 1`] = `
+<button class="button button--color-grey">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey can be text 1`] = `
+<button class="button button--color-grey-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color ice can be outlined 1`] = `
+<button class="button button--color-ice-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color ice can be plain 1`] = `
+<button class="button button--color-ice">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color ice can be text 1`] = `
+<button class="button button--color-ice-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta can be outlined 1`] = `
+<button class="button button--color-magenta-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta can be plain 1`] = `
+<button class="button button--color-magenta">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta can be text 1`] = `
+<button class="button button--color-magenta-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night can be outlined 1`] = `
+<button class="button button--color-night-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night can be plain 1`] = `
+<button class="button button--color-night">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night can be text 1`] = `
+<button class="button button--color-night-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red can be outlined 1`] = `
+<button class="button button--color-red-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red can be plain 1`] = `
+<button class="button button--color-red">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red can be text 1`] = `
+<button class="button button--color-red-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue can be outlined 1`] = `
+<button class="button button--color-spartan_blue-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue can be plain 1`] = `
+<button class="button button--color-spartan_blue">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue can be text 1`] = `
+<button class="button button--color-spartan_blue-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise can be outlined 1`] = `
+<button class="button button--color-turquoise-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise can be plain 1`] = `
+<button class="button button--color-turquoise">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise can be text 1`] = `
+<button class="button button--color-turquoise-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color white can be outlined 1`] = `
+<button class="button button--color-white-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color white can be plain 1`] = `
+<button class="button button--color-white">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color white can be text 1`] = `
+<button class="button button--color-white-text">
   <!---->
   <!----> Button Text
   <!----></button>

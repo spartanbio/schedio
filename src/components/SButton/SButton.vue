@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import { colors, sizes } from './options.js'
 import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
+import { colors, sizes, types } from './options.js'
 
 export default {
   name: 'SButton',
@@ -60,11 +60,23 @@ export default {
       },
     },
 
+    type: {
+      type: String,
+      default: '',
+      validator (value) {
+        if (!value || types.includes(value)) return true
+
+        return console.error(`\`type\` ${value} not found. Allowed types: ${types}`)
+      },
+    },
+
+    /** @deprecated replaced by `type` */
     isOutlined: {
       type: Boolean,
       default: false,
     },
 
+    /** @deprecated replaced by `type` */
     isText: {
       type: Boolean,
       default: false,
@@ -106,9 +118,17 @@ export default {
 
       if (this.color) buttonStyle += `button--color-${this.color}`
 
-      if (this.color && this.isOutlined) buttonStyle += '-outlined'
+      /**
+       * TODO:
+       * - remove deprecated props
+       */
+      if (!this.type) {
+        if (this.color && this.isOutlined) buttonStyle += '-outlined'
 
-      if (this.color && this.isText) buttonStyle += '-text'
+        if (this.color && this.isText) buttonStyle += '-text'
+      }
+
+      if (this.color && this.type) buttonStyle += `-${this.type}`
 
       return buttonStyle
     },

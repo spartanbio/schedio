@@ -1,13 +1,13 @@
 import { SButton } from '@/components/SButton'
-import { colors, sizes } from '@/components/SButton/options'
+import { colors, sizes, types } from '@/components/SButton/options'
+import { SContainerColumn } from '@/components/SContainerColumn'
+import { SContainerRow } from '@/components/SContainerRow'
 import { SHeading } from '@/components/SHeading'
+import { generateHeading } from '@/utils/stories/render-functions'
 import PropList from '@@/docs/components/PropList'
 import StoryLink from '@@/docs/components/StoryLink'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import icons from 'feather-icons/dist/icons.json'
-import { generateHeading } from '@/utils/stories/render-functions'
-import { SContainerColumn } from '@/components/SContainerColumn'
-import { SContainerRow } from '@/components/SContainerRow'
 
 const iconNames = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconNames], '', 'Optional Props')
@@ -26,13 +26,9 @@ export const button = () => ({
       type: String,
       default: select('color', ['', ...colors], '', 'Optional Props'),
     },
-    isOutlined: {
+    type: {
       type: String,
-      default: boolean('is-outlined', false, 'Optional Props'),
-    },
-    isText: {
-      type: String,
-      default: boolean('is-text', false, 'Optional Props'),
+      default: select('type', ['', ...types], '', 'Optional Props'),
     },
     size: {
       type: String,
@@ -73,11 +69,6 @@ export const button = () => ({
         <p>
           Use <StoryLink to="Components/Buttons.SButtonGroup" story="Button Group" /> to group
           multiple buttons.
-        </p>
-
-        <SHeading level="2">Accessibility</SHeading>
-        <p>
-          Many buttons have a <code>text-shadow</code> applied to improve acessibility.{' '}
         </p>
         <p>
           If you want the button to just contain an icon, set the <code>icon-only</code> prop to{' '}
@@ -125,7 +116,7 @@ export const outlinedButtons = () => ({
     return (
       <div>
         <SHeading>Outlined Buttons</SHeading>
-        {generateButtons(h, { isOutlined: true })}
+        {generateButtons(h, { type: 'outlined' })}
       </div>
     )
   },
@@ -146,7 +137,7 @@ export const textButtons = () => ({
     return (
       <div>
         <SHeading>Text Buttons</SHeading>
-        {generateButtons(h, { isText: true })}
+        {generateButtons(h, { type: 'text' })}
       </div>
     )
   },
