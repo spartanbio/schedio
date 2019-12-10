@@ -23,6 +23,7 @@ export const Logo = () => ({
   },
   render (h) {
     const { props } = this.$props
+    const isWhite = () => props.color === 'white'
 
     return (
       <div>
@@ -30,7 +31,11 @@ export const Logo = () => ({
         <p>Spartan's brand logo.</p>
 
         <SHeading level="2">Example</SHeading>
-        <SLogo {...{ props }} />
+        <SLogo
+          {...{ props }}
+          style={{ backgroundColor: isWhite() ? '#212b36' : 'unset' }}
+        />
+        {isWhite() && <div><span class="caption">* Background added for contrast</span></div>}
 
         {/* This doesn't work if props are only generated through a mixin */}
         {SLogo.props && <PropList component={SLogo} />}
