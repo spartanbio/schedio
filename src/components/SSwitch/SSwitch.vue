@@ -14,6 +14,7 @@
       :required="required"
       :class="{ [`switch--${size}`]: size }"
       class="switch"
+      :checked="!!value"
       type="checkbox"
       v-on="listeners"
     >
