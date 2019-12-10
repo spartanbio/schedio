@@ -78,14 +78,21 @@ describe('STextarea.vue', () => {
   })
 
   it('can set each icon color', async () => {
+    const leftColor = Object.keys(iconColors)[0]
+    const rightColor = Object.keys(iconColors)[1]
+
     wrapper.setProps({
-      iconLeftColor: iconColors[0],
-      iconRightColor: iconColors[1],
+      iconLeftColor: leftColor,
+      iconLeftShade: iconColors[leftColor][0],
+      iconRightColor: rightColor,
+      iconRightShade: iconColors[rightColor][1],
     })
 
     await wrapper.vm.$nextTick()
+
     expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.props('iconLeftColor')).not.toBe(wrapper.props('iconRightColor'))
+    expect(wrapper.props('iconLeftShade')).not.toBe(wrapper.props('iconRightShade'))
     expect(wrapper.html()).toMatchSnapshot()
   })
 
