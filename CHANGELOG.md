@@ -1,3 +1,28 @@
+# [3.11.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.4...v3.11.0) (2019-12-10)
+
+
+### Bug Fixes
+
+* **deps:** ugrades dependencies ([2bc03c3](https://gitlab.com/spartanbio-ux/schedio/commit/2bc03c37d941adebf0f45a7bc88102cbd5b8d5d3))
+* **switch:** binds `checked` to `value` ([069f54c](https://gitlab.com/spartanbio-ux/schedio/commit/069f54cbc4c172ced4548575d4fa7ff74afe5f82))
+* **tokens-utils:** corrects `$background-value` name ([77ada75](https://gitlab.com/spartanbio-ux/schedio/commit/77ada75c5e73c62ed61041e105c5bf2f7a7d4bec))
+* uses correct `style-resources-loader` config ([5508608](https://gitlab.com/spartanbio-ux/schedio/commit/55086084340161cd4c23f824ec1d48b775f72d09))
+
+
+### Features
+
+* **button:** adds `type` prop; deprecates `isOutlined` and `isText` ([d07ad20](https://gitlab.com/spartanbio-ux/schedio/commit/d07ad20ea89ee86601d490f50ee2cab2b32caa1d))
+* **button:** adds shade prop ([697c9a4](https://gitlab.com/spartanbio-ux/schedio/commit/697c9a44f221c168eba15f570055538b613facbe))
+* **button-group:** deprecates `color`, `isOutlined`, `isText` ([10c3125](https://gitlab.com/spartanbio-ux/schedio/commit/10c31251cea8400dd40e894da7bb4b0898e423c4))
+* **controls:** adds shades to icon mixin ([b8aa66a](https://gitlab.com/spartanbio-ux/schedio/commit/b8aa66a163464a4e8da6ca90a854238fd732aa5d))
+* **icon:** enables icon shades ([97a1d74](https://gitlab.com/spartanbio-ux/schedio/commit/97a1d74d4c45274006840abc9181c06ebd84f41c))
+* **input:** adds icon shade props ([f39b90b](https://gitlab.com/spartanbio-ux/schedio/commit/f39b90b43ddea729d7c6bb086412255b99514a7c))
+* **internal:** adds prop deprecation mixin ([c35df89](https://gitlab.com/spartanbio-ux/schedio/commit/c35df89209710c6067d7fbf2e63299e355eb14d3))
+* **logo:** adds logo component ([2daaf2b](https://gitlab.com/spartanbio-ux/schedio/commit/2daaf2bfcc232277da022fce83c6a0deccf0d75d))
+* adds shared options ([a518316](https://gitlab.com/spartanbio-ux/schedio/commit/a5183160db7b10dc16c13f4f37a0a08265577feb))
+* **select:** adds icon shade props ([a77fe62](https://gitlab.com/spartanbio-ux/schedio/commit/a77fe623a6299c63f4887c141876eb755ac556ab))
+* **textarea:** adds icon shade props ([ee102af](https://gitlab.com/spartanbio-ux/schedio/commit/ee102aff5bca9e428a8cd8b79d2ed6fcd7363e4a))
+
 ## [3.10.4](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.3...v3.10.4) (2019-11-20)
 
 
