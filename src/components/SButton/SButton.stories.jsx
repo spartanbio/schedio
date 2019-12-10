@@ -1,5 +1,5 @@
 import { SButton } from '@/components/SButton'
-import { colors, sizes, types } from '@/components/SButton/options'
+import { colors, colorNames, sizes, types, allShadeOptions } from '@/components/SButton/options'
 import { SContainerColumn } from '@/components/SContainerColumn'
 import { SContainerRow } from '@/components/SContainerRow'
 import { SHeading } from '@/components/SHeading'
@@ -24,7 +24,11 @@ export const button = () => ({
   props: {
     color: {
       type: String,
-      default: select('color', ['', ...colors], '', 'Optional Props'),
+      default: select('color', ['', ...colorNames], '', 'Optional Props'),
+    },
+    shade: {
+      type: String,
+      default: select('shade', ['', ...allShadeOptions], '', 'Optional Props'),
     },
     type: {
       type: String,
@@ -154,22 +158,43 @@ textButtons.story = {
 }
 
 function generateButtons (h, propsData = {}) {
-  return colors.map((color) => {
-    const props = {
-      ...propsData,
-      color,
-    }
+  const buttons = Object.entries(colors).map(([color, shades]) => {
+    const rows = [null, ...shades].map((shade) => {
+      const props = {
+        ...propsData,
+        shade,
+        color,
+      }
+
+      return h(
+        SContainerRow,
+        { props: { align: 'end' } },
+        [
+          h(SContainerColumn, { props: { md: 12, lg: 1 } }, [
+            h(
+              SHeading,
+              {
+                props: { level: 3 },
+                style: { padding: '0.5em', textTransform: 'capitalize' },
+              },
+              shade || 'Base',
+            ),
+          ]),
+          generateButtonColumn(h, props, 'No icons'),
+          generateButtonColumn(h, { ...props, iconLeft: randIcon() }, 'Icon left'),
+          generateButtonColumn(h, { ...props, iconRight: randIcon() }, 'Icon right'),
+          generateButtonColumn(h, { ...props, iconLeft: randIcon(), iconRight: randIcon() }, 'Both'),
+        ],
+      )
+    })
 
     return [
       generateHeading(h, { level: 2, content: color }),
-      h(SContainerRow, [
-        generateButtonColumn(h, props, 'No icons'),
-        generateButtonColumn(h, { ...props, iconLeft: randIcon() }, 'Icon left'),
-        generateButtonColumn(h, { ...props, iconRight: randIcon() }, 'Icon right'),
-        generateButtonColumn(h, { ...props, iconLeft: randIcon(), iconRight: randIcon() }, 'Both'),
-      ]),
+      rows,
     ]
   })
+
+  return h('div', buttons)
 }
 
 function generateButtonColumn (h, props, heading) {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { colors } from '@/components/SButton/options.js'
+import { colorNames } from '@/components/SButton/options.js'
 
 export default {
   name: 'SButtonGroup',
@@ -18,8 +18,8 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || colors.includes(value)) return true
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
+        if (!value || colorNames.includes(value)) return true
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`)
       },
     },
 

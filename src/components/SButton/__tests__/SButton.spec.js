@@ -33,21 +33,48 @@ describe('SButton.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  describe.each(options.colors)('with color %s', (color) => {
-    it('can be plain', async () => {
-      wrapper.setProps({ color })
-      await wrapper.vm.$nextTick()
-      expect(await axe(wrapper.html())).toHaveNoViolations()
-      expect(wrapper.classes()).toContain(`button--color-${color}`)
-      expect(wrapper.html()).toMatchSnapshot()
+  describe.each(options.colorNames)('with color %s', (color) => {
+    const shades = options.colors[color]
+
+    describe('and base style', () => {
+      it('can be the base shade', async () => {
+        wrapper.setProps({ color })
+        await wrapper.vm.$nextTick()
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
+
+      if (!shades.length) return
+
+      it.each(shades)('can have shade %p', async (shade) => {
+        wrapper.setProps({ color, shade })
+        await wrapper.vm.$nextTick()
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-${shade}`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
     })
 
-    it.each(options.types)('can be %s', async (type) => {
-      wrapper.setProps({ type, color })
-      await wrapper.vm.$nextTick()
-      expect(await axe(wrapper.html())).toHaveNoViolations()
-      expect(wrapper.classes()).toContain(`button--color-${color}-${type}`)
-      expect(wrapper.html()).toMatchSnapshot()
+    describe.each(options.types)('and %p style', (type) => {
+      it('can be the base shade', async () => {
+        if (typeof type !== 'string') console.dir(type)
+        wrapper.setProps({ type, color })
+        await wrapper.vm.$nextTick()
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-${type}`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
+
+      if (!shades.length) return
+
+      it.each(shades)('can be the shade %p', async (shade) => {
+        wrapper.setProps({ type, color, shade })
+        await wrapper.vm.$nextTick()
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-${shade}-${type}`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
     })
   })
 

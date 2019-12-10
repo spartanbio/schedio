@@ -1,5 +1,5 @@
 import { SButton } from '@/components/SButton'
-import { colors } from '@/components/SButton/options'
+import { colorNames } from '@/components/SButton/options'
 import { SButtonGroup } from '@/components/SButtonGroup'
 import { SContainerColumn } from '@/components/SContainerColumn'
 import { SContainerRow } from '@/components/SContainerRow'
@@ -18,7 +18,7 @@ export default {
 
 export const buttonGroup = () => ({
   props: {
-    color: { default: select('color', ['', ...colors], '', 'Optional Props') },
+    color: { default: select('color', ['', ...colorNames], '', 'Optional Props') },
     isOutlined: { default: boolean('is-outlined', false, 'Optional Props') },
     isText: { default: boolean('is-text', false, 'Optional Props') },
     isGrouped: { default: boolean('is-grouped', false, 'Optional Props') },
@@ -125,7 +125,7 @@ textGroup.story = {
 }
 
 function colorsToGroups (h, props = { color: '' }) {
-  return colors.map(color => generateGroups(h, { ...props, color }))
+  return colorNames.map(color => generateGroups(h, { ...props, color }))
 }
 
 function generateGroups (h, props = { color: '' }) {

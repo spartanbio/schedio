@@ -30,7 +30,7 @@
 
 <script>
 import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
-import { colors, sizes, types } from './options.js'
+import { colors, colorNames, sizes, types, allShadeOptions } from './options.js'
 
 export default {
   name: 'SButton',
@@ -44,10 +44,16 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || colors.includes(value)) return true
+        if (!value || colorNames.includes(value)) return true
 
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`)
       },
+    },
+
+    shade: {
+      type: String,
+      default: '',
+      validator: value => !value || allShadeOptions.includes(value),
     },
 
     size: {
@@ -116,7 +122,11 @@ export default {
     buttonStyle () {
       let buttonStyle = ''
 
-      if (this.color) buttonStyle += `button--color-${this.color}`
+      if (this.color) {
+        buttonStyle = `button--color-${this.color}`
+
+        if (this.shade) buttonStyle += `-${this.shade}`
+      }
 
       /**
        * TODO:
@@ -131,6 +141,10 @@ export default {
       if (this.color && this.type) buttonStyle += `-${this.type}`
 
       return buttonStyle
+    },
+
+    hasValidShade () {
+      return colors[this.color].includes(this.shade)
     },
 
     ariaLabel () {
@@ -150,6 +164,12 @@ export default {
         console.warn('Button requires content or `aria-label`')
       }
     },
+  },
+
+  mounted () {
+    if (this.shade && !this.hasValidShade) {
+      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+    }
   },
 }
 </script>
@@ -222,6 +242,8 @@ export default {
 
   @each $color-name in $button-colors {
     &--color-#{$color-name} {
+      $values: map-keys(map-get($color-palette-data, $color-name));
+
       @include button-color($color-name);
 
       &-outlined {
@@ -230,6 +252,22 @@ export default {
 
       &-text {
         @include button-text($color-name);
+      }
+
+      @each $value in $values {
+        &-#{$value} {
+          @if $value != 'base' {
+            @include button-color($color-name, $value);
+
+            &-outlined {
+              @include button-outline($color-name, $value);
+            }
+
+            &-text {
+              @include button-text($color-name, $value);
+            }
+          }
+        }
       }
     }
   }
