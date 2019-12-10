@@ -1,12 +1,8 @@
 import { SButton } from '@/components/SButton'
-import { colorNames } from '@/components/SButton/options'
 import { SButtonGroup } from '@/components/SButtonGroup'
-import { SContainerColumn } from '@/components/SContainerColumn'
-import { SContainerRow } from '@/components/SContainerRow'
 import { SHeading } from '@/components/SHeading'
 import PropList from '@@/docs/components/PropList'
-import { boolean, select, text } from '@storybook/addon-knobs'
-import { generateHeading } from '@/utils/stories/render-functions'
+import { boolean, text } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/Buttons.SButtonGroup',
@@ -18,9 +14,6 @@ export default {
 
 export const buttonGroup = () => ({
   props: {
-    color: { default: select('color', ['', ...colorNames], '', 'Optional Props') },
-    isOutlined: { default: boolean('is-outlined', false, 'Optional Props') },
-    isText: { default: boolean('is-text', false, 'Optional Props') },
     isGrouped: { default: boolean('is-grouped', false, 'Optional Props') },
     button1Text: { default: text('Button 1 text', 'Button 1', 'Slots') },
     button2Text: { default: text('Button 2 text', 'Button 2', 'Slots') },
@@ -37,18 +30,35 @@ export const buttonGroup = () => ({
         <p>
           Buttons in a group can be merged with the <code>isGrouped</code> prop.
         </p>
-        <p>Note that the button group's color will override an individual button's color.</p>
+        <p>Colors and styles are set on the individual buttons</p>
 
         <SHeading level="2">Example</SHeading>
         <SButtonGroup
-          color={this.color}
-          isOutlined={this.isOutlined}
-          isText={this.isText}
           isGrouped={this.isGrouped}
         >
-          <SButton disabled={this.button1Disabled}>{this.button1Text}</SButton>
-          <SButton disabled={this.button2Disabled}>{this.button2Text}</SButton>
-          <SButton disabled={this.button3Disabled}>{this.button3Text}</SButton>
+          <SButton
+            color="spartan_blue"
+            shade="light"
+            disabled={this.button1Disabled}
+          >
+            {this.button1Text}
+          </SButton>
+
+          <SButton
+            color="spartan_blue"
+            shade="light"
+            disabled={this.button2Disabled}
+          >
+            {this.button2Text}
+          </SButton>
+
+          <SButton
+            color="spartan_blue"
+            shade="light"
+            disabled={this.button3Disabled}
+          >
+            {this.button3Text}
+          </SButton>
         </SButtonGroup>
 
         <PropList component={SButtonGroup} />
@@ -59,101 +69,4 @@ export const buttonGroup = () => ({
 
 buttonGroup.story = {
   name: 'Button Group',
-}
-
-export const solidGroup = () => ({
-  render (h) {
-    return (
-      <div>
-        <SHeading>Solid Group</SHeading>
-        {colorsToGroups(h)}
-      </div>
-    )
-  },
-})
-
-solidGroup.story = {
-  name: 'Solid Group',
-
-  parameters: {
-    options: {
-      showPanel: false,
-    },
-  },
-}
-
-export const outlinedGroup = () => ({
-  render (h) {
-    return (
-      <div>
-        <SHeading>Outlined Group</SHeading>
-        {colorsToGroups(h, { isOutlined: true })}
-      </div>
-    )
-  },
-})
-
-outlinedGroup.story = {
-  name: 'Outlined Group',
-
-  parameters: {
-    options: {
-      showPanel: false,
-    },
-  },
-}
-
-export const textGroup = () => ({
-  render (h) {
-    return (
-      <div>
-        <SHeading>Text Group</SHeading>
-        {colorsToGroups(h, { isText: true })}
-      </div>
-    )
-  },
-})
-
-textGroup.story = {
-  name: 'Text Group',
-
-  parameters: {
-    options: {
-      showPanel: false,
-    },
-  },
-}
-
-function colorsToGroups (h, props = { color: '' }) {
-  return colorNames.map(color => generateGroups(h, { ...props, color }))
-}
-
-function generateGroups (h, props = { color: '' }) {
-  return h(SContainerRow, [
-    h(SContainerColumn, [
-      generateHeading(h, { level: 2, content: props.color }),
-      h(SContainerRow, [
-        generateNarrowColumn(h, [
-          generateHeading(h, { level: 3, content: 'Ungrouped' }),
-          generateSingleGroup(h, { ...props }),
-        ]),
-        generateNarrowColumn(h, [
-          generateHeading(h, { level: 3, content: 'Grouped' }),
-          generateSingleGroup(h, { ...props, isGrouped: true }),
-        ]),
-      ]),
-    ]),
-  ])
-}
-
-function generateNarrowColumn (h, content) {
-  return h(SContainerColumn, { props: { narrow: true } }, content)
-}
-
-function generateSingleGroup (h, props) {
-  return h(SButtonGroup, { props }, generateTheeButtons(h))
-}
-
-function generateTheeButtons (h) {
-  return Array.from({ length: 3 }, (v, idx) => h(SButton, `Button ${idx + 1}`))
 }

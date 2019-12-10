@@ -1,47 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SButtonGroup.vue changes child button colors 1`] = `
-<div class="button-group button-group--color-red">
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 1
-  </sbutton-stub>
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 2
-  </sbutton-stub>
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 3
-  </sbutton-stub>
-</div>
-`;
-
-exports[`SButtonGroup.vue changes child button outlines 1`] = `
-<div class="button-group button-group--color-red-outlined button-group--grouped">
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 1
-  </sbutton-stub>
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 2
-  </sbutton-stub>
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 3
-  </sbutton-stub>
-</div>
-`;
-
-exports[`SButtonGroup.vue changes child button text 1`] = `
-<div class="button-group button-group--color-red-text button-group--grouped">
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 1
-  </sbutton-stub>
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 2
-  </sbutton-stub>
-  <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="">
-    Button 3
-  </sbutton-stub>
-</div>
-`;
-
 exports[`SButtonGroup.vue disables shadow based on children disabled status 1`] = `
 <div class="button-group button-group--disabled"><button class="button" disabled="disabled">
     <!---->

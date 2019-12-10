@@ -9,11 +9,17 @@
 
 <script>
 import { colorNames } from '@/components/SButton/options.js'
+import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 
 export default {
   name: 'SButtonGroup',
 
+  mixins: [
+    DeprecatePropsMixin(['color', 'isOutlined', 'isText'], 'Appropriate props on `SButton`'),
+  ],
+
   props: {
+    /** @deprecated */
     color: {
       type: String,
       default: '',
@@ -23,11 +29,13 @@ export default {
       },
     },
 
+    /** @deprecated */
     isOutlined: {
       type: Boolean,
       default: false,
     },
 
+    /** @deprecated */
     isText: {
       type: Boolean,
       default: false,
@@ -55,6 +63,7 @@ export default {
         },
       ]
     },
+    /** @deprecated */
     groupStyle () {
       let style = ''
 

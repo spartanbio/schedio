@@ -40,30 +40,6 @@ describe('SButtonGroup.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('changes child button colors', async () => {
-    buttonGroup.setProps({ color: 'red' })
-    await wrapper.vm.$nextTick()
-    expect(buttonGroup.classes()).toContain('button-group--color-red')
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(await axe(wrapper.html())).toHaveNoViolations()
-  })
-
-  it('changes child button outlines', async () => {
-    buttonGroup.setProps({ color: 'red', isOutlined: true, isGrouped: true })
-    await wrapper.vm.$nextTick()
-    expect(buttonGroup.classes()).toContain('button-group--color-red-outlined')
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(await axe(wrapper.html())).toHaveNoViolations()
-  })
-
-  it('changes child button text', async () => {
-    buttonGroup.setProps({ color: 'red', isText: true, isGrouped: true })
-    await wrapper.vm.$nextTick()
-    expect(buttonGroup.classes()).toContain('button-group--color-red-text')
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(await axe(wrapper.html())).toHaveNoViolations()
-  })
-
   it('groups child buttons', async () => {
     buttonGroup.setProps({ isGrouped: true })
     await wrapper.vm.$nextTick()
