@@ -31,36 +31,58 @@ describe('SIcon.vue', () => {
     expect(errorSpy).toHaveBeenCalled()
   })
 
-  it('validates icons', () => {
-    shallowMount(SIcon, { propsData: { icon: 'not an icon' } })
-    expect(errorSpy).toHaveBeenCalled()
-  })
-
-  options.colors.forEach((color) => {
-    it(`can be ${color}`, async () => {
+  describe.each(Object.keys(options.colors))('color "%s"', (color) => {
+    it('can be the base color', async () => {
       wrapper.setProps({ color })
       await wrapper.vm.$nextTick()
       expect(wrapper.contains(`.icon--color-${color}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
+
+    if (!options.colors[color].length) return
+
+    it.each(options.colors[color])('can be the shade "%s"', async (shade) => {
+      wrapper.setProps({ color, shade })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.contains(`.icon--color-${color}-${shade}`)).toBe(true)
+      expect(wrapper.html()).toMatchSnapshot()
+    })
   })
 
-  it('validates color', () => {
-    shallowMount(SIcon, { propsData: { icon: iconList[0], color: 'not a color' } })
-    expect(errorSpy).toHaveBeenCalled()
+  describe('validates', () => {
+    it('icons', () => {
+      shallowMount(SIcon, { propsData: { icon: 'not an icon' } })
+      expect(errorSpy).toHaveBeenCalled()
+    })
+
+    it('color', () => {
+      shallowMount(SIcon, { propsData: { icon: iconList[0], color: 'not a color' } })
+      expect(errorSpy).toHaveBeenCalled()
+    })
+
+    it('shade', () => {
+      shallowMount(SIcon, {
+        propsData: {
+          icon: iconList[0],
+          color: Object.keys(options.colors)[0],
+          shade: 'not a shade',
+        },
+      })
+      expect(errorSpy).toHaveBeenCalledTimes(2)
+    })
+
+    it('size', () => {
+      shallowMount(SIcon, { propsData: { icon: iconList[0], size: 'not a size' } })
+      expect(errorSpy).toHaveBeenCalled()
+    })
   })
 
-  options.sizes.forEach((size) => {
-    it(`can be ${size}`, async () => {
+  describe('size', () => {
+    it.each(options.sizes)('can be "%s"', async (size) => {
       wrapper.setProps({ size })
       await wrapper.vm.$nextTick()
       expect(wrapper.contains(`.icon--size-${size}`)).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
-  })
-
-  it('validates size', () => {
-    shallowMount(SIcon, { propsData: { icon: iconList[0], size: 'not a size' } })
-    expect(errorSpy).toHaveBeenCalled()
   })
 })
