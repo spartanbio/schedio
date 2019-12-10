@@ -1,3 +1,10 @@
+## [3.11.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.11.0...v3.11.1) (2019-12-10)
+
+
+### Bug Fixes
+
+* **ci:** uses object for assets config ([bc71d7a](https://gitlab.com/spartanbio-ux/schedio/commit/bc71d7a11ba47daaf01655f22185859872b167e5))
+
 # [3.11.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.10.4...v3.11.0) (2019-12-10)
 
 
