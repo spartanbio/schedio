@@ -9,7 +9,7 @@ module.exports = {
       '@semantic-release/gitlab',
       {
         assets: [
-          'dist',
+          { path: 'dist/**/*', label: 'schedio' },
         ],
       },
     ],
