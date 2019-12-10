@@ -8,7 +8,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('SFormValidation.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   beforeEach(() => {
@@ -30,8 +30,9 @@ describe('SFormValidation.vue', () => {
     expect(errorSpy).toHaveBeenCalled()
   })
 
-  it('accepts text as a prop or slot', () => {
+  it('accepts text as a prop or slot', async () => {
     wrapper.setProps({ text: 'Some text' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).toContain('Some text')
     expect(wrapper).toMatchSnapshot()
 
@@ -44,6 +45,7 @@ describe('SFormValidation.vue', () => {
     it(`sets a visual state for ${state} state`, async () => {
       wrapper.setProps({ state })
       // test if `state = ''` does not show an icon while other states do
+      await wrapper.vm.$nextTick()
       expect(wrapper.contains(SIcon)).toBe(!!state)
       expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.html()).toMatchSnapshot()
@@ -51,15 +53,17 @@ describe('SFormValidation.vue', () => {
     })
   })
 
-  it('accepts an icon prop', () => {
+  it('accepts an icon prop', async () => {
     wrapper.setProps({ icon: Object.keys(icons)[0] })
+    await wrapper.vm.$nextTick()
     expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.contains(SIcon)).toBe(true)
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('can hide its icon', () => {
+  it('can hide its icon', async () => {
     wrapper.setProps({ icon: Object.keys(icons)[0], hideIcon: true })
+    await wrapper.vm.$nextTick()
     expect(errorSpy).not.toHaveBeenCalled()
     expect(wrapper.contains(SIcon)).toBe(false)
   })

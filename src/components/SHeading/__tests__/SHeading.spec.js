@@ -5,7 +5,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('SHeading.vue', () => {
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
   let wrapper
 
   beforeEach(() => {
@@ -28,8 +28,9 @@ describe('SHeading.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('can have the tag specified', () => {
+  it('can have the tag specified', async () => {
     wrapper.setProps({ tag: 'div' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.props('tag')).toBe('div')
   })
 
@@ -50,18 +51,21 @@ describe('SHeading.vue', () => {
     expect(errorSpy).toHaveBeenCalled()
   })
 
-  it('can be display', () => {
+  it('can be display', async () => {
     wrapper.setProps({ isDisplay: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can have no case', () => {
+  it('can have no case', async () => {
     wrapper.setProps({ hasNoCase: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be subtle', () => {
+  it('can be subtle', async () => {
     wrapper.setProps({ isSubtle: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

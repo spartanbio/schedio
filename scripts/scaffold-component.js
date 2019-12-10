@@ -105,7 +105,7 @@ async function scaffoldComponent () {
         const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
 
         return fs.outputFile(file, contents)
-      })
+      }),
     )
 
     // add unit test files

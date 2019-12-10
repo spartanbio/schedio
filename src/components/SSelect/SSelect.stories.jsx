@@ -1,5 +1,5 @@
 import { SHeading } from '@/components/SHeading'
-import { colors as iconColors } from '@/components/SIcon/options'
+import { allShadeOptions, colorNames as iconColors } from '@/components/SIcon/options'
 import { SSelect } from '@/components/SSelect'
 import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
 import PropList from '@@/docs/components/PropList'
@@ -8,8 +8,12 @@ import icons from 'feather-icons/dist/icons.json'
 
 const iconList = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
-const iconColor = side =>
+const iconColor = (side) => {
   select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
+}
+const iconShade = (side) => {
+  select(`icon-${side}-shade`, ['', ...allShadeOptions], 'green', 'Optional Props')
+}
 
 export default {
   title: 'Components/Inputs.SSelect',
@@ -63,8 +67,10 @@ export const selectBox = () => {
           isFullwidth: boolean('is-fullwidth', false, 'Optional Props'),
           iconLeft: iconProp('left'),
           iconLeftColor: iconColor('left'),
+          iconLeftShade: iconShade('left'),
           iconRight: iconProp('right'),
           iconRightColor: iconColor('right'),
+          iconRightShade: iconShade('right'),
         }),
       },
       attrs: {

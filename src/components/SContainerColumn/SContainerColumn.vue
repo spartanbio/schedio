@@ -110,7 +110,7 @@ export default {
       // concatenate all responsive classes from computed properties
       return Object.keys(this.$options.computed).reduce(
         (classes, key) => (/responsive(.*)Classes/.test(key) ? classes.concat(this[key]) : classes),
-        [columnSize]
+        [columnSize],
       )
     },
   },

@@ -64,7 +64,7 @@ describe('STable.vue', () => {
     expect(wrapper.contains('th')).toBe(true)
   })
 
-  it('can override generated headers', () => {
+  it('can override generated headers', async () => {
     wrapper.setProps({
       header: [
         'One',
@@ -72,16 +72,19 @@ describe('STable.vue', () => {
         'Three',
       ],
     })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can hide header cells', () => {
+  it('can hide header cells', async () => {
     wrapper.setProps({ hideHeader: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.contains('thead')).toBe(false)
   })
 
-  it('can duplicate the header in the footer', () => {
+  it('can duplicate the header in the footer', async () => {
     wrapper.setProps({ headerInFooter: true })
+    await wrapper.vm.$nextTick()
     const headerCells = wrapper.findAll('th')
     const footerCells = wrapper.findAll('tfoot > tr > td')
 
@@ -94,35 +97,41 @@ describe('STable.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can have a caption', () => {
+  it('can have a caption', async () => {
     wrapper.setProps({ caption: 'caption' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.contains('caption')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can have the caption at the top', () => {
+  it('can have the caption at the top', async () => {
     wrapper.setProps({ hasCaptionTop: true, caption: 'caption' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.contains('.table__caption--top')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be bordered', () => {
+  it('can be bordered', async () => {
     wrapper.setProps({ isBordered: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be hoverable', () => {
+  it('can be hoverable', async () => {
     wrapper.setProps({ isHoverable: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be striped', () => {
+  it('can be striped', async () => {
     wrapper.setProps({ isStriped: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be fullwidth', () => {
+  it('can be fullwidth', async () => {
     wrapper.setProps({ isFullwidth: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

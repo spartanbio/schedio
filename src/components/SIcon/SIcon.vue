@@ -5,13 +5,11 @@
     class="icon"
     viewBox="0 0 24 24"
     v-html="featherIcon"
-  >
-    <!-- <use :xlink:href="require('feather-icons/dist/feather-sprite.svg') + '#' + icon" /> -->
-  </svg>
+  />
 </template>
 
 <script>
-import { colors, sizes } from './options.js'
+import { colors, sizes, allShadeOptions } from './options.js'
 import icons from 'feather-icons/dist/icons.json'
 
 const list = Object.keys(icons)
@@ -32,10 +30,16 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || colors.includes(value)) return true
+        if (!value || colors[value]) return true
 
         return console.error(`\`color\` ${value} not found. Allowed colors: ${colors}`)
       },
+    },
+
+    shade: {
+      type: String,
+      default: '',
+      validator: value => !value || allShadeOptions.includes(value),
     },
 
     size: {
@@ -51,15 +55,36 @@ export default {
 
   computed: {
     classList () {
-      return {
-        [`icon--color-${this.color}`]: this.color,
-        [`icon--size-${this.size}`]: this.size,
+      const list = []
+
+      if (this.color) {
+        let _color = `icon--color-${this.color}`
+
+        if (this.shade && this.hasValidShade) {
+          _color += `-${this.shade}`
+        }
+
+        list.push(_color)
       }
+
+      if (this.size) list.push(`icon--size-${this.size}`)
+
+      return list
+    },
+
+    hasValidShade () {
+      return colors[this.color].includes(this.shade)
     },
 
     featherIcon () {
       return icons[this.icon] || ''
     },
+  },
+
+  mounted () {
+    if (this.shade && !this.hasValidShade) {
+      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+    }
   },
 }
 </script>
@@ -90,9 +115,19 @@ export default {
     width: 4em;
   }
 
-  @each $color-name in $button-colors {
+  @each $color-name in $icon-colors {
     &--color-#{$color-name} {
+      $values: map-keys(map-get($color-palette-data, $color-name));
+
       stroke: color($color-name);
+
+      @each $value in $values {
+        @if $value != 'base' {
+          &-#{$value} {
+            stroke: color($color-name, $value);
+          }
+        }
+      }
     }
   }
 }

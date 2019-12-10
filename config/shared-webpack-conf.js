@@ -1,7 +1,6 @@
 const path = require('path')
 
 exports.styleResourcesLoaderOptions = {
-  preProcessor: 'scss',
   patterns: [
     path.resolve(__dirname, '../src/assets/styles/tokens/dist/*.scss'),
     path.resolve(__dirname, '../src/assets/styles/**/*.scss'),

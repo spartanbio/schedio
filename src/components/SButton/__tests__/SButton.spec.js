@@ -27,99 +27,147 @@ describe('SButton.vue', () => {
   })
 
   it('renders correctly', async () => {
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.text()).toBe('Button Text')
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
-  it('handles clicks', () => {
-    wrapper.trigger('click')
-    expect(click).toHaveBeenCalled()
-  })
+  describe.each(options.colorNames)('with color %s', (color) => {
+    const shades = options.colors[color]
 
-  Promise.all(
-    options.colors.map((color) => {
-      it(`can be ${color}`, async () => {
+    describe('and base style', () => {
+      it('can be the base shade', async () => {
         wrapper.setProps({ color })
+        await wrapper.vm.$nextTick()
         expect(await axe(wrapper.html())).toHaveNoViolations()
         expect(wrapper.classes()).toContain(`button--color-${color}`)
         expect(wrapper.html()).toMatchSnapshot()
       })
-    })
-  )
 
-  Promise.all(
-    options.colors.map((color) => {
-      it(`can be text with ${color}`, async () => {
-        wrapper.setProps({ color, isText: true })
+      if (!shades.length) return
+
+      it.each(shades)('can have shade %p', async (shade) => {
+        wrapper.setProps({ color, shade })
+        await wrapper.vm.$nextTick()
         expect(await axe(wrapper.html())).toHaveNoViolations()
-        expect(wrapper.classes()).toContain(`button--color-${color}-text`)
+        expect(wrapper.classes()).toContain(`button--color-${color}-${shade}`)
         expect(wrapper.html()).toMatchSnapshot()
       })
     })
-  )
 
-  Promise.all(
-    options.colors.map((color) => {
-      it(`can be outlined with ${color}`, async () => {
-        wrapper.setProps({ color, isOutlined: true })
+    describe.each(options.types)('and %p style', (type) => {
+      it('can be the base shade', async () => {
+        if (typeof type !== 'string') console.dir(type)
+        wrapper.setProps({ type, color })
+        await wrapper.vm.$nextTick()
         expect(await axe(wrapper.html())).toHaveNoViolations()
-        expect(wrapper.classes()).toContain(`button--color-${color}-outlined`)
+        expect(wrapper.classes()).toContain(`button--color-${color}-${type}`)
+        expect(wrapper.html()).toMatchSnapshot()
+      })
+
+      if (!shades.length) return
+
+      it.each(shades)('can be the shade %p', async (shade) => {
+        wrapper.setProps({ type, color, shade })
+        await wrapper.vm.$nextTick()
+        expect(await axe(wrapper.html())).toHaveNoViolations()
+        expect(wrapper.classes()).toContain(`button--color-${color}-${shade}-${type}`)
         expect(wrapper.html()).toMatchSnapshot()
       })
     })
-  )
-
-  it('validates fill color', () => {
-    shallowMount(SButton, { propsData: { color: 'not a color' } })
-    expect(errorSpy).toHaveBeenCalled()
   })
 
-  options.sizes.forEach((size) => {
-    it(`can be ${size}`, () => {
+  describe('can be size', () => {
+    it.each(options.sizes)('%s', async (size) => {
       wrapper.setProps({ size })
+      await wrapper.vm.$nextTick()
       expect(wrapper.classes()).toContain(`button--size-${size}`)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
 
-  it('validates size', () => {
-    shallowMount(SButton, { propsData: { size: 'not a size' } })
-    expect(errorSpy).toHaveBeenCalled()
-  })
-
-  it('can have an icon on the left', () => {
-    wrapper.setProps({ iconLeft: iconList[0] })
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-
-  it('can have an icon on the right', () => {
-    wrapper.setProps({ iconRight: iconList[0] })
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-
-  it('can have an icon and no text', async () => {
-    const iconButton = shallowMount(SButton, {
-      slots: {
-        default: 'Button Text',
-      },
-      listeners: { click },
-      attrs: {
-        'aria-label': 'Button',
-      },
-      propsData: {
-        iconOnly: true,
-        iconLeft: iconList[0],
-      },
+  describe('can have an icon', () => {
+    it('on the left', async () => {
+      wrapper.setProps({ iconLeft: iconList[0] })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.html()).toMatchSnapshot()
     })
 
-    expect(await axe(iconButton.html())).toHaveNoViolations()
-    expect(iconButton.text()).toBeFalsy()
-    expect(iconButton.html()).toMatchSnapshot()
+    it('on the right', async () => {
+      wrapper.setProps({ iconRight: iconList[0] })
+      await wrapper.vm.$nextTick()
+      expect(wrapper.html()).toMatchSnapshot()
+    })
+
+    it('and no text', async () => {
+      wrapper = shallowMount(SButton, {
+        slots: {
+          default: 'Button Text',
+        },
+        listeners: { click },
+        attrs: {
+          'aria-label': 'Button',
+        },
+        propsData: {
+          iconOnly: true,
+          iconLeft: iconList[0],
+        },
+      })
+
+      await wrapper.vm.$nextTick()
+      expect(await axe(wrapper.html())).toHaveNoViolations()
+      expect(wrapper.text()).toBeFalsy()
+      expect(wrapper.html()).toMatchSnapshot()
+    })
+  })
+
+  describe('validates', () => {
+    it.each(['color', 'type', 'size'])('%s', async (prop) => {
+      shallowMount(SButton, { propsData: { [prop]: 'not a prop' } })
+      await wrapper.vm.$nextTick()
+      expect(errorSpy).toHaveBeenCalled()
+    })
+  })
+
+  describe('errors if', () => {
+    it('no discernible text', async () => {
+      wrapper = shallowMount(SButton, {
+        listeners: { click },
+        propsData: {
+          iconOnly: true,
+          iconLeft: iconList[0],
+        },
+      })
+
+      await wrapper.vm.$nextTick()
+      expect(errorSpy).toHaveBeenCalled()
+      expect(await axe(wrapper.html())).not.toHaveNoViolations()
+    })
+
+    it.each(['isOutlined', 'isText'])('`%s` is used', async (prop) => {
+      wrapper = shallowMount(SButton, {
+        slots: {
+          default: 'Button Text',
+        },
+        propsData: {
+          [prop]: true,
+        },
+      })
+
+      await wrapper.vm.$nextTick()
+      expect(errorSpy).toHaveBeenCalled()
+    })
+  })
+
+  it('handles clicks', async () => {
+    await wrapper.vm.$nextTick()
+    wrapper.trigger('click')
+    expect(click).toHaveBeenCalled()
   })
 
   it('can use slot text for `aria-label`', async () => {
-    const iconButton = shallowMount(SButton, {
+    wrapper = shallowMount(SButton, {
       slots: {
         default: 'Button Text',
       },
@@ -130,26 +178,15 @@ describe('SButton.vue', () => {
       },
     })
 
-    expect(await axe(iconButton.html())).toHaveNoViolations()
-    expect(iconButton.text()).toBeFalsy()
-    expect(iconButton.html()).toMatchSnapshot()
-  })
-
-  it('errors if no discernible text', async () => {
-    const iconButton = shallowMount(SButton, {
-      listeners: { click },
-      propsData: {
-        iconOnly: true,
-        iconLeft: iconList[0],
-      },
-    })
-
-    expect(errorSpy).toHaveBeenCalled()
-    expect(await axe(iconButton.html())).not.toHaveNoViolations()
+    await wrapper.vm.$nextTick()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+    expect(wrapper.text()).toBeFalsy()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('can have a loading spinner', async () => {
     wrapper.setProps({ isLoading: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })

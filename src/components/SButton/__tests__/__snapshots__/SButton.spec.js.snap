@@ -1,231 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SButton.vue can be gold 1`] = `
-<button class="button button--color-gold">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be green 1`] = `
-<button class="button button--color-green">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be grey 1`] = `
-<button class="button button--color-grey">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be ice 1`] = `
-<button class="button button--color-ice">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be large 1`] = `
+exports[`SButton.vue can be size large 1`] = `
 <button class="button button--size-large">
   <!---->
   <!----> Button Text
   <!----></button>
 `;
 
-exports[`SButton.vue can be magenta 1`] = `
-<button class="button button--color-magenta">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be night 1`] = `
-<button class="button button--color-night">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with gold 1`] = `
-<button class="button button--color-gold-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with green 1`] = `
-<button class="button button--color-green-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with grey 1`] = `
-<button class="button button--color-grey-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with ice 1`] = `
-<button class="button button--color-ice-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with magenta 1`] = `
-<button class="button button--color-magenta-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with night 1`] = `
-<button class="button button--color-night-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with red 1`] = `
-<button class="button button--color-red-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with spartan_blue 1`] = `
-<button class="button button--color-spartan_blue-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with turquoise 1`] = `
-<button class="button button--color-turquoise-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be outlined with white 1`] = `
-<button class="button button--color-white-outlined">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be red 1`] = `
-<button class="button button--color-red">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be regular 1`] = `
+exports[`SButton.vue can be size regular 1`] = `
 <button class="button button--size-regular">
   <!---->
   <!----> Button Text
   <!----></button>
 `;
 
-exports[`SButton.vue can be small 1`] = `
+exports[`SButton.vue can be size small 1`] = `
 <button class="button button--size-small">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be spartan_blue 1`] = `
-<button class="button button--color-spartan_blue">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with gold 1`] = `
-<button class="button button--color-gold-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with green 1`] = `
-<button class="button button--color-green-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with grey 1`] = `
-<button class="button button--color-grey-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with ice 1`] = `
-<button class="button button--color-ice-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with magenta 1`] = `
-<button class="button button--color-magenta-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with night 1`] = `
-<button class="button button--color-night-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with red 1`] = `
-<button class="button button--color-red-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with spartan_blue 1`] = `
-<button class="button button--color-spartan_blue-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with turquoise 1`] = `
-<button class="button button--color-turquoise-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be text with white 1`] = `
-<button class="button button--color-white-text">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be turquoise 1`] = `
-<button class="button button--color-turquoise">
-  <!---->
-  <!----> Button Text
-  <!----></button>
-`;
-
-exports[`SButton.vue can be white 1`] = `
-<button class="button button--color-white">
   <!---->
   <!----> Button Text
   <!----></button>
@@ -271,6 +61,888 @@ exports[`SButton.vue can use slot text for \`aria-label\` 1`] = `
 
 exports[`SButton.vue renders correctly 1`] = `
 <button class="button">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-gold-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-gold-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "outlined" style can be the shade "darker" 1`] = `
+<button class="button button--color-gold-darker-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-gold-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-gold-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "text" style can be the base shade 1`] = `
+<button class="button button--color-gold-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-gold-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "text" style can be the shade "darker" 1`] = `
+<button class="button button--color-gold-darker-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-gold-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-gold-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and base style can be the base shade 1`] = `
+<button class="button button--color-gold">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and base style can have shade "dark" 1`] = `
+<button class="button button--color-gold-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and base style can have shade "darker" 1`] = `
+<button class="button button--color-gold-darker">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and base style can have shade "light" 1`] = `
+<button class="button button--color-gold-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color gold and base style can have shade "lighter" 1`] = `
+<button class="button button--color-gold-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-green-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-green-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "outlined" style can be the shade "darker" 1`] = `
+<button class="button button--color-green-darker-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-green-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-green-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "text" style can be the base shade 1`] = `
+<button class="button button--color-green-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-green-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "text" style can be the shade "darker" 1`] = `
+<button class="button button--color-green-darker-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-green-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-green-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and base style can be the base shade 1`] = `
+<button class="button button--color-green">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and base style can have shade "dark" 1`] = `
+<button class="button button--color-green-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and base style can have shade "darker" 1`] = `
+<button class="button button--color-green-darker">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and base style can have shade "light" 1`] = `
+<button class="button button--color-green-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color green and base style can have shade "lighter" 1`] = `
+<button class="button button--color-green-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-grey-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-grey-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "outlined" style can be the shade "darker" 1`] = `
+<button class="button button--color-grey-darker-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-grey-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-grey-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "text" style can be the base shade 1`] = `
+<button class="button button--color-grey-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-grey-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "text" style can be the shade "darker" 1`] = `
+<button class="button button--color-grey-darker-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-grey-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-grey-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and base style can be the base shade 1`] = `
+<button class="button button--color-grey">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and base style can have shade "dark" 1`] = `
+<button class="button button--color-grey-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and base style can have shade "darker" 1`] = `
+<button class="button button--color-grey-darker">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and base style can have shade "light" 1`] = `
+<button class="button button--color-grey-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color grey and base style can have shade "lighter" 1`] = `
+<button class="button button--color-grey-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color ice and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-ice-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color ice and "text" style can be the base shade 1`] = `
+<button class="button button--color-ice-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color ice and base style can be the base shade 1`] = `
+<button class="button button--color-ice">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-magenta-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-magenta-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "outlined" style can be the shade "darker" 1`] = `
+<button class="button button--color-magenta-darker-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-magenta-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-magenta-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "text" style can be the base shade 1`] = `
+<button class="button button--color-magenta-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-magenta-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "text" style can be the shade "darker" 1`] = `
+<button class="button button--color-magenta-darker-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-magenta-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-magenta-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and base style can be the base shade 1`] = `
+<button class="button button--color-magenta">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and base style can have shade "dark" 1`] = `
+<button class="button button--color-magenta-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and base style can have shade "darker" 1`] = `
+<button class="button button--color-magenta-darker">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and base style can have shade "light" 1`] = `
+<button class="button button--color-magenta-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color magenta and base style can have shade "lighter" 1`] = `
+<button class="button button--color-magenta-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-night-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-night-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-night-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-night-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "outlined" style can be the shade "lightest" 1`] = `
+<button class="button button--color-night-lightest-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "text" style can be the base shade 1`] = `
+<button class="button button--color-night-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-night-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-night-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-night-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and "text" style can be the shade "lightest" 1`] = `
+<button class="button button--color-night-lightest-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and base style can be the base shade 1`] = `
+<button class="button button--color-night">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and base style can have shade "dark" 1`] = `
+<button class="button button--color-night-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and base style can have shade "light" 1`] = `
+<button class="button button--color-night-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and base style can have shade "lighter" 1`] = `
+<button class="button button--color-night-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color night and base style can have shade "lightest" 1`] = `
+<button class="button button--color-night-lightest">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-red-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-red-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "outlined" style can be the shade "darker" 1`] = `
+<button class="button button--color-red-darker-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-red-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-red-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "text" style can be the base shade 1`] = `
+<button class="button button--color-red-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-red-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "text" style can be the shade "darker" 1`] = `
+<button class="button button--color-red-darker-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-red-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-red-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and base style can be the base shade 1`] = `
+<button class="button button--color-red">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and base style can have shade "dark" 1`] = `
+<button class="button button--color-red-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and base style can have shade "darker" 1`] = `
+<button class="button button--color-red-darker">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and base style can have shade "light" 1`] = `
+<button class="button button--color-red-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color red and base style can have shade "lighter" 1`] = `
+<button class="button button--color-red-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-spartan_blue-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-spartan_blue-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-spartan_blue-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-spartan_blue-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "outlined" style can be the shade "lightest" 1`] = `
+<button class="button button--color-spartan_blue-lightest-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "text" style can be the base shade 1`] = `
+<button class="button button--color-spartan_blue-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-spartan_blue-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-spartan_blue-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-spartan_blue-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and "text" style can be the shade "lightest" 1`] = `
+<button class="button button--color-spartan_blue-lightest-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and base style can be the base shade 1`] = `
+<button class="button button--color-spartan_blue">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and base style can have shade "dark" 1`] = `
+<button class="button button--color-spartan_blue-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and base style can have shade "light" 1`] = `
+<button class="button button--color-spartan_blue-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and base style can have shade "lighter" 1`] = `
+<button class="button button--color-spartan_blue-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color spartan_blue and base style can have shade "lightest" 1`] = `
+<button class="button button--color-spartan_blue-lightest">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-turquoise-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "outlined" style can be the shade "dark" 1`] = `
+<button class="button button--color-turquoise-dark-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "outlined" style can be the shade "darker" 1`] = `
+<button class="button button--color-turquoise-darker-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "outlined" style can be the shade "light" 1`] = `
+<button class="button button--color-turquoise-light-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "outlined" style can be the shade "lighter" 1`] = `
+<button class="button button--color-turquoise-lighter-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "text" style can be the base shade 1`] = `
+<button class="button button--color-turquoise-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "text" style can be the shade "dark" 1`] = `
+<button class="button button--color-turquoise-dark-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "text" style can be the shade "darker" 1`] = `
+<button class="button button--color-turquoise-darker-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "text" style can be the shade "light" 1`] = `
+<button class="button button--color-turquoise-light-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and "text" style can be the shade "lighter" 1`] = `
+<button class="button button--color-turquoise-lighter-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and base style can be the base shade 1`] = `
+<button class="button button--color-turquoise">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and base style can have shade "dark" 1`] = `
+<button class="button button--color-turquoise-dark">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and base style can have shade "darker" 1`] = `
+<button class="button button--color-turquoise-darker">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and base style can have shade "light" 1`] = `
+<button class="button button--color-turquoise-light">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color turquoise and base style can have shade "lighter" 1`] = `
+<button class="button button--color-turquoise-lighter">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color white and "outlined" style can be the base shade 1`] = `
+<button class="button button--color-white-outlined">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color white and "text" style can be the base shade 1`] = `
+<button class="button button--color-white-text">
+  <!---->
+  <!----> Button Text
+  <!----></button>
+`;
+
+exports[`SButton.vue with color white and base style can be the base shade 1`] = `
+<button class="button button--color-white">
   <!---->
   <!----> Button Text
   <!----></button>

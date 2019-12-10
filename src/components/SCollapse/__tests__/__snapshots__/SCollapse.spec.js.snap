@@ -3,31 +3,35 @@
 exports[`SCollapse.vue accepts props for text 1`] = `
 <article class="collapse">
   <header>
-    <sbutton-stub color="" size="" iconleft="" iconright="" class="collapse__trigger">
-      trigger text
-      <sicon-stub icon="chevron-down" color="" size="" class="collapse__icon"></sicon-stub>
+    <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="" class="collapse__trigger">
+      Collapse trigger text
+      <sicon-stub icon="chevron-down" color="" shade="" size="" class="collapse__icon"></sicon-stub>
     </sbutton-stub>
   </header>
-  <main aria-hidden="true" class="collapse__content" style="display: none;">
-    content
-  </main>
+  <transition-stub name="fade">
+    <main aria-hidden="true" class="collapse__content" style="display: none;">
+      Collapse content
+    </main>
+  </transition-stub>
 </article>
 `;
 
 exports[`SCollapse.vue accepts slots for text 1`] = `
 <article class="collapse">
   <header>
-    <sbutton-stub color="" size="" iconleft="" iconright="" class="collapse__trigger">
+    <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="" class="collapse__trigger">
       Collapse trigger text
-      <sicon-stub icon="chevron-down" color="" size="" class="collapse__icon"></sicon-stub>
+      <sicon-stub icon="chevron-down" color="" shade="" size="" class="collapse__icon"></sicon-stub>
     </sbutton-stub>
   </header>
-  <main aria-hidden="true" class="collapse__content" style="display: none;">content</main>
+  <transition-stub name="fade">
+    <main aria-hidden="true" class="collapse__content" style="display: none;">content</main>
+  </transition-stub>
 </article>
 `;
 
 exports[`SCollapse.vue opens and closes 1`] = `
-<article class="collapse collapse--active">
+<article class="collapse">
   <header><button class="button collapse__trigger">
       <!---->
       <!---->
@@ -36,7 +40,7 @@ exports[`SCollapse.vue opens and closes 1`] = `
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
       <!----></button></header>
-  <main class="collapse__content fade-enter fade-enter-active" style="">
+  <main aria-hidden="true" class="collapse__content" style="display: none;">
     Collapse content
   </main>
 </article>
@@ -52,7 +56,7 @@ exports[`SCollapse.vue opens and closes 2`] = `
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
       <!----></button></header>
-  <main class="collapse__content fade-leave fade-leave-active" style="" aria-hidden="true">
+  <main aria-hidden="true" class="collapse__content" style="display: none;">
     Collapse content
   </main>
 </article>
@@ -61,13 +65,15 @@ exports[`SCollapse.vue opens and closes 2`] = `
 exports[`SCollapse.vue renders correctly 1`] = `
 <article class="collapse">
   <header>
-    <sbutton-stub color="" size="" iconleft="" iconright="" class="collapse__trigger">
+    <sbutton-stub color="" shade="" size="" type="" iconleft="" iconright="" class="collapse__trigger">
       Collapse trigger text
-      <sicon-stub icon="chevron-down" color="" size="" class="collapse__icon"></sicon-stub>
+      <sicon-stub icon="chevron-down" color="" shade="" size="" class="collapse__icon"></sicon-stub>
     </sbutton-stub>
   </header>
-  <main aria-hidden="true" class="collapse__content" style="display: none;">
-    Collapse content
-  </main>
+  <transition-stub name="fade">
+    <main aria-hidden="true" class="collapse__content" style="display: none;">
+      Collapse content
+    </main>
+  </transition-stub>
 </article>
 `;

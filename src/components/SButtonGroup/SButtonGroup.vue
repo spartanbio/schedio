@@ -8,26 +8,34 @@
 </template>
 
 <script>
-import { colors } from '@/components/SButton/options.js'
+import { colorNames } from '@/components/SButton/options.js'
+import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 
 export default {
   name: 'SButtonGroup',
 
+  mixins: [
+    DeprecatePropsMixin(['color', 'isOutlined', 'isText'], 'Appropriate props on `SButton`'),
+  ],
+
   props: {
+    /** @deprecated */
     color: {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || colors.includes(value)) return true
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
+        if (!value || colorNames.includes(value)) return true
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`)
       },
     },
 
+    /** @deprecated */
     isOutlined: {
       type: Boolean,
       default: false,
     },
 
+    /** @deprecated */
     isText: {
       type: Boolean,
       default: false,
@@ -55,6 +63,7 @@ export default {
         },
       ]
     },
+    /** @deprecated */
     groupStyle () {
       let style = ''
 

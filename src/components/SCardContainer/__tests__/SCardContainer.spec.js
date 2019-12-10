@@ -24,8 +24,9 @@ describe('SCardContainer.vue', () => {
     expect(wrapper.vm.$slots.default).toBeTruthy()
   })
 
-  it('can be any html element', () => {
+  it('can be any html element', async () => {
     wrapper.setProps({ tag: 'section' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

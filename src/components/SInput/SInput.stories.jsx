@@ -1,5 +1,5 @@
 import { SHeading } from '@/components/SHeading'
-import { colors as iconColors } from '@/components/SIcon/options'
+import { colorNames as iconColors, allShadeOptions } from '@/components/SIcon/options'
 import { SInput } from '@/components/SInput'
 import { allowed } from '@/components/SInput/options'
 import PropList from '@@/docs/components/PropList'
@@ -10,8 +10,12 @@ import { SFormField } from '@/components/SFormField'
 
 const iconList = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
-const iconColor = side =>
-  select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
+const iconColor = (side) => {
+  return select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
+}
+const iconShade = (side) => {
+  return select(`icon-${side}-shade`, ['', ...allShadeOptions], '', 'Optional Props')
+}
 
 export default {
   title: 'Components/Inputs.SInput',
@@ -32,8 +36,10 @@ export const input = () => ({
         isFullwidth: boolean('is-fullwidth', false, 'Optional Props'),
         iconLeft: iconProp('left'),
         iconLeftColor: iconColor('left'),
+        iconLeftShade: iconShade('left'),
         iconRight: iconProp('right'),
         iconRightColor: iconColor('right'),
+        iconRightShade: iconShade('right'),
       }),
     },
 

@@ -20,7 +20,7 @@ export const heading = () => {
     'Pick one',
     ['Default', 'has-no-case', 'is-subtle'],
     'Default',
-    'Optional Props'
+    'Optional Props',
   )
 
   return {
@@ -75,7 +75,7 @@ export const usageHeadings = () => {
     'Pick one',
     ['Default', 'has-no-case', 'is-subtle'],
     'Default',
-    'Optional Props'
+    'Optional Props',
   )
 
   return {
@@ -138,7 +138,7 @@ export const usageDisplay = () => {
     'Pick one',
     ['Default', 'has-no-case', 'is-subtle'],
     'Default',
-    'Optional Props'
+    'Optional Props',
   )
 
   return {

@@ -22,7 +22,7 @@ export default {
       isVisible: false,
       // ensures we can have multiple, independent notification locations
       container: document.querySelector(
-        `${this.containerParent || '#main'}-notifications.notification__container`
+        `${this.containerParent || '#main'}-notifications.notification__container`,
       ),
     }
   },

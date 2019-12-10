@@ -18,8 +18,9 @@ describe('SContainerRow.vue', () => {
     return list
   }, staticProps)
 
-  const rowPropTest = (propName, value) => {
+  const rowPropTest = async (propName, value) => {
     wrapper.setProps({ [propName]: value })
+    await wrapper.vm.$nextTick()
     expect(wrapper.props(propName)).toBeTruthy()
     expect(wrapper.html()).toMatchSnapshot()
   }
@@ -38,7 +39,6 @@ describe('SContainerRow.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  // eslint-disable-next-line jest/expect-expect
   it('can be reversed', () => {
     rowPropTest('isReversed', true)
   })
@@ -49,8 +49,8 @@ describe('SContainerRow.vue', () => {
 
   propList.forEach((propName) => {
     const flexOptions = Object.values(rowOptions).filter(opt => !!opt)
+
     flexOptions.forEach((option) => {
-      // eslint-disable-next-line jest/expect-expect
       it(`can be ${propName} ${option}`, () => rowPropTest(propName, option))
     })
   })

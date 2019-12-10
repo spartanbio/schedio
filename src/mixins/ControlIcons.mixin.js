@@ -16,6 +16,11 @@ export default {
       default: 'green',
     },
 
+    iconLeftShade: {
+      type: String,
+      default: null,
+    },
+
     iconRight: {
       type: String,
       default: '',
@@ -24,6 +29,11 @@ export default {
     iconRightColor: {
       type: String,
       default: 'green',
+    },
+
+    iconRightShade: {
+      type: String,
+      default: null,
     },
   },
 }

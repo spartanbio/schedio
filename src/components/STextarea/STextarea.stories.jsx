@@ -1,5 +1,5 @@
 import { SHeading } from '@/components/SHeading'
-import { colors as iconColors } from '@/components/SIcon/options'
+import { colorNames as iconColors, allShadeOptions } from '@/components/SIcon/options'
 import { STextarea } from '@/components/STextarea'
 import PropList from '@@/docs/components/PropList'
 import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
@@ -8,9 +8,12 @@ import icons from 'feather-icons/dist/icons.json'
 
 const iconList = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
-const iconColor = side =>
+const iconColor = (side) => {
   select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
-
+}
+const iconShade = (side) => {
+  select(`icon-${side}-color`, ['', ...allShadeOptions], 'green', 'Optional Props')
+}
 export default {
   title: 'Components/Inputs.STextarea',
 
@@ -32,8 +35,10 @@ export const textarea = () => ({
         isInline: boolean('is-inline', false, 'Optional Props'),
         iconLeft: iconProp('left'),
         iconLeftColor: iconColor('left'),
+        iconLeftShade: iconShade('left'),
         iconRight: iconProp('right'),
         iconRightColor: iconColor('right'),
+        iconRightShade: iconShade('right'),
       }),
     },
 

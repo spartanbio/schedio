@@ -51,6 +51,7 @@ describe('SLink.vue', () => {
 
   it('respects `isExternal` prop', async () => {
     wrapper.setProps({ to: '/internal', isExternal: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.isExternalLink).toBe(true)
     expect(wrapper.vm.componentIs).toBe('a')
     expect(wrapper.html()).toMatchSnapshot()
@@ -71,18 +72,21 @@ describe('SLink.vue', () => {
 
   it('can be plain', async () => {
     wrapper.setProps({ isPlain: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can be light', async () => {
-    wrapper.setProps({ islight: true })
+    wrapper.setProps({ isLight: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
   it('can have an icon', async () => {
     wrapper.setProps({ icon: iconNames[0] })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
@@ -95,8 +99,9 @@ describe('SLink.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('detects internal links and uses a link component', () => {
+  it('detects internal links and uses a link component', async () => {
     wrapper.setProps({ to: '/about' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.isExternalLink).toBe(false)
     expect(wrapper.vm.componentIs).toBe('router-link')
     expect(wrapper.html()).toMatchSnapshot()

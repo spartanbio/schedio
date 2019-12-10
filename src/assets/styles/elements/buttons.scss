@@ -38,10 +38,10 @@
   }
 }
 
-@mixin button-color($button-color) {
+@mixin button-color($button-color, $button-shade: 'base') {
   $white-or-ice: ($button-color == 'white') or ($button-color == 'ice');
-  $base-color: color($button-color);
-  $text-color: choose-contrast-color($button-color);
+  $base-color: color($button-color, $button-shade);
+  $text-color: choose-contrast-color($button-color, $button-shade);
 
   @include button-shadow;
   @include button-disabled;
@@ -84,15 +84,15 @@
   }
 }
 
-@mixin button-text($button-color) {
+@mixin button-text($button-color, $button-shade: 'base') {
   $white-or-ice: ($button-color == 'white') or ($button-color == 'ice');
 
   @include button-disabled;
 
-  color: color($button-color);
+  color: color($button-color, $button-shade);
 
   .spinner {
-    stroke: color($button-color);
+    stroke: color($button-color, $button-shade);
   }
 
   &:hover {
@@ -117,13 +117,13 @@
   }
 }
 
-@mixin button-outline($button-color) {
-  @include button-text($button-color);
+@mixin button-outline($button-color, $button-shade: 'base') {
+  @include button-text($button-color, $button-shade);
   @include button-disabled;
 
   border: border();
-  border-color: color($button-color);
-  color: color($button-color);
+  border-color: color($button-color, $button-shade);
+  color: color($button-color, $button-shade);
 }
 
 @mixin button-size-small {

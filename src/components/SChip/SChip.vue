@@ -19,7 +19,7 @@
       icon-left="x"
       icon-only
       :aria-label="closeAriaLabel"
-      @click="$emit('close', false)"
+      @click="() => $emit('close', false)"
     />
   </Component>
 </template>

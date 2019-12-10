@@ -21,14 +21,16 @@ describe('SContainer.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be fullwidth', () => {
+  it('can be fullwidth', async () => {
     wrapper.setProps({ isFullwidth: true })
+    await wrapper.vm.$nextTick()
     expect(wrapper.vm.isFullwidth).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('can be any html element', () => {
+  it('can be any html element', async () => {
     wrapper.setProps({ tag: 'section' })
+    await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.contains('section')).toBe(true)
   })

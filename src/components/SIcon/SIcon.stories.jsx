@@ -1,11 +1,12 @@
-import { colors, sizes } from '@/components/SIcon/options'
 import { SHeading } from '@/components/SHeading'
 import { SIcon } from '@/components/SIcon'
+import StoryLink from '@@/docs/components/StoryLink.vue'
+import { colors, sizes, allShadeOptions } from '@/components/SIcon/options'
 import PropList from '@@/docs/components/PropList'
 import { select } from '@storybook/addon-knobs'
 import icons from 'feather-icons/dist/icons.json'
 
-const colorOptions = ['', ...colors]
+const colorOptions = ['', ...Object.keys(colors)]
 const sizeOptions = ['', ...sizes]
 const iconList = Object.keys(icons)
 
@@ -23,6 +24,7 @@ export const icon = () => ({
       default: () => ({
         icon: select('icon', iconList, iconList[0], 'Required Props'),
         color: select('color', colorOptions, '', 'Optional Props'),
+        shade: select('shade', ['', ...allShadeOptions], '', 'Optional Props'),
         size: select('size', sizeOptions, '', 'Optional Props'),
       }),
     },
@@ -39,6 +41,9 @@ export const icon = () => ({
           </a>{' '}
           to provide icons.
         </p>
+        <p>
+          All shades listed in <StoryLink to="* Design/Color" /> can be used with colored icons.
+        </p>
 
         <SHeading level="2">Example</SHeading>
         <div style="align-items: center; display: flex; padding: 0.5em 0;">
@@ -49,7 +54,15 @@ export const icon = () => ({
             </div>
             {props.color && (
               <div>
-                Icon color: <code>{props.color}</code>
+
+                <div>
+                  Icon color: <code>{props.color}</code>
+                </div>
+                <div>
+                  Available shades: {colors[props.color].map((c, i, r) => (
+                    <span><code>{c}</code>{i === r.length - 1 ? '' : ', '}</span>
+                  ))}
+                </div>
               </div>
             )}
             {props.size && (

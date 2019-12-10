@@ -22,8 +22,9 @@ describe('SContainerColumn.vue', () => {
     return list
   }, staticProps)
 
-  const columnPropTest = (propName, value) => {
+  const columnPropTest = async (propName, value) => {
     wrapper.setProps({ [propName]: value })
+    await wrapper.vm.$nextTick()
     expect(wrapper.props(propName)).toBeTruthy()
     expect(wrapper.html()).toMatchSnapshot()
   }
@@ -52,7 +53,6 @@ describe('SContainerColumn.vue', () => {
   })
 
   propList.forEach((propName) => {
-    /* eslint-disable jest/expect-expect */
     if (propName.match(/offset|order|size/)) {
       // props accepting column number
       for (let i = 1; i <= 12; i++) it(`can be ${propName} ${i}`, () => columnPropTest(propName, i))
@@ -66,5 +66,4 @@ describe('SContainerColumn.vue', () => {
       it(`can be ${propName}`, () => columnPropTest(propName, true))
     }
   })
-  /* eslint-enable jest/expect-expect */
 })

@@ -38,8 +38,8 @@
 /// @param {String} $background-hue ['base'] - the desired hue (default: 'base')
 /// @return {Color} - the most suitable color for the background.
 
-@function choose-contrast-color($background-color, $background-hue: 'base') {
-  $base-color: color($background-color, $background-hue);
+@function choose-contrast-color($background-color, $background-value: 'base') {
+  $base-color: color($background-color, $background-value);
   $light-color: color('white');
   $dark-color: color('night');
 
@@ -53,7 +53,7 @@
   } @else {
     // stylelint-disable string-no-newline
     $warning: "\
-  color('#{$color-name}', '#{$hue}') has no good contrast. \
+  color('#{$background-color}', '#{$background-value}') has no good contrast. \
   Light contrast: #{$light-contrast} \
   Dark contrast: #{$dark-contrast}\
   ";

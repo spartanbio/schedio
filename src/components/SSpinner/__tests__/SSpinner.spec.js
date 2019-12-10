@@ -4,7 +4,7 @@ import SSpinner from '@/components/SSpinner/SSpinner.vue'
 
 describe('SSpinner.vue', () => {
   let wrapper
-  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
+  const errorSpy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
 
   beforeEach(() => {
     wrapper = shallowMount(SSpinner, {
@@ -23,8 +23,9 @@ describe('SSpinner.vue', () => {
   })
 
   options.colors.forEach((color) => {
-    it(`can be ${color}`, () => {
+    it(`can be ${color}`, async () => {
       wrapper.setProps({ color })
+      await wrapper.vm.$nextTick()
       expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.props('color')).toBe(color)
       expect(wrapper.html()).toMatchSnapshot()
@@ -41,8 +42,9 @@ describe('SSpinner.vue', () => {
   })
 
   options.sizes.forEach((size) => {
-    it(`can be ${size}`, () => {
+    it(`can be ${size}`, async () => {
       wrapper.setProps({ size })
+      await wrapper.vm.$nextTick()
       expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.props('size')).toBe(size)
       expect(wrapper.html()).toMatchSnapshot()

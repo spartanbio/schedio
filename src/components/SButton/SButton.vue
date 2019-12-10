@@ -29,20 +29,31 @@
 </template>
 
 <script>
-import { colors, sizes } from './options.js'
+import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
+import { colors, colorNames, sizes, types, allShadeOptions } from './options.js'
 
 export default {
   name: 'SButton',
+
+  mixins: [
+    DeprecatePropsMixin(['isOutlined', 'isText'], 'type'),
+  ],
 
   props: {
     color: {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || colors.includes(value)) return true
+        if (!value || colorNames.includes(value)) return true
 
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${[...colors]}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`)
       },
+    },
+
+    shade: {
+      type: String,
+      default: '',
+      validator: value => !value || allShadeOptions.includes(value),
     },
 
     size: {
@@ -55,11 +66,23 @@ export default {
       },
     },
 
+    type: {
+      type: String,
+      default: '',
+      validator (value) {
+        if (!value || types.includes(value)) return true
+
+        return console.error(`\`type\` ${value} not found. Allowed types: ${types}`)
+      },
+    },
+
+    /** @deprecated replaced by `type` */
     isOutlined: {
       type: Boolean,
       default: false,
     },
 
+    /** @deprecated replaced by `type` */
     isText: {
       type: Boolean,
       default: false,
@@ -99,13 +122,29 @@ export default {
     buttonStyle () {
       let buttonStyle = ''
 
-      if (this.color) buttonStyle += `button--color-${this.color}`
+      if (this.color) {
+        buttonStyle = `button--color-${this.color}`
 
-      if (this.color && this.isOutlined) buttonStyle += '-outlined'
+        if (this.shade) buttonStyle += `-${this.shade}`
+      }
 
-      if (this.color && this.isText) buttonStyle += '-text'
+      /**
+       * TODO:
+       * - remove deprecated props
+       */
+      if (!this.type) {
+        if (this.color && this.isOutlined) buttonStyle += '-outlined'
+
+        if (this.color && this.isText) buttonStyle += '-text'
+      }
+
+      if (this.color && this.type) buttonStyle += `-${this.type}`
 
       return buttonStyle
+    },
+
+    hasValidShade () {
+      return colors[this.color].includes(this.shade)
     },
 
     ariaLabel () {
@@ -125,6 +164,12 @@ export default {
         console.warn('Button requires content or `aria-label`')
       }
     },
+  },
+
+  mounted () {
+    if (this.shade && !this.hasValidShade) {
+      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+    }
   },
 }
 </script>
@@ -197,6 +242,8 @@ export default {
 
   @each $color-name in $button-colors {
     &--color-#{$color-name} {
+      $values: map-keys(map-get($color-palette-data, $color-name));
+
       @include button-color($color-name);
 
       &-outlined {
@@ -205,6 +252,22 @@ export default {
 
       &-text {
         @include button-text($color-name);
+      }
+
+      @each $value in $values {
+        &-#{$value} {
+          @if $value != 'base' {
+            @include button-color($color-name, $value);
+
+            &-outlined {
+              @include button-outline($color-name, $value);
+            }
+
+            &-text {
+              @include button-text($color-name, $value);
+            }
+          }
+        }
       }
     }
   }
