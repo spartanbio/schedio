@@ -28,6 +28,7 @@
         v-if="iconLeft"
         :icon="iconLeft"
         :color="iconLeftColor"
+        :shade="iconLeftShade"
         class="input__icon input__icon--left"
       />
 
@@ -35,6 +36,7 @@
         v-if="iconRight"
         :icon="iconRight"
         :color="iconRightColor"
+        :shade="iconRightShade"
         class="input__icon input__icon--right"
       />
     </div>
