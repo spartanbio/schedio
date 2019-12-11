@@ -1,8 +1,0 @@
-imports:
-  - ./colors.yml
-  - ./font.yml
-  - ./font-size.yml
-  - ./spacing.yml
-global:
-  type: global
-  category: all

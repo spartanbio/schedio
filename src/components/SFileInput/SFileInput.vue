@@ -317,7 +317,7 @@ export default {
   &__inner {
     align-items: center;
     display: flex;
-    font-weight: $font-weight-regular;
+    font-weight: font-weight('regular');
     text-transform: none;
   }
 

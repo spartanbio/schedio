@@ -197,7 +197,7 @@ export default {
   }
 
   &__title {
-    font-weight: $font-weight-bold;
+    font-weight: font-weight('bold');
     text-transform: uppercase;
   }
 

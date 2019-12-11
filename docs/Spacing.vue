@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
 import orderBy from 'lodash.orderby'
 export default {
   name: 'Spacing',
@@ -72,6 +72,6 @@ export default {
 
 <style lang="scss" scoped>
 .spacing-example__spacer {
-  background-color: $spartan-blue;
+  background-color: color('spartan_blue');
 }
 </style>

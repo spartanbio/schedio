@@ -8,10 +8,10 @@
         The base Spartan font parameters are:
         <ul class="no-bullets">
           <li>Font: <code>Avenir Next</code></li>
-          <li>Size: <code>{{ tokens['base-font-size'] }}</code></li>
+          <li>Size: <code>{{ tokens['font-size-base'] }}</code></li>
           <li>Weight: <code>{{ tokens['font-weight-regular'] }}</code> (Regular)</li>
           <li>Color: <code>{{ tokens['night'] }}</code> (night)</li>
-          <li>Leading: <code>{{ tokens['base-line-height'] }}</code></li>
+          <li>Leading: <code>{{ tokens['line-height-base'] }}</code></li>
         </ul>
       </p>
 
@@ -35,14 +35,14 @@
       </p>
       <p class="caption">
         Size: {{ tokens['font-size-6'] }} | Weight: {{ tokens['font-weight-regular'] }} | Color:
-        <code>{{ tokens['grey'] }}</code>
+        <code>{{ tokens['color-grey'] }}</code>
       </p>
     </article>
   </div>
 </template>
 
 <script>
-import tokens from '@/assets/styles/tokens/dist/tokens.json'
+import tokens from '@spartanbio/schedio-tokens/dist/tokens.json'
 import { SCallout } from '@/components/SCallout'
 
 export default {

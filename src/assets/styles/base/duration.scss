@@ -1,3 +1,5 @@
+@import '~@spartanbio/schedio-tokens/dist/duration.map';
+
 /// Returns the duration value for a given variant.
 ///
 /// @param {String} $variant - The key for the given variant.
@@ -12,13 +14,3 @@
     @error 'Duration variant `#{$variant}` not found. Available variants: #{available-names($duration-data)}';
   }
 }
-
-$initial-transition-speed: 100ms;
-
-$duration-data: (
-  fast: $initial-transition-speed,
-  base: $initial-transition-speed * 2,
-  slow: $initial-transition-speed * 3,
-  slower: $initial-transition-speed * 4,
-  slowest: $initial-transition-speed * 5
-);

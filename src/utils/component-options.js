@@ -1,4 +1,4 @@
-import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
 
 /** Enforce shade order */
 const shadeOrder = (a, b) => {
@@ -18,7 +18,7 @@ const shadeOrder = (a, b) => {
 export const colors = Object.values(props).reduce((colorList, { category, name }) => {
   if (category === 'background-color') {
     // hue-value
-    const [hue, value] = name.split('-')
+    const [, hue, value] = name.split('-')
     const shades = colorList[hue] || []
 
     if (value) shades.push(value)

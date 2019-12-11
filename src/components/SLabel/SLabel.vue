@@ -77,7 +77,7 @@ export default {
   @include font-size(5);
 
   display: block;
-  font-weight: $font-weight-demi;
+  font-weight: font-weight('demi');
 
   &--fullwidth {
     width: 100%;
@@ -117,7 +117,7 @@ export default {
     @include font-size(6);
 
     color: color('night', 'light');
-    font-weight: $font-weight-regular;
+    font-weight: font-weight('regular');
     text-transform: none;
   }
 }

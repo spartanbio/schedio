@@ -239,14 +239,14 @@ export default {
 .table {
   &__header {
     border-bottom: border();
-    font-weight: $font-weight-bold;
+    font-weight: font-weight('bold');
     table-layout: auto;
     text-transform: uppercase;
   }
 
   &__footer {
     border-top: border();
-    font-weight: $font-weight-bold;
+    font-weight: font-weight('bold');
   }
 
   &__caption {
@@ -254,7 +254,7 @@ export default {
 
     caption-side: bottom;
     color: color('night', 'light');
-    font-weight: $font-weight-regular;
+    font-weight: font-weight('regular');
     text-align: left;
 
     &--top {
