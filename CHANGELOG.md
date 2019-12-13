@@ -1,3 +1,15 @@
+# [3.13.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.12.0...v3.13.0) (2019-12-13)
+
+
+### Bug Fixes
+
+* **deps:** updates tokens ([c5a36ed](https://gitlab.com/spartanbio-ux/schedio/commit/c5a36ed227e40da4f20792830bd502180c3ee0a8))
+
+
+### Features
+
+* migrates tokens to `@spartanbio/schedio-tokens` ([f4e1268](https://gitlab.com/spartanbio-ux/schedio/commit/f4e1268ac1a3cb90704a5d89b0a0253a789929cd))
+
 # [3.12.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.11.1...v3.12.0) (2019-12-13)
 
 
