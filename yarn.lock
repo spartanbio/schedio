@@ -1896,9 +1896,9 @@
   integrity sha512-NCz3vuTqxl6jByPXGnxXMcddQY9c6ZUAMY9o1yFdcDbWr+HPmp1zY7fFTsvM6p8Dw/EeaT7MMu+RbvxxllxW2g==
 
 "@spartanbio/schedio-tokens@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@spartanbio/schedio-tokens/-/schedio-tokens-1.1.0.tgz#525c68bb6d03d3c920906e4fa1f7a60bf5161a4d"
-  integrity sha512-RoRI/5zb/iae4h7fwJn0EqeR7JzU4fA7B1k5XVZhVjHJZzi8LV12WOU3V3mBO+LeL47UddP4vp1n+qIIkHriDA==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@spartanbio/schedio-tokens/-/schedio-tokens-1.1.1.tgz#c86d43753f767ad944a89d3b3454f7519bced6a8"
+  integrity sha512-zkmJGnujX/afUcKwzBhci/zSMilLrrumrIONXVf0fxn/vcGJGri9QacYO3Lv8z6KXWnkXw87HmPjyScGbxLx1w==
 
 "@spartanbio/stylelint-config-scss@^1.0.7":
   version "1.0.7"
