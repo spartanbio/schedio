@@ -1,3 +1,10 @@
+# [3.12.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.11.1...v3.12.0) (2019-12-13)
+
+
+### Features
+
+* migrates tokens to `@spartanbio/schedio-tokens` ([b946aee](https://gitlab.com/spartanbio-ux/schedio/commit/b946aeeda9a30e69b5bc639c4f74091a73ad2471))
+
 ## [3.11.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.11.0...v3.11.1) (2019-12-10)
 
 
