@@ -25,7 +25,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Case: uppercase
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em | Case: uppercase
       </p>
     </article>
 
@@ -38,7 +38,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em
       </p>
     </article>
 
@@ -51,7 +51,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em | Case: uppercase
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em | Case: uppercase
       </p>
     </article>
 
@@ -65,7 +65,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.25em | Tracking: 0.025em
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em
       </p>
     </article>
 
@@ -73,7 +73,7 @@
       <SHeading>Heading 1</SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-3'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        1.5em | Case: uppercase
+        {{ tokens['line-height-base'] }} | Case: uppercase
       </p>
     </article>
 
@@ -110,7 +110,7 @@
 
 <script>
 import StoryLink from '@@/docs/components/StoryLink'
-import tokens from '@/assets/styles/tokens/dist/tokens.json'
+import tokens from '@spartanbio/schedio-tokens/dist/tokens.json'
 
 export default {
   name: 'TypographyHeadings',
@@ -126,5 +126,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "typography.stories";
+@import 'typography.stories';
 </style>

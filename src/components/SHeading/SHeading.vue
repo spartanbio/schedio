@@ -88,7 +88,7 @@ export default {
 
 <style lang="scss">
 .heading {
-  font-weight: $font-weight-bold;
+  font-weight: font-weight('bold');
   margin-bottom: 1rem;
   margin-top: 2rem;
   text-transform: uppercase;
@@ -126,7 +126,7 @@ export default {
   }
 
   &--subtle {
-    font-weight: $font-weight-light;
+    font-weight: font-weight('light');
     text-transform: none;
   }
 

@@ -1,4 +1,5 @@
-import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
+import { colorNames as colors } from '@/utils/component-options'
 import { SHeading } from '@/components/SHeading'
 
 export default {
@@ -39,11 +40,6 @@ alignment.story = {
 
 export const color = () => ({
   render (h) {
-    const colors = Object.values(props)
-      .filter(prop => prop.type === 'color')
-      .map(color => color.name)
-      .sort()
-
     return (
       <div>
         <SHeading>Color</SHeading>

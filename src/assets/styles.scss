@@ -1,8 +1,4 @@
 // import from lowest level to highest
-
-@import 'styles/tokens.scss';
 @import 'styles/base.scss';
 @import 'styles/global.scss';
 @import 'styles/elements.scss';
-
-// automatically generated when a component is added
