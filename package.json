@@ -1,6 +1,6 @@
 {
   "name": "@spartanbio/schedio",
-  "version": "3.13.0",
+  "version": "3.12.0",
   "scripts": {
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "build": "vue-cli-service build --target lib --name schedio ./src/index.js && rm dist/demo.html",
@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.7.6",
+    "@spartanbio/schedio-tokens": "^1.0.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "feather-icons": "^4.22.0",
     "lodash.startcase": "^4.4.0",
@@ -44,7 +45,6 @@
     "@semantic-release/release-notes-generator": "^7.3.5",
     "@spartanbio/eslint-config": "^1.0.14",
     "@spartanbio/eslint-config-vue": "^1.0.7",
-    "@spartanbio/schedio-tokens": "^1.0.0",
     "@spartanbio/stylelint-config-scss": "^1.0.7",
     "@storybook/addon-a11y": "^5.2.8",
     "@storybook/addon-docs": "^5.2.8",
