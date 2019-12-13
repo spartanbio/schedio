@@ -1,20 +1,9 @@
-$spacing-data: (
-  'none': $spacing-none,
-  'quarter': $spacing-quarter,
-  'half': $spacing-half,
-  'tight': $spacing-tight,
-  'base': $spacing-base,
-  'loose': $spacing-loose,
-  'double': $spacing-double,
-  'triple': $spacing-triple,
-  '4x': $spacing-4x,
-);
+@import '~@spartanbio/schedio-tokens/dist/spacing.map';
 
 /// Returns the spacing value for a given variant.
 ///
 /// @param {String} $variant - The key for the given variant.
 /// @return {Number} The spacing for the variant.
-
 @function spacing($variant: base) {
   $fetched-value: map-get($spacing-data, $variant);
 

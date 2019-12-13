@@ -27,7 +27,7 @@
 import ColorList from '../components/ColorList'
 import groupBy from 'lodash.groupby'
 import orderBy from 'lodash.orderby'
-import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import { props as colors } from '@spartanbio/schedio-tokens/dist/colors.raw.json'
 
 export default {
   name: 'Color',
@@ -38,14 +38,16 @@ export default {
 
   data () {
     return {
-      colors: Object.values(props).filter(p => p.category === 'background-color'),
+      colors: Object.values(colors),
     }
   },
 
   computed: {
     palettes () {
       return this.colors.map((color) => {
-        color.palette = color.name.split('-').shift()
+        const [, palette] = color.name.split('-')
+        color.palette = palette
+
         return color
       })
     },

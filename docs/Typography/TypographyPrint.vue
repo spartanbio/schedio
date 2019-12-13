@@ -185,11 +185,11 @@
 
 <script>
 import orderBy from 'lodash.orderby'
-import { props } from '@/assets/styles/tokens/dist/tokens.raw.json'
+import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
 import StoryLink from '@@/docs/components/StoryLink'
 
 const fontSizes = Object.values(props).filter(
-  ({ category, name }) => category === 'font-size' && name !== 'base-font-size',
+  ({ category, name }) => category === 'font-size' && name !== 'font-size-base',
 )
 
 const baseFontSize = 10

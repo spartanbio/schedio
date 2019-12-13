@@ -1,27 +1,23 @@
+@import '~@spartanbio/schedio-tokens/dist/shadow.map';
+
 /// Returns the shadow for the specified depth
 /// @param {String} $depth [base] - The shadow’s depth.
+/// @param {Color} $color [color('night')] - The shadow’s depth.
+/// @param {Number} $alpha [base] - The shadow’s depth.
 /// @return {List} The shadow value.
-
-@function shadow($depth: base) {
-  $fetched-value: map-get($shadows-data, $depth);
+@function shadow($depth: 'base', $color: color('night'), $alpha: null) {
+  $fetched-value: map-get($shadow-data, $depth);
+  $_alpha: if($alpha, $alpha, if($depth != 'light', 0.15, 0.1));
 
   @if type-of($fetched-value) == list {
-    @return $fetched-value;
+    @return $fetched-value rgba($color, $_alpha);
   } @else {
     @error 'Shadow variant `#{$depth}` not found. Available variants: #{available-names($shadows-data)}';
   }
 }
 
-$shadow-color: color('night');
-
-$shadow-alpha: 0.15;
-
 @mixin shadow-overlay($direction: 0deg) {
-  background: linear-gradient(
-    $direction,
-    rgba($shadow-color, $shadow-alpha) -1em,
-    transparent 0.75em
-  );
+  background: linear-gradient($direction, rgba(color('night'), 0.15) -1em, transparent 0.75em);
   bottom: 0;
   content: '';
   left: 0;
@@ -31,21 +27,3 @@ $shadow-alpha: 0.15;
   top: 0;
   z-index: 1;
 }
-
-$shadows-data: (
-  border: (
-    0 0 1px rgba($shadow-color, $shadow-alpha)
-  ),
-  light: (
-    0 0.25em 1em rgba($shadow-color, $shadow-alpha - 0.05)
-  ),
-  base: (
-    0 0.25em 1em rgba($shadow-color, $shadow-alpha)
-  ),
-  heavy: (
-    0 0.5em 1.5em 0.25em rgba($shadow-color, $shadow-alpha)
-  ),
-  transparent: (
-    0 0 0 0 transparent
-  )
-);
