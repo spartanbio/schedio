@@ -1,3 +1,10 @@
+## [3.13.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.13.0...v3.13.1) (2019-12-13)
+
+
+### Bug Fixes
+
+* moves `@spartanbio/schedio-tokens` to dependencies ([0ad14c6](https://gitlab.com/spartanbio-ux/schedio/commit/0ad14c60924ceb9be5d89587e1da4da86c58fcb2))
+
 # [3.13.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.12.0...v3.13.0) (2019-12-13)
 
 
