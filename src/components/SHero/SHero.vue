@@ -26,6 +26,7 @@
 
 <script>
 import * as options from './options'
+import defaults from '@/utils/defaults'
 
 const limitValues = propName => (v) => {
   const validOptions = options[`${propName}s`]
@@ -48,7 +49,7 @@ export default {
 
     height: {
       type: String,
-      default: '',
+      default: () => defaults.heroHeight,
       validator: limitValues('height'),
     },
 

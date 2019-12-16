@@ -12,6 +12,9 @@ const defaults = {
   fileInputHideIcon: false,
   fileInputIsDroppable: false,
   fileInputText: '',
+
+  // Hero
+  heroHeight: '',
 }
 
 export default defaults
