@@ -25,6 +25,10 @@ const defaults = {
   // Progress Bar
   progressBarColor: '',
   progressBarMessage: '',
+
+  // Spinner
+  spinnerColor: '',
+  spinnerSize: '',
 }
 
 export default defaults

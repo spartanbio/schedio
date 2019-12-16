@@ -11,6 +11,7 @@
 
 <script>
 import { colors, sizes } from './options'
+import defaults from '@/utils/defaults'
 
 const propError = (propName, values) => console.error(`\`${propName}\` must be one of ${values}`)
 
@@ -20,13 +21,13 @@ export default {
   props: {
     color: {
       type: String,
-      default: '',
+      default: () => defaults.spinnerColor,
       validator: c => !c || colors.includes(c) || propError('color', colors),
     },
 
     size: {
       type: String,
-      default: '',
+      default: () => defaults.spinnerColor,
       validator: s => !s || sizes.includes(s) || propError('size', sizes),
     },
   },
