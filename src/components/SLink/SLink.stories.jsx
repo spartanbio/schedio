@@ -14,7 +14,6 @@ export default {
 }
 
 export const link = () => ({
-  // TODO: document visited/unvisited states.
   props: {
     props: {
       default: {
@@ -36,15 +35,15 @@ export const link = () => ({
         <SHeading level="1">Links</SHeading>
         <p>
           Links are used for simple navigation. If you find yourself adding <code>href="#"</code>{' '}
-          or <code>href=""javascript:void(0)"</code>, you should probably be using a{' '}
+          or <code>href="javascript:void(0)"</code>, you should probably be using a{' '}
           <StoryLink to="Components/Buttons.SButton" story="Button" />.
         </p>
         <p>
           <code>SLink</code> will detect external and internal links automatically. It supports
-            use with or without <code>vue-router</code>, and with <code>nuxt</code>. <code>a</code>,{' '}
-          <code>router-link</code>, or <code>nuxt-link</code> will be used for the component as
-          necessary. If you need, you can tell links to be external or anchor tags with the
-          <code>is-external</code> and <code>use-anchor</code> props, respectively.
+            use with or without <code>vue-router</code>. You can pass a custom router component with
+            the <code>link-component</code> prop. If you need, you can tell links to be external or
+            anchor tags with the <code>is-external</code> and <code>use-anchor</code> props,
+respectively.
         </p>
 
         <SHeading level="2">Link examples</SHeading>

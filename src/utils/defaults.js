@@ -18,6 +18,9 @@ const defaults = {
 
   // Hero
   heroHeight: '',
+
+  // Link
+  linkComponent: 'router-link',
 }
 
 export default defaults

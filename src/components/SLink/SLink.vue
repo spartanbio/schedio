@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import defaults from '@/utils/defaults'
+
 export default {
   name: 'SLink',
 
@@ -59,6 +61,11 @@ export default {
       type: Boolean,
       default: false,
     },
+
+    linkComponent: {
+      type: String,
+      default: () => defaults.linkComponent,
+    },
   },
 
   computed: {
@@ -76,8 +83,8 @@ export default {
 
     componentIs () {
       if (this.isExternalLink || !this.$router || this.useAnchor) return 'a'
-      if (this.$root.nuxt) return 'nuxt-link'
-      return 'router-link'
+
+      return this.linkComponent
     },
 
     linkProperties () {

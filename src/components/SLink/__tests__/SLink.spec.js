@@ -122,21 +122,21 @@ describe('SLink.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('detects nuxt and uses `nuxt-link` instead of `router-link`', () => {
-    const nuxtWrapper = shallowMount(SLink, {
+  it('can use custom router components', () => {
+    wrapper = shallowMount(SLink, {
       propsData: {
         to: '/about',
+        linkComponent: 'custom-link',
       },
       mocks: {
         $router: 'vue-router',
-        nuxt: true,
       },
       stubs: {
-        NuxtLink: RouterLinkStub,
+        CustomLink: RouterLinkStub,
       },
     })
 
-    expect(nuxtWrapper.vm.componentIs).toBe('nuxt-link')
-    expect(nuxtWrapper.html()).toMatchSnapshot()
+    expect(wrapper.vm.componentIs).toBe('custom-link')
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
