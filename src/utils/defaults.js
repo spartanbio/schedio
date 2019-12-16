@@ -6,6 +6,12 @@ const defaults = {
 
   // Container
   containerTag: 'div',
+
+  // FileInput
+  fileInputHideCount: false,
+  fileInputHideIcon: false,
+  fileInputIsDroppable: false,
+  fileInputText: '',
 }
 
 export default defaults
