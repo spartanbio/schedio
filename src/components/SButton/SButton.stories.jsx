@@ -1,4 +1,5 @@
 import { SButton } from '@/components/SButton'
+import { SCallout } from '@/components/SCallout'
 import { colors, colorNames, sizes, types, allShadeOptions } from '@/components/SButton/options'
 import { SContainerColumn } from '@/components/SContainerColumn'
 import { SContainerRow } from '@/components/SContainerRow'
@@ -84,8 +85,19 @@ export const button = () => ({
           {buttonText}
         </SButton>
 
-        <PropList component={SButton} />
-      </div>
+        <SContainerRow align="center">
+          <SContainerColumn>
+            <PropList component={SButton} />
+          </SContainerColumn>
+
+          <SContainerColumn md="5">
+            <SCallout type="warning">
+              If you need to set the button's type (e.g.: <code>type="submit"</code>), use the
+              <code>native-type</code> prop.
+            </SCallout>
+          </SContainerColumn>
+        </SContainerRow>
+      </div >
     )
   },
 })

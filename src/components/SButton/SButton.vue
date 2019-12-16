@@ -4,6 +4,7 @@
     :class="classList"
     class="button"
     :aria-label="ariaLabel"
+    :type="nativeType"
     v-on="$listeners"
   >
     <template v-if="isLoading">
@@ -75,6 +76,11 @@ export default {
 
         return console.error(`\`type\` ${value} not found. Allowed types: ${types}`)
       },
+    },
+
+    nativeType: {
+      type: String,
+      default: null,
     },
 
     /** @deprecated replaced by `type` */
