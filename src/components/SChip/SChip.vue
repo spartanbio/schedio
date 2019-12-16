@@ -27,6 +27,7 @@
 <script>
 import { SButton } from '@/components/SButton'
 import { colors } from './options'
+import defaults from '@/utils/defaults'
 
 export default {
   name: 'SChip',
@@ -45,7 +46,7 @@ export default {
 
   props: {
     color: {
-      default: '',
+      default: () => defaults.chipColor,
       type: String,
       validator: (val) => {
         return (

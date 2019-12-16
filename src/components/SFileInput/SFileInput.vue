@@ -81,6 +81,7 @@ import { SLabel } from '@/components/SLabel'
 import { SChip } from '@/components/SChip'
 import { SChipGroup } from '@/components/SChipGroup'
 import { SIcon } from '@/components/SIcon'
+import defaults from '@/utils/defaults'
 
 export default {
   name: 'SFileInput',
@@ -108,22 +109,22 @@ export default {
     },
 
     text: {
-      default: '',
+      default: () => defaults.fileInputText,
       type: String,
     },
 
     isDroppable: {
-      default: false,
+      default: () => defaults.fileInputIsDroppable,
       type: Boolean,
     },
 
     hideIcon: {
-      default: false,
+      default: () => defaults.fileInputHideIcon,
       type: Boolean,
     },
 
     hideCount: {
-      default: false,
+      default: () => defaults.fileInputHideCount,
       type: Boolean,
     },
 

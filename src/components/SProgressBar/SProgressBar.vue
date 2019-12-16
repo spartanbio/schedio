@@ -26,6 +26,7 @@
 
 <script>
 import { colors, sizes } from './options'
+import defaults from '@/utils/defaults'
 
 const propError = (propName, values) => console.error(`\`${propName}\` must be one of ${values}`)
 
@@ -51,13 +52,13 @@ export default {
 
     color: {
       type: String,
-      default: '',
+      default: () => defaults.progressBarColor,
       vaidator: c => !c || colors.includes(c) || propError('color', colors),
     },
 
     message: {
       type: String,
-      default: '',
+      default: () => defaults.progressBarMessage,
     },
 
     hidePercentComplete: {

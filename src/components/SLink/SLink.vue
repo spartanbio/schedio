@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import defaults from '@/utils/defaults'
+
 export default {
   name: 'SLink',
 
@@ -54,6 +56,16 @@ export default {
       type: String,
       default: '',
     },
+
+    useAnchor: {
+      type: Boolean,
+      default: false,
+    },
+
+    linkComponent: {
+      type: String,
+      default: () => defaults.linkComponent,
+    },
   },
 
   computed: {
@@ -70,9 +82,9 @@ export default {
     },
 
     componentIs () {
-      if (this.isExternalLink || !this.$router) return 'a'
-      if (this.$root.nuxt) return 'nuxt-link'
-      return 'router-link'
+      if (this.isExternalLink || !this.$router || this.useAnchor) return 'a'
+
+      return this.linkComponent
     },
 
     linkProperties () {
@@ -81,6 +93,12 @@ export default {
           href: this.to,
           target: '_blank',
           rel: 'noopener noreferrer',
+        }
+      }
+
+      if (this.useAnchor) {
+        return {
+          href: this.to,
         }
       }
 

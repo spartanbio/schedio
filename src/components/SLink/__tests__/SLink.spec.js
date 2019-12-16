@@ -58,6 +58,21 @@ describe('SLink.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
+  it('can be set to `a`', async () => {
+    const to = '/internal'
+
+    wrapper.setProps({
+      to,
+      useAnchor: true,
+    })
+
+    await wrapper.vm.$nextTick()
+    expect(wrapper.vm.componentIs).toBe('a')
+    expect(wrapper.attributes('href')).toBe(to)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+  })
+
   it('uses `a` when no router is present', () => {
     const noRouter = shallowMount(SLink, {
       propsData: {
@@ -107,21 +122,21 @@ describe('SLink.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('detects nuxt and uses `nuxt-link` instead of `router-link`', () => {
-    const nuxtWrapper = shallowMount(SLink, {
+  it('can use custom router components', () => {
+    wrapper = shallowMount(SLink, {
       propsData: {
         to: '/about',
+        linkComponent: 'custom-link',
       },
       mocks: {
         $router: 'vue-router',
-        nuxt: true,
       },
       stubs: {
-        NuxtLink: RouterLinkStub,
+        CustomLink: RouterLinkStub,
       },
     })
 
-    expect(nuxtWrapper.vm.componentIs).toBe('nuxt-link')
-    expect(nuxtWrapper.html()).toMatchSnapshot()
+    expect(wrapper.vm.componentIs).toBe('custom-link')
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

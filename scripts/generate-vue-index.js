@@ -18,10 +18,13 @@ module.exports = function generateVueIndex (componentNames) {
 
 import './assets/styles.scss'
 import Vue from 'vue'
+import { setDefaults } from './utils/defaults'
 ${importList}
 
 const Schedio = {
-  install(Vue) {
+  install(Vue, options = {}) {
+    setDefaults(options)
+
     ${componentNames.map(name => `Vue.use(${name})`).join('\n    ')}
   }
 }
