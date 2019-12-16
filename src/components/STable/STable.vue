@@ -77,6 +77,7 @@
 import startCase from 'lodash.startcase'
 import { STableRow } from '@/components/STableRow'
 import { STableCell } from '@/components/STableCell'
+import defaults from '@/utils/defaults'
 
 export default {
   name: 'STable',
@@ -121,19 +122,19 @@ export default {
     },
     isBordered: {
       type: Boolean,
-      default: false,
+      default: () => defaults.tableIsBordered,
     },
     isHoverable: {
       type: Boolean,
-      default: false,
+      default: () => defaults.tableIsHoverable,
     },
     isStriped: {
       type: Boolean,
-      default: false,
+      default: () => defaults.tableIsStriped,
     },
     isFullwidth: {
       type: Boolean,
-      default: false,
+      default: () => defaults.tableIsFullwidth,
     },
   },
 

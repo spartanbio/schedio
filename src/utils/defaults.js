@@ -29,6 +29,12 @@ const defaults = {
   // Spinner
   spinnerColor: '',
   spinnerSize: '',
+
+  // Table
+  tableIsBordered: false,
+  tableIsHoverable: false,
+  tableIsStriped: false,
+  tableIsFullwidth: false,
 }
 
 export default defaults
