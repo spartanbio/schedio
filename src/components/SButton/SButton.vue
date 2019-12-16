@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import defaults from '@/utils/defaults'
 import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 import { colors, colorNames, sizes, types, allShadeOptions } from './options.js'
 
@@ -42,7 +43,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: '',
+      default: () => defaults.buttonColor,
       validator: (value) => {
         if (!value || colorNames.includes(value)) return true
 
@@ -52,7 +53,7 @@ export default {
 
     shade: {
       type: String,
-      default: '',
+      default: () => defaults.buttonShade,
       validator: value => !value || allShadeOptions.includes(value),
     },
 
@@ -68,7 +69,7 @@ export default {
 
     type: {
       type: String,
-      default: '',
+      default: () => defaults.buttonType,
       validator (value) {
         if (!value || types.includes(value)) return true
 
