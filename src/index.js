@@ -5,6 +5,7 @@
 
 import './assets/styles.scss'
 import Vue from 'vue'
+import { setDefaults } from './utils/defaults'
 import SButton from './components/SButton'
 import SButtonGroup from './components/SButtonGroup'
 import SCallout from './components/SCallout'
@@ -40,7 +41,9 @@ import STextarea from './components/STextarea'
 import SToast from './components/SToast'
 
 const Schedio = {
-  install (Vue) {
+  install (Vue, options = {}) {
+    setDefaults(options)
+
     Vue.use(SButton)
     Vue.use(SButtonGroup)
     Vue.use(SCallout)

@@ -26,8 +26,12 @@ import Vue from 'vue'
 import Schedio from '@spartanbio/schedio'
 import '@spartanbio/schedio/dist/schedio.css'
 
-Vue.use(Schedio)
+Vue.use(Schedio, {
+  // options...
+})
 ```
+
+For a list of all configurable options, [check here](./src/utils/defaults.js).
 
 Or, import and register individual components to keep the bundle smaller:
 
@@ -52,8 +56,8 @@ import { SButton } from '@spartanbio/schedio'
 export default {
   name: 'ALocalComponent',
   components: {
-    SButton,
-  },
+    SButton
+  }
 }
 </script>
 ```
