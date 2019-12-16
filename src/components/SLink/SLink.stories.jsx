@@ -23,6 +23,7 @@ export const link = () => ({
         isExternal: boolean('is-external', false, 'Optional Props'),
         isLight: boolean('is-light', false, 'Optional Props'),
         icon: select('icon', ['', ...iconNames], '', 'Optional Props'),
+        useAnchor: boolean('use-anchor', false, 'Optional Props'),
       },
     },
     linkText: { default: text('Link text', '', 'Slots') },
@@ -42,7 +43,8 @@ export const link = () => ({
           <code>SLink</code> will detect external and internal links automatically. It supports
             use with or without <code>vue-router</code>, and with <code>nuxt</code>. <code>a</code>,{' '}
           <code>router-link</code>, or <code>nuxt-link</code> will be used for the component as
-          necessary.
+          necessary. If you need, you can tell links to be external or anchor tags with the
+          <code>is-external</code> and <code>use-anchor</code> props, respectively.
         </p>
 
         <SHeading level="2">Link examples</SHeading>

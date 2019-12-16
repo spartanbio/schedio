@@ -58,6 +58,21 @@ describe('SLink.vue', () => {
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
 
+  it('can be set to `a`', async () => {
+    const to = '/internal'
+
+    wrapper.setProps({
+      to,
+      useAnchor: true,
+    })
+
+    await wrapper.vm.$nextTick()
+    expect(wrapper.vm.componentIs).toBe('a')
+    expect(wrapper.attributes('href')).toBe(to)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(await axe(wrapper.html())).toHaveNoViolations()
+  })
+
   it('uses `a` when no router is present', () => {
     const noRouter = shallowMount(SLink, {
       propsData: {

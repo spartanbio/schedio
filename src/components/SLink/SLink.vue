@@ -54,6 +54,11 @@ export default {
       type: String,
       default: '',
     },
+
+    useAnchor: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -70,7 +75,7 @@ export default {
     },
 
     componentIs () {
-      if (this.isExternalLink || !this.$router) return 'a'
+      if (this.isExternalLink || !this.$router || this.useAnchor) return 'a'
       if (this.$root.nuxt) return 'nuxt-link'
       return 'router-link'
     },
@@ -81,6 +86,12 @@ export default {
           href: this.to,
           target: '_blank',
           rel: 'noopener noreferrer',
+        }
+      }
+
+      if (this.useAnchor) {
+        return {
+          href: this.to,
         }
       }
 

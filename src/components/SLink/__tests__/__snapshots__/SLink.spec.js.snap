@@ -14,6 +14,12 @@ exports[`SLink.vue can be plain 1`] = `
 </a>
 `;
 
+exports[`SLink.vue can be set to \`a\` 1`] = `
+<a href="/internal" class="link">link text
+  <!---->
+  <!----></a>
+`;
+
 exports[`SLink.vue can display link text 1`] = `
 <a href="https://spartanbio.com" target="_blank" rel="noopener noreferrer" class="link">link text
   <!---->
