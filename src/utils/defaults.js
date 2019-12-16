@@ -4,6 +4,9 @@ const defaults = {
   buttonShade: '',
   buttonType: '',
 
+  // Chip
+  chipColor: '',
+
   // Container
   containerTag: 'div',
 
