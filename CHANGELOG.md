@@ -1,3 +1,25 @@
+# [3.14.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.13.1...v3.14.0) (2019-12-16)
+
+
+### Bug Fixes
+
+* **button:** adds `native-type` prop so HTML button type can be set ([a0923ce](https://gitlab.com/spartanbio-ux/schedio/commit/a0923ce6a5f8e5a11a5c6f5feac1d7bfd787930d))
+
+
+### Features
+
+* **chip:** adds default config for color ([0fd9a19](https://gitlab.com/spartanbio-ux/schedio/commit/0fd9a19aef63ddf3c1cccf3449aa1cd5627e6b94))
+* enables default prop config ([dc20e34](https://gitlab.com/spartanbio-ux/schedio/commit/dc20e34e6c4842bbd27811ef14ce6b90025d7871))
+* **button:** adds default config for color, shade, and type ([b2798b8](https://gitlab.com/spartanbio-ux/schedio/commit/b2798b87a74efe8e8647a1d5653ebdcef560115c))
+* **container:** adds default config for tag ([8a0a85d](https://gitlab.com/spartanbio-ux/schedio/commit/8a0a85d494a6013d140d28d9c0ab941c222ff1e9))
+* **file-input:** adds default config for text, is-droppable, hide-icon, hide-count ([93f4166](https://gitlab.com/spartanbio-ux/schedio/commit/93f416641dc0fdaa67fd9969b1308256299e9f61))
+* **hero:** adds default config for height ([d38e898](https://gitlab.com/spartanbio-ux/schedio/commit/d38e89885fb3671018361375382d1aff5286960f))
+* **link:** adds `use-anchor` prop ([5f9e5a8](https://gitlab.com/spartanbio-ux/schedio/commit/5f9e5a86aab3467dfab34d58b4ea0ce571376aa0))
+* **link:** supports custom `router-link` wrappers, rather than just `nuxt-link` ([966ca30](https://gitlab.com/spartanbio-ux/schedio/commit/966ca30b8c6d0990ebd4aa8e5e0486352dba712f))
+* **progress-bar:** adds default config for message and color ([b4c7eea](https://gitlab.com/spartanbio-ux/schedio/commit/b4c7eea6f42d92d4816d91810d8b125ea01d5440))
+* **spinner:** adds default config for color and size ([519ef08](https://gitlab.com/spartanbio-ux/schedio/commit/519ef088cccec6d1e5345afeb4716add7b91b0bf))
+* **table:** adds default config for is-bordered, is-hoverable, is-striped, is-fullwidth ([e710012](https://gitlab.com/spartanbio-ux/schedio/commit/e71001227bbef6ce8c2f4ba2d7f7f0b9178ffc56))
+
 ## [3.13.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.13.0...v3.13.1) (2019-12-13)
 
 

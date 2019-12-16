@@ -1,6 +1,6 @@
 {
   "name": "@spartanbio/schedio",
-  "version": "3.13.1",
+  "version": "3.14.0",
   "scripts": {
     "add-unit-tests": "node ./scripts/add-all-missing-tests.js",
     "build": "vue-cli-service build --target lib --name schedio ./src/index.js && rm dist/demo.html",
