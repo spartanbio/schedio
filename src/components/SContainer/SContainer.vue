@@ -9,13 +9,15 @@
 </template>
 
 <script>
+import defaults from '@/utils/defaults'
+
 export default {
   name: 'SContainer',
 
   props: {
     tag: {
       type: String,
-      default: 'div',
+      default: () => defaults.containerTag,
     },
     isFullwidth: {
       type: Boolean,

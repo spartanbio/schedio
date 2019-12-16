@@ -3,6 +3,9 @@ const defaults = {
   buttonColor: '',
   buttonShade: '',
   buttonType: '',
+
+  // Container
+  containerTag: 'div',
 }
 
 export default defaults
