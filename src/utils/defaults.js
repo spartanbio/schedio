@@ -21,6 +21,10 @@ const defaults = {
 
   // Link
   linkComponent: 'router-link',
+
+  // Progress Bar
+  progressBarColor: '',
+  progressBarMessage: '',
 }
 
 export default defaults
