@@ -1,3 +1,10 @@
+## [3.14.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.14.0...v3.14.1) (2020-02-07)
+
+
+### Bug Fixes
+
+* **deps:** upgrade @vue/cli and plugins ([4efcb21](https://gitlab.com/spartanbio-ux/schedio/commit/4efcb21c88acf039fff953204f66b18517653b5c))
+
 # [3.14.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.13.1...v3.14.0) (2019-12-16)
 
 
