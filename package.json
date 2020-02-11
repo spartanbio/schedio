@@ -111,27 +111,22 @@
   "homepage": "https://spartanbio-design.netlify.com",
   "husky": {
     "hooks": {
-      "pre-commit": "sh ./scripts/guard-master.sh && lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "sh ./scripts/guard-master.sh"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "*.js": [
-      "yarn lint:vue",
-      "git add"
+      "yarn lint:vue"
     ],
     "*.jsx": [
-      "yarn lint:vue",
-      "git add"
+      "yarn lint:vue"
     ],
     "*.vue": [
-      "yarn lint:vue",
-      "git add"
+      "yarn lint:vue"
     ],
     "*.scss": [
-      "yarn lint:style",
-      "git add"
+      "yarn lint:style"
     ]
   },
   "publishConfig": {
