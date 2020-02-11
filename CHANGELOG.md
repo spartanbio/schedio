@@ -1,3 +1,10 @@
+# [3.15.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.14.1...v3.15.0) (2020-02-11)
+
+
+### Features
+
+* transpiles for ie 11 ([20ce98a](https://gitlab.com/spartanbio-ux/schedio/commit/20ce98a7116ca29c587d45c9813389bf21b15821))
+
 ## [3.14.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.14.0...v3.14.1) (2020-02-07)
 
 
