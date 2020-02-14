@@ -12,10 +12,10 @@
       v-bind="$attrs"
       :name="computedName"
       :required="required"
-      :class="{ [`switch--${size}`]: size }"
       class="switch"
-      :checked="!!value"
       type="checkbox"
+      :class="{ [`switch--${size}`]: size }"
+      :checked="!!value"
       v-on="listeners"
     >
     <span
@@ -46,6 +46,10 @@ export default {
             console.error(`\`size\` must be one of ${sizes}`)
           )
       },
+    },
+    value: {
+      type: null,
+      default: null,
     },
   },
 }
