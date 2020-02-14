@@ -1,3 +1,10 @@
+## [3.15.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.1...v3.15.2) (2020-02-14)
+
+
+### Bug Fixes
+
+* updates deps ([29d1c0a](https://gitlab.com/spartanbio-ux/schedio/commit/29d1c0a785369062cc3315cd073a14434f129af0))
+
 ## [3.15.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.0...v3.15.1) (2020-02-14)
 
 
