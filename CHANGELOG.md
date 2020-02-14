@@ -1,3 +1,10 @@
+## [3.15.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.0...v3.15.1) (2020-02-14)
+
+
+### Bug Fixes
+
+* **switch:** binds value prop correctly ([a62f901](https://gitlab.com/spartanbio-ux/schedio/commit/a62f9017520fb98ca63adb100ff85e11812c7c3c))
+
 # [3.15.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.14.1...v3.15.0) (2020-02-11)
 
 
