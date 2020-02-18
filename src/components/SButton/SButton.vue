@@ -17,6 +17,7 @@
       v-if="iconLeft"
       :icon="iconLeft"
       class="button__icon button__icon--left"
+      aria-hidden="true"
     />
 
     <slot v-if="!iconOnly" />
@@ -25,6 +26,7 @@
       v-if="iconRight"
       :icon="iconRight"
       class="button__icon button__icon--right"
+      aria-hidden="true"
     />
   </button>
 </template>

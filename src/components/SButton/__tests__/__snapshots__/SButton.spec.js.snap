@@ -30,7 +30,7 @@ exports[`SButton.vue can have a loading spinner 1`] = `
 exports[`SButton.vue can have an icon and no text 1`] = `
 <button aria-label="Button" class="button button--icon-only">
   <!---->
-  <sicon icon="activity" class="button__icon button__icon--left"></sicon>
+  <sicon icon="activity" aria-hidden="true" class="button__icon button__icon--left"></sicon>
   <!---->
   <!---->
 </button>
@@ -39,7 +39,7 @@ exports[`SButton.vue can have an icon and no text 1`] = `
 exports[`SButton.vue can have an icon on the left 1`] = `
 <button class="button">
   <!---->
-  <sicon icon="activity" class="button__icon button__icon--left"></sicon> Button Text
+  <sicon icon="activity" aria-hidden="true" class="button__icon button__icon--left"></sicon> Button Text
   <!---->
 </button>
 `;
@@ -47,13 +47,13 @@ exports[`SButton.vue can have an icon on the left 1`] = `
 exports[`SButton.vue can have an icon on the right 1`] = `
 <button class="button">
   <!---->
-  <!----> Button Text <sicon icon="activity" class="button__icon button__icon--right"></sicon></button>
+  <!----> Button Text <sicon icon="activity" aria-hidden="true" class="button__icon button__icon--right"></sicon></button>
 `;
 
 exports[`SButton.vue can use slot text for \`aria-label\` 1`] = `
 <button aria-label="Button Text" class="button button--icon-only">
   <!---->
-  <sicon icon="activity" class="button__icon button__icon--left"></sicon>
+  <sicon icon="activity" aria-hidden="true" class="button__icon button__icon--left"></sicon>
   <!---->
   <!---->
 </button>
