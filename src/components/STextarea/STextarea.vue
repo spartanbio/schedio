@@ -30,6 +30,7 @@
         :color="iconLeftColor"
         :shade="iconLeftShade"
         class="textarea__icon textarea__icon--left"
+        aria-hidden="true"
       />
 
       <SIcon
@@ -38,6 +39,7 @@
         :color="iconRightColor"
         :shade="iconRightShade"
         class="textarea__icon textarea__icon--right"
+        aria-hidden="true"
       />
     </div>
   </SLabel>
