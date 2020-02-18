@@ -13,6 +13,7 @@
         <SIcon
           :icon="toastIcon"
           :color="toastIconColor"
+          aria-hidden="true"
         />
       </div>
 
