@@ -28,7 +28,7 @@ exports[`SLink.vue can display link text 1`] = `
 `;
 
 exports[`SLink.vue can have an icon 1`] = `
-<a href="https://spartanbio.com" target="_blank" rel="noopener noreferrer" class="link">link text <sicon icon="activity" size="small" class="link__icon"></sicon>
+<a href="https://spartanbio.com" target="_blank" rel="noopener noreferrer" class="link">link text <sicon icon="activity" size="small" aria-hidden="true" class="link__icon"></sicon>
   <sicon icon="external-link" size="small" aria-label="External link" class="link__icon"></sicon>
 </a>
 `;

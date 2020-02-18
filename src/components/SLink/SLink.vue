@@ -13,6 +13,7 @@
       :icon="icon"
       size="small"
       class="link__icon"
+      aria-hidden="true"
     />
 
     <SIcon
