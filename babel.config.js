@@ -4,5 +4,5 @@ module.exports = (api) => {
   return {
     presets: ['@vue/cli-plugin-babel/preset'],
     plugins: ['@babel/plugin-transform-runtime'],
-  };
+  }
 }

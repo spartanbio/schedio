@@ -15,7 +15,8 @@ Vue.use(Schedio)
 const docStories = require.context('@@/docs', true, /.stories.(js|jsx)$/)
 const componentStories = require.context('@/components', true, /.stories.(js|jsx|mdx)$/)
 
-const prepLoad = stories => stories.keys().map(name => stories(name)).filter(exp => !!exp.default)
+const prepLoad = stories => stories.keys().map(name => stories(name))
+  .filter(exp => !!exp.default)
 
 function loadStories () {
   return [
