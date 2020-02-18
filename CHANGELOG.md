@@ -1,3 +1,18 @@
+## [3.15.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.2...v3.15.3) (2020-02-18)
+
+
+### Bug Fixes
+
+* **button:** adds `aria-hidden` to icon ([f99b28d](https://gitlab.com/spartanbio-ux/schedio/commit/f99b28dbac7bb2087b0cd43820cc86490677a7b8))
+* **collapse:** adds `aria-hidden` to icon ([98d0baa](https://gitlab.com/spartanbio-ux/schedio/commit/98d0baa427ff764fdd356e98445ff8eabf5392a2))
+* **file-input:** adds `aria-hidden` to icon ([0dffb99](https://gitlab.com/spartanbio-ux/schedio/commit/0dffb9916fa76a0a86fc91486ad2d4d534bf23f5))
+* **form-validation:** adds `aria-hidden` to icon ([ae21212](https://gitlab.com/spartanbio-ux/schedio/commit/ae2121200699a77cc9552f69941f698fae34440e))
+* **input:** adds `aria-hidden` to icon ([d0b83ab](https://gitlab.com/spartanbio-ux/schedio/commit/d0b83abc7b6706aa859a9d131ef5d08083391c3a))
+* **link:** adds `aria-hidden` to icon ([a8c6107](https://gitlab.com/spartanbio-ux/schedio/commit/a8c6107489669e561dc2f16ee506b0d5c239bfbc))
+* **select:** adds `aria-hidden` to icon ([f0ebcd6](https://gitlab.com/spartanbio-ux/schedio/commit/f0ebcd68100b693cbe21c5d24dde833a749531a3))
+* **textarea:** adds `aria-hidden` to icon ([7953175](https://gitlab.com/spartanbio-ux/schedio/commit/795317525aaf7c69be9b23881c259641106a2248))
+* **toast:** adds `aria-hidden` to icon ([4665e85](https://gitlab.com/spartanbio-ux/schedio/commit/4665e8512da06d31ba9ca3ae8210f27157562fee))
+
 ## [3.15.2](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.1...v3.15.2) (2020-02-14)
 
 
