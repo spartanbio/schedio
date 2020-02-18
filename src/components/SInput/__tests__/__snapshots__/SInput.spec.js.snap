@@ -45,7 +45,7 @@ exports[`SInput.vue can have an icon on the left 1`] = `
     input
     <!---->
   </div>
-  <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-left"> <svg viewBox="0 0 24 24" class="icon input__icon input__icon--left icon--color-green">
+  <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-left"> <svg viewBox="0 0 24 24" class="icon input__icon input__icon--left icon--color-green" aria-hidden="true">
       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
     </svg>
     <!---->
@@ -60,7 +60,7 @@ exports[`SInput.vue can have an icon on the right 1`] = `
     <!---->
   </div>
   <div class="input__container"><input id="input" name="input" placeholder="" required="required" type="text" class="input input--has-icon-right">
-    <!----> <svg viewBox="0 0 24 24" class="icon input__icon input__icon--right icon--color-green">
+    <!----> <svg viewBox="0 0 24 24" class="icon input__icon input__icon--right icon--color-green" aria-hidden="true">
       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
     </svg></div>
 </label>

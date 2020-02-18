@@ -30,6 +30,7 @@
         :color="iconLeftColor"
         :shade="iconLeftShade"
         class="input__icon input__icon--left"
+        aria-hidden="true"
       />
 
       <SIcon
@@ -38,6 +39,7 @@
         :color="iconRightColor"
         :shade="iconRightShade"
         class="input__icon input__icon--right"
+        aria-hidden="true"
       />
     </div>
   </SLabel>
