@@ -17,6 +17,7 @@
         <SIcon
           class="collapse__icon"
           icon="chevron-down"
+          aria-hidden="true"
         />
       </SButton>
     </header>
