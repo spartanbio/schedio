@@ -177,7 +177,7 @@ exports[`SSelect.vue can have an icon on the left 1`] = `
       <option value="two">
         two
       </option>
-    </select> <svg viewBox="0 0 24 24" class="icon select__icon select__icon--left icon--color-green">
+    </select> <svg viewBox="0 0 24 24" class="icon select__icon select__icon--left icon--color-green" aria-hidden="true">
       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
     </svg>
     <!---->
@@ -202,7 +202,7 @@ exports[`SSelect.vue can have an icon on the right 1`] = `
         two
       </option>
     </select>
-    <!----> <svg viewBox="0 0 24 24" class="icon select__icon select__icon--right icon--color-green">
+    <!----> <svg viewBox="0 0 24 24" class="icon select__icon select__icon--right icon--color-green" aria-hidden="true">
       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
     </svg></div>
 </label>

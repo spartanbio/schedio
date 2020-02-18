@@ -71,6 +71,7 @@
         :color="iconLeftColor"
         :shade="iconLeftShade"
         class="select__icon select__icon--left"
+        aria-hidden="true"
       />
 
       <SIcon
@@ -79,6 +80,7 @@
         :color="iconRightColor"
         :shade="iconRightShade"
         class="select__icon select__icon--right"
+        aria-hidden="true"
       />
     </div>
   </SLabel>
