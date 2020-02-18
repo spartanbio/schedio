@@ -71,7 +71,7 @@ exports[`SFileInput.vue drop zone can be a drop zone 1`] = `
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
-        <sicon-stub icon="upload-cloud" color="" shade="" size="large" class="file-input__icon"></sicon-stub>
+        <sicon-stub icon="upload-cloud" color="" shade="" size="large" aria-hidden="true" class="file-input__icon"></sicon-stub>
 
         Drag and drop or click here to choose a file
       </div> <span class="file-input__count">0 files selected</span>
@@ -105,7 +105,7 @@ exports[`SFileInput.vue drop zone handles "dragenter" correctly 1`] = `
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display file-input__display--dragover">
-        <sicon-stub icon="upload-cloud" color="" shade="" size="large" class="file-input__icon"></sicon-stub>
+        <sicon-stub icon="upload-cloud" color="" shade="" size="large" aria-hidden="true" class="file-input__icon"></sicon-stub>
 
         Drag and drop or click here to choose a file
       </div> <span class="file-input__count">0 files selected</span>
@@ -122,7 +122,7 @@ exports[`SFileInput.vue drop zone handles "dragleave" correctly 1`] = `
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
-        <sicon-stub icon="upload-cloud" color="" shade="" size="large" class="file-input__icon"></sicon-stub>
+        <sicon-stub icon="upload-cloud" color="" shade="" size="large" aria-hidden="true" class="file-input__icon"></sicon-stub>
 
         Drag and drop or click here to choose a file
       </div> <span class="file-input__count">0 files selected</span>
@@ -139,7 +139,7 @@ exports[`SFileInput.vue drop zone handles "dragover" correctly 1`] = `
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
-        <sicon-stub icon="upload-cloud" color="" shade="" size="large" class="file-input__icon"></sicon-stub>
+        <sicon-stub icon="upload-cloud" color="" shade="" size="large" aria-hidden="true" class="file-input__icon"></sicon-stub>
 
         Drag and drop or click here to choose a file
       </div> <span class="file-input__count">0 files selected</span>
@@ -156,7 +156,7 @@ exports[`SFileInput.vue drop zone handles "drop" correctly 1`] = `
   <slabel-stub label="File input" isrequired="true" for="file-input">
     <div class="file-input__inner"><input id="file-input" label="File input" name="file-input" type="file" class="file-input__control">
       <div class="file-input__display">
-        <sicon-stub icon="upload-cloud" color="" shade="" size="large" class="file-input__icon"></sicon-stub>
+        <sicon-stub icon="upload-cloud" color="" shade="" size="large" aria-hidden="true" class="file-input__icon"></sicon-stub>
 
         Drag and drop or click here to choose a file
       </div> <span class="file-input__count">0 files selected</span>

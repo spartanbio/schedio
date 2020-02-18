@@ -35,6 +35,7 @@
             icon="upload-cloud"
             size="large"
             class="file-input__icon"
+            aria-hidden="true"
           />
 
           {{ displayText }}
