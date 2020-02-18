@@ -11,6 +11,7 @@
         <SIcon
           :icon="icons[state]"
           :color="iconColors[state] || 'night'"
+          aria-hidden="true"
         />
       </div>
 
