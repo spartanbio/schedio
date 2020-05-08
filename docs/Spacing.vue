@@ -3,13 +3,14 @@
     <SHeading level="1">
       Spacing
     </SHeading>
+
     <p>
       Consistent spacing allows elements to stand out. It improves scannability and reduces noise.
     </p>
+
     <p>
-      All spacing is defined using the
-      <code>em</code> unit. This ensures spacing is relative to the parent element's
-      <code>font-size</code>.
+      All spacing is defined using the <code>em</code> unit. This ensures spacing is relative to the
+      parent element's <code>font-size</code>.
     </p>
 
     <STable
@@ -25,11 +26,11 @@
       </template>
 
       <STableRow
-        v-for="{ name, value } in orderedSpacing"
+        v-for="(value, name) in orderedSpacing"
         :key="name"
       >
         <STableCell>
-          <code>${{ name }}</code>
+          <code>$spacing-{{ name }}</code>
         </STableCell>
 
         <STableCell is-numeric>
@@ -48,23 +49,25 @@
 </template>
 
 <script>
-import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
+import * as spacing from '@spartanbio/schedio-tokens/dist/js/module-js/spacing.module'
 import orderBy from 'lodash.orderby'
+
 export default {
   name: 'Spacing',
 
   data () {
     return {
-      spacing: Object.values(props).filter(p => p.category === 'spacing'),
+      spacing,
     }
   },
 
   computed: {
     orderedSpacing () {
-      const sizeToNumber = size => Number(size.replace('em', ''))
-      const orderFn = ({ value }) => (typeof value === 'string' ? sizeToNumber(value) : value)
+      const sizeToNumber = size => Number(size.replace(/r?em/, ''))
+      const orderFn = ([, value]) => (typeof value === 'string' ? sizeToNumber(value) : value)
+      const spacingMap = Object.entries(this.spacing)
 
-      return orderBy(this.spacing, orderFn)
+      return Object.fromEntries(orderBy(spacingMap, orderFn))
     },
   },
 }
@@ -72,6 +75,6 @@ export default {
 
 <style lang="scss" scoped>
 .spacing-example__spacer {
-  background-color: color('spartan_blue');
+  background-color: color('blue');
 }
 </style>

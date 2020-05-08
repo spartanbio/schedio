@@ -59,9 +59,10 @@ export const icon = () => ({
                   Icon color: <code>{props.color}</code>
                 </div>
                 <div>
-                  Available shades: {colors[props.color].map((c, i, r) => (
-                    <span><code>{c}</code>{i === r.length - 1 ? '' : ', '}</span>
-                  ))}
+                  Available shades: {Object.keys(colors[props.color])
+                    .map((c, i, r) => (
+                      <span><code>{c}</code>{i === r.length - 1 ? '' : ', '}</span>
+                    ))}
                 </div>
               </div>
             )}

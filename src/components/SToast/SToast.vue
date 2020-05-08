@@ -207,7 +207,7 @@ export default {
     background-color: transparent;
     border-bottom-right-radius: border-radius('small');
     border-top-right-radius: border-radius('small');
-    color: color('spartan_blue');
+    color: color('blue');
     padding: spacing();
 
     &:hover {

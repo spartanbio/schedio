@@ -130,7 +130,7 @@ export default {
   }
 
   &__bar {
-    fill: color('spartan_blue');
+    fill: color('blue');
   }
 
   @each $color in $logo-colors {

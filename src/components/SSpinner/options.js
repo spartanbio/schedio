@@ -3,7 +3,7 @@ export const colors = [
   'grey-lighter',
   'ice',
   'night-light',
-  'spartan_blue',
+  'blue',
   'white',
 ]
 export const sizes = [

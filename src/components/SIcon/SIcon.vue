@@ -60,7 +60,7 @@ export default {
       if (this.color) {
         let _color = `icon--color-${this.color}`
 
-        if (this.shade && this.hasValidShade) {
+        if (this.shade && this.shade !== 'base' && this.hasValidShade) {
           _color += `-${this.shade}`
         }
 
@@ -73,7 +73,7 @@ export default {
     },
 
     hasValidShade () {
-      return colors[this.color].includes(this.shade)
+      return Object.hasOwnProperty.call(colors[this.color], this.shade)
     },
 
     featherIcon () {
@@ -83,7 +83,7 @@ export default {
 
   mounted () {
     if (this.shade && !this.hasValidShade) {
-      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`)
     }
   },
 }

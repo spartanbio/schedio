@@ -27,7 +27,7 @@
 import ColorList from '../components/ColorList'
 import groupBy from 'lodash.groupby'
 import orderBy from 'lodash.orderby'
-import { props as colors } from '@spartanbio/schedio-tokens/dist/colors.raw.json'
+import { props as colors } from '@spartanbio/schedio-tokens/dist/web/raw-json/color.raw.json'
 
 export default {
   name: 'Color',
@@ -53,7 +53,7 @@ export default {
     },
     mainPalettes () {
       const order = [
-        'spartan_blue',
+        'blue',
         'grey',
         'night',
         'ice',

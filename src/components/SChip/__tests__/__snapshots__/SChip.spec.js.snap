@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SChip.vue base can have color blue 1`] = `
+<div class="chip chip--color-blue">
+  <div class="chip__content">Chip content</div>
+  <!---->
+</div>
+`;
+
 exports[`SChip.vue base can have color gold 1`] = `
 <div class="chip chip--color-gold">
   <div class="chip__content">Chip content</div>
@@ -44,13 +51,6 @@ exports[`SChip.vue base can have color night 1`] = `
 
 exports[`SChip.vue base can have color red 1`] = `
 <div class="chip chip--color-red">
-  <div class="chip__content">Chip content</div>
-  <!---->
-</div>
-`;
-
-exports[`SChip.vue base can have color spartan_blue 1`] = `
-<div class="chip chip--color-spartan_blue">
   <div class="chip__content">Chip content</div>
   <!---->
 </div>

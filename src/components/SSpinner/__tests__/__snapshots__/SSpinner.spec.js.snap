@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SSpinner.vue can be blue 1`] = `
+<svg role="status" viewBox="0 0 32 32" class="spinner spinner--color-blue" progress="50">
+  <path d="M16 2 a 14 14 0 0 0 0 28 a 14 14 0 0 0 0 -28"></path>
+</svg>
+`;
+
 exports[`SSpinner.vue can be green 1`] = `
 <svg role="status" viewBox="0 0 32 32" class="spinner spinner--color-green" progress="50">
   <path d="M16 2 a 14 14 0 0 0 0 28 a 14 14 0 0 0 0 -28"></path>
@@ -44,12 +50,6 @@ exports[`SSpinner.vue can be regular 1`] = `
 
 exports[`SSpinner.vue can be small 1`] = `
 <svg role="status" viewBox="0 0 32 32" class="spinner spinner--small" progress="50">
-  <path d="M16 2 a 14 14 0 0 0 0 28 a 14 14 0 0 0 0 -28"></path>
-</svg>
-`;
-
-exports[`SSpinner.vue can be spartan_blue 1`] = `
-<svg role="status" viewBox="0 0 32 32" class="spinner spinner--color-spartan_blue" progress="50">
   <path d="M16 2 a 14 14 0 0 0 0 28 a 14 14 0 0 0 0 -28"></path>
 </svg>
 `;

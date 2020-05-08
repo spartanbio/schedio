@@ -1,7 +1,7 @@
-@import '~@spartanbio/schedio-tokens/dist/font';
-@import '~@spartanbio/schedio-tokens/dist/font-size';
-@import '~@spartanbio/schedio-tokens/dist/font-weight.map';
-@import '~@spartanbio/schedio-tokens/dist/line-height';
+@import '~@spartanbio/schedio-tokens/dist/web/scss/font';
+@import '~@spartanbio/schedio-tokens/dist/web/scss/font-size';
+@import '~@spartanbio/schedio-tokens/dist/web/scss/font-weight.map';
+@import '~@spartanbio/schedio-tokens/dist/web/scss/line-height';
 
 @mixin font-size($size) {
   font-size: map-get(nth($sizes, $size), 'size');

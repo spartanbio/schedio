@@ -16,6 +16,14 @@ exports[`SHero.vue can be any html tag 1`] = `
 </section>
 `;
 
+exports[`SHero.vue can be blue 1`] = `
+<div class="hero hero--color-blue">
+  <div class="hero__head">Header Content</div>
+  <div class="hero__body">Body Content</div>
+  <div class="hero__foot">Foot Content</div>
+</div>
+`;
+
 exports[`SHero.vue can be full 1`] = `
 <div class="hero hero--height-full">
   <div class="hero__head">Header Content</div>
@@ -82,14 +90,6 @@ exports[`SHero.vue can be night 1`] = `
 
 exports[`SHero.vue can be red 1`] = `
 <div class="hero hero--color-red">
-  <div class="hero__head">Header Content</div>
-  <div class="hero__body">Body Content</div>
-  <div class="hero__foot">Foot Content</div>
-</div>
-`;
-
-exports[`SHero.vue can be spartan_blue 1`] = `
-<div class="hero hero--color-spartan_blue">
   <div class="hero__head">Header Content</div>
   <div class="hero__body">Body Content</div>
   <div class="hero__foot">Foot Content</div>

@@ -28,13 +28,13 @@
   border: border();
   border-color: transparent;
   border-radius: border-radius('small');
-  color: color('spartan_blue', 'light');
+  color: color('blue', 'light');
   display: inline-flex;
   padding: spacing('half') spacing();
   transition: all duration() easing(), outline 0s, outline-offset 0s, height 0s, width 0s;
 
   &:hover {
-    color: color('spartan_blue', 'dark');
+    color: color('blue', 'dark');
   }
 }
 
