@@ -134,7 +134,7 @@ export default {
       if (this.color) {
         buttonStyle = `button--color-${this.color}`
 
-        if (this.shade) buttonStyle += `-${this.shade}`
+        if (this.shade && this.shade !== 'base') buttonStyle += `-${this.shade}`
       }
 
       /**
@@ -153,7 +153,7 @@ export default {
     },
 
     hasValidShade () {
-      return colors[this.color].includes(this.shade)
+      return Object.hasOwnProperty.call(colors[this.color], this.shade)
     },
 
     ariaLabel () {
@@ -177,7 +177,7 @@ export default {
 
   mounted () {
     if (this.shade && !this.hasValidShade) {
-      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`)
     }
   },
 }

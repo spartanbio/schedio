@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SProgressBar.vue can be blue 1`] = `
+<div class="progress-bar">
+  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
+    <div class="progress-bar__indicator progress-bar__indicator--color-blue" style="width: 50%;"></div>
+  </div>
+  <div class="progress-bar__message">
+    50% complete.
+  </div>
+</div>
+`;
+
 exports[`SProgressBar.vue can be gold 1`] = `
 <div class="progress-bar">
   <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
@@ -103,17 +114,6 @@ exports[`SProgressBar.vue can be small 1`] = `
 <div class="progress-bar">
   <div class="progress-bar__background progress-bar__background--small"><progress max="100" class="progress-bar__progress"></progress>
     <div class="progress-bar__indicator" style="width: 50%;"></div>
-  </div>
-  <div class="progress-bar__message">
-    50% complete.
-  </div>
-</div>
-`;
-
-exports[`SProgressBar.vue can be spartan_blue 1`] = `
-<div class="progress-bar">
-  <div class="progress-bar__background"><progress max="100" class="progress-bar__progress"></progress>
-    <div class="progress-bar__indicator progress-bar__indicator--color-spartan_blue" style="width: 50%;"></div>
   </div>
   <div class="progress-bar__message">
     50% complete.

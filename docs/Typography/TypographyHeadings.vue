@@ -4,8 +4,8 @@
       <SHeading>Headings and Displays</SHeading>
 
       <p>
-        Headings and displays typically have <code>margin-top: 2em;</code> and
-        <code>margin-bottom: 1em;</code>, but that has been disabled for example purposes.
+        Headings and displays typically have <code>margin-top: 2rem;</code> and
+        <code>margin-bottom: 1rem;</code>, but that has been disabled for example purposes.
       </p>
       <p>
         The
@@ -25,7 +25,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em | Case: uppercase
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.125rem | Case: uppercase
       </p>
     </article>
 
@@ -38,7 +38,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-1'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.125rem
       </p>
     </article>
 
@@ -51,7 +51,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em | Case: uppercase
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.125rem | Case: uppercase
       </p>
     </article>
 
@@ -65,7 +65,7 @@
       </SHeading>
       <p class="caption">
         Size: {{ tokens['font-size-2'] }} | Weight: {{ tokens['font-weight-bold'] }} | Line height:
-        {{ tokens['line-height-large-text'] }} | Tracking: 0.025em
+        {{ tokens['line-height-large-text'] }} | Tracking: 0.125rem
       </p>
     </article>
 
@@ -110,7 +110,7 @@
 
 <script>
 import StoryLink from '@@/docs/components/StoryLink'
-import tokens from '@spartanbio/schedio-tokens/dist/tokens.json'
+import tokens from '@spartanbio/schedio-tokens/dist/web/json/tokens.json'
 
 export default {
   name: 'TypographyHeadings',

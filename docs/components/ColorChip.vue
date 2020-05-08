@@ -73,18 +73,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$palette-border-radius: 0.5em;
-$shadow-color: color("grey", "light");
-$left-border-shadow: -1px 0 color("grey", "lighter");
+$palette-border-radius: border-radius();
+$shadow-color: color('grey', 'light');
+$left-border-shadow: -1px 0 color('grey', 'lighter');
 
 .palette-card {
-  margin-bottom: spacing("loose");
+  margin-bottom: spacing('loose');
 
   &__description {
-    background-color: color("white");
+    background-color: color('white');
     box-shadow: $left-border-shadow;
-    margin-left: 6.5em;
-    padding: spacing("base");
+    margin-left: 6.5rem;
+    padding: spacing('base');
   }
 
   &__row {
@@ -101,7 +101,7 @@ $left-border-shadow: -1px 0 color("grey", "lighter");
     &:not(:first-child) {
       // Add a border to descriptions
       .palette-card__description {
-        box-shadow: $left-border-shadow, 0 -1px color("grey", "lighter");
+        box-shadow: $left-border-shadow, 0 -1px color('grey', 'lighter');
       }
     }
   }

@@ -60,7 +60,7 @@ export default {
       if (this.color) {
         let _color = `icon--color-${this.color}`
 
-        if (this.shade && this.hasValidShade) {
+        if (this.shade && this.shade !== 'base' && this.hasValidShade) {
           _color += `-${this.shade}`
         }
 
@@ -73,7 +73,7 @@ export default {
     },
 
     hasValidShade () {
-      return colors[this.color].includes(this.shade)
+      return Object.hasOwnProperty.call(colors[this.color], this.shade)
     },
 
     featherIcon () {
@@ -83,7 +83,7 @@ export default {
 
   mounted () {
     if (this.shade && !this.hasValidShade) {
-      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`)
     }
   },
 }
@@ -92,27 +92,27 @@ export default {
 <style lang="scss">
 .icon {
   fill: none;
-  height: 1.5em;
+  height: spacing('loose');
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   // using px because android browsers render stroke width twice as thick when using ems
   stroke-width: 2px;
-  width: 1.5em;
+  width: spacing('loose');
 
   &--size-small {
-    height: 0.75em;
-    width: 0.75em;
+    height: spacing('tight');
+    width: spacing('tight');
   }
 
   &--size-regular {
-    height: 1.5em;
-    width: 1.5em;
+    height: spacing('loose');
+    width: spacing('loose');
   }
 
   &--size-large {
-    height: 4em;
-    width: 4em;
+    height: spacing('quadruple');
+    width: spacing('quadruple');
   }
 
   @each $color-name in $icon-colors {

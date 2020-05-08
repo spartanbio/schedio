@@ -1,11 +1,11 @@
 $arrow-data: (
   'down': (
     'rotation': 315deg,
-    'vertical-offset': -0.2em
+    'vertical-offset': -0.2rem
   ),
   'up': (
     'rotation': 135deg,
-    'vertical-offset': 0.2em
+    'vertical-offset': 0.2rem
   ),
   'left': (
     'rotation': 45deg,
@@ -21,9 +21,8 @@ $arrow-data: (
 /// @param {String} $direction - The direction it should point
 /// @param {String} $position ('right') - Should it be on the left or right?
 /// @param {String} $direction ('green') - What color?
-/// @param {String} $direction (0.75em) - How big?
-
-@mixin arrow($direction, $position: 'right', $color: 'green', $size: 0.75em) {
+/// @param {String} $direction (0.75rem) - How big?
+@mixin arrow($direction, $position: 'right', $color: 'green', $size: 0.75rem) {
   $arrow: map-get($arrow-data, $direction);
   $rotation: map-get($arrow, 'rotation');
   $vertical-offset: map-get($arrow, 'vertical-offset');

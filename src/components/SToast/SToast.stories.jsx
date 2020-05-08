@@ -67,7 +67,7 @@ export const toast = () => ({
         <SHeading level="2">Example</SHeading>
 
         <div id="example" style={exampleContainerStyle}>
-          <SButton is-outlined color="spartan_blue" onClick={() => this.$toast.open(props)}>
+          <SButton is-outlined color="blue" onClick={() => this.$toast.open(props)}>
             Open a toast
           </SButton>
         </div>
@@ -133,7 +133,7 @@ export const toastTypes = () => ({
           ...exampleContainerStyle,
         }}>
           <SButton
-            color="spartan_blue"
+            color="blue"
             is-outlined
             onClick={this.mountToasts}
             disabled={this.toastCount !== 0}

@@ -370,7 +370,7 @@ export default {
     }
 
     #{$parent}__display {
-      $area-width: 12em;
+      $area-width: 12rem;
 
       @include control;
 
@@ -385,7 +385,7 @@ export default {
       &:hover,
       &--dragover {
         background-color: color('ice');
-        border-color: color('spartan_blue', 'lighter');
+        border-color: color('blue', 'lighter');
 
         #{$parent}__icon {
           opacity: 0.8;

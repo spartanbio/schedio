@@ -23,7 +23,7 @@
       />.
     </p>
 
-    <SFormField style="margin-bottom: 1em;">
+    <SFormField style="margin-bottom: 1rem;">
       <SInput
         id="base-font-size"
         v-model="calcFontSize"
@@ -62,7 +62,7 @@
       </template>
 
       <STableRow
-        v-for="{ name, value } in fontSizes"
+        v-for="(value, name) in fontSizes"
         :key="name"
       >
         <STableCell style="text-transform: capitalize;">
@@ -82,7 +82,14 @@
         </STableCell>
 
         <STableCell>
-          <span :style="{ fontSize: computePrintSize(value) }">
+          <span
+            :id="`example-${value}`"
+            :style="{
+              fontSize: computePrintSize(value),
+              lineHeight: computeLeading(value),
+              letterSpacing: computeTracking(value),
+            }"
+          >
             Example text
           </span>
         </STableCell>
@@ -185,12 +192,8 @@
 
 <script>
 import orderBy from 'lodash.orderby'
-import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
+import * as sizes from '@spartanbio/schedio-tokens/dist/js/module-js/font-size.module'
 import StoryLink from '@@/docs/components/StoryLink'
-
-const fontSizes = Object.values(props).filter(
-  ({ category, name }) => category === 'font-size' && name !== 'font-size-base',
-)
 
 const baseFontSize = 10
 
@@ -205,23 +208,28 @@ export default {
     prettyName: val => val.replace(/font-(size)-(\d*)/, '$1 $2'),
   },
 
-  data: () => ({
-    baseFontSize,
-    calcFontSize: baseFontSize,
-    fontSizes: orderBy(fontSizes, 'name'),
-  }),
+  data () {
+    return {
+      baseFontSize,
+      calcFontSize: baseFontSize,
+      fontSizes: Object.fromEntries(orderBy(
+        Object.entries(sizes).filter(([name, value]) => !name.includes('base')),
+        'name',
+      )),
+    }
+  },
 
   methods: {
     computePrintSize (value) {
-      return value.replace('rem', '') * this.calcFontSize + 'pt'
+      return value.replace(/(r?em)/, '') * this.calcFontSize + 'pt'
     },
     computeLeading (value) {
-      const strippedVal = value.replace('rem', '')
+      const strippedVal = value.replace(/(r?em)/, '')
       const leading = strippedVal > 3 ? 1.25 : 1.5
       return strippedVal * this.calcFontSize * leading + 'pt'
     },
     computeTracking (value) {
-      return (value.replace('rem', '') > 3 ? 0.025 : 0) + 'em'
+      return (value.replace(/(r?em)/, '') > 3 ? 0.125 : 0) + 'rem'
     },
   },
 }

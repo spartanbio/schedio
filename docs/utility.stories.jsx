@@ -1,4 +1,4 @@
-import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
+import * as weights from '@spartanbio/schedio-tokens/dist/js/module-js/font-weight.module'
 import { colorNames as colors } from '@/utils/component-options'
 import { SHeading } from '@/components/SHeading'
 
@@ -64,10 +64,6 @@ color.story = {
 
 export const italicAndWeight = () => ({
   render (h) {
-    const weights = Object.values(props)
-      .filter(prop => prop.name.includes('-weight-'))
-      .map(weight => weight.name.split('-').pop())
-
     return (
       <div>
         <SHeading>Italic and Weight</SHeading>
@@ -75,7 +71,7 @@ export const italicAndWeight = () => ({
           <code>.text--italic</code> will make text italic and the following classes can change its
           weight:
           <ul>
-            {weights.map(weight => (
+            {Object.keys(weights).map(weight => (
               <li>
                 <code>{`.text--weight-${weight}`}</code>
               </li>

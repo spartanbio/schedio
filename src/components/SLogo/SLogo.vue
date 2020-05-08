@@ -123,14 +123,14 @@ export default {
 
   display: block;
   height: 100%;
-  min-height: 0.5em;
+  min-height: spacing('half');
 
   &__text {
     fill: color('night');
   }
 
   &__bar {
-    fill: color('spartan_blue');
+    fill: color('blue');
   }
 
   @each $color in $logo-colors {

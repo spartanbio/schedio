@@ -106,20 +106,20 @@ export default {
     border-radius: border-radius('small');
     // provides some accessibility/contrast
     box-shadow: inset 0 0 1px color('night', 'light');
-    height: 0.5em;
+    height: spacing('half');
     margin-bottom: spacing('half');
     position: relative;
 
     &--small {
-      height: 0.5em;
+      height: spacing('half');
     }
 
     &--medium {
-      height: 1em;
+      height: spacing();
     }
 
     &--large {
-      height: 2em;
+      height: spacing('double');
     }
   }
 
@@ -137,7 +137,7 @@ export default {
     left: 0;
     position: absolute;
     top: 0;
-    transition: width duration('fast') easing('out');
+    transition: width duration('fast') easing('ease-out');
 
     @each $color-name in $button-colors {
       &--color-#{$color-name} {
