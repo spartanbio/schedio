@@ -88,8 +88,8 @@ export default {
     stroke: color('ice');
   }
 
-  &--color-spartan_blue {
-    stroke: color('spartan_blue');
+  &--color-blue {
+    stroke: color('blue');
   }
 
   &--color-white {

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SChipGroup.vue can have color blue 1`] = `<div class="chip-group chip-group--color-blue"></div>`;
+
 exports[`SChipGroup.vue can have color gold 1`] = `<div class="chip-group chip-group--color-gold"></div>`;
 
 exports[`SChipGroup.vue can have color green 1`] = `<div class="chip-group chip-group--color-green"></div>`;
@@ -13,8 +15,6 @@ exports[`SChipGroup.vue can have color magenta 1`] = `<div class="chip-group chi
 exports[`SChipGroup.vue can have color night 1`] = `<div class="chip-group chip-group--color-night"></div>`;
 
 exports[`SChipGroup.vue can have color red 1`] = `<div class="chip-group chip-group--color-red"></div>`;
-
-exports[`SChipGroup.vue can have color spartan_blue 1`] = `<div class="chip-group chip-group--color-spartan_blue"></div>`;
 
 exports[`SChipGroup.vue can have color turquoise 1`] = `<div class="chip-group chip-group--color-turquoise"></div>`;
 

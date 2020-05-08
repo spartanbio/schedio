@@ -385,7 +385,7 @@ export default {
       &:hover,
       &--dragover {
         background-color: color('ice');
-        border-color: color('spartan_blue', 'lighter');
+        border-color: color('blue', 'lighter');
 
         #{$parent}__icon {
           opacity: 0.8;

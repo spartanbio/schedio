@@ -144,12 +144,14 @@ describe('SSelect.vue', () => {
   it('can set each icon color', async () => {
     const leftColor = Object.keys(iconColors)[0]
     const rightColor = Object.keys(iconColors)[1]
+    const leftShade = Object.keys(iconColors[leftColor])[0]
+    const rightShade = Object.keys(iconColors[rightColor])[1]
 
     wrapper.setProps({
       iconLeftColor: leftColor,
-      iconLeftShade: iconColors[leftColor][0],
+      iconLeftShade: iconColors[leftColor][leftShade],
       iconRightColor: rightColor,
-      iconRightShade: iconColors[rightColor][1],
+      iconRightShade: iconColors[rightColor][rightShade],
     })
 
     await wrapper.vm.$nextTick()

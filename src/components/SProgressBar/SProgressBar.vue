@@ -137,7 +137,7 @@ export default {
     left: 0;
     position: absolute;
     top: 0;
-    transition: width duration('fast') easing('out');
+    transition: width duration('fast') easing('ease-out');
 
     @each $color-name in $button-colors {
       &--color-#{$color-name} {

@@ -1,36 +1,14 @@
-import { props } from '@spartanbio/schedio-tokens/dist/tokens.raw.json'
+import * as color from '@spartanbio/schedio-tokens/dist/js/module-js/color.color-map.module'
 
-/** Enforce shade order */
-const shadeOrder = (a, b) => {
-  const shades = [
-    'darkest',
-    'darker',
-    'dark',
-    'light',
-    'lighter',
-    'lightest',
-  ]
-
-  return shades.indexOf(a) > shades.indexOf(b) ? 1 : -1
-}
-
-/** All colors in the design system with their available shades */
-export const colors = Object.values(props).reduce((colorList, { category, name }) => {
-  if (category === 'background-color') {
-    // hue-value
-    const [, hue, value] = name.split('-')
-    const shades = colorList[hue] || []
-
-    if (value) shades.push(value)
-
-    colorList[hue] = shades.sort(shadeOrder)
-  }
-
-  return colorList
-}, {})
+export const colors = color
 
 /** All possible shade options */
-export const allShadeOptions = [...new Set(Object.values(colors).flat())]
+export const allShadeOptions = [
+  ...new Set(Object.values(colors)
+    .map(Object.keys)
+    .flat(),
+  ),
+]
 
 /** Simple list of color names */
-export const colorNames = [...new Set(Object.keys(colors))]
+export const colorNames = Object.keys(color)
