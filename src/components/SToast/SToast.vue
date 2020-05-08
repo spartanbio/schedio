@@ -161,7 +161,6 @@ export default {
 </script>
 
 <style lang="scss">
-// component styles
 .toast {
   align-items: center;
   background-color: color('white');
@@ -171,7 +170,7 @@ export default {
   display: flex;
   flex: 0 0 auto;
   margin: spacing();
-  max-width: 44em;
+  max-width: 44rem;
   pointer-events: auto;
   z-index: 500;
 

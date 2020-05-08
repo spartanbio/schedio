@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 .spinner {
-  @include spinner-dimensions(1.5em);
+  @include spinner-dimensions(spacing('loose'));
 
   animation: spin duration('slowest') linear infinite;
   fill: none;
@@ -55,23 +55,23 @@ export default {
   stroke-width: 2;
 
   &--small {
-    @include spinner-dimensions(0.75em);
+    @include spinner-dimensions(spacing('tight'));
   }
 
   &--regular {
-    @include spinner-dimensions(1.5em);
+    @include spinner-dimensions(spacing('loose'));
   }
 
   &--medium {
-    @include spinner-dimensions(2em);
+    @include spinner-dimensions(spacing('double'));
   }
 
   &--large {
-    @include spinner-dimensions(4em);
+    @include spinner-dimensions(spacing('quadruple'));
   }
 
   &--xl {
-    @include spinner-dimensions(8em);
+    @include spinner-dimensions(2 * spacing('quadruple'));
 
     stroke-width: 1.5;
   }
