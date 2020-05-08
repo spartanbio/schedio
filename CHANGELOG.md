@@ -1,3 +1,22 @@
+# [4.0.0-alpha.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.3...v4.0.0-alpha.1) (2020-05-08)
+
+
+### Features
+
+* converts `em` to `rem` ([997f196](https://gitlab.com/spartanbio-ux/schedio/commit/997f1962083473b282cb7ac3ad752c523c47223c))
+* upgrades `@spartanbio/schedio-tokens` ([5d2f1ff](https://gitlab.com/spartanbio-ux/schedio/commit/5d2f1ffa841b0bbe891ac6ffedcc38e04665b587))
+
+
+### BREAKING CHANGES
+
+* `em` is no longer used
+* SCSS
+  - `easing('in')` and `easing('out')` are now `easing('ease-in')` and `easing('ease-out')`
+  - `color('spartan_blue')` is now `color('blue`)`
+  - `spacing()` returns `rem`
+  - `spacing('4x')` is now `spacing('qudaruple')`
+  - `shadow()` returns shadows with `rem`
+
 ## [3.15.3](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.2...v3.15.3) (2020-02-18)
 
 
