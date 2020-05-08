@@ -370,7 +370,7 @@ export default {
     }
 
     #{$parent}__display {
-      $area-width: 12em;
+      $area-width: 12rem;
 
       @include control;
 

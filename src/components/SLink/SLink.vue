@@ -120,7 +120,7 @@ export default {
 
 <style lang="scss">
 .link {
-  $highlight-spacing: 0.1em;
+  $highlight-spacing: 0.1rem;
 
   align-items: center;
   color: color('blue', 'light');

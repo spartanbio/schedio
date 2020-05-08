@@ -102,7 +102,7 @@
   margin-top: 0 !important;
 
   &:not(:last-child) {
-    margin-right: 1em;
+    margin-right: spacing();
   }
 }
 
@@ -126,12 +126,12 @@
     border: border();
     display: flex;
     flex-shrink: 0;
-    height: 1em;
+    height: spacing();
     justify-content: center;
     margin: spacing('half');
     position: relative;
     transition: all duration() easing(), outline 0ms, outline-offset 0ms;
-    width: 1em;
+    width: spacing();
 
     &--invalid {
       @include control-invalid;
@@ -170,7 +170,7 @@
 }
 
 @mixin switch-size($switch-size: 'base') {
-  $toggle-size: 1.5em;
+  $toggle-size: 1.5rem;
 
   border-radius: $toggle-size;
   height: $toggle-size;
@@ -183,11 +183,11 @@
   }
 
   @if $switch-size == 'base' {
-    $toggle-size: 1.5em;
+    $toggle-size: 1.5rem;
   } @else if $switch-size == 'medium' {
-    $toggle-size: 2em;
+    $toggle-size: 2rem;
   } @else if $switch-size == 'large' {
-    $toggle-size: 3em;
+    $toggle-size: 3rem;
   }
 }
 

@@ -123,7 +123,7 @@ export default {
 
   display: block;
   height: 100%;
-  min-height: 0.5em;
+  min-height: spacing('half');
 
   &__text {
     fill: color('night');

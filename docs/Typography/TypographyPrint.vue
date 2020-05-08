@@ -23,7 +23,7 @@
       />.
     </p>
 
-    <SFormField style="margin-bottom: 1em;">
+    <SFormField style="margin-bottom: 1rem;">
       <SInput
         id="base-font-size"
         v-model="calcFontSize"
@@ -229,7 +229,7 @@ export default {
       return strippedVal * this.calcFontSize * leading + 'pt'
     },
     computeTracking (value) {
-      return (value.replace(/(r?em)/, '') > 3 ? 0.025 : 0) + 'em'
+      return (value.replace(/(r?em)/, '') > 3 ? 0.125 : 0) + 'rem'
     },
   },
 }
