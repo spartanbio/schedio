@@ -3,7 +3,6 @@ import results from '@@/.jest-test-results.json'
 import StoryContainer from '@@/docs/components/StoryContainer.vue'
 import '@@/static/fonts/fonts.css'
 import { withTests } from '@storybook/addon-jest'
-import { withA11y } from '@storybook/addon-a11y'
 import { addDecorator, addParameters } from '@storybook/vue'
 import Vue from 'vue'
 
@@ -19,7 +18,6 @@ addParameters({
   },
 })
 
-addDecorator(withA11y)
 addDecorator(withTests({ results }))
 addDecorator(story => ({
   name: 'TheStory',

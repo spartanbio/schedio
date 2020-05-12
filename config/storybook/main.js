@@ -3,8 +3,8 @@ const sharedConf = require('../shared-webpack-conf')
 
 module.exports = {
   stories: [
-    '@@/docs/**/*.stories.{js,jsx,mdx}',
-    '@/components/**/*.stories.{js,jsx,mdx}',
+    '../../docs/**/*.stories.(js|jsx)',
+    '../../src/components/**/*.stories.(js|jsx)',
   ],
   presets: [
     '@storybook/addon-docs/preset',
