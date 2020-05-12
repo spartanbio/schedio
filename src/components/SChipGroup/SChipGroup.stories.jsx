@@ -6,7 +6,7 @@ import { select } from '@storybook/addon-knobs'
 import { colors } from '../SChip/options'
 
 export default {
-  title: 'Components/Chips.SChipGroup',
+  title: 'Components|Chips/SChipGroup',
   component: SChipGroup,
   parameters: {
     jest: 'SChipGroup',

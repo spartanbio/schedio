@@ -11,7 +11,7 @@ const sizeOptions = ['', ...sizes]
 const iconList = Object.keys(icons)
 
 export default {
-  title: 'Components/SIcon',
+  title: 'Components|SIcon',
 
   parameters: {
     jest: 'SIcon',

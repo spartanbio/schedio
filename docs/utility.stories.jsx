@@ -3,7 +3,7 @@ import { colorNames as colors } from '@/utils/component-options'
 import { SHeading } from '@/components/SHeading'
 
 export default {
-  title: 'Utilities/Typography',
+  title: 'Utilities|Typography',
 
   parameters: {
     options: {

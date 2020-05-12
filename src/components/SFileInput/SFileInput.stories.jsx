@@ -6,7 +6,7 @@ import { boolean, number } from '@storybook/addon-knobs'
 import { withAttrsAsProps } from '@/mixins/stories/form-fields'
 
 export default {
-  title: 'Components/Inputs.SFileInput',
+  title: 'Components|Inputs/SFileInput',
 
   parameters: {
     jest: 'SFileInput',

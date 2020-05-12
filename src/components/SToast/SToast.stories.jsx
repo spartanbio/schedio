@@ -14,7 +14,7 @@ const exampleContainerStyle = {
 }
 
 export default {
-  title: 'Components/SToast',
+  title: 'Components|SToast',
 
   parameters: {
     jest: 'SToast',

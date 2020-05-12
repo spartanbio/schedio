@@ -5,7 +5,7 @@ import PropList from '@@/docs/components/PropList'
 import { boolean, text } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Buttons.SButtonGroup',
+  title: 'Components|Buttons/SButtonGroup',
 
   parameters: {
     jest: 'SButtonGroup',

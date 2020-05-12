@@ -3,7 +3,7 @@ import { SHeading } from '@/components/SHeading'
 import PropList from '@@/docs/components/PropList'
 
 export default {
-  title: 'Components/Forms.SFormField',
+  title: 'Components|Forms/SFormField',
 
   parameters: {
     jest: 'SFormField',

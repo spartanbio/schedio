@@ -10,7 +10,7 @@ import { SContainerRow } from '@/components/SContainerRow'
 import { generateHeading } from '@/utils/stories/render-functions'
 
 export default {
-  title: 'Components/Chips.SChip',
+  title: 'Components|Chips/SChip',
 
   parameters: {
     jest: 'SChip',

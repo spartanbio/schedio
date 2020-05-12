@@ -6,7 +6,7 @@ import icons from 'feather-icons/dist/icons.json'
 import { boolean, text, select } from '@storybook/addon-knobs'
 const iconNames = Object.keys(icons)
 export default {
-  title: 'Components/SLink',
+  title: 'Components|SLink',
 
   parameters: {
     jest: 'SLink',

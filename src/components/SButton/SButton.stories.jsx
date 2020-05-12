@@ -14,7 +14,7 @@ const iconNames = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconNames], '', 'Optional Props')
 
 export default {
-  title: 'Components/Buttons.SButton',
+  title: 'Components|Buttons/SButton',
 
   parameters: {
     jest: 'SButton',

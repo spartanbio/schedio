@@ -4,7 +4,7 @@ import PropList from '@@/docs/components/PropList'
 import { text } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/SCollapse',
+  title: 'Components|SCollapse',
 
   parameters: {
     jest: 'SCollapse',

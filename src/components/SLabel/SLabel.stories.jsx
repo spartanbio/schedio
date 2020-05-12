@@ -4,7 +4,7 @@ import PropList from '@@/docs/components/PropList'
 import { boolean, text } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Inputs.SLabel',
+  title: 'Components|Inputs/SLabel',
 
   parameters: {
     jest: 'SLabel',

@@ -6,7 +6,7 @@ import { boolean, select, text } from '@storybook/addon-knobs'
 import { colors, heights } from './options'
 
 export default {
-  title: 'Components/Layout.SHero',
+  title: 'Components|Layout/SHero',
 
   parameters: {
     jest: 'SHero',

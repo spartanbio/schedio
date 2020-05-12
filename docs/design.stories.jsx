@@ -25,7 +25,7 @@ const converter = new showdown.Converter({
 })
 const readme = converter.makeHtml(markdownContent)
 
-storiesOf('* Design/Library', module)
+storiesOf('* Design|Library', module)
   .addParameters(hideAddons)
   .add('README', () => ({
     template: `\
@@ -35,34 +35,34 @@ storiesOf('* Design/Library', module)
 `,
   }))
 
-storiesOf('* Design/Logo', module)
+storiesOf('* Design|Logo', module)
   .addParameters(hideAddons)
   .add('Logo Usage', () => ({ render: h => <Logo /> }))
 
-storiesOf('* Design/Color', module)
+storiesOf('* Design|Color', module)
   .addParameters(hideAddons)
   .add('Color', () => ({ render: h => <Color /> }))
   .add('Accessibility', () => ({ render: h => <ColorAccessibility /> }), hideAddons)
 
-storiesOf('* Design/Interaction', module)
+storiesOf('* Design|Interaction', module)
   .addParameters(hideAddons)
   .add('Interaction', () => ({ render: h => <Interaction /> }))
 
-storiesOf('* Design/Graphics', module)
+storiesOf('* Design|Graphics', module)
   .addParameters(hideAddons)
   .add('Graphics', () => ({ render: h => <Graphics /> }))
 
-storiesOf('* Design/Spacing', module)
+storiesOf('* Design|Spacing', module)
   .addParameters(hideAddons)
   .add('Spacing', () => ({ render: h => <Spacing /> }))
 
-storiesOf('* Design/Typography', module)
+storiesOf('* Design|Typography', module)
   .addParameters(hideAddons)
   .add('Base', () => ({ render: h => <TypographyBase /> }))
   .add('Headings & Displays', () => ({ render: h => <TypographyHeadings /> }))
   .add('Print', () => ({ render: h => <TypographyPrint /> }))
 
-storiesOf('* Design/Assets', module)
+storiesOf('* Design|Assets', module)
   .addParameters(hideAddons)
   .add('Design Assets', () => ({
     render (h) {

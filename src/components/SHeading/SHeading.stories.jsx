@@ -8,7 +8,7 @@ const headingLevels = ['1', '2', '3', '4']
 const tagOptions = ['', 'div', 'span', 'a']
 
 export default {
-  title: 'Components/Layout.SHeading',
+  title: 'Components|Layout/SHeading',
 
   parameters: {
     jest: 'SHeading',

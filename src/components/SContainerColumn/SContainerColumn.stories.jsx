@@ -8,7 +8,7 @@ import mobileBreakpoints from '../SContainer/mobile-breakpoints'
 import PropList from '@@/docs/components/PropList'
 
 export default {
-  title: 'Components/Layout.SContainerColumn',
+  title: 'Components|Layout/SContainerColumn',
 
   parameters: {
     jest: 'SContainerColumn',

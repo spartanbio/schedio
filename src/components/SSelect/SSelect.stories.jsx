@@ -16,7 +16,7 @@ const iconShade = (side) => {
 }
 
 export default {
-  title: 'Components/Inputs.SSelect',
+  title: 'Components|Inputs/SSelect',
 
   parameters: {
     jest: 'SSelect',
