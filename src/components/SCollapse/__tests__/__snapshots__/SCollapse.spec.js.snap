@@ -8,11 +8,9 @@ exports[`SCollapse.vue accepts props for text 1`] = `
       <sicon-stub icon="chevron-down" color="" shade="" size="" aria-hidden="true" class="collapse__icon"></sicon-stub>
     </sbutton-stub>
   </header>
-  <transition-stub name="fade">
-    <main aria-hidden="true" class="collapse__content" style="display: none;">
-      Collapse content
-    </main>
-  </transition-stub>
+  <main aria-hidden="true" class="collapse__content" style="display: none;">
+    Collapse content
+  </main>
 </article>
 `;
 
@@ -24,9 +22,7 @@ exports[`SCollapse.vue accepts slots for text 1`] = `
       <sicon-stub icon="chevron-down" color="" shade="" size="" aria-hidden="true" class="collapse__icon"></sicon-stub>
     </sbutton-stub>
   </header>
-  <transition-stub name="fade">
-    <main aria-hidden="true" class="collapse__content" style="display: none;">content</main>
-  </transition-stub>
+  <main aria-hidden="true" class="collapse__content" style="display: none;">content</main>
 </article>
 `;
 
@@ -70,10 +66,8 @@ exports[`SCollapse.vue renders correctly 1`] = `
       <sicon-stub icon="chevron-down" color="" shade="" size="" aria-hidden="true" class="collapse__icon"></sicon-stub>
     </sbutton-stub>
   </header>
-  <transition-stub name="fade">
-    <main aria-hidden="true" class="collapse__content" style="display: none;">
-      Collapse content
-    </main>
-  </transition-stub>
+  <main aria-hidden="true" class="collapse__content" style="display: none;">
+    Collapse content
+  </main>
 </article>
 `;

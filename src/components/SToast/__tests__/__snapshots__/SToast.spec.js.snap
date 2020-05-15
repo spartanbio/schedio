@@ -1,111 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SToast.vue can have a clickable action 1`] = `
-<transition-stub name="fade">
-  <div class="toast" style="">
+<div class="toast fade-enter fade-enter-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
-    </div> <button class="toast__action">
-      OK
-    </button>
-  </div>
-</transition-stub>
+    <div class="toast__body">
+      Text
+    </div>
+  </div> <button class="toast__action">
+    OK
+  </button>
+</div>
 `;
 
 exports[`SToast.vue can have action text configured 1`] = `
-<transition-stub name="fade">
-  <div class="toast" style="">
+<div class="toast fade-enter fade-enter-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
-    </div> <button class="toast__action">
-      action text
-    </button>
-  </div>
-</transition-stub>
+    <div class="toast__body">
+      Text
+    </div>
+  </div> <button class="toast__action">
+    action text
+  </button>
+</div>
 `;
 
 exports[`SToast.vue can have position  1`] = `
-<transition-stub name="fade">
-  <div class="toast" style="">
+<div class="toast fade-enter fade-enter-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
+    <div class="toast__body">
+      Text
     </div>
-    <!---->
   </div>
-</transition-stub>
+  <!---->
+</div>
 `;
 
 exports[`SToast.vue can have position center 1`] = `
-<transition-stub name="fade">
-  <div class="toast toast--center" style="">
+<div class="toast toast--center fade-enter fade-enter-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
+    <div class="toast__body">
+      Text
     </div>
-    <!---->
   </div>
-</transition-stub>
+  <!---->
+</div>
 `;
 
 exports[`SToast.vue can have position right 1`] = `
-<transition-stub name="fade">
-  <div class="toast toast--right" style="">
+<div class="toast toast--right fade-enter fade-enter-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
+    <div class="toast__body">
+      Text
     </div>
-    <!---->
   </div>
-</transition-stub>
+  <!---->
+</div>
 `;
 
 exports[`SToast.vue can have the icon hidden 1`] = `
-<transition-stub name="fade">
-  <div class="toast" style="">
+<div class="toast fade-enter fade-enter-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
+    <div class="toast__body">
+      Text
     </div>
-    <!---->
   </div>
-</transition-stub>
+  <!---->
+</div>
 `;
 
 exports[`SToast.vue closes on action click 1`] = `
-<transition-stub name="fade">
-  <div class="toast" style="display: none;">
+<div class="toast fade-leave fade-leave-active" style="">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        Text
-      </div>
-    </div> <button class="toast__action">
-      OK
-    </button>
-  </div>
-</transition-stub>
+    <div class="toast__body">
+      Text
+    </div>
+  </div> <button class="toast__action">
+    OK
+  </button>
+</div>
 `;
 
 exports[`SToast.vue renders toast type  correctly 1`] = `
@@ -172,26 +158,22 @@ exports[`SToast.vue renders toast type warning correctly 1`] = `
 `;
 
 exports[`SToast.vue requires a title or body 1`] = `
-<transition-stub name="fade">
-  <div class="toast" style="display: none;">
+<div class="toast" style="display: none;">
+  <!---->
+  <div class="toast__text">
     <!---->
-    <div class="toast__text">
-      <!---->
-      <div class="toast__body">
-        text
-      </div>
+    <div class="toast__body">
+      text
     </div>
-    <!---->
   </div>
-</transition-stub>
+  <!---->
+</div>
 `;
 
 exports[`SToast.vue requires a title or body 2`] = `
-<transition-stub name="fade">
-  <div class="toast" style="display: none;">
-    <!---->
-    <!---->
-    <!---->
-  </div>
-</transition-stub>
+<div class="toast" style="display: none;">
+  <!---->
+  <!---->
+  <!---->
+</div>
 `;

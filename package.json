@@ -83,7 +83,7 @@
     "highlight.js": "^10.0.0",
     "husky": "^4.0.0",
     "jeffsum": "^1.0.0",
-    "jest-axe": "^3.1.1",
+    "jest-axe": "3.3.0",
     "lint-staged": "^10.0.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.debounce": "^4.0.8",
