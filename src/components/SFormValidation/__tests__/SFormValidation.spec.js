@@ -44,9 +44,7 @@ describe('SFormValidation.vue', () => {
   states.forEach((state) => {
     it(`sets a visual state for ${state} state`, async () => {
       wrapper.setProps({ state })
-      // test if `state = ''` does not show an icon while other states do
       await wrapper.vm.$nextTick()
-      expect(wrapper.contains(SIcon)).toBe(!!state)
       expect(errorSpy).not.toHaveBeenCalled()
       expect(wrapper.html()).toMatchSnapshot()
       expect(await axe(wrapper.html())).toHaveNoViolations()
@@ -57,7 +55,9 @@ describe('SFormValidation.vue', () => {
     wrapper.setProps({ icon: Object.keys(icons)[0] })
     await wrapper.vm.$nextTick()
     expect(errorSpy).not.toHaveBeenCalled()
-    expect(wrapper.contains(SIcon)).toBe(true)
+
+    const component = wrapper.findComponent(SIcon)
+    expect(component.exists()).toBe(true)
     expect(wrapper).toMatchSnapshot()
   })
 
@@ -65,6 +65,8 @@ describe('SFormValidation.vue', () => {
     wrapper.setProps({ icon: Object.keys(icons)[0], hideIcon: true })
     await wrapper.vm.$nextTick()
     expect(errorSpy).not.toHaveBeenCalled()
-    expect(wrapper.contains(SIcon)).toBe(false)
+
+    const component = wrapper.findComponent(SIcon)
+    expect(component.exists()).toBe(false)
   })
 })

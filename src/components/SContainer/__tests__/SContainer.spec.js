@@ -32,6 +32,6 @@ describe('SContainer.vue', () => {
     wrapper.setProps({ tag: 'section' })
     await wrapper.vm.$nextTick()
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.contains('section')).toBe(true)
+    expect(wrapper.find('section').exists()).toBe(true)
   })
 })

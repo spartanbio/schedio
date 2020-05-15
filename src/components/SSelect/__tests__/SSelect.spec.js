@@ -86,7 +86,7 @@ describe('SSelect.vue', () => {
     wrapper.setProps({ selectOptions: optGroups })
     await wrapper.vm.$nextTick()
     expect(wrapper.findAll('option').length).toBeGreaterThan(1)
-    expect(wrapper.contains('optgroup')).toBe(true)
+    expect(wrapper.find('optgroup').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
