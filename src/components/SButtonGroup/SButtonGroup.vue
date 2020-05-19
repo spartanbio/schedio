@@ -8,38 +8,11 @@
 </template>
 
 <script>
-import { colorNames } from '@/components/SButton/options.js'
-import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 
 export default {
   name: 'SButtonGroup',
 
-  mixins: [
-    DeprecatePropsMixin(['color', 'isOutlined', 'isText'], 'Appropriate props on `SButton`'),
-  ],
-
   props: {
-    /** @deprecated */
-    color: {
-      type: String,
-      default: '',
-      validator: (value) => {
-        if (!value || colorNames.includes(value)) return true
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`)
-      },
-    },
-
-    /** @deprecated */
-    isOutlined: {
-      type: Boolean,
-      default: false,
-    },
-
-    /** @deprecated */
-    isText: {
-      type: Boolean,
-      default: false,
-    },
 
     isGrouped: {
       type: Boolean,
@@ -62,18 +35,6 @@ export default {
           'button-group--disabled': this.isDisabled,
         },
       ]
-    },
-    /** @deprecated */
-    groupStyle () {
-      let style = ''
-
-      if (this.color) style += `button-group--color-${this.color}`
-
-      if (style && this.isOutlined) style += '-outlined'
-
-      if (style && this.isText) style += '-text'
-
-      return style
     },
   },
 
