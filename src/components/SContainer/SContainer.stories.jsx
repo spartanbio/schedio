@@ -6,7 +6,7 @@ import PropList from '@@/docs/components/PropList'
 import { boolean, text } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Layout.SContainer',
+  title: 'Components|Layout/SContainer',
 
   parameters: {
     jest: 'SContainer',

@@ -10,7 +10,7 @@ import jeffsum from 'jeffsum'
 import { generateHeading } from '@/utils/stories/render-functions'
 
 export default {
-  title: 'Components/Forms.SFormValidation',
+  title: 'Components|Forms/SFormValidation',
 
   parameters: {
     jest: 'SFormValidation',

@@ -22,7 +22,7 @@
           <SIcon
             :color="passesAccessibility ? 'green' : 'red'"
             :icon="passesAccessibility ? 'check-circle' : 'x-circle'"
-            style="margin-right: 0.25em;"
+            style="margin-right: 0.25rem;"
           />
           {{ passesAccessibility ? 'Accessible' : 'Not accessible' }}
         </span>
@@ -110,9 +110,9 @@ export default {
 
 <style lang="scss">
 .contrast-calculator__preview {
-  border-radius: border-radius("small");
+  border-radius: border-radius('small');
   display: inline-block;
-  margin-bottom: spacing("half");
-  padding: spacing("half") spacing();
+  margin-bottom: spacing('half');
+  padding: spacing('half') spacing();
 }
 </style>

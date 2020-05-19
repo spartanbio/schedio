@@ -6,7 +6,7 @@ import { select } from '@storybook/addon-knobs'
 import { generateHeading } from '@/utils/stories/render-functions'
 
 export default {
-  title: 'Components/Loading.SSpinner',
+  title: 'Components|Loading/SSpinner',
 
   parameters: {
     jest: 'SSpinner',

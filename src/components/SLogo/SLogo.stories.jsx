@@ -5,7 +5,7 @@ import PropList from '@@/docs/components/PropList'
 import { colors } from './options'
 
 export default {
-  title: 'Components/SLogo',
+  title: 'Components|SLogo',
   component: SLogo,
   parameters: {
     jest: 'SLogo',

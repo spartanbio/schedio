@@ -9,7 +9,7 @@ import { types } from './options'
 const defaultSlotPlaceholder = jeffsum(5, 'sentences')
 
 export default {
-  title: 'Components/SCallout',
+  title: 'Components|SCallout',
 
   parameters: {
     jest: 'SCallout',

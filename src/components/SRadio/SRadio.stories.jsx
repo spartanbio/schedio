@@ -6,7 +6,7 @@ import StoryLink from '@@/docs/components/StoryLink'
 import { boolean } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Inputs.SRadio',
+  title: 'Components|Inputs/SRadio',
 
   parameters: {
     jest: 'SRadio',

@@ -5,7 +5,7 @@ import PropList from '@@/docs/components/PropList'
 import { boolean, select } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Inputs.SSwitch',
+  title: 'Components|Inputs/SSwitch',
 
   parameters: {
     jest: 'SSwitch',

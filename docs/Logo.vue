@@ -11,7 +11,7 @@
     <SLazyImage
       :src="require('@@/docs/assets/images/logo-space.png')"
       width=""
-      style="display: block; margin: 0 auto 3em;"
+      style="display: block; margin: 0 auto 3rem;"
     />
 
     <p>

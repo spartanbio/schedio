@@ -1,31 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SIcon.vue color "blue" can be the base color 1`] = `
+<svg viewBox="0 0 24 24" class="icon icon--color-blue">
+  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+</svg>
+`;
+
 exports[`SIcon.vue color "gold" can be the base color 1`] = `
 <svg viewBox="0 0 24 24" class="icon icon--color-gold">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "gold" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-gold-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "gold" can be the shade "darker" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-gold-darker">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "gold" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-gold-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "gold" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-gold-lighter">
   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
 </svg>
 `;
@@ -36,56 +18,8 @@ exports[`SIcon.vue color "green" can be the base color 1`] = `
 </svg>
 `;
 
-exports[`SIcon.vue color "green" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-green-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "green" can be the shade "darker" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-green-darker">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "green" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-green-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "green" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-green-lighter">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
 exports[`SIcon.vue color "grey" can be the base color 1`] = `
 <svg viewBox="0 0 24 24" class="icon icon--color-grey">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "grey" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-grey-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "grey" can be the shade "darker" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-grey-darker">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "grey" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-grey-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "grey" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-grey-lighter">
   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
 </svg>
 `;
@@ -102,56 +36,8 @@ exports[`SIcon.vue color "magenta" can be the base color 1`] = `
 </svg>
 `;
 
-exports[`SIcon.vue color "magenta" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-magenta-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "magenta" can be the shade "darker" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-magenta-darker">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "magenta" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-magenta-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "magenta" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-magenta-lighter">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
 exports[`SIcon.vue color "night" can be the base color 1`] = `
 <svg viewBox="0 0 24 24" class="icon icon--color-night">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "night" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-night-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "night" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-night-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "night" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-night-lighter">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "night" can be the shade "lightest" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-night-lightest">
   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
 </svg>
 `;
@@ -162,86 +48,8 @@ exports[`SIcon.vue color "red" can be the base color 1`] = `
 </svg>
 `;
 
-exports[`SIcon.vue color "red" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-red-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "red" can be the shade "darker" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-red-darker">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "red" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-red-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "red" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-red-lighter">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "spartan_blue" can be the base color 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-spartan_blue">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "spartan_blue" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-spartan_blue-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "spartan_blue" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-spartan_blue-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "spartan_blue" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-spartan_blue-lighter">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "spartan_blue" can be the shade "lightest" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-spartan_blue-lightest">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
 exports[`SIcon.vue color "turquoise" can be the base color 1`] = `
 <svg viewBox="0 0 24 24" class="icon icon--color-turquoise">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "turquoise" can be the shade "dark" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-turquoise-dark">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "turquoise" can be the shade "darker" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-turquoise-darker">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "turquoise" can be the shade "light" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-turquoise-light">
-  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-</svg>
-`;
-
-exports[`SIcon.vue color "turquoise" can be the shade "lighter" 1`] = `
-<svg viewBox="0 0 24 24" class="icon icon--color-turquoise-lighter">
   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
 </svg>
 `;

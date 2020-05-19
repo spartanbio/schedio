@@ -4,7 +4,7 @@ import { text, object } from '@storybook/addon-knobs'
 import PropList from '@@/docs/components/PropList'
 
 export default {
-  title: 'Components/SLazyImage',
+  title: 'Components|SLazyImage',
   component: SLazyImage,
   parameters: {
     jest: 'SLazyImage',

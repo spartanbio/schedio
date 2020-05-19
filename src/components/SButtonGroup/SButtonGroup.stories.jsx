@@ -5,7 +5,7 @@ import PropList from '@@/docs/components/PropList'
 import { boolean, text } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Buttons.SButtonGroup',
+  title: 'Components|Buttons/SButtonGroup',
 
   parameters: {
     jest: 'SButtonGroup',
@@ -37,7 +37,7 @@ export const buttonGroup = () => ({
           isGrouped={this.isGrouped}
         >
           <SButton
-            color="spartan_blue"
+            color="blue"
             shade="light"
             disabled={this.button1Disabled}
           >
@@ -45,7 +45,7 @@ export const buttonGroup = () => ({
           </SButton>
 
           <SButton
-            color="spartan_blue"
+            color="blue"
             shade="light"
             disabled={this.button2Disabled}
           >
@@ -53,7 +53,7 @@ export const buttonGroup = () => ({
           </SButton>
 
           <SButton
-            color="spartan_blue"
+            color="blue"
             shade="light"
             disabled={this.button3Disabled}
           >

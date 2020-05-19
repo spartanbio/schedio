@@ -33,15 +33,10 @@
 
 <script>
 import defaults from '@/utils/defaults'
-import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 import { colors, colorNames, sizes, types, allShadeOptions } from './options.js'
 
 export default {
   name: 'SButton',
-
-  mixins: [
-    DeprecatePropsMixin(['isOutlined', 'isText'], 'type'),
-  ],
 
   props: {
     color: {
@@ -85,18 +80,6 @@ export default {
       default: null,
     },
 
-    /** @deprecated replaced by `type` */
-    isOutlined: {
-      type: Boolean,
-      default: false,
-    },
-
-    /** @deprecated replaced by `type` */
-    isText: {
-      type: Boolean,
-      default: false,
-    },
-
     isLoading: {
       type: Boolean,
       default: false,
@@ -134,17 +117,7 @@ export default {
       if (this.color) {
         buttonStyle = `button--color-${this.color}`
 
-        if (this.shade) buttonStyle += `-${this.shade}`
-      }
-
-      /**
-       * TODO:
-       * - remove deprecated props
-       */
-      if (!this.type) {
-        if (this.color && this.isOutlined) buttonStyle += '-outlined'
-
-        if (this.color && this.isText) buttonStyle += '-text'
+        if (this.shade && this.shade !== 'base') buttonStyle += `-${this.shade}`
       }
 
       if (this.color && this.type) buttonStyle += `-${this.type}`
@@ -153,7 +126,7 @@ export default {
     },
 
     hasValidShade () {
-      return colors[this.color].includes(this.shade)
+      return Object.hasOwnProperty.call(colors[this.color], this.shade)
     },
 
     ariaLabel () {
@@ -177,7 +150,7 @@ export default {
 
   mounted () {
     if (this.shade && !this.hasValidShade) {
-      console.error(`Valid shades of \`${this.color}\` are: ${colors[this.color].join(', ')}.`)
+      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`)
     }
   },
 }

@@ -14,7 +14,7 @@ const iconNames = Object.keys(icons)
 const iconProp = side => select(`icon-${side}`, ['', ...iconNames], '', 'Optional Props')
 
 export default {
-  title: 'Components/Buttons.SButton',
+  title: 'Components|Buttons/SButton',
 
   parameters: {
     jest: 'SButton',
@@ -171,7 +171,7 @@ textButtons.story = {
 
 function generateButtons (h, propsData = {}) {
   const buttons = Object.entries(colors).map(([color, shades]) => {
-    const rows = [null, ...shades].map((shade) => {
+    const rows = Object.keys(shades).map((shade) => {
       const props = {
         ...propsData,
         shade,
@@ -189,7 +189,7 @@ function generateButtons (h, propsData = {}) {
                 props: { level: 3 },
                 style: { padding: '0.5em', textTransform: 'capitalize' },
               },
-              shade || 'Base',
+              shade,
             ),
           ]),
           generateButtonColumn(h, props, 'No icons'),

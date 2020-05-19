@@ -1,4 +1,4 @@
-@import '~@spartanbio/schedio-tokens/dist/shadow.map';
+@import '~@spartanbio/schedio-tokens/dist/web/scss/shadow.map';
 
 /// Returns the shadow for the specified depth
 /// @param {String} $depth [base] - The shadow’s depth.
@@ -17,7 +17,7 @@
 }
 
 @mixin shadow-overlay($direction: 0deg) {
-  background: linear-gradient($direction, rgba(color('night'), 0.15) -1em, transparent 0.75em);
+  background: linear-gradient($direction, rgba(color('night'), 0.15) -1rem, transparent 0.75rem);
   bottom: 0;
   content: '';
   left: 0;

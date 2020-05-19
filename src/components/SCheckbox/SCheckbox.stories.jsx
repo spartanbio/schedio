@@ -5,7 +5,7 @@ import PropList from '@@/docs/components/PropList'
 import { boolean } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Inputs.SCheckbox',
+  title: 'Components|Inputs/SCheckbox',
 
   parameters: {
     jest: 'SCheckbox',

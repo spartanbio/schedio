@@ -19,7 +19,7 @@ describe('STableCell.vue', () => {
       `,
     })
 
-    tableCell = wrapper.find(STableCell)
+    tableCell = wrapper.findComponent(STableCell)
   })
 
   it('renders correctly', () => {
@@ -40,21 +40,22 @@ describe('STableCell.vue', () => {
       `,
     },
     {
-      attachToDocument: true,
+      attachTo: document.getElementById('app'),
     },
   )
 
   it("automatically detects if it's a header", () => {
-    expect(wrapper.contains('th')).toBe(false)
-    expect(headerWrapper.find(STableCell).html()).toMatchSnapshot()
-    expect(headerWrapper.contains('th')).toBe(true)
+    expect(wrapper.find('th').exists()).toBe(false)
+    expect(headerWrapper.findComponent(STableCell).html()).toMatchSnapshot()
+    expect(headerWrapper.find('th').exists()).toBe(true)
+    headerWrapper.destroy()
   })
 
   it('can be manually set to use `th`', async () => {
-    expect(wrapper.contains('th')).toBe(false)
+    expect(wrapper.find('th').exists()).toBe(false)
     tableCell.setProps({ isHeader: true })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('th')).toBe(true)
+    expect(wrapper.find('th').exists()).toBe(true)
     expect(tableCell.html()).toMatchSnapshot()
   })
 

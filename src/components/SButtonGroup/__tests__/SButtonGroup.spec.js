@@ -24,7 +24,7 @@ describe('SButtonGroup.vue', () => {
       { stubs: { SButton: true } },
     )
 
-    buttonGroup = wrapper.find(SButtonGroup)
+    buttonGroup = wrapper.findComponent(SButtonGroup)
   })
 
   it('renders correctly', async () => {
@@ -34,16 +34,15 @@ describe('SButtonGroup.vue', () => {
   })
 
   it('renders child buttons', async () => {
-    expect(buttonGroup.is(SButtonGroup)).toBe(true)
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains(SButton)).toBe(true)
+    expect(wrapper.findComponent(SButton).exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('groups child buttons', async () => {
     buttonGroup.setProps({ isGrouped: true })
     await wrapper.vm.$nextTick()
-    expect(buttonGroup.contains('.button-group--grouped')).toBe(true)
+    expect(buttonGroup.find('.button-group--grouped').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 

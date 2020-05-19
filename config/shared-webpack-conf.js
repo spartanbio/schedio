@@ -2,7 +2,6 @@ const path = require('path')
 
 exports.styleResourcesLoaderOptions = {
   patterns: [
-    // path.resolve(__dirname, 'node_modules/@spartanbio/schedio-tokens/dist/*.scss'),
     path.resolve(__dirname, '../src/assets/styles/**/*.scss'),
   ],
 }

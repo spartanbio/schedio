@@ -10,7 +10,7 @@
           <li>Font: <code>Avenir Next</code></li>
           <li>Size: <code>{{ tokens['font-size-base'] }}</code></li>
           <li>Weight: <code>{{ tokens['font-weight-regular'] }}</code> (Regular)</li>
-          <li>Color: <code>{{ tokens['night'] }}</code> (night)</li>
+          <li>Color: <code>{{ tokens['color-night'] }}</code> (night)</li>
           <li>Leading: <code>{{ tokens['line-height-base'] }}</code></li>
         </ul>
       </p>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import tokens from '@spartanbio/schedio-tokens/dist/tokens.json'
+import tokens from '@spartanbio/schedio-tokens/dist/web/json/tokens.json'
 import { SCallout } from '@/components/SCallout'
 
 export default {

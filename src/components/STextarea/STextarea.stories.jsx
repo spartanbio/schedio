@@ -15,7 +15,7 @@ const iconShade = (side) => {
   select(`icon-${side}-color`, ['', ...allShadeOptions], 'green', 'Optional Props')
 }
 export default {
-  title: 'Components/Inputs.STextarea',
+  title: 'Components|Inputs/STextarea',
 
   parameters: {
     jest: 'STextarea',

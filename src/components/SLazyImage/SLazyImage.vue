@@ -130,7 +130,7 @@ export default {
 
 <style lang="scss">
 .lazy-image {
-  transition: filter duration() easing('out'), -webkit-filter duration() easing('out');
+  transition: filter duration() easing('ease-out'), -webkit-filter duration() easing('ease-out');
 
   &--loading {
     background-color: color('grey', 'light');

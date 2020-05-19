@@ -1,6 +1,7 @@
 .typography-example {
   border-bottom: border-width() solid color('grey', 'light');
   padding: spacing('double');
+
   // Add space after intro
   .typography-intro + & {
     border-top: border-width() solid color('grey', 'light');
@@ -13,6 +14,6 @@
   .heading-1,
   .heading-2,
   .heading-3 {
-    margin: spacing('none') spacing('none') 1rem;
+    margin: spacing('none') spacing('none') spacing();
   }
 }

@@ -91,7 +91,7 @@ export default {
 
     .select {
       // prevent arrow from overlapping default placeholder
-      min-width: 16em;
+      min-width: 16rem;
     }
 
     .input,

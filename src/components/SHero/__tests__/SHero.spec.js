@@ -76,7 +76,7 @@ describe('SHero.vue', () => {
   it('can be any html tag', async () => {
     wrapper.setProps({ tag: 'section' })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('section')).toBe(true)
+    expect(wrapper.find('section').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

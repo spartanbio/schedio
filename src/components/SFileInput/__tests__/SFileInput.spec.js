@@ -71,7 +71,7 @@ describe('SFileInput.vue', () => {
     wrapper.vm.handleFiles({ target: { files: [fileA] } })
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted('input')).toBeTruthy()
-    expect(wrapper.contains(SChip)).toBe(true)
+    expect(wrapper.findComponent(SChip).exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -226,7 +226,7 @@ describe('SFileInput.vue', () => {
     it('can hide the icon', async () => {
       wrapper.setProps({ hideIcon: true })
       await wrapper.vm.$nextTick()
-      expect(wrapper.contains('sicon')).toBe(false)
+      expect(wrapper.find('sicon').exists()).toBe(false)
       expect(wrapper.html()).toMatchSnapshot()
     })
 

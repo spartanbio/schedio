@@ -6,7 +6,7 @@ import PropList from '@@/docs/components/PropList'
 import { text } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/Tables.STableRow',
+  title: 'Components|Tables/STableRow',
 
   parameters: {
     jest: 'STableRow',

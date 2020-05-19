@@ -35,7 +35,7 @@ describe('SIcon.vue', () => {
     it('can be the base color', async () => {
       wrapper.setProps({ color })
       await wrapper.vm.$nextTick()
-      expect(wrapper.contains(`.icon--color-${color}`)).toBe(true)
+      expect(wrapper.find(`.icon--color-${color}`).exists()).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
 
@@ -44,7 +44,7 @@ describe('SIcon.vue', () => {
     it.each(options.colors[color])('can be the shade "%s"', async (shade) => {
       wrapper.setProps({ color, shade })
       await wrapper.vm.$nextTick()
-      expect(wrapper.contains(`.icon--color-${color}-${shade}`)).toBe(true)
+      expect(wrapper.find(`.icon--color-${color}-${shade}`).exists()).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
@@ -81,7 +81,7 @@ describe('SIcon.vue', () => {
     it.each(options.sizes)('can be "%s"', async (size) => {
       wrapper.setProps({ size })
       await wrapper.vm.$nextTick()
-      expect(wrapper.contains(`.icon--size-${size}`)).toBe(true)
+      expect(wrapper.find(`.icon--size-${size}`).exists()).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })

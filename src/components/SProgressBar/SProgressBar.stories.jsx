@@ -7,7 +7,7 @@ import { generateHeading } from '@/utils/stories/render-functions'
 import { SButton } from '@/components/SButton'
 
 export default {
-  title: 'Components/Loading.SProgressBar',
+  title: 'Components|Loading/SProgressBar',
 
   parameters: {
     jest: 'SProgressBar',

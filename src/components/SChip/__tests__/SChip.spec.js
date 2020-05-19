@@ -44,7 +44,7 @@ describe('SChip.vue', () => {
     it('can have its HTML tag set', async () => {
       wrapper.setProps({ tag: 'li' })
       await wrapper.vm.$nextTick()
-      expect(wrapper.contains('li')).toBe(true)
+      expect(wrapper.find('li').exists()).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
@@ -62,7 +62,7 @@ describe('SChip.vue', () => {
     })
 
     it('can be closable', async () => {
-      expect(wrapper.contains(SButton)).toBe(true)
+      expect(wrapper.findComponent(SButton).exists()).toBe(true)
       expect(wrapper.html()).toMatchSnapshot()
       expect(await axe(wrapper.html())).toHaveNoViolations()
     })

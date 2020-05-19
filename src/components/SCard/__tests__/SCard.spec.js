@@ -16,7 +16,7 @@ describe('SCard.vue', () => {
   })
 
   it('renders correctly', async () => {
-    expect(wrapper.contains('.card')).toBe(true)
+    expect(wrapper.find('.card').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
@@ -24,7 +24,7 @@ describe('SCard.vue', () => {
   it('can use different HTML tags', async () => {
     wrapper.setProps({ tag: 'section' })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('section')).toBe(true)
+    expect(wrapper.find('section').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -39,7 +39,7 @@ describe('SCard.vue', () => {
     wrapper.setProps(props)
     await wrapper.vm.$nextTick()
     expect(wrapper.props('image')).toEqual(props.image)
-    expect(wrapper.contains('img')).toBe(true)
+    expect(wrapper.find('img').exists()).toBe(true)
 
     const imageAttributes = wrapper.find('img').attributes()
 
@@ -56,7 +56,7 @@ describe('SCard.vue', () => {
   it('can remove padding from content', async () => {
     wrapper.setProps({ hasNoPadding: true })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('.card__body--no-padding')).toBe(true)
+    expect(wrapper.find('.card__body--no-padding').exists()).toBe(true)
   })
 
   it('can have a header', () => {

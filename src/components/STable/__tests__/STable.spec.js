@@ -52,16 +52,16 @@ describe('STable.vue', () => {
     })
 
     expect(errorSpy).not.toHaveBeenCalled()
-    expect(slotWrapper.contains('caption')).toBe(true)
-    expect(slotWrapper.contains('tbody')).toBe(true)
-    expect(slotWrapper.contains('thead')).toBe(true)
-    expect(slotWrapper.contains('tfoot')).toBe(true)
+    expect(slotWrapper.find('caption').exists()).toBe(true)
+    expect(slotWrapper.find('tbody').exists()).toBe(true)
+    expect(slotWrapper.find('thead').exists()).toBe(true)
+    expect(slotWrapper.find('tfoot').exists()).toBe(true)
 
     expect(slotWrapper.html()).toMatchSnapshot()
   })
 
   it('generates header cells from data', () => {
-    expect(wrapper.contains('th')).toBe(true)
+    expect(wrapper.find('th').exists()).toBe(true)
   })
 
   it('can override generated headers', async () => {
@@ -79,7 +79,7 @@ describe('STable.vue', () => {
   it('can hide header cells', async () => {
     wrapper.setProps({ hideHeader: true })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('thead')).toBe(false)
+    expect(wrapper.find('thead').exists()).toBe(false)
   })
 
   it('can duplicate the header in the footer', async () => {
@@ -100,14 +100,14 @@ describe('STable.vue', () => {
   it('can have a caption', async () => {
     wrapper.setProps({ caption: 'caption' })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('caption')).toBe(true)
+    expect(wrapper.find('caption').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('can have the caption at the top', async () => {
     wrapper.setProps({ hasCaptionTop: true, caption: 'caption' })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains('.table__caption--top')).toBe(true)
+    expect(wrapper.find('.table__caption--top').exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 

@@ -53,14 +53,14 @@ export default {
     border-left: none;
     border-top: none;
     content: '';
-    height: 0.65em;
+    height: 0.65rem;
     left: 50%;
     opacity: 0;
     position: absolute;
     top: 45%;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
     transition: all duration() ease;
-    width: 0.35em;
+    width: 0.35rem;
   }
 
   &:checked ~ &__check::after {

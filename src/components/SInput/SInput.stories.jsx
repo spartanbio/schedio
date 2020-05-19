@@ -18,7 +18,7 @@ const iconShade = (side) => {
 }
 
 export default {
-  title: 'Components/Inputs.SInput',
+  title: 'Components|Inputs/SInput',
 
   parameters: {
     jest: 'SInput',

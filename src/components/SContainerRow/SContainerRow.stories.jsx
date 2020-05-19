@@ -9,7 +9,7 @@ import PropList from '@@/docs/components/PropList'
 import kebabCase from 'lodash.kebabcase'
 
 export default {
-  title: 'Components/Layout.SContainerRow',
+  title: 'Components|Layout/SContainerRow',
 
   parameters: {
     jest: 'SContainerRow',

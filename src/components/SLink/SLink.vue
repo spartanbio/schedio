@@ -120,10 +120,10 @@ export default {
 
 <style lang="scss">
 .link {
-  $highlight-spacing: 0.1em;
+  $highlight-spacing: 0.1rem;
 
   align-items: center;
-  color: color('spartan_blue', 'light');
+  color: color('blue', 'light');
   display: inline-flex;
   position: relative;
   text-decoration: none;
@@ -159,7 +159,7 @@ export default {
 
   // Tone-down visited links
   &:visited {
-    color: color('spartan_blue');
+    color: color('blue');
 
     &::after {
       background-color: color('grey', 'light');
@@ -167,7 +167,7 @@ export default {
   }
 
   &--plain {
-    color: color('spartan_blue', 'light');
+    color: color('blue', 'light');
 
     &:active {
       color: color('green');
