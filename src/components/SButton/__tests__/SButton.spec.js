@@ -144,20 +144,6 @@ describe('SButton.vue', () => {
       expect(errorSpy).toHaveBeenCalled()
       expect(await axe(wrapper.html())).not.toHaveNoViolations()
     })
-
-    it.each(['isOutlined', 'isText'])('`%s` is used', async (prop) => {
-      wrapper = shallowMount(SButton, {
-        slots: {
-          default: 'Button Text',
-        },
-        propsData: {
-          [prop]: true,
-        },
-      })
-
-      await wrapper.vm.$nextTick()
-      expect(errorSpy).toHaveBeenCalled()
-    })
   })
 
   it('handles clicks', async () => {

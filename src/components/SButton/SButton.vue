@@ -33,15 +33,10 @@
 
 <script>
 import defaults from '@/utils/defaults'
-import DeprecatePropsMixin from '@/mixins/DeprecateProps.mixin'
 import { colors, colorNames, sizes, types, allShadeOptions } from './options.js'
 
 export default {
   name: 'SButton',
-
-  mixins: [
-    DeprecatePropsMixin(['isOutlined', 'isText'], 'type'),
-  ],
 
   props: {
     color: {
@@ -85,18 +80,6 @@ export default {
       default: null,
     },
 
-    /** @deprecated replaced by `type` */
-    isOutlined: {
-      type: Boolean,
-      default: false,
-    },
-
-    /** @deprecated replaced by `type` */
-    isText: {
-      type: Boolean,
-      default: false,
-    },
-
     isLoading: {
       type: Boolean,
       default: false,
@@ -135,16 +118,6 @@ export default {
         buttonStyle = `button--color-${this.color}`
 
         if (this.shade && this.shade !== 'base') buttonStyle += `-${this.shade}`
-      }
-
-      /**
-       * TODO:
-       * - remove deprecated props
-       */
-      if (!this.type) {
-        if (this.color && this.isOutlined) buttonStyle += '-outlined'
-
-        if (this.color && this.isText) buttonStyle += '-text'
       }
 
       if (this.color && this.type) buttonStyle += `-${this.type}`
