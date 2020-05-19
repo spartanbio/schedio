@@ -1,3 +1,27 @@
+# [4.0.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.3...v4.0.0) (2020-05-19)
+
+
+### Features
+
+* converts `em` to `rem` ([f76cbfc](https://gitlab.com/spartanbio-ux/schedio/commit/f76cbfc723f411958ab3b757fa4f2bbaa931c334))
+* **button:** removes `isOutlined` and `isText` props ([b91fa8c](https://gitlab.com/spartanbio-ux/schedio/commit/b91fa8c31fd4ad91489424e9db97bf035fd4e2e3))
+* **button-group:** removes props to change button styles ([1cf3ac9](https://gitlab.com/spartanbio-ux/schedio/commit/1cf3ac9185139eeb63a52d32230a4f45a61cbb59))
+* upgrades `@spartanbio/schedio-tokens` ([296c947](https://gitlab.com/spartanbio-ux/schedio/commit/296c9479ace6142b46125324505f86fe23e70920))
+* upgrades `@spartanbio/schedio-tokens` ([8ac7b9c](https://gitlab.com/spartanbio-ux/schedio/commit/8ac7b9c673411741eb7650467219b85f17e658ee))
+
+
+### BREAKING CHANGES
+
+* **button-group:** buttons should be styled individually, rather than by the group.
+* **button:** props were replaced by `type` prop
+* `em` is no longer used
+* SCSS
+  - `easing('in')` and `easing('out')` are now `easing('ease-in')` and `easing('ease-out')`
+  - `color('spartan_blue')` is now `color('blue`)`
+  - `spacing()` returns `rem`
+  - `spacing('4x')` is now `spacing('qudaruple')`
+  - `shadow()` returns shadows with `rem`
+
 # [4.0.0-alpha.1](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.3...v4.0.0-alpha.1) (2020-05-19)
 
 
