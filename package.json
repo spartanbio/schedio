@@ -132,10 +132,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "gitlab:spartanbio-ux/schedio"
-  },
+  "repository": "github:spartanbio/schedio",
   "vetur": {
     "tags": "dist/vetur/tags.json",
     "attributes": "dist/vetur/attributes.json"
