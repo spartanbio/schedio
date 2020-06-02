@@ -2376,25 +2376,27 @@
     stylelint-config-standard "^20.0.0"
     stylelint-order "^4.0.0"
 
-"@storybook/addon-a11y@^6.0.0-beta.6":
-  version "6.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-beta.8.tgz#9915fbd2b9b0eb8ab7829e77c8f17c22e9641448"
-  integrity sha512-H3F0hjVUH7sPJjfLPoESnbn/rVachGW3vPJfHKY9WStwDNwZC053j4+7JgrRnV9sorx7ayu8K6KzsKVvE8K5kA==
+"@storybook/addon-a11y@^6.0.0-beta.20":
+  version "6.0.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-beta.20.tgz#75e80af5819cd8dac9cfb5e0dc11a83696844fe7"
+  integrity sha512-VBpsEdDjwycwbKcgjdyK62++q3uBQzh6mKj+2lYAOZFTx4jEugjy2PVHo7gpZWNDU64YK2aBQzWpyhOiM+ud4w==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.8"
-    "@storybook/api" "6.0.0-beta.8"
-    "@storybook/channels" "6.0.0-beta.8"
-    "@storybook/client-api" "6.0.0-beta.8"
-    "@storybook/client-logger" "6.0.0-beta.8"
-    "@storybook/components" "6.0.0-beta.8"
-    "@storybook/core-events" "6.0.0-beta.8"
-    "@storybook/theming" "6.0.0-beta.8"
+    "@storybook/addons" "6.0.0-beta.20"
+    "@storybook/api" "6.0.0-beta.20"
+    "@storybook/channels" "6.0.0-beta.20"
+    "@storybook/client-api" "6.0.0-beta.20"
+    "@storybook/client-logger" "6.0.0-beta.20"
+    "@storybook/components" "6.0.0-beta.20"
+    "@storybook/core-events" "6.0.0-beta.20"
+    "@storybook/theming" "6.0.0-beta.20"
     axe-core "^3.5.2"
     core-js "^3.0.1"
     global "^4.3.2"
     lodash "^4.17.15"
     react-sizeme "^2.5.2"
     regenerator-runtime "^0.13.3"
+    ts-dedent "^1.1.1"
+    util-deprecate "^1.0.2"
 
 "@storybook/addon-docs@^6.0.0-beta.20":
   version "6.0.0-beta.20"
