@@ -26,6 +26,7 @@ jobs:
           restore-keys: | # uses partial matches
             ${{ runner.os }}-yarn-
       - uses: actions/checkout@v2
+      - run: yarn --check-files --frozen-lockfile --non-interactive
       - run: yarn test:generate
       - run: yarn build:release
       - run: yarn semantic-release
