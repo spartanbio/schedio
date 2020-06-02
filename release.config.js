@@ -5,7 +5,7 @@ module.exports = {
     '@semantic-release/changelog',
     '@semantic-release/npm',
     [
-      '@semantic-release/gitlab',
+      '@semantic-release/github',
       {
         assets: [
           { path: 'dist/**/*', label: 'schedio' },
