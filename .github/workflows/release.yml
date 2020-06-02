@@ -7,9 +7,13 @@ on:
       - master
 
 jobs:
-  install:
+  release:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
+    needs: install
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -23,28 +27,6 @@ jobs:
           restore-keys: | # uses partial matches
             ${{ runner.os }}-yarn-
       - uses: actions/checkout@v2
-      - name: Install
-        run: yarn --check-files --frozen-lockfile --non-interactive
-      - name: Cache workspace
-        uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}
-          key: schedio-${{ github.sha }}
-  release:
-    if: "!contains(github.event.head_commit.message, 'skip ci')"
-    runs-on: ubuntu-latest
-    needs: install
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Restore workspace
-        uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}
-          key: schedio-${{ github.sha }}
-      - run: yarn --check-files --frozen-lockfile --non-interactive
       - run: yarn test:generate
       - run: yarn build:release
       - run: yarn semantic-release
