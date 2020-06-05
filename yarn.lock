@@ -2385,19 +2385,19 @@
     stylelint-config-standard "^20.0.0"
     stylelint-order "^4.0.0"
 
-"@storybook/addon-a11y@^6.0.0-beta.20":
-  version "6.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-beta.20.tgz#75e80af5819cd8dac9cfb5e0dc11a83696844fe7"
-  integrity sha512-VBpsEdDjwycwbKcgjdyK62++q3uBQzh6mKj+2lYAOZFTx4jEugjy2PVHo7gpZWNDU64YK2aBQzWpyhOiM+ud4w==
+"@storybook/addon-a11y@^6.0.0-beta.21":
+  version "6.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-beta.21.tgz#a56d8b89c29f21aad7c149cda349cd50bda07631"
+  integrity sha512-NjBf85fCzAqNpFubwvjNGRbVa2KBnKqEmhKzxoxXuZ9HGwm3lQofH3vVQzoN6OvrVlZSxIXA9j9gWO1VVDlhqg==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.20"
-    "@storybook/api" "6.0.0-beta.20"
-    "@storybook/channels" "6.0.0-beta.20"
-    "@storybook/client-api" "6.0.0-beta.20"
-    "@storybook/client-logger" "6.0.0-beta.20"
-    "@storybook/components" "6.0.0-beta.20"
-    "@storybook/core-events" "6.0.0-beta.20"
-    "@storybook/theming" "6.0.0-beta.20"
+    "@storybook/addons" "6.0.0-beta.21"
+    "@storybook/api" "6.0.0-beta.21"
+    "@storybook/channels" "6.0.0-beta.21"
+    "@storybook/client-api" "6.0.0-beta.21"
+    "@storybook/client-logger" "6.0.0-beta.21"
+    "@storybook/components" "6.0.0-beta.21"
+    "@storybook/core-events" "6.0.0-beta.21"
+    "@storybook/theming" "6.0.0-beta.21"
     axe-core "^3.5.2"
     core-js "^3.0.1"
     global "^4.3.2"
