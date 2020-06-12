@@ -2453,16 +2453,16 @@
     vue-docgen-api "^4.7.0"
     vue-docgen-loader "^1.4.0"
 
-"@storybook/addon-jest@^6.0.0-beta.23":
-  version "6.0.0-beta.23"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-beta.23.tgz#71e270264bc003b310e829c6e3c612a35ad99fd7"
-  integrity sha512-+swf7k/YlP5bD6jYDzPBIGPr/txhkpJ3lS0K9YyhF3d5hofWOic4qjsWyQBlqg1PZN28/ow0eoUV0AdkGpNpfg==
+"@storybook/addon-jest@^6.0.0-beta.25":
+  version "6.0.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-beta.25.tgz#8e053c5bc7bd7c1901325d7848cf7b6db1bb6c90"
+  integrity sha512-MazzaPno11AjR32c/W/eUMsYNuvAthYYW00iI98rOSlsftlElKEfRfC8NeAwG5WPhgElcb4Uq99YehUCOp58/Q==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.23"
-    "@storybook/api" "6.0.0-beta.23"
-    "@storybook/components" "6.0.0-beta.23"
-    "@storybook/core-events" "6.0.0-beta.23"
-    "@storybook/theming" "6.0.0-beta.23"
+    "@storybook/addons" "6.0.0-beta.25"
+    "@storybook/api" "6.0.0-beta.25"
+    "@storybook/components" "6.0.0-beta.25"
+    "@storybook/core-events" "6.0.0-beta.25"
+    "@storybook/theming" "6.0.0-beta.25"
     core-js "^3.0.1"
     global "^4.3.2"
     react "^16.8.3"
@@ -2525,6 +2525,21 @@
     "@storybook/core-events" "6.0.0-beta.23"
     "@storybook/router" "6.0.0-beta.23"
     "@storybook/theming" "6.0.0-beta.23"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    regenerator-runtime "^0.13.3"
+
+"@storybook/addons@6.0.0-beta.25", "@storybook/addons@^6.0.0-beta.23":
+  version "6.0.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.0.0-beta.25.tgz#d3589f26154f440c6c27db9bd4b33f1c93898dd5"
+  integrity sha512-XjTE+Z4ioy+YdJlaPQkNTZPw2XCj790HzTE32wTsQl3PXVnnHE8lod/nJ3F4BtceZ4RUUUc2uy7BIzfjUZ8i2g==
+  dependencies:
+    "@storybook/api" "6.0.0-beta.25"
+    "@storybook/channels" "6.0.0-beta.25"
+    "@storybook/client-logger" "6.0.0-beta.25"
+    "@storybook/core-events" "6.0.0-beta.25"
+    "@storybook/router" "6.0.0-beta.25"
+    "@storybook/theming" "6.0.0-beta.25"
     core-js "^3.0.1"
     global "^4.3.2"
     regenerator-runtime "^0.13.3"
@@ -2764,6 +2779,36 @@
     "@storybook/client-logger" "6.0.0-beta.23"
     "@storybook/csf" "0.0.1"
     "@storybook/theming" "6.0.0-beta.23"
+    "@types/overlayscrollbars" "^1.9.0"
+    "@types/react-color" "^3.0.1"
+    "@types/react-syntax-highlighter" "11.0.4"
+    core-js "^3.0.1"
+    fast-deep-equal "^3.1.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.11.4"
+    memoizerific "^1.11.3"
+    overlayscrollbars "^1.10.2"
+    overlayscrollbars-react "^0.2.1"
+    polished "^3.4.4"
+    popper.js "^1.14.7"
+    react "^16.8.3"
+    react-color "^2.17.0"
+    react-dom "^16.8.3"
+    react-helmet-async "^1.0.2"
+    react-popper-tooltip "^2.11.0"
+    react-syntax-highlighter "^12.2.1"
+    react-textarea-autosize "^8.0.1"
+    ts-dedent "^1.1.1"
+
+"@storybook/components@6.0.0-beta.25":
+  version "6.0.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.0.0-beta.25.tgz#2aac17afa78b8f3fad7dbb91b4c5a48097224628"
+  integrity sha512-3L3LZCnEczNaUe2kRs6AlD+/cGkxmO05N7Puf754yeNY8g99N/e95aAmjMS/7W+elULSTxQcwS7AAaFGT0pnJw==
+  dependencies:
+    "@storybook/client-logger" "6.0.0-beta.25"
+    "@storybook/csf" "0.0.1"
+    "@storybook/theming" "6.0.0-beta.25"
     "@types/overlayscrollbars" "^1.9.0"
     "@types/react-color" "^3.0.1"
     "@types/react-syntax-highlighter" "11.0.4"
