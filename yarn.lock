@@ -2445,18 +2445,18 @@
     regenerator-runtime "^0.13.3"
     upath "^1.1.0"
 
-"@storybook/addon-knobs@^6.0.0-beta.26":
-  version "6.0.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-beta.26.tgz#3bef07afa61e42445b207e35f26eb6ac452475ce"
-  integrity sha512-Aea2eubT4vMEbgfYdWoH7fYLL5KpheAjAhPX8UKsw/LcQ6QGFcoiiIm8zDlybpaqJIplvqHsXzKSghIzyD5Mjg==
+"@storybook/addon-knobs@^6.0.0-beta.27":
+  version "6.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-beta.27.tgz#cbdb15ae11c63ec0ca00f2a5d330fb868c62f28d"
+  integrity sha512-GgM0uAaQAq50LK1eVaLYZFqTF6CRgD6QsnE4Lg2lDM6RrygtOogMSOgsXAvGyTTK045BtvTxveuzD6mzub/38Q==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.26"
-    "@storybook/api" "6.0.0-beta.26"
-    "@storybook/channels" "6.0.0-beta.26"
-    "@storybook/client-api" "6.0.0-beta.26"
-    "@storybook/components" "6.0.0-beta.26"
-    "@storybook/core-events" "6.0.0-beta.26"
-    "@storybook/theming" "6.0.0-beta.26"
+    "@storybook/addons" "6.0.0-beta.27"
+    "@storybook/api" "6.0.0-beta.27"
+    "@storybook/channels" "6.0.0-beta.27"
+    "@storybook/client-api" "6.0.0-beta.27"
+    "@storybook/components" "6.0.0-beta.27"
+    "@storybook/core-events" "6.0.0-beta.27"
+    "@storybook/theming" "6.0.0-beta.27"
     "@types/react-color" "^3.0.1"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
