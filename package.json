@@ -51,7 +51,7 @@
     "@storybook/addon-jest": "^6.0.0-beta.25",
     "@storybook/addon-knobs": "^6.0.0-beta.26",
     "@storybook/addon-links": "^6.0.0-beta.26",
-    "@storybook/addons": "^6.0.0-beta.25",
+    "@storybook/addons": "^6.0.0-beta.27",
     "@storybook/vue": "^6.0.0-beta.6",
     "@vue/babel-plugin-transform-vue-jsx": "^1.1.2",
     "@vue/cli": "^4.4.1",
