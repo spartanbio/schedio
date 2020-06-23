@@ -55,7 +55,7 @@
     "@storybook/vue": "^6.0.0-beta.6",
     "@vue/babel-plugin-transform-vue-jsx": "^1.1.2",
     "@vue/cli": "^4.4.5",
-    "@vue/cli-plugin-babel": "~4.4.4",
+    "@vue/cli-plugin-babel": "~4.4.5",
     "@vue/cli-plugin-eslint": "~4.4.5",
     "@vue/cli-plugin-unit-jest": "~4.4.4",
     "@vue/cli-service": "~4.4.4",
