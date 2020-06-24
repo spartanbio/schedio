@@ -2484,16 +2484,16 @@
     react-select "^3.0.8"
     regenerator-runtime "^0.13.3"
 
-"@storybook/addon-links@^6.0.0-beta.33":
-  version "6.0.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.0.0-beta.33.tgz#32c3d5ebfb12913e630558b37a75c0151f5688f7"
-  integrity sha512-tIXY3ZbG/YgRlTqNP3U2P/FywvWEmZI7fNeUAR1rrHC43gG853BPNoxvtoQpxaj+5eV4cabjAVPjlpDfLdx3Xw==
+"@storybook/addon-links@^6.0.0-beta.35":
+  version "6.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.0.0-beta.35.tgz#e99beea2f9c33e724d641af737bf8bd24b696549"
+  integrity sha512-bI5g+N7l+/TNrwf8UuDBaEJgmXVFymAuQ6Ems00//zlCKUECqgBb43vmoqaXS14J+9GL/8CLf/VJZ04PWKzX4A==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.33"
-    "@storybook/client-logger" "6.0.0-beta.33"
-    "@storybook/core-events" "6.0.0-beta.33"
+    "@storybook/addons" "6.0.0-beta.35"
+    "@storybook/client-logger" "6.0.0-beta.35"
+    "@storybook/core-events" "6.0.0-beta.35"
     "@storybook/csf" "0.0.1"
-    "@storybook/router" "6.0.0-beta.33"
+    "@storybook/router" "6.0.0-beta.35"
     "@types/qs" "^6.9.0"
     core-js "^3.0.1"
     global "^4.3.2"
