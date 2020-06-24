@@ -2547,6 +2547,21 @@
     global "^4.3.2"
     regenerator-runtime "^0.13.3"
 
+"@storybook/addons@^6.0.0-beta.34":
+  version "6.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.0.0-beta.34.tgz#f8b0c1a64ec3e3948d832a3d11a0faef070203cc"
+  integrity sha512-00S69QTJbZN7xbd5zZiZoGZLvnR7wzZt2bVFpfwTsfYHB4ZaFgeSf7pVqTf+DCTlUSo4z6aPOBa0leGmoWmwbQ==
+  dependencies:
+    "@storybook/api" "6.0.0-beta.34"
+    "@storybook/channels" "6.0.0-beta.34"
+    "@storybook/client-logger" "6.0.0-beta.34"
+    "@storybook/core-events" "6.0.0-beta.34"
+    "@storybook/router" "6.0.0-beta.34"
+    "@storybook/theming" "6.0.0-beta.34"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    regenerator-runtime "^0.13.3"
+
 "@storybook/api@6.0.0-beta.33":
   version "6.0.0-beta.33"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.0.0-beta.33.tgz#9202950c8ddfaf721d33b1b350b019cc360560ff"
