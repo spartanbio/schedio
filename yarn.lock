@@ -2373,19 +2373,19 @@
     stylelint-config-standard "^20.0.0"
     stylelint-order "^4.0.0"
 
-"@storybook/addon-a11y@^6.0.0-beta.36":
-  version "6.0.0-beta.36"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-beta.36.tgz#ba6c013a1cd16e625e95d3293c9b95442af2ab02"
-  integrity sha512-XY5m6raFEmfo05f62b5fMvMfwukociTFmx4aolLpMtiQumSUjfSVkdSWfHeGT7SSHFu1HGKZMOfJ1gSXc+Zydg==
+"@storybook/addon-a11y@^6.0.0-beta.37":
+  version "6.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-beta.37.tgz#7413dd0f812d955175145386af4abc32fb4ee999"
+  integrity sha512-EpcjkZTvPoXcUZjwbrenvc7PBJe6OT59trOSL+CuHi8xsOyDmfKY3jg6vJ/0KxNHPCAGr6hxyl3rzcA5kVGAhw==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.36"
-    "@storybook/api" "6.0.0-beta.36"
-    "@storybook/channels" "6.0.0-beta.36"
-    "@storybook/client-api" "6.0.0-beta.36"
-    "@storybook/client-logger" "6.0.0-beta.36"
-    "@storybook/components" "6.0.0-beta.36"
-    "@storybook/core-events" "6.0.0-beta.36"
-    "@storybook/theming" "6.0.0-beta.36"
+    "@storybook/addons" "6.0.0-beta.37"
+    "@storybook/api" "6.0.0-beta.37"
+    "@storybook/channels" "6.0.0-beta.37"
+    "@storybook/client-api" "6.0.0-beta.37"
+    "@storybook/client-logger" "6.0.0-beta.37"
+    "@storybook/components" "6.0.0-beta.37"
+    "@storybook/core-events" "6.0.0-beta.37"
+    "@storybook/theming" "6.0.0-beta.37"
     axe-core "^3.5.2"
     core-js "^3.0.1"
     global "^4.3.2"
@@ -2637,6 +2637,18 @@
     global "^4.3.2"
     telejson "^4.0.0"
 
+"@storybook/channel-postmessage@6.0.0-beta.37":
+  version "6.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-beta.37.tgz#b81973812fcc84cfb854d209edd1005289a09758"
+  integrity sha512-8ioXVZ4WLW99e+EoK+ew+MouhXRUkjfqO1xtlK9SAATZFE4+ZtqMIir35kjs7dtKoCcsiZ0q7RALRyuqI+0jXw==
+  dependencies:
+    "@storybook/channels" "6.0.0-beta.37"
+    "@storybook/client-logger" "6.0.0-beta.37"
+    "@storybook/core-events" "6.0.0-beta.37"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    telejson "^4.0.0"
+
 "@storybook/channel-postmessage@6.0.0-beta.8":
   version "6.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-beta.8.tgz#57b95437d24bbbb76d50b626601e9fb06c4d7196"
@@ -2696,6 +2708,28 @@
     qs "^6.6.0"
     stable "^0.1.8"
     ts-dedent "^1.1.1"
+
+"@storybook/client-api@6.0.0-beta.37":
+  version "6.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-6.0.0-beta.37.tgz#64c375cca7d345acb3ca8bf629abbe195e511376"
+  integrity sha512-H91wn26lCh0UK6wEHSqNvbUQcQutSECRPEkNqU9eF8XSIU5YnoslD2WCgHtjGgMv1kakVD/YME0uhpBpW8h6sA==
+  dependencies:
+    "@storybook/addons" "6.0.0-beta.37"
+    "@storybook/channel-postmessage" "6.0.0-beta.37"
+    "@storybook/channels" "6.0.0-beta.37"
+    "@storybook/client-logger" "6.0.0-beta.37"
+    "@storybook/core-events" "6.0.0-beta.37"
+    "@storybook/csf" "0.0.1"
+    "@types/qs" "^6.9.0"
+    "@types/webpack-env" "^1.15.2"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    memoizerific "^1.11.3"
+    qs "^6.6.0"
+    stable "^0.1.8"
+    ts-dedent "^1.1.1"
+    util-deprecate "^1.0.2"
 
 "@storybook/client-api@6.0.0-beta.8":
   version "6.0.0-beta.8"
