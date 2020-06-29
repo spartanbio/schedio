@@ -44,7 +44,7 @@
     "@semantic-release/github": "^7.0.7",
     "@semantic-release/release-notes-generator": "^9.0.0",
     "@spartanbio/eslint-config": "^1.1.1",
-    "@spartanbio/eslint-config-vue": "^1.0.7",
+    "@spartanbio/eslint-config-vue": "^1.1.0",
     "@spartanbio/stylelint-config-scss": "^1.0.7",
     "@storybook/addon-a11y": "^6.0.0-beta.37",
     "@storybook/addon-docs": "^6.0.0-beta.37",

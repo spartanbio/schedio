@@ -2319,10 +2319,10 @@
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.0.tgz#623aa40623550e3b94767cffeb096a6fb597ed09"
   integrity sha512-9GvTek+7cVw7r+L7TNGOG1astZJWXz2h5q4BqMXl28KN+24iSCm1xo+RhZOZvwdT3bzNe9hD7riJc/lBoO7mgg==
 
-"@spartanbio/eslint-config-vue@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@spartanbio/eslint-config-vue/-/eslint-config-vue-1.0.7.tgz#cb8ec69f7813d9a1648b9de4666abd99e4367e4d"
-  integrity sha512-E6pYNPE1VZDcaDovq5fi+JJBZRh1zod+9s9uaVuaHtKEi6KkkLzc/bZERSBLFCTXcbri0RID9tFA+QIX8rWeaQ==
+"@spartanbio/eslint-config-vue@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@spartanbio/eslint-config-vue/-/eslint-config-vue-1.1.0.tgz#29628cb5074251f1c178d03c604756ef4910c509"
+  integrity sha512-LLbEPhm3W3jB3U7cjqwQyrvHfuK1lEexA2pum0Q0UaP26Vt7bqsYB3iJeiZDvj71HDWobaqQcRzqd0UNk9Gr6w==
 
 "@spartanbio/eslint-config@^1.1.1":
   version "1.1.1"
