@@ -2324,10 +2324,10 @@
   resolved "https://registry.yarnpkg.com/@spartanbio/eslint-config-vue/-/eslint-config-vue-1.1.0.tgz#29628cb5074251f1c178d03c604756ef4910c509"
   integrity sha512-LLbEPhm3W3jB3U7cjqwQyrvHfuK1lEexA2pum0Q0UaP26Vt7bqsYB3iJeiZDvj71HDWobaqQcRzqd0UNk9Gr6w==
 
-"@spartanbio/eslint-config@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@spartanbio/eslint-config/-/eslint-config-1.1.1.tgz#06f48fb68077ac64c2c7e713a9771046542e70e5"
-  integrity sha512-Byl0tCQ/i6A7cc3Jggz52/l9RTj8rHgTkjGzNhxX9+nx2B8Czw42SSu5TNCdps+ciSfTCmMabQpTEeUvFmKqXw==
+"@spartanbio/eslint-config@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@spartanbio/eslint-config/-/eslint-config-1.2.0.tgz#de83d0768c1f3ad6028c63b7b3aac641c9dbdfca"
+  integrity sha512-RvdTLK3WTqCn+U5R+ZcLkLVoZh87nWFTZgKYmfJNL3Nu7b8xKKCXzQKcPHXeiU0LQwwEITQdX4NVhNvwRBChSw==
 
 "@spartanbio/schedio-tokens@^2.0.0-alpha.5":
   version "2.0.0"
