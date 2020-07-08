@@ -1,3 +1,10 @@
+## [4.0.1-alpha.1](https://github.com/spartanbio/schedio/compare/v4.0.0...v4.0.1-alpha.1) (2020-07-08)
+
+
+### Bug Fixes
+
+* loads tokens with `sass-resources-loader` ([d8de231](https://github.com/spartanbio/schedio/commit/d8de23136b101cfb63bd2f405fd54fb36ae19079))
+
 # [4.0.0](https://gitlab.com/spartanbio-ux/schedio/compare/v3.15.3...v4.0.0) (2020-05-19)
 
 
