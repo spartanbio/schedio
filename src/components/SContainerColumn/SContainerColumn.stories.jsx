@@ -1,27 +1,27 @@
-import { SContainer } from '@/components/SContainer'
-import { SContainerColumn } from '@/components/SContainerColumn'
-import { SContainerRow } from '@/components/SContainerRow'
-import { SHeading } from '@/components/SHeading'
-import { boolean, number, select } from '@storybook/addon-knobs'
-import orderBy from 'lodash.orderby'
-import mobileBreakpoints from '../SContainer/mobile-breakpoints'
-import PropList from '@@/docs/components/PropList'
+import { SContainer } from '@/components/SContainer';
+import { SContainerColumn } from '@/components/SContainerColumn';
+import { SContainerRow } from '@/components/SContainerRow';
+import { SHeading } from '@/components/SHeading';
+import { boolean, number, select } from '@storybook/addon-knobs';
+import orderBy from 'lodash.orderby';
+import mobileBreakpoints from '../SContainer/mobile-breakpoints';
+import PropList from '@@/docs/components/PropList';
 
 export default {
-  title: 'Components|Layout/SContainerColumn',
+  title: 'Components/Layout/SContainerColumn',
 
   parameters: {
     jest: 'SContainerColumn',
   },
-}
+};
 
 export const containerColumn = () => {
   // get sorted column props from component
-  const columnPropNames = orderBy(Object.keys(SContainerColumn.props))
+  const columnPropNames = orderBy(Object.keys(SContainerColumn.props));
 
   // Object of sizes
-  const colSizes = ['']
-  for (let i = 1; i < 13; i++) colSizes[i] = String(i)
+  const colSizes = [''];
+  for (let i = 1; i < 13; i++) colSizes[i] = String(i);
 
   // convert props to storybook knobs
   const sizeProps = columnPropNames
@@ -32,11 +32,11 @@ export const containerColumn = () => {
         [name]: select(name, [false, true, ...colSizes.filter(val => val)], false, 'Sizes'),
       }),
       {},
-    )
+    );
 
   const offsetProps = columnPropNames
     .filter(propName => /^offset/.test(propName))
-    .reduce((props, name) => ({ ...props, [name]: select(name, colSizes, '', 'Offsets') }), {})
+    .reduce((props, name) => ({ ...props, [name]: select(name, colSizes, '', 'Offsets') }), {});
 
   const orderProps = columnPropNames
     .filter(propName => /^order/.test(propName))
@@ -46,11 +46,11 @@ export const containerColumn = () => {
         [name]: select(name, { ...colSizes, first: 'first', last: 'last' }, '', 'Order'),
       }),
       {},
-    )
+    );
 
   const narrowBreakpoints = columnPropNames
     .filter(propName => /^narrow/.test(propName))
-    .reduce((p, n) => ({ ...p, [n]: boolean(n, false, 'Narrow') }), {})
+    .reduce((p, n) => ({ ...p, [n]: boolean(n, false, 'Narrow') }), {});
 
   return {
     props: {
@@ -65,7 +65,7 @@ export const containerColumn = () => {
       },
     },
     render (h) {
-      const { props } = this.$props
+      const { props } = this.$props;
 
       return (
         <div>
@@ -160,11 +160,11 @@ export const containerColumn = () => {
 
           <PropList component={SContainerColumn} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 containerColumn.story = {
   name: 'Container Column',
-}
+};

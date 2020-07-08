@@ -1,5 +1,5 @@
-import SHeading from './SHeading.vue'
+import SHeading from './SHeading.vue';
 
-export { SHeading }
+export { SHeading };
 
-export default { install: Vue => Vue.component(SHeading.name, SHeading) }
+export default { install: Vue => Vue.component(SHeading.name, SHeading) };

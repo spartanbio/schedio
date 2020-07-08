@@ -35,9 +35,9 @@ const defaults = {
   tableIsHoverable: false,
   tableIsStriped: false,
   tableIsFullwidth: false,
-}
+};
 
-export default defaults
+export default defaults;
 export function setDefaults (options) {
-  Object.assign(defaults, options)
+  Object.assign(defaults, options);
 }

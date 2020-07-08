@@ -1,7 +1,7 @@
-import SSpinner from './SSpinner.vue'
+import SSpinner from './SSpinner.vue';
 
-export { SSpinner }
+export { SSpinner };
 
 export default {
   install: Vue => Vue.component(SSpinner.name, SSpinner),
-}
+};

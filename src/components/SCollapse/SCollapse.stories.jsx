@@ -1,15 +1,15 @@
-import { SCollapse } from '@/components/SCollapse'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { text } from '@storybook/addon-knobs'
+import { SCollapse } from '@/components/SCollapse';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|SCollapse',
+  title: 'Components/SCollapse',
 
   parameters: {
     jest: 'SCollapse',
   },
-}
+};
 
 export const collapse = () => ({
   props: {
@@ -27,7 +27,7 @@ export const collapse = () => ({
     },
   },
   render (h) {
-    const { props, slots } = this.$props
+    const { props, slots } = this.$props;
 
     return (
       <div>
@@ -52,10 +52,10 @@ export const collapse = () => ({
         {/* This doesn't work if props are only generated through a mixin */}
         {SCollapse.props && <PropList component={SCollapse} />}
       </div>
-    )
+    );
   },
-})
+});
 
 collapse.story = {
   name: 'Collapse',
-}
+};

@@ -1,5 +1,5 @@
-import SContainerColumn from './SContainerColumn.vue'
+import SContainerColumn from './SContainerColumn.vue';
 
-export { SContainerColumn }
+export { SContainerColumn };
 
-export default { install: Vue => Vue.component(SContainerColumn.name, SContainerColumn) }
+export default { install: Vue => Vue.component(SContainerColumn.name, SContainerColumn) };

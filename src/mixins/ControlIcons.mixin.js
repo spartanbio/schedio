@@ -1,4 +1,4 @@
-import { SIcon } from '@/components/SIcon'
+import { SIcon } from '@/components/SIcon';
 
 export default {
   components: {
@@ -36,4 +36,4 @@ export default {
       default: null,
     },
   },
-}
+};

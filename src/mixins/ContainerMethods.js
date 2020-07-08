@@ -1,4 +1,4 @@
-import kebabCase from 'lodash.kebabcase'
+import kebabCase from 'lodash.kebabcase';
 
 export default {
   methods: {
@@ -8,16 +8,16 @@ export default {
      * @returns {Object.<string, (number|string|boolean)>}
      */
     getClassNameProps (modifier) {
-      const pattern = modifier instanceof RegExp ? modifier : new RegExp(modifier)
+      const pattern = modifier instanceof RegExp ? modifier : new RegExp(modifier);
 
       return Object.keys(this.$props).reduce((classes, className) => {
         if (pattern.test(className) && this.$props[className]) {
-          const kebabName = kebabCase(className)
-          classes[kebabName] = this.$props[className]
+          const kebabName = kebabCase(className);
+          classes[kebabName] = this.$props[className];
         }
 
-        return classes
-      }, {})
+        return classes;
+      }, {});
     },
 
     /**
@@ -26,8 +26,8 @@ export default {
      * @returns {Array.<string>}
      */
     generateResponsiveClassNames (modifier) {
-      const classes = this.getClassNameProps(modifier)
-      return Object.keys(classes).reduce(this.classNameReducer(classes), [])
+      const classes = this.getClassNameProps(modifier);
+      return Object.keys(classes).reduce(this.classNameReducer(classes), []);
     },
   },
-}
+};

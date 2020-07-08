@@ -1,21 +1,22 @@
-import { SFormField } from '@/components/SFormField'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
+import { SFormField } from '@/components/SFormField';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
 
 export default {
-  title: 'Components|Forms/SFormField',
+  title: 'Components/Forms/SFormField',
 
   parameters: {
     jest: 'SFormField',
   },
-}
+};
 
 export const formField = () => ({
   render (h) {
     const submitHandler = (e) => {
-      e.preventDefault()
-      alert('You submitted the form')
-    }
+      e.preventDefault();
+      // eslint-disable-next-line no-alert
+      alert('You submitted the form');
+    };
 
     return (
       <div>
@@ -52,10 +53,10 @@ export const formField = () => ({
 
         {SFormField.props && <PropList component={SFormField} />}
       </div>
-    )
+    );
   },
-})
+});
 
 formField.story = {
   name: 'Form Field',
-}
+};

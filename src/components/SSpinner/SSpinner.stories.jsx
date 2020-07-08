@@ -1,17 +1,17 @@
-import { SSpinner } from '@/components/SSpinner'
-import { colors, sizes } from '@/components/SSpinner/options'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { select } from '@storybook/addon-knobs'
-import { generateHeading } from '@/utils/stories/render-functions'
+import { SSpinner } from '@/components/SSpinner';
+import { colors, sizes } from '@/components/SSpinner/options';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { select } from '@storybook/addon-knobs';
+import { generateHeading } from '@/utils/stories/render-functions';
 
 export default {
-  title: 'Components|Loading/SSpinner',
+  title: 'Components/Loading/SSpinner',
 
   parameters: {
     jest: 'SSpinner',
   },
-}
+};
 
 export const spinner = () => ({
   props: {
@@ -36,13 +36,13 @@ export const spinner = () => ({
 
         {SSpinner.props && <PropList component={SSpinner} />}
       </div>
-    )
+    );
   },
-})
+});
 
 spinner.story = {
   name: 'Spinner',
-}
+};
 
 export const spinnerColors = () => ({
   render (h) {
@@ -52,9 +52,9 @@ export const spinnerColors = () => ({
         generateHeading(h, { level: 2, content: color }),
         h(SSpinner, { props: { color } }),
       ]),
-    ])
+    ]);
   },
-})
+});
 
 spinnerColors.story = {
   name: 'Spinner Colors',
@@ -64,4 +64,4 @@ spinnerColors.story = {
       showPanel: false,
     },
   },
-}
+};

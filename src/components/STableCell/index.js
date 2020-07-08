@@ -1,5 +1,5 @@
-import STableCell from './STableCell.vue'
+import STableCell from './STableCell.vue';
 
-export { STableCell }
+export { STableCell };
 
-export default { install: Vue => Vue.component(STableCell.name, STableCell) }
+export default { install: Vue => Vue.component(STableCell.name, STableCell) };

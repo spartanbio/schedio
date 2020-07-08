@@ -1,5 +1,5 @@
-import SButtonGroup from './SButtonGroup.vue'
+import SButtonGroup from './SButtonGroup.vue';
 
-export { SButtonGroup }
+export { SButtonGroup };
 
-export default { install: Vue => Vue.component(SButtonGroup.name, SButtonGroup) }
+export default { install: Vue => Vue.component(SButtonGroup.name, SButtonGroup) };

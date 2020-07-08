@@ -1,5 +1,5 @@
-import SCardContainer from './SCardContainer.vue'
+import SCardContainer from './SCardContainer.vue';
 
-export { SCardContainer }
+export { SCardContainer };
 
-export default { install: Vue => Vue.component(SCardContainer.name, SCardContainer) }
+export default { install: Vue => Vue.component(SCardContainer.name, SCardContainer) };

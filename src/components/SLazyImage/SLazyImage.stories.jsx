@@ -1,22 +1,22 @@
-import { SLazyImage } from '@/components/SLazyImage'
-import { SHeading } from '@/components/SHeading'
-import { text, object } from '@storybook/addon-knobs'
-import PropList from '@@/docs/components/PropList'
+import { SLazyImage } from '@/components/SLazyImage';
+import { SHeading } from '@/components/SHeading';
+import { text, object } from '@storybook/addon-knobs';
+import PropList from '@@/docs/components/PropList';
 
 export default {
-  title: 'Components|SLazyImage',
+  title: 'Components/SLazyImage',
   component: SLazyImage,
   parameters: {
     jest: 'SLazyImage',
   },
-}
+};
 
-const defaultImage = 'https://source.unsplash.com/a7XPK-oDsMk'
+const defaultImage = 'https://source.unsplash.com/a7XPK-oDsMk';
 const intersectionOptions = {
   root: null,
   rootMargin: '0px',
   threshold: 0,
-}
+};
 
 export const LazyImage = () => ({
   props: {
@@ -32,7 +32,7 @@ export const LazyImage = () => ({
   },
 
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
 
     return (
       <div>
@@ -55,10 +55,10 @@ export const LazyImage = () => ({
         {/* This doesn't work if props are only generated through a mixin */}
         {SLazyImage.props && <PropList component={SLazyImage} />}
       </div>
-    )
+    );
   },
-})
+});
 
 LazyImage.story = {
   name: 'Lazy Image',
-}
+};

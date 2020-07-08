@@ -61,8 +61,8 @@
 </template>
 
 <script>
-import ColorPicker from './ColorPicker'
-import contrast from 'get-contrast'
+import ColorPicker from './ColorPicker';
+import contrast from 'get-contrast';
 
 export default {
   name: 'ContrastCalculator',
@@ -75,29 +75,29 @@ export default {
     return {
       foreground: 'rgb(255, 255, 255)',
       background: 'rgb(6, 137, 58)',
-    }
+    };
   },
 
   computed: {
     contrastRatio () {
       try {
-        return this.ratio(this.foreground, this.background).toFixed(2)
+        return this.ratio(this.foreground, this.background).toFixed(2);
       } catch {
-        return 0
+        return 0;
       }
     },
     passesAccessibility () {
       try {
-        return this.isAccessible(this.foreground, this.background)
+        return this.isAccessible(this.foreground, this.background);
       } catch {
-        return false
+        return false;
       }
     },
     wcagScore () {
       try {
-        return this.score(this.foreground, this.background)
+        return this.score(this.foreground, this.background);
       } catch {
-        return 'F'
+        return 'F';
       }
     },
   },
@@ -105,7 +105,7 @@ export default {
   methods: {
     ...contrast,
   },
-}
+};
 </script>
 
 <style lang="scss">

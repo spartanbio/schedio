@@ -1,17 +1,17 @@
-import { SHeading } from '@/components/SHeading'
-import { SLink } from '@/components/SLink'
-import PropList from '@@/docs/components/PropList'
-import StoryLink from '@@/docs/components/StoryLink'
-import icons from 'feather-icons/dist/icons.json'
-import { boolean, text, select } from '@storybook/addon-knobs'
-const iconNames = Object.keys(icons)
+import { SHeading } from '@/components/SHeading';
+import { SLink } from '@/components/SLink';
+import PropList from '@@/docs/components/PropList';
+import StoryLink from '@@/docs/components/StoryLink';
+import icons from 'feather-icons/dist/icons.json';
+import { boolean, text, select } from '@storybook/addon-knobs';
+const iconNames = Object.keys(icons);
 export default {
-  title: 'Components|SLink',
+  title: 'Components/SLink',
 
   parameters: {
     jest: 'SLink',
   },
-}
+};
 
 export const link = () => ({
   props: {
@@ -28,7 +28,7 @@ export const link = () => ({
     linkText: { default: text('Link text', '', 'Slots') },
   },
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
 
     return (
       <div>
@@ -74,13 +74,13 @@ respectively.
 
         <PropList component={SLink} />
       </div>
-    )
+    );
   },
-})
+});
 
 link.story = {
   name: 'Link',
-}
+};
 
 export const linkTypes = () => ({
   render (h) {
@@ -119,9 +119,9 @@ export const linkTypes = () => ({
           If you haven't spartanbio.com already, click here
         </SLink>
       </div>
-    )
+    );
   },
-})
+});
 
 linkTypes.story = {
   name: 'Link Types',
@@ -131,4 +131,4 @@ linkTypes.story = {
       showPanel: false,
     },
   },
-}
+};

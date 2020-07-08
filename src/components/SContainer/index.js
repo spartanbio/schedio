@@ -1,5 +1,5 @@
-import SContainer from './SContainer.vue'
+import SContainer from './SContainer.vue';
 
-export { SContainer }
+export { SContainer };
 
-export default { install: Vue => Vue.component(SContainer.name, SContainer) }
+export default { install: Vue => Vue.component(SContainer.name, SContainer) };

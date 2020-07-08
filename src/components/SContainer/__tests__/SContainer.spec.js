@@ -1,37 +1,37 @@
-import { shallowMount } from '@vue/test-utils'
-import SContainer from '@/components/SContainer/SContainer.vue'
+import { shallowMount } from '@vue/test-utils';
+import SContainer from '@/components/SContainer/SContainer.vue';
 
 describe('SContainer.vue', () => {
-  let wrapper
+  let wrapper;
 
   beforeEach(() => {
     wrapper = shallowMount(SContainer, {
       slots: {
         default: '<div>Container Content</div>',
       },
-    })
-  })
+    });
+  });
 
   it('renders correctly', () => {
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('renders slot content', () => {
-    expect(wrapper.vm.$slots.default).toBeTruthy()
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    expect(wrapper.vm.$slots.default).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('can be fullwidth', async () => {
-    wrapper.setProps({ isFullwidth: true })
-    await wrapper.vm.$nextTick()
-    expect(wrapper.vm.isFullwidth).toBe(true)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    wrapper.setProps({ isFullwidth: true });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.isFullwidth).toBe(true);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('can be any html element', async () => {
-    wrapper.setProps({ tag: 'section' })
-    await wrapper.vm.$nextTick()
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('section').exists()).toBe(true)
-  })
-})
+    wrapper.setProps({ tag: 'section' });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.find('section').exists()).toBe(true);
+  });
+});

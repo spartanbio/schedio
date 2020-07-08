@@ -1,21 +1,21 @@
-import { SChip } from '@/components/SChip'
-import { SChipGroup } from '@/components/SChipGroup'
-import { SHeading } from '@/components/SHeading'
-import { SCallout } from '@/components/SCallout'
-import PropList from '@@/docs/components/PropList'
-import { boolean, select, text } from '@storybook/addon-knobs'
-import { colors } from './options'
-import { SContainerColumn } from '@/components/SContainerColumn'
-import { SContainerRow } from '@/components/SContainerRow'
-import { generateHeading } from '@/utils/stories/render-functions'
+import { SChip } from '@/components/SChip';
+import { SChipGroup } from '@/components/SChipGroup';
+import { SHeading } from '@/components/SHeading';
+import { SCallout } from '@/components/SCallout';
+import PropList from '@@/docs/components/PropList';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import { colors } from './options';
+import { SContainerColumn } from '@/components/SContainerColumn';
+import { SContainerRow } from '@/components/SContainerRow';
+import { generateHeading } from '@/utils/stories/render-functions';
 
 export default {
-  title: 'Components|Chips/SChip',
+  title: 'Components/Chips/SChip',
 
   parameters: {
     jest: 'SChip',
   },
-}
+};
 
 export const chip = () => ({
   props: {
@@ -34,7 +34,7 @@ export const chip = () => ({
   },
 
   render (h) {
-    const { props, slots } = this.$props
+    const { props, slots } = this.$props;
 
     return (
       <div>
@@ -58,9 +58,9 @@ export const chip = () => ({
 
         {SChip.props && <PropList component={SChip} />}
       </div>
-    )
+    );
   },
-})
+});
 
 chip.story = {
   name: 'Chip',
@@ -70,7 +70,7 @@ chip.story = {
       showPanel: true,
     },
   },
-}
+};
 
 export const closableChip = () => ({
   data () {
@@ -83,17 +83,17 @@ export const closableChip = () => ({
         chip4: true,
         chip5: true,
       },
-    }
+    };
   },
 
   methods: {
     handleClose (evt, chip) {
-      this.chips[chip] = evt
-      console.log(`[SChip]: ${chip} is ${evt} now`)
+      this.chips[chip] = evt;
+      console.log(`[SChip]: ${chip} is ${evt} now`);
     },
     resetChips () {
       for (const chip in this.chips) {
-        if ({}.hasOwnProperty.call(this.chips, chip)) this.chips[chip] = true
+        if ({}.hasOwnProperty.call(this.chips, chip)) this.chips[chip] = true;
       }
     },
   },
@@ -117,7 +117,7 @@ export const closableChip = () => ({
           size="small"
           style="margin-bottom: 1em;"
           onClick={() => {
-            this.showComponentCode = !this.showComponentCode
+            this.showComponentCode = !this.showComponentCode;
           }}
         >
           {this.showComponentCode ? 'Hide' : 'Show'} component code
@@ -191,9 +191,9 @@ template: \`
           Reset Chips
         </SButton>
       </div>
-    )
+    );
   },
-})
+});
 
 closableChip.story = {
   name: 'Closable Chip',
@@ -203,7 +203,7 @@ closableChip.story = {
       showPanel: false,
     },
   },
-}
+};
 
 export const chipColors = () => ({
   render (h) {
@@ -213,9 +213,9 @@ export const chipColors = () => ({
 
         {['', ...colors].map(color => generateChips(h, color))}
       </div>
-    )
+    );
   },
-})
+});
 
 chipColors.story = {
   name: 'Chip Colors',
@@ -225,10 +225,10 @@ chipColors.story = {
       showPanel: false,
     },
   },
-}
+};
 
 function generateChips (h, color) {
-  const chipName = `${color || ''} chip`
+  const chipName = `${color || ''} chip`;
 
   return h(SContainerRow, [
     h(SContainerColumn, [
@@ -238,5 +238,5 @@ function generateChips (h, color) {
         h(SChip, { props: { color, isClosable: true } }, `Closable ${chipName}`),
       ]),
     ]),
-  ])
+  ]);
 }

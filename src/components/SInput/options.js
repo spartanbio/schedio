@@ -11,4 +11,4 @@ export const allowed = [
   'month',
   'time',
   'week',
-].sort()
+].sort();

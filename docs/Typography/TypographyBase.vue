@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import tokens from '@spartanbio/schedio-tokens/dist/web/json/tokens.json'
-import { SCallout } from '@/components/SCallout'
+import tokens from '@spartanbio/schedio-tokens/dist/web/json/tokens.json';
+import { SCallout } from '@/components/SCallout';
 
 export default {
   name: 'TypographyBase',
@@ -53,7 +53,7 @@ export default {
   data: () => ({
     tokens,
   }),
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -87,8 +87,8 @@
 </template>
 
 <script>
-import ControlIcons from '@/mixins/ControlIcons.mixin'
-import InputText from '@/mixins/InputText.mixin'
+import ControlIcons from '@/mixins/ControlIcons.mixin';
+import InputText from '@/mixins/InputText.mixin';
 
 export default {
   name: 'SSelect',
@@ -126,51 +126,51 @@ export default {
     return {
       // <select multiple/> expects array
       selected: this.multiple ? [] : '',
-    }
+    };
   },
 
   computed: {
     listeners () {
       // input is handled by `this.watch.selected` and does not need to be caught here
-      const { input, ..._listeners } = this.$listeners
+      const { input, ..._listeners } = this.$listeners;
 
       return {
         ..._listeners,
         // ensure change emits like input
         change: evt => this.$emit('change', this.selected),
-      }
+      };
     },
 
     optionsHaveGroups () {
-      if (!this.selectOptions) return false
+      if (!this.selectOptions) return false;
 
-      return Object.values(this.selectOptions).every(value => Array.isArray(value))
+      return Object.values(this.selectOptions).every(value => Array.isArray(value));
     },
   },
 
   watch: {
     selected (val) {
-      this.$emit('input', val)
+      this.$emit('input', val);
     },
 
     value (val) {
-      this.selected = val
+      this.selected = val;
     },
   },
 
   mounted () {
-    if (this.value) this.selected = this.value
+    if (this.value) this.selected = this.value;
   },
 
   methods: {
     getValue (option) {
-      return option.value || option.label || option
+      return option.value || option.label || option;
     },
     getLabel (option) {
-      return option.label || option.value || option
+      return option.label || option.value || option;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

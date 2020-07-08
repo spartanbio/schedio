@@ -1,17 +1,17 @@
-import { SContainer } from '@/components/SContainer'
-import { SContainerColumn } from '@/components/SContainerColumn'
-import { SContainerRow } from '@/components/SContainerRow'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { boolean, text } from '@storybook/addon-knobs'
+import { SContainer } from '@/components/SContainer';
+import { SContainerColumn } from '@/components/SContainerColumn';
+import { SContainerRow } from '@/components/SContainerRow';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { boolean, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Layout/SContainer',
+  title: 'Components/Layout/SContainer',
 
   parameters: {
     jest: 'SContainer',
   },
-}
+};
 
 export const container = () => ({
   props: {
@@ -23,7 +23,7 @@ export const container = () => ({
     },
   },
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
     return (
       <div>
         <SHeading level="1">Container</SHeading>
@@ -45,10 +45,10 @@ export const container = () => ({
 
         <PropList component={SContainer} />
       </div>
-    )
+    );
   },
-})
+});
 
 container.story = {
   name: 'Container',
-}
+};

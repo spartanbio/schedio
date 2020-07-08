@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import ColorChip from './ColorChip'
+import ColorChip from './ColorChip';
 
 export default {
   components: { ColorChip },
   // eslint-disable-next-line
   props: ['palette']
-}
+};
 </script>

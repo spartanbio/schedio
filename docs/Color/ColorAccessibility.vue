@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ContrastCalculator from '../components/ContrastCalculator'
+import ContrastCalculator from '../components/ContrastCalculator';
 
 export default {
   name: 'ColorAccessibility',
@@ -34,5 +34,5 @@ export default {
   components: {
     ContrastCalculator,
   },
-}
+};
 </script>

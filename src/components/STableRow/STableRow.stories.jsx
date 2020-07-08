@@ -1,17 +1,17 @@
-import { SHeading } from '@/components/SHeading'
-import { STable } from '@/components/STable'
-import { STableCell } from '@/components/STableCell'
-import { STableRow } from '@/components/STableRow'
-import PropList from '@@/docs/components/PropList'
-import { text } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import { STable } from '@/components/STable';
+import { STableCell } from '@/components/STableCell';
+import { STableRow } from '@/components/STableRow';
+import PropList from '@@/docs/components/PropList';
+import { text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Tables/STableRow',
+  title: 'Components/Tables/STableRow',
 
   parameters: {
     jest: 'STableRow',
   },
-}
+};
 
 export const tableRow = () => ({
   props: {
@@ -40,10 +40,10 @@ export const tableRow = () => ({
 
         {STableRow.props && <PropList component={STableRow} />}
       </div>
-    )
+    );
   },
-})
+});
 
 tableRow.story = {
   name: 'Table Row',
-}
+};

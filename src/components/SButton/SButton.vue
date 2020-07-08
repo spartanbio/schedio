@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import defaults from '@/utils/defaults'
-import { colors, colorNames, sizes, types, allShadeOptions } from './options.js'
+import defaults from '@/utils/defaults';
+import { colors, colorNames, sizes, types, allShadeOptions } from './options.js';
 
 export default {
   name: 'SButton',
@@ -43,9 +43,9 @@ export default {
       type: String,
       default: () => defaults.buttonColor,
       validator: (value) => {
-        if (!value || colorNames.includes(value)) return true
+        if (!value || colorNames.includes(value)) return true;
 
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colorNames}`);
       },
     },
 
@@ -59,9 +59,9 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || sizes.includes(value)) return true
+        if (!value || sizes.includes(value)) return true;
 
-        return console.error(`\`size\` ${value} not found. Allowed sizes: ${sizes}`)
+        return console.error(`\`size\` ${value} not found. Allowed sizes: ${sizes}`);
       },
     },
 
@@ -69,9 +69,9 @@ export default {
       type: String,
       default: () => defaults.buttonType,
       validator (value) {
-        if (!value || types.includes(value)) return true
+        if (!value || types.includes(value)) return true;
 
-        return console.error(`\`type\` ${value} not found. Allowed types: ${types}`)
+        return console.error(`\`type\` ${value} not found. Allowed types: ${types}`);
       },
     },
 
@@ -108,52 +108,52 @@ export default {
         this.size && `button--size-${this.size}`,
         this.iconOnly && 'button--icon-only',
         this.isLoading && 'button--loading',
-      ]
+      ];
     },
 
     buttonStyle () {
-      let buttonStyle = ''
+      let buttonStyle = '';
 
       if (this.color) {
-        buttonStyle = `button--color-${this.color}`
+        buttonStyle = `button--color-${this.color}`;
 
-        if (this.shade && this.shade !== 'base') buttonStyle += `-${this.shade}`
+        if (this.shade && this.shade !== 'base') buttonStyle += `-${this.shade}`;
       }
 
-      if (this.color && this.type) buttonStyle += `-${this.type}`
+      if (this.color && this.type) buttonStyle += `-${this.type}`;
 
-      return buttonStyle
+      return buttonStyle;
     },
 
     hasValidShade () {
-      return Object.hasOwnProperty.call(colors[this.color], this.shade)
+      return Object.hasOwnProperty.call(colors[this.color], this.shade);
     },
 
     ariaLabel () {
-      if (this.$attrs['aria-label']) return this.$attrs['aria-label']
+      if (this.$attrs['aria-label']) return this.$attrs['aria-label'];
 
       if (this.iconOnly && this.$slots.default && this.$slots.default[0]) {
-        return this.$slots.default[0].text
+        return this.$slots.default[0].text;
       }
 
-      return null
+      return null;
     },
   },
 
   watch: {
     iconOnly (val) {
       if (val && !this.ariaLabel) {
-        console.warn('Button requires content or `aria-label`')
+        console.warn('Button requires content or `aria-label`');
       }
     },
   },
 
   mounted () {
     if (this.shade && !this.hasValidShade) {
-      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`)
+      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`);
     }
   },
-}
+};
 </script>
 
 <style lang="scss">

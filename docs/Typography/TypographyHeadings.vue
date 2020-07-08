@@ -109,8 +109,8 @@
 </template>
 
 <script>
-import StoryLink from '@@/docs/components/StoryLink'
-import tokens from '@spartanbio/schedio-tokens/dist/web/json/tokens.json'
+import StoryLink from '@@/docs/components/StoryLink';
+import tokens from '@spartanbio/schedio-tokens/dist/web/json/tokens.json';
 
 export default {
   name: 'TypographyHeadings',
@@ -122,7 +122,7 @@ export default {
   data: () => ({
     tokens,
   }),
-}
+};
 </script>
 
 <style lang="scss" scoped>

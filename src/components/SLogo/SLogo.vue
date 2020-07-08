@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import { colors } from './options'
+import { colors } from './options';
 
 export default {
   name: 'SLogo',
@@ -94,7 +94,7 @@ export default {
       validator (value) {
         return !value ||
           colors.includes(value) ||
-          console.error(`Valid colors are: ${colors.join(',')}`)
+          console.error(`Valid colors are: ${colors.join(',')}`);
       },
     },
 
@@ -106,14 +106,14 @@ export default {
 
   computed: {
     classList () {
-      const list = []
+      const list = [];
 
-      if (this.color) list.push(`logo--${this.color}`)
+      if (this.color) list.push(`logo--${this.color}`);
 
-      return list
+      return list;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

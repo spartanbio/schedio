@@ -1,22 +1,22 @@
-import { SHeading } from '@/components/SHeading'
-import { SIcon } from '@/components/SIcon'
-import StoryLink from '@@/docs/components/StoryLink.vue'
-import { colors, sizes, allShadeOptions } from '@/components/SIcon/options'
-import PropList from '@@/docs/components/PropList'
-import { select } from '@storybook/addon-knobs'
-import icons from 'feather-icons/dist/icons.json'
+import { SHeading } from '@/components/SHeading';
+import { SIcon } from '@/components/SIcon';
+import StoryLink from '@@/docs/components/StoryLink.vue';
+import { colors, sizes, allShadeOptions } from '@/components/SIcon/options';
+import PropList from '@@/docs/components/PropList';
+import { select } from '@storybook/addon-knobs';
+import icons from 'feather-icons/dist/icons.json';
 
-const colorOptions = ['', ...Object.keys(colors)]
-const sizeOptions = ['', ...sizes]
-const iconList = Object.keys(icons)
+const colorOptions = ['', ...Object.keys(colors)];
+const sizeOptions = ['', ...sizes];
+const iconList = Object.keys(icons);
 
 export default {
-  title: 'Components|SIcon',
+  title: 'Components/SIcon',
 
   parameters: {
     jest: 'SIcon',
   },
-}
+};
 
 export const icon = () => ({
   props: {
@@ -30,7 +30,7 @@ export const icon = () => ({
     },
   },
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
     return (
       <div>
         <SHeading level="1">Icon</SHeading>
@@ -76,13 +76,13 @@ export const icon = () => ({
 
         {SIcon.props && <PropList component={SIcon} />}
       </div>
-    )
+    );
   },
-})
+});
 
 icon.story = {
   name: 'Icon',
-}
+};
 
 export const allIcons = () => ({
   render (h) {
@@ -98,13 +98,13 @@ export const allIcons = () => ({
                 <SIcon icon={icon} />
                 {icon}
               </div>
-            )
+            );
           })}
         </div>
       </div>
-    )
+    );
   },
-})
+});
 
 allIcons.story = {
   name: 'All icons',
@@ -114,4 +114,4 @@ allIcons.story = {
       showPanel: false,
     },
   },
-}
+};

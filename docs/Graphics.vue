@@ -122,5 +122,5 @@
 <script>
 export default {
   name: 'Graphics',
-}
+};
 </script>

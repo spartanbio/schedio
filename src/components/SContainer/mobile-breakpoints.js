@@ -3,4 +3,4 @@ export default [
   'md',
   'lg',
   'xl',
-]
+];

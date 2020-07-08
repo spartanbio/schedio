@@ -1,7 +1,7 @@
 // Checkboxes, radios, etc.
-import { SLabel } from '@/components/SLabel'
-import InputListeners from './InputListeners.mixin'
-import InputProps from './InputProps.mixin'
+import { SLabel } from '@/components/SLabel';
+import InputListeners from './InputListeners.mixin';
+import InputProps from './InputProps.mixin';
 
 export default {
   components: {
@@ -19,4 +19,4 @@ export default {
       default: false,
     },
   },
-}
+};

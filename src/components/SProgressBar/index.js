@@ -1,7 +1,7 @@
-import SProgressBar from './SProgressBar.vue'
+import SProgressBar from './SProgressBar.vue';
 
-export { SProgressBar }
+export { SProgressBar };
 
 export default {
   install: Vue => Vue.component(SProgressBar.name, SProgressBar),
-}
+};

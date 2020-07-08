@@ -1,20 +1,20 @@
-import * as weights from '@spartanbio/schedio-tokens/dist/js/module-js/font-weight.module'
-import { colorNames as colors } from '@/utils/component-options'
-import { SHeading } from '@/components/SHeading'
+import * as weights from '@spartanbio/schedio-tokens/dist/js/module-js/font-weight.module';
+import { colorNames as colors } from '@/utils/component-options';
+import { SHeading } from '@/components/SHeading';
 
 export default {
-  title: 'Utilities|Typography',
+  title: 'Utilities/Typography/$3',
 
   parameters: {
     options: {
       showPanel: false,
     },
   },
-}
+};
 
 export const alignment = () => ({
   render (h) {
-    const alignments = ['center', 'left', 'right', 'justify']
+    const alignments = ['center', 'left', 'right', 'justify'];
 
     return (
       <div>
@@ -30,13 +30,13 @@ export const alignment = () => ({
           </ul>
         </p>
       </div>
-    )
+    );
   },
-})
+});
 
 alignment.story = {
   name: 'Alignment',
-}
+};
 
 export const color = () => ({
   render (h) {
@@ -54,13 +54,13 @@ export const color = () => ({
           </ul>
         </p>
       </div>
-    )
+    );
   },
-})
+});
 
 color.story = {
   name: 'Color',
-}
+};
 
 export const italicAndWeight = () => ({
   render (h) {
@@ -79,17 +79,17 @@ export const italicAndWeight = () => ({
           </ul>
         </p>
       </div>
-    )
+    );
   },
-})
+});
 
 italicAndWeight.story = {
   name: 'Italic and Weight',
-}
+};
 
 export const size = () => ({
   render (h) {
-    const sizes = Array.from({ length: 7 })
+    const sizes = Array.from({ length: 7 });
 
     return (
       <div>
@@ -105,13 +105,13 @@ export const size = () => ({
           </ul>
         </p>
       </div>
-    )
+    );
   },
-})
+});
 
 size.story = {
   name: 'Size',
-}
+};
 
 export const markdown = () => ({
   render (h) {
@@ -123,10 +123,10 @@ export const markdown = () => ({
           container.
         </p>
       </div>
-    )
+    );
   },
-})
+});
 
 markdown.story = {
   name: 'Markdown',
-}
+};

@@ -1,5 +1,5 @@
-import STable from './STable.vue'
+import STable from './STable.vue';
 
-export { STable }
+export { STable };
 
-export default { install: Vue => Vue.component(STable.name, STable) }
+export default { install: Vue => Vue.component(STable.name, STable) };

@@ -1,5 +1,5 @@
-import SSelect from './SSelect.vue'
+import SSelect from './SSelect.vue';
 
-export { SSelect }
+export { SSelect };
 
-export default { install: Vue => Vue.component(SSelect.name, SSelect) }
+export default { install: Vue => Vue.component(SSelect.name, SSelect) };

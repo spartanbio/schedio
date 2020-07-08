@@ -1,5 +1,5 @@
-import SLabel from './SLabel.vue'
+import SLabel from './SLabel.vue';
 
-export { SLabel }
+export { SLabel };
 
-export default { install: Vue => Vue.component(SLabel.name, SLabel) }
+export default { install: Vue => Vue.component(SLabel.name, SLabel) };

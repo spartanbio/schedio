@@ -60,16 +60,16 @@ export default {
         'label--inline': this.isInline,
         'label--fullwidth': this.isFullwidth,
         'label--reversed': this.isReversed,
-      }
+      };
     },
   },
 
   mounted () {
     if ((this.isFullwidth || this.isReversed) && !this.isInline) {
-      console.error('`isFullwidth` and `isReversed` require `isInline`')
+      console.error('`isFullwidth` and `isReversed` require `isInline`');
     }
   },
-}
+};
 </script>
 
 <style lang="scss">

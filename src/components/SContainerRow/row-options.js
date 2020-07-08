@@ -5,4 +5,4 @@ export default {
   end: 'end',
   around: 'around',
   between: 'between',
-}
+};

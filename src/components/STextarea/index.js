@@ -1,5 +1,5 @@
-import STextarea from './STextarea.vue'
+import STextarea from './STextarea.vue';
 
-export { STextarea }
+export { STextarea };
 
-export default { install: Vue => Vue.component(STextarea.name, STextarea) }
+export default { install: Vue => Vue.component(STextarea.name, STextarea) };

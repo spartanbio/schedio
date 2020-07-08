@@ -112,16 +112,16 @@
 </template>
 
 <script>
-import { convert, parse } from 'pure-color'
-import debounce from 'lodash.debounce'
-import throttle from 'lodash.throttle'
+import { convert, parse } from 'pure-color';
+import debounce from 'lodash.debounce';
+import throttle from 'lodash.throttle';
 
 // used as method and filter
 const stringifyColor = (color, mode) => {
-  if (!Array.isArray(color)) return color
-  if (mode === 'rgb') return `${mode}(${color.join(', ')})`
-  if (mode === 'hsl') return `${mode}(${color[0]}, ${color[1]}%, ${color[2]}%)`
-}
+  if (!Array.isArray(color)) return color;
+  if (mode === 'rgb') return `${mode}(${color.join(', ')})`;
+  if (mode === 'hsl') return `${mode}(${color[0]}, ${color[1]}%, ${color[2]}%)`;
+};
 
 const defaultCanvasProperties = {
   x: 0,
@@ -129,7 +129,7 @@ const defaultCanvasProperties = {
   ctx: null,
   rect: null,
   shouldFollow: false,
-}
+};
 
 export default {
   name: 'ColorPicker',
@@ -180,35 +180,35 @@ export default {
           100,
         ],
       },
-    }
+    };
   },
 
   computed: {
     previewStyle () {
-      const { h, s, l } = this.hsl
+      const { h, s, l } = this.hsl;
 
       return {
         backgroundColor: `hsl(${h}, ${s}%, ${l}%)`,
-      }
+      };
     },
 
     convertedColors () {
-      const hsl = Object.values(this.hsl)
-      const rgb = this.roundColorValues(convert.hsl.rgb(hsl))
+      const hsl = Object.values(this.hsl);
+      const rgb = this.roundColorValues(convert.hsl.rgb(hsl));
 
       return {
         rgb,
         hex: this.roundColorValues(convert.rgb.hex(rgb)),
         hsl: this.roundColorValues(hsl),
-      }
+      };
     },
   },
 
   watch: {
     color (val) {
-      if (val) this.pickedColor = val
+      if (val) this.pickedColor = val;
 
-      this.displayColor = this.convertedColors[this.colorMode]
+      this.displayColor = this.convertedColors[this.colorMode];
     },
 
     displayColor (val) {
@@ -218,183 +218,183 @@ export default {
             h,
             s,
             l,
-          ] = convert.rgb.hsl(val)
-          return { h, s, l }
+          ] = convert.rgb.hsl(val);
+          return { h, s, l };
         },
         hsl: () => {
           const [
             h,
             s,
             l,
-          ] = val
-          return { h, s, l }
+          ] = val;
+          return { h, s, l };
         },
         hex: () => {
           if (val.replace('#', '').length >= 3) {
-            const toParse = val.includes('#') ? val : `#${val}`
-            const rgb = parse(toParse)
+            const toParse = val.includes('#') ? val : `#${val}`;
+            const rgb = parse(toParse);
             const [
               h,
               s,
               l,
-            ] = convert.rgb.hsl(rgb)
+            ] = convert.rgb.hsl(rgb);
 
-            return { h, s, l }
+            return { h, s, l };
           } else {
-            return this.hsl
+            return this.hsl;
           }
         },
-      }
+      };
 
-      this.hsl = colorModes[this.colorMode]()
+      this.hsl = colorModes[this.colorMode]();
     },
 
     pickedColor (val) {
-      this.$emit('input', val)
+      this.$emit('input', val);
     },
 
     'hsl.h' (val) {
-      this.applyHue(this.picker.ctx)
-      this.buildLightnessGradient(this.picker.ctx)
-      this.buildSaturationGradient(this.picker.ctx)
+      this.applyHue(this.picker.ctx);
+      this.buildLightnessGradient(this.picker.ctx);
+      this.buildSaturationGradient(this.picker.ctx);
     },
   },
 
   mounted () {
-    if (!this.color) this.$emit('input', this.pickedColor)
+    if (!this.color) this.$emit('input', this.pickedColor);
 
     if (this.color) {
-      const rgbColor = parse(this.color)
+      const rgbColor = parse(this.color);
       const [
         h,
         s,
         l,
-      ] = convert.rgb.hsl(rgbColor)
-      this.hsl.h = h
-      this.hsl.s = s
-      this.hsl.l = l
-      this.pickedColor = this.stringifyColor(this.convertedColors[this.colorMode], this.colorMode)
+      ] = convert.rgb.hsl(rgbColor);
+      this.hsl.h = h;
+      this.hsl.s = s;
+      this.hsl.l = l;
+      this.pickedColor = this.stringifyColor(this.convertedColors[this.colorMode], this.colorMode);
     }
 
-    this.buildColorPalette()
-    this.displayColor = this.convertedColors[this.colorMode]
+    this.buildColorPalette();
+    this.displayColor = this.convertedColors[this.colorMode];
   },
 
   methods: {
     buildColorPalette () {
-      this.hue.ctx = this.$refs.hues.getContext('2d')
-      this.hue.rect = this.$refs.hues.getBoundingClientRect()
-      this.picker.ctx = this.$refs.colorPalette.getContext('2d')
-      this.picker.rect = this.$refs.colorPalette.getBoundingClientRect()
+      this.hue.ctx = this.$refs.hues.getContext('2d');
+      this.hue.rect = this.$refs.hues.getBoundingClientRect();
+      this.picker.ctx = this.$refs.colorPalette.getContext('2d');
+      this.picker.rect = this.$refs.colorPalette.getBoundingClientRect();
       // color gradient
-      this.buildHueGradient(this.hue.ctx)
+      this.buildHueGradient(this.hue.ctx);
       // set the base color
-      this.applyHue(this.picker.ctx)
+      this.applyHue(this.picker.ctx);
       // apply lightness and saturation gradients
-      this.buildLightnessGradient(this.picker.ctx)
-      this.buildSaturationGradient(this.picker.ctx)
+      this.buildLightnessGradient(this.picker.ctx);
+      this.buildSaturationGradient(this.picker.ctx);
     },
 
     buildHueGradient (context) {
-      const colorGradient = context.createLinearGradient(0, 0, 0, context.canvas.height)
-      colorGradient.addColorStop(0, 'rgb(255, 0, 0)') // red
-      colorGradient.addColorStop(0.84, 'rgb(255, 255, 0)') // yellow
-      colorGradient.addColorStop(0.67, 'rgb(0, 255, 0)') // green
-      colorGradient.addColorStop(0.49, 'rgb(0, 255, 255)') // cyan
-      colorGradient.addColorStop(0.33, 'rgb(0, 0, 255)') // blue
-      colorGradient.addColorStop(0.15, 'rgb(255, 0, 255)') // magenta
-      colorGradient.addColorStop(1, 'rgb(255, 0, 0)') // red
+      const colorGradient = context.createLinearGradient(0, 0, 0, context.canvas.height);
+      colorGradient.addColorStop(0, 'rgb(255, 0, 0)'); // red
+      colorGradient.addColorStop(0.84, 'rgb(255, 255, 0)'); // yellow
+      colorGradient.addColorStop(0.67, 'rgb(0, 255, 0)'); // green
+      colorGradient.addColorStop(0.49, 'rgb(0, 255, 255)'); // cyan
+      colorGradient.addColorStop(0.33, 'rgb(0, 0, 255)'); // blue
+      colorGradient.addColorStop(0.15, 'rgb(255, 0, 255)'); // magenta
+      colorGradient.addColorStop(1, 'rgb(255, 0, 0)'); // red
       // apply color gradient
-      context.fillStyle = colorGradient
-      context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+      context.fillStyle = colorGradient;
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     },
 
     applyHue (context) {
-      context.fillStyle = `hsl(${this.hsl.h}, 100%, 50%)`
-      context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+      context.fillStyle = `hsl(${this.hsl.h}, 100%, 50%)`;
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     },
 
     buildLightnessGradient (context) {
-      const lightGradient = context.createLinearGradient(0, 0, context.canvas.width, 0)
-      lightGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
-      lightGradient.addColorStop(1, 'rgba(255, 255, 255, 0)')
+      const lightGradient = context.createLinearGradient(0, 0, context.canvas.width, 0);
+      lightGradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+      lightGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
       // Apply `lightGradient` to canvas
-      context.fillStyle = lightGradient
-      context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+      context.fillStyle = lightGradient;
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     },
 
     buildSaturationGradient (context) {
-      const darkGradient = context.createLinearGradient(0, 0, 0, context.canvas.height)
-      darkGradient.addColorStop(0, 'rgba(0, 0, 0, 0)')
-      darkGradient.addColorStop(1, 'rgba(0, 0, 0, 1)')
+      const darkGradient = context.createLinearGradient(0, 0, 0, context.canvas.height);
+      darkGradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      darkGradient.addColorStop(1, 'rgba(0, 0, 0, 1)');
       // Apply `darkGradient` to canvas
-      context.fillStyle = darkGradient
-      context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+      context.fillStyle = darkGradient;
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     },
 
     startFollow (canvas, event) {
-      this[canvas].shouldFollow = true
-      this.setCoordinates(canvas, event)
+      this[canvas].shouldFollow = true;
+      this.setCoordinates(canvas, event);
     },
 
     followInput: throttle(function (canvas, event) {
-      if (!this[canvas].shouldFollow) return
+      if (!this[canvas].shouldFollow) return;
 
-      this.setCoordinates(canvas, event)
-      this.pickColor(canvas)
+      this.setCoordinates(canvas, event);
+      this.pickColor(canvas);
     }, 50),
 
     endFollow (canvas) {
-      this[canvas].shouldFollow = false
+      this[canvas].shouldFollow = false;
     },
 
     setCoordinates (canvas, event) {
-      const { pageX, pageY } = event.touches ? event.touches[0] : event
+      const { pageX, pageY } = event.touches ? event.touches[0] : event;
       // get coordinates relative to canvas bounding box
       if ({}.hasOwnProperty.call(this[canvas], 'x')) {
-        this[canvas].x = pageX - this[canvas].rect.left
+        this[canvas].x = pageX - this[canvas].rect.left;
       }
 
       if ({}.hasOwnProperty.call(this[canvas], 'y')) {
-        this[canvas].y = pageY - this[canvas].rect.top
+        this[canvas].y = pageY - this[canvas].rect.top;
       }
     },
 
     pickColor (canvas) {
-      const { data } = this[canvas].ctx.getImageData(this[canvas].x, this[canvas].y, 1, 1)
+      const { data } = this[canvas].ctx.getImageData(this[canvas].x, this[canvas].y, 1, 1);
       const [
         h,
         s,
         l,
-      ] = convert.rgb.hsl(data)
+      ] = convert.rgb.hsl(data);
 
       if (canvas === 'hue') {
-        this.hsl.h = Math.round(h)
+        this.hsl.h = Math.round(h);
       } else {
-        this.hsl.s = Math.round(s)
-        this.hsl.l = Math.round(l)
+        this.hsl.s = Math.round(s);
+        this.hsl.l = Math.round(l);
       }
 
-      this.emitInput()
+      this.emitInput();
     },
 
     emitInput () {
-      const { colorMode: mode } = this
-      this.pickedColor = this.stringifyColor(this.convertedColors[mode], mode)
-      this.$emit('input', this.pickedColor)
+      const { colorMode: mode } = this;
+      this.pickedColor = this.stringifyColor(this.convertedColors[mode], mode);
+      this.$emit('input', this.pickedColor);
     },
 
     roundColorValues (values) {
-      return Array.isArray(values) ? values.map(val => Math.round(val)) : values
+      return Array.isArray(values) ? values.map(val => Math.round(val)) : values;
     },
 
     stringifyColor,
 
     debounceInput: debounce(function () {
-      this.emitInput()
+      this.emitInput();
     }, 300),
   },
-}
+};
 </script>
 
 <style lang="scss">

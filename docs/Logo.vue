@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { SLazyImage } from '@/components/SLazyImage'
+import { SLazyImage } from '@/components/SLazyImage';
 
 export default {
   name: 'Logo',
@@ -111,9 +111,9 @@ export default {
           image: 'logo-bad-7.png',
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
-import SCard from './SCard.vue'
+import SCard from './SCard.vue';
 
-export { SCard }
+export { SCard };
 
-export default { install: Vue => Vue.component(SCard.name, SCard) }
+export default { install: Vue => Vue.component(SCard.name, SCard) };

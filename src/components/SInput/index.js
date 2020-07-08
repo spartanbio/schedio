@@ -1,5 +1,5 @@
-import SInput from './SInput.vue'
+import SInput from './SInput.vue';
 
-export { SInput }
+export { SInput };
 
-export default { install: Vue => Vue.component(SInput.name, SInput) }
+export default { install: Vue => Vue.component(SInput.name, SInput) };

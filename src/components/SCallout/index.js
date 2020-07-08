@@ -1,7 +1,7 @@
-import SCallout from './SCallout.vue'
+import SCallout from './SCallout.vue';
 
-export { SCallout }
+export { SCallout };
 
 export default {
   install: Vue => Vue.component(SCallout.name, SCallout),
-}
+};

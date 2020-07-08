@@ -1,15 +1,15 @@
-import { SHeading } from '@/components/SHeading'
-import { SCard } from '@/components/SCard'
-import PropList from '@@/docs/components/PropList'
-import { boolean, text } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import { SCard } from '@/components/SCard';
+import PropList from '@@/docs/components/PropList';
+import { boolean, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Layout/SCard',
+  title: 'Components/Layout/SCard',
 
   parameters: {
     jest: 'SCard',
   },
-}
+};
 
 export const card = () => ({
   props: {
@@ -26,7 +26,7 @@ export const card = () => ({
     footerSlot: { default: text('Footer', 'I am the footer slot', 'Slots') },
   },
   render (h) {
-    const { headerSlot, defaultSlot, footerSlot, ...props } = this.$props
+    const { headerSlot, defaultSlot, footerSlot, ...props } = this.$props;
 
     return (
       <div>
@@ -45,13 +45,13 @@ export const card = () => ({
 
         <PropList component={SCard} />
       </div>
-    )
+    );
   },
-})
+});
 
 card.story = {
   name: 'Card',
-}
+};
 
 export const cardTypes = () => ({
   render (h) {
@@ -74,9 +74,9 @@ export const cardTypes = () => ({
           <template slot="default">Default</template>
         </SCard>
       </div>
-    )
+    );
   },
-})
+});
 
 cardTypes.story = {
   name: 'Card Types',
@@ -86,4 +86,4 @@ cardTypes.story = {
       showPanel: false,
     },
   },
-}
+};

@@ -1,25 +1,25 @@
-import { SToast } from '@/components/SToast'
-import { SHeading } from '@/components/SHeading'
-import { SButton } from '@/components/SButton'
-import PropList from '@@/docs/components/PropList'
-import { boolean, number, select, text } from '@storybook/addon-knobs'
-import { types, positions } from './options'
+import { SToast } from '@/components/SToast';
+import { SHeading } from '@/components/SHeading';
+import { SButton } from '@/components/SButton';
+import PropList from '@@/docs/components/PropList';
+import { boolean, number, select, text } from '@storybook/addon-knobs';
+import { types, positions } from './options';
 
-const upperCase = str => str[0].toUpperCase() + str.substr(1)
+const upperCase = str => str[0].toUpperCase() + str.substr(1);
 const exampleContainerStyle = {
   minHeight: '12em',
   position: 'relative',
   padding: '1em',
   backgroundColor: '#f2f5f7',
-}
+};
 
 export default {
-  title: 'Components|SToast',
+  title: 'Components/SToast',
 
   parameters: {
     jest: 'SToast',
   },
-}
+};
 
 export const toast = () => ({
   props: {
@@ -41,15 +41,15 @@ export const toast = () => ({
               containerParent: '#example',
               body: 'The action ran',
               type: 'warning',
-            })
-          }, 750)
+            });
+          }, 750);
         },
       }),
     },
   },
 
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
 
     return (
       <div>
@@ -74,37 +74,37 @@ export const toast = () => ({
 
         {SToast.props && <PropList component={SToast} />}
       </div>
-    )
+    );
   },
-})
+});
 
 toast.story = {
   name: 'Toast',
-}
+};
 
 export const toastTypes = () => ({
   data () {
     return {
       toastCount: 0,
       toastList: [...types].reverse(),
-    }
+    };
   },
 
   methods: {
     mountToasts () {
-      if (this.toastCount > 0) return
+      if (this.toastCount > 0) return;
 
       this.toastList.forEach((type) => {
         this.$toast.open({
-          type: type,
+          type,
           containerParent: '#all-toasts',
           body: 'Type: ' + upperCase(type || 'default'),
           isIndefinite: true,
           action: () => this.toastCount--,
-        })
+        });
 
-        this.toastCount++
-      })
+        this.toastCount++;
+      });
     },
   },
 
@@ -112,15 +112,15 @@ export const toastTypes = () => ({
     // without actions
     this.toastList.forEach((type) => {
       this.$toast.open({
-        type: type,
+        type,
         containerParent: '#all-toasts',
         body: 'Type: ' + upperCase(type || 'default'),
         isIndefinite: true,
-      })
-    })
+      });
+    });
 
     // with actions
-    this.mountToasts()
+    this.mountToasts();
   },
   render (h) {
     return (
@@ -142,9 +142,9 @@ export const toastTypes = () => ({
           </SButton>
         </div>
       </div>
-    )
+    );
   },
-})
+});
 
 toastTypes.story = {
   name: 'Toast Types',
@@ -154,4 +154,4 @@ toastTypes.story = {
       showPanel: false,
     },
   },
-}
+};

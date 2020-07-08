@@ -77,12 +77,12 @@
 </template>
 
 <script>
-import InputProps from '@/mixins/InputProps.mixin'
-import { SLabel } from '@/components/SLabel'
-import { SChip } from '@/components/SChip'
-import { SChipGroup } from '@/components/SChipGroup'
-import { SIcon } from '@/components/SIcon'
-import defaults from '@/utils/defaults'
+import InputProps from '@/mixins/InputProps.mixin';
+import { SLabel } from '@/components/SLabel';
+import { SChip } from '@/components/SChip';
+import { SChipGroup } from '@/components/SChipGroup';
+import { SIcon } from '@/components/SIcon';
+import defaults from '@/utils/defaults';
 
 export default {
   name: 'SFileInput',
@@ -139,41 +139,41 @@ export default {
     return {
       fileList: [],
       hasDragover: false,
-    }
+    };
   },
 
   computed: {
     fileNames () {
-      return this.fileList.map(file => file.name)
+      return this.fileList.map(file => file.name);
     },
 
     displayText () {
-      const defaultText = this.$attrs.multiple ? 'Choose files' : 'Choose a file'
+      const defaultText = this.$attrs.multiple ? 'Choose files' : 'Choose a file';
 
-      if (this.isDroppable) return `Drag and drop or click here to ${defaultText.toLowerCase()}`
+      if (this.isDroppable) return `Drag and drop or click here to ${defaultText.toLowerCase()}`;
 
-      return this.text || defaultText
+      return this.text || defaultText;
     },
 
     fileCountText () {
-      const count = this.fileList.length
-      let text = `${count} file`
+      const count = this.fileList.length;
+      let text = `${count} file`;
 
-      if (count !== 1) text += 's'
+      if (count !== 1) text += 's';
 
-      return `${text} selected`
+      return `${text} selected`;
     },
 
     classList () {
       return {
         'file-input--droppable': this.isDroppable,
         'file-input--multipe': this.$attrs.multiple,
-      }
+      };
     },
 
     listeners () {
-      const { dragenter, dragover, dragleave, drop, ...otherListeners } = this.$listeners
-      let dragListeners = {}
+      const { dragenter, dragover, dragleave, drop, ...otherListeners } = this.$listeners;
+      let dragListeners = {};
 
       if (this.isDroppable) {
         dragListeners = {
@@ -181,43 +181,43 @@ export default {
           dragover: evt => this.handleDragover(evt),
           dragleave: evt => this.handleDragleave(evt),
           drop: evt => this.handleDrop(evt),
-        }
+        };
       }
 
       const nondragListeners = {
         ...otherListeners,
         input: evt => this.handleFiles(evt),
-      }
+      };
 
-      return { nondragListeners, dragListeners }
+      return { nondragListeners, dragListeners };
     },
   },
 
   watch: {
     files (val) {
-      this.fileList = val
+      this.fileList = val;
     },
 
     fileList (val) {
-      this.$emit('input', this.fileList)
+      this.$emit('input', this.fileList);
     },
   },
 
   methods: {
     handleFiles (event) {
-      const eventItem = event.dataTransfer ? event.dataTransfer : event.target
-      const filesArray = eventItem.files.length ? Array.from(eventItem.files) : []
-      const { invalid, valid } = this.getValidFiles(filesArray)
+      const eventItem = event.dataTransfer ? event.dataTransfer : event.target;
+      const filesArray = eventItem.files.length ? Array.from(eventItem.files) : [];
+      const { invalid, valid } = this.getValidFiles(filesArray);
 
       if (invalid.length > 0) {
-        const payload = invalid.map(({ name, failed }) => ({ name, failed }), [])
-        this.$emit('error', { payload })
+        const payload = invalid.map(({ name, failed }) => ({ name, failed }), []);
+        this.$emit('error', { payload });
       }
 
-      this.fileList = this.$attrs.multiple ? [...this.fileList, ...valid] : valid
+      this.fileList = this.$attrs.multiple ? [...this.fileList, ...valid] : valid;
 
       // reset the input value
-      event.target.value = null
+      event.target.value = null;
     },
     /**
      * Validates files
@@ -227,19 +227,19 @@ export default {
      */
     getValidFiles (files) {
       const validate = ({ invalid, valid }, file) => {
-        const { isValid, failed } = this.checkValidations(file)
+        const { isValid, failed } = this.checkValidations(file);
 
         if (isValid) {
-          valid.push(file)
+          valid.push(file);
         } else {
-          file.failed = failed
-          invalid.push(file)
+          file.failed = failed;
+          invalid.push(file);
         }
 
-        return { invalid, valid }
-      }
+        return { invalid, valid };
+      };
 
-      return files.reduce(validate, { invalid: [], valid: [] })
+      return files.reduce(validate, { invalid: [], valid: [] });
     },
 
     checkValidations (file) {
@@ -252,51 +252,51 @@ export default {
           type: 'duplicate name',
           isValid: this.hasUniqueName(file),
         },
-      ]
+      ];
 
-      const failed = toValidate.reduce((r, { isValid, type }) => (isValid ? r : r.concat(type)), [])
+      const failed = toValidate.reduce((r, { isValid, type }) => (isValid ? r : r.concat(type)), []);
 
-      return { isValid: failed.length === 0, failed }
+      return { isValid: failed.length === 0, failed };
     },
 
     isValidSize (file) {
-      return this.maxSize ? file.size <= this.maxSize : true
+      return this.maxSize ? file.size <= this.maxSize : true;
     },
 
     hasUniqueName (file) {
-      return this.$attrs.multiple ? !this.fileNames.includes(file.name) : true
+      return this.$attrs.multiple ? !this.fileNames.includes(file.name) : true;
     },
 
     handleDragenter (event) {
-      this.stopAndPrevent(event)
-      this.hasDragover = true
+      this.stopAndPrevent(event);
+      this.hasDragover = true;
     },
 
     handleDragleave (event) {
-      this.stopAndPrevent(event)
-      this.hasDragover = false
+      this.stopAndPrevent(event);
+      this.hasDragover = false;
     },
 
     handleDrop (event) {
-      this.stopAndPrevent(event)
-      this.hasDragover = false
-      this.handleFiles(event)
+      this.stopAndPrevent(event);
+      this.hasDragover = false;
+      this.handleFiles(event);
     },
 
     handleDragover (event) {
-      this.stopAndPrevent(event)
+      this.stopAndPrevent(event);
     },
 
     stopAndPrevent (event) {
-      event.stopPropagation()
-      event.preventDefault()
+      event.stopPropagation();
+      event.preventDefault();
     },
 
     removeFile ({ idx }) {
-      this.fileList.splice(idx, 1)
+      this.fileList.splice(idx, 1);
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

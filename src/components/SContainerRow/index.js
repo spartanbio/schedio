@@ -1,5 +1,5 @@
-import SContainerRow from './SContainerRow.vue'
+import SContainerRow from './SContainerRow.vue';
 
-export { SContainerRow }
+export { SContainerRow };
 
-export default { install: Vue => Vue.component(SContainerRow.name, SContainerRow) }
+export default { install: Vue => Vue.component(SContainerRow.name, SContainerRow) };

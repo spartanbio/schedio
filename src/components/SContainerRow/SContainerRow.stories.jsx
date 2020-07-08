@@ -1,38 +1,38 @@
-import { SContainer } from '@/components/SContainer'
-import { SContainerColumn } from '@/components/SContainerColumn'
-import { SContainerRow } from '@/components/SContainerRow'
-import rowOptions from '@/components/SContainerRow/row-options'
-import { SHeading } from '@/components/SHeading'
-import { boolean, select } from '@storybook/addon-knobs'
-import orderBy from 'lodash.orderby'
-import PropList from '@@/docs/components/PropList'
-import kebabCase from 'lodash.kebabcase'
+import { SContainer } from '@/components/SContainer';
+import { SContainerColumn } from '@/components/SContainerColumn';
+import { SContainerRow } from '@/components/SContainerRow';
+import rowOptions from '@/components/SContainerRow/row-options';
+import { SHeading } from '@/components/SHeading';
+import { boolean, select } from '@storybook/addon-knobs';
+import orderBy from 'lodash.orderby';
+import PropList from '@@/docs/components/PropList';
+import kebabCase from 'lodash.kebabcase';
 
 export default {
-  title: 'Components|Layout/SContainerRow',
+  title: 'Components/Layout/SContainerRow',
 
   parameters: {
     jest: 'SContainerRow',
   },
-}
+};
 
 export const containerRow = () => {
   // get sorted row props from component
-  const rowPropNames = orderBy(Object.keys(SContainerRow.props))
+  const rowPropNames = orderBy(Object.keys(SContainerRow.props));
 
   // flexbox align items
   const alignProps = rowPropNames.reduce((p, name) => {
     return /^(align)/.test(name)
       ? { ...p, [name]: select(kebabCase(name), rowOptions, '', 'Alignment') }
-      : p
-  }, {})
+      : p;
+  }, {});
 
   // flexbox justify content
   const justifyProps = rowPropNames.reduce((props, name) => {
     return /^(justify)/.test(name)
       ? { ...props, [name]: select(kebabCase(name), rowOptions, '', 'Justification') }
-      : props
-  }, {})
+      : props;
+  }, {});
 
   return {
     props: {
@@ -45,7 +45,7 @@ export const containerRow = () => {
       },
     },
     render (h) {
-      const { props } = this.$props
+      const { props } = this.$props;
 
       return (
         <div>
@@ -73,11 +73,11 @@ export const containerRow = () => {
 
           <PropList component={SContainerRow} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 containerRow.story = {
   name: 'Container Row',
-}
+};

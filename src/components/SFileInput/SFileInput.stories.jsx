@@ -1,24 +1,24 @@
-import { SFileInput } from '@/components/SFileInput'
-import { SCallout } from '@/components/SCallout'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { boolean, number } from '@storybook/addon-knobs'
-import { withAttrsAsProps } from '@/mixins/stories/form-fields'
+import { SFileInput } from '@/components/SFileInput';
+import { SCallout } from '@/components/SCallout';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { boolean, number } from '@storybook/addon-knobs';
+import { withAttrsAsProps } from '@/mixins/stories/form-fields';
 
 export default {
-  title: 'Components|Inputs/SFileInput',
+  title: 'Components/Inputs/SFileInput',
 
   parameters: {
     jest: 'SFileInput',
   },
-}
+};
 
 export const fileInput = () => ({
   data () {
     return {
       errors: [],
       files: [],
-    }
+    };
   },
 
   props: {
@@ -40,7 +40,7 @@ export const fileInput = () => ({
     },
   },
   render (h) {
-    const { props, attrs } = this.$props
+    const { props, attrs } = this.$props;
 
     return (
       <div>
@@ -61,10 +61,10 @@ export const fileInput = () => ({
             {...{ props }}
             {...{ attrs }}
             onError={(evt) => {
-              this.errors = evt.payload
+              this.errors = evt.payload;
             }}
             onInput={(evt) => {
-              this.files = evt
+              this.files = evt;
             }}
             files={this.files}
           />
@@ -108,13 +108,13 @@ export const fileInput = () => ({
 
         {SFileInput.props && <PropList component={SFileInput} />}
       </div>
-    )
+    );
   },
-})
+});
 
 fileInput.story = {
   name: 'File Input',
-}
+};
 
 export const fileInputTypes = () => ({
   render (h) {
@@ -128,9 +128,9 @@ export const fileInputTypes = () => ({
         <SHeading level="2">Droppable</SHeading>
         <SFileInput id="file-drop" name="file-drop" label="File" is-droppable />
       </div>
-    )
+    );
   },
-})
+});
 
 fileInputTypes.story = {
   name: 'File Input Types',
@@ -140,4 +140,4 @@ fileInputTypes.story = {
       showPanel: false,
     },
   },
-}
+};

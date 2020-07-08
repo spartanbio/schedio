@@ -24,10 +24,10 @@
 </template>
 
 <script>
-import ColorList from '../components/ColorList'
-import groupBy from 'lodash.groupby'
-import orderBy from 'lodash.orderby'
-import { props as colors } from '@spartanbio/schedio-tokens/dist/web/raw-json/color.raw.json'
+import ColorList from '../components/ColorList';
+import groupBy from 'lodash.groupby';
+import orderBy from 'lodash.orderby';
+import { props as colors } from '@spartanbio/schedio-tokens/dist/web/raw-json/color.raw.json';
 
 export default {
   name: 'Color',
@@ -39,17 +39,17 @@ export default {
   data () {
     return {
       colors: Object.values(colors),
-    }
+    };
   },
 
   computed: {
     palettes () {
       return this.colors.map((color) => {
-        const [, palette] = color.name.split('-')
-        color.palette = palette
+        const [, palette] = color.name.split('-');
+        color.palette = palette;
 
-        return color
-      })
+        return color;
+      });
     },
     mainPalettes () {
       const order = [
@@ -58,12 +58,12 @@ export default {
         'night',
         'ice',
         'white',
-      ]
-      const toOrder = this.getPalette('main')
-      return order.reduce((ordered, key) => ({ ...ordered, [key]: toOrder[key] }), {})
+      ];
+      const toOrder = this.getPalette('main');
+      return order.reduce((ordered, key) => ({ ...ordered, [key]: toOrder[key] }), {});
     },
     accentPalettes () {
-      return this.getPalette('accent')
+      return this.getPalette('accent');
     },
   },
 
@@ -74,9 +74,9 @@ export default {
      * @returns {Object.<string, Object.<string, string>>}
      */
     getPalette (paletteType) {
-      const filtered = this.palettes.filter(palette => palette.paletteType === paletteType)
-      const palette = groupBy(filtered, 'palette')
-      return this.orderPalette(palette)
+      const filtered = this.palettes.filter(palette => palette.paletteType === paletteType);
+      const palette = groupBy(filtered, 'palette');
+      return this.orderPalette(palette);
     },
 
     /**
@@ -93,14 +93,14 @@ export default {
         'lighter',
         'lightest',
         'text',
-      ]
-      const colors = Object.keys(palette)
+      ];
+      const colors = Object.keys(palette);
       // base shades do not contain '-'
-      const shade = name => (name.match('-') ? name.split('-').pop() : 'base')
+      const shade = name => (name.match('-') ? name.split('-').pop() : 'base');
       // parse color shades to assign ranks. `base` if no shade named.
-      const rank = color => ranks.indexOf(shade(color.name))
-      return colors.reduce((pal, color) => ({ ...pal, [color]: orderBy(palette[color], rank) }), {})
+      const rank = color => ranks.indexOf(shade(color.name));
+      return colors.reduce((pal, color) => ({ ...pal, [color]: orderBy(palette[color], rank) }), {});
     },
   },
-}
+};
 </script>

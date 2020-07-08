@@ -1,16 +1,16 @@
-import { SButton } from '@/components/SButton'
-import { SButtonGroup } from '@/components/SButtonGroup'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { boolean, text } from '@storybook/addon-knobs'
+import { SButton } from '@/components/SButton';
+import { SButtonGroup } from '@/components/SButtonGroup';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { boolean, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Buttons/SButtonGroup',
+  title: 'Components/Buttons/SButtonGroup',
 
   parameters: {
     jest: 'SButtonGroup',
   },
-}
+};
 
 export const buttonGroup = () => ({
   props: {
@@ -63,10 +63,10 @@ export const buttonGroup = () => ({
 
         <PropList component={SButtonGroup} />
       </div>
-    )
+    );
   },
-})
+});
 
 buttonGroup.story = {
   name: 'Button Group',
-}
+};

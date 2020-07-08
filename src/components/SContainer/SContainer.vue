@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import defaults from '@/utils/defaults'
+import defaults from '@/utils/defaults';
 
 export default {
   name: 'SContainer',
@@ -24,7 +24,7 @@ export default {
       default: false,
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

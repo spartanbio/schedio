@@ -1,19 +1,19 @@
 // Global registration doesn't work with `jsx` templates
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { boolean, radios, select, text } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { boolean, radios, select, text } from '@storybook/addon-knobs';
 
-const headingLevels = ['1', '2', '3', '4']
+const headingLevels = ['1', '2', '3', '4'];
 
-const tagOptions = ['', 'div', 'span', 'a']
+const tagOptions = ['', 'div', 'span', 'a'];
 
 export default {
-  title: 'Components|Layout/SHeading',
+  title: 'Components/Layout/SHeading',
 
   parameters: {
     jest: 'SHeading',
   },
-}
+};
 
 export const heading = () => {
   const options = radios(
@@ -21,7 +21,7 @@ export const heading = () => {
     ['Default', 'has-no-case', 'is-subtle'],
     'Default',
     'Optional Props',
-  )
+  );
 
   return {
     props: {
@@ -41,7 +41,7 @@ export const heading = () => {
       },
     },
     render (h) {
-      const { props } = this.$props
+      const { props } = this.$props;
 
       return (
         <div>
@@ -61,14 +61,14 @@ export const heading = () => {
 
           <PropList component={SHeading} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 heading.story = {
   name: 'Heading',
-}
+};
 
 export const usageHeadings = () => {
   const options = radios(
@@ -76,7 +76,7 @@ export const usageHeadings = () => {
     ['Default', 'has-no-case', 'is-subtle'],
     'Default',
     'Optional Props',
-  )
+  );
 
   return {
     props: {
@@ -94,7 +94,7 @@ export const usageHeadings = () => {
       },
     },
     render (h) {
-      const { slotContent, props } = this.$props
+      const { slotContent, props } = this.$props;
 
       return (
         <div>
@@ -124,14 +124,14 @@ export const usageHeadings = () => {
 
           <PropList component={SHeading} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 usageHeadings.story = {
   name: 'Usage: Headings',
-}
+};
 
 export const usageDisplay = () => {
   const options = radios(
@@ -139,7 +139,7 @@ export const usageDisplay = () => {
     ['Default', 'has-no-case', 'is-subtle'],
     'Default',
     'Optional Props',
-  )
+  );
 
   return {
     props: {
@@ -159,7 +159,7 @@ export const usageDisplay = () => {
       },
     },
     render (h) {
-      const { slotContent, props } = this.$props
+      const { slotContent, props } = this.$props;
 
       return (
         <div>
@@ -178,11 +178,11 @@ export const usageDisplay = () => {
 
           <PropList component={SHeading} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 usageDisplay.story = {
   name: 'Usage: Display',
-}
+};

@@ -27,29 +27,29 @@ export default {
   data () {
     return {
       parentTag: '',
-    }
+    };
   },
 
   computed: {
     cellType () {
-      return this.isInHeaderRow ? 'th' : 'td'
+      return this.isInHeaderRow ? 'th' : 'td';
     },
     isInHeaderRow () {
-      return this.isHeader || this.parentTag === 'THEAD'
+      return this.isHeader || this.parentTag === 'THEAD';
     },
   },
 
   mounted () {
     // make $el available to computed
-    this.parentTag = this.$parent.$el.parentNode.tagName
+    this.parentTag = this.$parent.$el.parentNode.tagName;
   },
 
   updated () {
     if (this.isNumeric && isFinite(this.$el.innerText)) {
-      this.$el.innerText = Number(this.$el.innerText).toLocaleString()
+      this.$el.innerText = Number(this.$el.innerText).toLocaleString();
     }
   },
-}
+};
 </script>
 
 <style lang="scss">

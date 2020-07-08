@@ -1,7 +1,7 @@
-const fs = require('fs-extra')
-const path = require('path')
+const fs = require('fs-extra');
+const path = require('path');
 
-const defaultComponentDir = path.resolve(__dirname, '../src/components')
+const defaultComponentDir = path.resolve(__dirname, '../src/components');
 
 /**
  * Generates a unit test for a Vue component
@@ -11,20 +11,20 @@ const defaultComponentDir = path.resolve(__dirname, '../src/components')
  * @return {Promise.<string>} The component name
  */
 async function addUnitTest (fileName, componentDir = defaultComponentDir) {
-  const filePath = path.resolve(componentDir, fileName)
-  const stat = await fs.stat(filePath)
+  const filePath = path.resolve(componentDir, fileName);
+  const stat = await fs.stat(filePath);
 
   // only run on directories
   if (stat.isDirectory()) {
-    const testDir = path.resolve(filePath, '__tests__')
+    const testDir = path.resolve(filePath, '__tests__');
 
-    await fs.ensureDir(testDir)
+    await fs.ensureDir(testDir);
 
-    const { length: testDirHasFiles } = await fs.readdir(testDir)
+    const { length: testDirHasFiles } = await fs.readdir(testDir);
 
     // only run if there are no tests
     if (!testDirHasFiles) {
-      const testFile = path.resolve(testDir, `${fileName}.spec.js`)
+      const testFile = path.resolve(testDir, `${fileName}.spec.js`);
       const testContents = `\
 import { shallowMount } from '@vue/test-utils'
 import ${fileName} from '@/components/${fileName}/${fileName}.vue'
@@ -39,14 +39,14 @@ describe('${fileName}.vue', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
-})\n`
+})\n`;
 
       // write the file
-      await fs.outputFile(testFile, testContents)
+      await fs.outputFile(testFile, testContents);
 
-      return fileName
+      return fileName;
     }
   }
 }
 
-module.exports = addUnitTest
+module.exports = addUnitTest;

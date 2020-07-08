@@ -1,7 +1,7 @@
-import SLazyImage from './SLazyImage.vue'
+import SLazyImage from './SLazyImage.vue';
 
-export { SLazyImage }
+export { SLazyImage };
 
 export default {
   install: Vue => Vue.component(SLazyImage.name, SLazyImage),
-}
+};

@@ -1,10 +1,10 @@
-const path = require('path')
-const sharedConf = require('../shared-webpack-conf')
+const path = require('path');
+const sharedConf = require('../shared-webpack-conf');
 
 module.exports = {
   stories: [
-    '../../docs/**/*.stories.(js|jsx)',
-    '../../src/components/**/*.stories.(js|jsx)',
+    '../../docs/**/*.stories.{js,jsx}',
+    '../../src/components/**/*.stories.{js,jsx}',
   ],
   presets: [
     '@storybook/addon-docs/preset',
@@ -16,7 +16,7 @@ module.exports = {
     '@storybook/addon-a11y',
   ],
   webpack: (config) => {
-    const rules = config.module.rules
+    const rules = config.module.rules;
 
     rules.push({
       test: /\.scss$/,
@@ -39,11 +39,11 @@ module.exports = {
         path.resolve(__dirname, '../../src'),
         path.resolve(__dirname, '../../docs'),
       ],
-    })
+    });
 
-    Object.assign(config.resolve.alias, sharedConf.aliases)
-    config.parallelism = 1
+    Object.assign(config.resolve.alias, sharedConf.aliases);
+    config.parallelism = 1;
 
-    return config
+    return config;
   },
-}
+};

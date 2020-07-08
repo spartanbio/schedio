@@ -1,5 +1,5 @@
-import SButton from './SButton.vue'
+import SButton from './SButton.vue';
 
-export { SButton }
+export { SButton };
 
-export default { install: Vue => Vue.component(SButton.name, SButton) }
+export default { install: Vue => Vue.component(SButton.name, SButton) };

@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import * as spacing from '@spartanbio/schedio-tokens/dist/js/module-js/spacing.module'
-import orderBy from 'lodash.orderby'
+import * as spacing from '@spartanbio/schedio-tokens/dist/js/module-js/spacing.module';
+import orderBy from 'lodash.orderby';
 
 export default {
   name: 'Spacing',
@@ -58,19 +58,19 @@ export default {
   data () {
     return {
       spacing,
-    }
+    };
   },
 
   computed: {
     orderedSpacing () {
-      const sizeToNumber = size => Number(size.replace(/r?em/, ''))
-      const orderFn = ([, value]) => (typeof value === 'string' ? sizeToNumber(value) : value)
-      const spacingMap = Object.entries(this.spacing)
+      const sizeToNumber = size => Number(size.replace(/r?em/, ''));
+      const orderFn = ([, value]) => (typeof value === 'string' ? sizeToNumber(value) : value);
+      const spacingMap = Object.entries(this.spacing);
 
-      return Object.fromEntries(orderBy(spacingMap, orderFn))
+      return Object.fromEntries(orderBy(spacingMap, orderFn));
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
