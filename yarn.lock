@@ -2451,16 +2451,16 @@
     vue-docgen-api "^4.7.0"
     vue-docgen-loader "^1.4.0"
 
-"@storybook/addon-jest@^6.0.0-rc.3":
-  version "6.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-rc.3.tgz#cdc13f5e5b3de6161db3ca26049b601002c977c6"
-  integrity sha512-5flWyfI/9LGpCWVyIhOFUI2Kbormdsm2MIypzFYq5JvZnMfn7LIR8a6oo1TGL5ymDap3ehMaGfb53Mi5CHJWng==
+"@storybook/addon-jest@^6.0.0-rc.5":
+  version "6.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-rc.5.tgz#7a3d193ba6429bf502e698b56f670bdde6030647"
+  integrity sha512-/QRhR7Tp+FD6w0U+UrsjyM7zLxct9b96x3Nr3unu0tH4g8NZlY6rtkb80i3A6PtH0J9zpIXCF+IVu/cIpRSuOg==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.3"
-    "@storybook/api" "6.0.0-rc.3"
-    "@storybook/components" "6.0.0-rc.3"
-    "@storybook/core-events" "6.0.0-rc.3"
-    "@storybook/theming" "6.0.0-rc.3"
+    "@storybook/addons" "6.0.0-rc.5"
+    "@storybook/api" "6.0.0-rc.5"
+    "@storybook/components" "6.0.0-rc.5"
+    "@storybook/core-events" "6.0.0-rc.5"
+    "@storybook/theming" "6.0.0-rc.5"
     core-js "^3.0.1"
     global "^4.3.2"
     react "^16.8.3"
@@ -2672,6 +2672,34 @@
     "@storybook/client-logger" "6.0.0-rc.3"
     "@storybook/csf" "0.0.1"
     "@storybook/theming" "6.0.0-rc.3"
+    "@types/overlayscrollbars" "^1.9.0"
+    "@types/react-color" "^3.0.1"
+    "@types/react-syntax-highlighter" "11.0.4"
+    core-js "^3.0.1"
+    fast-deep-equal "^3.1.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.11.4"
+    memoizerific "^1.11.3"
+    overlayscrollbars "^1.10.2"
+    polished "^3.4.4"
+    popper.js "^1.14.7"
+    react "^16.8.3"
+    react-color "^2.17.0"
+    react-dom "^16.8.3"
+    react-popper-tooltip "^2.11.0"
+    react-syntax-highlighter "^12.2.1"
+    react-textarea-autosize "^8.1.1"
+    ts-dedent "^1.1.1"
+
+"@storybook/components@6.0.0-rc.5":
+  version "6.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.0.0-rc.5.tgz#b8517a65f69c94da1b87c0a33158f05649b0c3ff"
+  integrity sha512-SpKSHCpYbq/Q0sVXV3XPtqBzUMZ6T2P+3IB9jAynLXiT4bbDUoI6SZFWWg/rfmKvCG5REWwVSnvaPcY5qVU/Qw==
+  dependencies:
+    "@storybook/client-logger" "6.0.0-rc.5"
+    "@storybook/csf" "0.0.1"
+    "@storybook/theming" "6.0.0-rc.5"
     "@types/overlayscrollbars" "^1.9.0"
     "@types/react-color" "^3.0.1"
     "@types/react-syntax-highlighter" "11.0.4"
