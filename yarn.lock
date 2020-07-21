@@ -2445,16 +2445,16 @@
     vue-docgen-api "^4.7.0"
     vue-docgen-loader "^1.4.0"
 
-"@storybook/addon-jest@^6.0.0-rc.11":
-  version "6.0.0-rc.11"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-rc.11.tgz#b80947c7ca927f76fed65a11ebacf65ba376fd8b"
-  integrity sha512-Z0CjcEFkw8EuZggVAUxOXY+GLhjafRNYN0St5/btRcJHPFQLVo6DjfvLHbknThUlvgCEJ80Juj4sFLTZvN59jw==
+"@storybook/addon-jest@^6.0.0-rc.12":
+  version "6.0.0-rc.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-rc.12.tgz#aa503c0114abcdb65eb215a5e415256fe6938e48"
+  integrity sha512-M2xwlwshBVgRMktOeHoyniDHI/bdt5V0338wuW1nXcIqpyxib84l1KfwEc8vgI3biMKUB884bsAa77RCUWkEdQ==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.11"
-    "@storybook/api" "6.0.0-rc.11"
-    "@storybook/components" "6.0.0-rc.11"
-    "@storybook/core-events" "6.0.0-rc.11"
-    "@storybook/theming" "6.0.0-rc.11"
+    "@storybook/addons" "6.0.0-rc.12"
+    "@storybook/api" "6.0.0-rc.12"
+    "@storybook/components" "6.0.0-rc.12"
+    "@storybook/core-events" "6.0.0-rc.12"
+    "@storybook/theming" "6.0.0-rc.12"
     core-js "^3.0.1"
     global "^4.3.2"
     react "^16.8.3"
