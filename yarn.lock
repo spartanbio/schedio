@@ -3033,16 +3033,16 @@
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-jest@^6.0.0-rc.20":
-  version "6.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-rc.20.tgz#653551a32a5b82b91ed8574a6f552ea8009617a9"
-  integrity sha512-qtVAWboXZL9GhKVWbH59S7pWNS0zpQhqjCiXszABkdnb0Ds8TluUVtw3rVzTWN7gIQM3SJoYtcmx3hxBmpIl0g==
+"@storybook/addon-jest@^6.0.0-rc.23":
+  version "6.0.0-rc.23"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.0-rc.23.tgz#053500d7f0e22a3f38a7f8f63bcbc2bf9ee3d7fa"
+  integrity sha512-KmLAmCXRGOiQ6v0j+e7n+Wexip3fRVSirFL/olvroGdNHJ3rMoZEh3Kf54z2r0/idIWaDAn7kxV/N38pdJog5A==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.20"
-    "@storybook/api" "6.0.0-rc.20"
-    "@storybook/components" "6.0.0-rc.20"
-    "@storybook/core-events" "6.0.0-rc.20"
-    "@storybook/theming" "6.0.0-rc.20"
+    "@storybook/addons" "6.0.0-rc.23"
+    "@storybook/api" "6.0.0-rc.23"
+    "@storybook/components" "6.0.0-rc.23"
+    "@storybook/core-events" "6.0.0-rc.23"
+    "@storybook/theming" "6.0.0-rc.23"
     core-js "^3.0.1"
     global "^4.3.2"
     react "^16.8.3"
@@ -3175,19 +3175,6 @@
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@6.0.0-rc.20":
-  version "6.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-rc.20.tgz#82c658cb3d4d86fb5432e6d10b1c008cc1ec0a85"
-  integrity sha512-gUY/uUEZyJMKz1yWGeMg+XB8xwYJMHMjTa+bva5Mk5qCWkK2pefctX+m5AUEd/f6b2fnTjP/AmU/jczs9oQKWg==
-  dependencies:
-    "@storybook/channels" "6.0.0-rc.20"
-    "@storybook/client-logger" "6.0.0-rc.20"
-    "@storybook/core-events" "6.0.0-rc.20"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    qs "^6.6.0"
-    telejson "^4.0.1"
-
 "@storybook/channel-postmessage@6.0.0-rc.23":
   version "6.0.0-rc.23"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-rc.23.tgz#51b80365c2ec784ce13f0791e035640d070cc046"
@@ -3216,29 +3203,6 @@
   integrity sha512-KeOH5Cg9rjZLxxRqnkxXWUJfq3VoOrPzoPBgt8jAQrP4QloBt1tAY947Pqo+oW5ON3woxDexlagVBnbMGCbmWw==
   dependencies:
     core-js "^3.0.1"
-    ts-dedent "^1.1.1"
-    util-deprecate "^1.0.2"
-
-"@storybook/client-api@6.0.0-rc.20":
-  version "6.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-6.0.0-rc.20.tgz#7a706423303bb49bf1531c9787ea92de662ab1a6"
-  integrity sha512-KVWUZ2r6JiL3oTyll7LkWx1vQsE5Gc+NoyBEKKOVrJOfEoD9k6PGbVIOcpX5HZ5MMHPgS/lUZb+wgNKxqUhKfg==
-  dependencies:
-    "@storybook/addons" "6.0.0-rc.20"
-    "@storybook/channel-postmessage" "6.0.0-rc.20"
-    "@storybook/channels" "6.0.0-rc.20"
-    "@storybook/client-logger" "6.0.0-rc.20"
-    "@storybook/core-events" "6.0.0-rc.20"
-    "@storybook/csf" "0.0.1"
-    "@types/qs" "^6.9.0"
-    "@types/webpack-env" "^1.15.2"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    qs "^6.6.0"
-    stable "^0.1.8"
-    store2 "^2.7.1"
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
@@ -3280,34 +3244,6 @@
   dependencies:
     core-js "^3.0.1"
     global "^4.3.2"
-
-"@storybook/components@6.0.0-rc.20":
-  version "6.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.0.0-rc.20.tgz#47e7edc0dd01332e8a76349439bd2ca6b3235001"
-  integrity sha512-EwnaXXLL3T46Yntr3FkaJYbnvVfCzj0YVN5uC4h20GNno9lgFWr2SUcJ713ViUxcDK6J8kTa6+k++QI6u3HV8A==
-  dependencies:
-    "@storybook/client-logger" "6.0.0-rc.20"
-    "@storybook/csf" "0.0.1"
-    "@storybook/theming" "6.0.0-rc.20"
-    "@types/overlayscrollbars" "^1.9.0"
-    "@types/react-color" "^3.0.1"
-    "@types/react-syntax-highlighter" "11.0.4"
-    core-js "^3.0.1"
-    fast-deep-equal "^3.1.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    markdown-to-jsx "^6.11.4"
-    memoizerific "^1.11.3"
-    overlayscrollbars "^1.10.2"
-    polished "^3.4.4"
-    popper.js "^1.14.7"
-    react "^16.8.3"
-    react-color "^2.17.0"
-    react-dom "^16.8.3"
-    react-popper-tooltip "^2.11.0"
-    react-syntax-highlighter "^12.2.1"
-    react-textarea-autosize "^8.1.1"
-    ts-dedent "^1.1.1"
 
 "@storybook/components@6.0.0-rc.23":
   version "6.0.0-rc.23"
