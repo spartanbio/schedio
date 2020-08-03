@@ -2461,18 +2461,18 @@
     regenerator-runtime "^0.13.3"
     upath "^1.1.0"
 
-"@storybook/addon-knobs@^6.0.0-rc.20":
-  version "6.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-rc.20.tgz#c9bf283b4ee37496f8cf48a4cdb0ec0059c72948"
-  integrity sha512-feI2N+uO8KlYvyED55XHqLf0KQhhgL1VDAsJI4vqTV4fSnlm0Ma1xGmn4e04JTLPWXyy9NqtlY9JgoEgPOW0dg==
+"@storybook/addon-knobs@^6.0.0-rc.23":
+  version "6.0.0-rc.23"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-rc.23.tgz#8d1c6853aa65f95b8907c6d29728a8c6a32f536a"
+  integrity sha512-a4RwV2HqJ8e1ipWdE+FoaCH56Ztco8ZsHheWX4I6HDfQ/rlulhITdtBma7X5c5ZBxdoFWdpt+JDbnAXX138UfA==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.20"
-    "@storybook/api" "6.0.0-rc.20"
-    "@storybook/channels" "6.0.0-rc.20"
-    "@storybook/client-api" "6.0.0-rc.20"
-    "@storybook/components" "6.0.0-rc.20"
-    "@storybook/core-events" "6.0.0-rc.20"
-    "@storybook/theming" "6.0.0-rc.20"
+    "@storybook/addons" "6.0.0-rc.23"
+    "@storybook/api" "6.0.0-rc.23"
+    "@storybook/channels" "6.0.0-rc.23"
+    "@storybook/client-api" "6.0.0-rc.23"
+    "@storybook/components" "6.0.0-rc.23"
+    "@storybook/core-events" "6.0.0-rc.23"
+    "@storybook/theming" "6.0.0-rc.23"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
     escape-html "^1.0.3"
