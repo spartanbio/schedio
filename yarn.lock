@@ -2648,19 +2648,19 @@
     stylelint-config-standard "^20.0.0"
     stylelint-order "^4.0.0"
 
-"@storybook/addon-a11y@^6.0.0-rc.29":
-  version "6.0.0-rc.29"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0-rc.29.tgz#360d892e94711117041e1fd0a855fc906fbc8ce9"
-  integrity sha512-FmbKzqL5EWDb0EIWPBNyla1OlKwL9uEA2hPhofvolYH97Invqt1h3Qp7WLG8kmyzbParajKVCM7qvM7p3VzScg==
+"@storybook/addon-a11y@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.0.0.tgz#80b03f107e8fdc2fd44c6ecdaddcc6518ff0d177"
+  integrity sha512-q6XrVhiyfUIkjePHqt14BPL9JRHf03gyT/qFu+Y5+38AH4qbqFHX5LHAVlpf2A4H0453ZQ+vpr1ZCYukc0tEVw==
   dependencies:
-    "@storybook/addons" "6.0.0-rc.29"
-    "@storybook/api" "6.0.0-rc.29"
-    "@storybook/channels" "6.0.0-rc.29"
-    "@storybook/client-api" "6.0.0-rc.29"
-    "@storybook/client-logger" "6.0.0-rc.29"
-    "@storybook/components" "6.0.0-rc.29"
-    "@storybook/core-events" "6.0.0-rc.29"
-    "@storybook/theming" "6.0.0-rc.29"
+    "@storybook/addons" "6.0.0"
+    "@storybook/api" "6.0.0"
+    "@storybook/channels" "6.0.0"
+    "@storybook/client-api" "6.0.0"
+    "@storybook/client-logger" "6.0.0"
+    "@storybook/components" "6.0.0"
+    "@storybook/core-events" "6.0.0"
+    "@storybook/theming" "6.0.0"
     axe-core "^3.5.2"
     core-js "^3.0.1"
     global "^4.3.2"
