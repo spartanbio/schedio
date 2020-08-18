@@ -52,7 +52,7 @@
     "@storybook/addon-knobs": "^6.0.12",
     "@storybook/addon-links": "^6.0.10",
     "@storybook/addons": "^6.0.0",
-    "@storybook/vue": "6.0.10",
+    "@storybook/vue": "6.0.12",
     "@vue/babel-plugin-transform-vue-jsx": "^1.1.2",
     "@vue/cli": "^4.5.4",
     "@vue/cli-plugin-babel": "~4.5.3",
