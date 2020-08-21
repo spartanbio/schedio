@@ -31,7 +31,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "feather-icons": "^4.22.0",
     "lodash.startcase": "^4.4.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.12"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -106,7 +106,7 @@
     "stylelint-scss": "^3.18.0",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-jest": "^3.0.6",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.12"
   },
   "homepage": "https://spartanbio-design.netlify.com",
   "husky": {
