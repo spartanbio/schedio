@@ -1,12 +1,12 @@
-import Schedio from '@'
-import results from '@@/.jest-test-results.json'
-import StoryContainer from '@@/docs/components/StoryContainer.vue'
-import '@@/static/fonts/fonts.css'
-import { withTests } from '@storybook/addon-jest'
-import { addDecorator, addParameters } from '@storybook/vue'
-import Vue from 'vue'
+import Schedio from '@';
+import results from '@@/.jest-test-results.json';
+import StoryContainer from '@@/docs/components/StoryContainer.vue';
+import '@@/static/fonts/fonts.css';
+import { withTests } from '@storybook/addon-jest';
+import { addDecorator, addParameters } from '@storybook/vue';
+import Vue from 'vue';
 
-Vue.use(Schedio)
+Vue.use(Schedio);
 
 // Set options
 addParameters({
@@ -16,9 +16,9 @@ addParameters({
         ? 0
         : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
-})
+});
 
-addDecorator(withTests({ results }))
+addDecorator(withTests({ results }));
 addDecorator(story => ({
   name: 'TheStory',
   components: { StoryContainer, story },
@@ -27,4 +27,4 @@ addDecorator(story => ({
   <story />
 </StoryContainer>
 `,
-}))
+}));

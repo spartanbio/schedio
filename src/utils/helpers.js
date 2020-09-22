@@ -7,10 +7,10 @@
  * @returns {string} the joined string
  */
 export function joinWithConjunction (values, conjunction = 'and', separator = ', ') {
-  if (typeof values === 'string' || values.length === 1) return values
+  if (typeof values === 'string' || values.length === 1) return values;
 
-  const _values = [...values]
-  const last = _values.pop()
+  const _values = [...values];
+  const last = _values.pop();
 
-  return _values.join(separator) + `${separator}${conjunction} ${last}`
+  return _values.join(separator) + `${separator}${conjunction} ${last}`;
 }

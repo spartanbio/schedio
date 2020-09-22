@@ -7,9 +7,9 @@ export default {
           this.$emit(
             'input',
             event.target.type === 'checkbox' ? event.target.checked : event.target.value,
-          )
+          );
         },
-      }
+      };
     },
   },
-}
+};

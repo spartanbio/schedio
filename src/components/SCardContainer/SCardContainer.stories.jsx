@@ -1,15 +1,15 @@
-import { SCardContainer } from '@/components/SCardContainer'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { text } from '@storybook/addon-knobs'
+import { SCardContainer } from '@/components/SCardContainer';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Layout/SCardContainer',
+  title: 'Components/Layout/SCardContainer',
 
   parameters: {
     jest: 'SCardContainer',
   },
-}
+};
 
 export const cardContainer = () => ({
   props: {
@@ -33,10 +33,10 @@ export const cardContainer = () => ({
 
         {SCardContainer.props && <PropList component={SCardContainer} />}
       </div>
-    )
+    );
   },
-})
+});
 
 cardContainer.story = {
   name: 'Card Container',
-}
+};

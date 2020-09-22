@@ -46,14 +46,14 @@
 </template>
 
 <script>
-import ControlIcons from '@/mixins/ControlIcons.mixin'
-import InputText from '@/mixins/InputText.mixin'
+import ControlIcons from '@/mixins/ControlIcons.mixin';
+import InputText from '@/mixins/InputText.mixin';
 
 export default {
   name: 'STextarea',
 
   mixins: [InputText, ControlIcons],
-}
+};
 </script>
 
 <style lang="scss">

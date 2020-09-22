@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import InputControl from '@/mixins/InputControl.mixin'
+import InputControl from '@/mixins/InputControl.mixin';
 
-const sizes = ['small', 'medium', 'large']
+const sizes = ['small', 'medium', 'large'];
 
 export default {
   name: 'SSwitch',
@@ -44,7 +44,7 @@ export default {
           (
             sizes.includes(size) ||
             console.error(`\`size\` must be one of ${sizes}`)
-          )
+          );
       },
     },
     value: {
@@ -52,7 +52,7 @@ export default {
       default: null,
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

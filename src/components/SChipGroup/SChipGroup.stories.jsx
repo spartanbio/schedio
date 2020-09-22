@@ -1,17 +1,17 @@
-import { SChip } from '@/components/SChip'
-import { SChipGroup } from '@/components/SChipGroup'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { select } from '@storybook/addon-knobs'
-import { colors } from '../SChip/options'
+import { SChip } from '@/components/SChip';
+import { SChipGroup } from '@/components/SChipGroup';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { select } from '@storybook/addon-knobs';
+import { colors } from '../SChip/options';
 
 export default {
-  title: 'Components|Chips/SChipGroup',
+  title: 'Components/Chips/SChipGroup',
   component: SChipGroup,
   parameters: {
     jest: 'SChipGroup',
   },
-}
+};
 
 export const ChipGroup = () => ({
   props: {
@@ -22,7 +22,7 @@ export const ChipGroup = () => ({
     },
   },
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
 
     return (
       <div>
@@ -42,10 +42,10 @@ export const ChipGroup = () => ({
         {/* This doesn't work if props are only generated through a mixin */}
         {SChipGroup.props && <PropList component={SChipGroup} />}
       </div>
-    )
+    );
   },
-})
+});
 
 ChipGroup.story = {
   name: 'ChipGroup',
-}
+};

@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import { colors, sizes } from './options'
-import defaults from '@/utils/defaults'
+import { colors, sizes } from './options';
+import defaults from '@/utils/defaults';
 
-const propError = (propName, values) => console.error(`\`${propName}\` must be one of ${values}`)
+const propError = (propName, values) => console.error(`\`${propName}\` must be one of ${values}`);
 
 export default {
   name: 'SProgressBar',
@@ -38,9 +38,9 @@ export default {
       type: [Number, String],
       required: true,
       validator (value) {
-        if (value < 0) return console.error('Progress should be at least 0.')
-        if (value > 100) return console.error('Progress should be less than 100.')
-        return true
+        if (value < 0) return console.error('Progress should be at least 0.');
+        if (value > 100) return console.error('Progress should be less than 100.');
+        return true;
       },
     },
 
@@ -69,28 +69,28 @@ export default {
 
   computed: {
     computedProgress () {
-      if (this.progress < 0) return 0
-      if (this.progress > 100) return 100
-      return this.progress
+      if (this.progress < 0) return 0;
+      if (this.progress > 100) return 100;
+      return this.progress;
     },
 
     computedMessage () {
-      let stack = this.message
-      if (this.message && !this.hidePercentComplete) stack += ': '
-      if (!this.hidePercentComplete) stack += `${this.computedProgress}% complete.`
+      let stack = this.message;
+      if (this.message && !this.hidePercentComplete) stack += ': ';
+      if (!this.hidePercentComplete) stack += `${this.computedProgress}% complete.`;
 
-      return stack
+      return stack;
     },
 
     progressBarClassList () {
-      return { [`progress-bar__background--${this.size}`]: this.size }
+      return { [`progress-bar__background--${this.size}`]: this.size };
     },
 
     progressIndicatorClassList () {
-      return { [`progress-bar__indicator--color-${this.color}`]: this.color }
+      return { [`progress-bar__indicator--color-${this.color}`]: this.color };
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

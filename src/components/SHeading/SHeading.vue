@@ -19,7 +19,7 @@ export default {
         return (
           Number(value) <= 4 ||
           console.error('Level must be 4 or lower. 2 or lower if `isDisplay`.')
-        )
+        );
       },
     },
 
@@ -52,14 +52,14 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        const allowedTags = ['div', 'span', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+        const allowedTags = ['div', 'span', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
         return (
           // allow empty
           !value ||
           allowedTags.includes(value) ||
           console.error(`Tag must be one of: ${allowedTags.join(', ')}.`)
-        )
+        );
       },
     },
   },
@@ -76,14 +76,14 @@ export default {
           'heading--title': this.isTitle,
           'heading--subtitle': this.isSubtitle,
         },
-      ]
+      ];
     },
 
     componentTag () {
-      return this.tag || 'h' + this.level
+      return this.tag || 'h' + this.level;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

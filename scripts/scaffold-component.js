@@ -1,18 +1,18 @@
-const addUnitTest = require('./add-unit-test')
-const chalk = require('chalk')
-const fs = require('fs-extra')
-const path = require('path')
-const getComponentNames = require('./get-component-names')
-const generateVueIndex = require('./generate-vue-index')
+const addUnitTest = require('./add-unit-test');
+const chalk = require('chalk');
+const fs = require('fs-extra');
+const path = require('path');
+const getComponentNames = require('./get-component-names');
+const generateVueIndex = require('./generate-vue-index');
 
 // params
-const rawName = process.argv[2]
-const componentName = `S${rawName}`
-const writeDir = path.resolve(__dirname, '../src', 'components', componentName)
+const rawName = process.argv[2];
+const componentName = `S${rawName}`;
+const writeDir = path.resolve(__dirname, '../src', 'components', componentName);
 
 // don't overwrite existing components
 if (fs.pathExistsSync(path.resolve(writeDir, `${componentName}.vue`))) {
-  return console.log(chalk.red(`\`${componentName}\` already exists!`))
+  return console.log(chalk.red(`\`${componentName}\` already exists!`));
 }
 
 // files and contents to write
@@ -90,41 +90,41 @@ export default {
 }
 `,
   },
-]
+];
 
 // write files
 async function scaffoldComponent () {
-  console.log(chalk.yellow(`Building ${componentName}...\n`))
+  console.log(chalk.yellow(`Building ${componentName}...\n`));
 
   try {
     // add vue, story, index.js
     await Promise.all(
       scaffold.map(async ({ fileName, extension, contents }) => {
-        console.log(chalk.yellow(`Adding ${extension} file...\n`))
+        console.log(chalk.yellow(`Adding ${extension} file...\n`));
 
-        const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`)
+        const file = path.resolve(writeDir, `${fileName || componentName}.${extension}`);
 
-        return fs.outputFile(file, contents)
+        return fs.outputFile(file, contents);
       }),
-    )
+    );
 
     // add unit test files
-    console.log(chalk.yellow('Adding unit test...\n'))
+    console.log(chalk.yellow('Adding unit test...\n'));
 
-    await addUnitTest(componentName)
+    await addUnitTest(componentName);
 
     // Rebuild index.js and components.scss
-    console.log(chalk.yellow('Rebuilding index files...\n'))
+    console.log(chalk.yellow('Rebuilding index files...\n'));
 
-    const allComponentNames = getComponentNames()
+    const allComponentNames = getComponentNames();
 
-    generateVueIndex(allComponentNames)
+    generateVueIndex(allComponentNames);
 
     // great success!
-    console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``))
+    console.log(chalk.green(`Successfully scaffolded component \`${componentName}\``));
   } catch (err) {
-    console.error(chalk.red(err))
+    console.error(chalk.red(err));
   }
 }
 
-scaffoldComponent()
+scaffoldComponent();

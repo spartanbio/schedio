@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import { allowed } from './options'
-import InputText from '@/mixins/InputText.mixin'
-import ControlIcons from '@/mixins/ControlIcons.mixin'
+import { allowed } from './options';
+import InputText from '@/mixins/InputText.mixin';
+import ControlIcons from '@/mixins/ControlIcons.mixin';
 
 /**
  * TODO:
@@ -65,11 +65,11 @@ export default {
       type: String,
       default: 'text',
       validator: (value) => {
-        return !value || allowed.includes(value) || console.error(`type must be one of: ${allowed}`)
+        return !value || allowed.includes(value) || console.error(`type must be one of: ${allowed}`);
       },
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

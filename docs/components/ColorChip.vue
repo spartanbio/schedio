@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import { SCard } from '@/components/SCard'
+import { SCard } from '@/components/SCard';
 
 const valToHex = (hex, int) => {
-  const val = Number(int).toString(16)
-  return hex + (val.length === 1 ? `0${val}` : val).toUpperCase()
-}
+  const val = Number(int).toString(16);
+  return hex + (val.length === 1 ? `0${val}` : val).toUpperCase();
+};
 
 export default {
   name: 'ColorChip',
@@ -69,7 +69,7 @@ export default {
       required: true,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

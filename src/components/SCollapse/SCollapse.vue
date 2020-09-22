@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import { SButton } from '@/components/SButton'
-import { SIcon } from '@/components/SIcon'
+import { SButton } from '@/components/SButton';
+import { SIcon } from '@/components/SIcon';
 
 export default {
   name: 'SCollapse',
@@ -63,15 +63,15 @@ export default {
   data () {
     return {
       showContent: false,
-    }
+    };
   },
 
   methods: {
     toggleContent () {
-      this.showContent = !this.showContent
+      this.showContent = !this.showContent;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

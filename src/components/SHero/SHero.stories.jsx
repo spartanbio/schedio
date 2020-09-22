@@ -1,17 +1,17 @@
-import { SHero } from '@/components/SHero'
-import { SHeading } from '@/components/SHeading'
-import { SContainer } from '@/components/SContainer'
-import PropList from '@@/docs/components/PropList'
-import { boolean, select, text } from '@storybook/addon-knobs'
-import { colors, heights } from './options'
+import { SHero } from '@/components/SHero';
+import { SHeading } from '@/components/SHeading';
+import { SContainer } from '@/components/SContainer';
+import PropList from '@@/docs/components/PropList';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import { colors, heights } from './options';
 
 export default {
-  title: 'Components|Layout/SHero',
+  title: 'Components/Layout/SHero',
 
   parameters: {
     jest: 'SHero',
   },
-}
+};
 
 export const hero = () => ({
   props: {
@@ -40,7 +40,7 @@ export const hero = () => ({
     },
   },
   render (h) {
-    const { slots, ...props } = this.$props
+    const { slots, ...props } = this.$props;
     return (
       <div>
         <SHeading level="1">Hero</SHeading>
@@ -53,19 +53,19 @@ export const hero = () => ({
         <SHeading level="2">Example</SHeading>
         <SHero {...{ props }}>
           {Object.entries(slots).map((slot) => {
-            return <template slot={slot[0]}>{slot[1]}</template>
+            return <template slot={slot[0]}>{slot[1]}</template>;
           })}
         </SHero>
 
         {SHero.props && <PropList component={SHero} />}
       </div>
-    )
+    );
   },
-})
+});
 
 hero.story = {
   name: 'Hero',
-}
+};
 
 export const heroColors = () => ({
   render (h) {
@@ -75,9 +75,9 @@ export const heroColors = () => ({
 
         {colors.map(color => generateHero(h, color))}
       </div>
-    )
+    );
   },
-})
+});
 
 heroColors.story = {
   name: 'Hero Colors',
@@ -87,7 +87,7 @@ heroColors.story = {
       showPanel: false,
     },
   },
-}
+};
 
 function generateHero (h, color) {
   return [
@@ -118,5 +118,5 @@ function generateHero (h, color) {
         ),
       ]),
     ]),
-  ]
+  ];
 }

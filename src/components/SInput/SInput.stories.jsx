@@ -1,29 +1,29 @@
-import { SHeading } from '@/components/SHeading'
-import { colorNames as iconColors, allShadeOptions } from '@/components/SIcon/options'
-import { SInput } from '@/components/SInput'
-import { allowed } from '@/components/SInput/options'
-import PropList from '@@/docs/components/PropList'
-import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import { boolean, select, text } from '@storybook/addon-knobs'
-import icons from 'feather-icons/dist/icons.json'
-import { SFormField } from '@/components/SFormField'
+import { SHeading } from '@/components/SHeading';
+import { colorNames as iconColors, allShadeOptions } from '@/components/SIcon/options';
+import { SInput } from '@/components/SInput';
+import { allowed } from '@/components/SInput/options';
+import PropList from '@@/docs/components/PropList';
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import icons from 'feather-icons/dist/icons.json';
+import { SFormField } from '@/components/SFormField';
 
-const iconList = Object.keys(icons)
-const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
+const iconList = Object.keys(icons);
+const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props');
 const iconColor = (side) => {
-  return select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
-}
+  return select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props');
+};
 const iconShade = (side) => {
-  return select(`icon-${side}-shade`, ['', ...allShadeOptions], '', 'Optional Props')
-}
+  return select(`icon-${side}-shade`, ['', ...allShadeOptions], '', 'Optional Props');
+};
 
 export default {
-  title: 'Components|Inputs/SInput',
+  title: 'Components/Inputs/SInput',
 
   parameters: {
     jest: 'SInput',
   },
-}
+};
 
 export const input = () => ({
   props: {
@@ -48,7 +48,7 @@ export const input = () => ({
     },
   },
   render (h) {
-    const { props, attrs } = this.$props
+    const { props, attrs } = this.$props;
     return (
       <div>
         <SHeading level="1">Input</SHeading>
@@ -59,13 +59,13 @@ export const input = () => ({
 
         <PropList component={SInput} />
       </div>
-    )
+    );
   },
-})
+});
 
 input.story = {
   name: 'Input',
-}
+};
 
 export const inputWithIcons = () => ({
   render (h) {
@@ -89,9 +89,9 @@ export const inputWithIcons = () => ({
           />
         </SFormField>
       </div>
-    )
+    );
   },
-})
+});
 
 inputWithIcons.story = {
   name: 'Input with icons',
@@ -101,4 +101,4 @@ inputWithIcons.story = {
       showPanel: false,
     },
   },
-}
+};

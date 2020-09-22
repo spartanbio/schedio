@@ -1,6 +1,6 @@
-import * as color from '@spartanbio/schedio-tokens/dist/js/module-js/color.color-map.module'
+import * as color from '@spartanbio/schedio-tokens/dist/js/module-js/color.color-map.module';
 
-export const colors = color
+export const colors = color;
 
 /** All possible shade options */
 export const allShadeOptions = [
@@ -8,7 +8,7 @@ export const allShadeOptions = [
     .map(Object.keys)
     .flat(),
   ),
-]
+];
 
 /** Simple list of color names */
-export const colorNames = Object.keys(color)
+export const colorNames = Object.keys(color);

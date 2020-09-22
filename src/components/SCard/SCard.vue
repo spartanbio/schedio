@@ -36,16 +36,16 @@
 
 <script>
 const imageValidator = (obj) => {
-  const requiredAttrs = ['src', 'alt']
+  const requiredAttrs = ['src', 'alt'];
 
   return requiredAttrs.every((attr) => {
-    const hasAttr = {}.hasOwnProperty.call(obj, attr)
+    const hasAttr = {}.hasOwnProperty.call(obj, attr);
 
-    if (!hasAttr) console.error(`\`image\` requires attribute: ${attr}`)
+    if (!hasAttr) console.error(`\`image\` requires attribute: ${attr}`);
 
-    return hasAttr
-  })
-}
+    return hasAttr;
+  });
+};
 
 export default {
   name: 'SCard',
@@ -67,7 +67,7 @@ export default {
       default: false,
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

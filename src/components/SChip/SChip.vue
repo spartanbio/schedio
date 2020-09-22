@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import { SButton } from '@/components/SButton'
-import { colors } from './options'
-import defaults from '@/utils/defaults'
+import { SButton } from '@/components/SButton';
+import { colors } from './options';
+import defaults from '@/utils/defaults';
 
 export default {
   name: 'SChip',
@@ -53,7 +53,7 @@ export default {
           !val ||
           colors.includes(val) ||
           console.error(`\`color\` must be one of ${colors.join(', ')}`)
-        )
+        );
       },
     },
 
@@ -82,14 +82,14 @@ export default {
     classList () {
       return {
         [`chip--color-${this.color}`]: this.color,
-      }
+      };
     },
 
     buttonColor () {
-      return this.color || 'ice'
+      return this.color || 'ice';
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

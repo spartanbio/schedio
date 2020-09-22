@@ -74,10 +74,10 @@
 </template>
 
 <script>
-import startCase from 'lodash.startcase'
-import { STableRow } from '@/components/STableRow'
-import { STableCell } from '@/components/STableCell'
-import defaults from '@/utils/defaults'
+import startCase from 'lodash.startcase';
+import { STableRow } from '@/components/STableRow';
+import { STableCell } from '@/components/STableCell';
+import defaults from '@/utils/defaults';
 
 export default {
   name: 'STable',
@@ -145,7 +145,7 @@ export default {
       tableWidth: 0,
       distanceToScroll: 0,
       horizontalScrollPosition: 0,
-    }
+    };
   },
 
   computed: {
@@ -153,7 +153,7 @@ export default {
       return {
         'table__overlay--left': this.isScrolled,
         'table__overlay--right': this.isFullyScrolled,
-      }
+      };
     },
 
     tableClassList () {
@@ -162,35 +162,35 @@ export default {
         'table--hoverable': this.isHoverable,
         'table--striped': this.isStriped,
         'table--fullwidth': this.isFullwidth,
-      }
+      };
     },
 
     isScrolled () {
-      return this.horizontalScrollPosition > 0
+      return this.horizontalScrollPosition > 0;
     },
 
     isFullyScrolled () {
-      return this.horizontalScrollPosition < this.distanceToScroll
+      return this.horizontalScrollPosition < this.distanceToScroll;
     },
 
     headerCells () {
       // check keys in case object is passed
-      if (Object.keys(this.header).length) return this.header
+      if (Object.keys(this.header).length) return this.header;
 
-      const items = Array.isArray(this.tableData) ? this.tableData : Object.values(this.tableData)
+      const items = Array.isArray(this.tableData) ? this.tableData : Object.values(this.tableData);
       const headers = items.reduce((acc, item) => {
-        return Array.isArray(item) ? acc : acc.concat(Object.keys(item))
-      }, [])
+        return Array.isArray(item) ? acc : acc.concat(Object.keys(item));
+      }, []);
 
       // only return unique values
-      return [...new Set(headers)]
+      return [...new Set(headers)];
     },
 
     footerCells () {
       // give `this.footer` priority
-      if (Object.keys(this.footer).length) return this.footer
+      if (Object.keys(this.footer).length) return this.footer;
       // always return something since we only check for this.footerCells.length
-      return this.headerInFooter ? this.headerCells : this.footer
+      return this.headerInFooter ? this.headerCells : this.footer;
     },
   },
 
@@ -198,42 +198,42 @@ export default {
     // warn if `tableData` prop or default slot not provided.
     // check keys in case object is passed
     if (!Object.keys(this.tableData).length && !this.$slots.default) {
-      console.error(`\`${this.$options.name}\` requires \`tableData\` prop or default slot content`)
+      console.error(`\`${this.$options.name}\` requires \`tableData\` prop or default slot content`);
     }
   },
 
   mounted () {
-    this.container = this.$el.querySelector('.table__container')
-    this.checkForOverflow()
+    this.container = this.$el.querySelector('.table__container');
+    this.checkForOverflow();
 
     if (typeof window !== 'undefined') {
-      window.addEventListener('resize', this.checkForOverflow)
-      this.container.addEventListener('scroll', this.checkOverflowSide)
+      window.addEventListener('resize', this.checkForOverflow);
+      this.container.addEventListener('scroll', this.checkOverflowSide);
     }
   },
 
   destroyed () {
     if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', this.checkForOverflow)
-      this.container.removeEventListener('scroll', this.checkOverflowSide)
+      window.removeEventListener('resize', this.checkForOverflow);
+      this.container.removeEventListener('scroll', this.checkOverflowSide);
     }
   },
 
   methods: {
     checkForOverflow (e) {
-      const table = this.$el.querySelector('.table')
+      const table = this.$el.querySelector('.table');
 
-      this.containerWidth = this.container.clientWidth
-      this.tableWidth = table.scrollWidth
-      this.distanceToScroll = this.tableWidth - this.containerWidth
-      this.horizontalScrollPosition = table.scrollLeft
+      this.containerWidth = this.container.clientWidth;
+      this.tableWidth = table.scrollWidth;
+      this.distanceToScroll = this.tableWidth - this.containerWidth;
+      this.horizontalScrollPosition = table.scrollLeft;
     },
 
     checkOverflowSide (e) {
-      this.horizontalScrollPosition = e.target.scrollLeft
+      this.horizontalScrollPosition = e.target.scrollLeft;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

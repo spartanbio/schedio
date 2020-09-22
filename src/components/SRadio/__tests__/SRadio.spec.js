@@ -1,15 +1,15 @@
-import { mount, shallowMount } from '@vue/test-utils'
-import SRadio from '@/components/SRadio/SRadio.vue'
-import SLabel from '@/components/SLabel/SLabel.vue'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { mount, shallowMount } from '@vue/test-utils';
+import SRadio from '@/components/SRadio/SRadio.vue';
+import SLabel from '@/components/SLabel/SLabel.vue';
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 describe('SRadio.vue', () => {
-  const inputEvent = jest.fn()
-  let wrapper
-  let radio
-  const testValue = 'this is a test'
+  const inputEvent = jest.fn();
+  let wrapper;
+  let radio;
+  const testValue = 'this is a test';
 
   beforeEach(() => {
     wrapper = mount(SRadio, {
@@ -21,46 +21,46 @@ describe('SRadio.vue', () => {
       listeners: {
         input: inputEvent,
       },
-    })
+    });
 
-    radio = wrapper.find('#radio')
-  })
+    radio = wrapper.find('#radio');
+  });
 
   it('renders correctly', async () => {
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(await axe(wrapper.html())).toHaveNoViolations()
-  })
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(await axe(wrapper.html())).toHaveNoViolations();
+  });
 
   it('requires required props', () => {
     // spies on `console.error` without calling `console.error`
-    const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { })
+    const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { });
     // mounting component without required props
-    shallowMount(SRadio)
-    expect(spy).toHaveBeenCalled()
-    expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop')
-  })
+    shallowMount(SRadio);
+    expect(spy).toHaveBeenCalled();
+    expect(spy.mock.calls[0][0]).toContain('[Vue warn]: Missing required prop');
+  });
 
   it('can be checked', async () => {
-    wrapper.trigger('click')
-    await wrapper.vm.$nextTick()
-    expect(radio.element.checked).toBe(true)
+    wrapper.trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(radio.element.checked).toBe(true);
     // check that radio emitted input/its value
-    expect(wrapper.emitted('input')[0][0]).toBe(testValue)
-    expect(await axe(wrapper.html())).toHaveNoViolations()
-  })
+    expect(wrapper.emitted('input')[0][0]).toBe(testValue);
+    expect(await axe(wrapper.html())).toHaveNoViolations();
+  });
 
   it('can be a required input', async () => {
-    wrapper.setProps({ required: true })
-    await wrapper.vm.$nextTick()
-    expect(radio.element.required).toBe(true)
-  })
+    wrapper.setProps({ required: true });
+    await wrapper.vm.$nextTick();
+    expect(radio.element.required).toBe(true);
+  });
 
   it('can be invalid', async () => {
-    wrapper.setProps({ isInvalid: true })
-    await wrapper.vm.$nextTick()
-    expect(radio.element.validity.valid).toBe(false)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    wrapper.setProps({ isInvalid: true });
+    await wrapper.vm.$nextTick();
+    expect(radio.element.validity.valid).toBe(false);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('can be disabled', () => {
     const disabledWrapper = shallowMount(SRadio, {
@@ -71,19 +71,19 @@ describe('SRadio.vue', () => {
       attrs: {
         disabled: true,
       },
-    })
+    });
 
     // verifies disabled attr is passed through to radio input element
-    expect(disabledWrapper.attributes('disabled')).toBeUndefined()
-    expect(disabledWrapper.find('#radio').element.disabled).toBeTruthy()
-  })
+    expect(disabledWrapper.attributes('disabled')).toBeUndefined();
+    expect(disabledWrapper.find('#radio').element.disabled).toBeTruthy();
+  });
 
   it('can be reversed', async () => {
-    wrapper.setProps({ isReversed: true })
-    await wrapper.vm.$nextTick()
-    expect(wrapper.find(SLabel).props('isReversed')).toBe(true)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    wrapper.setProps({ isReversed: true });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find(SLabel).props('isReversed')).toBe(true);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('can be grouped', async () => {
     const groupWrapper = mount({
@@ -106,22 +106,22 @@ describe('SRadio.vue', () => {
           />
         </div>
       `,
-    })
+    });
 
-    const radios = groupWrapper.findAll(SRadio)
+    const radios = groupWrapper.findAll(SRadio);
 
-    expect(radios.length).toBe(2)
-    radios.trigger('click')
-    await groupWrapper.vm.$nextTick()
-    expect(radios.at(0).emitted('input')[0][0]).toEqual('radio-1')
-    expect(radios.at(1).emitted('input')[0][0]).toEqual('radio-2')
-    expect(groupWrapper.html()).toMatchSnapshot()
-  })
+    expect(radios.length).toBe(2);
+    radios.trigger('click');
+    await groupWrapper.vm.$nextTick();
+    expect(radios.at(0).emitted('input')[0][0]).toEqual('radio-1');
+    expect(radios.at(1).emitted('input')[0][0]).toEqual('radio-2');
+    expect(groupWrapper.html()).toMatchSnapshot();
+  });
 
   it('can hide the optional tag', async () => {
-    wrapper.setProps({ hideOptional: true, required: false })
-    await wrapper.vm.$nextTick()
-    expect(wrapper.text()).not.toContain('Optional')
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-})
+    wrapper.setProps({ hideOptional: true, required: false });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.text()).not.toContain('Optional');
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+});

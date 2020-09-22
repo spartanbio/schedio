@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { types } from './options'
+import { types } from './options';
 
 export default {
   name: 'SCallout',
@@ -18,7 +18,7 @@ export default {
       type: String,
       default: types[0],
       validator: (v) => {
-        return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`)
+        return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`);
       },
     },
   },
@@ -27,10 +27,10 @@ export default {
     classList () {
       return {
         [`callout--${this.type}`]: !!this.type,
-      }
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

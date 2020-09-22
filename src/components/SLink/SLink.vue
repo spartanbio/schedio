@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import defaults from '@/utils/defaults'
+import defaults from '@/utils/defaults';
 
 export default {
   name: 'SLink',
@@ -74,18 +74,18 @@ export default {
       return {
         'link--plain': this.isPlain,
         'link--light': this.isLight,
-      }
+      };
     },
 
     isExternalLink () {
       return this.isExternal ||
-        (typeof this.to === 'string' && /^(http(s)?|ftp):\/\//.test(this.to))
+        (typeof this.to === 'string' && /^(http(s)?|ftp):\/\//.test(this.to));
     },
 
     componentIs () {
-      if (this.isExternalLink || !this.$router || this.useAnchor) return 'a'
+      if (this.isExternalLink || !this.$router || this.useAnchor) return 'a';
 
-      return this.linkComponent
+      return this.linkComponent;
     },
 
     linkProperties () {
@@ -94,28 +94,28 @@ export default {
           href: this.to,
           target: '_blank',
           rel: 'noopener noreferrer',
-        }
+        };
       }
 
       if (this.useAnchor) {
         return {
           href: this.to,
-        }
+        };
       }
 
       // handles internal links if `$router` is not present (i.e.: vue and nuxt)
       if (this.$router) {
         return {
           to: this.to,
-        }
+        };
       }
 
       return {
         href: this.to,
-      }
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

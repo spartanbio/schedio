@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import InputControl from '@/mixins/InputControl.mixin'
+import InputControl from '@/mixins/InputControl.mixin';
 
 export default {
   name: 'SRadio',
@@ -46,23 +46,23 @@ export default {
 
   computed: {
     isChecked () {
-      return this.modelValue === this.$attrs.value
+      return this.modelValue === this.$attrs.value;
     },
 
     listeners () {
       return {
         ...this.$listeners,
         input: this.updateInput,
-      }
+      };
     },
   },
 
   methods: {
     updateInput () {
-      this.$emit('input', this.$attrs.value)
+      this.$emit('input', this.$attrs.value);
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

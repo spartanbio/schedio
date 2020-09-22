@@ -1,1 +1,1 @@
-export { colorNames as colors } from '@/utils/component-options'
+export { colorNames as colors } from '@/utils/component-options';

@@ -1,5 +1,5 @@
-import { shallowMount } from '@vue/test-utils'
-import STableRow from '@/components/STableRow/STableRow.vue'
+import { shallowMount } from '@vue/test-utils';
+import STableRow from '@/components/STableRow/STableRow.vue';
 
 describe('STableRow.vue', () => {
   it('renders correctly', () => {
@@ -7,8 +7,8 @@ describe('STableRow.vue', () => {
       slots: {
         default: '<td>Slot content</td>',
       },
-    })
+    });
 
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-})
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+});

@@ -51,9 +51,9 @@
 </template>
 
 <script>
-import NotificationMixin from '@/mixins/Notification.mixin'
-import { SIcon } from '@/components/SIcon'
-import { types, positions } from './options'
+import NotificationMixin from '@/mixins/Notification.mixin';
+import { SIcon } from '@/components/SIcon';
+import { types, positions } from './options';
 
 export default {
   name: 'SToast',
@@ -69,7 +69,7 @@ export default {
       type: String,
       default: '',
       validator: (v) => {
-        return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`)
+        return types.includes(v) || console.error(`\`type\` should be one of ${types.join(', ')}`);
       },
     },
 
@@ -105,7 +105,7 @@ export default {
         return (
           positions.includes(v) ||
           console.error(`\`position\` should be one of ${positions.join(', ')}`)
-        )
+        );
       },
     },
   },
@@ -115,7 +115,7 @@ export default {
       return {
         [`toast--${this.type}`]: this.type,
         [`toast--${this.position}`]: this.position,
-      }
+      };
     },
 
     toastIcon () {
@@ -123,9 +123,9 @@ export default {
         error: 'alert-circle',
         warning: 'alert-triangle',
         success: 'check-circle',
-      }
+      };
 
-      return stateMap[this.type]
+      return stateMap[this.type];
     },
 
     toastIconColor () {
@@ -133,31 +133,31 @@ export default {
         error: 'red',
         warning: 'gold',
         success: 'green',
-      }
+      };
 
-      return stateMap[this.type]
+      return stateMap[this.type];
     },
 
     hasContent () {
-      const title = this.text || this.$slots.title
-      const body = this.body || this.$slots.default
-      const any = title || body
+      const title = this.text || this.$slots.title;
+      const body = this.body || this.$slots.default;
+      const any = title || body;
 
-      return { any, title, body }
+      return { any, title, body };
     },
   },
 
   mounted () {
-    if (!this.hasContent.any) console.error('`SToast` requires title or body text')
+    if (!this.hasContent.any) console.error('`SToast` requires title or body text');
   },
 
   methods: {
     clickHandler () {
-      this.action()
-      this.closeNotification()
+      this.action();
+      this.closeNotification();
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

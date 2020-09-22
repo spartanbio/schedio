@@ -1,16 +1,16 @@
-import { SHeading } from '@/components/SHeading'
-import { SLabel } from '@/components/SLabel'
-import PropList from '@@/docs/components/PropList'
-import { boolean, text } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import { SLabel } from '@/components/SLabel';
+import PropList from '@@/docs/components/PropList';
+import { boolean, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Inputs/SLabel',
+  title: 'Components/Inputs/SLabel',
 
   parameters: {
     jest: 'SLabel',
   },
 
-}
+};
 
 export const label = () => ({
   props: {
@@ -30,7 +30,7 @@ export const label = () => ({
     },
   },
   render (h) {
-    const { props, defaultSlot } = this.$props
+    const { props, defaultSlot } = this.$props;
     return (
       <div>
         <SHeading level="1">Label</SHeading>
@@ -52,10 +52,10 @@ export const label = () => ({
 
         <PropList component={SLabel} />
       </div>
-    )
+    );
   },
-})
+});
 
 label.story = {
   name: 'Label',
-}
+};

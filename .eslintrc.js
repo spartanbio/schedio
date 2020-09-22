@@ -12,4 +12,8 @@ module.exports = {
       jsx: true,
     },
   },
-}
+  rules: {
+    'no-unused-vars': 'off',
+    'no-shadow': 'off',
+  },
+};

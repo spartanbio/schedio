@@ -1,4 +1,4 @@
-const { aliases, styleResourcesLoaderOptions } = require('./config/shared-webpack-conf')
+const { aliases, styleResourcesLoaderOptions } = require('./config/shared-webpack-conf');
 
 module.exports = {
   productionSourceMap: false,
@@ -17,4 +17,4 @@ module.exports = {
       alias: aliases,
     },
   },
-}
+};

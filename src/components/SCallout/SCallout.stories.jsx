@@ -1,20 +1,20 @@
-import { SCallout } from '@/components/SCallout'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { generateHeading } from '@/utils/stories/render-functions'
-import { select, text } from '@storybook/addon-knobs'
-import jeffsum from 'jeffsum'
-import { types } from './options'
+import { SCallout } from '@/components/SCallout';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { generateHeading } from '@/utils/stories/render-functions';
+import { select, text } from '@storybook/addon-knobs';
+import jeffsum from 'jeffsum';
+import { types } from './options';
 
-const defaultSlotPlaceholder = jeffsum(5, 'sentences')
+const defaultSlotPlaceholder = jeffsum(5, 'sentences');
 
 export default {
-  title: 'Components|SCallout',
+  title: 'Components/SCallout',
 
   parameters: {
     jest: 'SCallout',
   },
-}
+};
 
 export const callout = () => ({
   props: {
@@ -31,7 +31,7 @@ export const callout = () => ({
   },
 
   render (h) {
-    const { slots, props } = this.$props
+    const { slots, props } = this.$props;
     return (
       <div>
         <SHeading>Callout</SHeading>
@@ -42,13 +42,13 @@ export const callout = () => ({
 
         {SCallout.props && <PropList component={SCallout} />}
       </div>
-    )
+    );
   },
-})
+});
 
 callout.story = {
   name: 'Callout',
-}
+};
 
 export const calloutTypes = () => ({
   render (h) {
@@ -58,9 +58,9 @@ export const calloutTypes = () => ({
         generateHeading(h, { level: 3, content: type || 'Base' }),
         h(SCallout, { props: { type } }, jeffsum(5)),
       ]),
-    ])
+    ]);
   },
-})
+});
 
 calloutTypes.story = {
   name: 'Callout Types',
@@ -70,4 +70,4 @@ calloutTypes.story = {
       showPanel: false,
     },
   },
-}
+};

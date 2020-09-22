@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import InputControl from '@/mixins/InputControl.mixin'
+import InputControl from '@/mixins/InputControl.mixin';
 
 export default {
   name: 'SCheckbox',
@@ -38,7 +38,7 @@ export default {
       default: null,
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

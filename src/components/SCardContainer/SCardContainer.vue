@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import { SCard } from '@/components/SCard'
-import { SContainer } from '@/components/SContainer'
+import { SCard } from '@/components/SCard';
+import { SContainer } from '@/components/SContainer';
 
 export default {
   name: 'SCardContainer',
@@ -24,5 +24,5 @@ export default {
       default: 'div',
     },
   },
-}
+};
 </script>

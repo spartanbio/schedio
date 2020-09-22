@@ -1,57 +1,57 @@
-import mobileBreakpoints from '@/components/SContainer/mobile-breakpoints'
-import SContainerRow from '@/components/SContainerRow/SContainerRow.vue'
-import rowOptions from '@/components/SContainerRow/row-options'
-import { shallowMount } from '@vue/test-utils'
-import camelCase from 'lodash.camelcase'
+import mobileBreakpoints from '@/components/SContainer/mobile-breakpoints';
+import SContainerRow from '@/components/SContainerRow/SContainerRow.vue';
+import rowOptions from '@/components/SContainerRow/row-options';
+import { shallowMount } from '@vue/test-utils';
+import camelCase from 'lodash.camelcase';
 
 describe('SContainerRow.vue', () => {
-  const staticProps = ['justify', 'align']
+  const staticProps = ['justify', 'align'];
   // Generate the same props generated in `SContainerRow.vue`
   const propsToGenerate = [
     'align-until',
     'align-after',
     'justify-until',
     'justify-after',
-  ]
+  ];
   const propList = propsToGenerate.reduce((list, prop) => {
-    mobileBreakpoints.forEach(breakPoint => list.push(camelCase(`${prop}-${breakPoint}`)))
-    return list
-  }, staticProps)
+    mobileBreakpoints.forEach(breakPoint => list.push(camelCase(`${prop}-${breakPoint}`)));
+    return list;
+  }, staticProps);
 
   const rowPropTest = async (propName, value) => {
-    wrapper.setProps({ [propName]: value })
-    await wrapper.vm.$nextTick()
-    expect(wrapper.props(propName)).toBeTruthy()
-    expect(wrapper.html()).toMatchSnapshot()
-  }
+    wrapper.setProps({ [propName]: value });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.props(propName)).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  };
 
-  let wrapper
+  let wrapper;
 
   beforeEach(() => {
     wrapper = shallowMount(SContainerRow, {
       slots: {
         default: '<div>Row Content</div>',
       },
-    })
-  })
+    });
+  });
 
   it('renders correctly', () => {
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('can be reversed', () => {
-    rowPropTest('isReversed', true)
-  })
+    rowPropTest('isReversed', true);
+  });
 
   it('generates props for mobile breakpoints', () => {
-    propList.forEach(expect(wrapper.props()).toHaveProperty)
-  })
+    propList.forEach(expect(wrapper.props()).toHaveProperty);
+  });
 
   propList.forEach((propName) => {
-    const flexOptions = Object.values(rowOptions).filter(opt => !!opt)
+    const flexOptions = Object.values(rowOptions).filter(opt => !!opt);
 
     flexOptions.forEach((option) => {
-      it(`can be ${propName} ${option}`, () => rowPropTest(propName, option))
-    })
-  })
-})
+      it(`can be ${propName} ${option}`, () => rowPropTest(propName, option));
+    });
+  });
+});

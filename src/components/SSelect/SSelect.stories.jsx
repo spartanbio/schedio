@@ -1,55 +1,55 @@
-import { SHeading } from '@/components/SHeading'
-import { allShadeOptions, colorNames as iconColors } from '@/components/SIcon/options'
-import { SSelect } from '@/components/SSelect'
-import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import PropList from '@@/docs/components/PropList'
-import { boolean, select, text } from '@storybook/addon-knobs'
-import icons from 'feather-icons/dist/icons.json'
+import { SHeading } from '@/components/SHeading';
+import { allShadeOptions, colorNames as iconColors } from '@/components/SIcon/options';
+import { SSelect } from '@/components/SSelect';
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields';
+import PropList from '@@/docs/components/PropList';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import icons from 'feather-icons/dist/icons.json';
 
-const iconList = Object.keys(icons)
-const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
+const iconList = Object.keys(icons);
+const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props');
 const iconColor = (side) => {
-  select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
-}
+  select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props');
+};
 const iconShade = (side) => {
-  select(`icon-${side}-shade`, ['', ...allShadeOptions], 'green', 'Optional Props')
-}
+  select(`icon-${side}-shade`, ['', ...allShadeOptions], 'green', 'Optional Props');
+};
 
 export default {
-  title: 'Components|Inputs/SSelect',
+  title: 'Components/Inputs/SSelect',
 
   parameters: {
     jest: 'SSelect',
   },
-}
+};
 
 export const selectBox = () => {
-  const object1 = { label: 'Option 1', value: 'option1' }
-  const object2 = { label: 'Option 2', value: 'option2' }
-  const object3 = { label: 'Option 3', value: 'option3' }
-  const object4 = { label: 'Option 4', value: 'option4' }
-  const objectOfObjects = { object1, object2, object3, object4 }
-  const arrayOfObjects = Object.values(objectOfObjects)
-  const arrayOfStrings = arrayOfObjects.map(obj => obj.label)
+  const object1 = { label: 'Option 1', value: 'option1' };
+  const object2 = { label: 'Option 2', value: 'option2' };
+  const object3 = { label: 'Option 3', value: 'option3' };
+  const object4 = { label: 'Option 4', value: 'option4' };
+  const objectOfObjects = { object1, object2, object3, object4 };
+  const arrayOfObjects = Object.values(objectOfObjects);
+  const arrayOfStrings = arrayOfObjects.map(obj => obj.label);
 
   const labelledArraysOfObjects = {
     'Group 1': [{ label: 'Group 1 option label', value: 'Group 1 option value' }],
     'Group 2': [{ label: 'Group 2 option label', value: 'Group 2 option value' }],
     'Group 3': [{ label: 'Group 3 option label', value: 'Group 3 option value' }],
     'Group 4': [{ label: 'Group 4 option label', value: 'Group 4 option value' }],
-  }
+  };
 
   const optionTypes = {
     'Object of objects': objectOfObjects,
     'Array of objects': arrayOfObjects,
     'Array of strings': arrayOfStrings,
     'Labelled arrays of objects': labelledArraysOfObjects,
-  }
+  };
 
   // enable setting of option structure.
-  const optionKeys = Object.keys(optionTypes)
-  const optionsObj = optionKeys.reduce((o, k) => ({ ...o, [k]: k }), {})
-  const options = select('select-options', optionsObj, optionKeys[0], 'Required Props')
+  const optionKeys = Object.keys(optionTypes);
+  const optionsObj = optionKeys.reduce((o, k) => ({ ...o, [k]: k }), {});
+  const options = select('select-options', optionsObj, optionKeys[0], 'Required Props');
 
   return {
     props: {
@@ -78,7 +78,7 @@ export const selectBox = () => {
       },
     },
     render (h) {
-      const { props, attrs } = this.$props
+      const { props, attrs } = this.$props;
 
       return (
         <div>
@@ -104,18 +104,18 @@ export const selectBox = () => {
 
           <PropList component={SSelect} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 select.story = {
   name: 'Select',
-}
+};
 
 export const standardSelect = () => ({
   render (h) {
-    const options = ['Option 1', 'Option 2', 'Option 3']
+    const options = ['Option 1', 'Option 2', 'Option 3'];
     return (
       <div>
         <SHeading>Standard Select</SHeading>
@@ -154,9 +154,9 @@ export const standardSelect = () => ({
           />
         </SFormField>
       </div>
-    )
+    );
   },
-})
+});
 
 standardSelect.story = {
   name: 'Standard Select',
@@ -166,11 +166,11 @@ standardSelect.story = {
       showPanel: false,
     },
   },
-}
+};
 
 export const multipleSelect = () => ({
   render (h) {
-    const options = ['Option 1', 'Option 2', 'Option 3']
+    const options = ['Option 1', 'Option 2', 'Option 3'];
     return (
       <div>
         <SHeading>Multiple Select</SHeading>
@@ -212,9 +212,9 @@ export const multipleSelect = () => ({
           />
         </SFormField>
       </div>
-    )
+    );
   },
-})
+});
 
 multipleSelect.story = {
   name: 'Multiple Select',
@@ -224,4 +224,4 @@ multipleSelect.story = {
       showPanel: false,
     },
   },
-}
+};

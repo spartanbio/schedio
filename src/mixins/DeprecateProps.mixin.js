@@ -1,4 +1,4 @@
-import { warnPropsDeprecation } from '@/utils/deprecate'
+import { warnPropsDeprecation } from '@/utils/deprecate';
 
 /** @typedef {import('vue').ComponentOptions} VueComponentOptions */
 /**
@@ -8,13 +8,13 @@ import { warnPropsDeprecation } from '@/utils/deprecate'
  * @returns {VueComponentOptions} A Vue mixin
  */
 export default function DeprecatePropsMixin (props, alternative) {
-  if (!props || props.length === 0) throw new Error('missing required argument `props`')
+  if (!props || props.length === 0) throw new Error('missing required argument `props`');
 
   return {
     mounted () {
-      const deprecated = props.filter(prop => this.$options.propsData[prop])
+      const deprecated = props.filter(prop => this.$options.propsData[prop]);
 
-      if (deprecated.length) warnPropsDeprecation(deprecated, alternative)
+      if (deprecated.length) warnPropsDeprecation(deprecated, alternative);
     },
-  }
+  };
 }

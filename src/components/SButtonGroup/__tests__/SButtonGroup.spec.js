@@ -1,13 +1,13 @@
-import { mount } from '@vue/test-utils'
-import SButton from '@/components/SButton/SButton.vue'
-import SButtonGroup from '@/components/SButtonGroup/SButtonGroup.vue'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { mount } from '@vue/test-utils';
+import SButton from '@/components/SButton/SButton.vue';
+import SButtonGroup from '@/components/SButtonGroup/SButtonGroup.vue';
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 describe('SButtonGroup.vue', () => {
-  let wrapper
-  let buttonGroup
+  let wrapper;
+  let buttonGroup;
 
   beforeEach(() => {
     wrapper = mount(
@@ -22,29 +22,29 @@ describe('SButtonGroup.vue', () => {
         `,
       },
       { stubs: { SButton: true } },
-    )
+    );
 
-    buttonGroup = wrapper.findComponent(SButtonGroup)
-  })
+    buttonGroup = wrapper.findComponent(SButtonGroup);
+  });
 
   it('renders correctly', async () => {
-    expect(wrapper.html()).toMatchSnapshot()
-    await wrapper.vm.$nextTick()
-    expect(await axe(wrapper.html())).toHaveNoViolations()
-  })
+    expect(wrapper.html()).toMatchSnapshot();
+    await wrapper.vm.$nextTick();
+    expect(await axe(wrapper.html())).toHaveNoViolations();
+  });
 
   it('renders child buttons', async () => {
-    await wrapper.vm.$nextTick()
-    expect(wrapper.findComponent(SButton).exists()).toBe(true)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    await wrapper.vm.$nextTick();
+    expect(wrapper.findComponent(SButton).exists()).toBe(true);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('groups child buttons', async () => {
-    buttonGroup.setProps({ isGrouped: true })
-    await wrapper.vm.$nextTick()
-    expect(buttonGroup.find('.button-group--grouped').exists()).toBe(true)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    buttonGroup.setProps({ isGrouped: true });
+    await wrapper.vm.$nextTick();
+    expect(buttonGroup.find('.button-group--grouped').exists()).toBe(true);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
   it('disables shadow based on children disabled status', async () => {
     const disabledWrapper = mount({
@@ -62,13 +62,13 @@ describe('SButtonGroup.vue', () => {
             </SButton>
           </SButtonGroup>
         `,
-    })
+    });
 
-    disabledWrapper.setProps({ disabled: true })
+    disabledWrapper.setProps({ disabled: true });
 
-    await wrapper.vm.$nextTick()
-    expect(disabledWrapper.classes()).toContain('button-group--disabled')
-    expect(disabledWrapper.html()).toMatchSnapshot()
-    expect(await axe(disabledWrapper.html())).toHaveNoViolations()
-  })
-})
+    await wrapper.vm.$nextTick();
+    expect(disabledWrapper.classes()).toContain('button-group--disabled');
+    expect(disabledWrapper.html()).toMatchSnapshot();
+    expect(await axe(disabledWrapper.html())).toHaveNoViolations();
+  });
+});

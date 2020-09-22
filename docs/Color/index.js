@@ -1,1 +1,1 @@
-export { default } from './Color.vue'
+export { default } from './Color.vue';

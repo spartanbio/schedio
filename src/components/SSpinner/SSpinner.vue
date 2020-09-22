@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import { colors, sizes } from './options'
-import defaults from '@/utils/defaults'
+import { colors, sizes } from './options';
+import defaults from '@/utils/defaults';
 
-const propError = (propName, values) => console.error(`\`${propName}\` must be one of ${values}`)
+const propError = (propName, values) => console.error(`\`${propName}\` must be one of ${values}`);
 
 export default {
   name: 'SSpinner',
@@ -37,10 +37,10 @@ export default {
       return {
         [`spinner--${this.size}`]: this.size,
         [`spinner--color-${this.color}`]: this.color,
-      }
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

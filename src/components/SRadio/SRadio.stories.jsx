@@ -1,17 +1,17 @@
-import { SHeading } from '@/components/SHeading'
-import { SRadio } from '@/components/SRadio'
-import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import PropList from '@@/docs/components/PropList'
-import StoryLink from '@@/docs/components/StoryLink'
-import { boolean } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import { SRadio } from '@/components/SRadio';
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields';
+import PropList from '@@/docs/components/PropList';
+import StoryLink from '@@/docs/components/StoryLink';
+import { boolean } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Inputs/SRadio',
+  title: 'Components/Inputs/SRadio',
 
   parameters: {
     jest: 'SRadio',
   },
-}
+};
 
 export const radio = () => ({
   props: {
@@ -51,10 +51,10 @@ export const radio = () => ({
 
         <PropList component={SRadio} />
       </div>
-    )
+    );
   },
-})
+});
 
 radio.story = {
   name: 'Radio',
-}
+};

@@ -1,14 +1,14 @@
-const fs = require('fs-extra')
-const path = require('path')
+const fs = require('fs-extra');
+const path = require('path');
 
 module.exports = function generateVueIndex (componentNames) {
   const importList = componentNames
     .map(name => `import ${name} from './components/${name}'`)
-    .join('\n')
+    .join('\n');
 
   const exportList = componentNames
     .map(name => `export { ${name} } from './components/${name}'`)
-    .join('\n')
+    .join('\n');
 
   const template = `\
 /**
@@ -34,6 +34,6 @@ if (typeof window !== 'undefined' && window.Vue) Vue.use(Schedio)
 export default Schedio
 
 ${exportList}
-`
-  fs.outputFileSync(path.resolve(__dirname, '../src/index.js'), template)
-}
+`;
+  fs.outputFileSync(path.resolve(__dirname, '../src/index.js'), template);
+};

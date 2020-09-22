@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { SIcon } from '@/components/SIcon'
-import { states } from './options'
+import { SIcon } from '@/components/SIcon';
+import { states } from './options';
 
 export default {
   name: 'SFormValidation',
@@ -45,7 +45,7 @@ export default {
       validator: (v) => {
         return (
           states.includes(v) || console.error(`\`state\` should be one of ${states.join(', ')}`)
-        )
+        );
       },
     },
 
@@ -67,27 +67,27 @@ export default {
         warning: 'gold',
         error: 'red',
       },
-    }
+    };
   },
 
   computed: {
     classList () {
       return {
         [`form-validation--${this.state}`]: this.state,
-      }
+      };
     },
 
     icons () {
-      if (this.icon) return { [this.state]: this.icon }
+      if (this.icon) return { [this.state]: this.icon };
 
       return {
         success: 'check-circle',
         warning: 'alert-triangle',
         error: 'alert-circle',
-      }
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

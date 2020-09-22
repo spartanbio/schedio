@@ -24,42 +24,42 @@ export default {
       container: document.querySelector(
         `${this.containerParent || '#main'}-notifications.notification__container`,
       ),
-    }
+    };
   },
 
   beforeMount () {
-    this.initContainer()
+    this.initContainer();
   },
 
   mounted () {
-    this.showNotification()
+    this.showNotification();
   },
 
   methods: {
     closeNotification () {
-      clearTimeout(this.timer)
+      clearTimeout(this.timer);
       // hide it
-      this.isVisible = false
+      this.isVisible = false;
       // timeout allows vue transition to run
       setTimeout(() => {
         // remove the component instance
-        this.$destroy()
+        this.$destroy();
         // remove the html element
         if (typeof this.$el.remove !== 'undefined') {
-          this.$el.remove()
+          this.$el.remove();
         } else if (typeof this.$el.parentNode !== 'undefined') {
-          this.$el.parentNode.removeChild(this.$el)
+          this.$el.parentNode.removeChild(this.$el);
         }
-      }, 200)
+      }, 200);
     },
 
     showNotification () {
       // add the notification
-      this.container.appendChild(this.$el)
+      this.container.appendChild(this.$el);
       // show it
-      this.isVisible = true
+      this.isVisible = true;
       // set timeout if needed
-      if (!this.isIndefinite) this.timer = setTimeout(() => this.closeNotification(), this.duration)
+      if (!this.isIndefinite) this.timer = setTimeout(() => this.closeNotification(), this.duration);
     },
 
     /**
@@ -68,17 +68,17 @@ export default {
     initContainer () {
       if (!this.container) {
         // create the container
-        this.container = document.createElement('div')
-        this.container.classList.add('notification__container')
+        this.container = document.createElement('div');
+        this.container.classList.add('notification__container');
         // change to `position: absolute` if notification container should be pinned to an element
         if (this.containerParent) {
-          this.container.classList.add('notification__container--has-parent')
+          this.container.classList.add('notification__container--has-parent');
         }
         // add an id so we can have multiple notification locations
-        this.container.id = (this.containerParent.substr(1) || 'main') + '-notifications'
+        this.container.id = (this.containerParent.substr(1) || 'main') + '-notifications';
         // append the container
-        document.querySelector(this.containerParent || 'body').appendChild(this.container)
+        document.querySelector(this.containerParent || 'body').appendChild(this.container);
       }
     },
   },
-}
+};

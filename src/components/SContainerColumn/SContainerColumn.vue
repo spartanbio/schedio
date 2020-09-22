@@ -8,48 +8,48 @@
 </template>
 
 <script>
-import ContainerMethods from '@/mixins/ContainerMethods'
-import mobileBreakpoints from '@/components/SContainer/mobile-breakpoints'
+import ContainerMethods from '@/mixins/ContainerMethods';
+import mobileBreakpoints from '@/components/SContainer/mobile-breakpoints';
 
 // Validator function for most $props
 const sizeValidator = (value) => {
-  if (Number(value) > 12) return console.error('Value cannot exceed 12')
-  return true
-}
+  if (Number(value) > 12) return console.error('Value cannot exceed 12');
+  return true;
+};
 
 // Validator function for $props.order*
 const orderValidator = (value) => {
-  if (!value) return true
+  if (!value) return true;
 
   if (!['first', 'last'].includes(value) || Number(value > 12)) {
-    return console.error('Valid `order` strings: first, last. Otherwise, value cannot exceed 12')
+    return console.error('Valid `order` strings: first, last. Otherwise, value cannot exceed 12');
   }
 
-  return true
-}
+  return true;
+};
 
 // Default props. Function allows reuse and cusomization.
 const propSettings = ({ types = [], validator = sizeValidator, defaultVal = '' } = {}) => ({
   type: [...types, Number, String],
   default: defaultVal,
   validator,
-})
+});
 
 const narrowSettings = () => ({
   type: Boolean,
   default: false,
-})
+});
 
 // set up all $props relying on mobile breakpoints
 const breakpointProps = mobileBreakpoints.reduce((props, breakpoint) => {
-  props[breakpoint] = propSettings({ types: [Boolean], defaultVal: false })
-  props[`narrow-after-${breakpoint}`] = narrowSettings()
-  props[`narrow-until-${breakpoint}`] = narrowSettings()
-  props[`offset-${breakpoint}`] = propSettings()
-  props[`order-${breakpoint}`] = propSettings({ validator: orderValidator })
+  props[breakpoint] = propSettings({ types: [Boolean], defaultVal: false });
+  props[`narrow-after-${breakpoint}`] = narrowSettings();
+  props[`narrow-until-${breakpoint}`] = narrowSettings();
+  props[`offset-${breakpoint}`] = propSettings();
+  props[`order-${breakpoint}`] = propSettings({ validator: orderValidator });
 
-  return props
-}, {})
+  return props;
+}, {});
 
 export default {
   name: 'SContainerColumn',
@@ -68,7 +68,7 @@ export default {
   data () {
     return {
       mobileBreakpoints,
-    }
+    };
   },
 
   computed: {
@@ -76,42 +76,42 @@ export default {
      * @returns {Array.<string>}
      */
     responsiveSizeClasses () {
-      const breakpointModifiers = `(${this.mobileBreakpoints.join('|')})`
-      return this.generateResponsiveClassNames(breakpointModifiers)
+      const breakpointModifiers = `(${this.mobileBreakpoints.join('|')})`;
+      return this.generateResponsiveClassNames(breakpointModifiers);
     },
 
     /**
      * @returns {Array.<string>}
      */
     responsiveNarrowClasses () {
-      return this.generateResponsiveClassNames('narrow')
+      return this.generateResponsiveClassNames('narrow');
     },
 
     /**
      * @returns {Array.<string>}
      */
     responsiveOffsetClasses () {
-      return this.generateResponsiveClassNames('offset')
+      return this.generateResponsiveClassNames('offset');
     },
 
     /**
      * @returns {Array.<string>}
      */
     responsiveOrderClasses () {
-      return this.generateResponsiveClassNames('order')
+      return this.generateResponsiveClassNames('order');
     },
 
     /**
      * @returns {Array.<string>}
      */
     classList () {
-      const columnSize = this.size ? `column--${this.size}` : ''
+      const columnSize = this.size ? `column--${this.size}` : '';
 
       // concatenate all responsive classes from computed properties
       return Object.keys(this.$options.computed).reduce(
         (classes, key) => (/responsive(.*)Classes/.test(key) ? classes.concat(this[key]) : classes),
         [columnSize],
-      )
+      );
     },
   },
 
@@ -119,13 +119,13 @@ export default {
     // Used by mixin
     classNameReducer: classes => (acc, key) => {
       // e.g.: 'column--1', 'column--narrow'
-      if (typeof classes[key] === 'boolean') return acc.concat(`column--${key}`)
+      if (typeof classes[key] === 'boolean') return acc.concat(`column--${key}`);
       // e.g.: 'column--sm-1', 'column--offset-md-1', 'column--narrow-until-lg'
-      if (classes[key]) return acc.concat(`column--${key}-${classes[key]}`)
-      return acc
+      if (classes[key]) return acc.concat(`column--${key}-${classes[key]}`);
+      return acc;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

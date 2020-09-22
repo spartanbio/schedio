@@ -1,26 +1,26 @@
-import { SHeading } from '@/components/SHeading'
-import { colorNames as iconColors, allShadeOptions } from '@/components/SIcon/options'
-import { STextarea } from '@/components/STextarea'
-import PropList from '@@/docs/components/PropList'
-import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import { boolean, number, select, text } from '@storybook/addon-knobs'
-import icons from 'feather-icons/dist/icons.json'
+import { SHeading } from '@/components/SHeading';
+import { colorNames as iconColors, allShadeOptions } from '@/components/SIcon/options';
+import { STextarea } from '@/components/STextarea';
+import PropList from '@@/docs/components/PropList';
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields';
+import { boolean, number, select, text } from '@storybook/addon-knobs';
+import icons from 'feather-icons/dist/icons.json';
 
-const iconList = Object.keys(icons)
-const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props')
+const iconList = Object.keys(icons);
+const iconProp = side => select(`icon-${side}`, ['', ...iconList], '', 'Optional Props');
 const iconColor = (side) => {
-  select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props')
-}
+  select(`icon-${side}-color`, ['', ...iconColors], 'green', 'Optional Props');
+};
 const iconShade = (side) => {
-  select(`icon-${side}-color`, ['', ...allShadeOptions], 'green', 'Optional Props')
-}
+  select(`icon-${side}-color`, ['', ...allShadeOptions], 'green', 'Optional Props');
+};
 export default {
-  title: 'Components|Inputs/STextarea',
+  title: 'Components/Inputs/STextarea',
 
   parameters: {
     jest: 'STextarea',
   },
-}
+};
 
 export const textarea = () => ({
   props: {
@@ -50,7 +50,7 @@ export const textarea = () => ({
     },
   },
   render (h) {
-    const { props, attrs } = this.$props
+    const { props, attrs } = this.$props;
 
     return (
       <div>
@@ -62,13 +62,13 @@ export const textarea = () => ({
 
         <PropList component={STextarea} />
       </div>
-    )
+    );
   },
-})
+});
 
 textarea.story = {
   name: 'Textarea',
-}
+};
 
 export const textareaWithIcons = () => ({
   render (h) {
@@ -92,9 +92,9 @@ export const textareaWithIcons = () => ({
           />
         </SFormField>
       </div>
-    )
+    );
   },
-})
+});
 
 textareaWithIcons.story = {
   name: 'Textarea with icons',
@@ -104,4 +104,4 @@ textareaWithIcons.story = {
       showPanel: false,
     },
   },
-}
+};

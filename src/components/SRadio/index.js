@@ -1,5 +1,5 @@
-import SRadio from './SRadio.vue'
+import SRadio from './SRadio.vue';
 
-export { SRadio }
+export { SRadio };
 
-export default { install: Vue => Vue.component(SRadio.name, SRadio) }
+export default { install: Vue => Vue.component(SRadio.name, SRadio) };

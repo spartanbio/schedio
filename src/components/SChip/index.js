@@ -1,7 +1,7 @@
-import SChip from './SChip.vue'
+import SChip from './SChip.vue';
 
-export { SChip }
+export { SChip };
 
 export default {
   install: Vue => Vue.component(SChip.name, SChip),
-}
+};

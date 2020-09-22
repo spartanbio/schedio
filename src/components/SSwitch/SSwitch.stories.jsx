@@ -1,16 +1,16 @@
-import { SHeading } from '@/components/SHeading'
-import { SSwitch } from '@/components/SSwitch'
-import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import PropList from '@@/docs/components/PropList'
-import { boolean, select } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import { SSwitch } from '@/components/SSwitch';
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields';
+import PropList from '@@/docs/components/PropList';
+import { boolean, select } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Inputs/SSwitch',
+  title: 'Components/Inputs/SSwitch',
 
   parameters: {
     jest: 'SSwitch',
   },
-}
+};
 
 export const switchStory = () => ({
   props: {
@@ -30,7 +30,7 @@ export const switchStory = () => ({
     },
   },
   render (h) {
-    const { props, attrs } = this.$props
+    const { props, attrs } = this.$props;
     return (
       <div>
         <SHeading level="1">Switch</SHeading>
@@ -40,10 +40,10 @@ export const switchStory = () => ({
 
         {SSwitch.props && <PropList component={SSwitch} />}
       </div>
-    )
+    );
   },
-})
+});
 
 switchStory.story = {
   name: 'Switch',
-}
+};

@@ -191,11 +191,11 @@
 </template>
 
 <script>
-import orderBy from 'lodash.orderby'
-import * as sizes from '@spartanbio/schedio-tokens/dist/js/module-js/font-size.module'
-import StoryLink from '@@/docs/components/StoryLink'
+import orderBy from 'lodash.orderby';
+import * as sizes from '@spartanbio/schedio-tokens/dist/js/module-js/font-size.module';
+import StoryLink from '@@/docs/components/StoryLink';
 
-const baseFontSize = 10
+const baseFontSize = 10;
 
 export default {
   name: 'TypographyPrint',
@@ -216,21 +216,21 @@ export default {
         Object.entries(sizes).filter(([name, value]) => !name.includes('base')),
         'name',
       )),
-    }
+    };
   },
 
   methods: {
     computePrintSize (value) {
-      return value.replace(/(r?em)/, '') * this.calcFontSize + 'pt'
+      return value.replace(/(r?em)/, '') * this.calcFontSize + 'pt';
     },
     computeLeading (value) {
-      const strippedVal = value.replace(/(r?em)/, '')
-      const leading = strippedVal > 3 ? 1.25 : 1.5
-      return strippedVal * this.calcFontSize * leading + 'pt'
+      const strippedVal = value.replace(/(r?em)/, '');
+      const leading = strippedVal > 3 ? 1.25 : 1.5;
+      return strippedVal * this.calcFontSize * leading + 'pt';
     },
     computeTracking (value) {
-      return (value.replace(/(r?em)/, '') > 3 ? 0.125 : 0) + 'rem'
+      return (value.replace(/(r?em)/, '') > 3 ? 0.125 : 0) + 'rem';
     },
   },
-}
+};
 </script>

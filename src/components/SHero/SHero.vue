@@ -25,18 +25,18 @@
 </template>
 
 <script>
-import * as options from './options'
-import defaults from '@/utils/defaults'
+import * as options from './options';
+import defaults from '@/utils/defaults';
 
 const limitValues = propName => (v) => {
-  const validOptions = options[`${propName}s`]
+  const validOptions = options[`${propName}s`];
 
   return (
     !v ||
     validOptions.includes(v) ||
     console.error(`\`${propName}\` must be one of ${validOptions.join(', ')}`)
-  )
-}
+  );
+};
 
 export default {
   name: 'SHero',
@@ -71,16 +71,16 @@ export default {
         this.height && `hero--height-${this.height}`,
         this.color && `hero--color-${this.color}`,
         this.hasNoPadding && 'hero--has-no-padding',
-      ]
+      ];
     },
   },
 
   created () {
     if (!this.$slots.default) {
-      console.error(`\`${this.$options.name}\` requires default slot content.`)
+      console.error(`\`${this.$options.name}\` requires default slot content.`);
     }
   },
-}
+};
 </script>
 
 <style lang="scss">

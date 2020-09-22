@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { linkTo } from '@storybook/addon-links'
+import { linkTo } from '@storybook/addon-links';
 
 export default {
   name: 'StoryLink',
@@ -39,14 +39,14 @@ export default {
           .replace(/^.*\/(\w*)/, '$1')
           .split('.')
           .pop()
-      ).trim()
+      ).trim();
     },
   },
 
   methods: {
     navigate (kind, story) {
-      linkTo(kind, story)()
+      linkTo(kind, story)();
     },
   },
-}
+};
 </script>

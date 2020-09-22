@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { colors } from '@/components/SChip/options'
+import { colors } from '@/components/SChip/options';
 
 export default {
   name: 'SChipGroup',
@@ -25,7 +25,7 @@ export default {
           !val ||
           colors.includes(val) ||
           console.error(`\`color\` must be one of ${colors.join(', ')}`)
-        )
+        );
       },
     },
     tag: {
@@ -33,7 +33,7 @@ export default {
       default: 'div',
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

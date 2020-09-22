@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import { colors, sizes, allShadeOptions } from './options.js'
-import icons from 'feather-icons/dist/icons.json'
+import { colors, sizes, allShadeOptions } from './options.js';
+import icons from 'feather-icons/dist/icons.json';
 
-const list = Object.keys(icons)
+const list = Object.keys(icons);
 
 export default {
   name: 'SIcon',
@@ -22,7 +22,7 @@ export default {
       type: String,
       required: true,
       validator: (v) => {
-        return list.includes(v) || console.error(`\`icon\` must be one of: ${list.join(', ')}`)
+        return list.includes(v) || console.error(`\`icon\` must be one of: ${list.join(', ')}`);
       },
     },
 
@@ -30,9 +30,9 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || colors[value]) return true
+        if (!value || colors[value]) return true;
 
-        return console.error(`\`color\` ${value} not found. Allowed colors: ${colors}`)
+        return console.error(`\`color\` ${value} not found. Allowed colors: ${colors}`);
       },
     },
 
@@ -46,47 +46,47 @@ export default {
       type: String,
       default: '',
       validator: (value) => {
-        if (!value || sizes.includes(value)) return true
+        if (!value || sizes.includes(value)) return true;
 
-        return console.error(`\`sizes\` ${value} not found. Allowed sizes: ${sizes}`)
+        return console.error(`\`sizes\` ${value} not found. Allowed sizes: ${sizes}`);
       },
     },
   },
 
   computed: {
     classList () {
-      const list = []
+      const list = [];
 
       if (this.color) {
-        let _color = `icon--color-${this.color}`
+        let _color = `icon--color-${this.color}`;
 
         if (this.shade && this.shade !== 'base' && this.hasValidShade) {
-          _color += `-${this.shade}`
+          _color += `-${this.shade}`;
         }
 
-        list.push(_color)
+        list.push(_color);
       }
 
-      if (this.size) list.push(`icon--size-${this.size}`)
+      if (this.size) list.push(`icon--size-${this.size}`);
 
-      return list
+      return list;
     },
 
     hasValidShade () {
-      return Object.hasOwnProperty.call(colors[this.color], this.shade)
+      return Object.hasOwnProperty.call(colors[this.color], this.shade);
     },
 
     featherIcon () {
-      return icons[this.icon] || ''
+      return icons[this.icon] || '';
     },
   },
 
   mounted () {
     if (this.shade && !this.hasValidShade) {
-      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`)
+      console.error(`Valid shades of \`${this.color}\` are: ${Object.keys(colors[this.color]).join(', ')}.`);
     }
   },
-}
+};
 </script>
 
 <style lang="scss">

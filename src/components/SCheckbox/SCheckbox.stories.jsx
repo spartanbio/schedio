@@ -1,16 +1,16 @@
-import { SCheckbox } from '@/components/SCheckbox'
-import { SHeading } from '@/components/SHeading'
-import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields'
-import PropList from '@@/docs/components/PropList'
-import { boolean } from '@storybook/addon-knobs'
+import { SCheckbox } from '@/components/SCheckbox';
+import { SHeading } from '@/components/SHeading';
+import { withAttrsAsProps, withUnboundAttrs } from '@/mixins/stories/form-fields';
+import PropList from '@@/docs/components/PropList';
+import { boolean } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Inputs/SCheckbox',
+  title: 'Components/Inputs/SCheckbox',
 
   parameters: {
     jest: 'SCheckbox',
   },
-}
+};
 
 export const checkbox = () => ({
   props: {
@@ -28,7 +28,7 @@ export const checkbox = () => ({
   },
 
   render (h) {
-    const { attrs, props } = this.$props
+    const { attrs, props } = this.$props;
     return (
       <div>
         <SHeading level="1">Checkbox</SHeading>
@@ -42,10 +42,10 @@ export const checkbox = () => ({
 
         <PropList component={SCheckbox} />
       </div>
-    )
+    );
   },
-})
+});
 
 checkbox.story = {
   name: 'Checkbox',
-}
+};

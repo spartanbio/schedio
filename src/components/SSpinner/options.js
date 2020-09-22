@@ -5,11 +5,11 @@ export const colors = [
   'night-light',
   'blue',
   'white',
-]
+];
 export const sizes = [
   'small',
   'regular',
   'medium',
   'large',
   'xl',
-]
+];

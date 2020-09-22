@@ -1,21 +1,21 @@
-import { SFormValidation } from '@/components/SFormValidation'
-import { SHeading } from '@/components/SHeading'
-import PropList from '@@/docs/components/PropList'
-import { boolean, select, text } from '@storybook/addon-knobs'
-import { states } from './options'
-import icons from 'feather-icons/dist/icons.json'
-import { SInput } from '@/components/SInput'
-import { SFormField } from '../SFormField/index'
-import jeffsum from 'jeffsum'
-import { generateHeading } from '@/utils/stories/render-functions'
+import { SFormValidation } from '@/components/SFormValidation';
+import { SHeading } from '@/components/SHeading';
+import PropList from '@@/docs/components/PropList';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import { states } from './options';
+import icons from 'feather-icons/dist/icons.json';
+import { SInput } from '@/components/SInput';
+import { SFormField } from '../SFormField/index';
+import jeffsum from 'jeffsum';
+import { generateHeading } from '@/utils/stories/render-functions';
 
 export default {
-  title: 'Components|Forms/SFormValidation',
+  title: 'Components/Forms/SFormValidation',
 
   parameters: {
     jest: 'SFormValidation',
   },
-}
+};
 
 export const formValidation = () => ({
   props: {
@@ -34,17 +34,17 @@ export const formValidation = () => ({
       inputOneValidity: null,
       shouldRespondInvalid: false,
       formValidity: null,
-    }
+    };
   },
 
   methods: {
     handleSubmit (e) {
-      e.preventDefault()
-      this.formValidity = this.shouldRespondInvalid ? false : this.inputOneValidity
+      e.preventDefault();
+      this.formValidity = this.shouldRespondInvalid ? false : this.inputOneValidity;
     },
   },
   render (h) {
-    const { props } = this.$props
+    const { props } = this.$props;
 
     return (
       <div>
@@ -75,10 +75,10 @@ export const formValidation = () => ({
               placeholder="email@domain.tld"
               type="email"
               onkeyup={(e) => {
-                this.inputOneValidity = e.target.validity.valid
+                this.inputOneValidity = e.target.validity.valid;
               }}
               onblur={(e) => {
-                this.inputOneValidity = e.target.validity.valid
+                this.inputOneValidity = e.target.validity.valid;
               }}
             />
 
@@ -96,7 +96,7 @@ export const formValidation = () => ({
               label="Respond as invalid"
               value={this.shouldRespondInvalid}
               oninput={(e) => {
-                this.shouldRespondInvalid = e
+                this.shouldRespondInvalid = e;
               }}
               required={false}
               hideOptional={true}
@@ -118,13 +118,13 @@ export const formValidation = () => ({
 
         {SFormValidation.props && <PropList component={SFormValidation} />}
       </div>
-    )
+    );
   },
-})
+});
 
 formValidation.story = {
   name: 'Form Validation',
-}
+};
 
 export const formValidationStates = () => ({
   render (h) {
@@ -134,9 +134,9 @@ export const formValidationStates = () => ({
 
         {states.map(state => generateValidations(h, state))}
       </div>
-    )
+    );
   },
-})
+});
 
 formValidationStates.story = {
   name: 'Form Validation States',
@@ -146,11 +146,11 @@ formValidationStates.story = {
       showPanel: false,
     },
   },
-}
+};
 
 function generateValidations (h, state) {
   return [
     generateHeading(h, { level: 2, content: state || 'Base' }),
     h(SFormValidation, { props: { state, text: jeffsum(2) } }),
-  ]
+  ];
 }

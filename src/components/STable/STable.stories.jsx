@@ -1,21 +1,21 @@
-import { SHeading } from '@/components/SHeading'
-import { STable } from '@/components/STable'
-import { STableCell } from '@/components/STableCell'
-import { STableRow } from '@/components/STableRow'
-import PropList from '@@/docs/components/PropList'
-import { boolean, number, object, text } from '@storybook/addon-knobs'
+import { SHeading } from '@/components/SHeading';
+import { STable } from '@/components/STable';
+import { STableCell } from '@/components/STableCell';
+import { STableRow } from '@/components/STableRow';
+import PropList from '@@/docs/components/PropList';
+import { boolean, number, object, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Tables/STable',
+  title: 'Components/Tables/STable',
 
   parameters: {
     jest: 'STable',
   },
-}
+};
 
 export const table = () => {
-  const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props')
-  const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots')
+  const makeOptionalBoolean = (prop, val = false) => boolean(prop, val, 'Optional Props');
+  const makeDummySlotData = (prop, n = 3) => number(prop, n, { range: true }, 'Slots');
   const slotExampleProps = {
     hasCaptionTop: makeOptionalBoolean('has-caption-top'),
     headerInFooter: makeOptionalBoolean('header-in-footer'),
@@ -24,16 +24,16 @@ export const table = () => {
     isHoverable: makeOptionalBoolean('is-hoverable'),
     isStriped: makeOptionalBoolean('is-striped'),
     isFullwidth: makeOptionalBoolean('is-fullwidth'),
-  }
+  };
   const tableData = [
     { col1: 'Cell 1', col2: 'Cell 2', col3: 'Cell 3' },
     { col1: 'Cell 4', col2: 'Cell 5', col3: 'Cell 6' },
-  ]
+  ];
   const propExampleProps = {
     ...slotExampleProps,
     caption: text('caption', 'This is a caption', 'Optional Props'),
     tableData: object('table-data', tableData, 'Optional Props'),
-  }
+  };
 
   return {
     props: {
@@ -48,7 +48,7 @@ export const table = () => {
       footerRows: { default: makeDummySlotData('footer (rows)', 1) },
     },
     render (h) {
-      const { props, headerCells, bodyRows, footerRows } = this.$props
+      const { props, headerCells, bodyRows, footerRows } = this.$props;
 
       return (
         <div>
@@ -163,11 +163,11 @@ export const table = () => {
 
           <PropList component={STable} />
         </div>
-      )
+      );
     },
-  }
-}
+  };
+};
 
 table.story = {
   name: 'Table',
-}
+};
