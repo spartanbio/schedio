@@ -18,10 +18,6 @@
             :select-options="colorSpaces"
             is-inline
             style="width: 100%;"
-            @change="() => {
-              emitInput()
-              displayColor = convertedColors[colorMode]
-            }"
           />
         </SFormField>
       </SContainerColumn>
@@ -253,6 +249,13 @@ export default {
       this.$emit('input', val);
     },
 
+    colorMode (old, newVal) {
+      if (old === newVal) return;
+
+      this.displayColor = this.convertedColors[this.colorMode];
+      this.emitInput();
+    },
+
     'hsl.h' (val) {
       this.applyHue(this.picker.ctx);
       this.buildLightnessGradient(this.picker.ctx);
@@ -392,7 +395,7 @@ export default {
 
     debounceInput: debounce(function () {
       this.emitInput();
-    }, 300),
+    }, 500),
   },
 };
 </script>

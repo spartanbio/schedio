@@ -18,7 +18,7 @@
       </SContainerColumn>
 
       <SContainerColumn>
-        <span style="display: flex; align-items: center;">
+        <span style="align-items: center; display: flex;">
           <SIcon
             :color="passesAccessibility ? 'green' : 'red'"
             :icon="passesAccessibility ? 'check-circle' : 'x-circle'"
