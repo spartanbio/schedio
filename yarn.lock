@@ -2729,16 +2729,16 @@
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-jest@^6.0.21":
-  version "6.0.21"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.21.tgz#9233188ec575269b4cb1405e71d3e84cdd644c99"
-  integrity sha512-6MCEVQ/OhzP1Ck000p0xvi3Z2nrLsqlvofJWp68Me9o9CYR/9TfW9ycStuhNtL2SiDevnV7gLq7ktiYj3KpuFw==
+"@storybook/addon-jest@^6.0.22":
+  version "6.0.22"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-6.0.22.tgz#c139141ae78368ecb9bb1c1c4db41707c4b54934"
+  integrity sha512-MS+Fjff3ixe8SlX6FczKwazqIhpbN6SM84X4yjc8ivlvMUB4hjl8P6TqAqkSeuuqdDozhRA3Hfis7lPMmLtHFA==
   dependencies:
-    "@storybook/addons" "6.0.21"
-    "@storybook/api" "6.0.21"
-    "@storybook/components" "6.0.21"
-    "@storybook/core-events" "6.0.21"
-    "@storybook/theming" "6.0.21"
+    "@storybook/addons" "6.0.22"
+    "@storybook/api" "6.0.22"
+    "@storybook/components" "6.0.22"
+    "@storybook/core-events" "6.0.22"
+    "@storybook/theming" "6.0.22"
     core-js "^3.0.1"
     global "^4.3.2"
     react "^16.8.3"
