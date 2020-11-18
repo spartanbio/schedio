@@ -19493,10 +19493,10 @@ style-loader@^1.2.1:
     loader-utils "^2.0.0"
     schema-utils "^2.6.6"
 
-style-resources-loader@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/style-resources-loader/-/style-resources-loader-1.4.0.tgz#8a8f19b7fb75b723be0f844e24b4827365e3e933"
-  integrity sha512-M/gsqwX2IcZd1hamS7B4OzbMoCY1UJ8UekC93LM0wwdjviCPn3eKKj5WgUoE7C+UY00UnbOwf7baBaYfMo3mcA==
+style-resources-loader@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/style-resources-loader/-/style-resources-loader-1.4.1.tgz#87f520e6c8120a71e756726c1c53a78c544ca7db"
+  integrity sha512-UaAoQXq20relw6B633z4QZDxDyW7gevTt1e0y3MZtzdZfnvB90UL658czAgNc609Y7Kn5ErdthK9bSVhnykBUA==
   dependencies:
     glob "^7.1.6"
     loader-utils "^2.0.0"
