@@ -50,7 +50,7 @@
     "@storybook/addon-docs": "^6.1.9",
     "@storybook/addon-jest": "^6.1.10",
     "@storybook/addon-knobs": "^6.1.9",
-    "@storybook/addon-links": "^6.1.9",
+    "@storybook/addon-links": "^6.1.10",
     "@storybook/addons": "^6.1.9",
     "@storybook/vue": "6.1.9",
     "@vue/babel-plugin-transform-vue-jsx": "^1.2.1",
