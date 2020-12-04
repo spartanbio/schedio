@@ -46,7 +46,7 @@
     "@spartanbio/eslint-config": "^1.2.0",
     "@spartanbio/eslint-config-vue": "^1.1.0",
     "@spartanbio/stylelint-config-scss": "^1.0.11",
-    "@storybook/addon-a11y": "^6.1.9",
+    "@storybook/addon-a11y": "^6.1.10",
     "@storybook/addon-docs": "^6.1.9",
     "@storybook/addon-jest": "^6.1.10",
     "@storybook/addon-knobs": "^6.1.9",
