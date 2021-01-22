@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/spartanbio/schedio/compare/v4.0.1...v4.0.2) (2021-01-22)
+
+
+### Bug Fixes
+
+* ensures third party `iframes` behave as expected ([e4be591](https://github.com/spartanbio/schedio/commit/e4be59193e1366402a8c560e63086a610317c5e0))
+
 ## [4.0.1](https://github.com/spartanbio/schedio/compare/v4.0.0...v4.0.1) (2020-09-22)
 
 
