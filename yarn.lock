@@ -4126,10 +4126,10 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/devtools@^5.3.3":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@vue/devtools/-/devtools-5.3.3.tgz#167473f31d986af81ab8c02629c800186e97d51c"
-  integrity sha512-wfQm0YHmEj1KLClhIyz/OFuRBky4/ptS5p7OqeNYIzEqgX+/jhTWbyKWUizYyYyz8HVEn/vAQb1pfPeYeeQCSQ==
+"@vue/devtools@^5.3.4":
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/@vue/devtools/-/devtools-5.3.4.tgz#2c58e5bca175461a64b75974f35b7e635209bb25"
+  integrity sha512-W7eLCcmKlIssnQPAUwDelmSvRyUABB99LSvSH9a4EwlmWgvtWr9Ck4SqUQVJyjkL1f+kenSUNnAG6Euwuzrp6g==
   dependencies:
     cross-spawn "^5.1.0"
     electron "^7.0.0"
