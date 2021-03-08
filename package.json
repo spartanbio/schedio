@@ -101,7 +101,7 @@
     "showdown": "^1.9.1",
     "showdown-highlight": "^2.1.6",
     "style-resources-loader": "^1.4.1",
-    "stylelint": "^13.11.0",
+    "stylelint": "^13.12.0",
     "stylelint-config-recommended-scss": "^4.1.0",
     "stylelint-scss": "^3.19.0",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
