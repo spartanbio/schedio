@@ -2349,10 +2349,10 @@
   resolved "https://registry.yarnpkg.com/@spartanbio/eslint-config/-/eslint-config-1.2.0.tgz#de83d0768c1f3ad6028c63b7b3aac641c9dbdfca"
   integrity sha512-RvdTLK3WTqCn+U5R+ZcLkLVoZh87nWFTZgKYmfJNL3Nu7b8xKKCXzQKcPHXeiU0LQwwEITQdX4NVhNvwRBChSw==
 
-"@spartanbio/schedio-tokens@^2.0.0-alpha.5":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@spartanbio/schedio-tokens/-/schedio-tokens-2.1.0.tgz#b8fcfb8aaca59db6ffbb4d76cd34b54476d3bb30"
-  integrity sha512-H1uVxXVt0LUhXYVQ5xR+7vGRIhXPZGk14UWrYuGXUCXe5dni/Mk0HA8+H5P3w9a1biMhh7dE6DzgMyNsHcb0dg==
+"@spartanbio/schedio-tokens@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@spartanbio/schedio-tokens/-/schedio-tokens-2.1.1.tgz#eb310e7d9e34179802d2c91fbf9c6660465fc048"
+  integrity sha512-zRv8YW3Qpur2tj22E4CVgRNhK28Sz+5Y4EDXwh6mmlc7i2sRqZqBaNpxKuTAjX9WbOAUbg2jOHeRo1nUyDH4oA==
 
 "@spartanbio/stylelint-config-scss@^1.0.11":
   version "1.0.11"
