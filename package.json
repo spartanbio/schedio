@@ -49,7 +49,7 @@
     "@storybook/addon-a11y": "^6.2.2",
     "@storybook/addon-docs": "^6.2.2",
     "@storybook/addon-jest": "^6.2.1",
-    "@storybook/addon-knobs": "^6.2.1",
+    "@storybook/addon-knobs": "^6.2.2",
     "@storybook/addon-links": "^6.2.1",
     "@storybook/addons": "^6.1.19",
     "@storybook/vue": "6.2.1",
