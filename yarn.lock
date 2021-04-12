@@ -10669,7 +10669,7 @@ hex-rgb@~1.0.0:
   resolved "https://registry.yarnpkg.com/hex-rgb/-/hex-rgb-1.0.0.tgz#532275697cb9823e052429b184c6781d46cfdf49"
   integrity sha1-UyJ1aXy5gj4FJCmxhMZ4HUbP30k=
 
-highlight.js@^10.1.1, highlight.js@^10.5.0, highlight.js@^10.7.2:
+highlight.js@^10.1.1, highlight.js@^10.7.2:
   version "10.7.2"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.7.2.tgz#89319b861edc66c48854ed1e6da21ea89f847360"
   integrity sha512-oFLl873u4usRM9K63j4ME9u3etNF0PLiJhSQ8rdfuL51Wn3zkD6drf9ZW0dOzjnZI22YYG24z30JcmfCZjMgYg==
@@ -17981,12 +17981,12 @@ shortid@^2.2.15:
   dependencies:
     nanoid "^2.1.0"
 
-showdown-highlight@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/showdown-highlight/-/showdown-highlight-2.1.6.tgz#2b003cae52a0e28bd7288e63f91055437973ea14"
-  integrity sha512-ILxKwpaFwOwmYVlnYPe48ZitelNGF0OWWao3Ixlm3mM+Lu/S3ZuBujV8ODErGKfgGXBK6mV7tmK5wwu4dmde/w==
+showdown-highlight@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/showdown-highlight/-/showdown-highlight-2.1.7.tgz#b9ebb6c56eb6964a5de992bd15a743cc70aa129b"
+  integrity sha512-/AxTfvKvGWScGeIIxgUWUMNcdx3P7UdzAC4M+wXMC27SzvRY7Z8u6HtiIGDKvSdKuwYhMEuC6R/x9qr9CxgOYA==
   dependencies:
-    highlight.js "^10.5.0"
+    highlight.js "^10.7.2"
     html-encoder-decoder "^1.3.9"
     showdown "^1.9.1"
 
