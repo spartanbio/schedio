@@ -78,7 +78,7 @@
     "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-vue": "^7.9.0",
     "fibers": "^5.0.0",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "get-contrast": "^3.0.0",
     "highlight.js": "^10.7.2",
     "husky": "^6.0.0",
