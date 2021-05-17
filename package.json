@@ -99,7 +99,7 @@
     "semantic-release": "^17.4.3",
     "shelljs": "^0.8.3",
     "showdown": "^1.9.1",
-    "showdown-highlight": "^2.1.7",
+    "showdown-highlight": "^2.1.8",
     "style-resources-loader": "^1.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.1.0",
