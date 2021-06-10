@@ -26,7 +26,7 @@
     "src"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.5",
     "@spartanbio/schedio-tokens": "^2.1.1",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "feather-icons": "^4.22.0",
