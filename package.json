@@ -103,7 +103,7 @@
     "style-resources-loader": "^1.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.3.0",
-    "stylelint-scss": "^3.19.0",
+    "stylelint-scss": "^3.20.0",
     "vue-cli-plugin-style-resources-loader": "^0.1.5",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.14"
